@@ -490,9 +490,9 @@ void setup_window_border(GtkWidget *w)
     mapping = FALSE;
 }
 
-void setup_font_active(GtkWidget *w)
+static void setup_font(GtkWidget *w, const gchar *place)
 {
-    gchar *fontstring;
+    gchar *fontstring, *node;
     gchar *name, **names;
     gchar *size;
     gchar *weight;
@@ -500,10 +500,21 @@ void setup_font_active(GtkWidget *w)
 
     mapping = TRUE;
 
-    name = tree_get_string("theme/font:place=ActiveWindow/name", "Sans");
-    size = tree_get_string("theme/font:place=ActiveWindow/size", "8");
-    weight = tree_get_string("theme/font:place=ActiveWindow/weight", "");
-    slant = tree_get_string("theme/font:place=ActiveWindow/slant", "");
+    node = g_strdup_printf("theme/font:place=%s/name", place);
+    name = tree_get_string(node, "Sans");
+    g_free(node);
+
+    node = g_strdup_printf("theme/font:place=%s/size", place);
+    size = tree_get_string(node, "8");
+    g_free(node);
+
+    node = g_strdup_printf("theme/font:place=%s/weight", place);
+    weight = tree_get_string(node, "");
+    g_free(node);
+
+    node = g_strdup_printf("theme/font:place=%s/slant", place);
+    slant = tree_get_string(node, "");
+    g_free(node);
 
     /* get only the first font in the string */
     names = g_strsplit(name, ",", 0);
@@ -530,133 +541,31 @@ void setup_font_active(GtkWidget *w)
     mapping = FALSE;
 }
 
+void setup_font_active(GtkWidget *w)
+{
+    setup_font(w, "ActiveWindow");
+}
+
 void setup_font_inactive(GtkWidget *w)
 {
-    gchar *fontstring;
-    gchar *name, **names;
-    gchar *size;
-    gchar *weight;
-    gchar *slant;
-
-    mapping = TRUE;
-
-    name = tree_get_string("theme/font:place=InactiveWindow/name", "Sans");
-    size = tree_get_string("theme/font:place=InactiveWindow/size", "8");
-    weight = tree_get_string("theme/font:place=InactiveWindow/weight", "");
-    slant = tree_get_string("theme/font:place=InactiveWindow/slant", "");
-
-    /* get only the first font in the string */
-    names = g_strsplit(name, ",", 0);
-    g_free(name);
-    name = g_strdup(names[0]);
-    g_strfreev(names);
-
-    fontstring = g_strdup_printf("%s %s %s %s", name, weight, slant, size);
-    gtk_font_button_set_font_name(GTK_FONT_BUTTON(w), fontstring);
-    g_free(fontstring);
-    g_free(slant);
-    g_free(weight);
-    g_free(size);
-    g_free(name);
-
-    mapping = FALSE;
+    setup_font(w, "InactiveWindow");
 }
 
 void setup_font_menu_header(GtkWidget *w)
 {
-    gchar *fontstring;
-    gchar *name, **names;
-    gchar *size;
-    gchar *weight;
-    gchar *slant;
-
-    mapping = TRUE;
-
-    name = tree_get_string("theme/font:place=MenuHeader/name", "Sans");
-    size = tree_get_string("theme/font:place=MenuHeader/size", "8");
-    weight = tree_get_string("theme/font:place=MenuHeader/weight", "");
-    slant = tree_get_string("theme/font:place=MenuHeader/slant", "");
-
-    /* get only the first font in the string */
-    names = g_strsplit(name, ",", 0);
-    g_free(name);
-    name = g_strdup(names[0]);
-    g_strfreev(names);
-
-    fontstring = g_strdup_printf("%s %s %s %s", name, weight, slant, size);
-    gtk_font_button_set_font_name(GTK_FONT_BUTTON(w), fontstring);
-    g_free(fontstring);
-    g_free(slant);
-    g_free(weight);
-    g_free(size);
-    g_free(name);
-
-    mapping = FALSE;
+    setup_font(w, "MenuHeader");
 }
 
 void setup_font_menu_item(GtkWidget *w)
 {
-    gchar *fontstring;
-    gchar *name, **names;
-    gchar *size;
-    gchar *weight;
-    gchar *slant;
-
-    mapping = TRUE;
-
-    name = tree_get_string("theme/font:place=MenuItem/name", "Sans");
-    size = tree_get_string("theme/font:place=MenuItem/size", "8");
-    weight = tree_get_string("theme/font:place=MenuItem/weight", "");
-    slant = tree_get_string("theme/font:place=MenuItem/slant", "");
-
-    /* get only the first font in the string */
-    names = g_strsplit(name, ",", 0);
-    g_free(name);
-    name = g_strdup(names[0]);
-    g_strfreev(names);
-
-    fontstring = g_strdup_printf("%s %s %s %s", name, weight, slant, size);
-    gtk_font_button_set_font_name(GTK_FONT_BUTTON(w), fontstring);
-    g_free(fontstring);
-    g_free(slant);
-    g_free(weight);
-    g_free(size);
-    g_free(name);
-
-    mapping = FALSE;
+    setup_font(w, "MenuItem");
 }
 
 void setup_font_display(GtkWidget *w)
 {
-    gchar *fontstring;
-    gchar *name, **names;
-    gchar *size;
-    gchar *weight;
-    gchar *slant;
-
-    mapping = TRUE;
-
-    name = tree_get_string("theme/font:place=OnScreenDisplay/name", "Sans");
-    size = tree_get_string("theme/font:place=OnScreenDisplay/size", "8");
-    weight = tree_get_string("theme/font:place=OnScreenDisplay/weight", "");
-    slant = tree_get_string("theme/font:place=OnScreenDisplay/slant", "");
-
-    /* get only the first font in the string */
-    names = g_strsplit(name, ",", 0);
-    g_free(name);
-    name = g_strdup(names[0]);
-    g_strfreev(names);
-
-    fontstring = g_strdup_printf("%s %s %s %s", name, weight, slant, size);
-    gtk_font_button_set_font_name(GTK_FONT_BUTTON(w), fontstring);
-    g_free(fontstring);
-    g_free(slant);
-    g_free(weight);
-    g_free(size);
-    g_free(name);
-
-    mapping = FALSE;
+    setup_font(w, "OnScreenDisplay");
 }
+
 
 static void reset_desktop_names()
 {
