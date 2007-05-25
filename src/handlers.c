@@ -1244,8 +1244,10 @@ static void set_desktop_names()
     }
 
     num = 0;
-    for (lit = desktop_names; lit && num <= last; lit = g_list_next(lit))
+    for (lit = desktop_names; lit && num <= last; lit = g_list_next(lit)) {
         xmlNewTextChild(n, NULL, "name", lit->data);
+        ++num;
+    }
     tree_apply();
 
     /* make openbox re-set the property */
