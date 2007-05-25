@@ -1,0 +1,8 @@
+- add raiseOnFocus option.
+
+(a) size groups
+(b) widget focus issues
+(c) key nav
+
+- add a means to remove desktop names > the number of desktops. a remove
+  button?

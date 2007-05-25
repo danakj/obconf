@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=ObConf
+Comment=Openbox Preferences Manager
+Icon=openbox.png
+Exec=obconf
+StartupNotify=true
+Terminal=false
+Type=Application
+Categories=Openbox;Application;System Tools
+Encoding=UTF-8
