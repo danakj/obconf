@@ -1,0 +1,11 @@
+Source: obconf
+Section: x11
+Priority: optional
+Maintainer: Dana Jansens <danakj@orodu.net>
+Standards-Version: 3.7.2
+
+Package: obconf
+Architecture: i386
+Depends: libc6, libgtk2.0-0, libglade2-0, openbox (>= 3.3.991), libstartup-notification0
+Recommends: obconf, ttf-bitstream-vera
+Description: Openbox configuration tool

@@ -1,0 +1,6 @@
+?package(obconf):\
+  needs="x11"\
+  section="Apps/System"\
+  title="ObConf"\
+  command="/usr/bin/obconf"\
+  icon="/usr/share/pixmaps/openbox.png"
