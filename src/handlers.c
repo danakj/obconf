@@ -511,6 +511,14 @@ void setup_font_active(GtkWidget *w)
     name = g_strdup(names[0]);
     g_strfreev(names);
 
+    /* don't use "normal" in the gtk string */
+    if (!g_ascii_strcasecmp(weight, "normal")) {
+        g_free(weight); weight = g_strdup("");
+    }
+    if (!g_ascii_strcasecmp(slant, "normal")) {
+        g_free(slant); slant = g_strdup("");
+    }
+
     fontstring = g_strdup_printf("%s %s %s %s", name, weight, slant, size);
     gtk_font_button_set_font_name(GTK_FONT_BUTTON(w), fontstring);
     g_free(fontstring);
