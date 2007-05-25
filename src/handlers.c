@@ -1229,6 +1229,7 @@ static void set_desktop_names()
     gchar **s;
     GList *lit;
     xmlNodePtr n, c;
+    gint num = 0, last = -1;
 
     n = tree_get_node("desktops/names", NULL);
     while ((c = n->children)) {
@@ -1236,7 +1237,14 @@ static void set_desktop_names()
         xmlFreeNode(c);
     }
 
-    for (lit = desktop_names; lit; lit = g_list_next(lit))
+    for (lit = desktop_names; lit; lit = g_list_next(lit)) {
+        if (((gchar*)lit->data)[0]) /* not empty */
+            last = num;
+        ++num;
+    }
+
+    num = 0;
+    for (lit = desktop_names; lit && num <= last; lit = g_list_next(lit))
         xmlNewTextChild(n, NULL, "name", lit->data);
     tree_apply();
 
