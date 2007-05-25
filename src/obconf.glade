@@ -1066,6 +1066,7 @@ C - The close button</property>
 				      <property name="active">False</property>
 				      <property name="inconsistent">False</property>
 				      <property name="draw_indicator">True</property>
+				      <signal name="toggled" handler="on_focus_last_toggled" last_modification_time="Fri, 25 May 2007 18:54:28 GMT"/>
 				    </widget>
 				    <packing>
 				      <property name="padding">0</property>
@@ -1622,7 +1623,7 @@ C - The close button</property>
 			  <child>
 			    <widget class="GtkLabel" id="label53">
 			      <property name="visible">True</property>
-			      <property name="label" translatable="yes">Number of _desktops: </property>
+			      <property name="label" translatable="yes">_Number of desktops: </property>
 			      <property name="use_underline">True</property>
 			      <property name="use_markup">False</property>
 			      <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -1675,7 +1676,7 @@ C - The close button</property>
 		      <child>
 			<widget class="GtkLabel" id="label54">
 			  <property name="visible">True</property>
-			  <property name="label" translatable="yes">Desktop _names:</property>
+			  <property name="label" translatable="yes">_Desktop names:</property>
 			  <property name="use_underline">True</property>
 			  <property name="use_markup">False</property>
 			  <property name="justify">GTK_JUSTIFY_LEFT</property>
