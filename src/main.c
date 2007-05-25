@@ -88,6 +88,7 @@ int main(int argc, char **argv)
     setup_dock_tab();
     setup_focus_mouse(glade_xml_get_widget(glade, "focus_mouse"));
     setup_focus_raise(glade_xml_get_widget(glade, "focus_raise"));
+    setup_focus_last(glade_xml_get_widget(glade, "focus_raise"));
     setup_focus_delay(glade_xml_get_widget(glade, "focus_delay"));
     setup_focus_new(glade_xml_get_widget(glade, "focus_new"));
     setup_place_mouse(glade_xml_get_widget(glade, "place_mouse"));

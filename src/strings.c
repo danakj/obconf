@@ -10,10 +10,10 @@ gchar *s = N_("    ");
 gchar *s = N_("Theme");
 gchar *s = N_("<span weight=\"bold\">Windows</span>");
 gchar *s = N_("    ");
-gchar *s = N_("Windows retain a border when undecorated");
+gchar *s = N_("_Windows retain a border when undecorated");
 gchar *s = N_("<span weight=\"bold\">Window Titles</span>");
 gchar *s = N_("    ");
-gchar *s = N_("Button _order:");
+gchar *s = N_("_Button order:");
 gchar *s = N_("N - The window's icon\n"
               "D - The all-desktops (sticky) button\n"
               "S - The shade (roll up) button\n"
@@ -23,11 +23,11 @@ gchar *s = N_("N - The window's icon\n"
               "C - The close button");
 gchar *s = N_("<span weight=\"bold\">Fonts</span>");
 gchar *s = N_("    ");
-gchar *s = N_("Active window title: ");
-gchar *s = N_("Inactive window title: ");
-gchar *s = N_("Menu header: ");
-gchar *s = N_("Menu Item: ");
-gchar *s = N_("On-screen display: ");
+gchar *s = N_("_Active window title: ");
+gchar *s = N_("_Inactive window title: ");
+gchar *s = N_("Menu _header: ");
+gchar *s = N_("_Menu Item: ");
+gchar *s = N_("_On-screen display: ");
 gchar *s = N_("Appearance");
 gchar *s = N_("<span weight=\"bold\">Focusing Windows</span>");
 gchar *s = N_("    ");
@@ -36,6 +36,7 @@ gchar *s = N_("    ");
 gchar *s = N_("_Raise windows when the mouse pointer moves over them");
 gchar *s = N_("_Delay before focusing and raising windows:");
 gchar *s = N_("ms");
+gchar *s = N_("_Give focus to the last used window, instead of under the mouse");
 gchar *s = N_("Focus _new windows when they appear");
 gchar *s = N_("<span weight=\"bold\">Placing Windows</span>");
 gchar *s = N_("    ");

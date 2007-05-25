@@ -134,10 +134,12 @@ void setup_focus_mouse(GtkWidget *w)
         GtkWidget *delay_u = glade_xml_get_widget(glade,
                                                   "focus_delay_label_units");
         GtkWidget *raise   = glade_xml_get_widget(glade, "focus_raise");
+        GtkWidget *last    = glade_xml_get_widget(glade, "focus_last");
         gtk_widget_set_sensitive(delay, b);
         gtk_widget_set_sensitive(delay_l, b);
         gtk_widget_set_sensitive(delay_u, b);
         gtk_widget_set_sensitive(raise, b);
+        gtk_widget_set_sensitive(last, b);
     }
 
     mapping = FALSE;
@@ -155,7 +157,15 @@ void setup_focus_raise(GtkWidget *w)
 {
     mapping = TRUE;
     gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(w),
-                          tree_get_bool("focus/raiseOnFocus", FALSE));
+                                 tree_get_bool("focus/raiseOnFocus", FALSE));
+    mapping = FALSE;
+}
+
+void setup_focus_last(GtkWidget *w)
+{
+    mapping = TRUE;
+    gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(w),
+                                 tree_get_bool("focus/focusLast", FALSE));
     mapping = FALSE;
 }
 
@@ -741,10 +751,12 @@ void on_focus_mouse_toggled(GtkToggleButton *w, gpointer data)
         GtkWidget *delay_u = glade_xml_get_widget(glade,
                                                   "focus_delay_label_units");
         GtkWidget *raise   = glade_xml_get_widget(glade, "focus_raise");
+        GtkWidget *last    = glade_xml_get_widget(glade, "focus_last");
         gtk_widget_set_sensitive(delay, b);
         gtk_widget_set_sensitive(delay_l, b);
         gtk_widget_set_sensitive(delay_u, b);
         gtk_widget_set_sensitive(raise, b);
+        gtk_widget_set_sensitive(last, b);
     }
 }
 
@@ -761,6 +773,13 @@ void on_focus_raise_toggled(GtkToggleButton *w, gpointer data)
     if (mapping) return;
 
     tree_set_bool("focus/raiseOnFocus", gtk_toggle_button_get_active(w));
+}
+
+void on_focus_last_toggled(GtkToggleButton *w, gpointer data)
+{
+    if (mapping) return;
+
+    tree_set_bool("focus/focusLast", gtk_toggle_button_get_active(w));
 }
 
 void on_focus_new_toggled(GtkToggleButton *w, gpointer data)
