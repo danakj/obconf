@@ -44,33 +44,41 @@ static void on_theme_names_selection_changed(GtkTreeSelection *sel,
 
 void setup_behavior_tab()
 {
-  GtkWidget *winresist  = glade_xml_get_widget(glade, "resist_window");
-  GtkWidget *edgeresist = glade_xml_get_widget(glade, "resist_edge");
-  GtkSizeGroup *group1  = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
+    GtkWidget *winresist, *edgeresist;
+    GtkWidget *winresist_l, *edgeresist_l;
+    GtkSizeGroup *group1, *group2;
 
-  gtk_size_group_add_widget(group1, winresist);
-  gtk_size_group_add_widget(group1, edgeresist);
+    winresist  = glade_xml_get_widget(glade, "resist_window");
+    edgeresist = glade_xml_get_widget(glade, "resist_edge");
+    group1     = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
 
-  GtkWidget *winresist_l  = glade_xml_get_widget(glade, "resist_window_label");
-  GtkWidget *edgeresist_l = glade_xml_get_widget(glade, "resist_edge_label");
-  GtkSizeGroup *group2    = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
+    gtk_size_group_add_widget(group1, winresist);
+    gtk_size_group_add_widget(group1, edgeresist);
 
-  gtk_size_group_add_widget(group2, winresist_l);
-  gtk_size_group_add_widget(group2, edgeresist_l);
+    winresist_l  = glade_xml_get_widget(glade, "resist_window_label");
+    edgeresist_l = glade_xml_get_widget(glade, "resist_edge_label");
+    group2       = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
+
+    gtk_size_group_add_widget(group2, winresist_l);
+    gtk_size_group_add_widget(group2, edgeresist_l);
 }
 
 void setup_dock_tab()
 {
-    GtkWidget *posi = glade_xml_get_widget(glade, "dock_position");
-    GtkWidget *dir  = glade_xml_get_widget(glade, "dock_direction");
-    GtkSizeGroup *group1 = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
+    GtkWidget *posi, *dir;
+    GtkWidget *posi_l, *dir_l;
+    GtkSizeGroup *group1, *group2;
+
+    posi   = glade_xml_get_widget(glade, "dock_position");
+    dir    = glade_xml_get_widget(glade, "dock_direction");
+    group1 = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
 
     gtk_size_group_add_widget(group1, posi);
     gtk_size_group_add_widget(group1, dir);
 
-    GtkWidget *posi_l = glade_xml_get_widget(glade, "dock_position_label");
-    GtkWidget *dir_l  = glade_xml_get_widget(glade, "dock_direction_label");
-    GtkSizeGroup *group2 = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
+    posi_l = glade_xml_get_widget(glade, "dock_position_label");
+    dir_l  = glade_xml_get_widget(glade, "dock_direction_label");
+    group2 = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
 
     gtk_size_group_add_widget(group2, posi_l);
     gtk_size_group_add_widget(group2, dir_l);
@@ -1230,14 +1238,15 @@ static void on_desktop_names_cell_edited(GtkCellRendererText *cell,
                                          const gchar *new_text,
                                          gpointer data)
 {
-    if (mapping) return;
-
-    GtkTreePath *path = gtk_tree_path_new_from_string (path_string);
+    GtkTreePath *path;
     GtkTreeIter it;
     gchar *old_text;
     GList *lit;
     gint i;
 
+    if (mapping) return;
+
+    path = gtk_tree_path_new_from_string (path_string);
     gtk_tree_model_get_iter(GTK_TREE_MODEL(desktop_store), &it, path);
 
     gtk_tree_model_get(GTK_TREE_MODEL(desktop_store), &it, 0, &old_text, -1);
