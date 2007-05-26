@@ -31,7 +31,7 @@ gchar *s = N_("_On-screen display: ");
 gchar *s = N_("Appearance");
 gchar *s = N_("<span weight=\"bold\">Focusing Windows</span>");
 gchar *s = N_("    ");
-gchar *s = N_("Focus windows when the _mouse pointer moves over them");
+gchar *s = N_("_Focus windows when the mouse pointer moves over them");
 gchar *s = N_("    ");
 gchar *s = N_("_Raise windows when the mouse pointer moves over them");
 gchar *s = N_("_Delay before focusing and raising windows:");
