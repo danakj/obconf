@@ -36,7 +36,7 @@ gchar *s = N_("    ");
 gchar *s = N_("_Raise windows when the mouse pointer moves over them");
 gchar *s = N_("_Delay before focusing and raising windows:");
 gchar *s = N_("ms");
-gchar *s = N_("_Give focus to the last used window, instead of under the mouse");
+gchar *s = N_("_Give focus to the last used window when switching desktops");
 gchar *s = N_("Focus _new windows when they appear");
 gchar *s = N_("<span weight=\"bold\">Placing Windows</span>");
 gchar *s = N_("    ");
