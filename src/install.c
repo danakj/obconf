@@ -11,6 +11,19 @@
 
 static gzFile gzf = NULL;
 
+#define gtk_msg(type, args...) \
+{                                                                        \
+    GtkWidget *msgw;                                                     \
+    msgw = gtk_message_dialog_new(GTK_WINDOW(mainwin),                   \
+                                  GTK_DIALOG_DESTROY_WITH_PARENT |       \
+                                  GTK_DIALOG_MODAL,                      \
+                                  type,                                  \
+                                  GTK_BUTTONS_OK,                        \
+                                  args);                                 \
+    gtk_dialog_run(GTK_DIALOG(msgw));                                    \
+    gtk_widget_destroy(msgw);                                            \
+}
+
 static int gzopen_frontend(const char *path, int oflags, int mode)
 {
     int fd;
@@ -54,40 +67,22 @@ gboolean install_theme(char *path, char *theme)
     dest = g_build_path(G_DIR_SEPARATOR_S, g_get_home_dir(), ".themes", NULL);
     r = mkdir(dest, 0777);
     if (r == -1 && errno != EEXIST) {
-        w = gtk_message_dialog_new(GTK_WINDOW(mainwin),
-                                   GTK_DIALOG_DESTROY_WITH_PARENT |
-                                   GTK_DIALOG_MODAL,
-                                   GTK_MESSAGE_ERROR,
-                                   GTK_BUTTONS_OK,
-                                   _("Unable to create directory \"%s\": %s"),
-                                   dest, strerror(errno));
-        gtk_dialog_run(GTK_DIALOG(w));
-        gtk_widget_destroy(w);
+        gtk_msg(GTK_MESSAGE_ERROR,
+                _("Unable to create directory \"%s\": %s"),
+                dest, strerror(errno));
         return FALSE;
     }
     if (chdir(dest) == -1) {
-        w = gtk_message_dialog_new(GTK_WINDOW(mainwin),
-                                   GTK_DIALOG_DESTROY_WITH_PARENT |
-                                   GTK_DIALOG_MODAL,
-                                   GTK_MESSAGE_ERROR,
-                                   GTK_BUTTONS_OK,
-                                   _("Unable to move to directory \"%s\": %s"),
-                                   dest, strerror(errno));
-        gtk_dialog_run(GTK_DIALOG(w));
-        gtk_widget_destroy(w);
+        gtk_msg(GTK_MESSAGE_ERROR,
+                _("Unable to move to directory \"%s\": %s"),
+                dest, strerror(errno));
         return FALSE;
     }
 
     if (tar_open(&t, path, &funcs, 0, O_RDONLY, TAR_GNU) == -1) {
-        w = gtk_message_dialog_new(GTK_WINDOW(mainwin),
-                                   GTK_DIALOG_DESTROY_WITH_PARENT |
-                                   GTK_DIALOG_MODAL,
-                                   GTK_MESSAGE_ERROR,
-                                   GTK_BUTTONS_OK,
-                                   _("Unable to open the file \"%s\": %s"),
-                                   path, strerror(errno));
-        gtk_dialog_run(GTK_DIALOG(w));
-        gtk_widget_destroy(w);
+        gtk_msg(GTK_MESSAGE_ERROR,
+                _("Unable to open the file \"%s\": %s"),
+                path, strerror(errno));
         return FALSE;
     }
 
@@ -97,27 +92,15 @@ gboolean install_theme(char *path, char *theme)
     tar_close(t);
 
     if (r != 0) {
-        w = gtk_message_dialog_new(GTK_WINDOW(mainwin),
-                                   GTK_DIALOG_DESTROY_WITH_PARENT |
-                                   GTK_DIALOG_MODAL,
-                                   GTK_MESSAGE_ERROR,
-                                   GTK_BUTTONS_OK,
-                                   _("Unable to extract the file \"%s\".\nIt does not appear to be a valid Openbox theme archive (in tar.gz format)."),
-                                   path, strerror(errno));
-        gtk_dialog_run(GTK_DIALOG(w));
-        gtk_widget_destroy(w);
+        gtk_msg(GTK_MESSAGE_ERROR,
+                _("Unable to extract the file \"%s\".\nIt does not appear to be a valid Openbox theme archive (in tar.gz format)."),
+                path, strerror(errno));
 
         g_free(dest);
         return FALSE;
     }
 
-    w = gtk_message_dialog_new(GTK_WINDOW(mainwin),
-                               GTK_DIALOG_DESTROY_WITH_PARENT |
-                               GTK_DIALOG_MODAL,
-                               GTK_MESSAGE_INFO,
-                               GTK_BUTTONS_OK,
-                               _("%s was installed to %s"),
-                               theme, dest);
+    gtk_msg(GTK_MESSAGE_INFO, _("%s was installed to %s"), theme, dest);
     gtk_dialog_run(GTK_DIALOG(w));
     gtk_widget_destroy(w);
 
