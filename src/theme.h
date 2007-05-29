@@ -3,6 +3,6 @@
 
 #include <glib.h>
 
-gboolean install_theme(gchar *path, gchar *theme);
+gboolean theme_install(gchar *path, gchar *theme);
 
 #endif

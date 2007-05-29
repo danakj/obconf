@@ -19,7 +19,7 @@
 
 #include "main.h"
 #include "tree.h"
-#include "install.h"
+#include "theme.h"
 #include "gettext.h"
 #include "openbox/render.h"
 

@@ -1,4 +1,4 @@
-#include "install.h"
+#include "theme.h"
 #include "main.h"
 #include "gettext.h"
 
@@ -38,6 +38,31 @@ tartype_t funcs = {
     (readfunc_t) gzread_frontend,
     (writefunc_t) gzwrite_frontend
 };
+
+gboolean theme_install(gchar *path, gchar *theme)
+{
+    gchar *dest;
+    gchar *curdir;
+
+    if (!(dest = get_theme_dir()))
+        return FALSE;
+
+    curdir = g_get_current_dir();
+    if (!change_dir(dest)) {
+        g_free(curdir);
+        return FALSE;
+    }
+
+    if (install_theme_to(theme, path, dest))
+        gtk_msg(GTK_MESSAGE_INFO, _("%s was installed to %s"), theme, dest);
+
+    g_free(dest);
+
+    change_dir(curdir);
+    g_free(curdir);
+
+    return TRUE;
+}
 
 static gchar *get_theme_dir()
 {
@@ -92,31 +117,6 @@ static gboolean install_theme_to(gchar *theme, gchar *file, gchar *to)
                 file, strerror(errno));
 
     return r == 0;
-}
-
-gboolean install_theme(gchar *path, gchar *theme)
-{
-    gchar *dest;
-    gchar *curdir;
-
-    if (!(dest = get_theme_dir()))
-        return FALSE;
-
-    curdir = g_get_current_dir();
-    if (!change_dir(dest)) {
-        g_free(curdir);
-        return FALSE;
-    }
-
-    if (install_theme_to(theme, path, dest))
-        gtk_msg(GTK_MESSAGE_INFO, _("%s was installed to %s"), theme, dest);
-
-    g_free(dest);
-
-    change_dir(curdir);
-    g_free(curdir);
-
-    return TRUE;
 }
 
 static int gzopen_frontend(const char *path, int oflags, int mode)
