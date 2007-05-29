@@ -1345,7 +1345,7 @@ void on_install_theme_clicked(GtkButton *w, gpointer data)
             return;
         }
 
-        if (install_theme(path, themename)) {
+        if (theme_install(path, themename)) {
             GtkWidget *w;
             GtkTreePath *path;
             GList *it;
