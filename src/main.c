@@ -25,7 +25,7 @@
 #include <libsn/sn.h>
 #undef SN_API_NOT_YET_FROZEN
 
-static GtkWidget *mainwin;
+GtkWidget *mainwin;
 
 GladeXML *glade;
 xmlDocPtr doc;

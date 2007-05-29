@@ -27,6 +27,7 @@
 extern GladeXML *glade;
 extern xmlDocPtr doc;
 extern xmlNodePtr root;
+extern GtkWidget *mainwin;
 
 void obconf_error(gchar *msg);
 

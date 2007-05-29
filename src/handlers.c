@@ -1264,3 +1264,21 @@ static void on_desktop_names_cell_edited(GtkCellRendererText *cell,
 
     set_desktop_names();
 }
+
+void on_install_theme_clicked(GtkButton *w, gpointer data)
+{
+    GtkWidget *d;
+    gint r;
+
+    d = gtk_file_chooser_dialog_new(_("Choose an Openbox theme"),
+                                    mainwin,
+                                    GTK_FILE_CHOOSER_ACTION_OPEN,
+                                    GTK_STOCK_OK, GTK_RESPONSE_OK,
+                                    GTK_STOCK_CANCEL, GTK_RESPONSE_NONE,
+                                    NULL);
+    r = gtk_dialog_run(GTK_DIALOG(d));
+    if (r == GTK_RESPONSE_OK) {
+        g_print("hi\n");
+    }
+    gtk_widget_destroy(d);
+}

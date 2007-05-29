@@ -7,6 +7,9 @@
 gchar *s = N_("Openbox Window Preferences");
 gchar *s = N_("<span weight=\"bold\">Theme</span>");
 gchar *s = N_("    ");
+gchar *s = N_("<span weight=\"bold\">Install a New Theme</span>");
+gchar *s = N_("    ");
+gchar *s = N_("_Choose a theme to install...");
 gchar *s = N_("Theme");
 gchar *s = N_("<span weight=\"bold\">Windows</span>");
 gchar *s = N_("    ");
