@@ -24,6 +24,78 @@ static gzFile gzf = NULL;
     gtk_widget_destroy(msgw);                                            \
 }
 
+static int gzopen_frontend(const char *path, int oflags, int mode);
+static int gzclose_frontend(int nothing);
+static ssize_t gzread_frontend(int nothing, void *buf, size_t s);
+static ssize_t gzwrite_frontend(int nothing, const void *buf, size_t s);
+
+tartype_t funcs = {
+    (openfunc_t) gzopen_frontend,
+    (closefunc_t) gzclose_frontend,
+    (readfunc_t) gzread_frontend,
+    (writefunc_t) gzwrite_frontend
+};
+
+gboolean install_theme(char *path, char *theme)
+{
+    TAR *t;
+    gchar *dest;
+    gint r;
+    gchar *glob;
+    gchar *curdir;
+
+    dest = g_build_path(G_DIR_SEPARATOR_S, g_get_home_dir(), ".themes", NULL);
+    r = mkdir(dest, 0777);
+    if (r == -1 && errno != EEXIST) {
+        gtk_msg(GTK_MESSAGE_ERROR,
+                _("Unable to create directory \"%s\": %s"),
+                dest, strerror(errno));
+        return FALSE;
+    }
+    curdir = g_get_current_dir();
+    if (chdir(dest) == -1) {
+        gtk_msg(GTK_MESSAGE_ERROR,
+                _("Unable to move to directory \"%s\": %s"),
+                dest, strerror(errno));
+        g_free(curdir);
+        return FALSE;
+    }
+
+    if (tar_open(&t, path, &funcs, 0, O_RDONLY, TAR_GNU) == -1) {
+        gtk_msg(GTK_MESSAGE_ERROR,
+                _("Unable to open the file \"%s\": %s"),
+                path, strerror(errno));
+        chdir(curdir);
+        g_free(curdir);
+        return FALSE;
+    }
+
+    glob = g_strdup_printf("%s/openbox-3/*", theme);
+    r = tar_extract_glob(t, glob, dest);
+    g_free(glob);
+    tar_close(t);
+
+    if (r != 0) {
+        gtk_msg(GTK_MESSAGE_ERROR,
+                _("Unable to extract the file \"%s\".\nIt does not appear to be a valid Openbox theme archive (in tar.gz format)."),
+                path, strerror(errno));
+
+        g_free(dest);
+        chdir(curdir);
+        g_free(curdir);
+        return FALSE;
+    }
+
+    gtk_msg(GTK_MESSAGE_INFO, _("%s was installed to %s"), theme, dest);
+
+    g_free(dest);
+
+    chdir(curdir);
+    g_free(curdir);
+
+    return TRUE;
+}
+
 static int gzopen_frontend(const char *path, int oflags, int mode)
 {
     int fd;
@@ -49,62 +121,3 @@ static ssize_t gzwrite_frontend(int nothing, const void *buf, size_t s)
     return gzwrite(gzf, buf, s);
 }
 
-tartype_t funcs = {
-    (openfunc_t) gzopen_frontend,
-    (closefunc_t) gzclose_frontend,
-    (readfunc_t) gzread_frontend,
-    (writefunc_t) gzwrite_frontend
-};
-
-gboolean install_theme(char *path, char *theme)
-{
-    TAR *t;
-    gchar *dest;
-    gint r;
-    gchar *glob;
-    GtkWidget *w;
-
-    dest = g_build_path(G_DIR_SEPARATOR_S, g_get_home_dir(), ".themes", NULL);
-    r = mkdir(dest, 0777);
-    if (r == -1 && errno != EEXIST) {
-        gtk_msg(GTK_MESSAGE_ERROR,
-                _("Unable to create directory \"%s\": %s"),
-                dest, strerror(errno));
-        return FALSE;
-    }
-    if (chdir(dest) == -1) {
-        gtk_msg(GTK_MESSAGE_ERROR,
-                _("Unable to move to directory \"%s\": %s"),
-                dest, strerror(errno));
-        return FALSE;
-    }
-
-    if (tar_open(&t, path, &funcs, 0, O_RDONLY, TAR_GNU) == -1) {
-        gtk_msg(GTK_MESSAGE_ERROR,
-                _("Unable to open the file \"%s\": %s"),
-                path, strerror(errno));
-        return FALSE;
-    }
-
-    glob = g_strdup_printf("%s/openbox-3/*", theme);
-    r = tar_extract_glob(t, glob, dest);
-    g_free(glob);
-    tar_close(t);
-
-    if (r != 0) {
-        gtk_msg(GTK_MESSAGE_ERROR,
-                _("Unable to extract the file \"%s\".\nIt does not appear to be a valid Openbox theme archive (in tar.gz format)."),
-                path, strerror(errno));
-
-        g_free(dest);
-        return FALSE;
-    }
-
-    gtk_msg(GTK_MESSAGE_INFO, _("%s was installed to %s"), theme, dest);
-    gtk_dialog_run(GTK_DIALOG(w));
-    gtk_widget_destroy(w);
-
-    g_free(dest);
-
-    return TRUE;
-}
