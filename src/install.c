@@ -28,6 +28,7 @@ static int gzopen_frontend(const char *path, int oflags, int mode);
 static int gzclose_frontend(int nothing);
 static ssize_t gzread_frontend(int nothing, void *buf, size_t s);
 static ssize_t gzwrite_frontend(int nothing, const void *buf, size_t s);
+static gchar *get_theme_dir();
 
 tartype_t funcs = {
     (openfunc_t) gzopen_frontend,
@@ -35,6 +36,23 @@ tartype_t funcs = {
     (readfunc_t) gzread_frontend,
     (writefunc_t) gzwrite_frontend
 };
+
+static gchar *get_theme_dir()
+{
+    gchar *dir;
+
+    dir = g_build_path(G_DIR_SEPARATOR_S, g_get_home_dir(), ".themes", NULL);
+    r = mkdir(dir, 0777);
+    if (r == -1 && errno != EEXIST) {
+        gtk_msg(GTK_MESSAGE_ERROR,
+                _("Unable to create directory \"%s\": %s"),
+                dir, strerror(errno));
+        g_free(dir);
+        dir = NULL;
+    }
+
+    return dir;
+}
 
 gboolean install_theme(char *path, char *theme)
 {
@@ -44,14 +62,9 @@ gboolean install_theme(char *path, char *theme)
     gchar *glob;
     gchar *curdir;
 
-    dest = g_build_path(G_DIR_SEPARATOR_S, g_get_home_dir(), ".themes", NULL);
-    r = mkdir(dest, 0777);
-    if (r == -1 && errno != EEXIST) {
-        gtk_msg(GTK_MESSAGE_ERROR,
-                _("Unable to create directory \"%s\": %s"),
-                dest, strerror(errno));
+    if (!(dest = get_theme_dir()))
         return FALSE;
-    }
+
     curdir = g_get_current_dir();
     if (chdir(dest) == -1) {
         gtk_msg(GTK_MESSAGE_ERROR,
