@@ -29,6 +29,7 @@ static int gzclose_frontend(int nothing);
 static ssize_t gzread_frontend(int nothing, void *buf, size_t s);
 static ssize_t gzwrite_frontend(int nothing, const void *buf, size_t s);
 static gchar *get_theme_dir();
+static gboolean change_dir(const gchar *dir);
 
 tartype_t funcs = {
     (openfunc_t) gzopen_frontend,
@@ -55,6 +56,17 @@ static gchar *get_theme_dir()
     return dir;
 }
 
+static gboolean change_dir(const gchar *dir)
+{
+    if (chdir(dest) == -1) {
+        gtk_msg(GTK_MESSAGE_ERROR,
+                _("Unable to move to directory \"%s\": %s"),
+                dest, strerror(errno));
+        return FALSE;
+    }
+    return TRUE;
+}
+
 gboolean install_theme(char *path, char *theme)
 {
     TAR *t;
@@ -67,10 +79,7 @@ gboolean install_theme(char *path, char *theme)
         return FALSE;
 
     curdir = g_get_current_dir();
-    if (chdir(dest) == -1) {
-        gtk_msg(GTK_MESSAGE_ERROR,
-                _("Unable to move to directory \"%s\": %s"),
-                dest, strerror(errno));
+    if (!change_dir(dest)) {
         g_free(curdir);
         return FALSE;
     }
