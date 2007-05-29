@@ -19,6 +19,7 @@
 
 #include "main.h"
 #include "tree.h"
+#include "install.h"
 #include "gettext.h"
 #include "openbox/render.h"
 
@@ -382,22 +383,17 @@ static void add_theme_dir(const gchar *dirname)
     }
 }
 
-void setup_theme_names(GtkWidget *w)
+static void reset_theme_names(GtkWidget *w)
 {
-    GtkCellRenderer *render;
-    GtkTreeViewColumn *column;
     gchar *name;
     gchar *p;
     GList *it, *next;
     gint i;
-    GtkTreeSelection *select;
-
-    mapping = TRUE;
 
     name = tree_get_string("theme/name", "TheBear");
 
     for (it = themes; it; it = g_list_next(it))
-        g_list_free(it->data);
+        g_free(it->data);
     g_list_free(themes);
     themes = NULL;
 
@@ -417,19 +413,6 @@ void setup_theme_names(GtkWidget *w)
     add_theme_dir(THEMEDIR);
 
     themes = g_list_sort(themes, (GCompareFunc) strcasecmp);
-
-    /* widget setup */
-    theme_store = gtk_list_store_new(2, G_TYPE_STRING, G_TYPE_BOOLEAN);
-    gtk_tree_view_set_model(GTK_TREE_VIEW(w), GTK_TREE_MODEL(theme_store));
-    g_object_unref (theme_store);
-
-    gtk_tree_selection_set_mode(gtk_tree_view_get_selection(GTK_TREE_VIEW(w)),
-                                GTK_SELECTION_SINGLE);
-
-    render = gtk_cell_renderer_text_new();
-    column = gtk_tree_view_column_new_with_attributes
-        ("Name", render, "text", 0, NULL);
-    gtk_tree_view_append_column(GTK_TREE_VIEW(w), column);
 
     /* return to regular scheduled programming */
     i = 0;
@@ -461,6 +444,30 @@ void setup_theme_names(GtkWidget *w)
         ++i;
     }
 
+    g_free(name);
+}
+
+void setup_theme_names(GtkWidget *w)
+{
+    GtkCellRenderer *render;
+    GtkTreeViewColumn *column;
+    GtkTreeSelection *select;
+
+    mapping = TRUE;
+
+    /* widget setup */
+    theme_store = gtk_list_store_new(2, G_TYPE_STRING, G_TYPE_BOOLEAN);
+    gtk_tree_view_set_model(GTK_TREE_VIEW(w), GTK_TREE_MODEL(theme_store));
+    g_object_unref (theme_store);
+
+    gtk_tree_selection_set_mode(gtk_tree_view_get_selection(GTK_TREE_VIEW(w)),
+                                GTK_SELECTION_SINGLE);
+
+    render = gtk_cell_renderer_text_new();
+    column = gtk_tree_view_column_new_with_attributes
+        ("Name", render, "text", 0, NULL);
+    gtk_tree_view_append_column(GTK_TREE_VIEW(w), column);
+
     /* setup the selection handler */
     select = gtk_tree_view_get_selection(GTK_TREE_VIEW (w));
     gtk_tree_selection_set_mode(select, GTK_SELECTION_SINGLE);
@@ -468,7 +475,7 @@ void setup_theme_names(GtkWidget *w)
                       G_CALLBACK(on_theme_names_selection_changed),
                       NULL);
 
-    g_free(name);
+    reset_theme_names(w);
 
     mapping = FALSE;
 }
@@ -1269,16 +1276,96 @@ void on_install_theme_clicked(GtkButton *w, gpointer data)
 {
     GtkWidget *d;
     gint r;
+    gchar *path = NULL;
+    GtkFileFilter *filter;
 
     d = gtk_file_chooser_dialog_new(_("Choose an Openbox theme"),
-                                    mainwin,
+                                    GTK_WINDOW(mainwin),
                                     GTK_FILE_CHOOSER_ACTION_OPEN,
                                     GTK_STOCK_OK, GTK_RESPONSE_OK,
                                     GTK_STOCK_CANCEL, GTK_RESPONSE_NONE,
                                     NULL);
+
+    gtk_file_chooser_set_show_hidden(GTK_FILE_CHOOSER(d), FALSE);
+    filter = gtk_file_filter_new();
+    gtk_file_filter_set_name(filter, _("Openbox theme archives"));
+    gtk_file_filter_add_pattern(filter, "*.obt");
+    //gtk_file_filter_add_pattern(filter, "*.tgz");
+    //gtk_file_filter_add_pattern(filter, "*.tar.gz");
+    gtk_file_chooser_add_filter(GTK_FILE_CHOOSER(d), filter);
+
     r = gtk_dialog_run(GTK_DIALOG(d));
-    if (r == GTK_RESPONSE_OK) {
-        g_print("hi\n");
-    }
+    if (r == GTK_RESPONSE_OK)
+        path = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(d));
     gtk_widget_destroy(d);
+
+    if (path != NULL) {
+        /* decipher the theme name from the file name */
+        gchar *fname = g_path_get_basename(path);
+        gchar *themename = NULL;
+        gint len = strlen(fname);
+
+        if (len > 4 &&
+            (fname[len-4] == '.' && fname[len-3] == 'o' &&
+             fname[len-2] == 'b' && fname[len-1] == 't')/* ||
+            (fname[len-4] == '.' && fname[len-3] == 't' &&
+            fname[len-2] == 'g' && fname[len-1] == 'z')*/)
+        {
+            fname[len-4] = '\0';
+            themename = strdup(fname);
+            fname[len-4] = '.';
+        }
+/*
+        else if (len > 7 &&
+                 (fname[len-7] == '.' && fname[len-6] == 't' &&
+                  fname[len-5] == 'a' && fname[len-4] == 'r' &&
+                  fname[len-3] == '.' && fname[len-2] == 'g' &&
+                  fname[len-1] == 'z'))
+        {
+            fname[len-7] = '\0';
+            themename = strdup(fname);
+            fname[len-7] = '.';
+        }
+*/
+
+        if (themename == NULL) {
+            GtkWidget *w;
+
+            w = gtk_message_dialog_new(GTK_WINDOW(mainwin),
+                                       GTK_DIALOG_DESTROY_WITH_PARENT |
+                                       GTK_DIALOG_MODAL,
+                                       GTK_MESSAGE_ERROR,
+                                       GTK_BUTTONS_OK,
+                                       _("Unable to determine the theme's name rom \"%s\".  File name should be ThemeName.obt."),
+                                       fname);
+            gtk_dialog_run(GTK_DIALOG(w));
+            gtk_widget_destroy(w);
+            g_free(fname);
+            g_free(path);
+            return;
+        }
+
+        if (install_theme(path, themename)) {
+            GtkWidget *w;
+            GtkTreePath *path;
+            GList *it;
+            gint i;
+
+            w = glade_xml_get_widget(glade, "theme_names");
+            mapping = TRUE;
+            reset_theme_names(w);
+            mapping = FALSE;
+
+            /* go to the newly installed theme */
+            for (it = themes, i = 0; it; it = g_list_next(it), ++i)
+                if (!strcmp(it->data, themename)) break;
+            if (it) {
+                path = gtk_tree_path_new_from_indices(i, -1);
+                gtk_tree_view_set_cursor(GTK_TREE_VIEW(w), path, NULL, FALSE);
+            }
+        }
+        g_free(fname);
+        g_free(themename);
+        g_free(path);
+    }
 }

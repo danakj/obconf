@@ -30,13 +30,16 @@ src_obconf_LDADD = \
 	$(GTK_LIBS) \
 	$(GLADE_LIBS) \
 	$(GDK_PIXBUF_LIBS) \
-	$(LIBINTL)
+	$(LIBINTL) \
+	-lz -ltar
 src_obconf_SOURCES = \
 	src/gettext.h \
 	src/main.c \
 	src/main.h \
 	src/handlers.c \
 	src/handlers.h \
+	src/install.c \
+	src/install.h \
 	src/tree.c \
 	src/tree.h
 
