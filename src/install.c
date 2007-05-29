@@ -40,6 +40,7 @@ tartype_t funcs = {
 static gchar *get_theme_dir()
 {
     gchar *dir;
+    gint r;
 
     dir = g_build_path(G_DIR_SEPARATOR_S, g_get_home_dir(), ".themes", NULL);
     r = mkdir(dir, 0777);
