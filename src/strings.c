@@ -7,12 +7,8 @@
 gchar *s = N_("Openbox Window Preferences");
 gchar *s = N_("<span weight=\"bold\">Theme</span>");
 gchar *s = N_("    ");
-gchar *s = N_("<span weight=\"bold\">Install a New Theme</span>");
-gchar *s = N_("    ");
-gchar *s = N_("Choose a theme to _install...");
-gchar *s = N_("<span weight=\"bold\">Create a Theme Archive</span>");
-gchar *s = N_("    ");
-gchar *s = N_("Choose a theme to _archive...");
+gchar *s = N_("_Install a new theme...");
+gchar *s = N_("_Create a theme archive (.obt)...");
 gchar *s = N_("Theme");
 gchar *s = N_("<span weight=\"bold\">Windows</span>");
 gchar *s = N_("    ");
