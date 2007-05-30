@@ -107,3 +107,7 @@ EXTRA_DIST = \
 install-data-hook:
 	update-mime-database $(mimedir) || true
 	update-desktop-database $(desktopdir) || true
+
+uninstall-hook:
+	update-mime-database $(mimedir) || true
+	update-desktop-database $(desktopdir) || true
