@@ -6,7 +6,7 @@
 <widget class="GtkWindow" id="main_window">
   <property name="border_width">13</property>
   <property name="visible">True</property>
-  <property name="title" translatable="yes">Openbox Settings</property>
+  <property name="title" translatable="yes">Openbox Configuration Manager</property>
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
   <property name="window_position">GTK_WIN_POS_NONE</property>
   <property name="modal">False</property>
