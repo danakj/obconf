@@ -88,8 +88,8 @@ gchar *s = N_("ms");
 gchar *s = N_("Dock");
 gchar *s = N_("About");
 gchar *s = N_("About ObConf");
-gchar *s = N_("<span weight=\"bold\" size=\"xx-large\">ObConf 3.0</span>");
+gchar *s = N_("<span weight=\"bold\" size=\"xx-large\">ObConf VERSION</span>");
 gchar *s = N_("A preferences manager for Openbox");
-gchar *s = N_("Copyright (c) 2003-2006\n"
+gchar *s = N_("Copyright (c) 2003-2007\n"
               "Dana Jansens <danakj@orodu.net>\n"
               "Tim Riley <tr@slackzone.org>");

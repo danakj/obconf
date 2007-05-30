@@ -100,14 +100,7 @@ void on_close_clicked()
 
 void on_about_clicked()
 {
-    GtkWidget *parent;
-    GtkWidget *about;
-
-    parent = glade_xml_get_widget(glade, "main_window");
-    about  = glade_xml_get_widget(glade, "about_window");
-
-    gtk_window_set_transient_for(GTK_WINDOW(about), GTK_WINDOW(parent));
-    gtk_widget_show(about);
+    gtk_widget_show(glade_xml_get_widget(glade, "about_window"));
 }
 
 void on_about_close_clicked()
