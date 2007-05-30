@@ -6,6 +6,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
+#include <unistd.h>
 #include <zlib.h>
 #include <libtar.h>
 
@@ -32,6 +33,8 @@ static gchar *get_theme_dir();
 static gboolean change_dir(const gchar *dir);
 static gboolean install_theme_to(gchar *theme, gchar *file, gchar *to);
 static gchar* name_from_file(const gchar *path);
+static gchar* name_from_dir(const gchar *dir);
+static gboolean create_theme_archive(gchar *dir, gchar *to);
 
 tartype_t funcs = {
     (openfunc_t) gzopen_frontend,
@@ -69,6 +72,43 @@ gchar* theme_install(gchar *path)
     return name;
 }
 
+void theme_archive(gchar *path)
+{
+    gchar *name;
+    gchar *dest;
+
+    if (!(name = name_from_dir(path)))
+        return;
+
+    {
+        gchar *file;
+        file = g_strdup_printf("%s.obt", name);
+        dest = g_build_path(G_DIR_SEPARATOR_S, g_get_current_dir(), file);
+        g_free(file);
+    }
+
+    if (create_theme_archive(path, dest))
+        gtk_msg(GTK_MESSAGE_INFO, _("\"%s\" was successfully created"),
+                dest);
+
+    g_free(dest);
+    g_free(name);
+}
+
+static gboolean create_theme_archive(gchar *dir, gchar *to)
+{
+    TAR *t;
+
+    if (tar_open(&t, to, &funcs, 0, O_WRONLY, TAR_GNU) == -1) {
+        gtk_msg(GTK_MESSAGE_ERROR,
+                _("Unable to create the file \"%s\": %s"),
+                to, strerror(errno));
+        return;
+    }
+
+    tar_close(t);
+}
+
 static gchar *get_theme_dir()
 {
     gchar *dir;
@@ -85,6 +125,26 @@ static gchar *get_theme_dir()
     }
 
     return dir;
+}
+
+static gchar* name_from_dir(const gchar *dir)
+{
+    gchar *rc;
+    struct stat st;
+    gboolean r;
+
+    rc = g_build_path(G_DIR_SEPARATOR_S, dir, "openbox-3", "themerc");
+
+    r = (stat(rc, &st) == 0 && S_ISREG(st.st_mode));
+    g_free(rc);
+
+    if (!r) {
+        gtk_msg(GTK_MESSAGE_ERROR,
+                _("\"%s\" does not appear to be a valid Openbox theme directory"),
+                dir);
+        return NULL;
+    }
+    return g_path_get_basename(dir);
 }
 
 static gchar* name_from_file(const gchar *path)
@@ -150,9 +210,17 @@ static gboolean install_theme_to(gchar *theme, gchar *file, gchar *to)
 static int gzopen_frontend(const char *path, int oflags, int mode)
 {
     int fd;
+    const char *gzflags;
+
+    if (oflags & O_RDONLY)
+        gzflags = "rb";
+    else if (oflags & O_WRONLY)
+        gzflags = "wb";
+    else
+        g_assert_not_reached();
 
     if ((fd = open(path, oflags, mode)) < 0) return -1;
-    if (!(gzf = gzdopen(fd, "rb"))) return -1;
+    if (!(gzf = gzdopen(fd, gzflags))) return -1;
     return 1;
 }
 

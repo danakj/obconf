@@ -1347,6 +1347,7 @@ void on_theme_archive_clicked(GtkButton *w, gpointer data)
     gtk_widget_destroy(d);
 
     if (path != NULL) {
-        g_print("ok %s\n", path);
+        theme_archive(path);
+        g_free(path);
     }
 }

@@ -5,4 +5,6 @@
 
 gchar* theme_install(gchar *path);
 
+void theme_archive(gchar *path);
+
 #endif
