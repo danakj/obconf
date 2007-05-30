@@ -1,10 +1,11 @@
 [Desktop Entry]
+Encoding=UTF-8
+Type=Application
 Name=ObConf
-Comment=Openbox Preferences Manager
+Comment=Openbox preferences manager
 Icon=openbox.png
-Exec=obconf
+Exec=obconf %f
+Categories=Settings;DesktopSettings;GTK;
+MimeType=application/x-openbox-theme
 StartupNotify=true
 Terminal=false
-Type=Application
-Categories=Openbox;Application;System Tools
-Encoding=UTF-8

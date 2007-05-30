@@ -5,6 +5,9 @@ gladedir        = $(datadir)/obconf
 pixmapdir       = $(datadir)/pixmaps
 themedir        = $(datadir)/openbox/themes
 desktopdir      = $(datadir)/applications
+mimedir         = $(datadir)/mime
+mimepkgdir      = $(datadir)/mime/packages
+kdemimedir      = $(datadir)/mimelnk/application
 
 AUTOMAKE_OPTIONS = subdir-objects
 ACLOCAL_AMFLAGS = -I m4
@@ -53,6 +56,12 @@ dist_noinst_DATA = \
 dist_desktop_DATA = \
 	obconf.desktop
 
+dist_mimepkg_DATA = \
+	obconf.xml
+
+dist_kdemime_DATA = \
+	x-openbox-theme.desktop
+
 EXTRA_DIST = \
 	config.rpath \
 	README \
@@ -95,3 +104,5 @@ EXTRA_DIST = \
 	debian/rules \
 	config.rpath
 
+install-data-hook:
+	update-mime-database $(mimedir) || true
