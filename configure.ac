@@ -19,13 +19,13 @@ ALL_LINGUAS=""
 AM_GNU_GETTEXT_VERSION(0.15)
 AM_GNU_GETTEXT([external])
 
-PKG_CHECK_MODULES(OBLIBS, [obrender-3.0 obparser-3.0])
-AC_SUBST(OB_CFLAGS)
-AC_SUBST(OB_LIBS)
+PKG_CHECK_MODULES(OPENBOX, [obrender-3.0 obparser-3.0])
+AC_SUBST(OPENBOX_CFLAGS)
+AC_SUBST(OPENBOX_LIBS)
 
-PKG_CHECK_MODULES(STARTUP, [libstartup-notification-1.0])
-AC_SUBST(STARTUP_CFLAGS)
-AC_SUBST(STARTUP_LIBS)
+PKG_CHECK_MODULES(LIBSTARTUPNOTIFICATION, [libstartup-notification-1.0])
+AC_SUBST(LIBSTARTUPNOTIFICATION_CFLAGS)
+AC_SUBST(LIBSTARTUPNOTIFICATION_LIBS)
 
 PKG_CHECK_MODULES(GTK, [gtk+-2.0])
 AC_SUBST(GTK_CFLAGS)
@@ -39,6 +39,20 @@ PKG_CHECK_MODULES(GLADE, [libglade-2.0])
 AC_SUBST(GLADE_CFLAGS)
 AC_SUBST(GLADE_LIBS)
 
+# zlib
+AC_CHECK_HEADER([zlib.h], [ZLIB_LIBS="-lz"],
+  AC_MSG_ERROR([Could not find zlib.h]))
+AC_CHECK_LIB([z], [gzopen],,
+  AC_MSG_ERROR([Could not find gzopen in -lz.]))
+AC_SUBST(ZLIB_LIBS)
+
+# libtar
+AC_CHECK_HEADER([libtar.h], [LIBTAR_LIBS="-ltar"],
+  AC_MSG_ERROR([Could not find libtar.h]))
+AC_CHECK_LIB([tar], [tar_open],,
+  AC_MSG_ERROR([Could not find tar_open in -ltar.]))
+AC_SUBST(LIBTAR_LIBS)
+
 AC_CONFIG_FILES([
   Makefile
   po/Makefile.in
@@ -47,3 +61,5 @@ AC_OUTPUT
 
 AC_MSG_RESULT
 AC_MSG_RESULT([configure complete, now type \"make\"])
+
+

@@ -13,8 +13,8 @@ bin_PROGRAMS = \
 	src/obconf
 
 src_obconf_CPPFLAGS = \
-	$(OBLIBS_CFLAGS) \
-	$(STARTUP_CFLAGS) \
+	$(OPENBOX_CFLAGS) \
+	$(LIBSTARTUPNOTIFICATION_CFLAGS) \
 	$(GTK_CFLAGS) \
 	$(GLADE_CFLAGS) \
 	$(GDK_PIXBUF_CFLAGS) \
@@ -25,13 +25,14 @@ src_obconf_CPPFLAGS = \
 	-DTHEMEDIR=\"$(themedir)\" \
 	-DG_LOG_DOMAIN=\"Obconf\"
 src_obconf_LDADD = \
-	$(OBLIBS_LIBS) \
-	$(STARTUP_LIBS) \
+	$(OPENBOX_LIBS) \
+	$(LIBSTARTUPNOTIFICATION_LIBS) \
 	$(GTK_LIBS) \
 	$(GLADE_LIBS) \
 	$(GDK_PIXBUF_LIBS) \
 	$(LIBINTL) \
-	-lz -ltar
+	$(ZLIB_LIBS) \
+	$(LIBTAR_LIBS)
 src_obconf_SOURCES = \
 	src/gettext.h \
 	src/main.c \
