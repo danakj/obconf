@@ -63,6 +63,10 @@ gchar* theme_install(gchar *path)
 
     if (install_theme_to(name, path, dest))
         gtk_msg(GTK_MESSAGE_INFO, _("\"%s\" was installed to %s"), name, dest);
+    else {
+        g_free(name);
+        name = NULL;
+    }
 
     g_free(dest);
 
