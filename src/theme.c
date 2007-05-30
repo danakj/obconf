@@ -2,6 +2,7 @@
 #include "main.h"
 #include "gettext.h"
 
+#include <string.h>
 #include <errno.h>
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -61,9 +62,9 @@ gchar* theme_install(gchar *path)
     if (!(name = name_from_file(path)))
         return NULL;
 
-    if (install_theme_to(name, path, dest))
+    if (install_theme_to(name, path, dest)) {
         gtk_msg(GTK_MESSAGE_INFO, _("\"%s\" was installed to %s"), name, dest);
-    else {
+    } else {
         g_free(name);
         name = NULL;
     }
@@ -174,7 +175,7 @@ static gchar* name_from_file(const gchar *path)
          fname[len-2] == 'b' && fname[len-1] == 't'))
     {
         fname[len-4] = '\0';
-        name = strdup(fname);
+        name = g_strdup(fname);
         fname[len-4] = '.';
     }
 
