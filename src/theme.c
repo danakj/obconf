@@ -212,7 +212,7 @@ static gboolean install_theme_to(gchar *theme, gchar *file, gchar *to)
 
     if (r != 0)
         gtk_msg(GTK_MESSAGE_ERROR,
-                _("Unable to extract the file \"%s\".\nIt does not appear to be a valid Openbox theme archive (in tar.gz format)."),
+                _("Unable to extract the file \"%s\".\nPlease ensure that \"%s\" is writable and that the file is a valid Openbox theme archive"),
                 file, strerror(errno));
 
     return r == 0;
