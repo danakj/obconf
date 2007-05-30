@@ -57,8 +57,11 @@ xmlNodePtr tree_get_node(const gchar *path, const gchar *def)
 
         if (!c) {
             gint i;
+            gchar **attrs;
 
-            c = xmlNewTextChild(n, NULL, *it, *next ? NULL : def);
+            attrs = g_strsplit(*it, ":", 0);
+
+            c = xmlNewTextChild(n, NULL, *it, *next ? NULL : attrs[0]);
 
             for (i = 1; attrs[i]; ++i) {
                 gchar **eq = g_strsplit(attrs[i], "=", 2);
