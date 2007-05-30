@@ -1326,3 +1326,27 @@ void on_install_theme_clicked(GtkButton *w, gpointer data)
         g_free(path);
     }
 }
+
+void on_install_archive_clicked(GtkButton *w, gpointer data)
+{
+    GtkWidget *d;
+    gint r;
+    gchar *path = NULL;
+
+    d = gtk_file_chooser_dialog_new(_("Choose an Openbox theme"),
+                                    GTK_WINDOW(mainwin),
+                                    GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER,
+                                    GTK_STOCK_OK, GTK_RESPONSE_OK,
+                                    GTK_STOCK_CANCEL, GTK_RESPONSE_NONE,
+                                    NULL);
+
+    gtk_file_chooser_set_show_hidden(GTK_FILE_CHOOSER(d), FALSE);
+    r = gtk_dialog_run(GTK_DIALOG(d));
+    if (r == GTK_RESPONSE_OK)
+        path = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(d));
+    gtk_widget_destroy(d);
+
+    if (path != NULL) {
+        g_print("ok %s\n", path);
+    }
+}
