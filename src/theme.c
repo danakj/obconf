@@ -223,9 +223,9 @@ static int gzopen_frontend(const char *path, int oflags, int mode)
     int fd;
     const char *gzflags;
 
-    if (oflags & O_RDONLY)
+    if ((oflags & O_ACCMODE) == O_RDONLY)
         gzflags = "rb";
-    else if (oflags & O_WRONLY)
+    else if ((oflags & O_ACCMODE) == O_WRONLY)
         gzflags = "wb";
     else
         g_assert_not_reached();
