@@ -26,6 +26,7 @@
 #define SN_API_NOT_YET_FROZEN
 #include <libsn/sn.h>
 #undef SN_API_NOT_YET_FROZEN
+#include <stdlib.h>
 
 GtkWidget *mainwin = NULL;
 
@@ -51,12 +52,43 @@ void obconf_error(gchar *msg)
     gtk_widget_show(d);
 }
 
+static void print_version()
+{
+    g_print("ObConf %s\n", PACKAGE_VERSION);
+    g_print(_("Copyright (c)"));
+    g_print(" 2003-2007   Dana Jansens\n");
+    g_print(_("Copyright (c)"));
+    g_print(" 2003        Tim Riley\n\n");
+    g_print("This program comes with ABSOLUTELY NO WARRANTY.\n");
+    g_print("This is free software, and you are welcome to redistribute it\n");
+    g_print("under certain conditions. See the file COPYING for details.\n\n");
+
+    exit(EXIT_SUCCESS);
+}
+
+static void print_help()
+{
+    g_print(_("Syntax: obconf [options] [ARCHIVE.obt]\n"));
+    g_print(_("\nOptions:\n"));
+    g_print(_("  --help                Display this help and exit\n"));
+    g_print(_("  --version             Display the version and exit\n"));
+    g_print(_("  --install ARCHIVE.obt Install the given theme archive and select it\n"));
+    g_print(_("  --archive THEME       Create a theme archive from the given theme directory\n"));
+    g_print(_("\nPlease report bugs at %s\n\n"), PACKAGE_BUGREPORT);
+    
+    exit(EXIT_SUCCESS);
+}
+
 static void parse_args(int argc, char **argv)
 {
     int i;
 
     for (i = 1; i < argc; ++i) {
-        if (!strcmp(argv[i], "--install")) {
+        if (!strcmp(argv[i], "--help"))
+            print_help();
+        if (!strcmp(argv[i], "--version"))
+            print_version();
+        else if (!strcmp(argv[i], "--install")) {
             if (i == argc - 1) /* no args left */
                 g_printerr(_("--install requires an argument\n"));
             else
@@ -67,7 +99,8 @@ static void parse_args(int argc, char **argv)
                 g_printerr(_("--archive requires an argument\n"));
             else
                 obc_theme_archive = argv[++i];
-        }
+        } else
+            obc_theme_install = argv[i];
     }
 }
 
