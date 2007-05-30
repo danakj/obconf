@@ -39,19 +39,20 @@ PKG_CHECK_MODULES(GLADE, [libglade-2.0])
 AC_SUBST(GLADE_CFLAGS)
 AC_SUBST(GLADE_LIBS)
 
-# zlib
-AC_CHECK_HEADER([zlib.h], [ZLIB_LIBS="-lz"],
-  AC_MSG_ERROR([Could not find zlib.h]))
-AC_CHECK_LIB([z], [gzopen],,
-  AC_MSG_ERROR([Could not find gzopen in -lz.]))
-AC_SUBST(ZLIB_LIBS)
+AC_CHECK_PROG(TAR, [tar], [yes], [no])
+if test "$TAR" = "no"; then
+  AC_MSG_ERROR([Unable to find the tar command.])
+fi
 
-# libtar
-AC_CHECK_HEADER([libtar.h], [LIBTAR_LIBS="-ltar"],
-  AC_MSG_ERROR([Could not find libtar.h]))
-AC_CHECK_LIB([tar], [tar_open],,
-  AC_MSG_ERROR([Could not find tar_open in -ltar.]))
-AC_SUBST(LIBTAR_LIBS)
+AC_CHECK_PROG(GZIP, [gzip], [yes], [no])
+if test "$GZIP" = "no"; then
+  AC_MSG_ERROR([Unable to find the gzip command.])
+fi
+
+AC_CHECK_PROG(GUNZIP, [gunzip], [yes], [no])
+if test "$GUNZIP" = "no"; then
+  AC_MSG_ERROR([Unable to find the gunzip command.])
+fi
 
 AC_CONFIG_FILES([
   Makefile

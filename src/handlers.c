@@ -18,6 +18,7 @@
 */
 
 #include "main.h"
+#include "handlers.h"
 #include "tree.h"
 #include "theme.h"
 #include "gettext.h"
@@ -1315,7 +1316,7 @@ void on_theme_archive_clicked(GtkButton *w, gpointer data)
                                     GTK_STOCK_CANCEL, GTK_RESPONSE_NONE,
                                     NULL);
 
-    gtk_file_chooser_set_show_hidden(GTK_FILE_CHOOSER(d), FALSE);
+    gtk_file_chooser_set_show_hidden(GTK_FILE_CHOOSER(d), TRUE);
     r = gtk_dialog_run(GTK_DIALOG(d));
     if (r == GTK_RESPONSE_OK)
         path = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(d));

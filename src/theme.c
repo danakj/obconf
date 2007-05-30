@@ -6,12 +6,7 @@
 #include <errno.h>
 #include <sys/types.h>
 #include <sys/stat.h>
-#include <fcntl.h>
 #include <unistd.h>
-#include <zlib.h>
-#include <libtar.h>
-
-static gzFile gzf = NULL;
 
 #define gtk_msg(type, args...) \
 {                                                                        \
@@ -26,23 +21,14 @@ static gzFile gzf = NULL;
     gtk_widget_destroy(msgw);                                            \
 }
 
-static int gzopen_frontend(const char *path, int oflags, int mode);
-static int gzclose_frontend(int nothing);
-static ssize_t gzread_frontend(int nothing, void *buf, size_t s);
-static ssize_t gzwrite_frontend(int nothing, const void *buf, size_t s);
 static gchar *get_theme_dir();
 static gboolean change_dir(const gchar *dir);
-static gboolean install_theme_to(gchar *theme, gchar *file, gchar *to);
 static gchar* name_from_file(const gchar *path);
 static gchar* name_from_dir(const gchar *dir);
-static gboolean create_theme_archive(gchar *dir, gchar *name, gchar *to);
-
-tartype_t funcs = {
-    (openfunc_t) gzopen_frontend,
-    (closefunc_t) gzclose_frontend,
-    (readfunc_t) gzread_frontend,
-    (writefunc_t) gzwrite_frontend
-};
+static gboolean install_theme_to(const gchar *name, const gchar *file,
+                                 const gchar *to);
+static gboolean create_theme_archive(const gchar *dir, const gchar *name,
+                                     const gchar *to);
 
 gchar* theme_install(gchar *path)
 {
@@ -91,28 +77,47 @@ void theme_archive(gchar *path)
     g_free(name);
 }
 
-static gboolean create_theme_archive(gchar *dir, gchar *name, gchar *to)
+static gboolean create_theme_archive(const gchar *dir, const gchar *name,
+                                     const gchar *to)
 {
-    TAR *t;
-    gint r;
+    gchar *glob;
+    gchar **argv;
+    gchar *errtxt = NULL;
+    gchar *parentdir;
+    gint exitcode;
+    GError *e = NULL;
 
-    if (tar_open(&t, to, &funcs, O_WRONLY | O_CREAT, 0666, TAR_GNU) == -1) {
-        gtk_msg(GTK_MESSAGE_ERROR,
-                _("Unable to create the file \"%s\": %s"),
-                to, strerror(errno));
-        return;
+    glob = g_strdup_printf("%s/openbox-3/", name);
+
+    parentdir = g_build_path(G_DIR_SEPARATOR_S, dir, "..", NULL);
+
+    argv = g_new(gchar*, 7);
+    argv[0] = g_strdup("tar");
+    argv[1] = g_strdup("-c");
+    argv[2] = g_strdup("-z");
+    argv[3] = g_strdup("-f");
+    argv[4] = g_strdup(to);
+    argv[5] = g_strdup(glob);
+    argv[6] = NULL;
+    if (g_spawn_sync(parentdir, argv, NULL, G_SPAWN_SEARCH_PATH, NULL, NULL,
+                     NULL, &errtxt, &exitcode, &e))
+    {
+        if (exitcode != EXIT_SUCCESS)
+            gtk_msg(GTK_MESSAGE_ERROR,
+                    _("Unable to create the theme archive \"%s\".\nThe following errors were reported:\n%s"),
+                    to, errtxt);
+
     }
+    else
+        gtk_msg(GTK_MESSAGE_ERROR, _("Unable to run the \"tar\" command: %s"),
+                e->message);
 
-    r = tar_append_tree(t, dir, name);
-    tar_close(t);
-
-    if (r != 0) {
-        gtk_msg(GTK_MESSAGE_ERROR,
-                _("Unable to create the theme archive \"%s\": %s"),
-                to, strerror(errno));
-    }
-
-    return r == 0;
+    g_strfreev(argv);
+    if (e) g_error_free(e);
+    g_free(errtxt);
+    g_free(parentdir);
+    g_free(glob);
+    return exitcode == EXIT_SUCCESS;
 }
 
 static gchar *get_theme_dir()
@@ -186,74 +191,38 @@ static gboolean change_dir(const gchar *dir)
     return TRUE;
 }
 
-static gboolean install_theme_to(gchar *theme, gchar *file, gchar *to)
+static gboolean install_theme_to(const gchar *name, const gchar *file,
+                                 const gchar *to)
 {
-    TAR *t;
     gchar *glob;
-    gint r;
-    gchar *curdir;
+    gchar **argv;
+    gchar *errtxt = NULL;
+    gint exitcode;
+    GError *e = NULL;
 
-    if (tar_open(&t, file, &funcs, O_RDONLY, 0666, TAR_GNU) == -1) {
+    glob = g_strdup_printf("%s/openbox-3/", name);
+
+    argv = g_new(gchar*, 7);
+    argv[0] = g_strdup("tar");
+    argv[1] = g_strdup("-x");
+    argv[2] = g_strdup("-z");
+    argv[3] = g_strdup("-f");
+    argv[4] = g_strdup(file);
+    argv[5] = g_strdup(glob);
+    argv[6] = NULL;
+    if (!g_spawn_sync(to, argv, NULL, G_SPAWN_SEARCH_PATH, NULL, NULL,
+                      NULL, &errtxt, &exitcode, &e))
+        gtk_msg(GTK_MESSAGE_ERROR, _("Unable to run the \"tar\" command: %s"),
+                e->message);
+    g_strfreev(argv);
+    if (e) g_error_free(e);
+
+    if (exitcode != EXIT_SUCCESS)
         gtk_msg(GTK_MESSAGE_ERROR,
-                _("Unable to open the file \"%s\": %s"),
-                file, strerror(errno));
-        return FALSE;
-    }
+                _("Unable to extract the file \"%s\".\nPlease ensure that \"%s\" is writable and that the file is a valid Openbox theme archive.\nThe following errors were reported:\n%s"),
+                file, to, errtxt);
 
-    curdir = g_get_current_dir();
-    if (!change_dir(to)) {
-        g_free(curdir);
-        tar_close(t);
-        return FALSE;
-    }
-
-    glob = g_strdup_printf("%s/openbox-3/*", theme);
-    r = tar_extract_glob(t, glob, ".");
+    g_free(errtxt);
     g_free(glob);
-
-    change_dir(curdir);
-
-    g_free(curdir);
-    tar_close(t);
-
-    if (r != 0)
-        gtk_msg(GTK_MESSAGE_ERROR,
-                _("Unable to extract the file \"%s\".\nPlease ensure that \"%s\" is writable and that the file is a valid Openbox theme archive"),
-                file, strerror(errno));
-
-    return r == 0;
+    return exitcode == EXIT_SUCCESS;
 }
-
-static int gzopen_frontend(const char *path, int oflags, int mode)
-{
-    int fd;
-    const char *gzflags;
-
-    if ((oflags & O_ACCMODE) == O_RDONLY)
-        gzflags = "rb";
-    else if ((oflags & O_ACCMODE) == O_WRONLY)
-        gzflags = "wb";
-    else
-        g_assert_not_reached();
-
-    if ((fd = open(path, oflags, mode)) < 0) return -1;
-    if (!(gzf = gzdopen(fd, gzflags))) return -1;
-    return 1;
-}
-
-static int gzclose_frontend(int nothing)
-{
-    g_return_val_if_fail(gzf != NULL, 0);
-    return gzclose(gzf);
-}
-
-static ssize_t gzread_frontend(int nothing, void *buf, size_t s)
-{
-    return gzread(gzf, buf, s);
-}
-
-static ssize_t gzwrite_frontend(int nothing, const void *buf, size_t s)
-{
-    return gzwrite(gzf, buf, s);
-}
-
