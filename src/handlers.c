@@ -1327,7 +1327,7 @@ void on_install_theme_clicked(GtkButton *w, gpointer data)
     }
 }
 
-void on_install_archive_clicked(GtkButton *w, gpointer data)
+void on_theme_archive_clicked(GtkButton *w, gpointer data)
 {
     GtkWidget *d;
     gint r;
