@@ -103,3 +103,13 @@ EXTRA_DIST = \
 	debian/menu \
 	debian/rules \
 	config.rpath
+
+# Packages need to run these...
+
+install-data-hook:
+#	update-mime-database $(mimedir)
+#	update-desktop-database $(desktopdir)
+
+uninstall-hook:
+#	update-mime-database $(mimedir)
+#	update-desktop-database $(desktopdir)
