@@ -4,7 +4,7 @@
  * DO NOT compile it as part of your application.
  */
 
-gchar *s = N_("Openbox Window Preferences");
+gchar *s = N_("Openbox Settings");
 gchar *s = N_("<span weight=\"bold\">Theme</span>");
 gchar *s = N_("    ");
 gchar *s = N_("_Install a new theme...");

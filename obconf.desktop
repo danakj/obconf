@@ -1,8 +1,8 @@
 [Desktop Entry]
 Encoding=UTF-8
 Type=Application
-Name=ObConf
-Comment=Openbox preferences manager
+Name=Openbox Settings
+Comment=Openbox settings manager
 Icon=openbox.png
 Exec=obconf %f
 Categories=Settings;DesktopSettings;GTK;
