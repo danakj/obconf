@@ -414,6 +414,8 @@ static void reset_theme_names(GtkWidget *w)
 
     themes = g_list_sort(themes, (GCompareFunc) strcasecmp);
 
+    gtk_list_store_clear(theme_store);
+
     /* return to regular scheduled programming */
     i = 0;
     for (it = themes; it; it = next) {
@@ -438,6 +440,8 @@ static void reset_theme_names(GtkWidget *w)
             GtkTreePath *path;
             path = gtk_tree_path_new_from_indices(i, -1);
             gtk_tree_view_set_cursor(GTK_TREE_VIEW(w), path, NULL, FALSE);
+            gtk_tree_view_scroll_to_cell(GTK_TREE_VIEW(w), path, NULL,
+                                         FALSE, 0, 0);
         }
 
 
@@ -1300,29 +1304,7 @@ void on_install_theme_clicked(GtkButton *w, gpointer data)
     gtk_widget_destroy(d);
 
     if (path != NULL) {
-        gchar *name;
-
-        if ((name = theme_install(path))) {
-            GtkWidget *w;
-            GtkTreePath *path;
-            GList *it;
-            gint i;
-
-            w = glade_xml_get_widget(glade, "theme_names");
-            mapping = TRUE;
-            reset_theme_names(w);
-            mapping = FALSE;
-
-            /* go to the newly installed theme */
-            for (it = themes, i = 0; it; it = g_list_next(it), ++i)
-                if (!strcmp(it->data, name)) break;
-            if (it) {
-                path = gtk_tree_path_new_from_indices(i, -1);
-                gtk_tree_view_set_cursor(GTK_TREE_VIEW(w), path, NULL, FALSE);
-            }
-
-            g_free(name);
-        }
+        handlers_install_theme(path);
         g_free(path);
     }
 }
@@ -1349,5 +1331,34 @@ void on_theme_archive_clicked(GtkButton *w, gpointer data)
     if (path != NULL) {
         theme_archive(path);
         g_free(path);
+    }
+}
+
+void handlers_install_theme(gchar *path)
+{
+    gchar *name;
+
+    if ((name = theme_install(path))) {
+        GtkWidget *w;
+        GtkTreePath *path;
+        GList *it;
+        gint i;
+
+        w = glade_xml_get_widget(glade, "theme_names");
+        mapping = TRUE;
+        reset_theme_names(w);
+        mapping = FALSE;
+
+        /* go to the newly installed theme */
+        for (it = themes, i = 0; it; it = g_list_next(it), ++i)
+            if (!strcmp(it->data, name)) break;
+        if (it) {
+            path = gtk_tree_path_new_from_indices(i, -1);
+            gtk_tree_view_set_cursor(GTK_TREE_VIEW(w), path, NULL, FALSE);
+            gtk_tree_view_scroll_to_cell(GTK_TREE_VIEW(w), path, NULL,
+                                         FALSE, 0, 0);
+        }
+
+        g_free(name);
     }
 }

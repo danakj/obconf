@@ -19,17 +19,22 @@
 
 #include "main.h"
 #include "handlers.h"
+#include "theme.h"
+#include "gettext.h"
 
 #include <gdk/gdkx.h>
 #define SN_API_NOT_YET_FROZEN
 #include <libsn/sn.h>
 #undef SN_API_NOT_YET_FROZEN
 
-GtkWidget *mainwin;
+GtkWidget *mainwin = NULL;
 
 GladeXML *glade;
 xmlDocPtr doc;
 xmlNodePtr root;
+
+static gchar *obc_theme_install = NULL;
+static gchar *obc_theme_archive = NULL;
 
 void obconf_error(gchar *msg)
 {
@@ -46,15 +51,41 @@ void obconf_error(gchar *msg)
     gtk_widget_show(d);
 }
 
+static void parse_args(int argc, char **argv)
+{
+    int i;
+
+    for (i = 1; i < argc; ++i) {
+        if (!strcmp(argv[i], "--install")) {
+            if (i == argc - 1) /* no args left */
+                g_printerr(_("--install requires an argument\n"));
+            else
+                obc_theme_install = argv[++i];
+        }
+        else if (!strcmp(argv[i], "--archive")) {
+            if (i == argc - 1) /* no args left */
+                g_printerr(_("--archive requires an argument\n"));
+            else
+                obc_theme_archive = argv[++i];
+        }
+    }
+}
+
 int main(int argc, char **argv)
 {
     SnDisplay *sn_d;
     SnLauncheeContext *sn_cx;
     gchar *p;
 
-    parse_paths_startup();
-
     gtk_init(&argc, &argv);
+    parse_args(argc, argv);
+
+    if (obc_theme_archive) {
+        theme_archive(obc_theme_archive);
+        return;
+    }
+
+    parse_paths_startup();
 
     p = g_build_filename(GLADEDIR, "obconf.glade", NULL);
     glade = glade_xml_new(p, NULL, NULL);
@@ -136,6 +167,9 @@ int main(int argc, char **argv)
     if (sn_cx)
         sn_launchee_context_unref(sn_cx);
     sn_display_unref(sn_d);
+
+    if (obc_theme_install)
+        handlers_install_theme(obc_theme_install);
 
     gtk_main();
 

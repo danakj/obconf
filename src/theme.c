@@ -47,17 +47,10 @@ tartype_t funcs = {
 gchar* theme_install(gchar *path)
 {
     gchar *dest;
-    gchar *curdir;
     gchar *name;
 
     if (!(dest = get_theme_dir()))
         return NULL;
-
-    curdir = g_get_current_dir();
-    if (!change_dir(dest)) {
-        g_free(curdir);
-        return NULL;
-    }
 
     if (!(name = name_from_file(path)))
         return NULL;
@@ -70,9 +63,6 @@ gchar* theme_install(gchar *path)
     }
 
     g_free(dest);
-
-    change_dir(curdir);
-    g_free(curdir);
 
     return name;
 }
@@ -201,6 +191,7 @@ static gboolean install_theme_to(gchar *theme, gchar *file, gchar *to)
     TAR *t;
     gchar *glob;
     gint r;
+    gchar *curdir;
 
     if (tar_open(&t, file, &funcs, O_RDONLY, 0666, TAR_GNU) == -1) {
         gtk_msg(GTK_MESSAGE_ERROR,
@@ -209,10 +200,20 @@ static gboolean install_theme_to(gchar *theme, gchar *file, gchar *to)
         return FALSE;
     }
 
+    curdir = g_get_current_dir();
+    if (!change_dir(to)) {
+        g_free(curdir);
+        tar_close(t);
+        return FALSE;
+    }
+
     glob = g_strdup_printf("%s/openbox-3/*", theme);
-    r = tar_extract_glob(t, glob, to);
+    r = tar_extract_glob(t, glob, ".");
     g_free(glob);
 
+    change_dir(curdir);
+
+    g_free(curdir);
     tar_close(t);
 
     if (r != 0)

@@ -49,4 +49,6 @@ void setup_font_display(GtkWidget *w);
 void setup_desktop_num(GtkWidget *w);
 void setup_desktop_names(GtkWidget *w);
 
+void handlers_install_theme(gchar *path);
+
 #endif
