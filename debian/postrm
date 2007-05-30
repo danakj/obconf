@@ -23,6 +23,7 @@ case "$1" in
     ;;
     remove)
         update-mime-database /usr/share/mime
+	update-desktop-database /usr/share/applications
     ;;
     upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)
     ;;
