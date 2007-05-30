@@ -34,7 +34,7 @@ static gboolean change_dir(const gchar *dir);
 static gboolean install_theme_to(gchar *theme, gchar *file, gchar *to);
 static gchar* name_from_file(const gchar *path);
 static gchar* name_from_dir(const gchar *dir);
-static gboolean create_theme_archive(gchar *dir, gchar *to);
+static gboolean create_theme_archive(gchar *dir, gchar *name, gchar *to);
 
 tartype_t funcs = {
     (openfunc_t) gzopen_frontend,
@@ -83,11 +83,12 @@ void theme_archive(gchar *path)
     {
         gchar *file;
         file = g_strdup_printf("%s.obt", name);
-        dest = g_build_path(G_DIR_SEPARATOR_S, g_get_current_dir(), file);
+        dest = g_build_path(G_DIR_SEPARATOR_S,
+                            g_get_current_dir(), file, NULL);
         g_free(file);
     }
 
-    if (create_theme_archive(path, dest))
+    if (create_theme_archive(path, name, dest))
         gtk_msg(GTK_MESSAGE_INFO, _("\"%s\" was successfully created"),
                 dest);
 
@@ -95,18 +96,28 @@ void theme_archive(gchar *path)
     g_free(name);
 }
 
-static gboolean create_theme_archive(gchar *dir, gchar *to)
+static gboolean create_theme_archive(gchar *dir, gchar *name, gchar *to)
 {
     TAR *t;
+    gint r;
 
-    if (tar_open(&t, to, &funcs, 0, O_WRONLY, TAR_GNU) == -1) {
+    if (tar_open(&t, to, &funcs, O_WRONLY | O_CREAT, 0666, TAR_GNU) == -1) {
         gtk_msg(GTK_MESSAGE_ERROR,
                 _("Unable to create the file \"%s\": %s"),
                 to, strerror(errno));
         return;
     }
 
+    r = tar_append_tree(t, dir, name);
     tar_close(t);
+
+    if (r != 0) {
+        gtk_msg(GTK_MESSAGE_ERROR,
+                _("Unable to create the theme archive \"%s\": %s"),
+                to, strerror(errno));
+    }
+
+    return r == 0;
 }
 
 static gchar *get_theme_dir()
@@ -133,7 +144,7 @@ static gchar* name_from_dir(const gchar *dir)
     struct stat st;
     gboolean r;
 
-    rc = g_build_path(G_DIR_SEPARATOR_S, dir, "openbox-3", "themerc");
+    rc = g_build_path(G_DIR_SEPARATOR_S, dir, "openbox-3", "themerc", NULL);
 
     r = (stat(rc, &st) == 0 && S_ISREG(st.st_mode));
     g_free(rc);
@@ -186,7 +197,7 @@ static gboolean install_theme_to(gchar *theme, gchar *file, gchar *to)
     gchar *glob;
     gint r;
 
-    if (tar_open(&t, file, &funcs, 0, O_RDONLY, TAR_GNU) == -1) {
+    if (tar_open(&t, file, &funcs, O_RDONLY, 0666, TAR_GNU) == -1) {
         gtk_msg(GTK_MESSAGE_ERROR,
                 _("Unable to open the file \"%s\": %s"),
                 file, strerror(errno));
