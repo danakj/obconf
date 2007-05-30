@@ -31,6 +31,7 @@ static ssize_t gzwrite_frontend(int nothing, const void *buf, size_t s);
 static gchar *get_theme_dir();
 static gboolean change_dir(const gchar *dir);
 static gboolean install_theme_to(gchar *theme, gchar *file, gchar *to);
+static gchar* name_from_file(const gchar *path);
 
 tartype_t funcs = {
     (openfunc_t) gzopen_frontend,
@@ -39,29 +40,33 @@ tartype_t funcs = {
     (writefunc_t) gzwrite_frontend
 };
 
-gboolean theme_install(gchar *path, gchar *theme)
+gchar* theme_install(gchar *path)
 {
     gchar *dest;
     gchar *curdir;
+    gchar *name;
 
     if (!(dest = get_theme_dir()))
-        return FALSE;
+        return NULL;
 
     curdir = g_get_current_dir();
     if (!change_dir(dest)) {
         g_free(curdir);
-        return FALSE;
+        return NULL;
     }
 
-    if (install_theme_to(theme, path, dest))
-        gtk_msg(GTK_MESSAGE_INFO, _("%s was installed to %s"), theme, dest);
+    if (!(name = name_from_file(path)))
+        return NULL;
+
+    if (install_theme_to(name, path, dest))
+        gtk_msg(GTK_MESSAGE_INFO, _("\"%s\" was installed to %s"), name, dest);
 
     g_free(dest);
 
     change_dir(curdir);
     g_free(curdir);
 
-    return TRUE;
+    return name;
 }
 
 static gchar *get_theme_dir()
@@ -80,6 +85,29 @@ static gchar *get_theme_dir()
     }
 
     return dir;
+}
+
+static gchar* name_from_file(const gchar *path)
+{
+    /* decipher the theme name from the file name */
+    gchar *fname = g_path_get_basename(path);
+    gint len = strlen(fname);
+    gchar *name = NULL;
+
+    if (len > 4 &&
+        (fname[len-4] == '.' && fname[len-3] == 'o' &&
+         fname[len-2] == 'b' && fname[len-1] == 't'))
+    {
+        fname[len-4] = '\0';
+        name = strdup(fname);
+        fname[len-4] = '.';
+    }
+
+    if (name == NULL)
+        gtk_msg(GTK_MESSAGE_ERROR,
+                _("Unable to determine the theme's name from \"%s\".  File name should be ThemeName.obt."), fname);
+
+    return name;
 }
 
 static gboolean change_dir(const gchar *dir)

@@ -1300,52 +1300,9 @@ void on_install_theme_clicked(GtkButton *w, gpointer data)
     gtk_widget_destroy(d);
 
     if (path != NULL) {
-        /* decipher the theme name from the file name */
-        gchar *fname = g_path_get_basename(path);
-        gchar *themename = NULL;
-        gint len = strlen(fname);
+        gchar *name;
 
-        if (len > 4 &&
-            (fname[len-4] == '.' && fname[len-3] == 'o' &&
-             fname[len-2] == 'b' && fname[len-1] == 't')/* ||
-            (fname[len-4] == '.' && fname[len-3] == 't' &&
-            fname[len-2] == 'g' && fname[len-1] == 'z')*/)
-        {
-            fname[len-4] = '\0';
-            themename = strdup(fname);
-            fname[len-4] = '.';
-        }
-/*
-        else if (len > 7 &&
-                 (fname[len-7] == '.' && fname[len-6] == 't' &&
-                  fname[len-5] == 'a' && fname[len-4] == 'r' &&
-                  fname[len-3] == '.' && fname[len-2] == 'g' &&
-                  fname[len-1] == 'z'))
-        {
-            fname[len-7] = '\0';
-            themename = strdup(fname);
-            fname[len-7] = '.';
-        }
-*/
-
-        if (themename == NULL) {
-            GtkWidget *w;
-
-            w = gtk_message_dialog_new(GTK_WINDOW(mainwin),
-                                       GTK_DIALOG_DESTROY_WITH_PARENT |
-                                       GTK_DIALOG_MODAL,
-                                       GTK_MESSAGE_ERROR,
-                                       GTK_BUTTONS_OK,
-                                       _("Unable to determine the theme's name rom \"%s\".  File name should be ThemeName.obt."),
-                                       fname);
-            gtk_dialog_run(GTK_DIALOG(w));
-            gtk_widget_destroy(w);
-            g_free(fname);
-            g_free(path);
-            return;
-        }
-
-        if (theme_install(path, themename)) {
+        if ((name = theme_install(path))) {
             GtkWidget *w;
             GtkTreePath *path;
             GList *it;
@@ -1358,14 +1315,14 @@ void on_install_theme_clicked(GtkButton *w, gpointer data)
 
             /* go to the newly installed theme */
             for (it = themes, i = 0; it; it = g_list_next(it), ++i)
-                if (!strcmp(it->data, themename)) break;
+                if (!strcmp(it->data, name)) break;
             if (it) {
                 path = gtk_tree_path_new_from_indices(i, -1);
                 gtk_tree_view_set_cursor(GTK_TREE_VIEW(w), path, NULL, FALSE);
             }
+
+            g_free(name);
         }
-        g_free(fname);
-        g_free(themename);
         g_free(path);
     }
 }
