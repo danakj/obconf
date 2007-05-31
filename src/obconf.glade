@@ -711,7 +711,7 @@ C - The close button</property>
 			      <property name="can_focus">True</property>
 			      <property name="show_style">True</property>
 			      <property name="show_size">True</property>
-			      <property name="use_font">False</property>
+			      <property name="use_font">True</property>
 			      <property name="use_size">False</property>
 			      <property name="focus_on_click">True</property>
 			      <signal name="font_set" handler="on_font_inactive_font_set" last_modification_time="Fri, 25 May 2007 16:03:13 GMT"/>
@@ -732,7 +732,7 @@ C - The close button</property>
 			      <property name="can_focus">True</property>
 			      <property name="show_style">True</property>
 			      <property name="show_size">True</property>
-			      <property name="use_font">False</property>
+			      <property name="use_font">True</property>
 			      <property name="use_size">False</property>
 			      <property name="focus_on_click">True</property>
 			      <signal name="font_set" handler="on_font_menu_header_font_set" last_modification_time="Fri, 25 May 2007 16:03:17 GMT"/>
@@ -753,7 +753,7 @@ C - The close button</property>
 			      <property name="can_focus">True</property>
 			      <property name="show_style">True</property>
 			      <property name="show_size">True</property>
-			      <property name="use_font">False</property>
+			      <property name="use_font">True</property>
 			      <property name="use_size">False</property>
 			      <property name="focus_on_click">True</property>
 			      <signal name="font_set" handler="on_font_menu_item_font_set" last_modification_time="Fri, 25 May 2007 16:03:20 GMT"/>
@@ -774,7 +774,7 @@ C - The close button</property>
 			      <property name="can_focus">True</property>
 			      <property name="show_style">True</property>
 			      <property name="show_size">True</property>
-			      <property name="use_font">False</property>
+			      <property name="use_font">True</property>
 			      <property name="use_size">False</property>
 			      <property name="focus_on_click">True</property>
 			      <signal name="font_set" handler="on_font_display_font_set" last_modification_time="Fri, 25 May 2007 16:03:23 GMT"/>
@@ -940,7 +940,7 @@ C - The close button</property>
 			      <property name="can_focus">True</property>
 			      <property name="show_style">True</property>
 			      <property name="show_size">True</property>
-			      <property name="use_font">False</property>
+			      <property name="use_font">True</property>
 			      <property name="use_size">False</property>
 			      <property name="focus_on_click">True</property>
 			      <signal name="font_set" handler="on_font_active_font_set" last_modification_time="Fri, 25 May 2007 16:03:09 GMT"/>
