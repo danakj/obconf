@@ -42,6 +42,8 @@ src_obconf_SOURCES = \
 	src/main.h \
 	src/handlers.c \
 	src/handlers.h \
+	src/preview.c \
+	src/preview.h \
 	src/theme.c \
 	src/theme.h \
 	src/tree.c \

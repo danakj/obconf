@@ -35,6 +35,10 @@ static int num_desktops;
 static GList *desktop_names;
 static GtkListStore *theme_store;
 
+static RrFont *active_window_font, *inactive_window_font, *menu_title_font, *menu_item_font, *osd_font;
+
+static gchar *titlelayout;
+
 static void on_desktop_names_cell_edited(GtkCellRendererText *cell,
                                          const gchar *path_string,
                                          const gchar *new_text,
@@ -42,6 +46,7 @@ static void on_desktop_names_cell_edited(GtkCellRendererText *cell,
 
 static void on_theme_names_selection_changed(GtkTreeSelection *sel, 
                                              gpointer data);
+static void handlers_update_theme_previews();
 
 
 void setup_behavior_tab()
@@ -384,6 +389,8 @@ static void reset_theme_names(GtkWidget *w)
     GList *it, *next;
     gint i;
 
+    RrFont *active, *inactive, *menu_t, *menu_i, *osd;
+
     name = tree_get_string("theme/name", "TheBear");
 
     for (it = themes; it; it = g_list_next(it))
@@ -427,7 +434,7 @@ static void reset_theme_names(GtkWidget *w)
         gtk_list_store_append(theme_store, &iter);
         gtk_list_store_set(theme_store, &iter,
                            0, it->data,
-                           1, TRUE,
+                           1, NULL,
                            -1);
 
         if(!strcmp(name, it->data)) {
@@ -454,17 +461,26 @@ void setup_theme_names(GtkWidget *w)
     mapping = TRUE;
 
     /* widget setup */
-    theme_store = gtk_list_store_new(2, G_TYPE_STRING, G_TYPE_BOOLEAN);
+    theme_store = gtk_list_store_new(2, G_TYPE_STRING, GDK_TYPE_PIXBUF);
     gtk_tree_view_set_model(GTK_TREE_VIEW(w), GTK_TREE_MODEL(theme_store));
     g_object_unref (theme_store);
 
     gtk_tree_selection_set_mode(gtk_tree_view_get_selection(GTK_TREE_VIEW(w)),
                                 GTK_SELECTION_SINGLE);
 
+    /* text column for the names */
     render = gtk_cell_renderer_text_new();
     column = gtk_tree_view_column_new_with_attributes
         ("Name", render, "text", 0, NULL);
     gtk_tree_view_append_column(GTK_TREE_VIEW(w), column);
+
+    /* pixbuf column, for theme previews */
+    render = gtk_cell_renderer_pixbuf_new();
+    g_object_set(render, "xalign", 1.0);
+    column = gtk_tree_view_column_new_with_attributes
+        ("Preview", render, "pixbuf", 1, NULL);
+    gtk_tree_view_append_column(GTK_TREE_VIEW(w), column);
+
 
     /* setup the selection handler */
     select = gtk_tree_view_get_selection(GTK_TREE_VIEW (w));
@@ -474,6 +490,8 @@ void setup_theme_names(GtkWidget *w)
                       NULL);
 
     reset_theme_names(w);
+
+    handlers_update_theme_previews();
 
     mapping = FALSE;
 }
@@ -485,6 +503,7 @@ void setup_title_layout(GtkWidget *w)
     mapping = TRUE;
 
     layout = tree_get_string("theme/titleLayout", "NLIMC");
+    titlelayout = g_strdup(layout);
     gtk_entry_set_text(GTK_ENTRY(w), layout);
     g_free(layout);
 
@@ -513,13 +532,17 @@ void setup_window_border(GtkWidget *w)
     mapping = FALSE;
 }
 
-static void setup_font(GtkWidget *w, const gchar *place)
+static RrFont *setup_font(GtkWidget *w, const gchar *place)
 {
+    RrFont *font;
     gchar *fontstring, *node;
     gchar *name, **names;
     gchar *size;
     gchar *weight;
     gchar *slant;
+
+    RrFontWeight rr_weight = RR_FONTWEIGHT_NORMAL;
+    RrFontSlant rr_slant = RR_FONTSLANT_NORMAL;
 
     mapping = TRUE;
 
@@ -555,6 +578,12 @@ static void setup_font(GtkWidget *w, const gchar *place)
 
     fontstring = g_strdup_printf("%s %s %s %s", name, weight, slant, size);
     gtk_font_button_set_font_name(GTK_FONT_BUTTON(w), fontstring);
+
+    if (!g_ascii_strcasecmp(weight, "Bold")) rr_weight = RR_FONTWEIGHT_BOLD;
+    if (!g_ascii_strcasecmp(slant, "Italic")) rr_slant = RR_FONTSLANT_ITALIC;
+    if (!g_ascii_strcasecmp(slant, "Oblique")) rr_slant = RR_FONTSLANT_OBLIQUE;
+
+    font = RrFontOpen(rrinst, name, atoi(size), rr_weight, rr_slant);
     g_free(fontstring);
     g_free(slant);
     g_free(weight);
@@ -562,31 +591,33 @@ static void setup_font(GtkWidget *w, const gchar *place)
     g_free(name);
 
     mapping = FALSE;
+
+    return font;
 }
 
 void setup_font_active(GtkWidget *w)
 {
-    setup_font(w, "ActiveWindow");
+    active_window_font = setup_font(w, "ActiveWindow");
 }
 
 void setup_font_inactive(GtkWidget *w)
 {
-    setup_font(w, "InactiveWindow");
+    inactive_window_font = setup_font(w, "InactiveWindow");
 }
 
 void setup_font_menu_header(GtkWidget *w)
 {
-    setup_font(w, "MenuHeader");
+    menu_title_font = setup_font(w, "MenuHeader");
 }
 
 void setup_font_menu_item(GtkWidget *w)
 {
-    setup_font(w, "MenuItem");
+    menu_item_font = setup_font(w, "MenuItem");
 }
 
 void setup_font_display(GtkWidget *w)
 {
-    setup_font(w, "OnScreenDisplay");
+    osd_font = setup_font(w, "OnScreenDisplay");
 }
 
 
@@ -680,13 +711,16 @@ void on_window_border_toggled(GtkToggleButton *w, gpointer data)
     tree_set_bool("theme/keepBorder", b);
 }
 
-static void on_font_set(GtkFontButton *w, const gchar *place)
+static RrFont *on_font_set(GtkFontButton *w, const gchar *place)
 {
     gchar *c;
     gchar *font, *node;
     const gchar *size = NULL;
     const gchar *bold = NULL;
     const gchar *italic = NULL;
+
+    RrFontWeight weight = RR_FONTWEIGHT_NORMAL;
+    RrFontSlant slant = RR_FONTSLANT_NORMAL;
 
     if (mapping) return;
 
@@ -721,32 +755,49 @@ static void on_font_set(GtkFontButton *w, const gchar *place)
     tree_set_string(node, italic);
     g_free(node);
 
+    if (!g_ascii_strcasecmp(bold, "Bold")) weight = RR_FONTWEIGHT_BOLD;
+    if (!g_ascii_strcasecmp(italic, "Italic")) slant = RR_FONTSLANT_ITALIC;
+    if (!g_ascii_strcasecmp(italic, "Oblique")) slant = RR_FONTSLANT_OBLIQUE;
+
+    return RrFontOpen(rrinst, font, atoi(size), weight, slant);
+
     g_free(font);
+
 }
 
 void on_font_active_font_set(GtkFontButton *w, gpointer data)
 {
-    on_font_set(w, "ActiveWindow");
+    RrFontClose(active_window_font);
+    active_window_font = on_font_set(w, "ActiveWindow");
+    handlers_update_theme_previews();
 }
 
 void on_font_inactive_font_set(GtkFontButton *w, gpointer data)
 {
-    on_font_set(w, "InactiveWindow");
+    RrFontClose(inactive_window_font);
+    inactive_window_font = on_font_set(w, "InactiveWindow");
+    handlers_update_theme_previews();
 }
 
 void on_font_menu_header_font_set(GtkFontButton *w, gpointer data)
 {
-    on_font_set(w, "MenuHeader");
+    RrFontClose(menu_title_font);
+    menu_title_font = on_font_set(w, "MenuHeader");
+    handlers_update_theme_previews();
 }
 
 void on_font_menu_item_font_set(GtkFontButton *w, gpointer data)
 {
-    on_font_set(w, "MenuItem");
+    RrFontClose(menu_item_font);
+    menu_item_font = on_font_set(w, "MenuItem");
+    handlers_update_theme_previews();
 }
 
 void on_font_display_font_set(GtkFontButton *w, gpointer data)
 {
-    on_font_set(w, "OnScreenDisplay");
+    RrFontClose(osd_font);
+    osd_font = on_font_set(w, "OnScreenDisplay");
+    handlers_update_theme_previews();
 }
 
 void on_focus_mouse_toggled(GtkToggleButton *w, gpointer data)
@@ -1170,7 +1221,12 @@ void on_title_layout_changed(GtkEntry *w, gpointer data)
 
     gtk_entry_set_text(w, layout);
     tree_set_string("theme/titleLayout", layout);
+
+    g_free(titlelayout);
+    titlelayout = g_strdup(layout);
     g_free(layout);
+
+    
 }
 
 static void set_desktop_names()
@@ -1355,4 +1411,39 @@ void handlers_install_theme(gchar *path)
 
         g_free(name);
     }
+}
+
+
+static gboolean update_theme_preview_iterate(gpointer data)
+{
+    GtkListStore *ls = data;
+    static GtkTreeIter iter;
+    static gboolean restart = TRUE;
+    gchar *name;
+
+    if (restart) {
+        if (!gtk_tree_model_get_iter_first(GTK_TREE_MODEL(ls), &iter))
+            return;
+        restart = FALSE;
+    } else {
+        if (!gtk_tree_model_iter_next(GTK_TREE_MODEL(ls), &iter)) {
+            restart = TRUE;
+            return;
+        }
+    }
+
+    gtk_tree_model_get(GTK_TREE_MODEL(ls), &iter, 0, &name, -1);
+
+    gtk_list_store_set(GTK_LIST_STORE(ls), &iter, 1,
+                       preview_theme(name, titlelayout, active_window_font,
+                                     inactive_window_font, menu_title_font,
+                                     menu_item_font, osd_font),
+                       -1);
+}
+
+static void handlers_update_theme_previews()
+{
+    g_idle_remove_by_data(theme_store);
+    g_idle_add_full(G_PRIORITY_LOW, update_theme_preview_iterate,
+                    theme_store, NULL);
 }

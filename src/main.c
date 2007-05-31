@@ -33,6 +33,7 @@ GtkWidget *mainwin = NULL;
 GladeXML *glade;
 xmlDocPtr doc;
 xmlNodePtr root;
+RrInstance *rrinst;
 
 static gchar *obc_theme_install = NULL;
 static gchar *obc_theme_archive = NULL;
@@ -118,8 +119,6 @@ int main(int argc, char **argv)
         return;
     }
 
-    parse_paths_startup();
-
     p = g_build_filename(GLADEDIR, "obconf.glade", NULL);
     glade = glade_xml_new(p, NULL, NULL);
     g_free(p);
@@ -129,6 +128,9 @@ int main(int argc, char **argv)
                      "have probably failed to install ObConf properly.");
         return 1;
     }
+
+    parse_paths_startup();
+    rrinst = RrInstanceNew(GDK_DISPLAY(), gdk_x11_get_default_screen());
 
     xmlIndentTreeOutput = 1;
     if (!parse_load_rc(NULL, &doc, &root)) {
@@ -206,6 +208,7 @@ int main(int argc, char **argv)
 
     gtk_main();
 
+    RrInstanceFree(rrinst);
     parse_paths_shutdown();
 
     xmlFreeDoc(doc);

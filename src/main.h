@@ -19,7 +19,9 @@
 #ifndef obconf__main_h
 #define obconf__main_h
 
-#include "openbox/parse.h"
+#include <openbox/render.h>
+#include <openbox/instance.h>
+#include <openbox/parse.h>
 
 #include <gtk/gtk.h>
 #include <glade/glade-xml.h>
@@ -27,6 +29,7 @@
 extern GladeXML *glade;
 extern xmlDocPtr doc;
 extern xmlNodePtr root;
+extern RrInstance *rrinst;
 extern GtkWidget *mainwin;
 
 void obconf_error(gchar *msg);
