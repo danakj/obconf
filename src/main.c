@@ -221,6 +221,8 @@ void obconf_show_main()
     SnDisplay *sn_d;
     SnLauncheeContext *sn_cx;
 
+    gtk_widget_show_all(mainwin);
+
     sn_d = sn_display_new(GDK_DISPLAY_XDISPLAY(gdk_display_get_default()),
                           NULL, NULL);
 
@@ -238,6 +240,4 @@ void obconf_show_main()
     if (sn_cx)
         sn_launchee_context_unref(sn_cx);
     sn_display_unref(sn_d);
-
-    gtk_widget_show_all(mainwin);
 }
