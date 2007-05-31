@@ -29,7 +29,7 @@ static GtkListStore *desktop_store;
 static int num_desktops;
 static GList *desktop_names;
 
-static void reset_desktop_names();
+static void load_desktop_names();
 static void desktops_set_names();
 static void desktops_set_number();
 static void on_desktop_names_cell_edited(GtkCellRendererText *cell,
@@ -66,7 +66,7 @@ void desktops_setup_tab()
         ("Name", render, "text", 0, "editable", 1, NULL);
     gtk_tree_view_append_column(GTK_TREE_VIEW(w), column);
 
-    reset_desktop_names();
+    load_desktop_names();
 
     mapping = FALSE;
 }
@@ -79,7 +79,7 @@ void on_desktop_num_value_changed(GtkSpinButton *w, gpointer data)
 
     desktops_set_number();
 
-    reset_desktop_names();
+    load_desktop_names();
 }
 
 static void on_desktop_names_cell_edited(GtkCellRendererText *cell,
@@ -114,7 +114,7 @@ static void on_desktop_names_cell_edited(GtkCellRendererText *cell,
     desktops_set_names();
 }
 
-static void reset_desktop_names()
+static void load_desktop_names()
 {
     GtkTreeIter it;
     xmlNodePtr n;
