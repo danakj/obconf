@@ -20,8 +20,6 @@
 #include "main.h"
 
 #include <openbox/parse.h>
-#include <sys/types.h>
-#include <signal.h>
 #include <gdk/gdkx.h>
 
 xmlNodePtr tree_get_node(const gchar *path, const gchar *def)
