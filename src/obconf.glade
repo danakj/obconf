@@ -1197,7 +1197,7 @@ C - The close button</property>
 					  <property name="update_policy">GTK_UPDATE_ALWAYS</property>
 					  <property name="snap_to_ticks">False</property>
 					  <property name="wrap">False</property>
-					  <property name="adjustment">0 0 10000 100 10 100</property>
+					  <property name="adjustment">0 0 10000 10 10 10</property>
 					  <signal name="value_changed" handler="on_focus_delay_value_changed" after="yes" last_modification_time="Sun, 14 Sep 2003 11:24:28 GMT"/>
 					</widget>
 					<packing>
@@ -1810,7 +1810,7 @@ C - The close button</property>
 				  <property name="update_policy">GTK_UPDATE_ALWAYS</property>
 				  <property name="snap_to_ticks">False</property>
 				  <property name="wrap">False</property>
-				  <property name="adjustment">0 0 100000 100 10 100</property>
+				  <property name="adjustment">0 0 10000 10 10 10</property>
 				  <signal name="value_changed" handler="on_doubleclick_time_value_changed" after="yes" last_modification_time="Thu, 31 May 2007 16:09:40 GMT"/>
 				</widget>
 				<packing>
@@ -3034,7 +3034,7 @@ C - The close button</property>
 				      <property name="update_policy">GTK_UPDATE_ALWAYS</property>
 				      <property name="snap_to_ticks">False</property>
 				      <property name="wrap">False</property>
-				      <property name="adjustment">300 0 10000 1 10 100</property>
+				      <property name="adjustment">300 0 10000 10 10 10</property>
 				      <signal name="value_changed" handler="on_dock_hide_delay_value_changed" after="yes" last_modification_time="Sun, 14 Sep 2003 11:08:49 GMT"/>
 				    </widget>
 				    <packing>
@@ -3156,7 +3156,7 @@ C - The close button</property>
 				      <property name="update_policy">GTK_UPDATE_ALWAYS</property>
 				      <property name="snap_to_ticks">False</property>
 				      <property name="wrap">False</property>
-				      <property name="adjustment">300 0 10000 1 10 100</property>
+				      <property name="adjustment">300 0 10000 10 10 100</property>
 				      <signal name="value_changed" handler="on_dock_show_delay_value_changed" after="yes" last_modification_time="Thu, 31 May 2007 15:17:16 GMT"/>
 				    </widget>
 				    <packing>
