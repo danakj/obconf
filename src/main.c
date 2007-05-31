@@ -200,6 +200,8 @@ void obconf_show_main()
     SnDisplay *sn_d;
     SnLauncheeContext *sn_cx;
 
+    if (GTK_WIDGET_VISIBLE(mainwin)) return;
+
     gtk_widget_show_all(mainwin);
 
     sn_d = sn_display_new(GDK_DISPLAY_XDISPLAY(gdk_display_get_default()),
