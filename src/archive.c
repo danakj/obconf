@@ -91,15 +91,17 @@ static gboolean create_theme_archive(const gchar *dir, const gchar *name,
 
     parentdir = g_build_path(G_DIR_SEPARATOR_S, dir, "..", NULL);
 
-    argv = g_new(gchar*, 7);
+    argv = g_new(gchar*, 9);
     argv[0] = g_strdup("tar");
     argv[1] = g_strdup("-c");
     argv[2] = g_strdup("-z");
     argv[3] = g_strdup("-f");
     argv[4] = g_strdup(to);
-    argv[5] = g_strdup(glob);
-    argv[6] = NULL;
-    if (g_spawn_sync(parentdir, argv, NULL, G_SPAWN_SEARCH_PATH, NULL, NULL,
+    argv[5] = g_strdup("-C");
+    argv[6] = g_strdup(parentdir);
+    argv[7] = g_strdup(glob);
+    argv[8] = NULL;
+    if (g_spawn_sync(NULL, argv, NULL, G_SPAWN_SEARCH_PATH, NULL, NULL,
                      NULL, &errtxt, &exitcode, &e))
     {
         if (exitcode != EXIT_SUCCESS)
@@ -202,15 +204,17 @@ static gboolean install_theme_to(const gchar *name, const gchar *file,
 
     glob = g_strdup_printf("%s/openbox-3/", name);
 
-    argv = g_new(gchar*, 7);
+    argv = g_new(gchar*, 9);
     argv[0] = g_strdup("tar");
     argv[1] = g_strdup("-x");
     argv[2] = g_strdup("-z");
     argv[3] = g_strdup("-f");
     argv[4] = g_strdup(file);
-    argv[5] = g_strdup(glob);
-    argv[6] = NULL;
-    if (!g_spawn_sync(to, argv, NULL, G_SPAWN_SEARCH_PATH, NULL, NULL,
+    argv[5] = g_strdup("-C");
+    argv[6] = g_strdup(to);
+    argv[7] = g_strdup(glob);
+    argv[8] = NULL;
+    if (!g_spawn_sync(NULL, argv, NULL, G_SPAWN_SEARCH_PATH, NULL, NULL,
                       NULL, &errtxt, &exitcode, &e))
         gtk_msg(GTK_MESSAGE_ERROR, _("Unable to run the \"tar\" command: %s"),
                 e->message);

@@ -24,6 +24,7 @@
 
 void theme_setup_tab();
 
+void theme_load_all();
 void theme_install(const gchar *path);
 
 #endif

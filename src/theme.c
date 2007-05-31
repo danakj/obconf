@@ -31,7 +31,6 @@ static GList *themes;
 static GtkListStore *theme_store;
 
 static void add_theme_dir(const gchar *dirname);
-static void reset_theme_names(GtkWidget *w);
 static void on_theme_names_selection_changed(GtkTreeSelection *sel,
                                              gpointer data);
 
@@ -74,8 +73,6 @@ void theme_setup_tab()
     g_signal_connect (G_OBJECT(select), "changed",
                       G_CALLBACK(on_theme_names_selection_changed),
                       NULL);
-
-    reset_theme_names(w);
 
     mapping = FALSE;
 }
@@ -159,46 +156,24 @@ void theme_install(const gchar *path)
 {
     gchar *name;
 
-    if ((name = archive_install(path))) {
-        GtkWidget *w;
-        GList *it;
-        gint i;
-
-        w = glade_xml_get_widget(glade, "theme_names");
-        mapping = TRUE;
-        reset_theme_names(w);
-        mapping = FALSE;
-
-        /* go to the newly installed theme */
-        for (it = themes, i = 0; it; it = g_list_next(it), ++i)
-            if (!strcmp(it->data, name)) break;
-        if (it) {
-            GtkTreePath *path;
-
-            path = gtk_tree_path_new_from_indices(i, -1);
-            gtk_tree_view_set_cursor(GTK_TREE_VIEW(w), path, NULL, FALSE);
-            gtk_tree_path_free(path);
-        }
-
-        g_free(name);
-    }
+    if ((name = archive_install(path)))
+        tree_set_string("theme/name", name);
+    g_free(name);
 }
 
-
-
-
-
-
-static void reset_theme_names(GtkWidget *w)
+void theme_load_all()
 {
     gchar *name;
     gchar *p;
     GList *it, *next;
     gint i;
+    GtkWidget *w;
     GtkTreePath *path = NULL;
-
     RrFont *active, *inactive, *menu_t, *menu_i, *osd;
 
+    mapping = TRUE;
+
+    w = get_widget("theme_names");
     name = tree_get_string("theme/name", "TheBear");
 
     for (it = themes; it; it = g_list_next(it))
@@ -260,6 +235,8 @@ static void reset_theme_names(GtkWidget *w)
     }
 
     g_free(name);
+
+    mapping = FALSE;
 }
 
 static void add_theme_dir(const gchar *dirname)
