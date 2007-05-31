@@ -158,17 +158,7 @@ int main(int argc, char **argv)
     appearance_setup_tab();
     behavior_setup_tab();
     desktops_setup_tab();
-
     dock_setup_tab();
-    dock_setup_position(get_widget("dock_position"));
-    dock_setup_float_x(get_widget("dock_float_x"));
-    dock_setup_float_y(get_widget("dock_float_y"));
-    dock_setup_stacking(get_widget("dock_stack_top"),
-                        get_widget("dock_stack_normal"),
-                        get_widget("dock_stack_bottom"));
-    dock_setup_direction(get_widget("dock_direction"));
-    dock_setup_hide(get_widget("dock_hide"));
-    dock_setup_hide_delay(get_widget("dock_hide_delay"));
 
     mainwin = get_widget("main_window");
 
