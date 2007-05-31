@@ -30,6 +30,8 @@ void behavior_setup_tab()
     GtkSizeGroup *group;
     gchar *s;
 
+    mapping = TRUE;
+
     winresist  = get_widget("resist_window");
     edgeresist = get_widget("resist_edge");
     group      = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
@@ -80,6 +82,8 @@ void behavior_setup_tab()
     gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(w),
                                  !g_ascii_strcasecmp(s, "UnderMouse"));
     g_free(s);
+
+    mapping = FALSE;
 }
 
 static void behavior_enable_stuff()
