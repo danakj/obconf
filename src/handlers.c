@@ -22,8 +22,8 @@
 #include "tree.h"
 #include "theme.h"
 #include "gettext.h"
-#include "openbox/render.h"
 
+#include <openbox/render.h>
 #include <string.h>
 #include <ctype.h>
 #include <gdk/gdkx.h>
