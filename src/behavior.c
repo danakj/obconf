@@ -26,23 +26,35 @@ static void behavior_enable_stuff();
 
 void behavior_setup_tab()
 {
-    GtkWidget *w, *winresist, *edgeresist;
+    GtkWidget *w, *w1, *w2;
     GtkSizeGroup *group;
     gchar *s;
 
     mapping = TRUE;
 
-    winresist  = get_widget("resist_window");
-    edgeresist = get_widget("resist_edge");
-    group      = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
-    gtk_size_group_add_widget(group, winresist);
-    gtk_size_group_add_widget(group, edgeresist);
+    w1    = get_widget("resist_window");
+    w2    = get_widget("resist_edge");
+    group = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
+    gtk_size_group_add_widget(group, w1);
+    gtk_size_group_add_widget(group, w2);
 
-    winresist  = get_widget("resist_window_label");
-    edgeresist = get_widget("resist_edge_label");
-    group      = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
-    gtk_size_group_add_widget(group, winresist);
-    gtk_size_group_add_widget(group, edgeresist);
+    w1    = get_widget("resist_window_label");
+    w2    = get_widget("resist_edge_label");
+    group = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
+    gtk_size_group_add_widget(group, w1);
+    gtk_size_group_add_widget(group, w2);
+
+    w1    = get_widget("doubleclick_time");
+    w2    = get_widget("drag_threshold");
+    group = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
+    gtk_size_group_add_widget(group, w1);
+    gtk_size_group_add_widget(group, w2);
+
+    w1    = get_widget("doubleclick_time_label");
+    w2    = get_widget("drag_threshold_label");
+    group = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
+    gtk_size_group_add_widget(group, w1);
+    gtk_size_group_add_widget(group, w2);
 
     w = get_widget("focus_mouse");
     gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(w),
@@ -82,6 +94,14 @@ void behavior_setup_tab()
     gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(w),
                                  !g_ascii_strcasecmp(s, "UnderMouse"));
     g_free(s);
+
+    w = get_widget("doubleclick_time");
+    gtk_spin_button_set_value(GTK_SPIN_BUTTON(w),
+                              tree_get_int("mouse/doubleClickTime", 200));
+
+    w = get_widget("drag_threshold");
+    gtk_spin_button_set_value(GTK_SPIN_BUTTON(w),
+                              tree_get_int("mouse/dragThreshold", 3));
 
     behavior_enable_stuff();
 
@@ -179,3 +199,20 @@ void on_resize_contents_toggled(GtkToggleButton *w, gpointer data)
 
     tree_set_bool("resize/drawContents", gtk_toggle_button_get_active(w));
 }
+
+void on_doubleclick_time_value_changed(GtkSpinButton *w, gpointer data)
+{
+    if (mapping) return;
+
+    tree_set_int("mouse/doubleClickTime",
+                 gtk_spin_button_get_value_as_int(w));
+}
+
+void on_drag_threshold_value_changed(GtkSpinButton *w, gpointer data)
+{
+    if (mapping) return;
+
+    tree_set_int("mouse/dragThreshold",
+                 gtk_spin_button_get_value_as_int(w));
+}
+
