@@ -113,8 +113,6 @@ static void parse_args(int argc, char **argv)
 
 int main(int argc, char **argv)
 {
-    SnDisplay *sn_d;
-    SnLauncheeContext *sn_cx;
     gchar *p;
 
     gtk_init(&argc, &argv);
@@ -186,24 +184,6 @@ int main(int argc, char **argv)
 
     mainwin = get_widget("main_window");
 
-    sn_d = sn_display_new(GDK_DISPLAY_XDISPLAY(gdk_display_get_default()),
-                          NULL, NULL);
-
-    sn_cx = sn_launchee_context_new_from_environment
-        (sn_d, gdk_screen_get_number(gdk_display_get_default_screen
-                                     (gdk_display_get_default())));
-
-    if (sn_cx)
-        sn_launchee_context_setup_window
-            (sn_cx, GDK_WINDOW_XWINDOW(GDK_WINDOW(mainwin->window)));
-
-    if (sn_cx)
-        sn_launchee_context_complete(sn_cx);
-
-    if (sn_cx)
-        sn_launchee_context_unref(sn_cx);
-    sn_display_unref(sn_d);
-
     if (obc_theme_install)
         theme_install(obc_theme_install);
 
@@ -234,4 +214,30 @@ gboolean on_main_window_delete_event(GtkWidget *w, GdkEvent *e, gpointer d)
 void on_close_clicked()
 {
     gtk_main_quit();
+}
+
+void obconf_show_main()
+{
+    SnDisplay *sn_d;
+    SnLauncheeContext *sn_cx;
+
+    sn_d = sn_display_new(GDK_DISPLAY_XDISPLAY(gdk_display_get_default()),
+                          NULL, NULL);
+
+    sn_cx = sn_launchee_context_new_from_environment
+        (sn_d, gdk_screen_get_number(gdk_display_get_default_screen
+                                     (gdk_display_get_default())));
+
+    if (sn_cx)
+        sn_launchee_context_setup_window
+            (sn_cx, GDK_WINDOW_XWINDOW(GDK_WINDOW(mainwin->window)));
+
+    if (sn_cx)
+        sn_launchee_context_complete(sn_cx);
+
+    if (sn_cx)
+        sn_launchee_context_unref(sn_cx);
+    sn_display_unref(sn_d);
+
+    gtk_widget_show_all(mainwin);
 }

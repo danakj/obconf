@@ -105,7 +105,7 @@ static gboolean update_theme_preview_iterate(gpointer data)
                                          FALSE, 0, 0);
             gtk_tree_path_free(path);
 
-            gtk_widget_show_all(mainwin);
+            obconf_show_main();
 
             return FALSE;
         }

@@ -35,5 +35,6 @@ extern GtkWidget *mainwin;
 #define get_widget(s) glade_xml_get_widget(glade, s)
 
 void obconf_error(gchar *msg);
+void obconf_show_main();
 
 #endif
