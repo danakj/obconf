@@ -20,8 +20,6 @@
 #ifndef obconf__dock_h
 #define obconf__dock_h
 
-#include <gtk/gtk.h>
-
 void dock_setup_tab();
 
 #endif
