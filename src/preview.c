@@ -286,7 +286,7 @@ static GdkPixbuf* preview_window(RrTheme *theme, const gchar *titlelayout,
             a->texture[0].type = RR_TEXTURE_RGBA;
             a->texture[0].data.rgba.width = 48;
             a->texture[0].data.rgba.height = 48;
-						a->texture[0].data.rgba.alpha = 0xff;
+            a->texture[0].data.rgba.alpha = 0xff;
             a->texture[0].data.rgba.data = theme->def_win_icon;
 
             a->surface.parent = title;
@@ -489,8 +489,8 @@ GdkPixbuf *preview_theme(const gchar *name, const gchar *titlelayout,
 
     w = MAX(window_w, menu_w) + 20;
   
-		/* we don't want windows disappearing on us */
-		if (!window_w) window_w = menu_w;
+    /* we don't want windows disappearing on us */
+    if (!window_w) window_w = menu_w;
 
     preview = gdk_pixbuf_new(GDK_COLORSPACE_RGB, TRUE, 8,
                              w, h + 2*(theme->title_height +5) + 1);
