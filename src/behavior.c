@@ -22,120 +22,84 @@
 
 static gboolean mapping = FALSE;
 
+static void behavior_enable_stuff();
+
 void behavior_setup_tab()
 {
-    GtkWidget *winresist, *edgeresist;
-    GtkWidget *winresist_l, *edgeresist_l;
-    GtkSizeGroup *group1, *group2;
+    GtkWidget *w, *winresist, *edgeresist;
+    GtkSizeGroup *group;
+    gchar *s;
 
     winresist  = get_widget("resist_window");
     edgeresist = get_widget("resist_edge");
-    group1     = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
+    group      = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
+    gtk_size_group_add_widget(group, winresist);
+    gtk_size_group_add_widget(group, edgeresist);
 
-    gtk_size_group_add_widget(group1, winresist);
-    gtk_size_group_add_widget(group1, edgeresist);
+    winresist  = get_widget("resist_window_label");
+    edgeresist = get_widget("resist_edge_label");
+    group      = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
+    gtk_size_group_add_widget(group, winresist);
+    gtk_size_group_add_widget(group, edgeresist);
 
-    winresist_l  = get_widget("resist_window_label");
-    edgeresist_l = get_widget("resist_edge_label");
-    group2       = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
+    w = get_widget("focus_mouse");
+    gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(w),
+                                 tree_get_bool("focus/followMouse", FALSE));
 
-    gtk_size_group_add_widget(group2, winresist_l);
-    gtk_size_group_add_widget(group2, edgeresist_l);
-}
-
-void behavior_setup_focus_mouse(GtkWidget *w)
-{
-    gboolean b;
-
-    mapping = TRUE;
-
-    b = tree_get_bool("focus/followMouse", FALSE);
-    gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(w), b);
-
-    {
-        GtkWidget *delay   = get_widget("focus_delay");
-        GtkWidget *delay_l = get_widget("focus_delay_label");
-        GtkWidget *delay_u = get_widget("focus_delay_label_units");
-        GtkWidget *raise   = get_widget("focus_raise");
-        GtkWidget *last    = get_widget("focus_last");
-
-        gtk_widget_set_sensitive(delay, b);
-        gtk_widget_set_sensitive(delay_l, b);
-        gtk_widget_set_sensitive(delay_u, b);
-        gtk_widget_set_sensitive(raise, b);
-        gtk_widget_set_sensitive(last, b);
-    }
-
-    mapping = FALSE;
-}
-
-void behavior_setup_focus_delay(GtkWidget *w)
-{
-    mapping = TRUE;
+    w = get_widget("focus_delay");
     gtk_spin_button_set_value(GTK_SPIN_BUTTON(w),
                               tree_get_int("focus/focusDelay", 0));
-    mapping = FALSE;
-}
 
-void behavior_setup_focus_raise(GtkWidget *w)
-{
-    mapping = TRUE;
+    w = get_widget("focus_raise");
     gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(w),
                                  tree_get_bool("focus/raiseOnFocus", FALSE));
-    mapping = FALSE;
-}
 
-void behavior_setup_focus_last(GtkWidget *w)
-{
-    mapping = TRUE;
+    w = get_widget("focus_last");
     gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(w),
                                  tree_get_bool("focus/focusLast", FALSE));
-    mapping = FALSE;
-}
 
-void behavior_setup_focus_new(GtkWidget *w)
-{
-    mapping = TRUE;
+    w = get_widget("focus_new");
     gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(w),
                                  tree_get_bool("focus/focusNew", TRUE));
-    mapping = FALSE;
-}
 
-void behavior_setup_place_mouse(GtkWidget *w)
-{
-    gchar *s;
+    w = get_widget("resize_contents");
+    gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(w),
+                                 tree_get_bool("resize/drawContents", TRUE));
 
-    mapping = TRUE;
+    w = get_widget("resist_window");
+    gtk_spin_button_set_value(GTK_SPIN_BUTTON(w),
+                              tree_get_int("resistance/strength", 10));
+
+    w = get_widget("resist_edge");
+    gtk_spin_button_set_value(GTK_SPIN_BUTTON(w),
+                              tree_get_int("resistance/screen_edge_strength",
+                                           20));
+
+    w = get_widget("place_mouse");
     s = tree_get_string("placement/policy", "Smart");
     gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(w),
                                  !g_ascii_strcasecmp(s, "UnderMouse"));
     g_free(s);
-    mapping = FALSE;
 }
 
-void behavior_setup_resist_window(GtkWidget *w)
+static void behavior_enable_stuff()
 {
-    mapping = TRUE;
-    gtk_spin_button_set_value(GTK_SPIN_BUTTON(w),
-                              tree_get_int("resistance/strength", 10));
-    mapping = FALSE;
-}
+    GtkWidget *w;
+    gboolean b;
 
-void behavior_setup_resist_edge(GtkWidget *w)
-{
-    mapping = TRUE;
-    gtk_spin_button_set_value(GTK_SPIN_BUTTON(w),
-                              tree_get_int("resistance/screen_edge_strength",
-                                           20));
-    mapping = FALSE;
-}
+    w = get_widget("focus_mouse");
+    b = gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(w));
 
-void behavior_setup_resize_contents(GtkWidget *w)
-{
-    mapping = TRUE;
-    gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(w),
-                                 tree_get_bool("resize/drawContents", TRUE));
-    mapping = FALSE;
+    w = get_widget("focus_delay");
+    gtk_widget_set_sensitive(w, b);
+    w = get_widget("focus_delay_label");
+    gtk_widget_set_sensitive(w, b);
+    w = get_widget("focus_delay_label_units");
+    gtk_widget_set_sensitive(w, b);
+    w = get_widget("focus_raise");
+    gtk_widget_set_sensitive(w, b);
+    w = get_widget("focus_last");
+    gtk_widget_set_sensitive(w, b);
 }
 
 void on_focus_mouse_toggled(GtkToggleButton *w, gpointer data)

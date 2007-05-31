@@ -156,18 +156,7 @@ int main(int argc, char **argv)
 
     theme_setup_tab();
     appearance_setup_tab();
-
     behavior_setup_tab();
-    behavior_setup_focus_mouse(get_widget("focus_mouse"));
-    behavior_setup_focus_raise(get_widget("focus_raise"));
-    behavior_setup_focus_last(get_widget("focus_raise"));
-    behavior_setup_focus_delay(get_widget("focus_delay"));
-    behavior_setup_focus_new(get_widget("focus_new"));
-    behavior_setup_place_mouse(get_widget("place_mouse"));
-    behavior_setup_resist_window(get_widget("resist_window"));
-    behavior_setup_resist_edge(get_widget("resist_edge"));
-    behavior_setup_resize_contents(get_widget("resize_contents"));
-
     desktops_setup_tab();
 
     dock_setup_tab();
