@@ -19,14 +19,18 @@
 #include "main.h"
 #include "tree.h"
 
-static gboolean mapping = FALSE;
-static gchar   *saved_text = NULL;
+static gboolean      mapping = FALSE;
+static gchar        *saved_text = NULL;
+static GtkListStore *binding_store;
 
 static gboolean validate_key(const gchar *s);
 
 void keybindings_setup_tab()
 {
     GtkWidget *w;
+    GtkCellRenderer *render;
+    GtkTreeViewColumn *column;
+    GtkTreeSelection *select;
     gchar *s;
 
     mapping = TRUE;
@@ -35,6 +39,27 @@ void keybindings_setup_tab()
     s = tree_get_string("keyboard/chainQuitKey", "C-g");
     gtk_entry_set_text(GTK_ENTRY(w), s);
     g_free(s);
+
+    /* widget setup */
+    w = get_widget("key_bindings");
+    binding_store = gtk_list_store_new(2, G_TYPE_STRING, GTK_TYPE_COMBO_BOX);
+    gtk_tree_view_set_model(GTK_TREE_VIEW(w), GTK_TREE_MODEL(binding_store));
+    g_object_unref (binding_store);
+
+    gtk_tree_selection_set_mode(gtk_tree_view_get_selection(GTK_TREE_VIEW(w)),
+                                GTK_SELECTION_SINGLE);
+
+    /* text column for the keys */
+    render = gtk_cell_renderer_text_new();
+    column = gtk_tree_view_column_new_with_attributes
+        ("Key", render, "text", 0, NULL);
+    gtk_tree_view_append_column(GTK_TREE_VIEW(w), column);
+
+    /* combo box column, for the actions */
+    render = gtk_cell_renderer_combo_new();
+    column = gtk_tree_view_column_new_with_attributes
+        ("Action", render, "text", 0, NULL);
+    gtk_tree_view_append_column(GTK_TREE_VIEW(w), column);
 
     mapping = FALSE;
 }
