@@ -158,13 +158,7 @@ int main(int argc, char **argv)
 
     theme_setup_names(get_widget("theme_names"));
 
-    appr_setup_window_border(get_widget("window_border"));
-    appr_setup_title_layout(get_widget("title_layout"));
-    appr_setup_font_active(get_widget("font_active"));
-    appr_setup_font_inactive(get_widget("font_inactive"));
-    appr_setup_font_menu_header(get_widget("font_menu_header"));
-    appr_setup_font_menu_item(get_widget("font_menu_item"));
-    appr_setup_font_display(get_widget("font_display"));
+    appearance_setup_tab();
 
     behavior_setup_tab();
     behavior_setup_focus_mouse(get_widget("focus_mouse"));

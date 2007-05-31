@@ -23,58 +23,48 @@
 
 static gboolean mapping = FALSE;
 
-static RrFont *appr_setup_font(GtkWidget *w, const gchar *place);
-static RrFont *appr_set_font(GtkFontButton *w, const gchar *place);
+static RrFont *read_font(GtkFontButton *w, const gchar *place);
+static RrFont *write_font(GtkFontButton *w, const gchar *place);
 
-void appr_setup_window_border(GtkWidget *w)
+void appearance_setup_tab()
 {
-    gboolean border;
-
-    mapping = TRUE;
-
-    border = tree_get_bool("theme/keepBorder", TRUE);
-    gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(w), border);
-
-    mapping = FALSE;
-}
-
-void appr_setup_title_layout(GtkWidget *w)
-{
+    GtkWidget *w;
     gchar *layout;
+    RrFont *f;
 
     mapping = TRUE;
 
+    w = get_widget("window_border");
+    gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(w),
+                                 tree_get_bool("theme/keepBorder", TRUE));
+
+    w = get_widget("title_layout");
     layout = tree_get_string("theme/titleLayout", "NLIMC");
     gtk_entry_set_text(GTK_ENTRY(w), layout);
     preview_update_set_title_layout(layout);
     g_free(layout);
 
+    w = get_widget("font_active");
+    f = read_font(GTK_FONT_BUTTON(w), "ActiveWindow");
+    preview_update_set_active_font(f);
+
+    w = get_widget("font_inactive");
+    f = read_font(GTK_FONT_BUTTON(w), "InactiveWindow");
+    preview_update_set_inactive_font(f);
+
+    w = get_widget("font_menu_header");
+    f = read_font(GTK_FONT_BUTTON(w), "MenuHeader");
+    preview_update_set_menu_header_font(f);
+
+    w = get_widget("font_menu_item");
+    f = read_font(GTK_FONT_BUTTON(w), "MenuItem");
+    preview_update_set_menu_item_font(f);
+
+    w = get_widget("font_display");
+    f = read_font(GTK_FONT_BUTTON(w), "OnScreenDisplay");
+    preview_update_set_osd_font(f);
+
     mapping = FALSE;
-}
-
-void appr_setup_font_active(GtkWidget *w)
-{
-    preview_update_set_active_font(appr_setup_font(w, "ActiveWindow"));
-}
-
-void appr_setup_font_inactive(GtkWidget *w)
-{
-    preview_update_set_inactive_font(appr_setup_font(w, "InactiveWindow"));
-}
-
-void appr_setup_font_menu_header(GtkWidget *w)
-{
-    preview_update_set_menu_header_font(appr_setup_font(w, "MenuHeader"));
-}
-
-void appr_setup_font_menu_item(GtkWidget *w)
-{
-    preview_update_set_menu_item_font(appr_setup_font(w, "MenuItem"));
-}
-
-void appr_setup_font_display(GtkWidget *w)
-{
-    preview_update_set_osd_font(appr_setup_font(w, "OnScreenDisplay"));
 }
 
 void on_window_border_toggled(GtkToggleButton *w, gpointer data)
@@ -155,30 +145,30 @@ void on_title_layout_changed(GtkEntry *w, gpointer data)
 
 void on_font_active_font_set(GtkFontButton *w, gpointer data)
 {
-    preview_update_set_active_font(appr_set_font(w, "ActiveWindow"));
+    preview_update_set_active_font(write_font(w, "ActiveWindow"));
 }
 
 void on_font_inactive_font_set(GtkFontButton *w, gpointer data)
 {
-    preview_update_set_inactive_font(appr_set_font(w, "InactiveWindow"));
+    preview_update_set_inactive_font(write_font(w, "InactiveWindow"));
 }
 
 void on_font_menu_header_font_set(GtkFontButton *w, gpointer data)
 {
-    preview_update_set_menu_header_font(appr_set_font(w, "MenuHeader"));
+    preview_update_set_menu_header_font(write_font(w, "MenuHeader"));
 }
 
 void on_font_menu_item_font_set(GtkFontButton *w, gpointer data)
 {
-    preview_update_set_menu_item_font(appr_set_font(w, "MenuItem"));
+    preview_update_set_menu_item_font(write_font(w, "MenuItem"));
 }
 
 void on_font_display_font_set(GtkFontButton *w, gpointer data)
 {
-    preview_update_set_osd_font(appr_set_font(w, "OnScreenDisplay"));
+    preview_update_set_osd_font(write_font(w, "OnScreenDisplay"));
 }
 
-static RrFont *appr_setup_font(GtkWidget *w, const gchar *place)
+static RrFont *read_font(GtkFontButton *w, const gchar *place)
 {
     RrFont *font;
     gchar *fontstring, *node;
@@ -223,7 +213,7 @@ static RrFont *appr_setup_font(GtkWidget *w, const gchar *place)
     }
 
     fontstring = g_strdup_printf("%s %s %s %s", name, weight, slant, size);
-    gtk_font_button_set_font_name(GTK_FONT_BUTTON(w), fontstring);
+    gtk_font_button_set_font_name(w, fontstring);
 
     if (!g_ascii_strcasecmp(weight, "Bold")) rr_weight = RR_FONTWEIGHT_BOLD;
     if (!g_ascii_strcasecmp(slant, "Italic")) rr_slant = RR_FONTSLANT_ITALIC;
@@ -241,7 +231,7 @@ static RrFont *appr_setup_font(GtkWidget *w, const gchar *place)
     return font;
 }
 
-static RrFont *appr_set_font(GtkFontButton *w, const gchar *place)
+static RrFont *write_font(GtkFontButton *w, const gchar *place)
 {
     gchar *c;
     gchar *font, *node;

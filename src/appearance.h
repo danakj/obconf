@@ -20,13 +20,6 @@
 #ifndef obconf__appearance_h
 #define obconf__appearance_h
 
-void appr_setup_window_border    (GtkWidget *w);
-void appr_setup_title_layout     (GtkWidget *w);
-
-void appr_setup_font_active      (GtkWidget *w);
-void appr_setup_font_inactive    (GtkWidget *w);
-void appr_setup_font_menu_header (GtkWidget *w);
-void appr_setup_font_menu_item   (GtkWidget *w);
-void appr_setup_font_display     (GtkWidget *w);
+void appearance_setup_tab();
 
 #endif
