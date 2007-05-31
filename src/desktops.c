@@ -29,9 +29,9 @@ static GtkListStore *desktop_store;
 static int num_desktops;
 static GList *desktop_names;
 
-static void desktops_load_names();
-static void desktops_set_names();
-static void desktops_set_number();
+static void desktops_read_names();
+static void desktops_write_names();
+static void desktops_write_number();
 static void on_desktop_names_cell_edited(GtkCellRendererText *cell,
                                          const gchar *path_string,
                                          const gchar *new_text,
@@ -66,7 +66,7 @@ void desktops_setup_tab()
         ("Name", render, "text", 0, "editable", 1, NULL);
     gtk_tree_view_append_column(GTK_TREE_VIEW(w), column);
 
-    desktops_load_names();
+    desktops_read_names();
 
     mapping = FALSE;
 }
@@ -77,9 +77,8 @@ void on_desktop_num_value_changed(GtkSpinButton *w, gpointer data)
 
     num_desktops = gtk_spin_button_get_value(w);
 
-    desktops_set_number();
-
-    desktops_load_names();
+    desktops_write_number();
+    desktops_read_names();
 }
 
 static void on_desktop_names_cell_edited(GtkCellRendererText *cell,
@@ -111,10 +110,10 @@ static void on_desktop_names_cell_edited(GtkCellRendererText *cell,
     else
         gtk_list_store_set(desktop_store, &it, 0, _("(Unnamed desktop)"), -1);
 
-    desktops_set_names();
+    desktops_write_names();
 }
 
-static void desktops_load_names()
+static void desktops_read_names()
 {
     GtkTreeIter it;
     xmlNodePtr n;
@@ -163,7 +162,7 @@ static void desktops_load_names()
     }
 }
 
-static void desktops_set_names()
+static void desktops_write_names()
 {
     gchar **s;
     GList *lit;
@@ -194,7 +193,7 @@ static void desktops_set_names()
                     XInternAtom(GDK_DISPLAY(), "_NET_DESKTOP_NAMES", FALSE));
 }
 
-static void desktops_set_number()
+static void desktops_write_number()
 {
     XEvent ce;
 
