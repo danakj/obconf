@@ -83,6 +83,8 @@ void behavior_setup_tab()
                                  !g_ascii_strcasecmp(s, "UnderMouse"));
     g_free(s);
 
+    behavior_enable_stuff();
+
     mapping = FALSE;
 }
 
@@ -115,18 +117,7 @@ void on_focus_mouse_toggled(GtkToggleButton *w, gpointer data)
     b = gtk_toggle_button_get_active(w);
     tree_set_bool("focus/followMouse", b);
 
-    {
-        GtkWidget *delay   = get_widget("focus_delay");
-        GtkWidget *delay_l = get_widget("focus_delay_label");
-        GtkWidget *delay_u = get_widget("focus_delay_label_units");
-        GtkWidget *raise   = get_widget("focus_raise");
-        GtkWidget *last    = get_widget("focus_last");
-        gtk_widget_set_sensitive(delay, b);
-        gtk_widget_set_sensitive(delay_l, b);
-        gtk_widget_set_sensitive(delay_u, b);
-        gtk_widget_set_sensitive(raise, b);
-        gtk_widget_set_sensitive(last, b);
-    }
+    behavior_enable_stuff();
 }
 
 void on_focus_delay_value_changed(GtkSpinButton *w, gpointer data)
