@@ -34,13 +34,16 @@ static void reset_theme_names(GtkWidget *w);
 static void on_theme_names_selection_changed(GtkTreeSelection *sel,
                                              gpointer data);
 
-void theme_setup_names(GtkWidget *w)
+void theme_setup_tab()
 {
     GtkCellRenderer *render;
     GtkTreeViewColumn *column;
     GtkTreeSelection *select;
+    GtkWidget *w;
 
     mapping = TRUE;
+
+    w = get_widget("theme_names");
 
     /* widget setup */
     theme_store = gtk_list_store_new(2, G_TYPE_STRING, GDK_TYPE_PIXBUF);
@@ -63,7 +66,6 @@ void theme_setup_names(GtkWidget *w)
     column = gtk_tree_view_column_new_with_attributes
         ("Preview", render, "pixbuf", 1, NULL);
     gtk_tree_view_append_column(GTK_TREE_VIEW(w), column);
-
 
     /* setup the selection handler */
     select = gtk_tree_view_get_selection(GTK_TREE_VIEW (w));

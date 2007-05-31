@@ -156,8 +156,7 @@ int main(int argc, char **argv)
         g_free(s);
     }
 
-    theme_setup_names(get_widget("theme_names"));
-
+    theme_setup_tab();
     appearance_setup_tab();
 
     behavior_setup_tab();
