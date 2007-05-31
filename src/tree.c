@@ -18,10 +18,11 @@
 
 #include "tree.h"
 #include "main.h"
-#include "openbox/parse.h"
 
+#include <openbox/parse.h>
 #include <sys/types.h>
 #include <signal.h>
+#include <gdk/gdkx.h>
 
 xmlNodePtr tree_get_node(const gchar *path, const gchar *def)
 {
@@ -99,19 +100,21 @@ void tree_apply()
     g_free(p);
 
     if (!err) {
-        GdkAtom type;
-        gint format;
-        gint length;
-        guint *pid;
+        XEvent ce;
 
-        if (gdk_property_get
-            (gdk_screen_get_root_window(gdk_screen_get_default()),
-             gdk_atom_intern("_OPENBOX_PID", FALSE),
-             gdk_atom_intern("CARDINAL", FALSE),
-             0, 4, FALSE, &type, &format, &length, (guchar**)&pid)) {
-            kill(*pid, SIGUSR2);
-            g_free(pid);
-        }
+        ce.xclient.type = ClientMessage;
+        ce.xclient.message_type = gdk_x11_get_xatom_by_name("_OB_CONTROL");
+        ce.xclient.display = GDK_DISPLAY();
+        ce.xclient.window = GDK_ROOT_WINDOW();
+        ce.xclient.format = 32;
+        ce.xclient.data.l[0] = 1;
+        ce.xclient.data.l[1] = 0;
+        ce.xclient.data.l[2] = 0;
+        ce.xclient.data.l[3] = 0;
+        ce.xclient.data.l[4] = 0;
+        XSendEvent(GDK_DISPLAY(), GDK_ROOT_WINDOW(), FALSE,
+                   SubstructureNotifyMask | SubstructureRedirectMask,
+                   &ce);
     }
 }
 
