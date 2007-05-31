@@ -24,6 +24,10 @@ static gchar        *saved_text = NULL;
 static GtkListStore *binding_store;
 
 static gboolean validate_key(const gchar *s);
+static void on_key_cell_edited(GtkCellRendererText *cell,
+                               const gchar *path_string,
+                               const gchar *new_text,
+                               gpointer data);
 
 void keybindings_setup_tab()
 {
@@ -51,6 +55,8 @@ void keybindings_setup_tab()
 
     /* text column for the keys */
     render = gtk_cell_renderer_text_new();
+    g_signal_connect(render, "edited",
+                     G_CALLBACK(on_key_cell_edited), NULL);
     column = gtk_tree_view_column_new_with_attributes
         ("Key", render, "text", 0, NULL);
     gtk_tree_view_append_column(GTK_TREE_VIEW(w), column);
@@ -62,6 +68,33 @@ void keybindings_setup_tab()
     gtk_tree_view_append_column(GTK_TREE_VIEW(w), column);
 
     mapping = FALSE;
+}
+
+static void on_key_cell_edited(GtkCellRendererText *cell,
+                               const gchar *path_string,
+                               const gchar *new_text,
+                               gpointer data)
+{
+    if (mapping) return;
+
+    if (!validate_key(new_text)) {
+        g_print("bad key binding: %s\n", new_text);
+    } else {
+        GtkTreePath *path;
+        GtkTreeIter it;
+        gchar *old_text;
+
+        path = gtk_tree_path_new_from_string (path_string);
+        gtk_tree_model_get_iter(GTK_TREE_MODEL(binding_store), &it, path);
+
+        gtk_tree_model_get(GTK_TREE_MODEL(binding_store), &it, 0,
+                           &old_text, -1);
+        g_free(old_text);
+
+        gtk_list_store_set(binding_store, &it, 0, new_text, -1);
+
+        //tree_set_string("keyboard/keybind:key=%s", s);
+    }
 }
 
 void on_chain_quit_key_focus_in(GtkEntry *w, gpointer data)
