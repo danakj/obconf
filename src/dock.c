@@ -35,6 +35,8 @@ static gboolean mapping = FALSE;
 #define DIRECTION_VERTICAL   0
 #define DIRECTION_HORIZONTAL 1
 
+static void dock_enable_stuff();
+
 void dock_setup_tab()
 {
     GtkWidget *w, *w1, *w2;
@@ -127,7 +129,7 @@ void dock_setup_tab()
     mapping = FALSE;
 }
 
-void dock_enable_stuff()
+static void dock_enable_stuff()
 {
     GtkWidget *w, *s;
     gboolean b;
