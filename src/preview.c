@@ -1,6 +1,6 @@
 /* -*- indent-tabs-mode: nil; tab-width: 4; c-basic-offset: 4; -*-
 
-   main.c for ObConf, the configuration tool for Openbox
+   preview.c for ObConf, the configuration tool for Openbox
    Copyright (c) 2007        Javeed Shaikh
    Copyright (c) 2007        Dana Jansens
 
