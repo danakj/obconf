@@ -22,8 +22,10 @@ case "$1" in
     purge)
     ;;
     remove)
-        update-mime-database /usr/share/mime
-	update-desktop-database /usr/share/applications
+        which update-mime-database>/dev/null && \
+            update-mime-database /usr/share/mime
+        which update-desktop-database>/dev/null && \
+            update-desktop-database /usr/share/applications
     ;;
     upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)
     ;;

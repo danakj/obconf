@@ -20,8 +20,10 @@ set -e
 
 case "$1" in
     configure)
-        update-mime-database /usr/share/mime
-	update-desktop-database /usr/share/applications
+        which update-mime-database>/dev/null && \
+            update-mime-database /usr/share/mime
+	which update-desktop-database>/dev/null && \
+            update-desktop-database /usr/share/applications
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)
