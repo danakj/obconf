@@ -476,9 +476,11 @@ GdkPixbuf *preview_theme(const gchar *name, const gchar *titlelayout,
 
     gint w, h;
 
-    RrTheme *theme = RrThemeNew(rrinst, name,
+    RrTheme *theme = RrThemeNew(rrinst, name, FALSE,
                                 active_window_font, inactive_window_font,
                                 menu_title_font, menu_item_font, osd_font);
+    if (!theme)
+        return NULL;
 
     menu = preview_menu(theme);
   
