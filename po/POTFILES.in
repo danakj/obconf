@@ -1,4 +1,5 @@
 src/strings.c
 src/main.c
-src/handlers.c
-src/tree.c
+src/desktops.c
+src/theme.c
+src/archive.c
