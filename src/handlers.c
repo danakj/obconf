@@ -1226,7 +1226,7 @@ void on_title_layout_changed(GtkEntry *w, gpointer data)
     titlelayout = g_strdup(layout);
     g_free(layout);
 
-    
+    handlers_update_theme_previews();    
 }
 
 static void set_desktop_names()
