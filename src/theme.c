@@ -23,6 +23,7 @@
 #include "gettext.h"
 #include "archive.h"
 #include "theme.h"
+#include "preview.h"
 
 static gboolean mapping = FALSE;
 
@@ -48,7 +49,7 @@ void theme_setup_tab()
     /* widget setup */
     theme_store = gtk_list_store_new(2, G_TYPE_STRING, GDK_TYPE_PIXBUF);
     gtk_tree_view_set_model(GTK_TREE_VIEW(w), GTK_TREE_MODEL(theme_store));
-    preview_update_set_list_store(theme_store);
+    preview_update_set_tree_view(GTK_TREE_VIEW(w), theme_store);
     g_object_unref (theme_store);
 
     gtk_tree_selection_set_mode(gtk_tree_view_get_selection(GTK_TREE_VIEW(w)),
@@ -160,7 +161,6 @@ void theme_install(const gchar *path)
 
     if ((name = archive_install(path))) {
         GtkWidget *w;
-        GtkTreePath *path;
         GList *it;
         gint i;
 
@@ -173,10 +173,11 @@ void theme_install(const gchar *path)
         for (it = themes, i = 0; it; it = g_list_next(it), ++i)
             if (!strcmp(it->data, name)) break;
         if (it) {
+            GtkTreePath *path;
+
             path = gtk_tree_path_new_from_indices(i, -1);
             gtk_tree_view_set_cursor(GTK_TREE_VIEW(w), path, NULL, FALSE);
-            gtk_tree_view_scroll_to_cell(GTK_TREE_VIEW(w), path, NULL,
-                                         FALSE, 0, 0);
+            gtk_tree_path_free(path);
         }
 
         g_free(name);
@@ -194,6 +195,7 @@ static void reset_theme_names(GtkWidget *w)
     gchar *p;
     GList *it, *next;
     gint i;
+    GtkTreePath *path = NULL;
 
     RrFont *active, *inactive, *menu_t, *menu_i, *osd;
 
@@ -243,19 +245,19 @@ static void reset_theme_names(GtkWidget *w)
                            1, NULL,
                            -1);
 
-        if(!strcmp(name, it->data)) {
-            GtkTreePath *path;
+        if(!strcmp(name, it->data))
             path = gtk_tree_path_new_from_indices(i, -1);
-            gtk_tree_view_set_cursor(GTK_TREE_VIEW(w), path, NULL, FALSE);
-            gtk_tree_view_scroll_to_cell(GTK_TREE_VIEW(w), path, NULL,
-                                         FALSE, 0, 0);
-        }
-
 
         ++i;
     }
 
     preview_update_all();
+
+    /* do this after starting the preview update */
+    if (path) {
+        gtk_tree_view_set_cursor(GTK_TREE_VIEW(w), path, NULL, FALSE);
+        gtk_tree_path_free(path);
+    }
 
     g_free(name);
 }

@@ -145,26 +145,36 @@ void on_title_layout_changed(GtkEntry *w, gpointer data)
 
 void on_font_active_font_set(GtkFontButton *w, gpointer data)
 {
+    if (mapping) return;
+
     preview_update_set_active_font(write_font(w, "ActiveWindow"));
 }
 
 void on_font_inactive_font_set(GtkFontButton *w, gpointer data)
 {
+    if (mapping) return;
+
     preview_update_set_inactive_font(write_font(w, "InactiveWindow"));
 }
 
 void on_font_menu_header_font_set(GtkFontButton *w, gpointer data)
 {
+    if (mapping) return;
+
     preview_update_set_menu_header_font(write_font(w, "MenuHeader"));
 }
 
 void on_font_menu_item_font_set(GtkFontButton *w, gpointer data)
 {
+    if (mapping) return;
+
     preview_update_set_menu_item_font(write_font(w, "MenuItem"));
 }
 
 void on_font_display_font_set(GtkFontButton *w, gpointer data)
 {
+    if (mapping) return;
+
     preview_update_set_osd_font(write_font(w, "OnScreenDisplay"));
 }
 

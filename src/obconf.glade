@@ -5,7 +5,6 @@
 
 <widget class="GtkWindow" id="main_window">
   <property name="border_width">13</property>
-  <property name="visible">True</property>
   <property name="title" translatable="yes">Openbox Configuration Manager</property>
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
   <property name="window_position">GTK_WIN_POS_NONE</property>
@@ -711,7 +710,7 @@ C - The close button</property>
 			      <property name="can_focus">True</property>
 			      <property name="show_style">True</property>
 			      <property name="show_size">True</property>
-			      <property name="use_font">True</property>
+			      <property name="use_font">False</property>
 			      <property name="use_size">False</property>
 			      <property name="focus_on_click">True</property>
 			      <signal name="font_set" handler="on_font_inactive_font_set" last_modification_time="Fri, 25 May 2007 16:03:13 GMT"/>
@@ -732,7 +731,7 @@ C - The close button</property>
 			      <property name="can_focus">True</property>
 			      <property name="show_style">True</property>
 			      <property name="show_size">True</property>
-			      <property name="use_font">True</property>
+			      <property name="use_font">False</property>
 			      <property name="use_size">False</property>
 			      <property name="focus_on_click">True</property>
 			      <signal name="font_set" handler="on_font_menu_header_font_set" last_modification_time="Fri, 25 May 2007 16:03:17 GMT"/>
@@ -753,7 +752,7 @@ C - The close button</property>
 			      <property name="can_focus">True</property>
 			      <property name="show_style">True</property>
 			      <property name="show_size">True</property>
-			      <property name="use_font">True</property>
+			      <property name="use_font">False</property>
 			      <property name="use_size">False</property>
 			      <property name="focus_on_click">True</property>
 			      <signal name="font_set" handler="on_font_menu_item_font_set" last_modification_time="Fri, 25 May 2007 16:03:20 GMT"/>
@@ -774,7 +773,7 @@ C - The close button</property>
 			      <property name="can_focus">True</property>
 			      <property name="show_style">True</property>
 			      <property name="show_size">True</property>
-			      <property name="use_font">True</property>
+			      <property name="use_font">False</property>
 			      <property name="use_size">False</property>
 			      <property name="focus_on_click">True</property>
 			      <signal name="font_set" handler="on_font_display_font_set" last_modification_time="Fri, 25 May 2007 16:03:23 GMT"/>
@@ -940,7 +939,7 @@ C - The close button</property>
 			      <property name="can_focus">True</property>
 			      <property name="show_style">True</property>
 			      <property name="show_size">True</property>
-			      <property name="use_font">True</property>
+			      <property name="use_font">False</property>
 			      <property name="use_size">False</property>
 			      <property name="focus_on_click">True</property>
 			      <signal name="font_set" handler="on_font_active_font_set" last_modification_time="Fri, 25 May 2007 16:03:09 GMT"/>
@@ -2981,8 +2980,7 @@ C - The close button</property>
 	      <property name="can_focus">True</property>
 	      <property name="label" translatable="yes">Copyright (c) 2003-2007
 Dana Jansens &lt;danakj@orodu.net&gt;
-Tim Riley &lt;tr@slackzone.org&gt;
-Javeed Shaikh &lt;syscrash2k@gmail.com&gt;</property>
+Tim Riley &lt;tr@slackzone.org&gt;</property>
 	      <property name="use_underline">False</property>
 	      <property name="use_markup">False</property>
 	      <property name="justify">GTK_JUSTIFY_CENTER</property>

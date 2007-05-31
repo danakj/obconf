@@ -6,7 +6,7 @@
 
 void preview_update_all();
 
-void preview_update_set_list_store       (GtkListStore *ls);
+void preview_update_set_tree_view        (GtkTreeView  *tr, GtkListStore *ls);
 void preview_update_set_active_font      (RrFont *f);
 void preview_update_set_inactive_font    (RrFont *f);
 void preview_update_set_menu_header_font (RrFont *f);

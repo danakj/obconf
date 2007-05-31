@@ -1,7 +1,9 @@
 #include "preview_update.h"
+#include "main.h"
 
 static gboolean restart_theme_preview_update = TRUE;
 
+static GtkTreeView  *tree_view            = NULL;
 static GtkListStore *list_store           = NULL;
 static gchar        *title_layout         = NULL;
 static RrFont       *active_window_font   = NULL;
@@ -28,10 +30,13 @@ void preview_update_all()
                     list_store, NULL);
 }
 
-void preview_update_set_list_store(GtkListStore *ls)
+void preview_update_set_tree_view(GtkTreeView *tr, GtkListStore *ls)
 {
+    g_assert(!!tr == !!ls);
+
     if (list_store) g_idle_remove_by_data(list_store);
 
+    tree_view = tr;
     list_store = ls;
 
     if (list_store) preview_update_all();
@@ -87,12 +92,22 @@ static gboolean update_theme_preview_iterate(gpointer data)
 
     if (restart_theme_preview_update) {
         if (!gtk_tree_model_get_iter_first(GTK_TREE_MODEL(ls), &iter))
-            return;
+            return FALSE;
         restart_theme_preview_update = FALSE;
     } else {
         if (!gtk_tree_model_iter_next(GTK_TREE_MODEL(ls), &iter)) {
+            GtkTreePath *path;
+
             restart_theme_preview_update = TRUE;
-            return;
+
+            gtk_tree_view_get_cursor(tree_view, &path, NULL);
+            gtk_tree_view_scroll_to_cell(tree_view, path, NULL,
+                                         FALSE, 0, 0);
+            gtk_tree_path_free(path);
+
+            gtk_widget_show_all(mainwin);
+
+            return FALSE;
         }
     }
 
@@ -103,4 +118,6 @@ static gboolean update_theme_preview_iterate(gpointer data)
                                      inactive_window_font, menu_title_font,
                                      menu_item_font, osd_font),
                        -1);
+
+    return TRUE;
 }

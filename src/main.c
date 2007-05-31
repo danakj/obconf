@@ -197,8 +197,6 @@ int main(int argc, char **argv)
         sn_launchee_context_setup_window
             (sn_cx, GDK_WINDOW_XWINDOW(GDK_WINDOW(mainwin->window)));
 
-    gtk_widget_show_all(mainwin);
-
     if (sn_cx)
         sn_launchee_context_complete(sn_cx);
 
@@ -209,9 +207,10 @@ int main(int argc, char **argv)
     if (obc_theme_install)
         theme_install(obc_theme_install);
 
+    /* the main window is not shown here ! it is shown when the theme previews
+       are completed */
     gtk_main();
 
-    preview_update_set_list_store(NULL);
     preview_update_set_active_font(NULL);
     preview_update_set_inactive_font(NULL);
     preview_update_set_menu_header_font(NULL);
