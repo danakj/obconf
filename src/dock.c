@@ -37,24 +37,36 @@ static gboolean mapping = FALSE;
 
 void dock_setup_tab()
 {
-    GtkWidget *w, *posi, *dir;
+    GtkWidget *w, *w1, *w2;
     GtkSizeGroup *group;
     gchar *s;
     gint pos;
 
     mapping = TRUE;
 
-    posi  = get_widget("dock_position");
-    dir   = get_widget("dock_direction");
+    w1    = get_widget("dock_position");
+    w2    = get_widget("dock_direction");
     group = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
-    gtk_size_group_add_widget(group, posi);
-    gtk_size_group_add_widget(group, dir);
+    gtk_size_group_add_widget(group, w1);
+    gtk_size_group_add_widget(group, w2);
 
-    posi  = get_widget("dock_position_label");
-    dir   = get_widget("dock_direction_label");
+    w1    = get_widget("dock_position_label");
+    w2    = get_widget("dock_direction_label");
     group = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
-    gtk_size_group_add_widget(group, posi);
-    gtk_size_group_add_widget(group, dir);
+    gtk_size_group_add_widget(group, w1);
+    gtk_size_group_add_widget(group, w2);
+
+    w1    = get_widget("dock_hide_label");
+    w2    = get_widget("dock_show_label");
+    group = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
+    gtk_size_group_add_widget(group, w1);
+    gtk_size_group_add_widget(group, w2);
+
+    w1    = get_widget("dock_hide_delay");
+    w2    = get_widget("dock_show_delay");
+    group = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
+    gtk_size_group_add_widget(group, w1);
+    gtk_size_group_add_widget(group, w2);
 
     w = get_widget("dock_position");
     s = tree_get_string("dock/position", "TopLeft");
@@ -94,6 +106,10 @@ void dock_setup_tab()
     g_free(s);
     gtk_option_menu_set_history(GTK_OPTION_MENU(w), pos);
 
+    w = get_widget("dock_nostrut");
+    gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(w),
+                                 tree_get_bool("dock/noStrut", FALSE));
+
     w = get_widget("dock_hide");
     gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(w),
                                  tree_get_bool("dock/autoHide", FALSE));
@@ -101,6 +117,10 @@ void dock_setup_tab()
     w = get_widget("dock_hide_delay");
     gtk_spin_button_set_value(GTK_SPIN_BUTTON(w),
                               tree_get_int("dock/hideDelay", 300));
+
+    w = get_widget("dock_show_delay");
+    gtk_spin_button_set_value(GTK_SPIN_BUTTON(w),
+                              tree_get_int("dock/showDelay", 300));
 
     dock_enable_stuff();
 
@@ -123,6 +143,8 @@ void dock_enable_stuff()
     gtk_widget_set_sensitive(s, b);
     s = get_widget("dock_float_label_x");
     gtk_widget_set_sensitive(s, b);
+    s = get_widget("dock_nostrut");
+    gtk_widget_set_sensitive(s, !b);
 
     w = get_widget("dock_hide");
     b = gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(w));
@@ -132,6 +154,12 @@ void dock_enable_stuff()
     s = get_widget("dock_hide_label");
     gtk_widget_set_sensitive(s, b);
     s = get_widget("dock_hide_label_units");
+    gtk_widget_set_sensitive(s, b);
+    s = get_widget("dock_show_delay");
+    gtk_widget_set_sensitive(s, b);
+    s = get_widget("dock_show_label");
+    gtk_widget_set_sensitive(s, b);
+    s = get_widget("dock_show_label_units");
     gtk_widget_set_sensitive(s, b);
 }
 
@@ -259,6 +287,13 @@ void on_dock_vertical_activate(GtkMenuItem *w, gpointer data)
     tree_set_string("dock/direction", "Vertical");
 }
 
+void on_dock_nostrut_toggled(GtkToggleButton *w, gpointer data)
+{
+    if (mapping) return;
+
+    tree_set_bool("dock/noStrut", gtk_toggle_button_get_active(w));
+}
+
 void on_dock_hide_toggled(GtkToggleButton *w, gpointer data)
 {
     if (mapping) return;
@@ -272,6 +307,14 @@ void on_dock_hide_delay_value_changed(GtkSpinButton *w, gpointer data)
     if (mapping) return;
 
     tree_set_int("dock/hideDelay",
+                 gtk_spin_button_get_value_as_int(w));
+}
+
+void on_dock_show_delay_value_changed(GtkSpinButton *w, gpointer data)
+{
+    if (mapping) return;
+
+    tree_set_int("dock/showDelay",
                  gtk_spin_button_get_value_as_int(w));
 }
 
