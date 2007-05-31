@@ -105,7 +105,7 @@ void tree_apply()
         ce.xclient.display = GDK_DISPLAY();
         ce.xclient.window = GDK_ROOT_WINDOW();
         ce.xclient.format = 32;
-        ce.xclient.data.l[0] = 1;
+        ce.xclient.data.l[0] = 1; /* reconfigure */
         ce.xclient.data.l[1] = 0;
         ce.xclient.data.l[2] = 0;
         ce.xclient.data.l[3] = 0;
