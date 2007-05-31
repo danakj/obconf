@@ -24,7 +24,7 @@
 #include <openbox/font.h>
 #include <gdk/gdkpixbuf.h>
 
-GdkPixbuf *preview_theme(gchar *name, gchar *titlelayout,
+GdkPixbuf *preview_theme(const gchar *name, const gchar *titlelayout,
                          RrFont *active_window_font,
                          RrFont *inactive_window_font,
                          RrFont *menu_title_font,
