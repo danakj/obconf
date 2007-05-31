@@ -37,27 +37,23 @@ static void on_desktop_names_cell_edited(GtkCellRendererText *cell,
                                          const gchar *new_text,
                                          gpointer data);
 
-void desktops_setup_num(GtkWidget *w)
+void desktops_setup_tab()
 {
-    mapping = TRUE;
-
-    num_desktops = tree_get_int("desktops/number", 4);
-    gtk_spin_button_set_value(GTK_SPIN_BUTTON(w), num_desktops);
-
-    mapping = FALSE;
-}
-
-void desktops_setup_names(GtkWidget *w)
-{
+    GtkWidget *w;
     GtkCellRenderer *render;
     GtkTreeViewColumn *column;
 
     mapping = TRUE;
 
+    w = get_widget("desktop_num");
+    num_desktops = tree_get_int("desktops/number", 4);
+    gtk_spin_button_set_value(GTK_SPIN_BUTTON(w), num_desktops);
+
     desktop_store = gtk_list_store_new(2, G_TYPE_STRING, G_TYPE_BOOLEAN);
     gtk_tree_view_set_model(GTK_TREE_VIEW(w), GTK_TREE_MODEL(desktop_store));
     g_object_unref (desktop_store);
 
+    w = get_widget("desktop_names");
     gtk_tree_selection_set_mode(gtk_tree_view_get_selection(GTK_TREE_VIEW(w)),
                                 GTK_SELECTION_SINGLE);
 

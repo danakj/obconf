@@ -168,8 +168,7 @@ int main(int argc, char **argv)
     behavior_setup_resist_edge(get_widget("resist_edge"));
     behavior_setup_resize_contents(get_widget("resize_contents"));
 
-    desktops_setup_num(get_widget("desktop_num"));
-    desktops_setup_names(get_widget("desktop_names"));
+    desktops_setup_tab();
 
     dock_setup_tab();
     dock_setup_position(get_widget("dock_position"));
