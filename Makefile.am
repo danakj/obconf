@@ -51,6 +51,8 @@ src_obconf_SOURCES = \
 	src/main.h \
 	src/appearance.c \
 	src/appearance.h \
+	src/keybindings.c \
+	src/keybindings.h \
 	src/preview.c \
 	src/preview.h \
 	src/preview_update.c \

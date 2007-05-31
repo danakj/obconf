@@ -1,6 +1,6 @@
 /* -*- indent-tabs-mode: nil; tab-width: 4; c-basic-offset: 4; -*-
 
-   behavior.h for ObConf, the configuration tool for Openbox
+   behavior.c for ObConf, the configuration tool for Openbox
    Copyright (c) 2003-2007   Dana Jansens
    Copyright (c) 2003        Tim Riley
 
