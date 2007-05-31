@@ -449,6 +449,8 @@ static void reset_theme_names(GtkWidget *w)
         ++i;
     }
 
+    handlers_update_theme_previews();
+
     g_free(name);
 }
 
@@ -490,8 +492,6 @@ void setup_theme_names(GtkWidget *w)
                       NULL);
 
     reset_theme_names(w);
-
-    handlers_update_theme_previews();
 
     mapping = FALSE;
 }
