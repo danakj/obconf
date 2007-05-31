@@ -1,10 +1,10 @@
-#ifndef __install_h
-#define __install_h
+#ifndef obconf__theme_h
+#define obconf__theme_h
 
-#include <glib.h>
+#include <gtk/gtk.h>
 
-gchar* theme_install(gchar *path);
+void theme_setup_names (GtkWidget *w);
 
-void theme_archive(gchar *path);
+void theme_install     (const gchar *path);
 
 #endif

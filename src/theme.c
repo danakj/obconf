@@ -1,228 +1,267 @@
-#include "theme.h"
 #include "main.h"
+#include "tree.h"
+#include "preview_update.h"
 #include "gettext.h"
+#include "archive.h"
+#include "theme.h"
 
-#include <string.h>
-#include <errno.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <unistd.h>
+static gboolean mapping = FALSE;
 
-#define gtk_msg(type, args...) \
-{                                                                        \
-    GtkWidget *msgw;                                                     \
-    msgw = gtk_message_dialog_new(GTK_WINDOW(mainwin),                   \
-                                  GTK_DIALOG_DESTROY_WITH_PARENT |       \
-                                  GTK_DIALOG_MODAL,                      \
-                                  type,                                  \
-                                  GTK_BUTTONS_OK,                        \
-                                  args);                                 \
-    gtk_dialog_run(GTK_DIALOG(msgw));                                    \
-    gtk_widget_destroy(msgw);                                            \
+static GList *themes;
+static GtkListStore *theme_store;
+
+static void add_theme_dir(const gchar *dirname);
+static void reset_theme_names(GtkWidget *w);
+static void on_theme_names_selection_changed(GtkTreeSelection *sel,
+                                             gpointer data);
+
+void theme_setup_names(GtkWidget *w)
+{
+    GtkCellRenderer *render;
+    GtkTreeViewColumn *column;
+    GtkTreeSelection *select;
+
+    mapping = TRUE;
+
+    /* widget setup */
+    theme_store = gtk_list_store_new(2, G_TYPE_STRING, GDK_TYPE_PIXBUF);
+    gtk_tree_view_set_model(GTK_TREE_VIEW(w), GTK_TREE_MODEL(theme_store));
+    preview_update_set_list_store(theme_store);
+    g_object_unref (theme_store);
+
+    gtk_tree_selection_set_mode(gtk_tree_view_get_selection(GTK_TREE_VIEW(w)),
+                                GTK_SELECTION_SINGLE);
+
+    /* text column for the names */
+    render = gtk_cell_renderer_text_new();
+    column = gtk_tree_view_column_new_with_attributes
+        ("Name", render, "text", 0, NULL);
+    gtk_tree_view_append_column(GTK_TREE_VIEW(w), column);
+
+    /* pixbuf column, for theme previews */
+    render = gtk_cell_renderer_pixbuf_new();
+    g_object_set(render, "xalign", 1.0);
+    column = gtk_tree_view_column_new_with_attributes
+        ("Preview", render, "pixbuf", 1, NULL);
+    gtk_tree_view_append_column(GTK_TREE_VIEW(w), column);
+
+
+    /* setup the selection handler */
+    select = gtk_tree_view_get_selection(GTK_TREE_VIEW (w));
+    gtk_tree_selection_set_mode(select, GTK_SELECTION_SINGLE);
+    g_signal_connect (G_OBJECT(select), "changed",
+                      G_CALLBACK(on_theme_names_selection_changed),
+                      NULL);
+
+    reset_theme_names(w);
+
+    mapping = FALSE;
 }
 
-static gchar *get_theme_dir();
-static gboolean change_dir(const gchar *dir);
-static gchar* name_from_file(const gchar *path);
-static gchar* name_from_dir(const gchar *dir);
-static gboolean install_theme_to(const gchar *name, const gchar *file,
-                                 const gchar *to);
-static gboolean create_theme_archive(const gchar *dir, const gchar *name,
-                                     const gchar *to);
-
-gchar* theme_install(gchar *path)
+static void on_theme_names_selection_changed(GtkTreeSelection *sel,
+                                             gpointer data)
 {
-    gchar *dest;
-    gchar *name;
+    GtkTreeIter iter;
+    GtkTreeModel *model;
+    const gchar *name;
 
-    if (!(dest = get_theme_dir()))
-        return NULL;
+    if (mapping) return;
 
-    if (!(name = name_from_file(path)))
-        return NULL;
-
-    if (install_theme_to(name, path, dest)) {
-        gtk_msg(GTK_MESSAGE_INFO, _("\"%s\" was installed to %s"), name, dest);
-    } else {
-        g_free(name);
-        name = NULL;
+    if(gtk_tree_selection_get_selected(sel, &model, &iter)) {
+        gtk_tree_model_get(model, &iter, 0, &name, -1);
     }
 
-    g_free(dest);
-
-    return name;
+    if(name)
+      tree_set_string("theme/name", name);
 }
 
-void theme_archive(gchar *path)
+void on_install_theme_clicked(GtkButton *w, gpointer data)
+{
+    GtkWidget *d;
+    gint r;
+    gchar *path = NULL;
+    GtkFileFilter *filter;
+
+    d = gtk_file_chooser_dialog_new(_("Choose an Openbox theme"),
+                                    GTK_WINDOW(mainwin),
+                                    GTK_FILE_CHOOSER_ACTION_OPEN,
+                                    GTK_STOCK_OK, GTK_RESPONSE_OK,
+                                    GTK_STOCK_CANCEL, GTK_RESPONSE_NONE,
+                                    NULL);
+
+    gtk_file_chooser_set_show_hidden(GTK_FILE_CHOOSER(d), FALSE);
+    filter = gtk_file_filter_new();
+    gtk_file_filter_set_name(filter, _("Openbox theme archives"));
+    gtk_file_filter_add_pattern(filter, "*.obt");
+    //gtk_file_filter_add_pattern(filter, "*.tgz");
+    //gtk_file_filter_add_pattern(filter, "*.tar.gz");
+    gtk_file_chooser_add_filter(GTK_FILE_CHOOSER(d), filter);
+
+    r = gtk_dialog_run(GTK_DIALOG(d));
+    if (r == GTK_RESPONSE_OK)
+        path = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(d));
+    gtk_widget_destroy(d);
+
+    if (path != NULL) {
+        theme_install(path);
+        g_free(path);
+    }
+}
+
+void on_theme_archive_clicked(GtkButton *w, gpointer data)
+{
+    GtkWidget *d;
+    gint r;
+    gchar *path = NULL;
+
+    d = gtk_file_chooser_dialog_new(_("Choose an Openbox theme"),
+                                    GTK_WINDOW(mainwin),
+                                    GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER,
+                                    GTK_STOCK_OK, GTK_RESPONSE_OK,
+                                    GTK_STOCK_CANCEL, GTK_RESPONSE_NONE,
+                                    NULL);
+
+    gtk_file_chooser_set_show_hidden(GTK_FILE_CHOOSER(d), TRUE);
+    r = gtk_dialog_run(GTK_DIALOG(d));
+    if (r == GTK_RESPONSE_OK)
+        path = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(d));
+    gtk_widget_destroy(d);
+
+    if (path != NULL) {
+        archive_create(path);
+        g_free(path);
+    }
+}
+
+void theme_install(const gchar *path)
 {
     gchar *name;
-    gchar *dest;
 
-    if (!(name = name_from_dir(path)))
-        return;
+    if ((name = archive_install(path))) {
+        GtkWidget *w;
+        GtkTreePath *path;
+        GList *it;
+        gint i;
+
+        w = glade_xml_get_widget(glade, "theme_names");
+        mapping = TRUE;
+        reset_theme_names(w);
+        mapping = FALSE;
+
+        /* go to the newly installed theme */
+        for (it = themes, i = 0; it; it = g_list_next(it), ++i)
+            if (!strcmp(it->data, name)) break;
+        if (it) {
+            path = gtk_tree_path_new_from_indices(i, -1);
+            gtk_tree_view_set_cursor(GTK_TREE_VIEW(w), path, NULL, FALSE);
+            gtk_tree_view_scroll_to_cell(GTK_TREE_VIEW(w), path, NULL,
+                                         FALSE, 0, 0);
+        }
+
+        g_free(name);
+    }
+}
+
+
+
+
+
+
+static void reset_theme_names(GtkWidget *w)
+{
+    gchar *name;
+    gchar *p;
+    GList *it, *next;
+    gint i;
+
+    RrFont *active, *inactive, *menu_t, *menu_i, *osd;
+
+    name = tree_get_string("theme/name", "TheBear");
+
+    for (it = themes; it; it = g_list_next(it))
+        g_free(it->data);
+    g_list_free(themes);
+    themes = NULL;
+
+    p = g_build_filename(g_get_home_dir(), ".themes", NULL);
+    add_theme_dir(p);
+    g_free(p);
 
     {
-        gchar *file;
-        file = g_strdup_printf("%s.obt", name);
-        dest = g_build_path(G_DIR_SEPARATOR_S,
-                            g_get_current_dir(), file, NULL);
-        g_free(file);
+        GSList *it;
+        for (it = parse_xdg_data_dir_paths(); it; it = g_slist_next(it)) {
+            p = g_build_filename(it->data, "themes", NULL);
+            add_theme_dir(p);
+            g_free(p);
+        }
     }
 
-    if (create_theme_archive(path, name, dest))
-        gtk_msg(GTK_MESSAGE_INFO, _("\"%s\" was successfully created"),
-                dest);
+    add_theme_dir(THEMEDIR);
 
-    g_free(dest);
+    themes = g_list_sort(themes, (GCompareFunc) strcasecmp);
+
+    gtk_list_store_clear(theme_store);
+
+    /* return to regular scheduled programming */
+    i = 0;
+    for (it = themes; it; it = next) {
+        GtkTreeIter iter;
+
+        next = g_list_next(it);
+
+        /* remove duplicates */
+        if (next && !strcmp(it->data, next->data)) {
+            g_free(it->data);
+            themes = g_list_delete_link(themes, it);
+            continue;
+        }
+
+        gtk_list_store_append(theme_store, &iter);
+        gtk_list_store_set(theme_store, &iter,
+                           0, it->data,
+                           1, NULL,
+                           -1);
+
+        if(!strcmp(name, it->data)) {
+            GtkTreePath *path;
+            path = gtk_tree_path_new_from_indices(i, -1);
+            gtk_tree_view_set_cursor(GTK_TREE_VIEW(w), path, NULL, FALSE);
+            gtk_tree_view_scroll_to_cell(GTK_TREE_VIEW(w), path, NULL,
+                                         FALSE, 0, 0);
+        }
+
+
+        ++i;
+    }
+
+    preview_update_all();
+
     g_free(name);
 }
 
-static gboolean create_theme_archive(const gchar *dir, const gchar *name,
-                                     const gchar *to)
+static void add_theme_dir(const gchar *dirname)
 {
-    gchar *glob;
-    gchar **argv;
-    gchar *errtxt = NULL;
-    gchar *parentdir;
-    gint exitcode;
-    GError *e = NULL;
+    GDir *dir;
+    const gchar *n;
 
-    glob = g_strdup_printf("%s/openbox-3/", name);
+    if ((dir = g_dir_open(dirname, 0, NULL))) {
+        while ((n = g_dir_read_name(dir))) {
+            {
+                gchar *full;
+                full = g_build_filename(dirname, n, "openbox-3",
+                                        "themerc", NULL);
+                if (!g_file_test(full,
+                                 G_FILE_TEST_IS_REGULAR |
+                                 G_FILE_TEST_IS_SYMLINK))
+                    n = NULL;
+                g_free(full);
+            }
 
-    parentdir = g_build_path(G_DIR_SEPARATOR_S, dir, "..", NULL);
-
-    argv = g_new(gchar*, 7);
-    argv[0] = g_strdup("tar");
-    argv[1] = g_strdup("-c");
-    argv[2] = g_strdup("-z");
-    argv[3] = g_strdup("-f");
-    argv[4] = g_strdup(to);
-    argv[5] = g_strdup(glob);
-    argv[6] = NULL;
-    if (g_spawn_sync(parentdir, argv, NULL, G_SPAWN_SEARCH_PATH, NULL, NULL,
-                     NULL, &errtxt, &exitcode, &e))
-    {
-        if (exitcode != EXIT_SUCCESS)
-            gtk_msg(GTK_MESSAGE_ERROR,
-                    _("Unable to create the theme archive \"%s\".\nThe following errors were reported:\n%s"),
-                    to, errtxt);
-
+            if (n) {
+                themes = g_list_append(themes, g_strdup(n));
+            }
+        }
+        g_dir_close(dir);
     }
-    else
-        gtk_msg(GTK_MESSAGE_ERROR, _("Unable to run the \"tar\" command: %s"),
-                e->message);
-
-    g_strfreev(argv);
-    if (e) g_error_free(e);
-    g_free(errtxt);
-    g_free(parentdir);
-    g_free(glob);
-    return exitcode == EXIT_SUCCESS;
 }
 
-static gchar *get_theme_dir()
-{
-    gchar *dir;
-    gint r;
-
-    dir = g_build_path(G_DIR_SEPARATOR_S, g_get_home_dir(), ".themes", NULL);
-    r = mkdir(dir, 0777);
-    if (r == -1 && errno != EEXIST) {
-        gtk_msg(GTK_MESSAGE_ERROR,
-                _("Unable to create directory \"%s\": %s"),
-                dir, strerror(errno));
-        g_free(dir);
-        dir = NULL;
-    }
-
-    return dir;
-}
-
-static gchar* name_from_dir(const gchar *dir)
-{
-    gchar *rc;
-    struct stat st;
-    gboolean r;
-
-    rc = g_build_path(G_DIR_SEPARATOR_S, dir, "openbox-3", "themerc", NULL);
-
-    r = (stat(rc, &st) == 0 && S_ISREG(st.st_mode));
-    g_free(rc);
-
-    if (!r) {
-        gtk_msg(GTK_MESSAGE_ERROR,
-                _("\"%s\" does not appear to be a valid Openbox theme directory"),
-                dir);
-        return NULL;
-    }
-    return g_path_get_basename(dir);
-}
-
-static gchar* name_from_file(const gchar *path)
-{
-    /* decipher the theme name from the file name */
-    gchar *fname = g_path_get_basename(path);
-    gint len = strlen(fname);
-    gchar *name = NULL;
-
-    if (len > 4 &&
-        (fname[len-4] == '.' && fname[len-3] == 'o' &&
-         fname[len-2] == 'b' && fname[len-1] == 't'))
-    {
-        fname[len-4] = '\0';
-        name = g_strdup(fname);
-        fname[len-4] = '.';
-    }
-
-    if (name == NULL)
-        gtk_msg(GTK_MESSAGE_ERROR,
-                _("Unable to determine the theme's name from \"%s\".  File name should be ThemeName.obt."), fname);
-
-    return name;
-}
-
-static gboolean change_dir(const gchar *dir)
-{
-    if (chdir(dir) == -1) {
-        gtk_msg(GTK_MESSAGE_ERROR, _("Unable to move to directory \"%s\": %s"),
-                dir, strerror(errno));
-        return FALSE;
-    }
-    return TRUE;
-}
-
-static gboolean install_theme_to(const gchar *name, const gchar *file,
-                                 const gchar *to)
-{
-    gchar *glob;
-    gchar **argv;
-    gchar *errtxt = NULL;
-    gint exitcode;
-    GError *e = NULL;
-
-    glob = g_strdup_printf("%s/openbox-3/", name);
-
-    argv = g_new(gchar*, 7);
-    argv[0] = g_strdup("tar");
-    argv[1] = g_strdup("-x");
-    argv[2] = g_strdup("-z");
-    argv[3] = g_strdup("-f");
-    argv[4] = g_strdup(file);
-    argv[5] = g_strdup(glob);
-    argv[6] = NULL;
-    if (!g_spawn_sync(to, argv, NULL, G_SPAWN_SEARCH_PATH, NULL, NULL,
-                      NULL, &errtxt, &exitcode, &e))
-        gtk_msg(GTK_MESSAGE_ERROR, _("Unable to run the \"tar\" command: %s"),
-                e->message);
-    g_strfreev(argv);
-    if (e) g_error_free(e);
-
-    if (exitcode != EXIT_SUCCESS)
-        gtk_msg(GTK_MESSAGE_ERROR,
-                _("Unable to extract the file \"%s\".\nPlease ensure that \"%s\" is writable and that the file is a valid Openbox theme archive.\nThe following errors were reported:\n%s"),
-                file, to, errtxt);
-
-    g_free(errtxt);
-    g_free(glob);
-    return exitcode == EXIT_SUCCESS;
-}

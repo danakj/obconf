@@ -1,7 +1,8 @@
 /* -*- indent-tabs-mode: nil; tab-width: 4; c-basic-offset: 4; -*-
 
-   main.h for ObConf, the configuration tool for Openbox
-   Copyright (c) 2003        Dana Jansens
+   appearance.h for ObConf, the configuration tool for Openbox
+   Copyright (c) 2003-2007   Dana Jansens
+   Copyright (c) 2003        Tim Riley
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -16,24 +17,16 @@
    See the COPYING file for a copy of the GNU General Public License.
 */
 
-#ifndef obconf__main_h
-#define obconf__main_h
+#ifndef obconf__appearance_h
+#define obconf__appearance_h
 
-#include <openbox/render.h>
-#include <openbox/instance.h>
-#include <openbox/parse.h>
+void appr_setup_window_border    (GtkWidget *w);
+void appr_setup_title_layout     (GtkWidget *w);
 
-#include <gtk/gtk.h>
-#include <glade/glade-xml.h>
-
-extern GladeXML *glade;
-extern xmlDocPtr doc;
-extern xmlNodePtr root;
-extern RrInstance *rrinst;
-extern GtkWidget *mainwin;
-
-#define get_widget(s) glade_xml_get_widget(glade, s)
-
-void obconf_error(gchar *msg);
+void appr_setup_font_active      (GtkWidget *w);
+void appr_setup_font_inactive    (GtkWidget *w);
+void appr_setup_font_menu_header (GtkWidget *w);
+void appr_setup_font_menu_item   (GtkWidget *w);
+void appr_setup_font_display     (GtkWidget *w);
 
 #endif

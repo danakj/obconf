@@ -38,12 +38,23 @@ src_obconf_LDADD = \
 	$(LIBTAR_LIBS)
 src_obconf_SOURCES = \
 	src/gettext.h \
+	src/about.c \
+	src/archive.c \
+	src/archive.h \
+	src/behavior.c \
+	src/behavior.h \
+	src/desktops.c \
+	src/desktops.h \
+	src/dock.h \
+	src/dock.c \
 	src/main.c \
 	src/main.h \
-	src/handlers.c \
-	src/handlers.h \
+	src/appearance.c \
+	src/appearance.h \
 	src/preview.c \
 	src/preview.h \
+	src/preview_update.c \
+	src/preview_update.h \
 	src/theme.c \
 	src/theme.h \
 	src/tree.c \

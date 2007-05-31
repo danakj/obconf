@@ -18,8 +18,13 @@
 */
 
 #include "main.h"
-#include "handlers.h"
+#include "archive.h"
 #include "theme.h"
+#include "appearance.h"
+#include "behavior.h"
+#include "desktops.h"
+#include "dock.h"
+#include "preview_update.h"
 #include "gettext.h"
 
 #include <gdk/gdkx.h>
@@ -116,7 +121,7 @@ int main(int argc, char **argv)
     parse_args(argc, argv);
 
     if (obc_theme_archive) {
-        theme_archive(obc_theme_archive);
+        archive_create(obc_theme_archive);
         return;
     }
 
@@ -151,38 +156,42 @@ int main(int argc, char **argv)
         g_free(s);
     }
 
-    setup_behavior_tab();
-    setup_dock_tab();
-    setup_focus_mouse(glade_xml_get_widget(glade, "focus_mouse"));
-    setup_focus_raise(glade_xml_get_widget(glade, "focus_raise"));
-    setup_focus_last(glade_xml_get_widget(glade, "focus_raise"));
-    setup_focus_delay(glade_xml_get_widget(glade, "focus_delay"));
-    setup_focus_new(glade_xml_get_widget(glade, "focus_new"));
-    setup_place_mouse(glade_xml_get_widget(glade, "place_mouse"));
-    setup_resist_window(glade_xml_get_widget(glade, "resist_window"));
-    setup_resist_edge(glade_xml_get_widget(glade, "resist_edge"));
-    setup_resize_contents(glade_xml_get_widget(glade, "resize_contents"));
-    setup_dock_position(glade_xml_get_widget(glade, "dock_position"));
-    setup_dock_float_x(glade_xml_get_widget(glade, "dock_float_x"));
-    setup_dock_float_y(glade_xml_get_widget(glade, "dock_float_y"));
-    setup_dock_stacking(glade_xml_get_widget(glade, "dock_stack_top"),
-                        glade_xml_get_widget(glade, "dock_stack_normal"),
-                        glade_xml_get_widget(glade, "dock_stack_bottom"));
-    setup_dock_direction(glade_xml_get_widget(glade, "dock_direction"));
-    setup_dock_hide(glade_xml_get_widget(glade, "dock_hide"));
-    setup_dock_hide_delay(glade_xml_get_widget(glade, "dock_hide_delay"));
-    setup_theme_names(glade_xml_get_widget(glade, "theme_names"));
-    setup_title_layout(glade_xml_get_widget(glade, "title_layout"));
-    setup_desktop_num(glade_xml_get_widget(glade, "desktop_num"));
-    setup_desktop_names(glade_xml_get_widget(glade, "desktop_names"));
-    setup_window_border(glade_xml_get_widget(glade, "window_border"));
-    setup_font_active(glade_xml_get_widget(glade, "font_active"));
-    setup_font_inactive(glade_xml_get_widget(glade, "font_inactive"));
-    setup_font_menu_header(glade_xml_get_widget(glade, "font_menu_header"));
-    setup_font_menu_item(glade_xml_get_widget(glade, "font_menu_item"));
-    setup_font_display(glade_xml_get_widget(glade, "font_display"));
+    theme_setup_names(get_widget("theme_names"));
 
-    mainwin = glade_xml_get_widget(glade, "main_window");
+    appr_setup_window_border(get_widget("window_border"));
+    appr_setup_title_layout(get_widget("title_layout"));
+    appr_setup_font_active(get_widget("font_active"));
+    appr_setup_font_inactive(get_widget("font_inactive"));
+    appr_setup_font_menu_header(get_widget("font_menu_header"));
+    appr_setup_font_menu_item(get_widget("font_menu_item"));
+    appr_setup_font_display(get_widget("font_display"));
+
+    behavior_setup_tab();
+    behavior_setup_focus_mouse(get_widget("focus_mouse"));
+    behavior_setup_focus_raise(get_widget("focus_raise"));
+    behavior_setup_focus_last(get_widget("focus_raise"));
+    behavior_setup_focus_delay(get_widget("focus_delay"));
+    behavior_setup_focus_new(get_widget("focus_new"));
+    behavior_setup_place_mouse(get_widget("place_mouse"));
+    behavior_setup_resist_window(get_widget("resist_window"));
+    behavior_setup_resist_edge(get_widget("resist_edge"));
+    behavior_setup_resize_contents(get_widget("resize_contents"));
+
+    desktops_setup_num(get_widget("desktop_num"));
+    desktops_setup_names(get_widget("desktop_names"));
+
+    dock_setup_tab();
+    dock_setup_position(get_widget("dock_position"));
+    dock_setup_float_x(get_widget("dock_float_x"));
+    dock_setup_float_y(get_widget("dock_float_y"));
+    dock_setup_stacking(get_widget("dock_stack_top"),
+                        get_widget("dock_stack_normal"),
+                        get_widget("dock_stack_bottom"));
+    dock_setup_direction(get_widget("dock_direction"));
+    dock_setup_hide(get_widget("dock_hide"));
+    dock_setup_hide_delay(get_widget("dock_hide_delay"));
+
+    mainwin = get_widget("main_window");
 
     sn_d = sn_display_new(GDK_DISPLAY_XDISPLAY(gdk_display_get_default()),
                           NULL, NULL);
@@ -205,13 +214,32 @@ int main(int argc, char **argv)
     sn_display_unref(sn_d);
 
     if (obc_theme_install)
-        handlers_install_theme(obc_theme_install);
+        theme_install(obc_theme_install);
 
     gtk_main();
+
+    preview_update_set_list_store(NULL);
+    preview_update_set_active_font(NULL);
+    preview_update_set_inactive_font(NULL);
+    preview_update_set_menu_header_font(NULL);
+    preview_update_set_menu_item_font(NULL);
+    preview_update_set_osd_font(NULL);
+    preview_update_set_title_layout(NULL);
 
     RrInstanceFree(rrinst);
     parse_paths_shutdown();
 
     xmlFreeDoc(doc);
     return 0;
+}
+
+gboolean on_main_window_delete_event(GtkWidget *w, GdkEvent *e, gpointer d)
+{
+    gtk_main_quit();
+    return FALSE;
+}
+
+void on_close_clicked()
+{
+    gtk_main_quit();
 }
