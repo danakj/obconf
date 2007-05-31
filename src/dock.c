@@ -1,6 +1,6 @@
 /* -*- indent-tabs-mode: nil; tab-width: 4; c-basic-offset: 4; -*-
 
-   handlers.h for ObConf, the configuration tool for Openbox
+   dock.c for ObConf, the configuration tool for Openbox
    Copyright (c) 2003-2007   Dana Jansens
    Copyright (c) 2003        Tim Riley
 
