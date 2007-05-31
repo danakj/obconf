@@ -99,7 +99,7 @@ gchar *s = N_("ms");
 gchar *s = N_("Dock");
 gchar *s = N_("<span weight=\"bold\">Key Bindings</span>");
 gchar *s = N_("    ");
-gchar *s = N_("<span weight=\"bold\">Focusing Windows</span>");
+gchar *s = N_("<span weight=\"bold\">Key Chains</span>");
 gchar *s = N_("    ");
 gchar *s = N_("Escape key chains:");
 gchar *s = N_("Key Bindings");
