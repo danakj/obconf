@@ -1317,6 +1317,94 @@ C - The close button</property>
 			  </child>
 
 			  <child>
+			    <widget class="GtkHBox" id="hbox90">
+			      <property name="visible">True</property>
+			      <property name="homogeneous">False</property>
+			      <property name="spacing">12</property>
+
+			      <child>
+				<widget class="GtkLabel" id="label166">
+				  <property name="visible">True</property>
+				  <property name="label" translatable="yes">_Show size dialog:</property>
+				  <property name="use_underline">True</property>
+				  <property name="use_markup">False</property>
+				  <property name="justify">GTK_JUSTIFY_LEFT</property>
+				  <property name="wrap">False</property>
+				  <property name="selectable">False</property>
+				  <property name="xalign">0</property>
+				  <property name="yalign">0.5</property>
+				  <property name="xpad">0</property>
+				  <property name="ypad">0</property>
+				  <property name="mnemonic_widget">dock_position</property>
+				  <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
+				  <property name="width_chars">-1</property>
+				  <property name="single_line_mode">False</property>
+				  <property name="angle">0</property>
+				</widget>
+				<packing>
+				  <property name="padding">0</property>
+				  <property name="expand">False</property>
+				  <property name="fill">False</property>
+				</packing>
+			      </child>
+
+			      <child>
+				<widget class="GtkOptionMenu" id="resize_popup">
+				  <property name="visible">True</property>
+				  <property name="can_focus">True</property>
+				  <property name="history">0</property>
+
+				  <child>
+				    <widget class="GtkMenu" id="menu11">
+
+				      <child>
+					<widget class="GtkMenuItem" id="resize_popup_nonpixel">
+					  <property name="visible">True</property>
+					  <property name="label" translatable="yes">When resizing terminal windows</property>
+					  <property name="use_underline">True</property>
+					  <signal name="activate" handler="on_resize_popup_nonpixel_activate" last_modification_time="Fri, 01 Jun 2007 02:18:58 GMT"/>
+					</widget>
+				      </child>
+
+				      <child>
+					<widget class="GtkMenuItem" id="resize_popup_always">
+					  <property name="visible">True</property>
+					  <property name="label" translatable="yes">Always</property>
+					  <property name="use_underline">True</property>
+					  <signal name="activate" handler="on_resize_popup_always_activate" last_modification_time="Fri, 01 Jun 2007 02:18:58 GMT"/>
+					</widget>
+				      </child>
+
+				      <child>
+					<widget class="GtkMenuItem" id="resize_popup_never">
+					  <property name="visible">True</property>
+					  <property name="label" translatable="yes">Never</property>
+					  <property name="use_underline">True</property>
+					  <signal name="activate" handler="on_resize_popup_never_activate" last_modification_time="Fri, 01 Jun 2007 02:18:58 GMT"/>
+					</widget>
+				      </child>
+				    </widget>
+				  </child>
+				</widget>
+				<packing>
+				  <property name="padding">0</property>
+				  <property name="expand">False</property>
+				  <property name="fill">False</property>
+				</packing>
+			      </child>
+			    </widget>
+			    <packing>
+			      <property name="padding">0</property>
+			      <property name="expand">True</property>
+			      <property name="fill">True</property>
+			    </packing>
+			  </child>
+
+			  <child>
+			    <placeholder/>
+			  </child>
+
+			  <child>
 			    <widget class="GtkHBox" id="hbox17">
 			      <property name="visible">True</property>
 			      <property name="homogeneous">False</property>

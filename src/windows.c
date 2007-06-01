@@ -22,11 +22,16 @@
 
 static gboolean mapping = FALSE;
 
+#define POPUP_NONPIXEL 0
+#define POPUP_ALWAYS   1
+#define POPUP_NEVER    2
+
 void windows_setup_tab()
 {
     GtkWidget *w, *w1, *w2;
     GtkSizeGroup *group;
     gchar *s;
+    gint pos;
 
     mapping = TRUE;
 
@@ -64,6 +69,14 @@ void windows_setup_tab()
     gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(w),
                                  !g_ascii_strcasecmp(s, "UnderMouse"));
     g_free(s);
+
+    w = get_widget("resize_popup");
+    s = tree_get_string("resize/popupShow", "NonPixel");
+    if (!strcasecmp(s, "Always"))     pos = POPUP_ALWAYS;
+    else if (!strcasecmp(s, "Never")) pos = POPUP_NEVER;
+    else                              pos = POPUP_NONPIXEL;
+    g_free(s);
+    gtk_option_menu_set_history(GTK_OPTION_MENU(w), pos);
 
     mapping = FALSE;
 }
@@ -106,3 +119,23 @@ void on_resize_contents_toggled(GtkToggleButton *w, gpointer data)
     tree_set_bool("resize/drawContents", gtk_toggle_button_get_active(w));
 }
 
+void on_resize_popup_nonpixel_activate(GtkMenuItem *w, gpointer data)
+{
+    if (mapping) return;
+
+    tree_set_string("resize/popupShow", "NonPixel");
+}
+
+void on_resize_popup_always_activate(GtkMenuItem *w, gpointer data)
+{
+    if (mapping) return;
+
+    tree_set_string("resize/popupShow", "Always");
+}
+
+void on_resize_popup_never_activate(GtkMenuItem *w, gpointer data)
+{
+    if (mapping) return;
+
+    tree_set_string("resize/popupShow", "Never");
+}
