@@ -69,16 +69,16 @@ static GdkPixbuf* preview_menu(RrTheme *theme)
 
     title_text = theme->a_menu_text_title;
     title_text->surface.parent = title;
-    title_text->texture[0].data.text.string = "menu";
+    title_text->texture[0].data.text.string = "Menu";
 
     normal = theme->a_menu_text_normal;
-    normal->texture[0].data.text.string = "normal";
+    normal->texture[0].data.text.string = "Normal";
 
     disabled = theme->a_menu_text_disabled;
-    disabled->texture[0].data.text.string = "disabled";
+    disabled->texture[0].data.text.string = "Disabled";
 
     selected = theme->a_menu_text_selected;
-    selected->texture[0].data.text.string = "selected";
+    selected->texture[0].data.text.string = "Selected";
 
     bullet = theme->a_menu_bullet_normal;
 
@@ -304,7 +304,7 @@ static GdkPixbuf* preview_window(RrTheme *theme, const gchar *titlelayout,
             x += theme->button_size + 2 + theme->paddingx + 1;
         } else if (*layout == 'L') { /* label */
             a = focus ? theme->a_focused_label : theme->a_unfocused_label;
-            a->texture[0].data.text.string = focus ? "active" : "inactive";
+            a->texture[0].data.text.string = focus ? "Active" : "Inactive";
 
             a->surface.parent = title;
             a->surface.parentx = x;
