@@ -26,6 +26,11 @@ static gboolean mapping = FALSE;
 #define POPUP_ALWAYS   1
 #define POPUP_NEVER    2
 
+#define POSITION_CENTER 0
+#define POSITION_TOP    1
+
+static void enable_stuff();
+
 void windows_setup_tab()
 {
     GtkWidget *w, *w1, *w2, *w3;
@@ -86,7 +91,28 @@ void windows_setup_tab()
     gtk_spin_button_set_value(GTK_SPIN_BUTTON(w),
                               tree_get_int("mouse/dragThreshold", 8));
 
+    w = get_widget("resize_position");
+    s = tree_get_string("resize/popupPosition", "Center");
+    if (!strcasecmp(s, "Top")) pos = POSITION_TOP;
+    else                       pos = POSITION_CENTER;
+    g_free(s);
+    gtk_option_menu_set_history(GTK_OPTION_MENU(w), pos);
+
+    enable_stuff();
+
     mapping = FALSE;
+}
+
+static void enable_stuff()
+{
+    GtkWidget *w;
+    gboolean b;
+
+    w = get_widget("resize_popup");
+    b = gtk_option_menu_get_history(GTK_OPTION_MENU(w)) != POPUP_NEVER;
+
+    w = get_widget("resize_position");
+    gtk_widget_set_sensitive(w, b);
 }
 
 void on_focus_new_toggled(GtkToggleButton *w, gpointer data)
@@ -132,6 +158,7 @@ void on_resize_popup_nonpixel_activate(GtkMenuItem *w, gpointer data)
     if (mapping) return;
 
     tree_set_string("resize/popupShow", "NonPixel");
+    enable_stuff();
 }
 
 void on_resize_popup_always_activate(GtkMenuItem *w, gpointer data)
@@ -139,6 +166,7 @@ void on_resize_popup_always_activate(GtkMenuItem *w, gpointer data)
     if (mapping) return;
 
     tree_set_string("resize/popupShow", "Always");
+    enable_stuff();
 }
 
 void on_resize_popup_never_activate(GtkMenuItem *w, gpointer data)
@@ -146,6 +174,7 @@ void on_resize_popup_never_activate(GtkMenuItem *w, gpointer data)
     if (mapping) return;
 
     tree_set_string("resize/popupShow", "Never");
+    enable_stuff();
 }
 
 void on_drag_threshold_value_changed(GtkSpinButton *w, gpointer data)
@@ -155,3 +184,21 @@ void on_drag_threshold_value_changed(GtkSpinButton *w, gpointer data)
     tree_set_int("mouse/dragThreshold",
                  gtk_spin_button_get_value_as_int(w));
 }
+
+void on_resize_position_center_activate(GtkMenuItem *w, gpointer data)
+{
+    if (mapping) return;
+
+    tree_set_string("resize/popupPosition", "Center");
+    enable_stuff();
+}
+
+
+void on_resize_position_top_activate(GtkMenuItem *w, gpointer data)
+{
+    if (mapping) return;
+
+    tree_set_string("resize/popupPosition", "Top");
+    enable_stuff();
+}
+
