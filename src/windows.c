@@ -22,8 +22,6 @@
 
 static gboolean mapping = FALSE;
 
-static void windows_enable_stuff();
-
 void windows_setup_tab()
 {
     GtkWidget *w, *w1, *w2;
@@ -43,22 +41,6 @@ void windows_setup_tab()
     group = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
     gtk_size_group_add_widget(group, w1);
     gtk_size_group_add_widget(group, w2);
-
-    w = get_widget("focus_mouse");
-    gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(w),
-                                 tree_get_bool("focus/followMouse", FALSE));
-
-    w = get_widget("focus_delay");
-    gtk_spin_button_set_value(GTK_SPIN_BUTTON(w),
-                              tree_get_int("focus/focusDelay", 0));
-
-    w = get_widget("focus_raise");
-    gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(w),
-                                 tree_get_bool("focus/raiseOnFocus", FALSE));
-
-    w = get_widget("focus_last");
-    gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(w),
-                                 tree_get_bool("focus/focusLast", FALSE));
 
     w = get_widget("focus_new");
     gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(w),
@@ -83,63 +65,7 @@ void windows_setup_tab()
                                  !g_ascii_strcasecmp(s, "UnderMouse"));
     g_free(s);
 
-    windows_enable_stuff();
-
     mapping = FALSE;
-}
-
-static void windows_enable_stuff()
-{
-    GtkWidget *w;
-    gboolean b;
-
-    w = get_widget("focus_mouse");
-    b = gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(w));
-
-    w = get_widget("focus_delay");
-    gtk_widget_set_sensitive(w, b);
-    w = get_widget("focus_delay_label");
-    gtk_widget_set_sensitive(w, b);
-    w = get_widget("focus_delay_label_units");
-    gtk_widget_set_sensitive(w, b);
-    w = get_widget("focus_raise");
-    gtk_widget_set_sensitive(w, b);
-    w = get_widget("focus_last");
-    gtk_widget_set_sensitive(w, b);
-}
-
-void on_focus_mouse_toggled(GtkToggleButton *w, gpointer data)
-{
-    gboolean b;
-
-    if (mapping) return;
-
-    b = gtk_toggle_button_get_active(w);
-    tree_set_bool("focus/followMouse", b);
-
-    windows_enable_stuff();
-}
-
-void on_focus_delay_value_changed(GtkSpinButton *w, gpointer data)
-{
-    if (mapping) return;
-
-    tree_set_int("focus/focusDelay",
-                 gtk_spin_button_get_value_as_int(w));
-}
-
-void on_focus_raise_toggled(GtkToggleButton *w, gpointer data)
-{
-    if (mapping) return;
-
-    tree_set_bool("focus/raiseOnFocus", gtk_toggle_button_get_active(w));
-}
-
-void on_focus_last_toggled(GtkToggleButton *w, gpointer data)
-{
-    if (mapping) return;
-
-    tree_set_bool("focus/focusLast", gtk_toggle_button_get_active(w));
 }
 
 void on_focus_new_toggled(GtkToggleButton *w, gpointer data)

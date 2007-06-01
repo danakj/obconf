@@ -32,6 +32,7 @@ static gint read_doubleclick_action();
 static void write_doubleclick_action(gint a);
 static void on_titlebar_doubleclick_custom_activate(GtkMenuItem *w,
                                                     gpointer data);
+static void enable_stuff();
 
 void mouse_setup_tab()
 {
@@ -52,6 +53,22 @@ void mouse_setup_tab()
     group = gtk_size_group_new(GTK_SIZE_GROUP_HORIZONTAL);
     gtk_size_group_add_widget(group, w1);
     gtk_size_group_add_widget(group, w2);
+
+    w = get_widget("focus_mouse");
+    gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(w),
+                                 tree_get_bool("focus/followMouse", FALSE));
+
+    w = get_widget("focus_delay");
+    gtk_spin_button_set_value(GTK_SPIN_BUTTON(w),
+                              tree_get_int("focus/focusDelay", 0));
+
+    w = get_widget("focus_raise");
+    gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(w),
+                                 tree_get_bool("focus/raiseOnFocus", FALSE));
+
+    w = get_widget("focus_last");
+    gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(w),
+                                 tree_get_bool("focus/focusLast", FALSE));
 
     w = get_widget("doubleclick_time");
     gtk_spin_button_set_value(GTK_SPIN_BUTTON(w),
@@ -75,7 +92,62 @@ void mouse_setup_tab()
     }
     gtk_option_menu_set_history(GTK_OPTION_MENU(w), a);
 
+    enable_stuff();
+
     mapping = FALSE;
+}
+
+static void enable_stuff()
+{
+    GtkWidget *w;
+    gboolean b;
+
+    w = get_widget("focus_mouse");
+    b = gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(w));
+
+    w = get_widget("focus_delay");
+    gtk_widget_set_sensitive(w, b);
+    w = get_widget("focus_delay_label");
+    gtk_widget_set_sensitive(w, b);
+    w = get_widget("focus_delay_label_units");
+    gtk_widget_set_sensitive(w, b);
+    w = get_widget("focus_raise");
+    gtk_widget_set_sensitive(w, b);
+    w = get_widget("focus_last");
+    gtk_widget_set_sensitive(w, b);
+}
+
+void on_focus_mouse_toggled(GtkToggleButton *w, gpointer data)
+{
+    gboolean b;
+
+    if (mapping) return;
+
+    b = gtk_toggle_button_get_active(w);
+    tree_set_bool("focus/followMouse", b);
+
+    enable_stuff();
+}
+
+void on_focus_delay_value_changed(GtkSpinButton *w, gpointer data)
+{
+    if (mapping) return;
+
+    tree_set_int("focus/focusDelay", gtk_spin_button_get_value_as_int(w));
+}
+
+void on_focus_raise_toggled(GtkToggleButton *w, gpointer data)
+{
+    if (mapping) return;
+
+    tree_set_bool("focus/raiseOnFocus", gtk_toggle_button_get_active(w));
+}
+
+void on_focus_last_toggled(GtkToggleButton *w, gpointer data)
+{
+    if (mapping) return;
+
+    tree_set_bool("focus/focusLast", gtk_toggle_button_get_active(w));
 }
 
 void on_titlebar_doubleclick_maximize_activate(GtkMenuItem *w, gpointer data)
