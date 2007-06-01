@@ -499,7 +499,7 @@
 				    <widget class="GtkCheckButton" id="animate_iconify">
 				      <property name="visible">True</property>
 				      <property name="can_focus">True</property>
-				      <property name="label" translatable="yes">Animate _iconify and restore</property>
+				      <property name="label" translatable="yes">A_nimate iconify and restore</property>
 				      <property name="use_underline">True</property>
 				      <property name="relief">GTK_RELIEF_NORMAL</property>
 				      <property name="focus_on_click">True</property>

@@ -13,7 +13,7 @@ gchar *s = N_("Theme");
 gchar *s = N_("<span weight=\"bold\">Windows</span>");
 gchar *s = N_("    ");
 gchar *s = N_("_Windows retain a border when undecorated");
-gchar *s = N_("Animate _iconify and restore");
+gchar *s = N_("A_nimate iconify and restore");
 gchar *s = N_("<span weight=\"bold\">Window Titles</span>");
 gchar *s = N_("    ");
 gchar *s = N_("_Button order:");
