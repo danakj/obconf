@@ -159,7 +159,6 @@ int main(int argc, char **argv)
     behavior_setup_tab();
     desktops_setup_tab();
     dock_setup_tab();
-    keybindings_setup_tab();
 
     mainwin = get_widget("main_window");
 
