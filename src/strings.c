@@ -103,6 +103,7 @@ gchar *s = N_("<span weight=\"bold\" size=\"xx-large\">ObConf VERSION</span>");
 gchar *s = N_("A preferences manager for Openbox");
 gchar *s = N_("Copyright (c) 2003-2007\n"
               "Dana Jansens <danakj@orodu.net>\n"
-              "Tim Riley <tr@slackzone.org>");
+              "Tim Riley <tr@slackzone.org>\n"
+              "Javeed Shaikh <syscrash2k@gmail.com>");
 gchar *s = N_("window1");
 gchar *s = N_("<span weight=\"bold\">Press the key you wish to bind...</span>");
