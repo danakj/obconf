@@ -1,8 +1,7 @@
 /* -*- indent-tabs-mode: nil; tab-width: 4; c-basic-offset: 4; -*-
 
-   behavior.h for ObConf, the configuration tool for Openbox
-   Copyright (c) 2003-2007   Dana Jansens
-   Copyright (c) 2003        Tim Riley
+   mouse.h for ObConf, the configuration tool for Openbox
+   Copyright (c) 2007        Dana Jansens
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -17,9 +16,9 @@
    See the COPYING file for a copy of the GNU General Public License.
 */
 
-#ifndef obconf__behavior_h
-#define obconf__behavior_h
+#ifndef obconf__mouse_h
+#define obconf__mouse_h
 
-void behavior_setup_tab();
+void mouse_setup_tab();
 
 #endif

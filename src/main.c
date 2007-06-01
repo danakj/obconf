@@ -21,7 +21,8 @@
 #include "archive.h"
 #include "theme.h"
 #include "appearance.h"
-#include "behavior.h"
+#include "windows.h"
+#include "mouse.h"
 #include "desktops.h"
 #include "dock.h"
 #include "preview_update.h"
@@ -156,7 +157,8 @@ int main(int argc, char **argv)
 
     theme_setup_tab();
     appearance_setup_tab();
-    behavior_setup_tab();
+    windows_setup_tab();
+    mouse_setup_tab();
     desktops_setup_tab();
     dock_setup_tab();
 
