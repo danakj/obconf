@@ -2293,7 +2293,7 @@ C - The close button</property>
 			      <child>
 				<widget class="GtkLabel" id="label161">
 				  <property name="visible">True</property>
-				  <property name="label" translatable="yes">_Double click on the titlebar:</property>
+				  <property name="label" translatable="yes">Double click on the _titlebar:</property>
 				  <property name="use_underline">True</property>
 				  <property name="use_markup">False</property>
 				  <property name="justify">GTK_JUSTIFY_LEFT</property>

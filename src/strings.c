@@ -67,7 +67,7 @@ gchar *s = N_("ms");
 gchar *s = N_("_Give focus to the last used window when switching desktops");
 gchar *s = N_("<span weight=\"bold\">Titlebar</span>");
 gchar *s = N_("    ");
-gchar *s = N_("_Double click on the titlebar:");
+gchar *s = N_("Double click on the _titlebar:");
 gchar *s = N_("Maximizes the window");
 gchar *s = N_("Shades the window");
 gchar *s = N_("Double _click time:");
