@@ -59,7 +59,7 @@ void mouse_setup_tab()
 
     w = get_widget("drag_threshold");
     gtk_spin_button_set_value(GTK_SPIN_BUTTON(w),
-                              tree_get_int("mouse/dragThreshold", 3));
+                              tree_get_int("mouse/dragThreshold", 8));
 
     w = get_widget("titlebar_doubleclick");
     a = read_doubleclick_action();
