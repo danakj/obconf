@@ -434,10 +434,10 @@ static gint theme_label_width(RrTheme *theme, gboolean active)
 
     if (active) {
         label = theme->a_focused_label;
-        label->texture[0].data.text.string = "active";
+        label->texture[0].data.text.string = "Active";
     } else {
         label = theme->a_unfocused_label;
-        label->texture[0].data.text.string = "inactive";
+        label->texture[0].data.text.string = "Inactive";
     }
 
     return RrMinWidth(label);
