@@ -55,7 +55,6 @@ gchar *s = N_("Amount of resistance against other _windows:");
 gchar *s = N_("px");
 gchar *s = N_("Amount of resistance against screen _edges:");
 gchar *s = N_("px");
-gchar *s = N_("    ");
 gchar *s = N_("Windows");
 gchar *s = N_("<span weight=\"bold\">Focusing Windows</span>");
 gchar *s = N_("    ");
