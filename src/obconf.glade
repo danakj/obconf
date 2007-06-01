@@ -11,6 +11,7 @@
   <property name="modal">False</property>
   <property name="resizable">True</property>
   <property name="destroy_with_parent">False</property>
+  <property name="icon_name">preferences-system-windows</property>
   <property name="decorated">True</property>
   <property name="skip_taskbar_hint">False</property>
   <property name="skip_pager_hint">False</property>
@@ -1384,7 +1385,7 @@ C - The close button</property>
 			      <child>
 				<widget class="GtkLabel" id="label166">
 				  <property name="visible">True</property>
-				  <property name="label" translatable="yes">_Show size dialog:</property>
+				  <property name="label" translatable="yes">_Show information dialog:</property>
 				  <property name="use_underline">True</property>
 				  <property name="use_markup">False</property>
 				  <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -1499,7 +1500,7 @@ C - The close button</property>
 				  <child>
 				    <widget class="GtkLabel" id="label167">
 				      <property name="visible">True</property>
-				      <property name="label" translatable="yes">Size _dialog's position</property>
+				      <property name="label" translatable="yes">Information _dialog's position</property>
 				      <property name="use_underline">True</property>
 				      <property name="use_markup">False</property>
 				      <property name="justify">GTK_JUSTIFY_LEFT</property>
