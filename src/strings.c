@@ -8,7 +8,7 @@ gchar *s = N_("Openbox Configuration Manager");
 gchar *s = N_("<span weight=\"bold\">Theme</span>");
 gchar *s = N_("    ");
 gchar *s = N_("_Install a new theme...");
-gchar *s = N_("_Create a theme archive (.obt)...");
+gchar *s = N_("Create a theme _archive (.obt)...");
 gchar *s = N_("Theme");
 gchar *s = N_("<span weight=\"bold\">Windows</span>");
 gchar *s = N_("    ");
