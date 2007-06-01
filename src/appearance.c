@@ -38,6 +38,10 @@ void appearance_setup_tab()
     gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(w),
                                  tree_get_bool("theme/keepBorder", TRUE));
 
+    w = get_widget("animate_iconify");
+    gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(w),
+                                 tree_get_bool("theme/animateIconify", TRUE));
+
     w = get_widget("title_layout");
     layout = tree_get_string("theme/titleLayout", "NLIMC");
     gtk_entry_set_text(GTK_ENTRY(w), layout);
@@ -75,6 +79,16 @@ void on_window_border_toggled(GtkToggleButton *w, gpointer data)
 
     b = gtk_toggle_button_get_active(w);
     tree_set_bool("theme/keepBorder", b);
+}
+
+void on_animate_iconify_toggled(GtkToggleButton *w, gpointer data)
+{
+    gboolean b;
+
+    if (mapping) return;
+
+    b = gtk_toggle_button_get_active(w);
+    tree_set_bool("theme/animateIconify", b);
 }
 
 void on_title_layout_changed(GtkEntry *w, gpointer data)
