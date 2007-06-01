@@ -61,6 +61,7 @@ void mouse_setup_tab()
     gtk_spin_button_set_value(GTK_SPIN_BUTTON(w),
                               tree_get_int("mouse/doubleClickTime", 200));
 
+
     w = get_widget("titlebar_doubleclick");
     a = read_doubleclick_action();
     if (a == TITLEBAR_CUSTOM) {

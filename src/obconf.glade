@@ -1394,7 +1394,7 @@ C - The close button</property>
 				  <property name="yalign">0.5</property>
 				  <property name="xpad">0</property>
 				  <property name="ypad">0</property>
-				  <property name="mnemonic_widget">dock_position</property>
+				  <property name="mnemonic_widget">resize_popup</property>
 				  <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
 				  <property name="width_chars">-1</property>
 				  <property name="single_line_mode">False</property>
@@ -1509,7 +1509,7 @@ C - The close button</property>
 				      <property name="yalign">0.5</property>
 				      <property name="xpad">0</property>
 				      <property name="ypad">0</property>
-				      <property name="mnemonic_widget">dock_position</property>
+				      <property name="mnemonic_widget">resize_position</property>
 				      <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
 				      <property name="width_chars">-1</property>
 				      <property name="single_line_mode">False</property>
@@ -1591,7 +1591,7 @@ C - The close button</property>
 				  <property name="yalign">0.5</property>
 				  <property name="xpad">0</property>
 				  <property name="ypad">0</property>
-				  <property name="mnemonic_widget">resist_edge</property>
+				  <property name="mnemonic_widget">drag_threshold</property>
 				  <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
 				  <property name="width_chars">-1</property>
 				  <property name="single_line_mode">False</property>
@@ -2291,7 +2291,7 @@ C - The close button</property>
 			      <property name="spacing">12</property>
 
 			      <child>
-				<widget class="GtkLabel" id="label161">
+				<widget class="GtkLabel" id="titlebar_doubleclick_label">
 				  <property name="visible">True</property>
 				  <property name="label" translatable="yes">Double click on the _titlebar:</property>
 				  <property name="use_underline">True</property>
@@ -2303,7 +2303,7 @@ C - The close button</property>
 				  <property name="yalign">0.5</property>
 				  <property name="xpad">0</property>
 				  <property name="ypad">0</property>
-				  <property name="mnemonic_widget">dock_position</property>
+				  <property name="mnemonic_widget">titlebar_doubleclick</property>
 				  <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
 				  <property name="width_chars">-1</property>
 				  <property name="single_line_mode">False</property>
@@ -2378,7 +2378,7 @@ C - The close button</property>
 				  <property name="yalign">0.5</property>
 				  <property name="xpad">0</property>
 				  <property name="ypad">0</property>
-				  <property name="mnemonic_widget">resist_window</property>
+				  <property name="mnemonic_widget">doubleclick_time</property>
 				  <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
 				  <property name="width_chars">-1</property>
 				  <property name="single_line_mode">False</property>
@@ -2518,6 +2518,7 @@ C - The close button</property>
 	    <packing>
 	      <property name="tab_expand">False</property>
 	      <property name="tab_fill">True</property>
+	      <property name="menu_label" translatable="yes"></property>
 	    </packing>
 	  </child>
 
@@ -2530,7 +2531,7 @@ C - The close button</property>
 	      <property name="justify">GTK_JUSTIFY_LEFT</property>
 	      <property name="wrap">False</property>
 	      <property name="selectable">False</property>
-	      <property name="xalign">0.5</property>
+	      <property name="xalign">0.460000008345</property>
 	      <property name="yalign">0.5</property>
 	      <property name="xpad">0</property>
 	      <property name="ypad">0</property>
@@ -3691,7 +3692,7 @@ C - The close button</property>
 				      <property name="yalign">0.5</property>
 				      <property name="xpad">0</property>
 				      <property name="ypad">0</property>
-				      <property name="mnemonic_widget">dock_hide_delay</property>
+				      <property name="mnemonic_widget">dock_show_delay</property>
 				      <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
 				      <property name="width_chars">-1</property>
 				      <property name="single_line_mode">False</property>
