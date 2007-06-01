@@ -4,7 +4,7 @@
 <glade-interface>
 
 <widget class="GtkWindow" id="main_window">
-  <property name="border_width">13</property>
+  <property name="border_width">6</property>
   <property name="title" translatable="yes">Openbox Configuration Manager</property>
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
   <property name="window_position">GTK_WIN_POS_NONE</property>
@@ -24,7 +24,7 @@
     <widget class="GtkVBox" id="vbox8">
       <property name="visible">True</property>
       <property name="homogeneous">False</property>
-      <property name="spacing">12</property>
+      <property name="spacing">6</property>
 
       <child>
 	<widget class="GtkNotebook" id="notebook1">
