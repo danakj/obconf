@@ -40,7 +40,7 @@ gchar *s = N_("    ");
 gchar *s = N_("_Place new windows under the mouse pointer");
 gchar *s = N_("<span weight=\"bold\">Moving and Resizing Windows</span>");
 gchar *s = N_("    ");
-gchar *s = N_("Update the window c_ontents while resizing");
+gchar *s = N_("Update the window _contents while resizing");
 gchar *s = N_("_Show size dialog:");
 gchar *s = N_("When resizing terminal windows");
 gchar *s = N_("Always");
