@@ -11,6 +11,6 @@ Recommends: ttf-bitstream-vera, shared-mime-info, desktop-file-utils
 Description: Openbox configuration manager
  ObConf lets you change your configuration of Openbox. This includes setting
  your theme, desktop names, and focus behavior.
-
+ .
  ObConf also lets you easily install new themes, and package up your own themes
  for distribution.
