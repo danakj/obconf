@@ -53,7 +53,7 @@ gchar *s = N_("px");
 gchar *s = N_("Windows");
 gchar *s = N_("<span weight=\"bold\">Mouse Behavior</span>");
 gchar *s = N_("    ");
-gchar *s = N_("Double-click on the _titlebar:");
+gchar *s = N_("_Double-click on the titlebar:");
 gchar *s = N_("Maximizes the window");
 gchar *s = N_("Shades the window");
 gchar *s = N_("Double-_click time:");
