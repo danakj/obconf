@@ -294,7 +294,7 @@ static GdkPixbuf* preview_window(RrTheme *theme, const gchar *titlelayout,
 
             a->surface.parent = title;
             a->surface.parentx = x - theme->fbwidth;
-            a->surface.parenty = theme->paddingy + 1;
+            a->surface.parenty = theme->paddingy;
 
             w = h = theme->button_size + 2;
 
@@ -311,7 +311,7 @@ static GdkPixbuf* preview_window(RrTheme *theme, const gchar *titlelayout,
 
             a->surface.parent = title;
             a->surface.parentx = x - theme->fbwidth;
-            a->surface.parenty = theme->paddingy + 1;
+            a->surface.parenty = theme->paddingy;
             w = label_w;
             h = theme->label_height;
 
@@ -356,7 +356,7 @@ static GdkPixbuf* preview_window(RrTheme *theme, const gchar *titlelayout,
 
             a->surface.parent = title;
             a->surface.parentx = x - theme->fbwidth;
-            a->surface.parenty = theme->paddingy + 1;
+            a->surface.parenty = theme->paddingy;
 
             w = theme->button_size;
             h = theme->button_size;
