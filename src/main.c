@@ -116,6 +116,10 @@ int main(int argc, char **argv)
 {
     gchar *p;
 
+    bindtextdomain(PACKAGE_NAME, LOCALEDIR);
+    bind_textdomain_codeset(PACKAGE_NAME, "UTF-8");
+    textdomain(PACKAGE_NAME);
+
     gtk_init(&argc, &argv);
     parse_args(argc, argv);
 
