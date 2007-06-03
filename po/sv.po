@@ -165,7 +165,7 @@ msgstr "Ovanför fönstret"
 
 #: src/strings.c:52
 msgid "Drag _threshold distance:"
-msgstr "Drag_tröskel:"
+msgstr "Dra_gtröskel:"
 
 #: src/strings.c:53 src/strings.c:55 src/strings.c:57
 msgid "px"
@@ -177,7 +177,7 @@ msgstr "Motstånd mot andra _fönster:"
 
 #: src/strings.c:56
 msgid "Amount of resistance against screen _edges:"
-msgstr "Motstånd mot _skärmkanten"
+msgstr "Motstånd mot s_kärmkanten"
 
 #: src/strings.c:58
 msgid "Windows"
@@ -213,7 +213,7 @@ msgstr "<span weight=\"bold\">Titelrad</span>"
 
 #: src/strings.c:70
 msgid "Double click on the _titlebar:"
-msgstr "Dubbelklick på _titelraden:"
+msgstr "Dubbelklick på t_itelraden:"
 
 #: src/strings.c:71
 msgid "Maximizes the window"
@@ -225,7 +225,7 @@ msgstr "Rullar upp fönstret"
 
 #: src/strings.c:73
 msgid "Double click ti_me:"
-msgstr "Dubbelklickti_d:"
+msgstr "Dubbelkli_cktid:"
 
 #: src/strings.c:76
 msgid "Mouse"
@@ -305,7 +305,7 @@ msgstr "Tillåt att _fönster placeras ovanför dockans område"
 
 #: src/strings.c:99
 msgid "_Orientation: "
-msgstr "_Orientering: "
+msgstr "Or_ientering: "
 
 #: src/strings.c:100
 msgid "Vertical"
@@ -341,7 +341,7 @@ msgstr "_Dölj utanför skärmen"
 
 #: src/strings.c:111
 msgid "_Delay before hiding:"
-msgstr "_Fördröjning innan döljande:"
+msgstr "Fördröj_ning innan döljande:"
 
 #: src/strings.c:114
 msgid "Delay before _showing:"
