@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: obconf 2.0.0\n"
 "Report-Msgid-Bugs-To: http://bugzilla.icculus.org/\n"
-"POT-Creation-Date: 2007-06-01 13:39+0200\n"
+"POT-Creation-Date: 2007-06-03 15:36-0400\n"
 "PO-Revision-Date: 2007-06-01 13:41+0200\n"
 "Last-Translator:  <mikachu@icculus.org>\n"
 "Language-Team: Swedish\n"
@@ -26,10 +26,9 @@ msgstr "<span weight=\"bold\">Tema</span>"
 
 #: src/strings.c:9 src/strings.c:14 src/strings.c:18 src/strings.c:28
 #: src/strings.c:36 src/strings.c:39 src/strings.c:42 src/strings.c:48
-#: src/strings.c:58 src/strings.c:61 src/strings.c:63 src/strings.c:69
-#: src/strings.c:75 src/strings.c:78 src/strings.c:83 src/strings.c:94
-#: src/strings.c:97 src/strings.c:103 src/strings.c:108 src/strings.c:110
-#: src/strings.c:113
+#: src/strings.c:60 src/strings.c:62 src/strings.c:69 src/strings.c:75
+#: src/strings.c:78 src/strings.c:83 src/strings.c:94 src/strings.c:97
+#: src/strings.c:103 src/strings.c:108 src/strings.c:110 src/strings.c:113
 msgid "    "
 msgstr "    "
 
@@ -111,7 +110,7 @@ msgstr "_Popupfönster"
 msgid "Appearance"
 msgstr "Utseende"
 
-#: src/strings.c:35 src/strings.c:60
+#: src/strings.c:35 src/strings.c:59
 msgid "<span weight=\"bold\">Focusing Windows</span>"
 msgstr "<span weight=\"bold\">Fönsterfokus</span>"
 
@@ -129,7 +128,8 @@ msgstr "_Placera nya fönster under muspekaren"
 
 #: src/strings.c:41
 msgid "<span weight=\"bold\">Moving and Resizing Windows</span>"
-msgstr "<span weight=\"bold\">Förflyttning och Storleksändring av Fönster</span>"
+msgstr ""
+"<span weight=\"bold\">Förflyttning och Storleksändring av Fönster</span>"
 
 #: src/strings.c:43
 msgid "Update the window contents while _resizing"
@@ -179,29 +179,34 @@ msgstr "Motstånd mot andra _fönster:"
 msgid "Amount of resistance against screen _edges:"
 msgstr "Motstånd mot _skärmkanten"
 
-#: src/strings.c:59
+#: src/strings.c:58
 msgid "Windows"
 msgstr "Fönster"
 
-#: src/strings.c:62
+#: src/strings.c:61
 msgid "_Focus windows when the mouse pointer moves over them"
 msgstr "_Fokusera fönster när muspekaren flyttas in över dem"
 
+#: src/strings.c:63
+#, fuzzy
+msgid "Move focus under the mouse when _switching desktops"
+msgstr "_Ge fokus till det senast använda fönstret vid skrivbordsändring"
+
 #: src/strings.c:64
+msgid "Move focus _under the mouse when the mouse is not moving"
+msgstr ""
+
+#: src/strings.c:65
 msgid "_Raise windows when the mouse pointer moves over them"
 msgstr "Lägg fönste_r överst när muspekaren flyttas in över dem"
 
-#: src/strings.c:65
+#: src/strings.c:66
 msgid "_Delay before focusing and raising windows:"
 msgstr "För_dröjning innan fönster fokuseras och läggs överst"
 
-#: src/strings.c:66 src/strings.c:74 src/strings.c:112 src/strings.c:115
+#: src/strings.c:67 src/strings.c:74 src/strings.c:112 src/strings.c:115
 msgid "ms"
 msgstr "ms"
-
-#: src/strings.c:67
-msgid "_Give focus to the last used window when switching desktops"
-msgstr "_Ge fokus till det senast använda fönstret vid skrivbordsändring"
 
 #: src/strings.c:68
 msgid "<span weight=\"bold\">Titlebar</span>"
@@ -405,7 +410,8 @@ msgstr "  --version             Visa version och avsluta\n"
 
 #: src/main.c:83
 msgid "  --install ARCHIVE.obt Install the given theme archive and select it\n"
-msgstr "  --install ARKIV.obt   Installera det givna temaarkivet och välj det\n"
+msgstr ""
+"  --install ARKIV.obt   Installera det givna temaarkivet och välj det\n"
 
 #: src/main.c:84
 msgid ""
@@ -504,10 +510,11 @@ msgid ""
 "%s"
 msgstr ""
 "Kunde inte extrahera filen \"%s\".\n"
-"Verifiera att \"%s\" är skrivbar och att filen är ett giltigt Openboxtema-arkiv.\n"
+"Verifiera att \"%s\" är skrivbar och att filen är ett giltigt Openboxtema-"
+"arkiv.\n"
 "Följande fel rapporterades:\n"
 "%s"
 
-#: src/mouse.c:68
+#: src/mouse.c:72
 msgid "Custom actions"
 msgstr "Användardefinierad handling"

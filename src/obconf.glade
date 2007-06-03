@@ -2008,6 +2008,46 @@ C - The close button</property>
 				  <property name="spacing">6</property>
 
 				  <child>
+				    <widget class="GtkCheckButton" id="focus_notlast">
+				      <property name="visible">True</property>
+				      <property name="can_focus">True</property>
+				      <property name="label" translatable="yes">Move focus under the mouse when _switching desktops</property>
+				      <property name="use_underline">True</property>
+				      <property name="relief">GTK_RELIEF_NORMAL</property>
+				      <property name="focus_on_click">True</property>
+				      <property name="active">False</property>
+				      <property name="inconsistent">False</property>
+				      <property name="draw_indicator">True</property>
+				      <signal name="toggled" handler="on_focus_notlast_toggled" last_modification_time="Sun, 03 Jun 2007 19:29:54 GMT"/>
+				    </widget>
+				    <packing>
+				      <property name="padding">0</property>
+				      <property name="expand">False</property>
+				      <property name="fill">False</property>
+				    </packing>
+				  </child>
+
+				  <child>
+				    <widget class="GtkCheckButton" id="focus_under_mouse">
+				      <property name="visible">True</property>
+				      <property name="can_focus">True</property>
+				      <property name="label" translatable="yes">Move focus _under the mouse when the mouse is not moving</property>
+				      <property name="use_underline">True</property>
+				      <property name="relief">GTK_RELIEF_NORMAL</property>
+				      <property name="focus_on_click">True</property>
+				      <property name="active">False</property>
+				      <property name="inconsistent">False</property>
+				      <property name="draw_indicator">True</property>
+				      <signal name="toggled" handler="on_focus_under_mouse_toggled" last_modification_time="Sun, 03 Jun 2007 19:30:02 GMT"/>
+				    </widget>
+				    <packing>
+				      <property name="padding">0</property>
+				      <property name="expand">False</property>
+				      <property name="fill">False</property>
+				    </packing>
+				  </child>
+
+				  <child>
 				    <widget class="GtkCheckButton" id="focus_raise">
 				      <property name="visible">True</property>
 				      <property name="can_focus">True</property>
@@ -2108,26 +2148,6 @@ C - The close button</property>
 				      <property name="padding">0</property>
 				      <property name="expand">True</property>
 				      <property name="fill">True</property>
-				    </packing>
-				  </child>
-
-				  <child>
-				    <widget class="GtkCheckButton" id="focus_last">
-				      <property name="visible">True</property>
-				      <property name="can_focus">True</property>
-				      <property name="label" translatable="yes">_Give focus to the last used window when switching desktops</property>
-				      <property name="use_underline">True</property>
-				      <property name="relief">GTK_RELIEF_NORMAL</property>
-				      <property name="focus_on_click">True</property>
-				      <property name="active">False</property>
-				      <property name="inconsistent">False</property>
-				      <property name="draw_indicator">True</property>
-				      <signal name="toggled" handler="on_focus_last_toggled" last_modification_time="Fri, 25 May 2007 18:54:28 GMT"/>
-				    </widget>
-				    <packing>
-				      <property name="padding">0</property>
-				      <property name="expand">False</property>
-				      <property name="fill">False</property>
 				    </packing>
 				  </child>
 				</widget>

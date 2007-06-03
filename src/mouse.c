@@ -53,9 +53,13 @@ void mouse_setup_tab()
     gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(w),
                                  tree_get_bool("focus/raiseOnFocus", FALSE));
 
-    w = get_widget("focus_last");
+    w = get_widget("focus_notlast");
     gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(w),
-                                 tree_get_bool("focus/focusLast", FALSE));
+                                 !tree_get_bool("focus/focusLast", TRUE));
+
+    w = get_widget("focus_under_mouse");
+    gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(w),
+                                 tree_get_bool("focus/underMouse", FALSE));
 
     w = get_widget("doubleclick_time");
     gtk_spin_button_set_value(GTK_SPIN_BUTTON(w),
@@ -97,7 +101,9 @@ static void enable_stuff()
     gtk_widget_set_sensitive(w, b);
     w = get_widget("focus_raise");
     gtk_widget_set_sensitive(w, b);
-    w = get_widget("focus_last");
+    w = get_widget("focus_notlast");
+    gtk_widget_set_sensitive(w, b);
+    w = get_widget("focus_under_mouse");
     gtk_widget_set_sensitive(w, b);
 }
 
@@ -127,11 +133,18 @@ void on_focus_raise_toggled(GtkToggleButton *w, gpointer data)
     tree_set_bool("focus/raiseOnFocus", gtk_toggle_button_get_active(w));
 }
 
-void on_focus_last_toggled(GtkToggleButton *w, gpointer data)
+void on_focus_notlast_toggled(GtkToggleButton *w, gpointer data)
 {
     if (mapping) return;
 
-    tree_set_bool("focus/focusLast", gtk_toggle_button_get_active(w));
+    tree_set_bool("focus/focusLast", !gtk_toggle_button_get_active(w));
+}
+
+void on_focus_under_mouse_toggled(GtkToggleButton *w, gpointer data)
+{
+    if (mapping) return;
+
+    tree_set_bool("focus/underMouse", gtk_toggle_button_get_active(w));
 }
 
 void on_titlebar_doubleclick_maximize_activate(GtkMenuItem *w, gpointer data)
