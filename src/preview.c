@@ -356,7 +356,7 @@ static GdkPixbuf* preview_window(RrTheme *theme, const gchar *titlelayout,
 
             a->surface.parent = title;
             a->surface.parentx = x - theme->fbwidth;
-            a->surface.parenty = theme->paddingy;
+            a->surface.parenty = theme->paddingy + 1;
 
             w = theme->button_size;
             h = theme->button_size;
@@ -473,15 +473,15 @@ static gint theme_label_width(RrTheme *theme, gboolean active)
 static gint theme_window_min_width(RrTheme *theme, const gchar *titlelayout)
 {
     gint numbuttons = strlen(titlelayout);
-    gint w =  2 * (theme->fbwidth + theme->paddingx + 1);
+    gint w =  2 * theme->fbwidth + (numbuttons + 3) * (theme->paddingx + 1);
 
     if (g_strrstr(titlelayout, "L")) {
         numbuttons--;
         w += MAX(theme_label_width(theme, TRUE),
-                 theme_label_width(theme, FALSE)) + theme->paddingx + 1;
+                 theme_label_width(theme, FALSE));
     }
 
-    w += (theme->button_size + theme->paddingx + 1) * numbuttons;
+    w += theme->button_size * numbuttons;
 
     return w;
 }
