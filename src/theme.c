@@ -159,6 +159,8 @@ void theme_install(const gchar *path)
     if ((name = archive_install(path)))
         tree_set_string("theme/name", name);
     g_free(name);
+
+    theme_load_all();
 }
 
 void theme_load_all()
