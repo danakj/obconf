@@ -242,15 +242,18 @@ static GdkPixbuf* preview_window(RrTheme *theme, const gchar *titlelayout,
     title = focus ? theme->a_focused_title : theme->a_unfocused_title;
 
     /* set border */
-    pixbuf = gdk_pixbuf_new(GDK_COLORSPACE_RGB, FALSE, 8, width, height);
-    gdk_pixbuf_fill(pixbuf, rr_color_pixel(theme->menu_border_color));
+    pixbuf = gdk_pixbuf_new(GDK_COLORSPACE_RGB, TRUE, 8, width, height);
+    gdk_pixbuf_fill(pixbuf,
+                    rr_color_pixel(focus ?
+                                   theme->frame_focused_border_color :
+                                   theme->frame_unfocused_border_color));
 
     /* title */
     w = width - 2*theme->fbwidth;
     h = theme->title_height;
     theme_pixmap_paint(title, w, h);
 
-    x = y = theme->fbwidth;;
+    x = y = theme->fbwidth;
     pixmap = gdk_pixmap_foreign_new(title->pixmap);
     pixbuf = gdk_pixbuf_get_from_drawable(pixbuf, pixmap,
                                           gdk_colormap_get_system(),
@@ -277,7 +280,7 @@ static GdkPixbuf* preview_window(RrTheme *theme, const gchar *titlelayout,
     }
 
     x = theme->paddingx + theme->fbwidth + 1;
-    y += theme->paddingy + 1;
+    y += theme->paddingy;
     for (layout = titlelayout; *layout; layout++) {
         /* icon */
         if (*layout == 'N') {
@@ -290,8 +293,8 @@ static GdkPixbuf* preview_window(RrTheme *theme, const gchar *titlelayout,
             a->texture[0].data.rgba.data = theme->def_win_icon;
 
             a->surface.parent = title;
-            a->surface.parentx = x;
-            a->surface.parenty = theme->paddingy;
+            a->surface.parentx = x - theme->fbwidth;
+            a->surface.parenty = theme->paddingy + 1;
 
             w = h = theme->button_size + 2;
 
@@ -299,7 +302,7 @@ static GdkPixbuf* preview_window(RrTheme *theme, const gchar *titlelayout,
             pixmap = gdk_pixmap_foreign_new(a->pixmap);
             pixbuf = gdk_pixbuf_get_from_drawable(pixbuf, pixmap,
                                                   gdk_colormap_get_system(),
-                                                  0, 0, x, y - 1, w, h);
+                                                  0, 0, x, y, w, h);
 
             x += theme->button_size + 2 + theme->paddingx + 1;
         } else if (*layout == 'L') { /* label */
@@ -307,8 +310,8 @@ static GdkPixbuf* preview_window(RrTheme *theme, const gchar *titlelayout,
             a->texture[0].data.text.string = focus ? "Active" : "Inactive";
 
             a->surface.parent = title;
-            a->surface.parentx = x;
-            a->surface.parenty = theme->paddingy;
+            a->surface.parentx = x - theme->fbwidth;
+            a->surface.parenty = theme->paddingy + 1;
             w = label_w;
             h = theme->label_height;
 
@@ -316,7 +319,7 @@ static GdkPixbuf* preview_window(RrTheme *theme, const gchar *titlelayout,
             pixmap = gdk_pixmap_foreign_new(a->pixmap);
             pixbuf = gdk_pixbuf_get_from_drawable(pixbuf, pixmap,
                                                   gdk_colormap_get_system(),
-                                                  0, 0, x, y - 1, w, h);
+                                                  0, 0, x, y, w, h);
 
             x += w + theme->paddingx + 1;
         } else {
@@ -352,7 +355,7 @@ static GdkPixbuf* preview_window(RrTheme *theme, const gchar *titlelayout,
             }
 
             a->surface.parent = title;
-            a->surface.parentx = x;
+            a->surface.parentx = x - theme->fbwidth;
             a->surface.parenty = theme->paddingy + 1;
 
             w = theme->button_size;
@@ -360,9 +363,11 @@ static GdkPixbuf* preview_window(RrTheme *theme, const gchar *titlelayout,
 
             theme_pixmap_paint(a, w, h);
             pixmap = gdk_pixmap_foreign_new(a->pixmap);
+            /* use y + 1 because these buttons should be centered wrt the label
+             */
             pixbuf = gdk_pixbuf_get_from_drawable(pixbuf, pixmap,
                                                   gdk_colormap_get_system(),
-                                                  0, 0, x, y, w, h);
+                                                  0, 0, x, y + 1, w, h);
 
             x += theme->button_size + theme->paddingx + 1;
         }
@@ -417,12 +422,21 @@ static GdkPixbuf* preview_window(RrTheme *theme, const gchar *titlelayout,
     h = height - theme->title_height - 3*theme->fbwidth -
         (theme->handle_height ? (theme->fbwidth + theme->handle_height) : 0);
 
-    scratch = gdk_pixbuf_new(GDK_COLORSPACE_RGB, FALSE, 8, w, h);
+    scratch = gdk_pixbuf_new(GDK_COLORSPACE_RGB, TRUE, 8, w, h);
     gdk_pixbuf_fill(scratch, rr_color_pixel(focus ?
                                             theme->cb_focused_color :
                                             theme->cb_unfocused_color));
 
     gdk_pixbuf_copy_area(scratch, 0, 0, w, h, pixbuf, x, y);
+
+    /* clear (no alpha!) the area where the client resides */
+    gdk_pixbuf_fill(scratch, 0);
+    gdk_pixbuf_copy_area(scratch, 0, 0,
+                         w - 2*theme->cbwidthx,
+                         h - 2*theme->cbwidthy,
+                         pixbuf,
+                         x + theme->cbwidthx,
+                         y + theme->cbwidthy);
 
     return pixbuf;
 }
