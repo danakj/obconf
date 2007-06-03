@@ -152,8 +152,8 @@ msgid "Never"
 msgstr "Aldrig"
 
 #: src/strings.c:49
-msgid "Information _dialog's position"
-msgstr "Position för informations_dialog"
+msgid "Information _dialog's position:"
+msgstr "Position för informations_dialog:"
 
 #: src/strings.c:50
 msgid "Centered on the window"
