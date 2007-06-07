@@ -190,7 +190,7 @@ static void desktops_write_names()
 
     /* make openbox re-set the property */
     XDeleteProperty(GDK_DISPLAY(), GDK_ROOT_WINDOW(),
-                    XInternAtom(GDK_DISPLAY(), "_NET_DESKTOP_NAMES", FALSE));
+                    gdk_x11_get_xatom_by_name("_NET_DESKTOP_NAMES"));
 }
 
 static void desktops_write_number()
@@ -200,9 +200,8 @@ static void desktops_write_number()
     tree_set_int("desktops/number", num_desktops);
 
     ce.xclient.type = ClientMessage;
-    ce.xclient.message_type = XInternAtom(GDK_DISPLAY(),
-                                          "_NET_NUMBER_OF_DESKTOPS",
-                                          FALSE);
+    ce.xclient.message_type =
+        gdk_x11_get_xatom_by_name("_NET_NUMBER_OF_DESKTOPS");
     ce.xclient.display = GDK_DISPLAY();
     ce.xclient.window = GDK_ROOT_WINDOW();
     ce.xclient.format = 32;
