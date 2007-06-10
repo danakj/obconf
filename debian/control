@@ -6,7 +6,7 @@ Standards-Version: 3.7.2
 
 Package: obconf
 Architecture: i386
-Depends: libc6, libgtk2.0-0, libglade2-0, openbox (>= 3.3.996), libstartup-notification0, tar, gzip
+Depends: libc6, libgtk2.0-0, libglade2-0, openbox (>= 3.4.2), libstartup-notification0, tar, gzip
 Recommends: ttf-bitstream-vera, shared-mime-info, desktop-file-utils
 Description: Openbox configuration manager
  ObConf lets you change your configuration of Openbox. This includes setting
