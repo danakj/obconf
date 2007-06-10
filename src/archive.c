@@ -23,10 +23,8 @@
 
 static gchar *get_theme_dir();
 static gboolean change_dir(const gchar *dir);
-static gchar* name_from_file(const gchar *path);
 static gchar* name_from_dir(const gchar *dir);
-static gboolean install_theme_to(const gchar *name, const gchar *file,
-                                 const gchar *to);
+static gchar* install_theme_to(const gchar *file, const gchar *to);
 static gboolean create_theme_archive(const gchar *dir, const gchar *name,
                                      const gchar *to);
 
@@ -38,14 +36,8 @@ gchar* archive_install(const gchar *path)
     if (!(dest = get_theme_dir()))
         return NULL;
 
-    if (!(name = name_from_file(path)))
-        return NULL;
-
-    if (install_theme_to(name, path, dest)) {
+    if ((name = install_theme_to(path, dest))) {
         gtk_msg(GTK_MESSAGE_INFO, _("\"%s\" was installed to %s"), name, dest);
-    } else {
-        g_free(name);
-        name = NULL;
     }
 
     g_free(dest);
@@ -160,29 +152,6 @@ static gchar* name_from_dir(const gchar *dir)
     return g_path_get_basename(dir);
 }
 
-static gchar* name_from_file(const gchar *path)
-{
-    /* decipher the theme name from the file name */
-    gchar *fname = g_path_get_basename(path);
-    gint len = strlen(fname);
-    gchar *name = NULL;
-
-    if (len > 4 &&
-        (fname[len-4] == '.' && fname[len-3] == 'o' &&
-         fname[len-2] == 'b' && fname[len-1] == 't'))
-    {
-        fname[len-4] = '\0';
-        name = g_strdup(fname);
-        fname[len-4] = '.';
-    }
-
-    if (name == NULL)
-        gtk_msg(GTK_MESSAGE_ERROR,
-                _("Unable to determine the theme's name from \"%s\".  File name should be ThemeName.obt."), fname);
-
-    return name;
-}
-
 static gboolean change_dir(const gchar *dir)
 {
     if (chdir(dir) == -1) {
@@ -193,29 +162,31 @@ static gboolean change_dir(const gchar *dir)
     return TRUE;
 }
 
-static gboolean install_theme_to(const gchar *name, const gchar *file,
-                                 const gchar *to)
+static gchar* install_theme_to(const gchar *file, const gchar *to)
 {
     gchar *glob;
     gchar **argv;
-    gchar *errtxt = NULL;
+    gchar *errtxt = NULL, *outtxt = NULL;
     gint exitcode;
     GError *e = NULL;
+    gchar *name = NULL;
 
-    glob = g_strdup_printf("%s/openbox-3/", name);
+    glob = g_strdup_printf("*/openbox-3/", name);
 
-    argv = g_new(gchar*, 9);
+    argv = g_new(gchar*, 11);
     argv[0] = g_strdup("tar");
     argv[1] = g_strdup("-x");
-    argv[2] = g_strdup("-z");
-    argv[3] = g_strdup("-f");
-    argv[4] = g_strdup(file);
-    argv[5] = g_strdup("-C");
-    argv[6] = g_strdup(to);
-    argv[7] = g_strdup(glob);
-    argv[8] = NULL;
+    argv[2] = g_strdup("-v");
+    argv[3] = g_strdup("-z");
+    argv[4] = g_strdup("--wildcards");
+    argv[5] = g_strdup("-f");
+    argv[6] = g_strdup(file);
+    argv[7] = g_strdup("-C");
+    argv[8] = g_strdup(to);
+    argv[9] = g_strdup(glob);
+    argv[10] = NULL;
     if (!g_spawn_sync(NULL, argv, NULL, G_SPAWN_SEARCH_PATH, NULL, NULL,
-                      NULL, &errtxt, &exitcode, &e))
+                      &outtxt, &errtxt, &exitcode, &e))
         gtk_msg(GTK_MESSAGE_ERROR, _("Unable to run the \"tar\" command: %s"),
                 e->message);
     g_strfreev(argv);
@@ -226,7 +197,31 @@ static gboolean install_theme_to(const gchar *name, const gchar *file,
                 _("Unable to extract the file \"%s\".\nPlease ensure that \"%s\" is writable and that the file is a valid Openbox theme archive.\nThe following errors were reported:\n%s"),
                 file, to, errtxt);
 
+    if (exitcode == EXIT_SUCCESS) {
+        gchar **lines = g_strsplit(outtxt, "\n", 0);
+        gchar **it;
+        for (it = lines; *it; ++it) {
+            gchar *l = *it;
+            gboolean found = FALSE;
+
+            while (*l && !found) {
+                if (!strcmp(l, "/openbox-3/")) {
+                    *l = '\0'; /* cut the string */
+                    found = TRUE;
+                }
+                ++l;
+            }
+
+            if (found) {
+                name = g_strdup(*it);
+                break;
+            }
+        }
+        g_strfreev(lines);
+    }
+
+    g_free(outtxt);
     g_free(errtxt);
     g_free(glob);
-    return exitcode == EXIT_SUCCESS;
+    return name;
 }

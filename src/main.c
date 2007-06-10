@@ -170,7 +170,8 @@ int main(int argc, char **argv)
 
     if (obc_theme_install)
         theme_install(obc_theme_install);
-    theme_load_all();
+    else
+        theme_load_all();
 
     /* the main window is not shown here ! it is shown when the theme previews
        are completed */
