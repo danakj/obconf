@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: obconf 2.0.0\n"
 "Report-Msgid-Bugs-To: http://bugzilla.icculus.org/\n"
-"POT-Creation-Date: 2007-06-03 15:36-0400\n"
+"POT-Creation-Date: 2007-06-10 19:02-0400\n"
 "PO-Revision-Date: 2007-06-03 22:05+0200\n"
 "Last-Translator:  <mikachu@icculus.org>\n"
 "Language-Team: Swedish\n"
@@ -450,17 +450,17 @@ msgstr "Välj ett Openboxtema"
 msgid "Openbox theme archives"
 msgstr "Openboxtema-arkiv"
 
-#: src/archive.c:45
+#: src/archive.c:40
 #, c-format
 msgid "\"%s\" was installed to %s"
 msgstr "\"%s\" installerades till %s"
 
-#: src/archive.c:73
+#: src/archive.c:65
 #, c-format
 msgid "\"%s\" was successfully created"
 msgstr "\"%s\" installerades framgångsrikt"
 
-#: src/archive.c:109
+#: src/archive.c:101
 #, c-format
 msgid ""
 "Unable to create the theme archive \"%s\".\n"
@@ -471,35 +471,27 @@ msgstr ""
 "Följande fel rapporterades:\n"
 "%s"
 
-#: src/archive.c:114 src/archive.c:219
+#: src/archive.c:106 src/archive.c:190
 #, c-format
 msgid "Unable to run the \"tar\" command: %s"
 msgstr "Kunde inte köra tarkommandot: %s"
 
-#: src/archive.c:134
+#: src/archive.c:126
 #, c-format
 msgid "Unable to create directory \"%s\": %s"
 msgstr "Kunde inte skapa katalog \"%s\": %s"
 
-#: src/archive.c:156
+#: src/archive.c:148
 #, c-format
 msgid "\"%s\" does not appear to be a valid Openbox theme directory"
 msgstr "\"%s\" verkar inte vara en giltig Openboxtema-katalog"
 
-#: src/archive.c:181
-#, c-format
-msgid ""
-"Unable to determine the theme's name from \"%s\".  File name should be "
-"ThemeName.obt."
-msgstr ""
-"Kunde inte avgöra temats namn från \"%s\". Filnamnet borde vara TemaNamn.obt."
-
-#: src/archive.c:189
+#: src/archive.c:158
 #, c-format
 msgid "Unable to move to directory \"%s\": %s"
 msgstr "Kunde inte flytta till katalog \"%s\": %s"
 
-#: src/archive.c:226
+#: src/archive.c:197
 #, c-format
 msgid ""
 "Unable to extract the file \"%s\".\n"
@@ -517,3 +509,10 @@ msgstr ""
 #: src/mouse.c:72
 msgid "Custom actions"
 msgstr "Användardefinierad handling"
+
+#~ msgid ""
+#~ "Unable to determine the theme's name from \"%s\".  File name should be "
+#~ "ThemeName.obt."
+#~ msgstr ""
+#~ "Kunde inte avgöra temats namn från \"%s\". Filnamnet borde vara TemaNamn."
+#~ "obt."
