@@ -443,7 +443,7 @@ static GdkPixbuf* preview_window(RrTheme *theme, const gchar *titlelayout,
     gdk_pixbuf_copy_area(scratch, 0, 0, w, h, pixbuf, x, y);
 
     /* clear (no alpha!) the area where the client resides */
-    gdk_pixbuf_fill(scratch, 0);
+    gdk_pixbuf_fill(scratch, 0xffffffff);
     gdk_pixbuf_copy_area(scratch, 0, 0,
                          w - 2*theme->cbwidthx,
                          h - 2*theme->cbwidthy,
