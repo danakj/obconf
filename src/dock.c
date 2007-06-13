@@ -91,10 +91,10 @@ void dock_setup_tab()
     gtk_spin_button_set_value(GTK_SPIN_BUTTON(w),
                               tree_get_int("dock/floatingY", 0));
 
-    s = tree_get_string("dock/stacking", "Top");
+    s = tree_get_string("dock/stacking", "Above");
     if(!strcasecmp(s, "Normal"))
         w = get_widget("dock_stack_normal");
-    else if(!strcasecmp(s, "Bottom"))
+    else if(!strcasecmp(s, "Below"))
         w = get_widget("dock_stack_bottom");
     else
         w = get_widget("dock_stack_top");
@@ -256,7 +256,7 @@ void on_dock_stacking_top_toggled(GtkToggleButton *w, gpointer data)
     if (mapping) return;
 
     if(gtk_toggle_button_get_active(w))
-        tree_set_string("dock/stacking", "Top");
+        tree_set_string("dock/stacking", "Above");
 }
 
 void on_dock_stacking_normal_toggled(GtkToggleButton *w, gpointer data)
@@ -272,7 +272,7 @@ void on_dock_stacking_bottom_toggled(GtkToggleButton *w, gpointer data)
     if (mapping) return;
 
     if(gtk_toggle_button_get_active(w))
-        tree_set_string("dock/stacking", "Bottom");
+        tree_set_string("dock/stacking", "Below");
 }
 
 void on_dock_horizontal_activate(GtkMenuItem *w, gpointer data)
