@@ -73,6 +73,7 @@ void dock_setup_tab()
     w = get_widget("dock_position");
     s = tree_get_string("dock/position", "TopLeft");
     if (!strcasecmp(s, "Top"))              pos = POSITION_TOP;
+    else if (!strcasecmp(s, "TopRight"))    pos = POSITION_TOPRIGHT;
     else if (!strcasecmp(s, "Left"))        pos = POSITION_LEFT;
     else if (!strcasecmp(s, "Right"))       pos = POSITION_RIGHT;
     else if (!strcasecmp(s, "BottomLeft"))  pos = POSITION_BOTTOMLEFT;
