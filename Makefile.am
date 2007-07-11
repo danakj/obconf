@@ -60,7 +60,11 @@ src_obconf_SOURCES = \
 	src/theme.c \
 	src/theme.h \
 	src/tree.c \
-	src/tree.h
+	src/tree.h \
+	src/actions.c \
+	src/actions.h \
+	src/keyboard.c \
+	src/keyboard.h
 
 dist_glade_DATA = \
 	src/obconf.glade
@@ -112,11 +116,6 @@ EXTRA_DIST = \
 	m4/wchar_t.m4 \
 	m4/wint_t.m4 \
 	m4/xsize.m4 \
-	debian/changelog.in \
-	debian/compat \
-	debian/control \
-	debian/menu \
-	debian/rules \
 	config.rpath
 
 # Packages need to run these...
