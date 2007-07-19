@@ -1266,6 +1266,26 @@ C - The close button</property>
 			      <property name="fill">False</property>
 			    </packing>
 			  </child>
+
+			  <child>
+			    <widget class="GtkCheckButton" id="place_center">
+			      <property name="visible">True</property>
+			      <property name="can_focus">True</property>
+			      <property name="label" translatable="yes">_Center new windows when they are placed</property>
+			      <property name="use_underline">True</property>
+			      <property name="relief">GTK_RELIEF_NORMAL</property>
+			      <property name="focus_on_click">True</property>
+			      <property name="active">False</property>
+			      <property name="inconsistent">False</property>
+			      <property name="draw_indicator">True</property>
+			      <signal name="toggled" handler="on_place_center_toggled" after="yes" last_modification_time="Thu, 19 Jul 2007 21:21:23 GMT"/>
+			    </widget>
+			    <packing>
+			      <property name="padding">0</property>
+			      <property name="expand">False</property>
+			      <property name="fill">False</property>
+			    </packing>
+			  </child>
 			</widget>
 			<packing>
 			  <property name="padding">0</property>

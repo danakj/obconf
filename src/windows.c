@@ -79,6 +79,10 @@ void windows_setup_tab()
                                  !g_ascii_strcasecmp(s, "UnderMouse"));
     g_free(s);
 
+    w = get_widget("place_center");
+    gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(w),
+                                 tree_get_bool("placement/center", TRUE));
+
     w = get_widget("resize_popup");
     s = tree_get_string("resize/popupShow", "NonPixel");
     if (!strcasecmp(s, "Always"))     pos = POPUP_ALWAYS;
@@ -113,6 +117,12 @@ static void enable_stuff()
 
     w = get_widget("resize_position");
     gtk_widget_set_sensitive(w, b);
+
+    w = get_widget("place_mouse");
+    b = gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(w));
+
+    w = get_widget("place_center");
+    gtk_widget_set_sensitive(w, !b);
 }
 
 void on_focus_new_toggled(GtkToggleButton *w, gpointer data)
@@ -129,6 +139,14 @@ void on_place_mouse_toggled(GtkToggleButton *w, gpointer data)
     tree_set_string("placement/policy",
                     (gtk_toggle_button_get_active(w) ?
                      "UnderMouse" : "Smart"));
+    enable_stuff();
+}
+
+void on_place_center_toggled(GtkToggleButton *w, gpointer data)
+{
+    if (mapping) return;
+
+    tree_set_bool("placement/center", gtk_toggle_button_get_active(w));
 }
 
 void on_resist_window_value_changed(GtkSpinButton *w, gpointer data)

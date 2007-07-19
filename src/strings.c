@@ -38,6 +38,7 @@ gchar *s = N_("Focus _new windows when they appear");
 gchar *s = N_("<span weight=\"bold\">Placing Windows</span>");
 gchar *s = N_("    ");
 gchar *s = N_("_Place new windows under the mouse pointer");
+gchar *s = N_("_Center new windows when they are placed");
 gchar *s = N_("<span weight=\"bold\">Moving and Resizing Windows</span>");
 gchar *s = N_("    ");
 gchar *s = N_("Update the window contents while _resizing");
