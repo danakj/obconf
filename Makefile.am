@@ -115,6 +115,7 @@ EXTRA_DIST = \
 	m4/wchar_t.m4 \
 	m4/wint_t.m4 \
 	m4/xsize.m4 \
+	data/video-display.svg \
 	config.rpath
 
 # Packages need to run these...
