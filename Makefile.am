@@ -43,6 +43,8 @@ src_obconf_SOURCES = \
 	src/archive.h \
 	src/windows.c \
 	src/windows.h \
+	src/margins.c \
+	src/margins.h \
 	src/mouse.c \
 	src/mouse.h \
 	src/desktops.c \

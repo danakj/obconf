@@ -22,6 +22,7 @@
 #include "theme.h"
 #include "appearance.h"
 #include "windows.h"
+#include "margins.h"
 #include "mouse.h"
 #include "desktops.h"
 #include "dock.h"
@@ -164,6 +165,7 @@ int main(int argc, char **argv)
     windows_setup_tab();
     mouse_setup_tab();
     desktops_setup_tab();
+    margins_setup_tab();
     dock_setup_tab();
 
     mainwin = get_widget("main_window");
