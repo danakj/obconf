@@ -399,7 +399,7 @@ msgstr "Om ObConf"
 
 #: src/strings.c:132
 msgid "<span weight=\"bold\" size=\"xx-large\">ObConf VERSION</span>"
-msgstr "<span weight=\"bold\" size\"xx-large\">ObConf VERSION</span>"
+msgstr "<span weight=\"bold\" size=\"xx-large\">ObConf VERSION</span>"
 
 #: src/strings.c:133
 msgid "A preferences manager for Openbox"

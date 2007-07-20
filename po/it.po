@@ -23,7 +23,7 @@ msgstr "Gestore Configurazione di Openbox"
 
 #: src/strings.c:8
 msgid "<span weight=\"bold\">Theme</span>"
-msgstr "<span·weight=\"bold\">Tema</span>"
+msgstr "<span weight=\"bold\">Tema</span>"
 
 #: src/strings.c:9 src/strings.c:14 src/strings.c:18 src/strings.c:28
 #: src/strings.c:36 src/strings.c:39 src/strings.c:43 src/strings.c:49
@@ -48,7 +48,7 @@ msgstr "Tema"
 
 #: src/strings.c:13
 msgid "<span weight=\"bold\">Windows</span>"
-msgstr "<span·weight=\"bold\">Finestre</span>"
+msgstr "<span weight=\"bold\">Finestre</span>"
 
 #: src/strings.c:15
 msgid "_Windows retain a border when undecorated"
@@ -60,7 +60,7 @@ msgstr "Mostra a_nimazione durante minimizza e ripristina"
 
 #: src/strings.c:17
 msgid "<span weight=\"bold\">Window Titles</span>"
-msgstr "<span·weight=\"bold\">Barra del Titolo</span>"
+msgstr "<span weight=\"bold\">Barra del Titolo</span>"
 
 #: src/strings.c:19
 msgid "_Button order:"
@@ -86,7 +86,7 @@ msgstr ""
 
 #: src/strings.c:27
 msgid "<span weight=\"bold\">Fonts</span>"
-msgstr "<span·weight=\"bold\">Caratteri</span>"
+msgstr "<span weight=\"bold\">Caratteri</span>"
 
 #: src/strings.c:29
 msgid "_Active window title: "
@@ -106,7 +106,7 @@ msgstr "_Voci menù: "
 
 #: src/strings.c:33
 msgid "_On-screen display: "
-msgstr "_On-screen·display: "
+msgstr "_On-screen display: "
 
 #: src/strings.c:34
 msgid "Appearance"
@@ -114,7 +114,7 @@ msgstr "Aspetto"
 
 #: src/strings.c:35 src/strings.c:60
 msgid "<span weight=\"bold\">Focusing Windows</span>"
-msgstr "<span·weight=\"bold\">Focus Finestre</span>"
+msgstr "<span weight=\"bold\">Focus Finestre</span>"
 
 #: src/strings.c:37
 msgid "Focus _new windows when they appear"
@@ -122,7 +122,7 @@ msgstr "Assegna il focus alle _nuove finestre"
 
 #: src/strings.c:38
 msgid "<span weight=\"bold\">Placing Windows</span>"
-msgstr "<span·weight=\"bold\">Posizionamento Finestre</span>"
+msgstr "<span weight=\"bold\">Posizionamento Finestre</span>"
 
 #: src/strings.c:40
 msgid "_Place new windows under the mouse pointer"
@@ -134,7 +134,7 @@ msgstr "_Centra le nuove finestre nello schermo"
 
 #: src/strings.c:42
 msgid "<span weight=\"bold\">Moving and Resizing Windows</span>"
-msgstr "<span·weight=\"bold\">Movimento e Ridimensionamento Finestre</span>"
+msgstr "<span weight=\"bold\">Movimento e Ridimensionamento Finestre</span>"
 
 #: src/strings.c:44
 msgid "Update the window contents while _resizing"
@@ -217,7 +217,7 @@ msgstr ""
 
 #: src/strings.c:69
 msgid "<span weight=\"bold\">Titlebar</span>"
-msgstr "<span·weight=\"bold\">Barra del Titolo</span>"
+msgstr "<span weight=\"bold\">Barra del Titolo</span>"
 
 #: src/strings.c:71
 msgid "Double click on the _titlebar:"
@@ -241,7 +241,7 @@ msgstr ""
 
 #: src/strings.c:78
 msgid "<span weight=\"bold\">Desktops</span>"
-msgstr "<span·weight=\"bold\">Desktop</span>"
+msgstr "<span weight=\"bold\">Desktop</span>"
 
 #: src/strings.c:80
 msgid "_Number of desktops: "
@@ -257,7 +257,7 @@ msgstr "Desktop"
 
 #: src/strings.c:83
 msgid "<span weight=\"bold\">Desktop Margins</span>"
-msgstr "<span·weight=\"bold\">Margini dei Desktop</span>"
+msgstr "<span weight=\"bold\">Margini dei Desktop</span>"
 
 #: src/strings.c:85
 msgid ""
@@ -291,7 +291,7 @@ msgstr "Margini"
 
 #: src/strings.c:95
 msgid "<span weight=\"bold\">Position</span>"
-msgstr "<span·weight=\"bold\">Posizione</span>"
+msgstr "<span weight=\"bold\">Posizione</span>"
 
 #: src/strings.c:97
 msgid "_Position:"
@@ -359,7 +359,7 @@ msgstr "Orizzontale"
 
 #: src/strings.c:115
 msgid "<span weight=\"bold\">Stacking</span>"
-msgstr "<span·weight=\"bold\">Livello</span>"
+msgstr "<span weight=\"bold\">Livello</span>"
 
 #: src/strings.c:117
 msgid "Keep dock _above other windows"
@@ -375,7 +375,7 @@ msgstr "Mantieni la dock s_otto le altre finestre"
 
 #: src/strings.c:120
 msgid "<span weight=\"bold\">Hiding</span>"
-msgstr "<span·weight=\"bold\">Effetto Scomparsa</span>"
+msgstr "<span weight=\"bold\">Effetto Scomparsa</span>"
 
 #: src/strings.c:122
 msgid "_Hide off screen"
@@ -423,7 +423,7 @@ msgstr ""
 
 #: src/strings.c:139
 msgid "<span weight=\"bold\">Press the key you wish to bind...</span>"
-msgstr "<span·weight=\"bold\">Premi il tasto che desideri catturare...</span>"
+msgstr "<span weight=\"bold\">Premi il tasto che desideri catturare...</span>"
 
 #: src/main.c:66 src/main.c:68
 msgid "Copyright (c)"
@@ -431,7 +431,7 @@ msgstr ""
 
 #: src/main.c:80
 msgid "Syntax: obconf [options] [ARCHIVE.obt]\n"
-msgstr "Sintassi:·obconf·[opzioni]·[ARCHIVIO.obt]\n"
+msgstr "Sintassi: obconf [opzioni] [ARCHIVIO.obt]\n"
 
 #: src/main.c:81
 msgid ""
@@ -447,7 +447,7 @@ msgstr "  --help                 Mostra questo aiuto ed esce\n"
 
 #: src/main.c:83
 msgid "  --version             Display the version and exit\n"
-msgstr "  --version              Mostra·la·versione·ed·esce\n"
+msgstr "  --version              Mostra la versione ed esce\n"
 
 #: src/main.c:84
 msgid "  --install ARCHIVE.obt Install the given theme archive and select it\n"
