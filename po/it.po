@@ -265,6 +265,9 @@ msgid ""
 "will not be placed within a margin, and maximized windows will not cover "
 "them."
 msgstr ""
+"I margini del desktop sono aree riservate ai bordi dello schermo.  Le nuove "
+"finestre verranno posizionate al loro interno e le finestre massimizzate non "
+"li copriranno."
 
 #: src/strings.c:86
 msgid "_Top"
