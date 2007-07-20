@@ -82,7 +82,7 @@ gchar *s = N_("_Desktop names:");
 gchar *s = N_("Desktops");
 gchar *s = N_("<span weight=\"bold\">Desktop Margins</span>");
 gchar *s = N_("    ");
-gchar *s = N_("Desktop margins are reserved areas on the edge of your screen.  New windows will not be placed within a margin, and maximized windows will not cover it.");
+gchar *s = N_("Desktop margins are reserved areas on the edge of your screen.  New windows will not be placed within a margin, and maximized windows will not cover them.");
 gchar *s = N_("_Top");
 gchar *s = N_("px");
 gchar *s = N_("_Left");
