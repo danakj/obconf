@@ -262,7 +262,8 @@ msgid ""
 "Desktop margins are reserved areas on the edge of your screen.  New windows "
 "will not be placed within a margin, and maximized windows will not cover "
 "them."
-msgstr ""
+msgstr "Skrivbordsmarginaler är reserverade områden utmed kanten av skärmen. Nya fönster "
+"placeras inte i en marginal och maximerade fönster täcker dem inte."
 
 #: src/strings.c:86
 msgid "_Top"
