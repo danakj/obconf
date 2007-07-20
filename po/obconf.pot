@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: http://bugzilla.icculus.org/\n"
-"POT-Creation-Date: 2007-07-20 10:26-0400\n"
+"POT-Creation-Date: 2007-07-20 12:16-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,9 +27,9 @@ msgstr ""
 #: src/strings.c:9 src/strings.c:14 src/strings.c:18 src/strings.c:28
 #: src/strings.c:36 src/strings.c:39 src/strings.c:43 src/strings.c:49
 #: src/strings.c:61 src/strings.c:63 src/strings.c:70 src/strings.c:76
-#: src/strings.c:79 src/strings.c:84 src/strings.c:95 src/strings.c:106
-#: src/strings.c:109 src/strings.c:115 src/strings.c:120 src/strings.c:122
-#: src/strings.c:125
+#: src/strings.c:79 src/strings.c:84 src/strings.c:96 src/strings.c:107
+#: src/strings.c:110 src/strings.c:116 src/strings.c:121 src/strings.c:123
+#: src/strings.c:126
 msgid "    "
 msgstr ""
 
@@ -164,8 +164,8 @@ msgstr ""
 msgid "Drag _threshold distance:"
 msgstr ""
 
-#: src/strings.c:54 src/strings.c:56 src/strings.c:58 src/strings.c:86
-#: src/strings.c:88 src/strings.c:90 src/strings.c:92
+#: src/strings.c:54 src/strings.c:56 src/strings.c:58 src/strings.c:87
+#: src/strings.c:89 src/strings.c:91 src/strings.c:93
 msgid "px"
 msgstr ""
 
@@ -201,7 +201,7 @@ msgstr ""
 msgid "_Delay before focusing and raising windows:"
 msgstr ""
 
-#: src/strings.c:68 src/strings.c:75 src/strings.c:124 src/strings.c:127
+#: src/strings.c:68 src/strings.c:75 src/strings.c:125 src/strings.c:128
 msgid "ms"
 msgstr ""
 
@@ -250,146 +250,153 @@ msgid "<span weight=\"bold\">Desktop Margins</span>"
 msgstr ""
 
 #: src/strings.c:85
+msgid ""
+"Desktop margins are reserved areas on the edge of your screen.  New windows "
+"will not be placed within a margin, and maximized windows will not cover "
+"them."
+msgstr ""
+
+#: src/strings.c:86
 msgid "_Top"
 msgstr ""
 
-#: src/strings.c:87
+#: src/strings.c:88
 msgid "_Left"
 msgstr ""
 
-#: src/strings.c:89
+#: src/strings.c:90
 msgid "_Right"
 msgstr ""
 
-#: src/strings.c:91
+#: src/strings.c:92
 msgid "_Bottom"
 msgstr ""
 
-#: src/strings.c:93
+#: src/strings.c:94
 msgid "Margins"
 msgstr ""
 
-#: src/strings.c:94
+#: src/strings.c:95
 msgid "<span weight=\"bold\">Position</span>"
 msgstr ""
 
-#: src/strings.c:96
+#: src/strings.c:97
 msgid "_Position:"
 msgstr ""
 
-#: src/strings.c:97
+#: src/strings.c:98
 msgid "Top Left"
 msgstr ""
 
-#: src/strings.c:98
+#: src/strings.c:99
 msgid "Top"
 msgstr ""
 
-#: src/strings.c:99
+#: src/strings.c:100
 msgid "Top Right"
 msgstr ""
 
-#: src/strings.c:100
+#: src/strings.c:101
 msgid "Left"
 msgstr ""
 
-#: src/strings.c:101
+#: src/strings.c:102
 msgid "Right"
 msgstr ""
 
-#: src/strings.c:102
+#: src/strings.c:103
 msgid "Bottom Left"
 msgstr ""
 
-#: src/strings.c:103
+#: src/strings.c:104
 msgid "Bottom"
 msgstr ""
 
-#: src/strings.c:104
+#: src/strings.c:105
 msgid "Bottom Right"
 msgstr ""
 
-#: src/strings.c:105
+#: src/strings.c:106
 msgid "Floating"
 msgstr ""
 
-#: src/strings.c:107
+#: src/strings.c:108
 msgid "_Floating position:"
 msgstr ""
 
-#: src/strings.c:108
+#: src/strings.c:109
 msgid "x"
 msgstr ""
 
-#: src/strings.c:110
+#: src/strings.c:111
 msgid "Allow _windows to be placed within the dock's area"
 msgstr ""
 
-#: src/strings.c:111
+#: src/strings.c:112
 msgid "_Orientation: "
 msgstr ""
 
-#: src/strings.c:112
+#: src/strings.c:113
 msgid "Vertical"
 msgstr ""
 
-#: src/strings.c:113
+#: src/strings.c:114
 msgid "Horizontal"
 msgstr ""
 
-#: src/strings.c:114
+#: src/strings.c:115
 msgid "<span weight=\"bold\">Stacking</span>"
 msgstr ""
 
-#: src/strings.c:116
+#: src/strings.c:117
 msgid "Keep dock _above other windows"
 msgstr ""
 
-#: src/strings.c:117
+#: src/strings.c:118
 msgid "A_llow dock to be both above and below windows"
 msgstr ""
 
-#: src/strings.c:118
+#: src/strings.c:119
 msgid "Keep dock _below other windows"
 msgstr ""
 
-#: src/strings.c:119
+#: src/strings.c:120
 msgid "<span weight=\"bold\">Hiding</span>"
 msgstr ""
 
-#: src/strings.c:121
+#: src/strings.c:122
 msgid "_Hide off screen"
 msgstr ""
 
-#: src/strings.c:123
+#: src/strings.c:124
 msgid "_Delay before hiding:"
 msgstr ""
 
-#: src/strings.c:126
+#: src/strings.c:127
 msgid "Delay before _showing:"
 msgstr ""
 
-#: src/strings.c:128
+#: src/strings.c:129
 msgid "Dock"
 msgstr ""
 
-#: src/strings.c:129
+#: src/strings.c:130
 msgid "Abo_ut"
 msgstr ""
 
-#: src/strings.c:130
+#: src/strings.c:131
 msgid "About ObConf"
 msgstr ""
 
-#: src/strings.c:131
+#: src/strings.c:132
 msgid "<span weight=\"bold\" size=\"xx-large\">ObConf VERSION</span>"
 msgstr ""
 
-#: src/strings.c:132
+#: src/strings.c:133
 msgid "A preferences manager for Openbox"
 msgstr ""
 
-#: src/strings.c:133
+#: src/strings.c:134
 msgid ""
 "Copyright (c) 2003-2007\n"
 "Dana Jansens <danakj@orodu.net>\n"
@@ -397,11 +404,11 @@ msgid ""
 "Javeed Shaikh <syscrash2k@gmail.com>"
 msgstr ""
 
-#: src/strings.c:137
+#: src/strings.c:138
 msgid "window1"
 msgstr ""
 
-#: src/strings.c:138
+#: src/strings.c:139
 msgid "<span weight=\"bold\">Press the key you wish to bind...</span>"
 msgstr ""
 
