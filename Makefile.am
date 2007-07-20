@@ -65,7 +65,8 @@ src_obconf_SOURCES = \
 	src/tree.h
 
 dist_glade_DATA = \
-	src/obconf.glade
+	src/obconf.glade \
+	pixmaps/video-display.png
 
 dist_noinst_DATA = \
 	src/obconf.gladep

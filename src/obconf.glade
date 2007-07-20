@@ -2911,7 +2911,7 @@ C - The close button</property>
 				      <property name="xalign">0.5</property>
 				      <property name="yalign">0.5</property>
 				      <property name="xpad">0</property>
-				      <property name="ypad">0</property>
+				      <property name="ypad">4</property>
 				      <property name="mnemonic_widget">margins_top</property>
 				      <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
 				      <property name="width_chars">-1</property>
@@ -3153,7 +3153,7 @@ C - The close button</property>
 				  <property name="xalign">0.5</property>
 				  <property name="yalign">0.5</property>
 				  <property name="xpad">0</property>
-				  <property name="ypad">0</property>
+				  <property name="ypad">4</property>
 				  <property name="mnemonic_widget">margins_left</property>
 				  <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
 				  <property name="width_chars">-1</property>
@@ -3310,6 +3310,7 @@ C - The close button</property>
 			  <child>
 			    <widget class="GtkImage" id="image3">
 			      <property name="visible">True</property>
+			      <property name="pixbuf">video-display.png</property>
 			      <property name="xalign">0.5</property>
 			      <property name="yalign">0.5</property>
 			      <property name="xpad">0</property>
@@ -3317,8 +3318,8 @@ C - The close button</property>
 			    </widget>
 			    <packing>
 			      <property name="padding">0</property>
-			      <property name="expand">True</property>
-			      <property name="fill">True</property>
+			      <property name="expand">False</property>
+			      <property name="fill">False</property>
 			    </packing>
 			  </child>
 
@@ -3365,7 +3366,7 @@ C - The close button</property>
 				  <property name="xalign">0.5</property>
 				  <property name="yalign">0.5</property>
 				  <property name="xpad">0</property>
-				  <property name="ypad">0</property>
+				  <property name="ypad">4</property>
 				  <property name="mnemonic_widget">margins_right</property>
 				  <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
 				  <property name="width_chars">-1</property>
@@ -3600,7 +3601,7 @@ C - The close button</property>
 				  <property name="xalign">0.5</property>
 				  <property name="yalign">0.5</property>
 				  <property name="xpad">0</property>
-				  <property name="ypad">0</property>
+				  <property name="ypad">4</property>
 				  <property name="mnemonic_widget">margins_bottom</property>
 				  <property name="ellipsize">PANGO_ELLIPSIZE_NONE</property>
 				  <property name="width_chars">-1</property>
