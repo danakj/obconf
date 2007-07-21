@@ -4,6 +4,7 @@
   * Add Czech translation
   * Add Spanish translation
   * Updated Swedish translation
+  * Workaround a crash in GTK/Glib on the PowerPC platform
   * Add new Margins option (Margins tab)
   * Add new option for centering windows when placing them
   * Don't include the debian/ dir in releases
