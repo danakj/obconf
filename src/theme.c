@@ -46,7 +46,13 @@ void theme_setup_tab()
     w = get_widget("theme_names");
 
     /* widget setup */
-    theme_store = gtk_list_store_new(2, G_TYPE_STRING, GDK_TYPE_PIXBUF);
+    theme_store = gtk_list_store_new(3,
+                                     /* the theme name */
+                                     G_TYPE_STRING,
+                                     /* the theme preview */
+                                     GDK_TYPE_PIXBUF,
+                                     /* alignment of the preview */
+                                     G_TYPE_FLOAT);
     gtk_tree_view_set_model(GTK_TREE_VIEW(w), GTK_TREE_MODEL(theme_store));
     preview_update_set_tree_view(GTK_TREE_VIEW(w), theme_store);
     g_object_unref (theme_store);
@@ -62,9 +68,8 @@ void theme_setup_tab()
 
     /* pixbuf column, for theme previews */
     render = gtk_cell_renderer_pixbuf_new();
-    g_object_set(render, "xalign", 1.0);
     column = gtk_tree_view_column_new_with_attributes
-        ("Preview", render, "pixbuf", 1, NULL);
+        ("Preview", render, "pixbuf", 1, "xalign", 2, NULL);
     gtk_tree_view_append_column(GTK_TREE_VIEW(w), column);
 
     /* setup the selection handler */
@@ -218,8 +223,9 @@ void theme_load_all()
 
         gtk_list_store_append(theme_store, &iter);
         gtk_list_store_set(theme_store, &iter,
-                           0, it->data,
-                           1, NULL,
+                           0, it->data, /* the theme's name */
+                           1, NULL,     /* the preview is set later */
+                           2, 1.0,      /* all previews are right-aligned */
                            -1);
 
         if(!strcmp(name, it->data))
