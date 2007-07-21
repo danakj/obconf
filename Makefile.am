@@ -83,6 +83,7 @@ dist_kdemime_DATA = \
 EXTRA_DIST = \
 	config.rpath \
 	README \
+	CHANGELOG \
 	COPYING \
 	AUTHORS \
 	m4/codeset.m4 \
