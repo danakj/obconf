@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: obconf 2.0.1\n"
 "Report-Msgid-Bugs-To: http://bugzilla.icculus.org/\n"
-"POT-Creation-Date: 2007-07-20 12:16-0400\n"
+"POT-Creation-Date: 2007-07-21 21:27-0400\n"
 "PO-Revision-Date: 2007-06-26 20:07+0800\n"
 "Last-Translator: Wei-Lun Chao <chaoweilun@gmail.com>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
@@ -480,11 +480,11 @@ msgstr "--archive 需要一個引數\n"
 msgid "(Unnamed desktop)"
 msgstr "(未命名桌面)"
 
-#: src/theme.c:104 src/theme.c:136
+#: src/theme.c:109 src/theme.c:141
 msgid "Choose an Openbox theme"
 msgstr "選擇 Openbox 佈景主題"
 
-#: src/theme.c:113
+#: src/theme.c:118
 msgid "Openbox theme archives"
 msgstr "Openbox 佈景主題存檔"
 

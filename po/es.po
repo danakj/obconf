@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: obconf 2.0.2\n"
 "Report-Msgid-Bugs-To: http://bugzilla.icculus.org/\n"
-"POT-Creation-Date: 2007-07-20 12:16-0400\n"
+"POT-Creation-Date: 2007-07-21 21:27-0400\n"
 "PO-Revision-Date: 2007-07-21 00:54-0600\n"
 "Last-Translator: David Merino <rastiazul at yahoo . com>\n"
 "Language-Team: spanish\n"
@@ -133,8 +133,8 @@ msgstr "_Centrar las ventanas nuevas cuando éstas son colocadas"
 
 #: src/strings.c:42
 msgid "<span weight=\"bold\">Moving and Resizing Windows</span>"
-msgstr "<span weight=\"bold\">Moviendo y cambiando el tamaño de las
-ventanas</span>"
+msgstr ""
+"<span weight=\"bold\">Moviendo y cambiando el tamaño de las ventanas</span>"
 
 #: src/strings.c:44
 msgid "Update the window contents while _resizing"
@@ -191,8 +191,7 @@ msgstr "Ventanas"
 
 #: src/strings.c:62
 msgid "_Focus windows when the mouse pointer moves over them"
-msgstr "En_focar las ventanas cuando el puntero del ratón se mueve sobre
-estas"
+msgstr "En_focar las ventanas cuando el puntero del ratón se mueve sobre estas"
 
 #: src/strings.c:64
 msgid "Move focus under the mouse when _switching desktops"
@@ -200,8 +199,7 @@ msgstr "Mover el enfoque bajo el ratón cuando _se cambian escritorios"
 
 #: src/strings.c:65
 msgid "Move focus _under the mouse when the mouse is not moving"
-msgstr "Mover el enfoq_ue debajo del ratón cuando el ratón no se está
-moviendo"
+msgstr "Mover el enfoq_ue debajo del ratón cuando el ratón no se está moviendo"
 
 #: src/strings.c:66
 msgid "_Raise windows when the mouse pointer moves over them"
@@ -264,9 +262,10 @@ msgid ""
 "Desktop margins are reserved areas on the edge of your screen.  New windows "
 "will not be placed within a margin, and maximized windows will not cover "
 "them."
-msgstr "Los márgenes de los escritorios son áreas reservadas en el borde de
-su pantalla.  Las ventanas nuevas no serán colocadas dentro de un margen y las
-ventanas maximizas no las cubrirán."
+msgstr ""
+"Los márgenes de los escritorios son áreas reservadas en el borde de su "
+"pantalla.  Las ventanas nuevas no serán colocadas dentro de un margen y las "
+"ventanas maximizas no las cubrirán."
 
 #: src/strings.c:86
 msgid "_Top"
@@ -342,8 +341,7 @@ msgstr "x"
 
 #: src/strings.c:111
 msgid "Allow _windows to be placed within the dock's area"
-msgstr "Permitir que las _ventanas sean colocadas dentro de el área del
-muelle"
+msgstr "Permitir que las _ventanas sean colocadas dentro de el área del muelle"
 
 #: src/strings.c:112
 msgid "_Orientation: "
@@ -455,15 +453,16 @@ msgstr "  --version             Mostrar la versión y salir\n"
 
 #: src/main.c:84
 msgid "  --install ARCHIVE.obt Install the given theme archive and select it\n"
-msgstr "  --install ARCHIVO.obt Instalar el archivo de tema dado y
-seleccionarlo\n"
+msgstr ""
+"  --install ARCHIVO.obt Instalar el archivo de tema dado y seleccionarlo\n"
 
 #: src/main.c:85
 msgid ""
 "  --archive THEME       Create a theme archive from the given theme "
 "directory\n"
-msgstr "  --archive THEME       Crear un archivo de tema desde el directorio de
-tema dado\n"
+msgstr ""
+"  --archive THEME       Crear un archivo de tema desde el directorio de tema "
+"dado\n"
 
 #: src/main.c:86
 #, c-format
@@ -488,11 +487,11 @@ msgstr "--archive requiere un argumento\n"
 msgid "(Unnamed desktop)"
 msgstr "(Escritorio sin nombre)"
 
-#: src/theme.c:104 src/theme.c:136
+#: src/theme.c:109 src/theme.c:141
 msgid "Choose an Openbox theme"
 msgstr "Seleccionar un tema de Openbox"
 
-#: src/theme.c:113
+#: src/theme.c:118
 msgid "Openbox theme archives"
 msgstr "Archivos de temas de Openbox"
 
@@ -547,8 +546,8 @@ msgid ""
 "%s"
 msgstr ""
 "No fue posible extraer el archivo \"%s\".\n"
-"Por favor asegúrese de que \"%s\" es escribirle y que el archivo es un tema
-válido de Openbox\n"
+"Por favor asegúrese de que \"%s\" es escribirle y que el archivo es un tema "
+"válido de Openbox\n"
 "Los siguientes errores fueron reportados:\n"
 "%s"
 

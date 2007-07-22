@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: obconf 2.0.2\n"
 "Report-Msgid-Bugs-To: http://bugzilla.icculus.org/\n"
-"POT-Creation-Date: 2007-07-20 12:16-0400\n"
+"POT-Creation-Date: 2007-07-21 21:27-0400\n"
 "PO-Revision-Date: 2007-07-20 02:09+0200\n"
 "Last-Translator:  <mikachu@icculus.org>\n"
 "Language-Team: Swedish\n"
@@ -262,8 +262,9 @@ msgid ""
 "Desktop margins are reserved areas on the edge of your screen.  New windows "
 "will not be placed within a margin, and maximized windows will not cover "
 "them."
-msgstr "Skrivbordsmarginaler är reserverade områden utmed kanten av skärmen. Nya fönster "
-"placeras inte i en marginal och maximerade fönster täcker dem inte."
+msgstr ""
+"Skrivbordsmarginaler är reserverade områden utmed kanten av skärmen. Nya "
+"fönster placeras inte i en marginal och maximerade fönster täcker dem inte."
 
 #: src/strings.c:86
 msgid "_Top"
@@ -480,11 +481,11 @@ msgstr "--archive kräver ett argument\n"
 msgid "(Unnamed desktop)"
 msgstr "(Namnlöst skrivbord)"
 
-#: src/theme.c:104 src/theme.c:136
+#: src/theme.c:109 src/theme.c:141
 msgid "Choose an Openbox theme"
 msgstr "Välj ett Openboxtema"
 
-#: src/theme.c:113
+#: src/theme.c:118
 msgid "Openbox theme archives"
 msgstr "Openboxtema-arkiv"
 
