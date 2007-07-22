@@ -167,6 +167,19 @@ gchar *s = N_("    ");
 gchar *s = N_("Delay before _showing:");
 gchar *s = N_("ms");
 gchar *s = N_("Dock");
+gchar *s = N_("<span weight=\"bold\">Key Bindings</span>");
+gchar *s = N_("    ");
+gchar *s = N_("Chain Quit Key:");
+gchar *s = N_("Press <Return> followed by the keybinding you wish to set");
+gchar *s = N_("Bindings:");
+gchar *s = N_("New Keybinding");
+gchar *s = N_("Edit Keybinding");
+gchar *s = N_("Add Keychain");
+gchar *s = N_("Add Chain");
+gchar *s = N_("Add Action");
+gchar *s = N_("Add Action");
+gchar *s = N_("Delete Selected Keybinding/Chain/Action");
+gchar *s = N_("Key Bindings");
 gchar *s = N_("Abo_ut");
 gchar *s = N_("About ObConf");
 gchar *s = N_("<span weight=\"bold\" size=\"xx-large\">ObConf VERSION</span>");
@@ -175,5 +188,3 @@ gchar *s = N_("Copyright (c) 2003-2008\n"
               "Dana Jansens <danakj@orodu.net>\n"
               "Tim Riley <tr@slackzone.org>\n"
               "Javeed Shaikh <syscrash2k@gmail.com>");
-gchar *s = N_("window1");
-gchar *s = N_("<span weight=\"bold\">Press the key you wish to bind...</span>");

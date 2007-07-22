@@ -64,7 +64,11 @@ src_obconf_SOURCES = \
 	src/theme.c \
 	src/theme.h \
 	src/tree.c \
-	src/tree.h
+	src/tree.h \
+	src/actions.c \
+	src/actions.h \
+	src/keyboard.c \
+	src/keyboard.h
 
 dist_glade_DATA = \
 	src/obconf.glade \

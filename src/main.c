@@ -27,6 +27,7 @@
 #include "desktops.h"
 #include "dock.h"
 #include "preview_update.h"
+#include "keyboard.h"
 #include "gettext.h"
 
 #include <gdk/gdkx.h>
@@ -169,6 +170,7 @@ int main(int argc, char **argv)
     desktops_setup_tab();
     margins_setup_tab();
     dock_setup_tab();
+    keyboard_setup_tab();
 
     mainwin = get_widget("main_window");
 
