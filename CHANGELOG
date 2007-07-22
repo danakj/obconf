@@ -14,7 +14,7 @@
     Above/Below not Top/Bottom)
   * Give the theme previews white client areas to more closely resemble a real
     window
-  * Update to Openbox 3.4.2 libraries
+  * Update to Openbox 3.4.3 libraries
 
 2.0.1:
   * Make ObConf work when the .obt file has been renamed (e.g. by box-look.org)
