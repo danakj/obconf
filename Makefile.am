@@ -9,7 +9,7 @@ mimedir         = $(datadir)/mime
 mimepkgdir      = $(datadir)/mime/packages
 kdemimedir      = $(datadir)/mimelnk/application
 
-AUTOMAKE_OPTIONS = subdir-objects
+AUTOMAKE_OPTIONS = subdir-objects foreign
 ACLOCAL_AMFLAGS = -I m4
 
 bin_PROGRAMS = \
