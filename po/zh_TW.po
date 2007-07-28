@@ -5,10 +5,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: obconf 2.0.1\n"
+"Project-Id-Version: obconf 2.0.2\n"
 "Report-Msgid-Bugs-To: http://bugzilla.icculus.org/\n"
 "POT-Creation-Date: 2007-07-21 21:27-0400\n"
-"PO-Revision-Date: 2007-06-26 20:07+0800\n"
+"PO-Revision-Date: 2007-07-23 23:07+0800\n"
 "Last-Translator: Wei-Lun Chao <chaoweilun@gmail.com>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
 "MIME-Version: 1.0\n"
@@ -51,7 +51,7 @@ msgstr "<span weight=\"bold\">視窗</span>"
 
 #: src/strings.c:15
 msgid "_Windows retain a border when undecorated"
-msgstr "視窗宋裝飾時保留邊框(_W)"
+msgstr "視窗未裝飾時保留邊框(_W)"
 
 #: src/strings.c:16
 msgid "A_nimate iconify and restore"
@@ -129,7 +129,7 @@ msgstr "將新視窗放置於滑鼠指標下方(_P)"
 
 #: src/strings.c:41
 msgid "_Center new windows when they are placed"
-msgstr ""
+msgstr "擺放新視窗時置中"
 
 #: src/strings.c:42
 msgid "<span weight=\"bold\">Moving and Resizing Windows</span>"
@@ -254,7 +254,7 @@ msgstr "桌面"
 
 #: src/strings.c:83
 msgid "<span weight=\"bold\">Desktop Margins</span>"
-msgstr ""
+msgstr "<span weight=\"bold\">桌面邊界</span>"
 
 #: src/strings.c:85
 msgid ""
@@ -262,6 +262,9 @@ msgid ""
 "will not be placed within a margin, and maximized windows will not cover "
 "them."
 msgstr ""
+"桌面邊界是您螢幕邊緣保留的區域。新視窗"
+"將不會被置放於邊界之內，而最大化的視窗"
+"也不會蓋住它。"
 
 #: src/strings.c:86
 msgid "_Top"
@@ -281,7 +284,7 @@ msgstr "下"
 
 #: src/strings.c:94
 msgid "Margins"
-msgstr ""
+msgstr "邊界"
 
 #: src/strings.c:95
 msgid "<span weight=\"bold\">Position</span>"
@@ -465,7 +468,7 @@ msgid ""
 "\n"
 msgstr ""
 "\n"
-"請報告錯誤給 %s\n"
+"請將錯誤報告給 %s\n"
 "\n"
 
 #: src/main.c:102
