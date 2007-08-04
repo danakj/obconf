@@ -244,6 +244,7 @@ void on_warp_edge_toggled(GtkToggleButton *w, gpointer data)
     }
     else
         tree_set_int("mouse/screenEdgeWarpTime", 0);
+    enable_stuff();
 }
 
 void on_warp_edge_time_value_changed(GtkSpinButton *w, gpointer data)
