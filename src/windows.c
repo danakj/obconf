@@ -36,7 +36,7 @@ void windows_setup_tab()
     GtkWidget *w, *w1, *w2, *w3;
     GtkSizeGroup *group;
     gchar *s;
-    gint pos;
+    gint pos, i;
 
     mapping = TRUE;
 
@@ -102,6 +102,14 @@ void windows_setup_tab()
     g_free(s);
     gtk_option_menu_set_history(GTK_OPTION_MENU(w), pos);
 
+    i = tree_get_int("mouse/screenEdgeWarpTime", 400);
+
+    w = get_widget("warp_edge");
+    gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(w), i != 0);
+
+    w = get_widget("warp_edge_time");
+    gtk_spin_button_set_value(GTK_SPIN_BUTTON(w), i ? i : 400);
+
     enable_stuff();
 
     mapping = FALSE;
@@ -114,15 +122,18 @@ static void enable_stuff()
 
     w = get_widget("resize_popup");
     b = gtk_option_menu_get_history(GTK_OPTION_MENU(w)) != POPUP_NEVER;
-
     w = get_widget("resize_position");
     gtk_widget_set_sensitive(w, b);
 
     w = get_widget("place_mouse");
     b = gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(w));
-
     w = get_widget("place_center");
     gtk_widget_set_sensitive(w, !b);
+
+    w = get_widget("warp_edge");
+    b = gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(w));
+    w = get_widget("warp_edge_time");
+    gtk_widget_set_sensitive(w, b);
 }
 
 void on_focus_new_toggled(GtkToggleButton *w, gpointer data)
@@ -218,5 +229,28 @@ void on_resize_position_top_activate(GtkMenuItem *w, gpointer data)
 
     tree_set_string("resize/popupPosition", "Top");
     enable_stuff();
+}
+
+void on_warp_edge_toggled(GtkToggleButton *w, gpointer data)
+{
+    if (mapping) return;
+
+    if (gtk_toggle_button_get_active(w)) {
+        GtkWidget *w2;
+
+        w2 = get_widget("warp_edge_time");
+        tree_set_int("mouse/screenEdgeWarpTime",
+                     gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(w2)));
+    }
+    else
+        tree_set_int("mouse/screenEdgeWarpTime", 0);
+}
+
+void on_warp_edge_time_value_changed(GtkSpinButton *w, gpointer data)
+{
+    if (mapping) return;
+
+    tree_set_int("mouse/screenEdgeWarpTime",
+                 gtk_spin_button_get_value_as_int(w));
 }
 
