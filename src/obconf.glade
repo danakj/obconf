@@ -2750,7 +2750,7 @@ C - The close button</property>
 			<widget class="GtkCheckButton" id="desktop_popup">
 			  <property name="visible">True</property>
 			  <property name="can_focus">True</property>
-			  <property name="label" translatable="yes">_Show a notification when you switch desktops</property>
+			  <property name="label" translatable="yes">_Show a notification when switching desktops</property>
 			  <property name="use_underline">True</property>
 			  <property name="relief">GTK_RELIEF_NORMAL</property>
 			  <property name="focus_on_click">True</property>
@@ -2806,7 +2806,7 @@ C - The close button</property>
 			      <child>
 				<widget class="GtkLabel" id="label218">
 				  <property name="visible">True</property>
-				  <property name="label" translatable="yes">_Amount of time to wait before switching:</property>
+				  <property name="label" translatable="yes">_Amount of time to show the notification for:</property>
 				  <property name="use_underline">True</property>
 				  <property name="use_markup">False</property>
 				  <property name="justify">GTK_JUSTIFY_LEFT</property>
