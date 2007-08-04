@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: obconf 2.0.2\n"
 "Report-Msgid-Bugs-To: http://bugzilla.icculus.org/\n"
-"POT-Creation-Date: 2007-07-21 21:27-0400\n"
+"POT-Creation-Date: 2007-08-04 15:02-0400\n"
 "PO-Revision-Date: 2007-07-23 23:07+0800\n"
 "Last-Translator: Wei-Lun Chao <chaoweilun@gmail.com>\n"
 "Language-Team: Chinese (traditional) <zh-l10n@linux.org.tw>\n"
@@ -26,10 +26,10 @@ msgstr "<span weight=\"bold\">佈景主題</span>"
 
 #: src/strings.c:9 src/strings.c:14 src/strings.c:18 src/strings.c:28
 #: src/strings.c:36 src/strings.c:39 src/strings.c:43 src/strings.c:49
-#: src/strings.c:61 src/strings.c:63 src/strings.c:70 src/strings.c:76
-#: src/strings.c:79 src/strings.c:84 src/strings.c:96 src/strings.c:107
-#: src/strings.c:110 src/strings.c:116 src/strings.c:121 src/strings.c:123
-#: src/strings.c:126
+#: src/strings.c:60 src/strings.c:65 src/strings.c:67 src/strings.c:74
+#: src/strings.c:80 src/strings.c:83 src/strings.c:85 src/strings.c:92
+#: src/strings.c:104 src/strings.c:115 src/strings.c:118 src/strings.c:124
+#: src/strings.c:129 src/strings.c:131 src/strings.c:134
 msgid "    "
 msgstr "    "
 
@@ -111,7 +111,7 @@ msgstr "螢幕上顯示(_O)："
 msgid "Appearance"
 msgstr "外觀"
 
-#: src/strings.c:35 src/strings.c:60
+#: src/strings.c:35 src/strings.c:64
 msgid "<span weight=\"bold\">Focusing Windows</span>"
 msgstr "<span weight=\"bold\">焦點視窗</span>"
 
@@ -171,8 +171,8 @@ msgstr "在視窗之上"
 msgid "Drag _threshold distance:"
 msgstr "拖曳距離臨界值(_T)："
 
-#: src/strings.c:54 src/strings.c:56 src/strings.c:58 src/strings.c:87
-#: src/strings.c:89 src/strings.c:91 src/strings.c:93
+#: src/strings.c:54 src/strings.c:56 src/strings.c:58 src/strings.c:95
+#: src/strings.c:97 src/strings.c:99 src/strings.c:101
 msgid "px"
 msgstr "像素"
 
@@ -185,78 +185,95 @@ msgid "Amount of resistance against screen _edges:"
 msgstr "相對螢幕邊緣的阻力程度(_E)："
 
 #: src/strings.c:59
-msgid "Windows"
-msgstr "視窗"
+msgid "_Switch desktops when moving a window past the screen edge"
+msgstr ""
 
-#: src/strings.c:62
-msgid "_Focus windows when the mouse pointer moves over them"
-msgstr "滑鼠指標移動到視窗上方時設為焦點(_F)"
+#: src/strings.c:61
+msgid "_Amount of time to wait before switching:"
+msgstr ""
 
-#: src/strings.c:64
-msgid "Move focus under the mouse when _switching desktops"
-msgstr "交換桌面時移動滑鼠下方焦點(_S)"
-
-#: src/strings.c:65
-msgid "Move focus _under the mouse when the mouse is not moving"
-msgstr "滑鼠未移動時移動滑鼠下方焦點(_U)"
-
-#: src/strings.c:66
-msgid "_Raise windows when the mouse pointer moves over them"
-msgstr "滑鼠指標在視窗上方移動時，將它們提升層次(_R)"
-
-#: src/strings.c:67
-msgid "_Delay before focusing and raising windows:"
-msgstr "設為焦點和提升視窗之前產生延遲(_D)："
-
-#: src/strings.c:68 src/strings.c:75 src/strings.c:125 src/strings.c:128
+#: src/strings.c:62 src/strings.c:72 src/strings.c:79 src/strings.c:87
+#: src/strings.c:133 src/strings.c:136
 msgid "ms"
 msgstr "毫秒"
 
+#: src/strings.c:63
+msgid "Windows"
+msgstr "視窗"
+
+#: src/strings.c:66
+msgid "_Focus windows when the mouse pointer moves over them"
+msgstr "滑鼠指標移動到視窗上方時設為焦點(_F)"
+
+#: src/strings.c:68
+msgid "Move focus under the mouse when _switching desktops"
+msgstr "交換桌面時移動滑鼠下方焦點(_S)"
+
 #: src/strings.c:69
+msgid "Move focus _under the mouse when the mouse is not moving"
+msgstr "滑鼠未移動時移動滑鼠下方焦點(_U)"
+
+#: src/strings.c:70
+msgid "_Raise windows when the mouse pointer moves over them"
+msgstr "滑鼠指標在視窗上方移動時，將它們提升層次(_R)"
+
+#: src/strings.c:71
+msgid "_Delay before focusing and raising windows:"
+msgstr "設為焦點和提升視窗之前產生延遲(_D)："
+
+#: src/strings.c:73
 msgid "<span weight=\"bold\">Titlebar</span>"
 msgstr "<span weight=\"bold\">標題列</span>"
 
-#: src/strings.c:71
+#: src/strings.c:75
 msgid "Double click on the _titlebar:"
 msgstr "在標題列之上連按兩下(_T)："
 
-#: src/strings.c:72
+#: src/strings.c:76
 msgid "Maximizes the window"
 msgstr "視窗放到最大"
 
-#: src/strings.c:73
+#: src/strings.c:77
 msgid "Shades the window"
 msgstr "遮蔽視窗"
 
-#: src/strings.c:74
+#: src/strings.c:78
 msgid "Double click ti_me:"
 msgstr "連按兩下的時間(_M)："
 
-#: src/strings.c:77
+#: src/strings.c:81
 msgid "Mouse"
 msgstr "滑鼠"
 
-#: src/strings.c:78
+#: src/strings.c:82
 msgid "<span weight=\"bold\">Desktops</span>"
 msgstr "<span weight=\"bold\">桌面</span>"
 
-#: src/strings.c:80
+#: src/strings.c:84
+msgid "_Show a notification when switching desktops"
+msgstr ""
+
+#: src/strings.c:86
+msgid "_Amount of time to show the notification for:"
+msgstr ""
+
+#: src/strings.c:88
 msgid "_Number of desktops: "
 msgstr "桌面數量(_D)："
 
-#: src/strings.c:81
+#: src/strings.c:89
 msgid "_Desktop names:"
 msgstr "桌面名稱(_D)："
 
-#: src/strings.c:82
+#: src/strings.c:90
 msgid "Desktops"
 msgstr "桌面"
 
-#: src/strings.c:83
+#: src/strings.c:91
 msgid "<span weight=\"bold\">Desktop Margins</span>"
 msgstr "<span weight=\"bold\">桌面邊界</span>"
 
-#: src/strings.c:85
+#: src/strings.c:93
 msgid ""
 "Desktop margins are reserved areas on the edge of your screen.  New windows "
 "will not be placed within a margin, and maximized windows will not cover "
@@ -265,147 +282,147 @@ msgstr ""
 "桌面邊界是您螢幕邊緣保留的區域。新視窗將不會被置放於邊界之內，而最大化的視窗"
 "也不會蓋住它。"
 
-#: src/strings.c:86
+#: src/strings.c:94
 msgid "_Top"
 msgstr "上"
 
-#: src/strings.c:88
+#: src/strings.c:96
 msgid "_Left"
 msgstr "左"
 
-#: src/strings.c:90
+#: src/strings.c:98
 msgid "_Right"
 msgstr "右"
 
-#: src/strings.c:92
+#: src/strings.c:100
 msgid "_Bottom"
 msgstr "下"
 
-#: src/strings.c:94
+#: src/strings.c:102
 msgid "Margins"
 msgstr "邊界"
 
-#: src/strings.c:95
+#: src/strings.c:103
 msgid "<span weight=\"bold\">Position</span>"
 msgstr "<span weight=\"bold\">位置</span>"
 
-#: src/strings.c:97
+#: src/strings.c:105
 msgid "_Position:"
 msgstr "位置(_P)："
 
-#: src/strings.c:98
+#: src/strings.c:106
 msgid "Top Left"
 msgstr "左上"
 
-#: src/strings.c:99
+#: src/strings.c:107
 msgid "Top"
 msgstr "上"
 
-#: src/strings.c:100
+#: src/strings.c:108
 msgid "Top Right"
 msgstr "右上"
 
-#: src/strings.c:101
+#: src/strings.c:109
 msgid "Left"
 msgstr "左"
 
-#: src/strings.c:102
+#: src/strings.c:110
 msgid "Right"
 msgstr "右"
 
-#: src/strings.c:103
+#: src/strings.c:111
 msgid "Bottom Left"
 msgstr "左下"
 
-#: src/strings.c:104
+#: src/strings.c:112
 msgid "Bottom"
 msgstr "下"
 
-#: src/strings.c:105
+#: src/strings.c:113
 msgid "Bottom Right"
 msgstr "右下"
 
-#: src/strings.c:106
+#: src/strings.c:114
 msgid "Floating"
 msgstr "浮動"
 
-#: src/strings.c:108
+#: src/strings.c:116
 msgid "_Floating position:"
 msgstr "浮動位置(_F)："
 
-#: src/strings.c:109
+#: src/strings.c:117
 msgid "x"
 msgstr "x"
 
-#: src/strings.c:111
+#: src/strings.c:119
 msgid "Allow _windows to be placed within the dock's area"
 msgstr "允許視窗被置放在停駐區域之內(_W)"
 
-#: src/strings.c:112
+#: src/strings.c:120
 msgid "_Orientation: "
 msgstr "方向(_O)："
 
-#: src/strings.c:113
+#: src/strings.c:121
 msgid "Vertical"
 msgstr "垂直"
 
-#: src/strings.c:114
+#: src/strings.c:122
 msgid "Horizontal"
 msgstr "水平"
 
-#: src/strings.c:115
+#: src/strings.c:123
 msgid "<span weight=\"bold\">Stacking</span>"
 msgstr "<span weight=\"bold\">堆疊</span>"
 
-#: src/strings.c:117
+#: src/strings.c:125
 msgid "Keep dock _above other windows"
 msgstr "保持停駐於其他的視窗之上(_A)"
 
-#: src/strings.c:118
+#: src/strings.c:126
 msgid "A_llow dock to be both above and below windows"
 msgstr "同時允許在視窗之上與之下停駐(_L)"
 
-#: src/strings.c:119
+#: src/strings.c:127
 msgid "Keep dock _below other windows"
 msgstr "保持停駐停駐於其他的視窗之下(_B)"
 
-#: src/strings.c:120
+#: src/strings.c:128
 msgid "<span weight=\"bold\">Hiding</span>"
 msgstr "<span weight=\"bold\">隱藏</span>"
 
-#: src/strings.c:122
+#: src/strings.c:130
 msgid "_Hide off screen"
 msgstr "隱藏螢幕(_H)"
 
-#: src/strings.c:124
+#: src/strings.c:132
 msgid "_Delay before hiding:"
 msgstr "隱藏之前產生延遲(_D)："
 
-#: src/strings.c:127
+#: src/strings.c:135
 msgid "Delay before _showing:"
 msgstr "顯示之前產生延遲(_S)："
 
-#: src/strings.c:129
+#: src/strings.c:137
 msgid "Dock"
 msgstr "停駐"
 
-#: src/strings.c:130
+#: src/strings.c:138
 msgid "Abo_ut"
 msgstr "關於(_U)"
 
-#: src/strings.c:131
+#: src/strings.c:139
 msgid "About ObConf"
 msgstr "關於 ObConf"
 
-#: src/strings.c:132
+#: src/strings.c:140
 msgid "<span weight=\"bold\" size=\"xx-large\">ObConf VERSION</span>"
 msgstr "<span weight=\"bold\" size=\"xx-large\">ObConf 版本</span>"
 
-#: src/strings.c:133
+#: src/strings.c:141
 msgid "A preferences manager for Openbox"
 msgstr "用於 Openbox 的偏好設定管理員"
 
-#: src/strings.c:134
+#: src/strings.c:142
 msgid ""
 "Copyright (c) 2003-2007\n"
 "Dana Jansens <danakj@orodu.net>\n"
@@ -417,11 +434,11 @@ msgstr ""
 "Tim Riley <tr@slackzone.org>\n"
 "Javeed Shaikh <syscrash2k@gmail.com>"
 
-#: src/strings.c:138
+#: src/strings.c:146
 msgid "window1"
 msgstr "視窗1"
 
-#: src/strings.c:139
+#: src/strings.c:147
 msgid "<span weight=\"bold\">Press the key you wish to bind...</span>"
 msgstr "<span weight=\"bold\">按下您希望連結的按鍵…</span>"
 
@@ -478,7 +495,7 @@ msgstr "--install 需要一個引數\n"
 msgid "--archive requires an argument\n"
 msgstr "--archive 需要一個引數\n"
 
-#: src/desktops.c:111 src/desktops.c:142 src/desktops.c:158
+#: src/desktops.c:134 src/desktops.c:165 src/desktops.c:181
 msgid "(Unnamed desktop)"
 msgstr "(未命名桌面)"
 

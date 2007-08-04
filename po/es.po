@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: obconf 2.0.2\n"
 "Report-Msgid-Bugs-To: http://bugzilla.icculus.org/\n"
-"POT-Creation-Date: 2007-07-21 21:27-0400\n"
+"POT-Creation-Date: 2007-08-04 15:02-0400\n"
 "PO-Revision-Date: 2007-07-21 00:54-0600\n"
 "Last-Translator: David Merino <rastiazul at yahoo . com>\n"
 "Language-Team: spanish\n"
@@ -26,10 +26,10 @@ msgstr "<span weight=\"bold\">Tema</span>"
 
 #: src/strings.c:9 src/strings.c:14 src/strings.c:18 src/strings.c:28
 #: src/strings.c:36 src/strings.c:39 src/strings.c:43 src/strings.c:49
-#: src/strings.c:61 src/strings.c:63 src/strings.c:70 src/strings.c:76
-#: src/strings.c:79 src/strings.c:84 src/strings.c:96 src/strings.c:107
-#: src/strings.c:110 src/strings.c:116 src/strings.c:121 src/strings.c:123
-#: src/strings.c:126
+#: src/strings.c:60 src/strings.c:65 src/strings.c:67 src/strings.c:74
+#: src/strings.c:80 src/strings.c:83 src/strings.c:85 src/strings.c:92
+#: src/strings.c:104 src/strings.c:115 src/strings.c:118 src/strings.c:124
+#: src/strings.c:129 src/strings.c:131 src/strings.c:134
 msgid "    "
 msgstr "    "
 
@@ -111,7 +111,7 @@ msgstr "_Muestra en pantalla: "
 msgid "Appearance"
 msgstr "Apariencia"
 
-#: src/strings.c:35 src/strings.c:60
+#: src/strings.c:35 src/strings.c:64
 msgid "<span weight=\"bold\">Focusing Windows</span>"
 msgstr "<span weight=\"bold\">Enfocando Ventanas</span>"
 
@@ -172,8 +172,8 @@ msgstr "Sobre la ventana"
 msgid "Drag _threshold distance:"
 msgstr "Arras_trar la distancia del umbral:"
 
-#: src/strings.c:54 src/strings.c:56 src/strings.c:58 src/strings.c:87
-#: src/strings.c:89 src/strings.c:91 src/strings.c:93
+#: src/strings.c:54 src/strings.c:56 src/strings.c:58 src/strings.c:95
+#: src/strings.c:97 src/strings.c:99 src/strings.c:101
 msgid "px"
 msgstr "px"
 
@@ -186,78 +186,95 @@ msgid "Amount of resistance against screen _edges:"
 msgstr "Cantidad d_e resistencia contra los bordes de la pantalla:"
 
 #: src/strings.c:59
-msgid "Windows"
-msgstr "Ventanas"
+msgid "_Switch desktops when moving a window past the screen edge"
+msgstr ""
 
-#: src/strings.c:62
-msgid "_Focus windows when the mouse pointer moves over them"
-msgstr "En_focar las ventanas cuando el puntero del ratón se mueve sobre estas"
+#: src/strings.c:61
+msgid "_Amount of time to wait before switching:"
+msgstr ""
 
-#: src/strings.c:64
-msgid "Move focus under the mouse when _switching desktops"
-msgstr "Mover el enfoque bajo el ratón cuando _se cambian escritorios"
-
-#: src/strings.c:65
-msgid "Move focus _under the mouse when the mouse is not moving"
-msgstr "Mover el enfoq_ue debajo del ratón cuando el ratón no se está moviendo"
-
-#: src/strings.c:66
-msgid "_Raise windows when the mouse pointer moves over them"
-msgstr "Alza_r la ventanas cuando el puntero del ratón se mueve sobre éstas."
-
-#: src/strings.c:67
-msgid "_Delay before focusing and raising windows:"
-msgstr "Atrasar antes _de enfocar y elevar ventanas:"
-
-#: src/strings.c:68 src/strings.c:75 src/strings.c:125 src/strings.c:128
+#: src/strings.c:62 src/strings.c:72 src/strings.c:79 src/strings.c:87
+#: src/strings.c:133 src/strings.c:136
 msgid "ms"
 msgstr "ms"
 
+#: src/strings.c:63
+msgid "Windows"
+msgstr "Ventanas"
+
+#: src/strings.c:66
+msgid "_Focus windows when the mouse pointer moves over them"
+msgstr "En_focar las ventanas cuando el puntero del ratón se mueve sobre estas"
+
+#: src/strings.c:68
+msgid "Move focus under the mouse when _switching desktops"
+msgstr "Mover el enfoque bajo el ratón cuando _se cambian escritorios"
+
 #: src/strings.c:69
+msgid "Move focus _under the mouse when the mouse is not moving"
+msgstr "Mover el enfoq_ue debajo del ratón cuando el ratón no se está moviendo"
+
+#: src/strings.c:70
+msgid "_Raise windows when the mouse pointer moves over them"
+msgstr "Alza_r la ventanas cuando el puntero del ratón se mueve sobre éstas."
+
+#: src/strings.c:71
+msgid "_Delay before focusing and raising windows:"
+msgstr "Atrasar antes _de enfocar y elevar ventanas:"
+
+#: src/strings.c:73
 msgid "<span weight=\"bold\">Titlebar</span>"
 msgstr "<span weight=\"bold\">Barra de titulo</span>"
 
-#: src/strings.c:71
+#: src/strings.c:75
 msgid "Double click on the _titlebar:"
 msgstr "Doble click en la barra de _titulo:"
 
-#: src/strings.c:72
+#: src/strings.c:76
 msgid "Maximizes the window"
 msgstr "Maximiza la ventana"
 
-#: src/strings.c:73
+#: src/strings.c:77
 msgid "Shades the window"
 msgstr "Oculta la ventala"
 
-#: src/strings.c:74
+#: src/strings.c:78
 msgid "Double click ti_me:"
 msgstr "Dura_ción del doble click:"
 
-#: src/strings.c:77
+#: src/strings.c:81
 msgid "Mouse"
 msgstr "Ratón"
 
-#: src/strings.c:78
+#: src/strings.c:82
 msgid "<span weight=\"bold\">Desktops</span>"
 msgstr "<span weight=\"bold\">Escritorios</span>"
 
-#: src/strings.c:80
+#: src/strings.c:84
+msgid "_Show a notification when switching desktops"
+msgstr ""
+
+#: src/strings.c:86
+msgid "_Amount of time to show the notification for:"
+msgstr ""
+
+#: src/strings.c:88
 msgid "_Number of desktops: "
 msgstr "_Cantidad de escritorios: "
 
-#: src/strings.c:81
+#: src/strings.c:89
 msgid "_Desktop names:"
 msgstr "_Nombre de los escritorios:"
 
-#: src/strings.c:82
+#: src/strings.c:90
 msgid "Desktops"
 msgstr "Escritorios"
 
-#: src/strings.c:83
+#: src/strings.c:91
 msgid "<span weight=\"bold\">Desktop Margins</span>"
 msgstr "<span weight=\"bold\">Márgenes de los Escritorios</span>"
 
-#: src/strings.c:85
+#: src/strings.c:93
 msgid ""
 "Desktop margins are reserved areas on the edge of your screen.  New windows "
 "will not be placed within a margin, and maximized windows will not cover "
@@ -267,147 +284,147 @@ msgstr ""
 "pantalla.  Las ventanas nuevas no serán colocadas dentro de un margen y las "
 "ventanas maximizas no las cubrirán."
 
-#: src/strings.c:86
+#: src/strings.c:94
 msgid "_Top"
 msgstr "_Arriba"
 
-#: src/strings.c:88
+#: src/strings.c:96
 msgid "_Left"
 msgstr "_Izquierda"
 
-#: src/strings.c:90
+#: src/strings.c:98
 msgid "_Right"
 msgstr "_Derecha"
 
-#: src/strings.c:92
+#: src/strings.c:100
 msgid "_Bottom"
 msgstr "A_bajo"
 
-#: src/strings.c:94
+#: src/strings.c:102
 msgid "Margins"
 msgstr "Márgenes"
 
-#: src/strings.c:95
+#: src/strings.c:103
 msgid "<span weight=\"bold\">Position</span>"
 msgstr "<span weight=\"bold\">Posición</span>"
 
-#: src/strings.c:97
+#: src/strings.c:105
 msgid "_Position:"
 msgstr "_Posición"
 
-#: src/strings.c:98
+#: src/strings.c:106
 msgid "Top Left"
 msgstr "Arriba a la derecha"
 
-#: src/strings.c:99
+#: src/strings.c:107
 msgid "Top"
 msgstr "Arriba"
 
-#: src/strings.c:100
+#: src/strings.c:108
 msgid "Top Right"
 msgstr "Arriba a la izquierda"
 
-#: src/strings.c:101
+#: src/strings.c:109
 msgid "Left"
 msgstr "Izquierda"
 
-#: src/strings.c:102
+#: src/strings.c:110
 msgid "Right"
 msgstr "Derecha"
 
-#: src/strings.c:103
+#: src/strings.c:111
 msgid "Bottom Left"
 msgstr "Abajo a la derecha"
 
-#: src/strings.c:104
+#: src/strings.c:112
 msgid "Bottom"
 msgstr "Abajo"
 
-#: src/strings.c:105
+#: src/strings.c:113
 msgid "Bottom Right"
 msgstr "Abajo a la derecha"
 
-#: src/strings.c:106
+#: src/strings.c:114
 msgid "Floating"
 msgstr "Flotando"
 
-#: src/strings.c:108
+#: src/strings.c:116
 msgid "_Floating position:"
 msgstr "Posición de _flotación:"
 
-#: src/strings.c:109
+#: src/strings.c:117
 msgid "x"
 msgstr "x"
 
-#: src/strings.c:111
+#: src/strings.c:119
 msgid "Allow _windows to be placed within the dock's area"
 msgstr "Permitir que las _ventanas sean colocadas dentro de el área del muelle"
 
-#: src/strings.c:112
+#: src/strings.c:120
 msgid "_Orientation: "
 msgstr "_Orientación: "
 
-#: src/strings.c:113
+#: src/strings.c:121
 msgid "Vertical"
 msgstr "Vertical"
 
-#: src/strings.c:114
+#: src/strings.c:122
 msgid "Horizontal"
 msgstr "Horizontal"
 
-#: src/strings.c:115
+#: src/strings.c:123
 msgid "<span weight=\"bold\">Stacking</span>"
 msgstr "<span weight=\"bold\">Apilando</span>"
 
-#: src/strings.c:117
+#: src/strings.c:125
 msgid "Keep dock _above other windows"
 msgstr "Mantener el muelle _sobre otras ventanas"
 
-#: src/strings.c:118
+#: src/strings.c:126
 msgid "A_llow dock to be both above and below windows"
 msgstr "Per_mitir que el muelle esté sobre y debajo de las ventanas"
 
-#: src/strings.c:119
+#: src/strings.c:127
 msgid "Keep dock _below other windows"
 msgstr "Mantener el muelle _bajo otras ventanas"
 
-#: src/strings.c:120
+#: src/strings.c:128
 msgid "<span weight=\"bold\">Hiding</span>"
 msgstr "<span weight=\"bold\">Ocultando</span>"
 
-#: src/strings.c:122
+#: src/strings.c:130
 msgid "_Hide off screen"
 msgstr "_Ocultar pantalla"
 
-#: src/strings.c:124
+#: src/strings.c:132
 msgid "_Delay before hiding:"
 msgstr "_Atrasar antes de ocultar:"
 
-#: src/strings.c:127
+#: src/strings.c:135
 msgid "Delay before _showing:"
 msgstr "Atra_sar antes de mostrar:"
 
-#: src/strings.c:129
+#: src/strings.c:137
 msgid "Dock"
 msgstr "Muelle"
 
-#: src/strings.c:130
+#: src/strings.c:138
 msgid "Abo_ut"
 msgstr "Acer_ca"
 
-#: src/strings.c:131
+#: src/strings.c:139
 msgid "About ObConf"
 msgstr "Acerca de ObConf"
 
-#: src/strings.c:132
+#: src/strings.c:140
 msgid "<span weight=\"bold\" size=\"xx-large\">ObConf VERSION</span>"
 msgstr "<span weight=\"bold\" size=\"xx-large\">ObConf VERSION</span>"
 
-#: src/strings.c:133
+#: src/strings.c:141
 msgid "A preferences manager for Openbox"
 msgstr "Un administrador de preferencias para Openbox"
 
-#: src/strings.c:134
+#: src/strings.c:142
 msgid ""
 "Copyright (c) 2003-2007\n"
 "Dana Jansens <danakj@orodu.net>\n"
@@ -419,11 +436,11 @@ msgstr ""
 "Tim Riley <tr@slackzone.org>\n"
 "Javeed Shaikh <syscrash2k@gmail.com>"
 
-#: src/strings.c:138
+#: src/strings.c:146
 msgid "window1"
 msgstr "ventana1"
 
-#: src/strings.c:139
+#: src/strings.c:147
 msgid "<span weight=\"bold\">Press the key you wish to bind...</span>"
 msgstr "<span weight=\"bold\">Presione la letra que desea enlazar...</span>"
 
@@ -483,7 +500,7 @@ msgstr "--install requiere un argumento\n"
 msgid "--archive requires an argument\n"
 msgstr "--archive requiere un argumento\n"
 
-#: src/desktops.c:111 src/desktops.c:142 src/desktops.c:158
+#: src/desktops.c:134 src/desktops.c:165 src/desktops.c:181
 msgid "(Unnamed desktop)"
 msgstr "(Escritorio sin nombre)"
 
