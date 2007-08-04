@@ -1,5 +1,5 @@
 AC_PREREQ([2.54])
-AC_INIT([obconf], [2.0.2], [http://bugzilla.icculus.org])
+AC_INIT([obconf], [2.0.3], [http://bugzilla.icculus.org])
 AM_INIT_AUTOMAKE
 AC_CONFIG_SRCDIR([src/main.c])
 
