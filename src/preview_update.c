@@ -91,8 +91,11 @@ static gboolean update_theme_preview_iterate(gpointer data)
     gchar *name;
 
     if (restart_theme_preview_update) {
-        if (!gtk_tree_model_get_iter_first(GTK_TREE_MODEL(ls), &iter))
+        if (!gtk_tree_model_get_iter_first(GTK_TREE_MODEL(ls), &iter)) {
+            /* nothing to show */
+            obconf_show_main();
             return FALSE;
+        }
         restart_theme_preview_update = FALSE;
     } else {
         if (!gtk_tree_model_iter_next(GTK_TREE_MODEL(ls), &iter)) {
