@@ -36,12 +36,14 @@ static void on_desktop_names_cell_edited(GtkCellRendererText *cell,
                                          const gchar *path_string,
                                          const gchar *new_text,
                                          gpointer data);
+static void enable_stuff();
 
 void desktops_setup_tab()
 {
     GtkWidget *w;
     GtkCellRenderer *render;
     GtkTreeViewColumn *column;
+    gint i;
 
     mapping = TRUE;
 
@@ -68,7 +70,28 @@ void desktops_setup_tab()
 
     desktops_read_names();
 
+    i = tree_get_int("desktops/popupTime", 875);
+
+    w = get_widget("desktop_popup");
+    gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(w), i != 0);
+
+    w = get_widget("desktop_popup_time");
+    gtk_spin_button_set_value(GTK_SPIN_BUTTON(w), i ? i : 875);
+
+    enable_stuff();
+
     mapping = FALSE;
+}
+
+static void enable_stuff()
+{
+    GtkWidget *w;
+    gboolean b;
+
+    w = get_widget("desktop_popup");
+    b = gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(w));
+    w = get_widget("desktop_popup_time");
+    gtk_widget_set_sensitive(w, b);
 }
 
 void on_desktop_num_value_changed(GtkSpinButton *w, gpointer data)
@@ -213,4 +236,27 @@ static void desktops_write_number()
     XSendEvent(GDK_DISPLAY(), GDK_ROOT_WINDOW(), FALSE,
                SubstructureNotifyMask | SubstructureRedirectMask,
                &ce);
+}
+
+void on_desktop_popup_toggled(GtkToggleButton *w, gpointer data)
+{
+    if (mapping) return;
+
+    if (gtk_toggle_button_get_active(w)) {
+        GtkWidget *w2;
+
+        w2 = get_widget("desktop_popup_time");
+        tree_set_int("desktops/popupTime",
+                     gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(w2)));
+    }
+    else
+        tree_set_int("desktops/popupTime", 0);
+    enable_stuff();
+}
+
+void on_desktop_popup_time_value_changed(GtkSpinButton *w, gpointer data)
+{
+    if (mapping) return;
+
+    tree_set_int("desktops/popupTime", gtk_spin_button_get_value_as_int(w));
 }
