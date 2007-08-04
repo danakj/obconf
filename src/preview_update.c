@@ -104,9 +104,11 @@ static gboolean update_theme_preview_iterate(gpointer data)
             restart_theme_preview_update = TRUE;
 
             gtk_tree_view_get_cursor(tree_view, &path, NULL);
-            gtk_tree_view_scroll_to_cell(tree_view, path, NULL,
-                                         FALSE, 0, 0);
-            gtk_tree_path_free(path);
+            if (path) {
+                gtk_tree_view_scroll_to_cell(tree_view, path, NULL,
+                                             FALSE, 0, 0);
+                gtk_tree_path_free(path);
+            }
 
             obconf_show_main();
 

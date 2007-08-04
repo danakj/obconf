@@ -175,7 +175,6 @@ void theme_load_all()
     GList *it, *next;
     gint i;
     GtkWidget *w;
-    GtkTreePath *path = NULL;
     RrFont *active, *inactive, *menu_t, *menu_i, *osd;
 
     mapping = TRUE;
@@ -228,19 +227,18 @@ void theme_load_all()
                            2, 1.0,      /* all previews are right-aligned */
                            -1);
 
-        if(!strcmp(name, it->data))
+        if(!strcmp(name, it->data)) {
+            GtkTreePath *path;
+
             path = gtk_tree_path_new_from_indices(i, -1);
+            gtk_tree_view_set_cursor(GTK_TREE_VIEW(w), path, NULL, FALSE);
+            gtk_tree_path_free(path);
+        }
 
         ++i;
     }
 
     preview_update_all();
-
-    /* do this after starting the preview update */
-    if (path) {
-        gtk_tree_view_set_cursor(GTK_TREE_VIEW(w), path, NULL, FALSE);
-        gtk_tree_path_free(path);
-    }
 
     g_free(name);
 
