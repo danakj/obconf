@@ -82,6 +82,9 @@ dist_mimepkg_DATA = \
 dist_kdemime_DATA = \
 	x-openbox-theme.desktop
 
+dist_pixmap_DATA = \
+	data/obconf.png
+
 EXTRA_DIST = \
 	config.rpath \
 	README \
