@@ -39,7 +39,7 @@ gchar *s = N_("<span weight=\"bold\">Placing Windows</span>");
 gchar *s = N_("    ");
 gchar *s = N_("_Place new windows under the mouse pointer");
 gchar *s = N_("_Center new windows when they are placed");
-gchar *s = N_("Place new windows _on:");
+gchar *s = N_("Prefer to place new windows _on:");
 gchar *s = N_("All monitors");
 gchar *s = N_("The active monitor");
 gchar *s = N_("Windows");
