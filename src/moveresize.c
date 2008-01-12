@@ -28,8 +28,14 @@ static gboolean mapping = FALSE;
 
 #define POSITION_CENTER 0
 #define POSITION_TOP    1
+#define POSITION_FIXED  2
+
+#define EDGE_CENTER 0
+#define EDGE_LEFT   1
+#define EDGE_RIGHT  2
 
 static void enable_stuff();
+static void write_fixed_position(const gchar *coord);
 
 void moveresize_setup_tab()
 {
@@ -83,10 +89,19 @@ void moveresize_setup_tab()
 
     w = get_widget("resize_position");
     s = tree_get_string("resize/popupPosition", "Center");
-    if (!strcasecmp(s, "Top")) pos = POSITION_TOP;
-    else                       pos = POSITION_CENTER;
+    if (!strcasecmp(s, "Top"))   pos = POSITION_TOP;
+    if (!strcasecmp(s, "Fixed")) pos = POSITION_FIXED;
+    else                         pos = POSITION_CENTER;
     g_free(s);
     gtk_option_menu_set_history(GTK_OPTION_MENU(w), pos);
+
+    w = get_widget("fixed_x_pos");
+    gtk_spin_button_set_value(GTK_SPIN_BUTTON(w),
+                              tree_get_int("resize/popupFixedPosition/x", 0));
+
+    w = get_widget("fixed_y_pos");
+    gtk_spin_button_set_value(GTK_SPIN_BUTTON(w),
+                              tree_get_int("resize/popupFixedPosition/y", 0));
 
     i = tree_get_int("mouse/screenEdgeWarpTime", 400);
 
@@ -115,6 +130,30 @@ static void enable_stuff()
     b = gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(w));
     w = get_widget("warp_edge_time");
     gtk_widget_set_sensitive(w, b);
+
+    w = get_widget("resize_position");
+    b = gtk_option_menu_get_history(GTK_OPTION_MENU(w)) == POSITION_FIXED;
+    w = get_widget("fixed_x_popup");
+    gtk_widget_set_sensitive(w, b);
+    w = get_widget("fixed_y_popup");
+    gtk_widget_set_sensitive(w, b);
+    if (!b) {
+        w = get_widget("fixed_x_pos");
+        gtk_widget_set_sensitive(w, FALSE);
+        w = get_widget("fixed_y_pos");
+        gtk_widget_set_sensitive(w, FALSE);
+    }
+    else {
+        w = get_widget("fixed_x_popup");
+        b = gtk_option_menu_get_history(GTK_OPTION_MENU(w)) != EDGE_CENTER;
+        w = get_widget("fixed_x_pos");
+        gtk_widget_set_sensitive(w, b);
+
+        w = get_widget("fixed_y_popup");
+        b = gtk_option_menu_get_history(GTK_OPTION_MENU(w)) != EDGE_CENTER;
+        w = get_widget("fixed_y_pos");
+        gtk_widget_set_sensitive(w, b);
+    }
 }
 
 void on_resist_window_value_changed(GtkSpinButton *w, gpointer data)
@@ -179,13 +218,125 @@ void on_resize_position_center_activate(GtkMenuItem *w, gpointer data)
     enable_stuff();
 }
 
-
 void on_resize_position_top_activate(GtkMenuItem *w, gpointer data)
 {
     if (mapping) return;
 
     tree_set_string("resize/popupPosition", "Top");
     enable_stuff();
+}
+
+void on_resize_position_fixed_activate(GtkMenuItem *w, gpointer data)
+{
+    if (mapping) return;
+
+    tree_set_string("resize/popupPosition", "Fixed");
+    enable_stuff();
+}
+
+static void write_fixed_position(const gchar *coord)
+{
+    GtkWidget *popup;
+    gchar *popupname;
+    gchar *val;
+    gchar *valname;
+    gint edge;
+
+    g_assert(!strcmp(coord, "x") || !strcmp(coord, "y"));
+
+    popupname = g_strdup_printf("fixed_%s_popup", coord);
+    popup = get_widget(popupname);
+    g_free(popupname);
+
+    edge = gtk_option_menu_get_history(GTK_OPTION_MENU(popup));
+    g_assert(edge == EDGE_CENTER || edge == EDGE_LEFT || edge == EDGE_RIGHT);
+
+    if (edge == EDGE_CENTER)
+        val = g_strdup("center");
+    else {
+        GtkWidget *spin;
+        gchar *spinname;
+        gint i;
+
+        spinname = g_strdup_printf("fixed_%s_pos", coord);
+        spin = get_widget(spinname);
+        g_free(spinname);
+
+        i = gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(spin));
+
+        if (edge == EDGE_LEFT)
+            val = g_strdup_printf("%d", i);
+        else
+            val = g_strdup_printf("-%d", i);
+    }
+
+    valname = g_strdup_printf("resize/popupFixedPosition/%s", coord);
+    tree_set_string(valname, val);
+    g_free(valname);
+    g_free(val);
+}
+
+
+void on_fixed_x_position_left_activate(GtkMenuItem *w, gpointer data)
+{
+    if (mapping) return;
+
+    write_fixed_position("x");
+    enable_stuff();
+}
+
+void on_fixed_x_position_right_activate(GtkMenuItem *w, gpointer data)
+{
+    if (mapping) return;
+
+    write_fixed_position("x");
+    enable_stuff();
+}
+
+void on_fixed_x_position_center_activate(GtkMenuItem *w, gpointer data)
+{
+    if (mapping) return;
+
+    write_fixed_position("x");
+    enable_stuff();
+}
+
+void on_fixed_y_position_left_activate(GtkMenuItem *w, gpointer data)
+{
+    if (mapping) return;
+
+    write_fixed_position("y");
+    enable_stuff();
+}
+
+void on_fixed_y_position_right_activate(GtkMenuItem *w, gpointer data)
+{
+    if (mapping) return;
+
+    write_fixed_position("y");
+    enable_stuff();
+}
+
+void on_fixed_y_position_center_activate(GtkMenuItem *w, gpointer data)
+{
+    if (mapping) return;
+
+    write_fixed_position("y");
+    enable_stuff();
+}
+
+void on_fixed_x_pos_value_changed(GtkSpinButton *w, gpointer data)
+{
+    if (mapping) return;
+
+    write_fixed_position("x");
+}
+
+void on_fixed_y_pos_value_changed(GtkSpinButton *w, gpointer data)
+{
+    if (mapping) return;
+
+    write_fixed_position("y");
 }
 
 void on_warp_edge_toggled(GtkToggleButton *w, gpointer data)
