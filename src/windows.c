@@ -29,6 +29,9 @@ static gboolean mapping = FALSE;
 #define POSITION_CENTER 0
 #define POSITION_TOP    1
 
+#define PLACE_ON_ALL    0
+#define PLACE_ON_ACTIVE 1
+
 static void enable_stuff();
 
 void windows_setup_tab()
@@ -82,6 +85,12 @@ void windows_setup_tab()
     w = get_widget("place_center");
     gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(w),
                                  tree_get_bool("placement/center", TRUE));
+
+    w = get_widget("place_active_popup");
+    if (tree_get_bool("placement/active", FALSE))
+        gtk_option_menu_set_history(GTK_OPTION_MENU(w), PLACE_ON_ACTIVE);
+    else
+        gtk_option_menu_set_history(GTK_OPTION_MENU(w), PLACE_ON_ALL);
 
     w = get_widget("resize_popup");
     s = tree_get_string("resize/popupShow", "NonPixel");
@@ -158,6 +167,20 @@ void on_place_center_toggled(GtkToggleButton *w, gpointer data)
     if (mapping) return;
 
     tree_set_bool("placement/center", gtk_toggle_button_get_active(w));
+}
+
+void on_place_active_popup_all_activate(GtkMenuItem *w, gpointer data)
+{
+    if (mapping) return;
+
+    tree_set_bool("placement/active", FALSE);
+}
+
+void on_place_active_popup_active_activate(GtkMenuItem *w, gpointer data)
+{
+    if (mapping) return;
+
+    tree_set_bool("placement/active", TRUE);
 }
 
 void on_resist_window_value_changed(GtkSpinButton *w, gpointer data)
