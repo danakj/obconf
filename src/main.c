@@ -1,7 +1,7 @@
 /* -*- indent-tabs-mode: nil; tab-width: 4; c-basic-offset: 4; -*-
 
    main.c for ObConf, the configuration tool for Openbox
-   Copyright (c) 2003-2007   Dana Jansens
+   Copyright (c) 2003-2008   Dana Jansens
    Copyright (c) 2003        Tim Riley
 
    This program is free software; you can redistribute it and/or modify
@@ -164,6 +164,7 @@ int main(int argc, char **argv)
     theme_setup_tab();
     appearance_setup_tab();
     windows_setup_tab();
+    moveresize_setup_tab();
     mouse_setup_tab();
     desktops_setup_tab();
     margins_setup_tab();

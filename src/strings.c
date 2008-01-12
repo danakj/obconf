@@ -65,6 +65,7 @@ gchar *s = N_("    ");
 gchar *s = N_("Information _dialog's position:");
 gchar *s = N_("Centered on the window");
 gchar *s = N_("Above the window");
+gchar *s = N_("Fixed position on screen");
 gchar *s = N_("Move & Resize");
 gchar *s = N_("<span weight=\"bold\">Focusing Windows</span>");
 gchar *s = N_("    ");
