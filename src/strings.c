@@ -46,14 +46,6 @@ gchar *s = N_("Windows");
 gchar *s = N_("<span weight=\"bold\">Moving and Resizing Windows</span>");
 gchar *s = N_("    ");
 gchar *s = N_("Update the window contents while _resizing");
-gchar *s = N_("_Show information dialog:");
-gchar *s = N_("When resizing terminal windows");
-gchar *s = N_("Always");
-gchar *s = N_("Never");
-gchar *s = N_("    ");
-gchar *s = N_("Information _dialog's position:");
-gchar *s = N_("Centered on the window");
-gchar *s = N_("Above the window");
 gchar *s = N_("Drag _threshold distance:");
 gchar *s = N_("px");
 gchar *s = N_("Amount of resistance against other _windows:");
@@ -64,6 +56,15 @@ gchar *s = N_("_Switch desktops when moving a window past the screen edge");
 gchar *s = N_("    ");
 gchar *s = N_("_Amount of time to wait before switching:");
 gchar *s = N_("ms");
+gchar *s = N_("<span weight=\"bold\">Information Dialog</span>");
+gchar *s = N_("_Show information dialog:");
+gchar *s = N_("When resizing terminal windows");
+gchar *s = N_("Always");
+gchar *s = N_("Never");
+gchar *s = N_("    ");
+gchar *s = N_("Information _dialog's position:");
+gchar *s = N_("Centered on the window");
+gchar *s = N_("Above the window");
 gchar *s = N_("Move & Resize");
 gchar *s = N_("<span weight=\"bold\">Focusing Windows</span>");
 gchar *s = N_("    ");
@@ -143,7 +144,7 @@ gchar *s = N_("Abo_ut");
 gchar *s = N_("About ObConf");
 gchar *s = N_("<span weight=\"bold\" size=\"xx-large\">ObConf VERSION</span>");
 gchar *s = N_("A preferences manager for Openbox");
-gchar *s = N_("Copyright (c) 2003-2007\n"
+gchar *s = N_("Copyright (c) 2003-2008\n"
               "Dana Jansens <danakj@orodu.net>\n"
               "Tim Riley <tr@slackzone.org>\n"
               "Javeed Shaikh <syscrash2k@gmail.com>");

@@ -64,7 +64,7 @@ static void print_version()
 {
     g_print("ObConf %s\n", PACKAGE_VERSION);
     g_print(_("Copyright (c)"));
-    g_print(" 2003-2007   Dana Jansens\n");
+    g_print(" 2003-2008   Dana Jansens\n");
     g_print(_("Copyright (c)"));
     g_print(" 2003        Tim Riley\n");
     g_print(_("Copyright (c)"));
