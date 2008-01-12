@@ -66,7 +66,8 @@ static void print_version()
     g_print(_("Copyright (c)"));
     g_print(" 2003-2007   Dana Jansens\n");
     g_print(_("Copyright (c)"));
-    g_print(" 2003        Tim Riley\n\n");
+    g_print(" 2003        Tim Riley\n");
+    g_print(_("Copyright (c)"));
     g_print(" 2007        Javeed Shaikh\n\n");
     g_print("This program comes with ABSOLUTELY NO WARRANTY.\n");
     g_print("This is free software, and you are welcome to redistribute it\n");
