@@ -57,7 +57,7 @@ gchar *s = N_("    ");
 gchar *s = N_("_Amount of time to wait before switching:");
 gchar *s = N_("ms");
 gchar *s = N_("<span weight=\"bold\">Information Dialog</span>");
-gchar *s = N_("_Show information dialog:");
+gchar *s = N_("Show _information dialog:");
 gchar *s = N_("When resizing terminal windows");
 gchar *s = N_("Always");
 gchar *s = N_("Never");

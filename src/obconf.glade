@@ -1968,7 +1968,7 @@ C - The close button</property>
 			  <child>
 			    <widget class="GtkLabel" id="label166">
 			      <property name="visible">True</property>
-			      <property name="label" translatable="yes">_Show information dialog:</property>
+			      <property name="label" translatable="yes">Show _information dialog:</property>
 			      <property name="use_underline">True</property>
 			      <property name="use_markup">False</property>
 			      <property name="justify">GTK_JUSTIFY_LEFT</property>
