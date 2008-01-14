@@ -820,7 +820,7 @@ D:</property>
 				    <widget class="GtkLabel" id="label232">
 				      <property name="visible">True</property>
 				      <property name="label" translatable="yes">Close
-Shade (Roll up/down)
+Shade (Roll up)
 Omnipresent (On all desktops)</property>
 				      <property name="use_underline">False</property>
 				      <property name="use_markup">False</property>

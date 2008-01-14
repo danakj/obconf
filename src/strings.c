@@ -37,7 +37,7 @@ gchar *s = N_("C:\n"
               "S:\n"
               "D:");
 gchar *s = N_("Close\n"
-              "Shade (Roll up/down)\n"
+              "Shade (Roll up)\n"
               "Omnipresent (On all desktops)");
 gchar *s = N_("<span weight=\"bold\">Fonts</span>");
 gchar *s = N_("    ");
