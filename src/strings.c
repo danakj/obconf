@@ -24,6 +24,21 @@ gchar *s = N_("N - The window's icon\n"
               "I - The iconify (minimize) button\n"
               "M - The maximize button\n"
               "C - The close button");
+gchar *s = N_("    ");
+gchar *s = N_("N:\n"
+              "L:\n"
+              "I:\n"
+              "M:");
+gchar *s = N_("Window icon\n"
+              "Window label (Title)\n"
+              "Iconify (Minimize)\n"
+              "Maximize");
+gchar *s = N_("C:\n"
+              "S:\n"
+              "D:");
+gchar *s = N_("Close\n"
+              "Shade (Roll up/down)\n"
+              "Omnipresent (On all desktops)");
 gchar *s = N_("<span weight=\"bold\">Fonts</span>");
 gchar *s = N_("    ");
 gchar *s = N_("_Active window title: ");
