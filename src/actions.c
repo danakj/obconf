@@ -20,66 +20,56 @@
 
 gchar * action_option_get_text_from_name(Option name)
 {
-   switch (name)
-   {
-        case O_EXECUTE:
-            return g_strdup("execute");
-            break;
-        case O_MENU:
-            return g_strdup("menu");
-            break;
-        case O_DIALOG:
-            return g_strdup("dialog");
-            break;
-        case O_ALL_DESKTOPS:
-            return g_strdup("allDesktops");
-            break;
-        case O_PANELS:
-            return g_strdup("panels");
-            break;
-        case O_INCLUDE_DESKTOP:
-            return g_strdup("desktop");
-            break;
-        case O_LINEAR:
-            return g_strdup("linear");
-            break;
-        case O_DESKTOP:
-            return g_strdup("desktop");
-            break;
-        case O_WRAP:
-            return g_strdup("wrap");
-            break;
-        case O_STRING:
-            return g_strdup("string");
-            break;
-        case O_FOLLOW:
-            return g_strdup("follow");
-            break;
-        case O_EDGE:
-            return g_strdup("edge");
-            break;
-        case O_X:
-            return g_strdup("x");
-            break;
-        case O_Y:
-            return g_strdup("y");
-            break;
-        case O_LEFT:
-            return g_strdup("left");
-            break;
-        case O_RIGHT:
-            return g_strdup("right");
-            break;
-        case O_UP:
-            return g_strdup("up");
-            break;
-        case O_DOWN:
-            return g_strdup("down");
-            break;
-        case O_NUM_OPTIONS:
-        default:
-            return NULL;
-            break;
+   switch (name) {
+   case O_EXECUTE:
+       return g_strdup("execute");
+   case O_SN:
+       return g_strdup("startupnotify");
+   case O_SN_ENABLED:
+       return g_strdup("enabled");
+   case O_SN_WMCLASS:
+       return g_strdup("wmclass");
+   case O_SN_NAME:
+       return g_strdup("name");
+   case O_SN_ICON:
+       return g_strdup("icon");
+   case O_MENU:
+       return g_strdup("menu");
+   case O_DIALOG:
+       return g_strdup("dialog");
+   case O_ALL_DESKTOPS:
+       return g_strdup("allDesktops");
+   case O_PANELS:
+       return g_strdup("panels");
+   case O_INCLUDE_DESKTOP:
+       return g_strdup("desktop");
+   case O_LINEAR:
+       return g_strdup("linear");
+   case O_DESKTOP:
+       return g_strdup("desktop");
+   case O_WRAP:
+       return g_strdup("wrap");
+   case O_STRING:
+       return g_strdup("string");
+   case O_FOLLOW:
+       return g_strdup("follow");
+   case O_EDGE:
+       return g_strdup("edge");
+   case O_X:
+       return g_strdup("x");
+   case O_Y:
+       return g_strdup("y");
+   case O_LEFT:
+       return g_strdup("left");
+   case O_RIGHT:
+       return g_strdup("right");
+   case O_UP:
+       return g_strdup("up");
+   case O_DOWN:
+       return g_strdup("down");
+   case O_NUM_OPTIONS:
+   default:
+       return NULL;
     }
 }
 
@@ -124,36 +114,37 @@ GType action_option_get_type_from_text(const gchar *act, const gchar *opt)
 
     nopt = action_option_get_name_from_text(act, opt);
 
-    switch (nopt)
-    {
-        case O_EXECUTE:
-        case O_MENU:
-        case O_STRING:
-        case O_EDGE:
-            return G_TYPE_STRING;
-            break;
-        case O_DIALOG:
-        case O_ALL_DESKTOPS:
-        case O_PANELS:
-        case O_INCLUDE_DESKTOP:
-        case O_LINEAR:
-        case O_WRAP:
-        case O_FOLLOW:
-            return G_TYPE_BOOLEAN;
-            break;
-        case O_DESKTOP:
-        case O_X:
-        case O_Y:
-        case O_LEFT:
-        case O_RIGHT:
-        case O_UP:
-        case O_DOWN:
-            return G_TYPE_INT;
-            break;
-        case O_NUM_OPTIONS:
-        default:
-            return -1;
-            break;
+    switch (nopt) {
+    case O_SN:
+        return G_TYPE_NONE;
+    case O_EXECUTE:
+    case O_SN_WMCLASS:
+    case O_SN_NAME:
+    case O_SN_ICON:
+    case O_MENU:
+    case O_STRING:
+    case O_EDGE:
+        return G_TYPE_STRING;
+    case O_SN_ENABLED:
+    case O_DIALOG:
+    case O_ALL_DESKTOPS:
+    case O_PANELS:
+    case O_INCLUDE_DESKTOP:
+    case O_LINEAR:
+    case O_WRAP:
+    case O_FOLLOW:
+        return G_TYPE_BOOLEAN;
+    case O_DESKTOP:
+    case O_X:
+    case O_Y:
+    case O_LEFT:
+    case O_RIGHT:
+    case O_UP:
+    case O_DOWN:
+        return G_TYPE_INT;
+    case O_NUM_OPTIONS:
+    default:
+        return -1;
     }
 }
 

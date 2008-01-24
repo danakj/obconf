@@ -115,6 +115,11 @@ typedef enum {
 
 typedef enum {
     O_EXECUTE,
+    O_SN,
+    O_SN_ENABLED,
+    O_SN_WMCLASS,
+    O_SN_NAME,
+    O_SN_ICON,
     O_MENU,
     O_DIALOG,
     O_ALL_DESKTOPS,
