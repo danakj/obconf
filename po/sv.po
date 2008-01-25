@@ -1,14 +1,14 @@
 # Swedish translations for obconf package.
 # Copyright (C) 2007 Dana Jansens
 # This file is distributed under the same license as the obconf package.
-#  <mikachu@icculus.org>, 2007.
+#  <mikachu@icculus.org>, 2008.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: obconf 2.0.3\n"
 "Report-Msgid-Bugs-To: http://bugzilla.icculus.org/\n"
 "POT-Creation-Date: 2008-01-24 21:55-0500\n"
-"PO-Revision-Date: 2007-08-04 18:12+0200\n"
+"PO-Revision-Date: 2008-01-25 03:59+0100\n"
 "Last-Translator:  <mikachu@icculus.org>\n"
 "Language-Team: Swedish\n"
 "MIME-Version: 1.0\n"
@@ -99,6 +99,10 @@ msgid ""
 "Iconify (Minimize)\n"
 "Maximize"
 msgstr ""
+"Fönsterikon\n"
+"Fönstertitel\n"
+"Minimera\n"
+"Maximera"
 
 #: src/strings.c:36
 msgid ""
@@ -113,6 +117,9 @@ msgid ""
 "Shade (Roll up)\n"
 "Omnipresent (On all desktops)"
 msgstr ""
+"Stäng\n"
+"Rulla upp\n"
+"På alla skrivbord"
 
 #: src/strings.c:42
 msgid "<span weight=\"bold\">Fonts</span>"
@@ -164,15 +171,15 @@ msgstr "Centrera _nya fönster"
 
 #: src/strings.c:57
 msgid "Prefer to place new windows _on:"
-msgstr ""
+msgstr "Föredra att placera nya fönster _på:"
 
 #: src/strings.c:58
 msgid "All monitors"
-msgstr ""
+msgstr "Alla skärmar"
 
 #: src/strings.c:59
 msgid "The active monitor"
-msgstr ""
+msgstr "Den aktiva skärmen"
 
 #: src/strings.c:60
 msgid "Windows"
@@ -241,7 +248,6 @@ msgid "Never"
 msgstr "Aldrig"
 
 #: src/strings.c:80
-#, fuzzy
 msgid "Information dialog's _position:"
 msgstr "Position för informations_dialog:"
 
@@ -255,33 +261,31 @@ msgstr "Ovanför fönstret"
 
 #: src/strings.c:83
 msgid "Fixed position on screen"
-msgstr ""
+msgstr "Fix position på skärmen"
 
 #: src/strings.c:85
-#, fuzzy
 msgid "Fixed _x position:"
-msgstr "_Svävande position:"
+msgstr "_Fix position:"
 
 #: src/strings.c:86 src/strings.c:91
 msgid "Centered"
-msgstr ""
+msgstr "Centrerad"
 
 #: src/strings.c:87 src/strings.c:92
 msgid "From left edge"
-msgstr ""
+msgstr "Från vänsterkanten"
 
 #: src/strings.c:88 src/strings.c:93
 msgid "From right edge"
-msgstr ""
+msgstr "Från högerkanten"
 
 #: src/strings.c:90
-#, fuzzy
 msgid "Fixed _y position:"
-msgstr "_Svävande position:"
+msgstr "_Fix position:"
 
 #: src/strings.c:95
 msgid "Move & Resize"
-msgstr ""
+msgstr "Flytta & Ändra Storlek"
 
 #: src/strings.c:98
 msgid "_Focus windows when the mouse pointer moves over them"
