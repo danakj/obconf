@@ -227,11 +227,11 @@ msgstr "ms"
 
 #: src/strings.c:74
 msgid "<span weight=\"bold\">Information Dialog</span>"
-msgstr ""
+msgstr "<span weight=\"bold\">Informationsdialog</span>"
 
 #: src/strings.c:75
 msgid "Show _information dialog:"
-msgstr ""
+msgstr "Visa _informationsdialog:"
 
 #: src/strings.c:76
 msgid "When resizing terminal windows"
@@ -247,7 +247,7 @@ msgstr "Aldrig"
 
 #: src/strings.c:80
 msgid "Information dialog's _position:"
-msgstr ""
+msgstr "Position för informations_dialog:"
 
 #: src/strings.c:81
 msgid "Centered on the window"
