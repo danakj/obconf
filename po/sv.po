@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: obconf 2.0.3\n"
 "Report-Msgid-Bugs-To: http://bugzilla.icculus.org/\n"
-"POT-Creation-Date: 2007-08-04 15:02-0400\n"
+"POT-Creation-Date: 2008-01-24 21:55-0500\n"
 "PO-Revision-Date: 2007-08-04 18:12+0200\n"
 "Last-Translator:  <mikachu@icculus.org>\n"
 "Language-Team: Swedish\n"
@@ -24,12 +24,13 @@ msgstr "Openbox Konfigurationshanterare"
 msgid "<span weight=\"bold\">Theme</span>"
 msgstr "<span weight=\"bold\">Tema</span>"
 
-#: src/strings.c:9 src/strings.c:14 src/strings.c:18 src/strings.c:28
-#: src/strings.c:36 src/strings.c:39 src/strings.c:43 src/strings.c:49
-#: src/strings.c:60 src/strings.c:65 src/strings.c:67 src/strings.c:74
-#: src/strings.c:80 src/strings.c:83 src/strings.c:85 src/strings.c:92
-#: src/strings.c:104 src/strings.c:115 src/strings.c:118 src/strings.c:124
-#: src/strings.c:129 src/strings.c:131 src/strings.c:134
+#: src/strings.c:9 src/strings.c:14 src/strings.c:18 src/strings.c:27
+#: src/strings.c:43 src/strings.c:51 src/strings.c:54 src/strings.c:62
+#: src/strings.c:71 src/strings.c:79 src/strings.c:84 src/strings.c:97
+#: src/strings.c:99 src/strings.c:106 src/strings.c:112 src/strings.c:115
+#: src/strings.c:117 src/strings.c:124 src/strings.c:136 src/strings.c:147
+#: src/strings.c:150 src/strings.c:156 src/strings.c:161 src/strings.c:163
+#: src/strings.c:166
 msgid "    "
 msgstr "    "
 
@@ -83,198 +84,278 @@ msgstr ""
 "M - Knapp för att maximera\n"
 "C - Knapp för att stänga"
 
-#: src/strings.c:27
+#: src/strings.c:28
+msgid ""
+"N:\n"
+"L:\n"
+"I:\n"
+"M:"
+msgstr ""
+
+#: src/strings.c:32
+msgid ""
+"Window icon\n"
+"Window label (Title)\n"
+"Iconify (Minimize)\n"
+"Maximize"
+msgstr ""
+
+#: src/strings.c:36
+msgid ""
+"C:\n"
+"S:\n"
+"D:"
+msgstr ""
+
+#: src/strings.c:39
+msgid ""
+"Close\n"
+"Shade (Roll up)\n"
+"Omnipresent (On all desktops)"
+msgstr ""
+
+#: src/strings.c:42
 msgid "<span weight=\"bold\">Fonts</span>"
 msgstr "<span weight=\"bold\">Fonter</span>"
 
-#: src/strings.c:29
+#: src/strings.c:44
 msgid "_Active window title: "
 msgstr "_Aktiv fönstertitel: "
 
-#: src/strings.c:30
+#: src/strings.c:45
 msgid "_Inactive window title: "
 msgstr "_Inaktiv fönstertitel: "
 
-#: src/strings.c:31
+#: src/strings.c:46
 msgid "Menu _header: "
 msgstr "Meny_rubrik: "
 
-#: src/strings.c:32
+#: src/strings.c:47
 msgid "_Menu Item: "
 msgstr "_Menyalternativ: "
 
-#: src/strings.c:33
+#: src/strings.c:48
 msgid "_On-screen display: "
 msgstr "_Popupfönster"
 
-#: src/strings.c:34
+#: src/strings.c:49
 msgid "Appearance"
 msgstr "Utseende"
 
-#: src/strings.c:35 src/strings.c:64
+#: src/strings.c:50 src/strings.c:96
 msgid "<span weight=\"bold\">Focusing Windows</span>"
 msgstr "<span weight=\"bold\">Fönsterfokus</span>"
 
-#: src/strings.c:37
+#: src/strings.c:52
 msgid "Focus _new windows when they appear"
 msgstr "Fokusera _nya fönster när de skapas"
 
-#: src/strings.c:38
+#: src/strings.c:53
 msgid "<span weight=\"bold\">Placing Windows</span>"
 msgstr "<span weight=\"bold\">Fönsterplacering</span>"
 
-#: src/strings.c:40
+#: src/strings.c:55
 msgid "_Place new windows under the mouse pointer"
 msgstr "_Placera nya fönster under muspekaren"
 
-#: src/strings.c:41
+#: src/strings.c:56
 msgid "_Center new windows when they are placed"
 msgstr "Centrera _nya fönster"
 
-#: src/strings.c:42
+#: src/strings.c:57
+msgid "Prefer to place new windows _on:"
+msgstr ""
+
+#: src/strings.c:58
+msgid "All monitors"
+msgstr ""
+
+#: src/strings.c:59
+msgid "The active monitor"
+msgstr ""
+
+#: src/strings.c:60
+msgid "Windows"
+msgstr "Fönster"
+
+#: src/strings.c:61
 msgid "<span weight=\"bold\">Moving and Resizing Windows</span>"
 msgstr ""
 "<span weight=\"bold\">Förflyttning och Storleksändring av Fönster</span>"
 
-#: src/strings.c:44
+#: src/strings.c:63
 msgid "Update the window contents while _resizing"
 msgstr "Uppdate_ra fönsterinnehållet under pågående storleksändring"
 
-#: src/strings.c:45
-msgid "_Show information dialog:"
-msgstr "Vi_sa informationsdialog:"
-
-#: src/strings.c:46
-msgid "When resizing terminal windows"
-msgstr "För terminalfönster"
-
-#: src/strings.c:47
-msgid "Always"
-msgstr "Alltid"
-
-#: src/strings.c:48
-msgid "Never"
-msgstr "Aldrig"
-
-#: src/strings.c:50
-msgid "Information _dialog's position:"
-msgstr "Position för informations_dialog:"
-
-#: src/strings.c:51
-msgid "Centered on the window"
-msgstr "Centrerat på fönstret"
-
-#: src/strings.c:52
-msgid "Above the window"
-msgstr "Ovanför fönstret"
-
-#: src/strings.c:53
+#: src/strings.c:64
 msgid "Drag _threshold distance:"
 msgstr "Dra_gtröskel:"
 
-#: src/strings.c:54 src/strings.c:56 src/strings.c:58 src/strings.c:95
-#: src/strings.c:97 src/strings.c:99 src/strings.c:101
+#: src/strings.c:65 src/strings.c:67 src/strings.c:69 src/strings.c:89
+#: src/strings.c:94 src/strings.c:127 src/strings.c:129 src/strings.c:131
+#: src/strings.c:133
 msgid "px"
 msgstr "px"
 
-#: src/strings.c:55
+#: src/strings.c:66
 msgid "Amount of resistance against other _windows:"
 msgstr "Motstånd mot andra _fönster:"
 
-#: src/strings.c:57
+#: src/strings.c:68
 msgid "Amount of resistance against screen _edges:"
 msgstr "Motstånd mot s_kärmkanten"
 
-#: src/strings.c:59
+#: src/strings.c:70
 msgid "_Switch desktops when moving a window past the screen edge"
 msgstr "_Byt skrivbord när ett fönster flyttas förbi fönsterkanten"
 
-#: src/strings.c:61
+#: src/strings.c:72
 msgid "_Amount of time to wait before switching:"
 msgstr "_Fördröjning innan byte:"
 
-#: src/strings.c:62 src/strings.c:72 src/strings.c:79 src/strings.c:87
-#: src/strings.c:133 src/strings.c:136
+#: src/strings.c:73 src/strings.c:104 src/strings.c:111 src/strings.c:119
+#: src/strings.c:165 src/strings.c:168
 msgid "ms"
 msgstr "ms"
 
-#: src/strings.c:63
-msgid "Windows"
-msgstr "Fönster"
+#: src/strings.c:74
+#, fuzzy
+msgid "<span weight=\"bold\">Information Dialog</span>"
+msgstr "<span weight=\"bold\">Position</span>"
 
-#: src/strings.c:66
+#: src/strings.c:75
+#, fuzzy
+msgid "Show _information dialog:"
+msgstr "Vi_sa informationsdialog:"
+
+#: src/strings.c:76
+msgid "When resizing terminal windows"
+msgstr "För terminalfönster"
+
+#: src/strings.c:77
+msgid "Always"
+msgstr "Alltid"
+
+#: src/strings.c:78
+msgid "Never"
+msgstr "Aldrig"
+
+#: src/strings.c:80
+#, fuzzy
+msgid "Information dialog's _position:"
+msgstr "Position för informations_dialog:"
+
+#: src/strings.c:81
+msgid "Centered on the window"
+msgstr "Centrerat på fönstret"
+
+#: src/strings.c:82
+msgid "Above the window"
+msgstr "Ovanför fönstret"
+
+#: src/strings.c:83
+msgid "Fixed position on screen"
+msgstr ""
+
+#: src/strings.c:85
+#, fuzzy
+msgid "Fixed _x position:"
+msgstr "_Svävande position:"
+
+#: src/strings.c:86 src/strings.c:91
+msgid "Centered"
+msgstr ""
+
+#: src/strings.c:87 src/strings.c:92
+msgid "From left edge"
+msgstr ""
+
+#: src/strings.c:88 src/strings.c:93
+msgid "From right edge"
+msgstr ""
+
+#: src/strings.c:90
+#, fuzzy
+msgid "Fixed _y position:"
+msgstr "_Svävande position:"
+
+#: src/strings.c:95
+msgid "Move & Resize"
+msgstr ""
+
+#: src/strings.c:98
 msgid "_Focus windows when the mouse pointer moves over them"
 msgstr "_Fokusera fönster när muspekaren flyttas in över dem"
 
-#: src/strings.c:68
+#: src/strings.c:100
 msgid "Move focus under the mouse when _switching desktops"
 msgstr "_Ge fokus till fönstret under muspekaren vid skrivbordsändring"
 
-#: src/strings.c:69
+#: src/strings.c:101
 msgid "Move focus _under the mouse when the mouse is not moving"
 msgstr "Lägg fokus _under muspekaren när musen inte flyttas"
 
-#: src/strings.c:70
+#: src/strings.c:102
 msgid "_Raise windows when the mouse pointer moves over them"
 msgstr "Lägg fönste_r överst när muspekaren flyttas in över dem"
 
-#: src/strings.c:71
+#: src/strings.c:103
 msgid "_Delay before focusing and raising windows:"
 msgstr "För_dröjning innan fönster fokuseras och läggs överst"
 
-#: src/strings.c:73
+#: src/strings.c:105
 msgid "<span weight=\"bold\">Titlebar</span>"
 msgstr "<span weight=\"bold\">Titelrad</span>"
 
-#: src/strings.c:75
+#: src/strings.c:107
 msgid "Double click on the _titlebar:"
 msgstr "Dubbelklick på t_itelraden:"
 
-#: src/strings.c:76
+#: src/strings.c:108
 msgid "Maximizes the window"
 msgstr "Maximerar fönstret"
 
-#: src/strings.c:77
+#: src/strings.c:109
 msgid "Shades the window"
 msgstr "Rullar upp fönstret"
 
-#: src/strings.c:78
+#: src/strings.c:110
 msgid "Double click ti_me:"
 msgstr "Dubbelkli_cktid:"
 
-#: src/strings.c:81
+#: src/strings.c:113
 msgid "Mouse"
 msgstr "Mus"
 
-#: src/strings.c:82
+#: src/strings.c:114
 msgid "<span weight=\"bold\">Desktops</span>"
 msgstr "<span weight=\"bold\">Skrivbord</span>"
 
-#: src/strings.c:84
+#: src/strings.c:116
 msgid "_Show a notification when switching desktops"
 msgstr "_Visa en notifikation vid skrivbordsbyte"
 
-#: src/strings.c:86
+#: src/strings.c:118
 msgid "_Amount of time to show the notification for:"
 msgstr "_Tid att visa notifikationen:"
 
-#: src/strings.c:88
+#: src/strings.c:120
 msgid "_Number of desktops: "
 msgstr "_Antal skrivbord: "
 
-#: src/strings.c:89
+#: src/strings.c:121
 msgid "_Desktop names:"
 msgstr "_Skrivbordsnamn:"
 
-#: src/strings.c:90
+#: src/strings.c:122
 msgid "Desktops"
 msgstr "Skrivbord"
 
-#: src/strings.c:91
+#: src/strings.c:123
 msgid "<span weight=\"bold\">Desktop Margins</span>"
 msgstr "<span weight=\"bold\">Skrivbordsmarginaler</span>"
 
-#: src/strings.c:93
+#: src/strings.c:125
 msgid ""
 "Desktop margins are reserved areas on the edge of your screen.  New windows "
 "will not be placed within a margin, and maximized windows will not cover "
@@ -283,171 +364,171 @@ msgstr ""
 "Skrivbordsmarginaler är reserverade områden utmed kanten av skärmen. Nya "
 "fönster placeras inte i en marginal och maximerade fönster täcker dem inte."
 
-#: src/strings.c:94
+#: src/strings.c:126
 msgid "_Top"
 msgstr "_Topp"
 
-#: src/strings.c:96
+#: src/strings.c:128
 msgid "_Left"
 msgstr "_Vänster"
 
-#: src/strings.c:98
+#: src/strings.c:130
 msgid "_Right"
 msgstr "_Höger"
 
-#: src/strings.c:100
+#: src/strings.c:132
 msgid "_Bottom"
 msgstr "_Botten"
 
-#: src/strings.c:102
+#: src/strings.c:134
 msgid "Margins"
 msgstr "Marginaler"
 
-#: src/strings.c:103
+#: src/strings.c:135
 msgid "<span weight=\"bold\">Position</span>"
 msgstr "<span weight=\"bold\">Position</span>"
 
-#: src/strings.c:105
+#: src/strings.c:137
 msgid "_Position:"
 msgstr "_Position:"
 
-#: src/strings.c:106
+#: src/strings.c:138
 msgid "Top Left"
 msgstr "Överst till vänster"
 
-#: src/strings.c:107
+#: src/strings.c:139
 msgid "Top"
 msgstr "Överst"
 
-#: src/strings.c:108
+#: src/strings.c:140
 msgid "Top Right"
 msgstr "Överst till höger"
 
-#: src/strings.c:109
+#: src/strings.c:141
 msgid "Left"
 msgstr "Till vänster"
 
-#: src/strings.c:110
+#: src/strings.c:142
 msgid "Right"
 msgstr "Till höger"
 
-#: src/strings.c:111
+#: src/strings.c:143
 msgid "Bottom Left"
 msgstr "Nederst till vänster"
 
-#: src/strings.c:112
+#: src/strings.c:144
 msgid "Bottom"
 msgstr "Nederst"
 
-#: src/strings.c:113
+#: src/strings.c:145
 msgid "Bottom Right"
 msgstr "Nederst till höger"
 
-#: src/strings.c:114
+#: src/strings.c:146
 msgid "Floating"
 msgstr "Svävande"
 
-#: src/strings.c:116
+#: src/strings.c:148
 msgid "_Floating position:"
 msgstr "_Svävande position:"
 
-#: src/strings.c:117
+#: src/strings.c:149
 msgid "x"
 msgstr "x"
 
-#: src/strings.c:119
+#: src/strings.c:151
 msgid "Allow _windows to be placed within the dock's area"
 msgstr "Tillåt att _fönster placeras ovanför dockans område"
 
-#: src/strings.c:120
+#: src/strings.c:152
 msgid "_Orientation: "
 msgstr "Or_ientering: "
 
-#: src/strings.c:121
+#: src/strings.c:153
 msgid "Vertical"
 msgstr "Vertikal"
 
-#: src/strings.c:122
+#: src/strings.c:154
 msgid "Horizontal"
 msgstr "Horisontell"
 
-#: src/strings.c:123
+#: src/strings.c:155
 msgid "<span weight=\"bold\">Stacking</span>"
 msgstr "<span weight=\"bold\">Lager</span>"
 
-#: src/strings.c:125
+#: src/strings.c:157
 msgid "Keep dock _above other windows"
 msgstr "Håll dock_an ovanför andra fönster"
 
-#: src/strings.c:126
+#: src/strings.c:158
 msgid "A_llow dock to be both above and below windows"
 msgstr "_Låt dockan vara både över och under fönster"
 
-#: src/strings.c:127
+#: src/strings.c:159
 msgid "Keep dock _below other windows"
 msgstr "Håll dockan under andra fönst_er"
 
-#: src/strings.c:128
+#: src/strings.c:160
 msgid "<span weight=\"bold\">Hiding</span>"
 msgstr "<span weight=\"bold\">Döljande</span>"
 
-#: src/strings.c:130
+#: src/strings.c:162
 msgid "_Hide off screen"
 msgstr "_Dölj utanför skärmen"
 
-#: src/strings.c:132
+#: src/strings.c:164
 msgid "_Delay before hiding:"
 msgstr "Fördröj_ning innan döljande:"
 
-#: src/strings.c:135
+#: src/strings.c:167
 msgid "Delay before _showing:"
 msgstr "Fördröjning innan _visande:"
 
-#: src/strings.c:137
+#: src/strings.c:169
 msgid "Dock"
 msgstr "Docka"
 
-#: src/strings.c:138
+#: src/strings.c:170
 msgid "Abo_ut"
 msgstr "_Om"
 
-#: src/strings.c:139
+#: src/strings.c:171
 msgid "About ObConf"
 msgstr "Om ObConf"
 
-#: src/strings.c:140
+#: src/strings.c:172
 msgid "<span weight=\"bold\" size=\"xx-large\">ObConf VERSION</span>"
 msgstr "<span weight=\"bold\" size=\"xx-large\">ObConf VERSION</span>"
 
-#: src/strings.c:141
+#: src/strings.c:173
 msgid "A preferences manager for Openbox"
 msgstr "En inställningshanterare för Openbox"
 
-#: src/strings.c:142
+#: src/strings.c:174
 msgid ""
-"Copyright (c) 2003-2007\n"
+"Copyright (c) 2003-2008\n"
 "Dana Jansens <danakj@orodu.net>\n"
 "Tim Riley <tr@slackzone.org>\n"
 "Javeed Shaikh <syscrash2k@gmail.com>"
 msgstr ""
 
-#: src/strings.c:146
+#: src/strings.c:178
 msgid "window1"
 msgstr ""
 
-#: src/strings.c:147
+#: src/strings.c:179
 msgid "<span weight=\"bold\">Press the key you wish to bind...</span>"
 msgstr "<span weight=\"bold\">Tryck på tangenten du vill använda...</span>"
 
-#: src/main.c:66 src/main.c:68
+#: src/main.c:66 src/main.c:68 src/main.c:70
 msgid "Copyright (c)"
 msgstr "Copyright (c)"
 
-#: src/main.c:80
+#: src/main.c:81
 msgid "Syntax: obconf [options] [ARCHIVE.obt]\n"
 msgstr "Syntax: obconf [alternativ] [ARKIV.obt]\n"
 
-#: src/main.c:81
+#: src/main.c:82
 msgid ""
 "\n"
 "Options:\n"
@@ -455,27 +536,27 @@ msgstr ""
 "\n"
 "Alternativ:\n"
 
-#: src/main.c:82
+#: src/main.c:83
 msgid "  --help                Display this help and exit\n"
 msgstr "  --help                Visa den här hjälpen och avsluta\n"
 
-#: src/main.c:83
+#: src/main.c:84
 msgid "  --version             Display the version and exit\n"
 msgstr "  --version             Visa version och avsluta\n"
 
-#: src/main.c:84
+#: src/main.c:85
 msgid "  --install ARCHIVE.obt Install the given theme archive and select it\n"
 msgstr ""
 "  --install ARKIV.obt   Installera det givna temaarkivet och välj det\n"
 
-#: src/main.c:85
+#: src/main.c:86
 msgid ""
 "  --archive THEME       Create a theme archive from the given theme "
 "directory\n"
 msgstr ""
 "  --archive TEMA        Skapa ett temaarkiv från den givna temakatalogen\n"
 
-#: src/main.c:86
+#: src/main.c:87
 #, c-format
 msgid ""
 "\n"
@@ -486,11 +567,11 @@ msgstr ""
 "Rapportera buggar till %s\n"
 "\n"
 
-#: src/main.c:102
+#: src/main.c:103
 msgid "--install requires an argument\n"
 msgstr "--install kräver ett argument\n"
 
-#: src/main.c:108
+#: src/main.c:109
 msgid "--archive requires an argument\n"
 msgstr "--archive kräver ett argument\n"
 
