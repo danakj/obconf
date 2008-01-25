@@ -1,3 +1,14 @@
+2.0.3:
+  * Added Norwegian translation
+  * Updated Traditional Chinese, Italian, and Swedish translations
+  * Add support for the desktop warping option
+  * Add support for showing the popup notification when changing desktops
+  * Better build support for Max OSX platform (no --export-dynamic)
+  * Major layout changes
+  * Add support for putting the move/resize popup in a fixed position on screen
+  * Add support for the <active> window placement option
+  * New icon by Myles Green
+
 2.0.2:
   * Add Traditional Chinese translation
   * Add Italian translation
