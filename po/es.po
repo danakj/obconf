@@ -219,14 +219,12 @@ msgid "ms"
 msgstr "ms"
 
 #: src/strings.c:74
-#, fuzzy
 msgid "<span weight=\"bold\">Information Dialog</span>"
-msgstr "<span weight=\"bold\">Posición</span>"
+msgstr ""
 
 #: src/strings.c:75
-#, fuzzy
 msgid "Show _information dialog:"
-msgstr "Mo_strar información de diálogo:"
+msgstr ""
 
 #: src/strings.c:76
 msgid "When resizing terminal windows"
@@ -241,9 +239,8 @@ msgid "Never"
 msgstr "Nunca"
 
 #: src/strings.c:80
-#, fuzzy
 msgid "Information dialog's _position:"
-msgstr "Posición de los _diálogos de información:"
+msgstr ""
 
 #: src/strings.c:81
 msgid "Centered on the window"
@@ -258,9 +255,8 @@ msgid "Fixed position on screen"
 msgstr ""
 
 #: src/strings.c:85
-#, fuzzy
 msgid "Fixed _x position:"
-msgstr "Posición de _flotación:"
+msgstr ""
 
 #: src/strings.c:86 src/strings.c:91
 msgid "Centered"
@@ -275,9 +271,8 @@ msgid "From right edge"
 msgstr ""
 
 #: src/strings.c:90
-#, fuzzy
 msgid "Fixed _y position:"
-msgstr "Posición de _flotación:"
+msgstr ""
 
 #: src/strings.c:95
 msgid "Move & Resize"
@@ -506,17 +501,12 @@ msgid "A preferences manager for Openbox"
 msgstr "Un administrador de preferencias para Openbox"
 
 #: src/strings.c:174
-#, fuzzy
 msgid ""
 "Copyright (c) 2003-2008\n"
 "Dana Jansens <danakj@orodu.net>\n"
 "Tim Riley <tr@slackzone.org>\n"
 "Javeed Shaikh <syscrash2k@gmail.com>"
 msgstr ""
-"Copyright (c) 2003-2007\n"
-"Dana Jansens <danakj@orodu.net>\n"
-"Tim Riley <tr@slackzone.org>\n"
-"Javeed Shaikh <syscrash2k@gmail.com>"
 
 #: src/strings.c:178
 msgid "window1"

@@ -218,14 +218,12 @@ msgid "ms"
 msgstr "毫秒"
 
 #: src/strings.c:74
-#, fuzzy
 msgid "<span weight=\"bold\">Information Dialog</span>"
-msgstr "<span weight=\"bold\">位置</span>"
+msgstr ""
 
 #: src/strings.c:75
-#, fuzzy
 msgid "Show _information dialog:"
-msgstr "顯示資訊對話框(_S)："
+msgstr ""
 
 #: src/strings.c:76
 msgid "When resizing terminal windows"
@@ -240,9 +238,8 @@ msgid "Never"
 msgstr "永不"
 
 #: src/strings.c:80
-#, fuzzy
 msgid "Information dialog's _position:"
-msgstr "資訊對話框位置(_D)："
+msgstr ""
 
 #: src/strings.c:81
 msgid "Centered on the window"
@@ -257,9 +254,8 @@ msgid "Fixed position on screen"
 msgstr ""
 
 #: src/strings.c:85
-#, fuzzy
 msgid "Fixed _x position:"
-msgstr "浮動位置(_F)："
+msgstr ""
 
 #: src/strings.c:86 src/strings.c:91
 msgid "Centered"
@@ -274,9 +270,8 @@ msgid "From right edge"
 msgstr ""
 
 #: src/strings.c:90
-#, fuzzy
 msgid "Fixed _y position:"
-msgstr "浮動位置(_F)："
+msgstr ""
 
 #: src/strings.c:95
 msgid "Move & Resize"
@@ -504,17 +499,12 @@ msgid "A preferences manager for Openbox"
 msgstr "用於 Openbox 的偏好設定管理員"
 
 #: src/strings.c:174
-#, fuzzy
 msgid ""
 "Copyright (c) 2003-2008\n"
 "Dana Jansens <danakj@orodu.net>\n"
 "Tim Riley <tr@slackzone.org>\n"
 "Javeed Shaikh <syscrash2k@gmail.com>"
 msgstr ""
-"著作權 (c) 2003-2007\n"
-"Dana Jansens <danakj@orodu.net>\n"
-"Tim Riley <tr@slackzone.org>\n"
-"Javeed Shaikh <syscrash2k@gmail.com>"
 
 #: src/strings.c:178
 msgid "window1"

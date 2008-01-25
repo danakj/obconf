@@ -217,14 +217,12 @@ msgid "ms"
 msgstr "ms"
 
 #: src/strings.c:74
-#, fuzzy
 msgid "<span weight=\"bold\">Information Dialog</span>"
-msgstr "<span weight=\"bold\">Posisjon</span>"
+msgstr ""
 
 #: src/strings.c:75
-#, fuzzy
 msgid "Show _information dialog:"
-msgstr "_Vis informasjonsdialog:"
+msgstr ""
 
 #: src/strings.c:76
 msgid "When resizing terminal windows"
@@ -239,9 +237,8 @@ msgid "Never"
 msgstr "Aldri"
 
 #: src/strings.c:80
-#, fuzzy
 msgid "Information dialog's _position:"
-msgstr "Informasjons_dialogens posisjon:"
+msgstr ""
 
 #: src/strings.c:81
 msgid "Centered on the window"
@@ -256,9 +253,8 @@ msgid "Fixed position on screen"
 msgstr ""
 
 #: src/strings.c:85
-#, fuzzy
 msgid "Fixed _x position:"
-msgstr "_Svevende posisjon:"
+msgstr ""
 
 #: src/strings.c:86 src/strings.c:91
 msgid "Centered"
@@ -273,9 +269,8 @@ msgid "From right edge"
 msgstr ""
 
 #: src/strings.c:90
-#, fuzzy
 msgid "Fixed _y position:"
-msgstr "_Svevende posisjon:"
+msgstr ""
 
 #: src/strings.c:95
 msgid "Move & Resize"
