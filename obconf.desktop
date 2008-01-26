@@ -2,7 +2,9 @@
 Encoding=UTF-8
 Type=Application
 Name=Openbox Configuration Manager
+Name[zh_TW]=Openbox 組態管理器
 Comment=Openbox configuration manager
+Comment[zh_TW]=管理 Openbox 組態設定
 Icon=obconf
 Exec=obconf %f
 Categories=Settings;DesktopSettings;GTK;

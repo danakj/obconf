@@ -2,6 +2,7 @@
 <mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
   <mime-type type="application/x-openbox-theme">
          <comment xml:lang="en">openbox theme archive</comment>
+         <comment xml:lang="zh_TW">openbox 佈景主題存檔</comment>
          <sub-class-of type="application/x-gzip"/>
          <glob pattern="*.obt"/>
   </mime-type>
