@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: obconf 2.0.2\n"
 "Report-Msgid-Bugs-To: http://bugzilla.icculus.org/\n"
 "POT-Creation-Date: 2008-01-24 21:55-0500\n"
-"PO-Revision-Date: 2007-07-21 00:15+0200\n"
+"PO-Revision-Date: 2008-01-24 04:20+0100\n"
 "Last-Translator: tezlo <tezlo@gmx.net>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -76,7 +76,7 @@ msgid ""
 "C - The close button"
 msgstr ""
 "N - Ikona okna\n"
-"D - Tlačítko všech ploch\n"
+"D - Tlačítko omnipresence\n"
 "S - Tlačítko rolování\n"
 "L - Titulek okna\n"
 "I - Tlačítko minimalizace\n"
@@ -90,6 +90,10 @@ msgid ""
 "I:\n"
 "M:"
 msgstr ""
+"N:\n"
+"L:\n"
+"I:\n"
+"M:"
 
 #: src/strings.c:32
 msgid ""
@@ -98,6 +102,10 @@ msgid ""
 "Iconify (Minimize)\n"
 "Maximize"
 msgstr ""
+"Ikona okna\n"
+"Titulek okna\n"
+"Minimalizovat\n"
+"Maximalizovat"
 
 #: src/strings.c:36
 msgid ""
@@ -105,6 +113,9 @@ msgid ""
 "S:\n"
 "D:"
 msgstr ""
+"C:\n"
+"S:\n"
+"D:"
 
 #: src/strings.c:39
 msgid ""
@@ -112,6 +123,9 @@ msgid ""
 "Shade (Roll up)\n"
 "Omnipresent (On all desktops)"
 msgstr ""
+"Zavřít\n"
+"Srolovat\n"
+"Omnipresence (Na všech plochách)"
 
 #: src/strings.c:42
 msgid "<span weight=\"bold\">Fonts</span>"
@@ -156,7 +170,7 @@ msgstr "<span weight=\"bold\">Umístění Oken</span>"
 
 #: src/strings.c:55
 msgid "_Place new windows under the mouse pointer"
-msgstr "_Umístit nová okna pod kurzor myši"
+msgstr "_Umísťovat nová okna pod kurzor myši"
 
 #: src/strings.c:56
 msgid "_Center new windows when they are placed"
@@ -164,15 +178,15 @@ msgstr "_Centrovat nová okna při umístění"
 
 #: src/strings.c:57
 msgid "Prefer to place new windows _on:"
-msgstr ""
+msgstr "Přednostně umisťovat nová _okna na:"
 
 #: src/strings.c:58
 msgid "All monitors"
-msgstr ""
+msgstr "Všechny monitory"
 
 #: src/strings.c:59
 msgid "The active monitor"
-msgstr ""
+msgstr "Aktivní monitor"
 
 #: src/strings.c:60
 msgid "Windows"
@@ -208,11 +222,11 @@ msgstr "Míra odporu ke _krajům obrazovky:"
 
 #: src/strings.c:70
 msgid "_Switch desktops when moving a window past the screen edge"
-msgstr ""
+msgstr "_Změnit plochu při tažení okna přes okraj obrazovky"
 
 #: src/strings.c:72
 msgid "_Amount of time to wait before switching:"
-msgstr ""
+msgstr "Prodleva _před změnou plochy:"
 
 #: src/strings.c:73 src/strings.c:104 src/strings.c:111 src/strings.c:119
 #: src/strings.c:165 src/strings.c:168
@@ -220,12 +234,14 @@ msgid "ms"
 msgstr "ms"
 
 #: src/strings.c:74
+#, fuzzy
 msgid "<span weight=\"bold\">Information Dialog</span>"
-msgstr ""
+msgstr "<span weight=\"bold\">Pozice</span>"
 
 #: src/strings.c:75
+#, fuzzy
 msgid "Show _information dialog:"
-msgstr ""
+msgstr "_Zobrazit informační dialog:"
 
 #: src/strings.c:76
 msgid "When resizing terminal windows"
@@ -240,8 +256,9 @@ msgid "Never"
 msgstr "Nikdy"
 
 #: src/strings.c:80
+#, fuzzy
 msgid "Information dialog's _position:"
-msgstr ""
+msgstr "_Pozice informačního dialogu:"
 
 #: src/strings.c:81
 msgid "Centered on the window"
@@ -253,31 +270,33 @@ msgstr "Nad oknem"
 
 #: src/strings.c:83
 msgid "Fixed position on screen"
-msgstr ""
+msgstr "Fixní pozice na obrazovce"
 
 #: src/strings.c:85
+#, fuzzy
 msgid "Fixed _x position:"
-msgstr ""
+msgstr "Fixní _x pozice:"
 
 #: src/strings.c:86 src/strings.c:91
 msgid "Centered"
-msgstr ""
+msgstr "Centrováno"
 
 #: src/strings.c:87 src/strings.c:92
 msgid "From left edge"
-msgstr ""
+msgstr "Z levého okraje"
 
 #: src/strings.c:88 src/strings.c:93
 msgid "From right edge"
-msgstr ""
+msgstr "Z praváho okraje"
 
 #: src/strings.c:90
+#, fuzzy
 msgid "Fixed _y position:"
-msgstr ""
+msgstr "Fixní _y pozice:"
 
 #: src/strings.c:95
 msgid "Move & Resize"
-msgstr ""
+msgstr "Pohyb & Velikost"
 
 # XXX
 #: src/strings.c:98
@@ -331,11 +350,11 @@ msgstr "<span weight=\"bold\">Plochy</span>"
 
 #: src/strings.c:116
 msgid "_Show a notification when switching desktops"
-msgstr ""
+msgstr "Upozornit při _změně plochy"
 
 #: src/strings.c:118
 msgid "_Amount of time to show the notification for:"
-msgstr ""
+msgstr "Prodleva před _upozorněním:"
 
 #: src/strings.c:120
 msgid "_Number of desktops: "
@@ -510,10 +529,14 @@ msgid ""
 "Tim Riley <tr@slackzone.org>\n"
 "Javeed Shaikh <syscrash2k@gmail.com>"
 msgstr ""
+"Copyright (c) 2003-2008\n"
+"Dana Jansens <danakj@orodu.net>\n"
+"Tim Riley <tr@slackzone.org>\n"
+"Javeed Shaikh <syscrash2k@gmail.com>"
 
 #: src/strings.c:178
 msgid "window1"
-msgstr ""
+msgstr "window1"
 
 #: src/strings.c:179
 msgid "<span weight=\"bold\">Press the key you wish to bind...</span>"
@@ -618,7 +641,7 @@ msgstr "Nepodařilo se vytvořit adresář \"%s\": %s"
 #: src/archive.c:148
 #, c-format
 msgid "\"%s\" does not appear to be a valid Openbox theme directory"
-msgstr "\"%s\" nevypadá jako XXX adresář motivu Openbox"
+msgstr "\"%s\" nevypadá jako adresář motivu Openbox"
 
 #: src/archive.c:158
 #, c-format
