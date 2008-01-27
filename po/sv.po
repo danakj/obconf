@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: obconf 2.0.3\n"
 "Report-Msgid-Bugs-To: http://bugzilla.icculus.org/\n"
-"POT-Creation-Date: 2008-02-02 11:51-0500\n"
-"PO-Revision-Date: 2008-01-25 03:59+0100\n"
+"POT-Creation-Date: 2008-02-11 13:32+0100\n"
+"PO-Revision-Date: 2008-02-11 13:36+0100\n"
 "Last-Translator:  <mikachu@icculus.org>\n"
 "Language-Team: Swedish\n"
 "MIME-Version: 1.0\n"
@@ -183,7 +183,7 @@ msgstr "Den aktiva skärmen"
 
 #: src/strings.c:60
 msgid "The monitor with the mouse"
-msgstr ""
+msgstr "Skärmen med muspekaren"
 
 #: src/strings.c:61
 msgid "Windows"
@@ -273,17 +273,25 @@ msgstr "_Fix position:"
 msgid "Centered"
 msgstr "Centrerad"
 
-#: src/strings.c:88 src/strings.c:93
+#: src/strings.c:88
 msgid "From left edge"
 msgstr "Från vänsterkanten"
 
-#: src/strings.c:89 src/strings.c:94
+#: src/strings.c:89
 msgid "From right edge"
 msgstr "Från högerkanten"
 
 #: src/strings.c:91
 msgid "Fixed _y position:"
 msgstr "_Fix position:"
+
+#: src/strings.c:93
+msgid "From top edge"
+msgstr "Från överkanten"
+
+#: src/strings.c:94
+msgid "From bottom edge"
+msgstr "Från underkanten"
 
 #: src/strings.c:96
 msgid "Move & Resize"
@@ -564,7 +572,7 @@ msgstr ""
 
 #: src/main.c:93
 msgid "  --config-file FILE    Specify the path to the config file to use\n"
-msgstr ""
+msgstr "  --config-file FIL     Ange sökväg till konfigurationsfil att använda\n"
 
 #: src/main.c:94
 #, c-format
@@ -586,21 +594,22 @@ msgid "--archive requires an argument\n"
 msgstr "--archive kräver ett argument\n"
 
 #: src/main.c:122
-#, fuzzy
 msgid "--config-file requires an argument\n"
-msgstr "--archive kräver ett argument\n"
+msgstr "--config-file kräver ett argument\n"
 
 #: src/main.c:213
 msgid ""
 "Failed to load the obconf.glade interface file. You have probably failed to "
 "install ObConf properly."
-msgstr ""
+msgstr "Kunde inte ladda gränssnittsfilen obconf.glade. Du har antagligen "
+"inte installerat ObConf korrekt."
 
 #: src/main.c:234
 msgid ""
 "Failed to load an rc.xml. You have probably failed to install Openbox "
 "properly."
-msgstr ""
+msgstr "Kunde inte ladda en rc.xml. Du har antagligen inte installerat "
+"Openbox korrekt."
 
 #: src/main.c:243
 #, c-format
@@ -610,6 +619,10 @@ msgid ""
 "\n"
 "Message: %s"
 msgstr ""
+"Fel vid tolkning av Openbox konfigurationsfil. Din konfigurationsfil är inte "
+"korrekt XML.\n"
+"\n"
+"Meddelande: %s"
 
 #: src/desktops.c:134 src/desktops.c:165 src/desktops.c:181
 msgid "(Unnamed desktop)"
