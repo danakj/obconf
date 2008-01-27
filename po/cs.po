@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: obconf 2.0.2\n"
 "Report-Msgid-Bugs-To: http://bugzilla.icculus.org/\n"
-"POT-Creation-Date: 2008-01-24 21:55-0500\n"
+"POT-Creation-Date: 2008-01-27 15:25-0500\n"
 "PO-Revision-Date: 2008-01-24 04:20+0100\n"
 "Last-Translator: tezlo <tezlo@gmx.net>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -24,12 +24,12 @@ msgid "<span weight=\"bold\">Theme</span>"
 msgstr "<span weight=\"bold\">Motiv</span>"
 
 #: src/strings.c:9 src/strings.c:14 src/strings.c:18 src/strings.c:27
-#: src/strings.c:43 src/strings.c:51 src/strings.c:54 src/strings.c:62
-#: src/strings.c:71 src/strings.c:79 src/strings.c:84 src/strings.c:97
-#: src/strings.c:99 src/strings.c:106 src/strings.c:112 src/strings.c:115
-#: src/strings.c:117 src/strings.c:124 src/strings.c:136 src/strings.c:147
-#: src/strings.c:150 src/strings.c:156 src/strings.c:161 src/strings.c:163
-#: src/strings.c:166
+#: src/strings.c:43 src/strings.c:51 src/strings.c:54 src/strings.c:63
+#: src/strings.c:72 src/strings.c:80 src/strings.c:85 src/strings.c:98
+#: src/strings.c:100 src/strings.c:107 src/strings.c:113 src/strings.c:116
+#: src/strings.c:118 src/strings.c:125 src/strings.c:137 src/strings.c:148
+#: src/strings.c:151 src/strings.c:157 src/strings.c:162 src/strings.c:164
+#: src/strings.c:167
 msgid "    "
 msgstr "    "
 
@@ -156,7 +156,7 @@ msgstr "_OSD text: "
 msgid "Appearance"
 msgstr "Vzhled"
 
-#: src/strings.c:50 src/strings.c:96
+#: src/strings.c:50 src/strings.c:97
 msgid "<span weight=\"bold\">Focusing Windows</span>"
 msgstr "<span weight=\"bold\">Správa Oken</span>"
 
@@ -189,191 +189,195 @@ msgid "The active monitor"
 msgstr "Aktivní monitor"
 
 #: src/strings.c:60
+msgid "The monitor with the mouse"
+msgstr ""
+
+#: src/strings.c:61
 msgid "Windows"
 msgstr "Okna"
 
 # XXX
-#: src/strings.c:61
+#: src/strings.c:62
 msgid "<span weight=\"bold\">Moving and Resizing Windows</span>"
 msgstr "<span weight=\"bold\">Změna Pozice a Velikosti Oken</span>"
 
-#: src/strings.c:63
+#: src/strings.c:64
 msgid "Update the window contents while _resizing"
 msgstr "Aktualizovat obsah okna při změně _velikosti"
 
 # XXX
-#: src/strings.c:64
+#: src/strings.c:65
 msgid "Drag _threshold distance:"
 msgstr "Citlivost _tahu:"
 
-#: src/strings.c:65 src/strings.c:67 src/strings.c:69 src/strings.c:89
-#: src/strings.c:94 src/strings.c:127 src/strings.c:129 src/strings.c:131
-#: src/strings.c:133
+#: src/strings.c:66 src/strings.c:68 src/strings.c:70 src/strings.c:90
+#: src/strings.c:95 src/strings.c:128 src/strings.c:130 src/strings.c:132
+#: src/strings.c:134
 msgid "px"
 msgstr "px"
 
-#: src/strings.c:66
+#: src/strings.c:67
 msgid "Amount of resistance against other _windows:"
 msgstr "Míra odporu k ostatním _oknům:"
 
-#: src/strings.c:68
+#: src/strings.c:69
 msgid "Amount of resistance against screen _edges:"
 msgstr "Míra odporu ke _krajům obrazovky:"
 
-#: src/strings.c:70
+#: src/strings.c:71
 msgid "_Switch desktops when moving a window past the screen edge"
 msgstr "_Změnit plochu při tažení okna přes okraj obrazovky"
 
-#: src/strings.c:72
+#: src/strings.c:73
 msgid "_Amount of time to wait before switching:"
 msgstr "Prodleva _před změnou plochy:"
 
-#: src/strings.c:73 src/strings.c:104 src/strings.c:111 src/strings.c:119
-#: src/strings.c:165 src/strings.c:168
+#: src/strings.c:74 src/strings.c:105 src/strings.c:112 src/strings.c:120
+#: src/strings.c:166 src/strings.c:169
 msgid "ms"
 msgstr "ms"
 
-#: src/strings.c:74
+#: src/strings.c:75
 #, fuzzy
 msgid "<span weight=\"bold\">Information Dialog</span>"
 msgstr "<span weight=\"bold\">Pozice</span>"
 
-#: src/strings.c:75
+#: src/strings.c:76
 #, fuzzy
 msgid "Show _information dialog:"
 msgstr "_Zobrazit informační dialog:"
 
-#: src/strings.c:76
+#: src/strings.c:77
 msgid "When resizing terminal windows"
 msgstr "Pouze pro okna terminálu"
 
-#: src/strings.c:77
+#: src/strings.c:78
 msgid "Always"
 msgstr "Vždy"
 
-#: src/strings.c:78
+#: src/strings.c:79
 msgid "Never"
 msgstr "Nikdy"
 
-#: src/strings.c:80
+#: src/strings.c:81
 #, fuzzy
 msgid "Information dialog's _position:"
 msgstr "_Pozice informačního dialogu:"
 
-#: src/strings.c:81
+#: src/strings.c:82
 msgid "Centered on the window"
 msgstr "Uprostřed okna"
 
-#: src/strings.c:82
+#: src/strings.c:83
 msgid "Above the window"
 msgstr "Nad oknem"
 
-#: src/strings.c:83
+#: src/strings.c:84
 msgid "Fixed position on screen"
 msgstr "Fixní pozice na obrazovce"
 
-#: src/strings.c:85
+#: src/strings.c:86
 #, fuzzy
 msgid "Fixed _x position:"
 msgstr "Fixní _x pozice:"
 
-#: src/strings.c:86 src/strings.c:91
+#: src/strings.c:87 src/strings.c:92
 msgid "Centered"
 msgstr "Centrováno"
 
-#: src/strings.c:87 src/strings.c:92
+#: src/strings.c:88 src/strings.c:93
 msgid "From left edge"
 msgstr "Z levého okraje"
 
-#: src/strings.c:88 src/strings.c:93
+#: src/strings.c:89 src/strings.c:94
 msgid "From right edge"
 msgstr "Z praváho okraje"
 
-#: src/strings.c:90
+#: src/strings.c:91
 #, fuzzy
 msgid "Fixed _y position:"
 msgstr "Fixní _y pozice:"
 
-#: src/strings.c:95
+#: src/strings.c:96
 msgid "Move & Resize"
 msgstr "Pohyb & Velikost"
 
 # XXX
-#: src/strings.c:98
+#: src/strings.c:99
 msgid "_Focus windows when the mouse pointer moves over them"
 msgstr "_Aktivovat okno pod kurzorem myši"
 
-#: src/strings.c:100
+#: src/strings.c:101
 msgid "Move focus under the mouse when _switching desktops"
 msgstr "Aktivovat okno pod kurzorem při změně _plochy"
 
-#: src/strings.c:101
+#: src/strings.c:102
 msgid "Move focus _under the mouse when the mouse is not moving"
 msgstr "Aktivovat okno pod kurzorem když se _myš nehýbe"
 
 # XXX
-#: src/strings.c:102
+#: src/strings.c:103
 msgid "_Raise windows when the mouse pointer moves over them"
 msgstr "_Zvednout okno při přejezdu kurzorem myši"
 
-#: src/strings.c:103
+#: src/strings.c:104
 msgid "_Delay before focusing and raising windows:"
 msgstr "P_rodleva před aktivací a zvedáním oken:"
 
-#: src/strings.c:105
+#: src/strings.c:106
 msgid "<span weight=\"bold\">Titlebar</span>"
 msgstr "<span weight=\"bold\">Lišta</span>"
 
-#: src/strings.c:107
+#: src/strings.c:108
 msgid "Double click on the _titlebar:"
 msgstr "Dvojitý klik na _lištu:"
 
-#: src/strings.c:108
+#: src/strings.c:109
 msgid "Maximizes the window"
 msgstr "Maximalizuje okno"
 
-#: src/strings.c:109
+#: src/strings.c:110
 msgid "Shades the window"
 msgstr "Sroluje okno"
 
-#: src/strings.c:110
+#: src/strings.c:111
 msgid "Double click ti_me:"
 msgstr "Čas na dvojitý _klik:"
 
-#: src/strings.c:113
+#: src/strings.c:114
 msgid "Mouse"
 msgstr "Myš"
 
-#: src/strings.c:114
+#: src/strings.c:115
 msgid "<span weight=\"bold\">Desktops</span>"
 msgstr "<span weight=\"bold\">Plochy</span>"
 
-#: src/strings.c:116
+#: src/strings.c:117
 msgid "_Show a notification when switching desktops"
 msgstr "Upozornit při _změně plochy"
 
-#: src/strings.c:118
+#: src/strings.c:119
 msgid "_Amount of time to show the notification for:"
 msgstr "Prodleva před _upozorněním:"
 
-#: src/strings.c:120
+#: src/strings.c:121
 msgid "_Number of desktops: "
 msgstr "_Počet ploch: "
 
-#: src/strings.c:121
+#: src/strings.c:122
 msgid "_Desktop names:"
 msgstr "_Jména ploch:"
 
-#: src/strings.c:122
+#: src/strings.c:123
 msgid "Desktops"
 msgstr "Plochy"
 
-#: src/strings.c:123
+#: src/strings.c:124
 msgid "<span weight=\"bold\">Desktop Margins</span>"
 msgstr "<span weight=\"bold\">Okraje Plochy</span>"
 
 # XXX
-#: src/strings.c:125
+#: src/strings.c:126
 msgid ""
 "Desktop margins are reserved areas on the edge of your screen.  New windows "
 "will not be placed within a margin, and maximized windows will not cover "
@@ -382,147 +386,147 @@ msgstr ""
 "Okraje plochy je možné vyhranit jiným účelům. Nová okna budou umístěna mimo "
 "rámec okrajů a maximalizovaná okna je nebudou krýt."
 
-#: src/strings.c:126
+#: src/strings.c:127
 msgid "_Top"
 msgstr "_Horní"
 
-#: src/strings.c:128
+#: src/strings.c:129
 msgid "_Left"
 msgstr "_Levý"
 
-#: src/strings.c:130
+#: src/strings.c:131
 msgid "_Right"
 msgstr "_Pravý"
 
-#: src/strings.c:132
+#: src/strings.c:133
 msgid "_Bottom"
 msgstr "_Dolní"
 
-#: src/strings.c:134
+#: src/strings.c:135
 msgid "Margins"
 msgstr "Okraje"
 
-#: src/strings.c:135
+#: src/strings.c:136
 msgid "<span weight=\"bold\">Position</span>"
 msgstr "<span weight=\"bold\">Pozice</span>"
 
-#: src/strings.c:137
+#: src/strings.c:138
 msgid "_Position:"
 msgstr "_Pozice:"
 
-#: src/strings.c:138
+#: src/strings.c:139
 msgid "Top Left"
 msgstr "Vlevo Nahoře"
 
-#: src/strings.c:139
+#: src/strings.c:140
 msgid "Top"
 msgstr "Nahoře"
 
-#: src/strings.c:140
+#: src/strings.c:141
 msgid "Top Right"
 msgstr "Vpravo Nahoře"
 
-#: src/strings.c:141
+#: src/strings.c:142
 msgid "Left"
 msgstr "Vlevo"
 
-#: src/strings.c:142
+#: src/strings.c:143
 msgid "Right"
 msgstr "Vpravo"
 
-#: src/strings.c:143
+#: src/strings.c:144
 msgid "Bottom Left"
 msgstr "Vlevo Dole"
 
-#: src/strings.c:144
+#: src/strings.c:145
 msgid "Bottom"
 msgstr "Dole"
 
-#: src/strings.c:145
+#: src/strings.c:146
 msgid "Bottom Right"
 msgstr "Vpravo Dole"
 
-#: src/strings.c:146
+#: src/strings.c:147
 msgid "Floating"
 msgstr "Plovoucí"
 
-#: src/strings.c:148
+#: src/strings.c:149
 msgid "_Floating position:"
 msgstr "P_lovoucí pozice:"
 
-#: src/strings.c:149
+#: src/strings.c:150
 msgid "x"
 msgstr "x"
 
-#: src/strings.c:151
+#: src/strings.c:152
 msgid "Allow _windows to be placed within the dock's area"
 msgstr "Povolit _umístění oken v prostoru doku"
 
-#: src/strings.c:152
+#: src/strings.c:153
 msgid "_Orientation: "
 msgstr "_Orientace: "
 
-#: src/strings.c:153
+#: src/strings.c:154
 msgid "Vertical"
 msgstr "Vertikální"
 
-#: src/strings.c:154
+#: src/strings.c:155
 msgid "Horizontal"
 msgstr "Horizontální"
 
-#: src/strings.c:155
+#: src/strings.c:156
 msgid "<span weight=\"bold\">Stacking</span>"
 msgstr "<span weight=\"bold\">Vrstvení</span>"
 
-#: src/strings.c:157
+#: src/strings.c:158
 msgid "Keep dock _above other windows"
 msgstr "Udržovat dok _nad ostatními okny"
 
-#: src/strings.c:158
+#: src/strings.c:159
 msgid "A_llow dock to be both above and below windows"
 msgstr "Povolit dok pod _i nad okny"
 
-#: src/strings.c:159
+#: src/strings.c:160
 msgid "Keep dock _below other windows"
 msgstr "Udržovat dok po_d ostatními okny"
 
-#: src/strings.c:160
+#: src/strings.c:161
 msgid "<span weight=\"bold\">Hiding</span>"
 msgstr "<span weight=\"bold\">Schovávání</span>"
 
-#: src/strings.c:162
+#: src/strings.c:163
 msgid "_Hide off screen"
 msgstr "_Schovat z obrazovky"
 
-#: src/strings.c:164
+#: src/strings.c:165
 msgid "_Delay before hiding:"
 msgstr "Prodleva před s_chováním:"
 
-#: src/strings.c:167
+#: src/strings.c:168
 msgid "Delay before _showing:"
 msgstr "Prodleva před _zobrazením:"
 
-#: src/strings.c:169
+#: src/strings.c:170
 msgid "Dock"
 msgstr "Dok"
 
-#: src/strings.c:170
+#: src/strings.c:171
 msgid "Abo_ut"
 msgstr "_O programu"
 
-#: src/strings.c:171
+#: src/strings.c:172
 msgid "About ObConf"
 msgstr "O ObConf"
 
-#: src/strings.c:172
+#: src/strings.c:173
 msgid "<span weight=\"bold\" size=\"xx-large\">ObConf VERSION</span>"
 msgstr "<span weight=\"bold\" size=\"xx-large\">ObConf VERSION</span>"
 
-#: src/strings.c:173
+#: src/strings.c:174
 msgid "A preferences manager for Openbox"
 msgstr "Manažer preferencí pro Openbox"
 
-#: src/strings.c:174
+#: src/strings.c:175
 msgid ""
 "Copyright (c) 2003-2008\n"
 "Dana Jansens <danakj@orodu.net>\n"
@@ -534,11 +538,11 @@ msgstr ""
 "Tim Riley <tr@slackzone.org>\n"
 "Javeed Shaikh <syscrash2k@gmail.com>"
 
-#: src/strings.c:178
+#: src/strings.c:179
 msgid "window1"
 msgstr "window1"
 
-#: src/strings.c:179
+#: src/strings.c:180
 msgid "<span weight=\"bold\">Press the key you wish to bind...</span>"
 msgstr "<span weight=\"bold\">Stiskni kýženou klávesu...</span>"
 

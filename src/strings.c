@@ -57,6 +57,7 @@ gchar *s = N_("_Center new windows when they are placed");
 gchar *s = N_("Prefer to place new windows _on:");
 gchar *s = N_("All monitors");
 gchar *s = N_("The active monitor");
+gchar *s = N_("The monitor with the mouse");
 gchar *s = N_("Windows");
 gchar *s = N_("<span weight=\"bold\">Moving and Resizing Windows</span>");
 gchar *s = N_("    ");
