@@ -190,7 +190,7 @@ msgstr "Aktivní monitor"
 
 #: src/strings.c:60
 msgid "The monitor with the mouse"
-msgstr ""
+msgstr "Monitor s myší"
 
 #: src/strings.c:61
 msgid "Windows"
