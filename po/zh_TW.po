@@ -190,7 +190,7 @@ msgstr "作用中的監視器"
 
 #: src/strings.c:60
 msgid "The monitor with the mouse"
-msgstr ""
+msgstr "配有滑鼠的監視器"
 
 #: src/strings.c:61
 msgid "Windows"
