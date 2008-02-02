@@ -78,15 +78,19 @@ xmlNodePtr tree_get_node(const gchar *path, const gchar *def)
 
 void tree_apply()
 {
-    gchar *p;
+    gchar *p, *d;
     gboolean err;
 
-    p = g_build_filename(parse_xdg_config_home_path(), "openbox", NULL);
-    parse_mkdir_path(p, 0700);
-    g_free(p);
+    if (obc_config_file)
+        p = g_strdup(obc_config_file);
+    else
+        p = g_build_filename(parse_xdg_config_home_path(), "openbox",
+                             "rc.xml", NULL);
 
-    p = g_build_filename(parse_xdg_config_home_path(), "openbox",
-                         "rc.xml", NULL);
+    d = g_path_get_dirname(p);
+    parse_mkdir_path(d, 0700);
+    g_free(d);
+
     err = xmlSaveFormatFile(p, doc, 1) == -1;
     if (err) {
         gchar *s;

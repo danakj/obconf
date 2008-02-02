@@ -41,6 +41,7 @@ GladeXML *glade;
 xmlDocPtr doc;
 xmlNodePtr root;
 RrInstance *rrinst;
+gchar *obc_config_file = NULL;
 
 static gchar *obc_theme_install = NULL;
 static gchar *obc_theme_archive = NULL;
@@ -84,6 +85,7 @@ static void print_help()
     g_print(_("  --version             Display the version and exit\n"));
     g_print(_("  --install ARCHIVE.obt Install the given theme archive and select it\n"));
     g_print(_("  --archive THEME       Create a theme archive from the given theme directory\n"));
+    g_print(_("  --config-file FILE    Specify the path to the config file to use\n"));
     g_print(_("\nPlease report bugs at %s\n\n"), PACKAGE_BUGREPORT);
     
     exit(EXIT_SUCCESS);
@@ -109,9 +111,76 @@ static void parse_args(int argc, char **argv)
                 g_printerr(_("--archive requires an argument\n"));
             else
                 obc_theme_archive = argv[++i];
+        }
+        else if (!strcmp(argv[i], "--config-file")) {
+            if (i == argc - 1) /* no args left */
+                g_printerr(_("--config-file requires an argument\n"));
+            else
+                obc_config_file = argv[++i];
         } else
             obc_theme_install = argv[i];
     }
+}
+
+static gboolean get_all(Window win, Atom prop, Atom type, gint size,
+                        guchar **data, guint *num)
+{
+    gboolean ret = FALSE;
+    gint res;
+    guchar *xdata = NULL;
+    Atom ret_type;
+    gint ret_size;
+    gulong ret_items, bytes_left;
+
+    res = XGetWindowProperty(GDK_DISPLAY(), win, prop, 0l, G_MAXLONG,
+                             FALSE, type, &ret_type, &ret_size,
+                             &ret_items, &bytes_left, &xdata);
+    if (res == Success) {
+        if (ret_size == size && ret_items > 0) {
+            guint i;
+
+            *data = g_malloc(ret_items * (size / 8));
+            for (i = 0; i < ret_items; ++i)
+                switch (size) {
+                case 8:
+                    (*data)[i] = xdata[i];
+                    break;
+                case 16:
+                    ((guint16*)*data)[i] = ((gushort*)xdata)[i];
+                    break;
+                case 32:
+                    ((guint32*)*data)[i] = ((gulong*)xdata)[i];
+                    break;
+                default:
+                    g_assert_not_reached(); /* unhandled size */
+                }
+            *num = ret_items;
+            ret = TRUE;
+        }
+        XFree(xdata);
+    }
+    return ret;
+}
+
+static gboolean prop_get_string_utf8(Window win, Atom prop, gchar **ret)
+{
+    gchar *raw;
+    gchar *str;
+    guint num;
+
+    if (get_all(win, prop,
+                gdk_x11_get_xatom_by_name("UTF8_STRING"),
+                8,(guchar**)&raw, &num))
+    {
+        str = g_strndup(raw, num); /* grab the first string from the list */
+        g_free(raw);
+        if (g_utf8_validate(str, -1, NULL)) {
+            *ret = str;
+            return TRUE;
+        }
+        g_free(str);
+    }
+    return FALSE;
 }
 
 int main(int argc, char **argv)
@@ -143,8 +212,20 @@ int main(int argc, char **argv)
     parse_paths_startup();
     rrinst = RrInstanceNew(GDK_DISPLAY(), gdk_x11_get_default_screen());
 
+    if (!obc_config_file) {
+        gchar *p;
+
+        if (prop_get_string_utf8(GDK_ROOT_WINDOW(),
+                                 gdk_x11_get_xatom_by_name("_OB_CONFIG_FILE"),
+                                 &p))
+        {
+            obc_config_file = g_filename_from_utf8(p, -1, NULL, NULL, NULL);
+            g_free(p);
+        }
+    }
+
     xmlIndentTreeOutput = 1;
-    if (!parse_load_rc(NULL, &doc, &root)) {
+    if (!parse_load_rc(obc_config_file, &doc, &root)) {
         obconf_error("Failed to load an rc.xml. You have probably failed to "
                      "install Openbox properly.");
         return 1;

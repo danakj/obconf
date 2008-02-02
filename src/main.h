@@ -31,6 +31,7 @@ extern xmlDocPtr doc;
 extern xmlNodePtr root;
 extern RrInstance *rrinst;
 extern GtkWidget *mainwin;
+extern gchar *obc_config_file;
 
 #define get_widget(s) glade_xml_get_widget(glade, s)
 
