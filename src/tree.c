@@ -96,7 +96,7 @@ void tree_apply()
         gchar *s;
         s = g_strdup_printf("An error occured while saving the "
                             "config file '%s'", p);
-        obconf_error(s);
+        obconf_error(s, FALSE);
         g_free(s);
     }
     g_free(p);

@@ -35,7 +35,7 @@ extern gchar *obc_config_file;
 
 #define get_widget(s) glade_xml_get_widget(glade, s)
 
-void obconf_error(gchar *msg);
+void obconf_error(gchar *msg, gboolean model);
 void obconf_show_main();
 
 #endif
