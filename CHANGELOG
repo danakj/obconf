@@ -9,6 +9,11 @@
   * Add support for putting the move/resize popup in a fixed position on screen
   * Add support for the <active> window placement option
   * New icon by Myles Green
+  * Show an error when the configuration file is not valid, so it doesn't get
+    destroyed by ObConf
+  * Add a --config-file option to specify an alternate configuration file.
+  * Auto-load the same configuration as Openbox is using, if Openbox was run
+    with --config-file
 
 2.0.2:
   * Add Traditional Chinese translation
