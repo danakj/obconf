@@ -1,5 +1,6 @@
 2.0.3:
   * Added Norwegian translation
+  * Added Turkish translation
   * Updated Traditional Chinese, Italian, and Swedish translations
   * Add support for the desktop warping option
   * Add support for showing the popup notification when changing desktops
