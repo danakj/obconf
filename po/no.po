@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: obconf 2.0.3\n"
 "Report-Msgid-Bugs-To: http://bugzilla.icculus.org/\n"
-"POT-Creation-Date: 2008-01-27 15:25-0500\n"
+"POT-Creation-Date: 2008-02-02 11:51-0500\n"
 "PO-Revision-Date: 2007-07-30 15:43+0200\n"
 "Last-Translator: Michael Kjelbergvik Thung <postlogic@switch-case.org>\n"
 "Language-Team: Norwegian\n"
@@ -518,15 +518,15 @@ msgstr ""
 msgid "<span weight=\"bold\">Press the key you wish to bind...</span>"
 msgstr "<span weight=\"bold\">Trykk på knappen du ønsker å bruke...</span>"
 
-#: src/main.c:66 src/main.c:68 src/main.c:70
+#: src/main.c:72 src/main.c:74 src/main.c:76
 msgid "Copyright (c)"
 msgstr ""
 
-#: src/main.c:81
+#: src/main.c:87
 msgid "Syntax: obconf [options] [ARCHIVE.obt]\n"
 msgstr "Syntaks: obconf [alternativer] [ARKIV.obt]\n"
 
-#: src/main.c:82
+#: src/main.c:88
 msgid ""
 "\n"
 "Options:\n"
@@ -534,26 +534,30 @@ msgstr ""
 "\n"
 "Alternativer:\n"
 
-#: src/main.c:83
+#: src/main.c:89
 msgid "  --help                Display this help and exit\n"
 msgstr "  --help                Vis denne teksten og avslutt\n"
 
-#: src/main.c:84
+#: src/main.c:90
 msgid "  --version             Display the version and exit\n"
 msgstr "  --version             Vis versjonsnummeret og avslutt\n"
 
-#: src/main.c:85
+#: src/main.c:91
 msgid "  --install ARCHIVE.obt Install the given theme archive and select it\n"
 msgstr "  --install ARKIV.obt   Installér valgt tema-arkiv og velg det\n"
 
-#: src/main.c:86
+#: src/main.c:92
 msgid ""
 "  --archive THEME       Create a theme archive from the given theme "
 "directory\n"
 msgstr ""
 "  --archive TEMA        Opprett et tema-arkiv fra oppgitt tema-katalog\n"
 
-#: src/main.c:87
+#: src/main.c:93
+msgid "  --config-file FILE    Specify the path to the config file to use\n"
+msgstr ""
+
+#: src/main.c:94
 #, c-format
 msgid ""
 "\n"
@@ -564,13 +568,39 @@ msgstr ""
 "Vennligst rapporter feil til %s\n"
 "\n"
 
-#: src/main.c:103
+#: src/main.c:110
 msgid "--install requires an argument\n"
 msgstr "--install krever et argument\n"
 
-#: src/main.c:109
+#: src/main.c:116
 msgid "--archive requires an argument\n"
 msgstr "--archive krever et argument\n"
+
+#: src/main.c:122
+#, fuzzy
+msgid "--config-file requires an argument\n"
+msgstr "--archive krever et argument\n"
+
+#: src/main.c:213
+msgid ""
+"Failed to load the obconf.glade interface file. You have probably failed to "
+"install ObConf properly."
+msgstr ""
+
+#: src/main.c:234
+msgid ""
+"Failed to load an rc.xml. You have probably failed to install Openbox "
+"properly."
+msgstr ""
+
+#: src/main.c:243
+#, c-format
+msgid ""
+"Error while parsing the Openbox configuration file.  Your configuration file "
+"is not valid XML.\n"
+"\n"
+"Message: %s"
+msgstr ""
 
 #: src/desktops.c:134 src/desktops.c:165 src/desktops.c:181
 msgid "(Unnamed desktop)"

@@ -5,7 +5,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: obconf 2.0.2\n"
+"Project-Id-Version: obconf 2.0.3\n"
 "Report-Msgid-Bugs-To: http://bugzilla.icculus.org/\n"
 "POT-Creation-Date: 2008-01-27 15:25-0500\n"
 "PO-Revision-Date: 2007-07-22 15:36+0200\n"
@@ -90,6 +90,10 @@ msgid ""
 "I:\n"
 "M:"
 msgstr ""
+"N:\n"
+"L:\n"
+"I:\n"
+"M:"
 
 #: src/strings.c:32
 msgid ""
@@ -98,6 +102,10 @@ msgid ""
 "Iconify (Minimize)\n"
 "Maximize"
 msgstr ""
+"Icône de fenêtre\n"
+"Etiquette de fenêtre (titre)\n"
+"Iconifier (minimiser)\n"
+"Maximiser"
 
 #: src/strings.c:36
 msgid ""
@@ -105,6 +113,9 @@ msgid ""
 "S:\n"
 "D:"
 msgstr ""
+"C:\n"
+"S:\n"
+"D:"
 
 #: src/strings.c:39
 msgid ""
@@ -112,6 +123,9 @@ msgid ""
 "Shade (Roll up)\n"
 "Omnipresent (On all desktops)"
 msgstr ""
+"Fermer\n"
+"Dérouler\n"
+"Omniprésent (sur tous les bureaux)"
 
 #: src/strings.c:42
 msgid "<span weight=\"bold\">Fonts</span>"
@@ -163,19 +177,19 @@ msgstr "_Centrer les nouvelles fenêtres quand elles sont placées"
 
 #: src/strings.c:57
 msgid "Prefer to place new windows _on:"
-msgstr ""
+msgstr "Placer de préférence les n_ouvelles fenêtres sur :"
 
 #: src/strings.c:58
 msgid "All monitors"
-msgstr ""
+msgstr "Tous les écrans"
 
 #: src/strings.c:59
 msgid "The active monitor"
-msgstr ""
+msgstr "L'écran actif"
 
 #: src/strings.c:60
 msgid "The monitor with the mouse"
-msgstr ""
+msgstr "L'écran avec la souris"
 
 #: src/strings.c:61
 msgid "Windows"
@@ -209,11 +223,11 @@ msgstr "Force de résistance contre les b_ords de l'écran :"
 
 #: src/strings.c:71
 msgid "_Switch desktops when moving a window past the screen edge"
-msgstr ""
+msgstr "Ba_sculer d'un bureau à un autre quand une fenêtre déplacée dépasse le bord de l'écran."
 
 #: src/strings.c:73
 msgid "_Amount of time to wait before switching:"
-msgstr ""
+msgstr "Temps à _attendre avant le basculement :"
 
 #: src/strings.c:74 src/strings.c:105 src/strings.c:112 src/strings.c:120
 #: src/strings.c:166 src/strings.c:169
@@ -222,11 +236,11 @@ msgstr "ms"
 
 #: src/strings.c:75
 msgid "<span weight=\"bold\">Information Dialog</span>"
-msgstr ""
+msgstr "<span weight=\"bold\">Boîte d'information</span>"
 
 #: src/strings.c:76
 msgid "Show _information dialog:"
-msgstr ""
+msgstr "Afficher la boîte d'_information :"
 
 #: src/strings.c:77
 msgid "When resizing terminal windows"
@@ -242,7 +256,7 @@ msgstr "Jamais"
 
 #: src/strings.c:81
 msgid "Information dialog's _position:"
-msgstr ""
+msgstr "_Position de la boîte d'information :"
 
 #: src/strings.c:82
 msgid "Centered on the window"
@@ -254,31 +268,31 @@ msgstr "Au-dessus de la fenêtre"
 
 #: src/strings.c:84
 msgid "Fixed position on screen"
-msgstr ""
+msgstr "Position fixe à l'écran"
 
 #: src/strings.c:86
 msgid "Fixed _x position:"
-msgstr ""
+msgstr "Position _x fixée :"
 
 #: src/strings.c:87 src/strings.c:92
 msgid "Centered"
-msgstr ""
+msgstr "Centré"
 
 #: src/strings.c:88 src/strings.c:93
 msgid "From left edge"
-msgstr ""
+msgstr "Depuis le bord gauche"
 
 #: src/strings.c:89 src/strings.c:94
 msgid "From right edge"
-msgstr ""
+msgstr "Depuis le bord droit"
 
 #: src/strings.c:91
 msgid "Fixed _y position:"
-msgstr ""
+msgstr "Position _y fixée :"
 
 #: src/strings.c:96
 msgid "Move & Resize"
-msgstr ""
+msgstr "Déplacer et redimensionner"
 
 #: src/strings.c:99
 msgid "_Focus windows when the mouse pointer moves over them"
@@ -331,11 +345,11 @@ msgstr "<span weight=\"bold\">Bureaux</span>"
 
 #: src/strings.c:117
 msgid "_Show a notification when switching desktops"
-msgstr ""
+msgstr "Afficher une notification lor_s du changement de bureau"
 
 #: src/strings.c:119
 msgid "_Amount of time to show the notification for:"
-msgstr ""
+msgstr "Délai pour montrer la notific_ation :"
 
 #: src/strings.c:121
 msgid "_Number of desktops: "
@@ -510,6 +524,10 @@ msgid ""
 "Tim Riley <tr@slackzone.org>\n"
 "Javeed Shaikh <syscrash2k@gmail.com>"
 msgstr ""
+"Copyright (c) 2003-2008\n"
+"Dana Jansens <danakj@orodu.net>\n"
+"Tim Riley <tr@slackzone.org>\n"
+"Javeed Shaikh <syscrash2k@gmail.com>"
 
 #: src/strings.c:179
 msgid "window1"
