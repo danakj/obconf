@@ -43,6 +43,7 @@ void moveresize_setup_tab()
     GtkSizeGroup *group;
     gchar *s;
     gint pos, i;
+    gboolean opp;
 
     mapping = TRUE;
 
@@ -95,13 +96,30 @@ void moveresize_setup_tab()
     g_free(s);
     gtk_option_menu_set_history(GTK_OPTION_MENU(w), pos);
 
+    w = get_widget("fixed_x_popup");
+    s = tree_get_string("resize/popupFixedPosition/x", "0");
+    opp = s[0] == '-';
+    if (s[0] == '-' || s[0] == '+') ++s;
+    if (!strcasecmp(s, "Center")) pos = EDGE_CENTER;
+    else if (opp) pos = EDGE_RIGHT;
+    else pos = EDGE_LEFT;
+    g_free(s);
+    gtk_option_menu_set_history(GTK_OPTION_MENU(w), pos);
+
     w = get_widget("fixed_x_pos");
-    gtk_spin_button_set_value(GTK_SPIN_BUTTON(w),
-                              tree_get_int("resize/popupFixedPosition/x", 0));
+    gtk_spin_button_set_value(GTK_SPIN_BUTTON(w), MAX(atoi(s), 0));
+
+    w = get_widget("fixed_y_popup");
+    s = tree_get_string("resize/popupFixedPosition/y", "0");
+    opp = s[0] == '-';
+    if (!strcasecmp(s, "Center")) pos = EDGE_CENTER;
+    else if (opp) pos = EDGE_RIGHT;
+    else pos = EDGE_LEFT;
+    g_free(s);
+    gtk_option_menu_set_history(GTK_OPTION_MENU(w), pos);
 
     w = get_widget("fixed_y_pos");
-    gtk_spin_button_set_value(GTK_SPIN_BUTTON(w),
-                              tree_get_int("resize/popupFixedPosition/y", 0));
+    gtk_spin_button_set_value(GTK_SPIN_BUTTON(w), MAX(atoi(s), 0));
 
     i = tree_get_int("mouse/screenEdgeWarpTime", 400);
 
@@ -301,7 +319,7 @@ void on_fixed_x_position_center_activate(GtkMenuItem *w, gpointer data)
     enable_stuff();
 }
 
-void on_fixed_y_position_left_activate(GtkMenuItem *w, gpointer data)
+void on_fixed_y_position_top_activate(GtkMenuItem *w, gpointer data)
 {
     if (mapping) return;
 
@@ -309,7 +327,7 @@ void on_fixed_y_position_left_activate(GtkMenuItem *w, gpointer data)
     enable_stuff();
 }
 
-void on_fixed_y_position_right_activate(GtkMenuItem *w, gpointer data)
+void on_fixed_y_position_bottom_activate(GtkMenuItem *w, gpointer data)
 {
     if (mapping) return;
 
