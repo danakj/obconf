@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: obconf 2.0.2\n"
 "Report-Msgid-Bugs-To: http://bugzilla.icculus.org/\n"
-"POT-Creation-Date: 2008-02-02 11:51-0500\n"
+"POT-Creation-Date: 2008-02-13 20:28-0500\n"
 "PO-Revision-Date: 2008-01-24 04:20+0100\n"
 "Last-Translator: tezlo <tezlo@gmx.net>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -285,11 +285,11 @@ msgstr "Fixní _x pozice:"
 msgid "Centered"
 msgstr "Centrováno"
 
-#: src/strings.c:88 src/strings.c:93
+#: src/strings.c:88
 msgid "From left edge"
 msgstr "Z levého okraje"
 
-#: src/strings.c:89 src/strings.c:94
+#: src/strings.c:89
 msgid "From right edge"
 msgstr "Z praváho okraje"
 
@@ -297,6 +297,16 @@ msgstr "Z praváho okraje"
 #, fuzzy
 msgid "Fixed _y position:"
 msgstr "Fixní _y pozice:"
+
+#: src/strings.c:93
+#, fuzzy
+msgid "From top edge"
+msgstr "Z levého okraje"
+
+#: src/strings.c:94
+#, fuzzy
+msgid "From bottom edge"
+msgstr "Z levého okraje"
 
 #: src/strings.c:96
 msgid "Move & Resize"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: obconf 2.0.3\n"
 "Report-Msgid-Bugs-To: http://bugzilla.icculus.org/\n"
-"POT-Creation-Date: 2008-01-27 15:25-0500\n"
+"POT-Creation-Date: 2008-02-13 20:28-0500\n"
 "PO-Revision-Date: 2007-07-22 15:36+0200\n"
 "Last-Translator: Cyrille Bagard <nocbos@gmail.com>\n"
 "Language-Team: French\n"
@@ -223,7 +223,9 @@ msgstr "Force de résistance contre les b_ords de l'écran :"
 
 #: src/strings.c:71
 msgid "_Switch desktops when moving a window past the screen edge"
-msgstr "Ba_sculer d'un bureau à un autre quand une fenêtre déplacée dépasse le bord de l'écran."
+msgstr ""
+"Ba_sculer d'un bureau à un autre quand une fenêtre déplacée dépasse le bord "
+"de l'écran."
 
 #: src/strings.c:73
 msgid "_Amount of time to wait before switching:"
@@ -278,17 +280,25 @@ msgstr "Position _x fixée :"
 msgid "Centered"
 msgstr "Centré"
 
-#: src/strings.c:88 src/strings.c:93
+#: src/strings.c:88
 msgid "From left edge"
 msgstr "Depuis le bord gauche"
 
-#: src/strings.c:89 src/strings.c:94
+#: src/strings.c:89
 msgid "From right edge"
 msgstr "Depuis le bord droit"
 
 #: src/strings.c:91
 msgid "Fixed _y position:"
 msgstr "Position _y fixée :"
+
+#: src/strings.c:93
+msgid "From top edge"
+msgstr ""
+
+#: src/strings.c:94
+msgid "From bottom edge"
+msgstr ""
 
 #: src/strings.c:96
 msgid "Move & Resize"
@@ -538,15 +548,15 @@ msgid "<span weight=\"bold\">Press the key you wish to bind...</span>"
 msgstr ""
 "<span weight=\"bold\">Pressez la touche que vous souhaitez attacher...</span>"
 
-#: src/main.c:66 src/main.c:68 src/main.c:70
+#: src/main.c:72 src/main.c:74 src/main.c:76
 msgid "Copyright (c)"
 msgstr "Copyright (c)"
 
-#: src/main.c:81
+#: src/main.c:87
 msgid "Syntax: obconf [options] [ARCHIVE.obt]\n"
 msgstr "Syntaxe : obconf [options] [ARCHIVE.obt]\n"
 
-#: src/main.c:82
+#: src/main.c:88
 msgid ""
 "\n"
 "Options:\n"
@@ -554,21 +564,21 @@ msgstr ""
 "\n"
 "Options :\n"
 
-#: src/main.c:83
+#: src/main.c:89
 msgid "  --help                Display this help and exit\n"
 msgstr "  --help                Afficher cette aide et quitter\n"
 
-#: src/main.c:84
+#: src/main.c:90
 msgid "  --version             Display the version and exit\n"
 msgstr "  --version             Afficher la version et quitter\n"
 
-#: src/main.c:85
+#: src/main.c:91
 msgid "  --install ARCHIVE.obt Install the given theme archive and select it\n"
 msgstr ""
 "  --install ARCHIVE.obt Installer l'archive de thème donnée et la "
 "sélectionner\n"
 
-#: src/main.c:86
+#: src/main.c:92
 msgid ""
 "  --archive THEME       Create a theme archive from the given theme "
 "directory\n"
@@ -576,7 +586,11 @@ msgstr ""
 "  --archive THEME       Créer une archive de thème à partir du répertoire de "
 "thème courant\n"
 
-#: src/main.c:87
+#: src/main.c:93
+msgid "  --config-file FILE    Specify the path to the config file to use\n"
+msgstr ""
+
+#: src/main.c:94
 #, c-format
 msgid ""
 "\n"
@@ -587,13 +601,38 @@ msgstr ""
 "Veuillez soumettre les rapports de bogues à %s\n"
 "\n"
 
-#: src/main.c:103
+#: src/main.c:110
 msgid "--install requires an argument\n"
 msgstr "--install requiert un argument\n"
 
-#: src/main.c:109
+#: src/main.c:116
 msgid "--archive requires an argument\n"
 msgstr "--archive requiert un argument\n"
+
+#: src/main.c:122
+msgid "--config-file requires an argument\n"
+msgstr ""
+
+#: src/main.c:213
+msgid ""
+"Failed to load the obconf.glade interface file. You have probably failed to "
+"install ObConf properly."
+msgstr ""
+
+#: src/main.c:234
+msgid ""
+"Failed to load an rc.xml. You have probably failed to install Openbox "
+"properly."
+msgstr ""
+
+#: src/main.c:243
+#, c-format
+msgid ""
+"Error while parsing the Openbox configuration file.  Your configuration file "
+"is not valid XML.\n"
+"\n"
+"Message: %s"
+msgstr ""
 
 #: src/desktops.c:134 src/desktops.c:165 src/desktops.c:181
 msgid "(Unnamed desktop)"

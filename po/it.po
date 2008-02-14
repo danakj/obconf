@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: obconf 2.0.3\n"
 "Report-Msgid-Bugs-To: http://bugzilla.icculus.org/\n"
-"POT-Creation-Date: 2008-02-02 11:51-0500\n"
+"POT-Creation-Date: 2008-02-13 20:28-0500\n"
 "PO-Revision-Date: 2007-08-05 13:02+0200\n"
 "Last-Translator: Davide Truffa <davide@catoblepa.org>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
@@ -269,16 +269,24 @@ msgstr ""
 msgid "Centered"
 msgstr ""
 
-#: src/strings.c:88 src/strings.c:93
+#: src/strings.c:88
 msgid "From left edge"
 msgstr ""
 
-#: src/strings.c:89 src/strings.c:94
+#: src/strings.c:89
 msgid "From right edge"
 msgstr ""
 
 #: src/strings.c:91
 msgid "Fixed _y position:"
+msgstr ""
+
+#: src/strings.c:93
+msgid "From top edge"
+msgstr ""
+
+#: src/strings.c:94
+msgid "From bottom edge"
 msgstr ""
 
 #: src/strings.c:96
@@ -584,9 +592,8 @@ msgid "--archive requires an argument\n"
 msgstr "--archive richiede un argomento\n"
 
 #: src/main.c:122
-#, fuzzy
 msgid "--config-file requires an argument\n"
-msgstr "--archive richiede un argomento\n"
+msgstr ""
 
 #: src/main.c:213
 msgid ""
