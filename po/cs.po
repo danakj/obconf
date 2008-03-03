@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: obconf 2.0.2\n"
 "Report-Msgid-Bugs-To: http://bugzilla.icculus.org/\n"
-"POT-Creation-Date: 2008-02-13 20:28-0500\n"
+"POT-Creation-Date: 2008-03-02 19:36-0500\n"
 "PO-Revision-Date: 2008-01-24 04:20+0100\n"
 "Last-Translator: tezlo <tezlo@gmx.net>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -27,9 +27,9 @@ msgstr "<span weight=\"bold\">Motiv</span>"
 #: src/strings.c:43 src/strings.c:51 src/strings.c:54 src/strings.c:63
 #: src/strings.c:72 src/strings.c:80 src/strings.c:85 src/strings.c:98
 #: src/strings.c:100 src/strings.c:107 src/strings.c:113 src/strings.c:116
-#: src/strings.c:118 src/strings.c:125 src/strings.c:137 src/strings.c:148
-#: src/strings.c:151 src/strings.c:157 src/strings.c:162 src/strings.c:164
-#: src/strings.c:167
+#: src/strings.c:118 src/strings.c:125 src/strings.c:137 src/strings.c:140
+#: src/strings.c:151 src/strings.c:154 src/strings.c:160 src/strings.c:165
+#: src/strings.c:167 src/strings.c:170
 msgid "    "
 msgstr "    "
 
@@ -233,14 +233,13 @@ msgid "_Amount of time to wait before switching:"
 msgstr "Prodleva _před změnou plochy:"
 
 #: src/strings.c:74 src/strings.c:105 src/strings.c:112 src/strings.c:120
-#: src/strings.c:166 src/strings.c:169
+#: src/strings.c:169 src/strings.c:172
 msgid "ms"
 msgstr "ms"
 
 #: src/strings.c:75
-#, fuzzy
 msgid "<span weight=\"bold\">Information Dialog</span>"
-msgstr "<span weight=\"bold\">Pozice</span>"
+msgstr ""
 
 #: src/strings.c:76
 #, fuzzy
@@ -417,126 +416,138 @@ msgid "Margins"
 msgstr "Okraje"
 
 #: src/strings.c:136
+#, fuzzy
+msgid "<span weight=\"bold\">Dock</span>"
+msgstr "<span weight=\"bold\">Fonty</span>"
+
+#: src/strings.c:138
+msgid ""
+"The dock is a special container for \"dockapps\", or dock applications.  It "
+"is not visible on screen until a dockapp is run.  Dockapps can be used to "
+"show things like a clock, or to provide you with a system tray."
+msgstr ""
+
+#: src/strings.c:139
 msgid "<span weight=\"bold\">Position</span>"
 msgstr "<span weight=\"bold\">Pozice</span>"
 
-#: src/strings.c:138
+#: src/strings.c:141
 msgid "_Position:"
 msgstr "_Pozice:"
 
-#: src/strings.c:139
+#: src/strings.c:142
 msgid "Top Left"
 msgstr "Vlevo Nahoře"
 
-#: src/strings.c:140
+#: src/strings.c:143
 msgid "Top"
 msgstr "Nahoře"
 
-#: src/strings.c:141
+#: src/strings.c:144
 msgid "Top Right"
 msgstr "Vpravo Nahoře"
 
-#: src/strings.c:142
+#: src/strings.c:145
 msgid "Left"
 msgstr "Vlevo"
 
-#: src/strings.c:143
+#: src/strings.c:146
 msgid "Right"
 msgstr "Vpravo"
 
-#: src/strings.c:144
+#: src/strings.c:147
 msgid "Bottom Left"
 msgstr "Vlevo Dole"
 
-#: src/strings.c:145
+#: src/strings.c:148
 msgid "Bottom"
 msgstr "Dole"
 
-#: src/strings.c:146
+#: src/strings.c:149
 msgid "Bottom Right"
 msgstr "Vpravo Dole"
 
-#: src/strings.c:147
+#: src/strings.c:150
 msgid "Floating"
 msgstr "Plovoucí"
 
-#: src/strings.c:149
+#: src/strings.c:152
 msgid "_Floating position:"
 msgstr "P_lovoucí pozice:"
 
-#: src/strings.c:150
+#: src/strings.c:153
 msgid "x"
 msgstr "x"
 
-#: src/strings.c:152
+#: src/strings.c:155
 msgid "Allow _windows to be placed within the dock's area"
 msgstr "Povolit _umístění oken v prostoru doku"
 
-#: src/strings.c:153
+#: src/strings.c:156
 msgid "_Orientation: "
 msgstr "_Orientace: "
 
-#: src/strings.c:154
+#: src/strings.c:157
 msgid "Vertical"
 msgstr "Vertikální"
 
-#: src/strings.c:155
+#: src/strings.c:158
 msgid "Horizontal"
 msgstr "Horizontální"
 
-#: src/strings.c:156
+#: src/strings.c:159
 msgid "<span weight=\"bold\">Stacking</span>"
 msgstr "<span weight=\"bold\">Vrstvení</span>"
 
-#: src/strings.c:158
+#: src/strings.c:161
 msgid "Keep dock _above other windows"
 msgstr "Udržovat dok _nad ostatními okny"
 
-#: src/strings.c:159
+#: src/strings.c:162
 msgid "A_llow dock to be both above and below windows"
 msgstr "Povolit dok pod _i nad okny"
 
-#: src/strings.c:160
+#: src/strings.c:163
 msgid "Keep dock _below other windows"
 msgstr "Udržovat dok po_d ostatními okny"
 
-#: src/strings.c:161
+#: src/strings.c:164
 msgid "<span weight=\"bold\">Hiding</span>"
 msgstr "<span weight=\"bold\">Schovávání</span>"
 
-#: src/strings.c:163
+#: src/strings.c:166
 msgid "_Hide off screen"
 msgstr "_Schovat z obrazovky"
 
-#: src/strings.c:165
+#: src/strings.c:168
 msgid "_Delay before hiding:"
 msgstr "Prodleva před s_chováním:"
 
-#: src/strings.c:168
+#: src/strings.c:171
 msgid "Delay before _showing:"
 msgstr "Prodleva před _zobrazením:"
 
-#: src/strings.c:170
+#: src/strings.c:173
 msgid "Dock"
 msgstr "Dok"
 
-#: src/strings.c:171
+#: src/strings.c:174
 msgid "Abo_ut"
 msgstr "_O programu"
 
-#: src/strings.c:172
+#: src/strings.c:175
 msgid "About ObConf"
 msgstr "O ObConf"
 
-#: src/strings.c:173
+#: src/strings.c:176
 msgid "<span weight=\"bold\" size=\"xx-large\">ObConf VERSION</span>"
 msgstr "<span weight=\"bold\" size=\"xx-large\">ObConf VERSION</span>"
 
-#: src/strings.c:174
+#: src/strings.c:177
 msgid "A preferences manager for Openbox"
 msgstr "Manažer preferencí pro Openbox"
 
-#: src/strings.c:175
+#: src/strings.c:178
 msgid ""
 "Copyright (c) 2003-2008\n"
 "Dana Jansens <danakj@orodu.net>\n"
@@ -548,11 +559,11 @@ msgstr ""
 "Tim Riley <tr@slackzone.org>\n"
 "Javeed Shaikh <syscrash2k@gmail.com>"
 
-#: src/strings.c:179
+#: src/strings.c:182
 msgid "window1"
 msgstr "window1"
 
-#: src/strings.c:180
+#: src/strings.c:183
 msgid "<span weight=\"bold\">Press the key you wish to bind...</span>"
 msgstr "<span weight=\"bold\">Stiskni kýženou klávesu...</span>"
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: obconf 2.0.3\n"
 "Report-Msgid-Bugs-To: http://bugzilla.icculus.org/\n"
-"POT-Creation-Date: 2008-02-13 20:28-0500\n"
+"POT-Creation-Date: 2008-03-02 19:36-0500\n"
 "PO-Revision-Date: 2007-07-22 15:36+0200\n"
 "Last-Translator: Cyrille Bagard <nocbos@gmail.com>\n"
 "Language-Team: French\n"
@@ -27,9 +27,9 @@ msgstr "<span weight=\"bold\">Thème</span>"
 #: src/strings.c:43 src/strings.c:51 src/strings.c:54 src/strings.c:63
 #: src/strings.c:72 src/strings.c:80 src/strings.c:85 src/strings.c:98
 #: src/strings.c:100 src/strings.c:107 src/strings.c:113 src/strings.c:116
-#: src/strings.c:118 src/strings.c:125 src/strings.c:137 src/strings.c:148
-#: src/strings.c:151 src/strings.c:157 src/strings.c:162 src/strings.c:164
-#: src/strings.c:167
+#: src/strings.c:118 src/strings.c:125 src/strings.c:137 src/strings.c:140
+#: src/strings.c:151 src/strings.c:154 src/strings.c:160 src/strings.c:165
+#: src/strings.c:167 src/strings.c:170
 msgid "    "
 msgstr "    "
 
@@ -232,7 +232,7 @@ msgid "_Amount of time to wait before switching:"
 msgstr "Temps à _attendre avant le basculement :"
 
 #: src/strings.c:74 src/strings.c:105 src/strings.c:112 src/strings.c:120
-#: src/strings.c:166 src/strings.c:169
+#: src/strings.c:169 src/strings.c:172
 msgid "ms"
 msgstr "ms"
 
@@ -408,126 +408,137 @@ msgid "Margins"
 msgstr "Marges"
 
 #: src/strings.c:136
+msgid "<span weight=\"bold\">Dock</span>"
+msgstr ""
+
+#: src/strings.c:138
+msgid ""
+"The dock is a special container for \"dockapps\", or dock applications.  It "
+"is not visible on screen until a dockapp is run.  Dockapps can be used to "
+"show things like a clock, or to provide you with a system tray."
+msgstr ""
+
+#: src/strings.c:139
 msgid "<span weight=\"bold\">Position</span>"
 msgstr "<span weight=\"bold\">Position</span>"
 
-#: src/strings.c:138
+#: src/strings.c:141
 msgid "_Position:"
 msgstr "_Position :"
 
-#: src/strings.c:139
+#: src/strings.c:142
 msgid "Top Left"
 msgstr "En haut à gauche"
 
-#: src/strings.c:140
+#: src/strings.c:143
 msgid "Top"
 msgstr "En haut"
 
-#: src/strings.c:141
+#: src/strings.c:144
 msgid "Top Right"
 msgstr "En haut à droite"
 
-#: src/strings.c:142
+#: src/strings.c:145
 msgid "Left"
 msgstr "A gauche"
 
-#: src/strings.c:143
+#: src/strings.c:146
 msgid "Right"
 msgstr "A droite"
 
-#: src/strings.c:144
+#: src/strings.c:147
 msgid "Bottom Left"
 msgstr "En bas à gauche"
 
-#: src/strings.c:145
+#: src/strings.c:148
 msgid "Bottom"
 msgstr "En bas"
 
-#: src/strings.c:146
+#: src/strings.c:149
 msgid "Bottom Right"
 msgstr "En bas à droite"
 
-#: src/strings.c:147
+#: src/strings.c:150
 msgid "Floating"
 msgstr "Flottante"
 
-#: src/strings.c:149
+#: src/strings.c:152
 msgid "_Floating position:"
 msgstr "Position _flottante :"
 
-#: src/strings.c:150
+#: src/strings.c:153
 msgid "x"
 msgstr "x"
 
-#: src/strings.c:152
+#: src/strings.c:155
 msgid "Allow _windows to be placed within the dock's area"
 msgstr "Permettre aux fenêtres d'être placées dans la _zone de Dock"
 
-#: src/strings.c:153
+#: src/strings.c:156
 msgid "_Orientation: "
 msgstr "_Orientation :"
 
-#: src/strings.c:154
+#: src/strings.c:157
 msgid "Vertical"
 msgstr "Verticale"
 
-#: src/strings.c:155
+#: src/strings.c:158
 msgid "Horizontal"
 msgstr "Horizontale"
 
-#: src/strings.c:156
+#: src/strings.c:159
 msgid "<span weight=\"bold\">Stacking</span>"
 msgstr "<span weight=\"bold\">Emplilement</span>"
 
-#: src/strings.c:158
+#: src/strings.c:161
 msgid "Keep dock _above other windows"
 msgstr "Garder les Docks au-dess_us des autres fenêtres"
 
-#: src/strings.c:159
+#: src/strings.c:162
 msgid "A_llow dock to be both above and below windows"
 msgstr "Autoriser les Docks à être en-dessous _et au-dessus des fenêtres"
 
-#: src/strings.c:160
+#: src/strings.c:163
 msgid "Keep dock _below other windows"
 msgstr "Garder les Docks en-des_sous des autres fenêtres"
 
-#: src/strings.c:161
+#: src/strings.c:164
 msgid "<span weight=\"bold\">Hiding</span>"
 msgstr "<span weight=\"bold\">Dissimulation</span>"
 
-#: src/strings.c:163
+#: src/strings.c:166
 msgid "_Hide off screen"
 msgstr "Cac_her de l'écran"
 
-#: src/strings.c:165
+#: src/strings.c:168
 msgid "_Delay before hiding:"
 msgstr "_Délai avant de cacher :"
 
-#: src/strings.c:168
+#: src/strings.c:171
 msgid "Delay before _showing:"
 msgstr "Délai avant de _montrer :"
 
-#: src/strings.c:170
+#: src/strings.c:173
 msgid "Dock"
 msgstr "Dock"
 
-#: src/strings.c:171
+#: src/strings.c:174
 msgid "Abo_ut"
 msgstr "_A propos"
 
-#: src/strings.c:172
+#: src/strings.c:175
 msgid "About ObConf"
 msgstr "A propos d'ObConf"
 
-#: src/strings.c:173
+#: src/strings.c:176
 msgid "<span weight=\"bold\" size=\"xx-large\">ObConf VERSION</span>"
 msgstr "<span weight=\"bold\" size=\"xx-large\">ObConf VERSION</span>"
 
-#: src/strings.c:174
+#: src/strings.c:177
 msgid "A preferences manager for Openbox"
 msgstr "Un gestionnaire de préférences pour Openbox"
 
-#: src/strings.c:175
+#: src/strings.c:178
 msgid ""
 "Copyright (c) 2003-2008\n"
 "Dana Jansens <danakj@orodu.net>\n"
@@ -539,11 +550,11 @@ msgstr ""
 "Tim Riley <tr@slackzone.org>\n"
 "Javeed Shaikh <syscrash2k@gmail.com>"
 
-#: src/strings.c:179
+#: src/strings.c:182
 msgid "window1"
 msgstr "window1"
 
-#: src/strings.c:180
+#: src/strings.c:183
 msgid "<span weight=\"bold\">Press the key you wish to bind...</span>"
 msgstr ""
 "<span weight=\"bold\">Pressez la touche que vous souhaitez attacher...</span>"
@@ -588,8 +599,9 @@ msgstr ""
 
 #: src/main.c:93
 msgid "  --config-file FILE    Specify the path to the config file to use\n"
-msgstr "  --config-file FILE    Spécifie le chemin du fichier de configuration à utiliser\n"
-
+msgstr ""
+"  --config-file FILE    Spécifie le chemin du fichier de configuration à "
+"utiliser\n"
 
 #: src/main.c:94
 #, c-format
@@ -619,8 +631,8 @@ msgid ""
 "Failed to load the obconf.glade interface file. You have probably failed to "
 "install ObConf properly."
 msgstr ""
-"Echec du chargement du fichier d'interface obconf.glade. Vous n'avez probablement pas "
-"installé ObConf correctement."
+"Echec du chargement du fichier d'interface obconf.glade. Vous n'avez "
+"probablement pas installé ObConf correctement."
 
 #: src/main.c:234
 msgid ""
@@ -638,8 +650,8 @@ msgid ""
 "\n"
 "Message: %s"
 msgstr ""
-"Echec lors de l'analyse du fichier de configuration d'Openbox.  Votre fichier de configuration "
-"n'est pas de l'XML valide.\n"
+"Echec lors de l'analyse du fichier de configuration d'Openbox.  Votre "
+"fichier de configuration n'est pas de l'XML valide.\n"
 "\n"
 "Message : %s"
 

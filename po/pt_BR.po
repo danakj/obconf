@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ObConf 2.0.4\n"
 "Report-Msgid-Bugs-To: http://bugzilla.icculus.org/\n"
-"POT-Creation-Date: 2008-02-13 20:28-0500\n"
+"POT-Creation-Date: 2008-03-02 19:36-0500\n"
 "PO-Revision-Date: 2008-02-29 13:47-0500\n"
 "Last-Translator: Og Maciel <ogmaciel@gnome.org>\n"
 "Language-Team: Brazilian Portuguese\n"
@@ -24,31 +24,13 @@ msgstr "Gerente de Configurações do Openbox"
 msgid "<span weight=\"bold\">Theme</span>"
 msgstr "<span weight=\"bold\">Tema</span>"
 
-#: src/strings.c:9
-#: src/strings.c:14
-#: src/strings.c:18
-#: src/strings.c:27
-#: src/strings.c:43
-#: src/strings.c:51
-#: src/strings.c:54
-#: src/strings.c:63
-#: src/strings.c:72
-#: src/strings.c:80
-#: src/strings.c:85
-#: src/strings.c:98
-#: src/strings.c:100
-#: src/strings.c:107
-#: src/strings.c:113
-#: src/strings.c:116
-#: src/strings.c:118
-#: src/strings.c:125
-#: src/strings.c:137
-#: src/strings.c:148
-#: src/strings.c:151
-#: src/strings.c:157
-#: src/strings.c:162
-#: src/strings.c:164
-#: src/strings.c:167
+#: src/strings.c:9 src/strings.c:14 src/strings.c:18 src/strings.c:27
+#: src/strings.c:43 src/strings.c:51 src/strings.c:54 src/strings.c:63
+#: src/strings.c:72 src/strings.c:80 src/strings.c:85 src/strings.c:98
+#: src/strings.c:100 src/strings.c:107 src/strings.c:113 src/strings.c:116
+#: src/strings.c:118 src/strings.c:125 src/strings.c:137 src/strings.c:140
+#: src/strings.c:151 src/strings.c:154 src/strings.c:160 src/strings.c:165
+#: src/strings.c:167 src/strings.c:170
 msgid "    "
 msgstr "    "
 
@@ -174,8 +156,7 @@ msgstr "Visualizaçã_o na tela: "
 msgid "Appearance"
 msgstr "Aparência"
 
-#: src/strings.c:50
-#: src/strings.c:97
+#: src/strings.c:50 src/strings.c:97
 msgid "<span weight=\"bold\">Focusing Windows</span>"
 msgstr "<span weight=\"bold\">Foco de Janelas</span>"
 
@@ -227,14 +208,8 @@ msgstr "Atualizar o conteúdo da janela quando _redimensionando"
 msgid "Drag _threshold distance:"
 msgstr "Limi_te de distância de arrato:"
 
-#: src/strings.c:66
-#: src/strings.c:68
-#: src/strings.c:70
-#: src/strings.c:90
-#: src/strings.c:95
-#: src/strings.c:128
-#: src/strings.c:130
-#: src/strings.c:132
+#: src/strings.c:66 src/strings.c:68 src/strings.c:70 src/strings.c:90
+#: src/strings.c:95 src/strings.c:128 src/strings.c:130 src/strings.c:132
 #: src/strings.c:134
 msgid "px"
 msgstr "px"
@@ -257,12 +232,8 @@ msgstr ""
 msgid "_Amount of time to wait before switching:"
 msgstr "Qu_anto tempo esperar antes de alternar:"
 
-#: src/strings.c:74
-#: src/strings.c:105
-#: src/strings.c:112
-#: src/strings.c:120
-#: src/strings.c:166
-#: src/strings.c:169
+#: src/strings.c:74 src/strings.c:105 src/strings.c:112 src/strings.c:120
+#: src/strings.c:169 src/strings.c:172
 msgid "ms"
 msgstr "ms"
 
@@ -306,8 +277,7 @@ msgstr "Posição fixa na janela"
 msgid "Fixed _x position:"
 msgstr "Posição _x fixa:"
 
-#: src/strings.c:87
-#: src/strings.c:92
+#: src/strings.c:87 src/strings.c:92
 msgid "Centered"
 msgstr "Centralizada"
 
@@ -408,8 +378,14 @@ msgid "<span weight=\"bold\">Desktop Margins</span>"
 msgstr "<span weight=\"bold\">Margens da Área de Trabalho</span>"
 
 #: src/strings.c:126
-msgid "Desktop margins are reserved areas on the edge of your screen.  New windows will not be placed within a margin, and maximized windows will not cover them."
-msgstr "Margens da área de trabalho são áreas reservadas na borda de sua tela. Novas janelas não serão posicionadas dentro de uma margem, e janelas maximizadas não as cobrirá."
+msgid ""
+"Desktop margins are reserved areas on the edge of your screen.  New windows "
+"will not be placed within a margin, and maximized windows will not cover "
+"them."
+msgstr ""
+"Margens da área de trabalho são áreas reservadas na borda de sua tela. Novas "
+"janelas não serão posicionadas dentro de uma margem, e janelas maximizadas "
+"não as cobrirá."
 
 #: src/strings.c:127
 msgid "_Top"
@@ -432,126 +408,137 @@ msgid "Margins"
 msgstr "Margens"
 
 #: src/strings.c:136
+msgid "<span weight=\"bold\">Dock</span>"
+msgstr ""
+
+#: src/strings.c:138
+msgid ""
+"The dock is a special container for \"dockapps\", or dock applications.  It "
+"is not visible on screen until a dockapp is run.  Dockapps can be used to "
+"show things like a clock, or to provide you with a system tray."
+msgstr ""
+
+#: src/strings.c:139
 msgid "<span weight=\"bold\">Position</span>"
 msgstr "<span weight=\"bold\">Posição</span>"
 
-#: src/strings.c:138
+#: src/strings.c:141
 msgid "_Position:"
 msgstr "_Posição:"
 
-#: src/strings.c:139
+#: src/strings.c:142
 msgid "Top Left"
 msgstr "Esquerda superior"
 
-#: src/strings.c:140
+#: src/strings.c:143
 msgid "Top"
 msgstr "Acima"
 
-#: src/strings.c:141
+#: src/strings.c:144
 msgid "Top Right"
 msgstr "Direita superior"
 
-#: src/strings.c:142
+#: src/strings.c:145
 msgid "Left"
 msgstr "Esquerda"
 
-#: src/strings.c:143
+#: src/strings.c:146
 msgid "Right"
 msgstr "Direita"
 
-#: src/strings.c:144
+#: src/strings.c:147
 msgid "Bottom Left"
 msgstr "Esquerda inferior"
 
-#: src/strings.c:145
+#: src/strings.c:148
 msgid "Bottom"
 msgstr "Inferior"
 
-#: src/strings.c:146
+#: src/strings.c:149
 msgid "Bottom Right"
 msgstr "Direita inferior"
 
-#: src/strings.c:147
+#: src/strings.c:150
 msgid "Floating"
 msgstr "Flutuante"
 
-#: src/strings.c:149
+#: src/strings.c:152
 msgid "_Floating position:"
 msgstr "Posição _flutuante:"
 
-#: src/strings.c:150
+#: src/strings.c:153
 msgid "x"
 msgstr "x"
 
-#: src/strings.c:152
+#: src/strings.c:155
 msgid "Allow _windows to be placed within the dock's area"
 msgstr "Permite que _janelas sejam posicionadas dentro da área da doca"
 
-#: src/strings.c:153
+#: src/strings.c:156
 msgid "_Orientation: "
 msgstr "_Orientação: "
 
-#: src/strings.c:154
+#: src/strings.c:157
 msgid "Vertical"
 msgstr "Vertical"
 
-#: src/strings.c:155
+#: src/strings.c:158
 msgid "Horizontal"
 msgstr "Horizontal"
 
-#: src/strings.c:156
+#: src/strings.c:159
 msgid "<span weight=\"bold\">Stacking</span>"
 msgstr "<span weight=\"bold\">Empilhar</span>"
 
-#: src/strings.c:158
+#: src/strings.c:161
 msgid "Keep dock _above other windows"
 msgstr "Manter a doca _acima de outras janelas"
 
-#: src/strings.c:159
+#: src/strings.c:162
 msgid "A_llow dock to be both above and below windows"
 msgstr "Permitir que a doca fique acima e embaixo de jane_las"
 
-#: src/strings.c:160
+#: src/strings.c:163
 msgid "Keep dock _below other windows"
 msgstr "Manter a doca em _baixo de outras janelas"
 
-#: src/strings.c:161
+#: src/strings.c:164
 msgid "<span weight=\"bold\">Hiding</span>"
 msgstr "<span weight=\"bold\">Ocultar</span>"
 
-#: src/strings.c:163
+#: src/strings.c:166
 msgid "_Hide off screen"
 msgstr "Ocul_tar fora da tela"
 
-#: src/strings.c:165
+#: src/strings.c:168
 msgid "_Delay before hiding:"
 msgstr "Atraso antes _de ocultar:"
 
-#: src/strings.c:168
+#: src/strings.c:171
 msgid "Delay before _showing:"
 msgstr "Atraso ante_s de mostrar:"
 
-#: src/strings.c:170
+#: src/strings.c:173
 msgid "Dock"
 msgstr "Doca"
 
-#: src/strings.c:171
+#: src/strings.c:174
 msgid "Abo_ut"
 msgstr "_Sobre"
 
-#: src/strings.c:172
+#: src/strings.c:175
 msgid "About ObConf"
 msgstr "Sobre o ObConf"
 
-#: src/strings.c:173
+#: src/strings.c:176
 msgid "<span weight=\"bold\" size=\"xx-large\">ObConf VERSION</span>"
 msgstr "<span weight=\"bold\" size=\"xx-large\">ObConf VERSÃO</span>"
 
-#: src/strings.c:174
+#: src/strings.c:177
 msgid "A preferences manager for Openbox"
 msgstr "Um gerente de preferências para o Openbox"
 
-#: src/strings.c:175
+#: src/strings.c:178
 msgid ""
 "Copyright (c) 2003-2008\n"
 "Dana Jansens <danakj@orodu.net>\n"
@@ -563,17 +550,16 @@ msgstr ""
 "Tim Riley <tr@slackzone.org>\n"
 "Javeed Shaikh <syscrash2k@gmail.com>"
 
-#: src/strings.c:179
+#: src/strings.c:182
 msgid "window1"
 msgstr "janela1"
 
-#: src/strings.c:180
+#: src/strings.c:183
 msgid "<span weight=\"bold\">Press the key you wish to bind...</span>"
-msgstr "<span weight=\"bold\">Pressione a tecla que você deseja associar...</span>"
+msgstr ""
+"<span weight=\"bold\">Pressione a tecla que você deseja associar...</span>"
 
-#: src/main.c:72
-#: src/main.c:74
-#: src/main.c:76
+#: src/main.c:72 src/main.c:74 src/main.c:76
 msgid "Copyright (c)"
 msgstr "Copyright (c)"
 
@@ -602,12 +588,18 @@ msgid "  --install ARCHIVE.obt Install the given theme archive and select it\n"
 msgstr "  --install PACOTE.obt Instala o tema fornecido e o seleciona\n"
 
 #: src/main.c:92
-msgid "  --archive THEME       Create a theme archive from the given theme directory\n"
-msgstr "  --archive TEMA        Cria um tema a partir do diretório de tema fornecido\n"
+msgid ""
+"  --archive THEME       Create a theme archive from the given theme "
+"directory\n"
+msgstr ""
+"  --archive TEMA        Cria um tema a partir do diretório de tema "
+"fornecido\n"
 
 #: src/main.c:93
 msgid "  --config-file FILE    Specify the path to the config file to use\n"
-msgstr "  --config-file ARQUIVO    Especifica o caminho do arquivo de configuração para usar\n"
+msgstr ""
+"  --config-file ARQUIVO    Especifica o caminho do arquivo de configuração "
+"para usar\n"
 
 #: src/main.c:94
 #, c-format
@@ -633,32 +625,39 @@ msgid "--config-file requires an argument\n"
 msgstr "--config-file requere um argumento\n"
 
 #: src/main.c:213
-msgid "Failed to load the obconf.glade interface file. You have probably failed to install ObConf properly."
-msgstr "Falha ao carregar o arquivo de interface obconf.glade. Você provavelmente não instalou o ObConf corretamente."
+msgid ""
+"Failed to load the obconf.glade interface file. You have probably failed to "
+"install ObConf properly."
+msgstr ""
+"Falha ao carregar o arquivo de interface obconf.glade. Você provavelmente "
+"não instalou o ObConf corretamente."
 
 #: src/main.c:234
-msgid "Failed to load an rc.xml. You have probably failed to install Openbox properly."
-msgstr "Falha ao carregar um rc.xml. Você provavelmente não instalou o Openbox corretamente."
+msgid ""
+"Failed to load an rc.xml. You have probably failed to install Openbox "
+"properly."
+msgstr ""
+"Falha ao carregar um rc.xml. Você provavelmente não instalou o Openbox "
+"corretamente."
 
 #: src/main.c:243
 #, c-format
 msgid ""
-"Error while parsing the Openbox configuration file.  Your configuration file is not valid XML.\n"
+"Error while parsing the Openbox configuration file.  Your configuration file "
+"is not valid XML.\n"
 "\n"
 "Message: %s"
 msgstr ""
-"Erro quando analisando o arquivo de configurações do Openbox. Seu arquivo de configurações não possui XML válido.\n"
+"Erro quando analisando o arquivo de configurações do Openbox. Seu arquivo de "
+"configurações não possui XML válido.\n"
 "\n"
 "Mensagem: %s"
 
-#: src/desktops.c:134
-#: src/desktops.c:165
-#: src/desktops.c:181
+#: src/desktops.c:134 src/desktops.c:165 src/desktops.c:181
 msgid "(Unnamed desktop)"
 msgstr "(área de trabalho sem nome)"
 
-#: src/theme.c:109
-#: src/theme.c:141
+#: src/theme.c:109 src/theme.c:141
 msgid "Choose an Openbox theme"
 msgstr "Escolha um tema do Openbox"
 
@@ -687,8 +686,7 @@ msgstr ""
 "Os seguintes erros foram relatados:\n"
 "%s"
 
-#: src/archive.c:106
-#: src/archive.c:190
+#: src/archive.c:106 src/archive.c:190
 #, c-format
 msgid "Unable to run the \"tar\" command: %s"
 msgstr "Não foi possível executar o comando \"tar\": %s"
@@ -712,16 +710,17 @@ msgstr "Não foi possível mover para o diretório \"%s\": %s"
 #, c-format
 msgid ""
 "Unable to extract the file \"%s\".\n"
-"Please ensure that \"%s\" is writable and that the file is a valid Openbox theme archive.\n"
+"Please ensure that \"%s\" is writable and that the file is a valid Openbox "
+"theme archive.\n"
 "The following errors were reported:\n"
 "%s"
 msgstr ""
 "Não foi possível extrair o arquivo \"%s\".\n"
-"Por favor certifique-se que \"%s\" pode ser escrito e que o arquivo é um tema válido do Openbox.\n"
+"Por favor certifique-se que \"%s\" pode ser escrito e que o arquivo é um "
+"tema válido do Openbox.\n"
 "Os seguintes erros foram relatados:\n"
 "%s"
 
 #: src/mouse.c:72
 msgid "Custom actions"
 msgstr "Ações personalizadas"
-
