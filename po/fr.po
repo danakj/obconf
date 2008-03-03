@@ -294,11 +294,11 @@ msgstr "Position _y fixée :"
 
 #: src/strings.c:93
 msgid "From top edge"
-msgstr ""
+msgstr "Depuis le bord supérieur"
 
 #: src/strings.c:94
 msgid "From bottom edge"
-msgstr ""
+msgstr "Depuis le bord inférieur"
 
 #: src/strings.c:96
 msgid "Move & Resize"
@@ -588,7 +588,8 @@ msgstr ""
 
 #: src/main.c:93
 msgid "  --config-file FILE    Specify the path to the config file to use\n"
-msgstr ""
+msgstr "  --config-file FILE    Spécifie le chemin du fichier de configuration à utiliser\n"
+
 
 #: src/main.c:94
 #, c-format
@@ -611,19 +612,23 @@ msgstr "--archive requiert un argument\n"
 
 #: src/main.c:122
 msgid "--config-file requires an argument\n"
-msgstr ""
+msgstr "--config-file requiert un argument\n"
 
 #: src/main.c:213
 msgid ""
 "Failed to load the obconf.glade interface file. You have probably failed to "
 "install ObConf properly."
 msgstr ""
+"Echec du chargement du fichier d'interface obconf.glade. Vous n'avez probablement pas "
+"installé ObConf correctement."
 
 #: src/main.c:234
 msgid ""
 "Failed to load an rc.xml. You have probably failed to install Openbox "
 "properly."
 msgstr ""
+"Echec du chargement d'un fichier rc.xml. Vous n'avez probablement pas "
+"installé ObConf correctement."
 
 #: src/main.c:243
 #, c-format
@@ -633,6 +638,10 @@ msgid ""
 "\n"
 "Message: %s"
 msgstr ""
+"Echec lors de l'analyse du fichier de configuration d'Openbox.  Votre fichier de configuration "
+"n'est pas de l'XML valide.\n"
+"\n"
+"Message : %s"
 
 #: src/desktops.c:134 src/desktops.c:165 src/desktops.c:181
 msgid "(Unnamed desktop)"
