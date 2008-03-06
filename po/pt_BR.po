@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ObConf 2.0.4\n"
 "Report-Msgid-Bugs-To: http://bugzilla.icculus.org/\n"
 "POT-Creation-Date: 2008-03-02 19:36-0500\n"
-"PO-Revision-Date: 2008-02-29 13:47-0500\n"
+"PO-Revision-Date: 2008-03-04 15:49-0500\n"
 "Last-Translator: Og Maciel <ogmaciel@gnome.org>\n"
 "Language-Team: Brazilian Portuguese\n"
 "MIME-Version: 1.0\n"
@@ -409,7 +409,7 @@ msgstr "Margens"
 
 #: src/strings.c:136
 msgid "<span weight=\"bold\">Dock</span>"
-msgstr ""
+msgstr "<span weight=\"bold\">Doca</span>"
 
 #: src/strings.c:138
 msgid ""
@@ -417,6 +417,9 @@ msgid ""
 "is not visible on screen until a dockapp is run.  Dockapps can be used to "
 "show things like a clock, or to provide you with a system tray."
 msgstr ""
+"A doca é um recipiente especial para \"aplidocas\", ou aplicações de doca. Ela "
+"não é visível na tela até que uma aplidoca é executada. Aplidocas podem ser usadas "
+"para mostrar coisas como um relógio, ou te fornecer com uma bandeja do sistema."
 
 #: src/strings.c:139
 msgid "<span weight=\"bold\">Position</span>"
