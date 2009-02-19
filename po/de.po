@@ -3,12 +3,11 @@
 # This file is distributed under the same license as the Obconf package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: obconf 2.0.3\n"
 "Report-Msgid-Bugs-To: http://bugzilla.icculus.org/\n"
-"POT-Creation-Date: 2008-02-02 11:51-0500\n"
+"POT-Creation-Date: 2008-03-02 19:36-0500\n"
 "PO-Revision-Date: 2008-05-04 01:21+0200\n"
 "Last-Translator: Mario Blättermann <mario.blaettermann@t-online.de>\n"
 "Language-Team: Deutsch <LL@li.org>\n"
@@ -28,9 +27,9 @@ msgstr "<span weight=\"bold\">Thema</span>"
 #: src/strings.c:43 src/strings.c:51 src/strings.c:54 src/strings.c:63
 #: src/strings.c:72 src/strings.c:80 src/strings.c:85 src/strings.c:98
 #: src/strings.c:100 src/strings.c:107 src/strings.c:113 src/strings.c:116
-#: src/strings.c:118 src/strings.c:125 src/strings.c:137 src/strings.c:148
-#: src/strings.c:151 src/strings.c:157 src/strings.c:162 src/strings.c:164
-#: src/strings.c:167
+#: src/strings.c:118 src/strings.c:125 src/strings.c:137 src/strings.c:140
+#: src/strings.c:151 src/strings.c:154 src/strings.c:160 src/strings.c:165
+#: src/strings.c:167 src/strings.c:170
 msgid "    "
 msgstr "    "
 
@@ -198,7 +197,8 @@ msgstr "Fenster"
 
 #: src/strings.c:62
 msgid "<span weight=\"bold\">Moving and Resizing Windows</span>"
-msgstr "<span weight=\"bold\">Fenster verschieben und deren Größe ändern</span>"
+msgstr ""
+"<span weight=\"bold\">Fenster verschieben und deren Größe ändern</span>"
 
 #: src/strings.c:64
 msgid "Update the window contents while _resizing"
@@ -231,7 +231,7 @@ msgid "_Amount of time to wait before switching:"
 msgstr "W_artezeit vor dem Arbeitsflächenwechsel"
 
 #: src/strings.c:74 src/strings.c:105 src/strings.c:112 src/strings.c:120
-#: src/strings.c:166 src/strings.c:169
+#: src/strings.c:169 src/strings.c:172
 msgid "ms"
 msgstr "ms"
 
@@ -279,11 +279,11 @@ msgstr "Feste _x-Position:"
 msgid "Centered"
 msgstr "Zentriert"
 
-#: src/strings.c:88 src/strings.c:93
+#: src/strings.c:88
 msgid "From left edge"
 msgstr "Vom linken Rand"
 
-#: src/strings.c:89 src/strings.c:94
+#: src/strings.c:89
 msgid "From right edge"
 msgstr "Vom rechten Rand"
 
@@ -291,9 +291,17 @@ msgstr "Vom rechten Rand"
 msgid "Fixed _y position:"
 msgstr "Feste _y-Position"
 
+#: src/strings.c:93
+msgid "From top edge"
+msgstr ""
+
+#: src/strings.c:94
+msgid "From bottom edge"
+msgstr ""
+
 #: src/strings.c:96
 msgid "Move & Resize"
-msgstr "" 
+msgstr ""
 "Verschieben\n"
 "und Größe ändern"
 
@@ -400,126 +408,137 @@ msgid "Margins"
 msgstr "Ränder"
 
 #: src/strings.c:136
+msgid "<span weight=\"bold\">Dock</span>"
+msgstr ""
+
+#: src/strings.c:138
+msgid ""
+"The dock is a special container for \"dockapps\", or dock applications.  It "
+"is not visible on screen until a dockapp is run.  Dockapps can be used to "
+"show things like a clock, or to provide you with a system tray."
+msgstr ""
+
+#: src/strings.c:139
 msgid "<span weight=\"bold\">Position</span>"
 msgstr "<span weight=\"bold\">Position</span>"
 
-#: src/strings.c:138
+#: src/strings.c:141
 msgid "_Position:"
 msgstr "_Position:"
 
-#: src/strings.c:139
+#: src/strings.c:142
 msgid "Top Left"
 msgstr "Oben links"
 
-#: src/strings.c:140
+#: src/strings.c:143
 msgid "Top"
 msgstr "Oben"
 
-#: src/strings.c:141
+#: src/strings.c:144
 msgid "Top Right"
 msgstr "Oben rechts"
 
-#: src/strings.c:142
+#: src/strings.c:145
 msgid "Left"
 msgstr "Links"
 
-#: src/strings.c:143
+#: src/strings.c:146
 msgid "Right"
 msgstr "Rechts"
 
-#: src/strings.c:144
+#: src/strings.c:147
 msgid "Bottom Left"
 msgstr "Unten links"
 
-#: src/strings.c:145
+#: src/strings.c:148
 msgid "Bottom"
 msgstr "Unten"
 
-#: src/strings.c:146
+#: src/strings.c:149
 msgid "Bottom Right"
 msgstr "Unten rechts"
 
-#: src/strings.c:147
+#: src/strings.c:150
 msgid "Floating"
 msgstr "Frei platziert"
 
-#: src/strings.c:149
+#: src/strings.c:152
 msgid "_Floating position:"
 msgstr "P_osition"
 
-#: src/strings.c:150
+#: src/strings.c:153
 msgid "x"
 msgstr "x"
 
-#: src/strings.c:152
+#: src/strings.c:155
 msgid "Allow _windows to be placed within the dock's area"
 msgstr "Fenstern das _Verdecken des Docks erlauben"
 
-#: src/strings.c:153
+#: src/strings.c:156
 msgid "_Orientation: "
 msgstr "Aus_richtung: "
 
-#: src/strings.c:154
+#: src/strings.c:157
 msgid "Vertical"
 msgstr "Senkrecht"
 
-#: src/strings.c:155
+#: src/strings.c:158
 msgid "Horizontal"
 msgstr "Waagerecht"
 
-#: src/strings.c:156
+#: src/strings.c:159
 msgid "<span weight=\"bold\">Stacking</span>"
 msgstr "<span weight=\"bold\">Ebene</span>"
 
-#: src/strings.c:158
+#: src/strings.c:161
 msgid "Keep dock _above other windows"
 msgstr "Immer im _Vordergrund"
 
-#: src/strings.c:159
+#: src/strings.c:162
 msgid "A_llow dock to be both above and below windows"
 msgstr "Dock _kann im Vordergrund oder Hintergrund sein"
 
-#: src/strings.c:160
+#: src/strings.c:163
 msgid "Keep dock _below other windows"
 msgstr "Dock wird durch _andere Fenster verdeckt"
 
-#: src/strings.c:161
+#: src/strings.c:164
 msgid "<span weight=\"bold\">Hiding</span>"
 msgstr "<span weight=\"bold\">Ausblenden</span>"
 
-#: src/strings.c:163
+#: src/strings.c:166
 msgid "_Hide off screen"
 msgstr "Dock aus_blenden"
 
-#: src/strings.c:165
+#: src/strings.c:168
 msgid "_Delay before hiding:"
 msgstr "_Wartezeit vor dem Ausblenden:"
 
-#: src/strings.c:168
+#: src/strings.c:171
 msgid "Delay before _showing:"
 msgstr "Wartezeit vor dem _Einblenden:"
 
-#: src/strings.c:170
+#: src/strings.c:173
 msgid "Dock"
 msgstr "Dock"
 
-#: src/strings.c:171
+#: src/strings.c:174
 msgid "Abo_ut"
 msgstr "Ü_ber ObConf"
 
-#: src/strings.c:172
+#: src/strings.c:175
 msgid "About ObConf"
 msgstr "Über ObConf"
 
-#: src/strings.c:173
+#: src/strings.c:176
 msgid "<span weight=\"bold\" size=\"xx-large\">ObConf VERSION</span>"
 msgstr "<span weight=\"bold\" size=\"xx-large\">ObConf VERSION</span>"
 
-#: src/strings.c:174
+#: src/strings.c:177
 msgid "A preferences manager for Openbox"
 msgstr "Ein Einstellungsmanager für Openbox"
 
-#: src/strings.c:175
+#: src/strings.c:178
 msgid ""
 "Copyright (c) 2003-2008\n"
 "Dana Jansens <danakj@orodu.net>\n"
@@ -531,13 +550,14 @@ msgstr ""
 "Tim Riley <tr@slackzone.org>\n"
 "Javeed Shaikh <syscrash2k@gmail.com>"
 
-#: src/strings.c:179
+#: src/strings.c:182
 msgid "window1"
 msgstr "window1"
 
-#: src/strings.c:180
+#: src/strings.c:183
 msgid "<span weight=\"bold\">Press the key you wish to bind...</span>"
-msgstr "<span weight=\"bold\">Drücken Sie die zu registrierende Taste...</span>"
+msgstr ""
+"<span weight=\"bold\">Drücken Sie die zu registrierende Taste...</span>"
 
 #: src/main.c:72 src/main.c:74 src/main.c:76
 msgid "Copyright (c)"
@@ -557,22 +577,22 @@ msgstr ""
 
 #: src/main.c:89
 msgid "  --help                Display this help and exit\n"
-msgstr "  --help		Zeigt diese Hilfe an und beendet\n"
+msgstr "  --help\t\tZeigt diese Hilfe an und beendet\n"
 
 #: src/main.c:90
 msgid "  --version             Display the version and exit\n"
-msgstr "  --version		Zeigt die Programmversion an und beendet\n"
+msgstr "  --version\t\tZeigt die Programmversion an und beendet\n"
 
 #: src/main.c:91
 msgid "  --install ARCHIVE.obt Install the given theme archive and select it\n"
-msgstr "  --install ARCHIV.obt  Installiert das Themenarchiv und wählt es aus\n"
+msgstr ""
+"  --install ARCHIV.obt  Installiert das Themenarchiv und wählt es aus\n"
 
 #: src/main.c:92
 msgid ""
 "  --archive THEME       Create a theme archive from the given theme "
 "directory\n"
-msgstr ""
-"  --archive THEMA       Erstellt ein Themenarchiv aus THEMA\n"
+msgstr "  --archive THEMA       Erstellt ein Themenarchiv aus THEMA\n"
 
 #: src/main.c:93
 msgid "  --config-file FILE    Specify the path to the config file to use\n"
@@ -606,16 +626,16 @@ msgid ""
 "Failed to load the obconf.glade interface file. You have probably failed to "
 "install ObConf properly."
 msgstr ""
-"Schnittstellendatei obconf.glade konnte nicht geladen werden. Möglicherweise wurde "
-"ObConf nicht korrekt installiert." 
+"Schnittstellendatei obconf.glade konnte nicht geladen werden. Möglicherweise "
+"wurde ObConf nicht korrekt installiert."
 
 #: src/main.c:234
 msgid ""
 "Failed to load an rc.xml. You have probably failed to install Openbox "
 "properly."
 msgstr ""
-"Datei rc.xml konnte nicht geladen werden. Möglicherweise wurde "
-"Openbox nicht korrekt installiert."
+"Datei rc.xml konnte nicht geladen werden. Möglicherweise wurde Openbox nicht "
+"korrekt installiert."
 
 #: src/main.c:243
 #, c-format
@@ -693,8 +713,8 @@ msgid ""
 "%s"
 msgstr ""
 "Konnte Datei \"%s\" nicht entpacken.\n"
-"Bitte stellen Sie sicher, dass \"%s\" schreibbar ist und dass die Datei ein gültiges "
-"Openbox-Themenarchiv ist.\n"
+"Bitte stellen Sie sicher, dass \"%s\" schreibbar ist und dass die Datei ein "
+"gültiges Openbox-Themenarchiv ist.\n"
 "Die Fehlermeldung war:\n"
 "%s"
 

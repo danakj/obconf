@@ -242,7 +242,6 @@ msgid "<span weight=\"bold\">Information Dialog</span>"
 msgstr ""
 
 #: src/strings.c:76
-#, fuzzy
 msgid "Show _information dialog:"
 msgstr "_Zobrazit informační dialog:"
 
@@ -259,7 +258,6 @@ msgid "Never"
 msgstr "Nikdy"
 
 #: src/strings.c:81
-#, fuzzy
 msgid "Information dialog's _position:"
 msgstr "_Pozice informačního dialogu:"
 
@@ -276,7 +274,6 @@ msgid "Fixed position on screen"
 msgstr "Fixní pozice na obrazovce"
 
 #: src/strings.c:86
-#, fuzzy
 msgid "Fixed _x position:"
 msgstr "Fixní _x pozice:"
 
@@ -293,19 +290,16 @@ msgid "From right edge"
 msgstr "Z praváho okraje"
 
 #: src/strings.c:91
-#, fuzzy
 msgid "Fixed _y position:"
 msgstr "Fixní _y pozice:"
 
 #: src/strings.c:93
-#, fuzzy
 msgid "From top edge"
-msgstr "Z levého okraje"
+msgstr ""
 
 #: src/strings.c:94
-#, fuzzy
 msgid "From bottom edge"
-msgstr "Z levého okraje"
+msgstr ""
 
 #: src/strings.c:96
 msgid "Move & Resize"
@@ -416,9 +410,8 @@ msgid "Margins"
 msgstr "Okraje"
 
 #: src/strings.c:136
-#, fuzzy
 msgid "<span weight=\"bold\">Dock</span>"
-msgstr "<span weight=\"bold\">Fonty</span>"
+msgstr ""
 
 #: src/strings.c:138
 msgid ""
@@ -625,9 +618,8 @@ msgid "--archive requires an argument\n"
 msgstr "--archive vyžaduje argument\n"
 
 #: src/main.c:122
-#, fuzzy
 msgid "--config-file requires an argument\n"
-msgstr "--archive vyžaduje argument\n"
+msgstr ""
 
 #: src/main.c:213
 msgid ""

@@ -418,9 +418,9 @@ msgid ""
 "show things like a clock, or to provide you with a system tray."
 msgstr ""
 "Le dock est un conteneur spécial pour les \"dockapps\", ou les applications "
-"dockables. Il n'est pas visible à l'écran jusqu'à ce qu'une telle application "
-"soit lancée.  Les applications dockables peuvent être utilisées pour afficher "
-"des choses comme une horloge, ou pour vous fournir un systray."
+"dockables. Il n'est pas visible à l'écran jusqu'à ce qu'une telle "
+"application soit lancée.  Les applications dockables peuvent être utilisées "
+"pour afficher des choses comme une horloge, ou pour vous fournir un systray."
 
 #: src/strings.c:139
 msgid "<span weight=\"bold\">Position</span>"

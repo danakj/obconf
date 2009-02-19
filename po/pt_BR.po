@@ -417,9 +417,10 @@ msgid ""
 "is not visible on screen until a dockapp is run.  Dockapps can be used to "
 "show things like a clock, or to provide you with a system tray."
 msgstr ""
-"A doca é um recipiente especial para \"aplidocas\", ou aplicações de doca. Ela "
-"não é visível na tela até que uma aplidoca é executada. Aplidocas podem ser usadas "
-"para mostrar coisas como um relógio, ou te fornecer com uma bandeja do sistema."
+"A doca é um recipiente especial para \"aplidocas\", ou aplicações de doca. "
+"Ela não é visível na tela até que uma aplidoca é executada. Aplidocas podem "
+"ser usadas para mostrar coisas como um relógio, ou te fornecer com uma "
+"bandeja do sistema."
 
 #: src/strings.c:139
 msgid "<span weight=\"bold\">Position</span>"
