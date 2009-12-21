@@ -43,7 +43,7 @@ xmlNodePtr root;
 RrInstance *rrinst;
 gchar *obc_config_file = NULL;
 ObtPaths *paths;
-ObtParseInst *parse_i;
+ObtXmlInst *parse_i;
 
 static gchar *obc_theme_install = NULL;
 static gchar *obc_theme_archive = NULL;
@@ -217,7 +217,7 @@ int main(int argc, char **argv)
     }
 
     paths = obt_paths_new();
-    parse_i = obt_parse_instance_new();
+    parse_i = obt_xml_instance_new();
     rrinst = RrInstanceNew(GDK_DISPLAY(), gdk_x11_get_default_screen());
 
     if (!obc_config_file) {
@@ -233,18 +233,18 @@ int main(int argc, char **argv)
     }
 
     xmlIndentTreeOutput = 1;
-    if (!obt_parse_load_config_file(parse_i,
-                                    "openbox",
-                                    (obc_config_file ?
-                                     obc_config_file : "rc.xml"),
-                                    "openbox_config"))
+    if (!obt_xml_load_config_file(parse_i,
+                                  "openbox",
+                                  (obc_config_file ?
+                                   obc_config_file : "rc.xml"),
+                                  "openbox_config"))
     {
         obconf_error(_("Failed to load an rc.xml. You have probably failed to install Openbox properly."), TRUE);
         exit_with_error = TRUE;
     }
     else {
-        doc = obt_parse_doc(parse_i);
-        root = obt_parse_root(parse_i);
+        doc = obt_xml_doc(parse_i);
+        root = obt_xml_root(parse_i);
     }
 
     /* look for parsing errors */
@@ -303,7 +303,7 @@ int main(int argc, char **argv)
     }
 
     RrInstanceFree(rrinst);
-    obt_parse_instance_unref(parse_i);
+    obt_xml_instance_unref(parse_i);
     obt_paths_unref(paths);
 
     xmlFreeDoc(doc);

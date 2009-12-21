@@ -21,7 +21,7 @@
 
 #include <obrender/render.h>
 #include <obrender/instance.h>
-#include <obt/parse.h>
+#include <obt/xml.h>
 #include <obt/paths.h>
 
 #include <gtk/gtk.h>
@@ -32,7 +32,7 @@ extern RrInstance *rrinst;
 extern GtkWidget *mainwin;
 extern gchar *obc_config_file;
 extern ObtPaths *paths;
-extern ObtParseInst *parse_i;
+extern ObtXmlInst *parse_i;
 
 #define get_widget(s) glade_xml_get_widget(glade, s)
 

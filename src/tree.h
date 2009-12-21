@@ -19,7 +19,7 @@
 #ifndef obconf__tree_h
 #define obconf__tree_h
 
-#include <obt/parse.h>
+#include <obt/xml.h>
 
 xmlNodePtr tree_get_node(const gchar *path, const gchar *def);
 

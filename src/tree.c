@@ -19,7 +19,7 @@
 #include "tree.h"
 #include "main.h"
 
-#include <obt/parse.h>
+#include <obt/xml.h>
 #include <gdk/gdkx.h>
 
 xmlNodePtr tree_get_node(const gchar *path, const gchar *def)
@@ -28,7 +28,7 @@ xmlNodePtr tree_get_node(const gchar *path, const gchar *def)
     gchar **nodes;
     gchar **it, **next;
 
-    n = obt_parse_root(parse_i);
+    n = obt_xml_root(parse_i);
 
     nodes = g_strsplit(path, "/", 0);
     for (it = nodes; *it; it = next) {
@@ -39,19 +39,19 @@ xmlNodePtr tree_get_node(const gchar *path, const gchar *def)
         next = it + 1;
 
         /* match attributes */
-        c = obt_parse_find_node(n->children, attrs[0]);
+        c = obt_xml_find_node(n->children, attrs[0]);
         while (c && !ok) {
             gint i;
 
             ok = TRUE;
             for (i = 1; attrs[i]; ++i) {
                 gchar **eq = g_strsplit(attrs[i], "=", 2);
-                if (eq[1] && !obt_parse_attr_contains(c, eq[0], eq[1]))
+                if (eq[1] && !obt_xml_attr_contains(c, eq[0], eq[1]))
                     ok = FALSE;
                 g_strfreev(eq);
             }
             if (!ok)
-                c = obt_parse_find_node(c->next, attrs[0]);
+                c = obt_xml_find_node(c->next, attrs[0]);
         }
 
         if (!c) {
@@ -100,7 +100,7 @@ void tree_apply()
     obt_paths_mkdir_path(d, 0700);
     g_free(d);
 
-    if (!obt_parse_save_file(parse_i, p, TRUE)) {
+    if (!obt_xml_save_file(parse_i, p, TRUE)) {
         gchar *s;
         s = g_strdup_printf("An error occured while saving the "
                             "config file '%s'", p);
@@ -166,7 +166,7 @@ gchar* tree_get_string(const gchar *node, const gchar *def)
     xmlNodePtr n;
 
     n = tree_get_node(node, def);
-    return obt_parse_node_string(n);
+    return obt_xml_node_string(n);
 }
 
 gint tree_get_int(const gchar *node, gint def)
@@ -177,7 +177,7 @@ gint tree_get_int(const gchar *node, gint def)
     d = g_strdup_printf("%d", def);
     n = tree_get_node(node, d);
     g_free(d);
-    return obt_parse_node_int(n);
+    return obt_xml_node_int(n);
 }
 
 gboolean tree_get_bool(const gchar *node, gboolean def)
@@ -185,5 +185,5 @@ gboolean tree_get_bool(const gchar *node, gboolean def)
     xmlNodePtr n;
 
     n = tree_get_node(node, (def ? "yes" : "no"));
-    return obt_parse_node_bool(n);
+    return obt_xml_node_bool(n);
 }

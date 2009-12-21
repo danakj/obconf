@@ -19,7 +19,7 @@
 #include "main.h"
 #include "tree.h"
 #include "gettext.h"
-#include <obt/parse.h>
+#include <obt/xml.h>
 
 static gboolean   mapping = FALSE;
 static xmlNodePtr saved_custom = NULL;
@@ -206,9 +206,9 @@ static gint read_doubleclick_action()
 
     while (n) {
         if (!xmlStrcmp(n->name, (const xmlChar*)"action")) {
-            if (obt_parse_attr_contains(n, "name", "ToggleMaximizeFull"))
+            if (obt_xml_attr_contains(n, "name", "ToggleMaximizeFull"))
                 ++max;
-            else if (obt_parse_attr_contains(n, "name", "ToggleShade"))
+            else if (obt_xml_attr_contains(n, "name", "ToggleShade"))
                 ++shade;
             else
                 ++other;
