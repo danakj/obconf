@@ -9,8 +9,10 @@ config.guess
 config.log
 config.rpath
 config.status
+config.status.lineno
 config.sub
 configure
+configure.lineno
 depcomp
 install-sh
 missing
