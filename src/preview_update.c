@@ -1,4 +1,5 @@
 #include "preview_update.h"
+#include "preview.h"
 #include "main.h"
 
 static gboolean restart_theme_preview_update = TRUE;
@@ -97,6 +98,7 @@ void preview_update_set_title_layout(const gchar *layout)
 static gboolean update_theme_preview_iterate(gpointer data)
 {
     GtkListStore *ls = data;
+    GdkPixbuf *preview;
     static GtkTreeIter iter;
     gchar *name;
 
@@ -130,12 +132,12 @@ static gboolean update_theme_preview_iterate(gpointer data)
 
     gtk_tree_model_get(GTK_TREE_MODEL(ls), &iter, 0, &name, -1);
 
-    gtk_list_store_set(GTK_LIST_STORE(ls), &iter, 1,
-                       preview_theme(name, title_layout, active_window_font,
-                                     inactive_window_font, menu_title_font,
-                                     menu_item_font, osd_active_font,
-                                     osd_inactive_font),
-                       -1);
+    preview = preview_theme(name, title_layout, active_window_font,
+                            inactive_window_font, menu_title_font,
+                            menu_item_font, osd_active_font,
+                            osd_inactive_font);
+    if (preview)
+        gtk_list_store_set(GTK_LIST_STORE(ls), &iter, 1, preview, -1);
 
     return TRUE;
 }
