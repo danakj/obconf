@@ -19,9 +19,11 @@
 #ifndef obconf__tree_h
 #define obconf__tree_h
 
-#include "openbox/parse.h"
+#include <obt/parse.h>
 
 xmlNodePtr tree_get_node(const gchar *path, const gchar *def);
+
+void tree_delete_node(const gchar *path);
 
 gchar* tree_get_string(const gchar *node, const gchar *def);
 gint tree_get_int(const gchar *node, gint def);

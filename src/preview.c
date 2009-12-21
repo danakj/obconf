@@ -23,7 +23,7 @@
 
 #include <string.h>
 
-#include <openbox/theme.h>
+#include <obrender/theme.h>
 
 #define PADDING 2 /* openbox does it :/ */
 
@@ -491,7 +491,8 @@ GdkPixbuf *preview_theme(const gchar *name, const gchar *titlelayout,
                          RrFont *inactive_window_font,
                          RrFont *menu_title_font,
                          RrFont *menu_item_font,
-                         RrFont *osd_font)
+                         RrFont *osd_active_font,
+                         RrFont *osd_inactive_font)
 {
 
     GdkPixbuf *preview;
@@ -505,7 +506,8 @@ GdkPixbuf *preview_theme(const gchar *name, const gchar *titlelayout,
 
     RrTheme *theme = RrThemeNew(rrinst, name, FALSE,
                                 active_window_font, inactive_window_font,
-                                menu_title_font, menu_item_font, osd_font);
+                                menu_title_font, menu_item_font,
+                                osd_active_font, osd_inactive_font);
     if (!theme)
         return NULL;
 

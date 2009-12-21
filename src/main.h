@@ -19,19 +19,20 @@
 #ifndef obconf__main_h
 #define obconf__main_h
 
-#include <openbox/render.h>
-#include <openbox/instance.h>
-#include <openbox/parse.h>
+#include <obrender/render.h>
+#include <obrender/instance.h>
+#include <obt/parse.h>
+#include <obt/paths.h>
 
 #include <gtk/gtk.h>
 #include <glade/glade-xml.h>
 
 extern GladeXML *glade;
-extern xmlDocPtr doc;
-extern xmlNodePtr root;
 extern RrInstance *rrinst;
 extern GtkWidget *mainwin;
 extern gchar *obc_config_file;
+extern ObtPaths *paths;
+extern ObtParseInst *parse_i;
 
 #define get_widget(s) glade_xml_get_widget(glade, s)
 

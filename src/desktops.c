@@ -156,7 +156,7 @@ static void desktops_read_names()
         gchar *name;
 
         if (!xmlStrcmp(n->name, (const xmlChar*)"name")) {
-            name = parse_string(doc, n);
+            name = obt_parse_node_string(n);
 
             desktop_names = g_list_append(desktop_names, name);
 

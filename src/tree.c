@@ -19,7 +19,7 @@
 #include "tree.h"
 #include "main.h"
 
-#include <openbox/parse.h>
+#include <obt/parse.h>
 #include <gdk/gdkx.h>
 
 xmlNodePtr tree_get_node(const gchar *path, const gchar *def)
@@ -28,7 +28,7 @@ xmlNodePtr tree_get_node(const gchar *path, const gchar *def)
     gchar **nodes;
     gchar **it, **next;
 
-    n = root;
+    n = obt_parse_root(parse_i);
 
     nodes = g_strsplit(path, "/", 0);
     for (it = nodes; *it; it = next) {
@@ -39,19 +39,19 @@ xmlNodePtr tree_get_node(const gchar *path, const gchar *def)
         next = it + 1;
 
         /* match attributes */
-        c = parse_find_node(attrs[0], n->children);
+        c = obt_parse_find_node(n->children, attrs[0]);
         while (c && !ok) {
             gint i;
 
             ok = TRUE;
             for (i = 1; attrs[i]; ++i) {
                 gchar **eq = g_strsplit(attrs[i], "=", 2);
-                if (eq[1] && !parse_attr_contains(eq[1], c, eq[0]))
+                if (eq[1] && !obt_parse_attr_contains(c, eq[0], eq[1]))
                     ok = FALSE;
                 g_strfreev(eq);
             }
             if (!ok)
-                c = parse_find_node(attrs[0], c->next);
+                c = obt_parse_find_node(c->next, attrs[0]);
         }
 
         if (!c) {
@@ -76,6 +76,15 @@ xmlNodePtr tree_get_node(const gchar *path, const gchar *def)
     return n;
 }
 
+void tree_delete_node(const gchar *path)
+{
+    xmlNodePtr n;
+
+    n = tree_get_node(path, NULL);
+    xmlUnlinkNode(n);
+    xmlFreeNode(n);
+}
+
 void tree_apply()
 {
     gchar *p, *d;
@@ -84,15 +93,14 @@ void tree_apply()
     if (obc_config_file)
         p = g_strdup(obc_config_file);
     else
-        p = g_build_filename(parse_xdg_config_home_path(), "openbox",
+        p = g_build_filename(obt_paths_config_home(paths), "openbox",
                              "rc.xml", NULL);
 
     d = g_path_get_dirname(p);
-    parse_mkdir_path(d, 0700);
+    obt_paths_mkdir_path(d, 0700);
     g_free(d);
 
-    err = xmlSaveFormatFile(p, doc, 1) == -1;
-    if (err) {
+    if (!obt_parse_save_file(parse_i, p, TRUE)) {
         gchar *s;
         s = g_strdup_printf("An error occured while saving the "
                             "config file '%s'", p);
@@ -158,7 +166,7 @@ gchar* tree_get_string(const gchar *node, const gchar *def)
     xmlNodePtr n;
 
     n = tree_get_node(node, def);
-    return parse_string(doc, n);
+    return obt_parse_node_string(n);
 }
 
 gint tree_get_int(const gchar *node, gint def)
@@ -169,7 +177,7 @@ gint tree_get_int(const gchar *node, gint def)
     d = g_strdup_printf("%d", def);
     n = tree_get_node(node, d);
     g_free(d);
-    return parse_int(doc, n);
+    return obt_parse_node_int(n);
 }
 
 gboolean tree_get_bool(const gchar *node, gboolean def)
@@ -177,5 +185,5 @@ gboolean tree_get_bool(const gchar *node, gboolean def)
     xmlNodePtr n;
 
     n = tree_get_node(node, (def ? "yes" : "no"));
-    return parse_bool(doc, n);
+    return obt_parse_node_bool(n);
 }

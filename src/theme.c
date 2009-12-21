@@ -193,7 +193,7 @@ void theme_load_all()
 
     {
         GSList *it;
-        for (it = parse_xdg_data_dir_paths(); it; it = g_slist_next(it)) {
+        for (it = obt_paths_data_dirs(paths); it; it = g_slist_next(it)) {
             p = g_build_filename(it->data, "themes", NULL);
             add_theme_dir(p);
             g_free(p);

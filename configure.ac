@@ -1,5 +1,5 @@
 AC_PREREQ([2.54])
-AC_INIT([obconf], [2.0.3], [http://bugzilla.icculus.org])
+AC_INIT([obconf], [2.0.4], [http://bugzilla.icculus.org])
 AM_INIT_AUTOMAKE
 AC_CONFIG_SRCDIR([src/main.c])
 
@@ -20,7 +20,7 @@ ALL_LINGUAS=""
 AM_GNU_GETTEXT_VERSION(0.15)
 AM_GNU_GETTEXT([external])
 
-PKG_CHECK_MODULES(OPENBOX, [obrender-3.0 >= 3.4.2 obparser-3.0 >= 3.4.2])
+PKG_CHECK_MODULES(OPENBOX, [obrender-3.5 obt-3.5])
 AC_SUBST(OPENBOX_CFLAGS)
 AC_SUBST(OPENBOX_LIBS)
 

@@ -1,7 +1,7 @@
 #ifndef obconf__preview_update_h
 #define obconf__preview_update_h
 
-#include <openbox/render.h>
+#include <obrender/render.h>
 #include <gtk/gtk.h>
 
 void preview_update_all();
