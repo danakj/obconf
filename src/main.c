@@ -297,7 +297,8 @@ int main(int argc, char **argv)
         preview_update_set_inactive_font(NULL);
         preview_update_set_menu_header_font(NULL);
         preview_update_set_menu_item_font(NULL);
-        preview_update_set_osd_font(NULL);
+        preview_update_set_osd_active_font(NULL);
+        preview_update_set_osd_inactive_font(NULL);
         preview_update_set_title_layout(NULL);
     }
 

@@ -10,18 +10,21 @@ static RrFont       *active_window_font   = NULL;
 static RrFont       *inactive_window_font = NULL;
 static RrFont       *menu_title_font      = NULL;
 static RrFont       *menu_item_font       = NULL;
-static RrFont       *osd_font             = NULL;
+static RrFont       *osd_active_font      = NULL;
+static RrFont       *osd_inactive_font    = NULL;
 
 static gboolean update_theme_preview_iterate(gpointer data);
 
 void preview_update_all()
 {
     if (!list_store) return;
+    if (!RR_CHECK_VERSION(3,5,0)) return;
 
     g_idle_remove_by_data(list_store);
 
     if (!(title_layout && active_window_font && inactive_window_font &&
-          menu_title_font && menu_item_font && osd_font))
+          menu_title_font && menu_item_font &&
+          osd_active_font && osd_inactive_font))
         return; /* not set up */
 
     restart_theme_preview_update = TRUE;
@@ -70,10 +73,17 @@ void preview_update_set_menu_item_font(RrFont *f)
     preview_update_all();
 }
 
-void preview_update_set_osd_font(RrFont *f)
+void preview_update_set_osd_active_font(RrFont *f)
 {
-    RrFontClose(osd_font);
-    osd_font = f;
+    RrFontClose(osd_active_font);
+    osd_active_font = f;
+    preview_update_all();
+}
+
+void preview_update_set_osd_inactive_font(RrFont *f)
+{
+    RrFontClose(osd_inactive_font);
+    osd_inactive_font = f;
     preview_update_all();
 }
 
@@ -123,7 +133,8 @@ static gboolean update_theme_preview_iterate(gpointer data)
     gtk_list_store_set(GTK_LIST_STORE(ls), &iter, 1,
                        preview_theme(name, title_layout, active_window_font,
                                      inactive_window_font, menu_title_font,
-                                     menu_item_font, osd_font),
+                                     menu_item_font, osd_active_font,
+                                     osd_inactive_font),
                        -1);
 
     return TRUE;

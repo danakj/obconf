@@ -23,6 +23,7 @@
 static gboolean mapping = FALSE;
 
 #define PLACE_ON_ALL    0
+#define PLACE_ON_FIXED 0
 #define PLACE_ON_ACTIVE 1
 #define PLACE_ON_MOUSE 2
 
@@ -59,6 +60,21 @@ void windows_setup_tab()
         gtk_option_menu_set_history(GTK_OPTION_MENU(w), PLACE_ON_ALL);
     g_free(s);
 
+    w = get_widget("primary_monitor_popup");
+    s = tree_get_string("placement/primaryMonitor", "");
+    if (!g_ascii_strcasecmp(s, "Active"))
+        gtk_option_menu_set_history(GTK_OPTION_MENU(w), PLACE_ON_ACTIVE);
+    else if (!g_ascii_strcasecmp(s, "Mouse"))
+        gtk_option_menu_set_history(GTK_OPTION_MENU(w), PLACE_ON_MOUSE);
+    else {
+        gtk_option_menu_set_history(GTK_OPTION_MENU(w), PLACE_ON_FIXED);
+
+        w = get_widget("fixed_monitor");
+        gtk_spin_button_set_value(GTK_SPIN_BUTTON(w),
+                                  tree_get_int("placement/primaryMonitor", 1));
+    }
+    g_free(s);
+
     enable_stuff();
 
     mapping = FALSE;
@@ -71,8 +87,50 @@ static void enable_stuff()
 
     w = get_widget("place_mouse");
     b = gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(w));
+
     w = get_widget("place_center");
     gtk_widget_set_sensitive(w, !b);
+
+    w = get_widget("primary_monitor_popup");
+    b = gtk_option_menu_get_history(GTK_OPTION_MENU(w)) == PLACE_ON_FIXED;
+    w = get_widget("fixed_monitor");
+    gtk_widget_set_sensitive(w, b);
+}
+
+void on_primary_monitor_active_activate(GtkMenuItem *w, gpointer data)
+{
+    if (mapping) return;
+
+    tree_set_string("placement/primaryMonitor", "Active");
+    enable_stuff();
+}
+
+void on_primary_monitor_mouse_activate(GtkMenuItem *w, gpointer data)
+{
+    if (mapping) return;
+
+    tree_set_string("placement/primaryMonitor", "Mouse");
+    enable_stuff();
+}
+
+void on_primary_monitor_fixed_activate(GtkMenuItem *w, gpointer data)
+{
+    GtkWidget *w2;
+
+    if (mapping) return;
+
+    w2 = get_widget("fixed_monitor");
+    tree_set_int("placement/primaryMonitor",
+                 gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(w2)));
+    enable_stuff();
+}
+
+void on_fixed_monitor_value_changed(GtkSpinButton *w, gpointer data)
+{
+    if (mapping) return;
+
+    tree_set_int("placement/primaryMonitor",
+                 gtk_spin_button_get_value_as_int(w));
 }
 
 void on_focus_new_toggled(GtkToggleButton *w, gpointer data)

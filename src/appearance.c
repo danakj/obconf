@@ -23,7 +23,7 @@
 
 static gboolean mapping = FALSE;
 
-static RrFont *read_font(GtkFontButton *w, const gchar *place);
+static RrFont *read_font(GtkFontButton *w, const gchar *place, gboolean def);
 static RrFont *write_font(GtkFontButton *w, const gchar *place);
 
 void appearance_setup_tab()
@@ -49,24 +49,31 @@ void appearance_setup_tab()
     g_free(layout);
 
     w = get_widget("font_active");
-    f = read_font(GTK_FONT_BUTTON(w), "ActiveWindow");
+    f = read_font(GTK_FONT_BUTTON(w), "ActiveWindow", TRUE);
     preview_update_set_active_font(f);
 
     w = get_widget("font_inactive");
-    f = read_font(GTK_FONT_BUTTON(w), "InactiveWindow");
+    f = read_font(GTK_FONT_BUTTON(w), "InactiveWindow", TRUE);
     preview_update_set_inactive_font(f);
 
     w = get_widget("font_menu_header");
-    f = read_font(GTK_FONT_BUTTON(w), "MenuHeader");
+    f = read_font(GTK_FONT_BUTTON(w), "MenuHeader", TRUE);
     preview_update_set_menu_header_font(f);
 
     w = get_widget("font_menu_item");
-    f = read_font(GTK_FONT_BUTTON(w), "MenuItem");
+    f = read_font(GTK_FONT_BUTTON(w), "MenuItem", TRUE);
     preview_update_set_menu_item_font(f);
 
-    w = get_widget("font_display");
-    f = read_font(GTK_FONT_BUTTON(w), "OnScreenDisplay");
-    preview_update_set_osd_font(f);
+    w = get_widget("font_active_display");
+    if (!(f = read_font(GTK_FONT_BUTTON(w), "ActiveOnScreenDisplay", FALSE))) {
+        f = read_font(GTK_FONT_BUTTON(w), "OnScreenDisplay", TRUE);
+        tree_delete_node("theme/font:place=OnScreenDisplay");
+    }
+    preview_update_set_osd_active_font(f);
+
+    w = get_widget("font_inactive_display");
+    f = read_font(GTK_FONT_BUTTON(w), "InactiveOnScreenDisplay", TRUE);
+    preview_update_set_osd_inactive_font(f);
 
     mapping = FALSE;
 }
@@ -185,14 +192,23 @@ void on_font_menu_item_font_set(GtkFontButton *w, gpointer data)
     preview_update_set_menu_item_font(write_font(w, "MenuItem"));
 }
 
-void on_font_display_font_set(GtkFontButton *w, gpointer data)
+void on_font_active_display_font_set(GtkFontButton *w, gpointer data)
 {
     if (mapping) return;
 
-    preview_update_set_osd_font(write_font(w, "OnScreenDisplay"));
+    preview_update_set_osd_active_font(write_font(w, "ActiveOnScreenDisplay"));
 }
 
-static RrFont *read_font(GtkFontButton *w, const gchar *place)
+void on_font_inactive_display_font_set(GtkFontButton *w, gpointer data)
+{
+    if (mapping) return;
+
+    preview_update_set_osd_inactive_font
+        (write_font(w, "InactiveOnScreenDisplay"));
+}
+
+static RrFont *read_font(GtkFontButton *w, const gchar *place,
+                         gboolean use_default)
 {
     RrFont *font;
     gchar *fontstring, *node;
@@ -207,8 +223,13 @@ static RrFont *read_font(GtkFontButton *w, const gchar *place)
     mapping = TRUE;
 
     node = g_strdup_printf("theme/font:place=%s/name", place);
-    name = tree_get_string(node, "Sans");
+    name = tree_get_string(node, use_default ? "Sans" : NULL);
     g_free(node);
+
+    if (name[0] == '\0') {
+        g_free(name);
+        return NULL;
+    }
 
     node = g_strdup_printf("theme/font:place=%s/size", place);
     size = tree_get_string(node, "8");
