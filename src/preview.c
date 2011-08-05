@@ -327,28 +327,28 @@ static GdkPixbuf* preview_window(RrTheme *theme, const gchar *titlelayout,
             switch (*layout) {
             case 'D':
                 a = focus ?
-                    theme->a_focused_unpressed_desk :
-                    theme->a_unfocused_unpressed_desk;
+                    theme->btn_desk->a_focused_unpressed :
+                    theme->btn_desk->a_unfocused_unpressed;
                 break;
             case 'S':
                 a = focus ?
-                    theme->a_focused_unpressed_shade :
-                    theme->a_unfocused_unpressed_shade;
+                    theme->btn_shade->a_focused_unpressed :
+                    theme->btn_shade->a_unfocused_unpressed;
                 break;
             case 'I':
                 a = focus ?
-                    theme->a_focused_unpressed_iconify :
-                    theme->a_unfocused_unpressed_iconify;
+                    theme->btn_iconify->a_focused_unpressed :
+                    theme->btn_iconify->a_unfocused_unpressed;
                 break;
             case 'M':
                 a = focus ?
-                    theme->a_focused_unpressed_max :
-                    theme->a_unfocused_unpressed_max;
+                    theme->btn_max->a_focused_unpressed :
+                    theme->btn_max->a_unfocused_unpressed;
                 break;
             case 'C':
                 a = focus ?
-                    theme->a_focused_unpressed_close :
-                    theme->a_unfocused_unpressed_close;
+                    theme->btn_close->a_focused_unpressed :
+                    theme->btn_close->a_unfocused_unpressed;
                 break;
             default:
                 continue;
