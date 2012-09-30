@@ -2,17 +2,16 @@
 # Copyright (C) 2008 Dana Jansens
 # This file is distributed under the same license as the obconf package.
 # <mektup@tutkudalmaz.org>, 2008.
-# <mektup@tutkudalmaz.org>, 2008.
-#
+# Muhammet Kara <muhammet.k@gmail.com>, 2011.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: obconf 2.0.3\n"
 "Report-Msgid-Bugs-To: http://bugzilla.icculus.org/\n"
 "POT-Creation-Date: 2008-03-02 19:36-0500\n"
-"PO-Revision-Date: 2008-02-02 18:53+0200\n"
-"Last-Translator: Tutku Dalmaz <mektup@tutkudalmaz.org>\n"
-"Language-Team: Turkish\n"
+"PO-Revision-Date: 2011-04-28 00:49+0300\n"
+"Last-Translator: Muhammet Kara <muhammet.k@gmail.com>\n"
+"Language-Team: Turkish <gnome-turk@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -295,11 +294,11 @@ msgstr "Karışık _y konumu:"
 
 #: src/strings.c:93
 msgid "From top edge"
-msgstr ""
+msgstr "Üst kenardan"
 
 #: src/strings.c:94
 msgid "From bottom edge"
-msgstr ""
+msgstr "Alt kenardan"
 
 #: src/strings.c:96
 msgid "Move & Resize"
@@ -409,7 +408,7 @@ msgstr "Kenar Boşlukları"
 
 #: src/strings.c:136
 msgid "<span weight=\"bold\">Dock</span>"
-msgstr ""
+msgstr "<span weight=\"bold\">Panel</span>"
 
 #: src/strings.c:138
 msgid ""
@@ -417,6 +416,10 @@ msgid ""
 "is not visible on screen until a dockapp is run.  Dockapps can be used to "
 "show things like a clock, or to provide you with a system tray."
 msgstr ""
+"Panel, \"dockapps\" ya da panel uygulamaları için özel bir kaptır.  Bir "
+"panel uygulaması çalışmadığı sürece ekranda görünmez.  Panel uygulamaları; "
+"ekranda bir duvar saati gibi şeyler göstermek ya da size bir sistem tepsisi "
+"sağlamak için kullanılabilir."
 
 #: src/strings.c:139
 msgid "<span weight=\"bold\">Position</span>"
@@ -596,6 +599,8 @@ msgstr ""
 #: src/main.c:93
 msgid "  --config-file FILE    Specify the path to the config file to use\n"
 msgstr ""
+"  --config-file DOSYA    Kullanılacak yapılandırma dosyasının yolunu "
+"belirtin\n"
 
 #: src/main.c:94
 #, c-format
@@ -618,19 +623,23 @@ msgstr "--archvie bir değişkene ihtiyaç duyar\n"
 
 #: src/main.c:122
 msgid "--config-file requires an argument\n"
-msgstr ""
+msgstr "--config-file bir argümana ihtiyaç duyuyor\n"
 
 #: src/main.c:213
 msgid ""
 "Failed to load the obconf.glade interface file. You have probably failed to "
 "install ObConf properly."
 msgstr ""
+"obconf.glade arayüz dosyası yüklenemedi. Muhtemelen ObConf'u doğru şekilde "
+"kuramadınız."
 
 #: src/main.c:234
 msgid ""
 "Failed to load an rc.xml. You have probably failed to install Openbox "
 "properly."
 msgstr ""
+"rc.xml yüklenmesi başarısız oldu. Muhtemelen Openbox'ı doğru şekilde "
+"kuramadınız."
 
 #: src/main.c:243
 #, c-format
@@ -640,6 +649,10 @@ msgid ""
 "\n"
 "Message: %s"
 msgstr ""
+"Openbox yapılandırma dosyası ayrıştırılırken hata oluştu.  Yapılandırma "
+"dosyanız geçerli bir XML dosyası değil.\n"
+"\n"
+"Mesaj: %s"
 
 #: src/desktops.c:134 src/desktops.c:165 src/desktops.c:181
 msgid "(Unnamed desktop)"
