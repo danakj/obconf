@@ -22,10 +22,11 @@
 
 static gboolean mapping = FALSE;
 
-#define PLACE_ON_ALL    0
 #define PLACE_ON_FIXED 0
+#define PLACE_ON_PRIMARY 0
 #define PLACE_ON_ACTIVE 1
 #define PLACE_ON_MOUSE 2
+#define PLACE_ON_ALL 3
 
 static void enable_stuff();
 
@@ -46,16 +47,14 @@ void windows_setup_tab()
                                  !g_ascii_strcasecmp(s, "UnderMouse"));
     g_free(s);
 
-    w = get_widget("place_center");
-    gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(w),
-                                 tree_get_bool("placement/center", TRUE));
-
     w = get_widget("place_active_popup");
     s = tree_get_string("placement/monitor", "Any");
     if (!g_ascii_strcasecmp(s, "Active"))
         gtk_option_menu_set_history(GTK_OPTION_MENU(w), PLACE_ON_ACTIVE);
     else if (!g_ascii_strcasecmp(s, "Mouse"))
         gtk_option_menu_set_history(GTK_OPTION_MENU(w), PLACE_ON_MOUSE);
+    else if (!g_ascii_strcasecmp(s, "Primary"))
+        gtk_option_menu_set_history(GTK_OPTION_MENU(w), PLACE_ON_PRIMARY);
     else
         gtk_option_menu_set_history(GTK_OPTION_MENU(w), PLACE_ON_ALL);
     g_free(s);
@@ -87,9 +86,6 @@ static void enable_stuff()
 
     w = get_widget("place_mouse");
     b = gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(w));
-
-    w = get_widget("place_center");
-    gtk_widget_set_sensitive(w, !b);
 
     w = get_widget("primary_monitor_popup");
     b = gtk_option_menu_get_history(GTK_OPTION_MENU(w)) == PLACE_ON_FIXED;
@@ -150,13 +146,6 @@ void on_place_mouse_toggled(GtkToggleButton *w, gpointer data)
     enable_stuff();
 }
 
-void on_place_center_toggled(GtkToggleButton *w, gpointer data)
-{
-    if (mapping) return;
-
-    tree_set_bool("placement/center", gtk_toggle_button_get_active(w));
-}
-
 void on_place_active_popup_all_activate(GtkMenuItem *w, gpointer data)
 {
     if (mapping) return;
@@ -176,4 +165,11 @@ void on_place_active_popup_mouse_activate(GtkMenuItem *w, gpointer data)
     if (mapping) return;
 
     tree_set_string("placement/monitor", "Mouse");
+}
+
+void on_place_active_popup_primary_activate(GtkMenuItem *w, gpointer data)
+{
+    if (mapping) return;
+
+    tree_set_string("placement/monitor", "Primary");
 }
