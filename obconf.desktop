@@ -8,6 +8,6 @@ Comment[zh_TW]=管理 Openbox 組態設定
 Icon=obconf
 Exec=obconf %f
 Categories=Settings;DesktopSettings;GTK;
-MimeType=application/x-openbox-theme
+MimeType=application/x-openbox-theme;
 StartupNotify=true
 Terminal=false
