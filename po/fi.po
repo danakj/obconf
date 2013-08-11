@@ -1,0 +1,701 @@
+# Finnish translation of ObConf.
+# Copyright (C) 2009 Dana Jansens
+# This file is distributed under the same license as the ObConf package.
+# riku <lamriku@hotmail.com>, 2009.
+# , fuzzy
+# 
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: 2.0.3\n"
+"Report-Msgid-Bugs-To: http://bugzilla.icculus.org/\n"
+"POT-Creation-Date: 2008-03-02 19:36-0500\n"
+"PO-Revision-Date: 2009-02-28 18:06+0200\n"
+"Last-Translator: riku <lamriku@hotmail.com>\n"
+"Language-Team: Finnish <fi@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit"
+
+#: src/strings.c:7
+msgid "Openbox Configuration Manager"
+msgstr "Openbox Kokoonpanoasetukset"
+
+#: src/strings.c:8
+msgid "<span weight=\"bold\">Theme</span>"
+msgstr "<span weight=\"bold\">Teema</span>"
+
+#: src/strings.c:9 src/strings.c:14 src/strings.c:18 src/strings.c:27
+#: src/strings.c:43 src/strings.c:51 src/strings.c:54 src/strings.c:63
+#: src/strings.c:72 src/strings.c:80 src/strings.c:85 src/strings.c:98
+#: src/strings.c:100 src/strings.c:107 src/strings.c:113 src/strings.c:116
+#: src/strings.c:118 src/strings.c:125 src/strings.c:137 src/strings.c:140
+#: src/strings.c:151 src/strings.c:154 src/strings.c:160 src/strings.c:165
+#: src/strings.c:167 src/strings.c:170
+msgid "    "
+msgstr "...."
+
+#: src/strings.c:10
+msgid "_Install a new theme..."
+msgstr "_Asenna uusi teema..."
+
+#: src/strings.c:11
+msgid "Create a theme _archive (.obt)..."
+msgstr "Luo uusi teema-arkisto (.obt)..."
+
+#: src/strings.c:12
+msgid "Theme"
+msgstr "Teema"
+
+#: src/strings.c:13
+msgid "<span weight=\"bold\">Windows</span>"
+msgstr "<span weight=\"bold\">Ikkunat</span>"
+
+#: src/strings.c:15
+msgid "_Windows retain a border when undecorated"
+msgstr "_Ikkunat säilyttävät reunustukset epäreunustettuina"
+
+#: src/strings.c:16
+msgid "A_nimate iconify and restore"
+msgstr "A_nimoi ikkunoiden pienentäminen ja suurentaminen"
+
+#: src/strings.c:17
+msgid "<span weight=\"bold\">Window Titles</span>"
+msgstr "<span weight=\"bold\">Ikkunoiden otsikot</span>"
+
+#: src/strings.c:19
+msgid "_Button order:"
+msgstr "_Painikkeiden järjestys:"
+
+#: src/strings.c:20
+msgid ""
+"N - The window's icon\n"
+"D - The all-desktops (sticky) button\n"
+"S - The shade (roll up) button\n"
+"L - The label (window title)\n"
+"I - The iconify (minimize) button\n"
+"M - The maximize button\n"
+"C - The close button"
+msgstr "N - Ikkunan kuvake\n"
+"D - Kaikkiin työtiloihin\n"
+"S - Rullaa (ylös/alas)\n"
+"L - Ikkunan otsikko\n"
+"I - Pienennä\n"
+"M - Suurenna\n"
+"C - Sulje"
+
+#: src/strings.c:28
+msgid ""
+"N:\n"
+"L:\n"
+"I:\n"
+"M:"
+msgstr "N:\n"
+"L:\n"
+"I:\n"
+"M:"
+
+#: src/strings.c:32
+msgid ""
+"Window icon\n"
+"Window label (Title)\n"
+"Iconify (Minimize)\n"
+"Maximize"
+msgstr "Ikkunan kuvake\n"
+"Ikkunan otsikko\n"
+"Pienennä\n"
+"Suurenna"
+
+#: src/strings.c:36
+msgid ""
+"C:\n"
+"S:\n"
+"D:"
+msgstr "C:\n"
+"S:\n"
+"D:"
+
+#: src/strings.c:39
+msgid ""
+"Close\n"
+"Shade (Roll up)\n"
+"Omnipresent (On all desktops)"
+msgstr "Sulje\n"
+"Rullaa (ylös/alas)\n"
+"Kaikkiin työtiloihin"
+
+#: src/strings.c:42
+msgid "<span weight=\"bold\">Fonts</span>"
+msgstr "<span weight=\"bold\">Fontit</span>"
+
+#: src/strings.c:44
+msgid "_Active window title: "
+msgstr "_Aktiivisen ikkunan otsikko: "
+
+#: src/strings.c:45
+msgid "_Inactive window title: "
+msgstr "_Epäaktiivisen ikkunan otsikko: "
+
+#: src/strings.c:46
+msgid "Menu _header: "
+msgstr "Valikon otsikko: "
+
+#: src/strings.c:47
+msgid "_Menu Item: "
+msgstr "_Valikon osio: "
+
+#: src/strings.c:48
+msgid "_On-screen display: "
+msgstr "_Ikkunanvaihtimen fontti: "
+
+#: src/strings.c:49
+msgid "Appearance"
+msgstr "Ulkonäkö"
+
+#: src/strings.c:50 src/strings.c:97
+msgid "<span weight=\"bold\">Focusing Windows</span>"
+msgstr "<span weight=\"bold\">Ikkunoiden valitseminen</span>"
+
+#: src/strings.c:52
+msgid "Focus _new windows when they appear"
+msgstr "Valitse _uusi ikkuna ilmestyessä"
+
+#: src/strings.c:53
+msgid "<span weight=\"bold\">Placing Windows</span>"
+msgstr "<span weight=\"bold\">Ikkunoiden sijoittaminen</span>"
+
+#: src/strings.c:55
+msgid "_Place new windows under the mouse pointer"
+msgstr "_Sijoita uudet ikkunat hiiren osoittimen alapuolelle"
+
+#: src/strings.c:56
+msgid "_Center new windows when they are placed"
+msgstr "_Keskitä uudet ikkunat kun ne on sijoitettu"
+
+#: src/strings.c:57
+msgid "Prefer to place new windows _on:"
+msgstr "Sijoita uudet ikkunat mieluiten:"
+
+#: src/strings.c:58
+msgid "All monitors"
+msgstr "Kaikille moniteroille"
+
+#: src/strings.c:59
+msgid "The active monitor"
+msgstr "Aktiiviselle monitorille"
+
+#: src/strings.c:60
+msgid "The monitor with the mouse"
+msgstr "Moniterille, jossa on hiiri"
+
+#: src/strings.c:61
+msgid "Windows"
+msgstr "Ikkunat"
+
+#: src/strings.c:62
+msgid "<span weight=\"bold\">Moving and Resizing Windows</span>"
+msgstr "<span weight=\"bold\">Ikkunoiden liikuttaminen ja koon muuttaminen</span>"
+
+#: src/strings.c:64
+msgid "Update the window contents while _resizing"
+msgstr "Päivitä ikkunoiden sisältöä siirrettäessä"
+
+#: src/strings.c:65
+msgid "Drag _threshold distance:"
+msgstr "Siirtämisen kynnyksen etäisyys:"
+
+#: src/strings.c:66 src/strings.c:68 src/strings.c:70 src/strings.c:90
+#: src/strings.c:95 src/strings.c:128 src/strings.c:130 src/strings.c:132
+#: src/strings.c:134
+msgid "px"
+msgstr "px"
+
+#: src/strings.c:67
+msgid "Amount of resistance against other _windows:"
+msgstr "Vastustuksen määrä toisiin ikkunoihin:"
+
+#: src/strings.c:69
+msgid "Amount of resistance against screen _edges:"
+msgstr "Vastustuksen määrä työpöydän reunoihin:"
+
+#: src/strings.c:71
+msgid "_Switch desktops when moving a window past the screen edge"
+msgstr "_Vaihda työpöytää, kun ikkunaa siirretään työpöydän reunan yli"
+
+#: src/strings.c:73
+msgid "_Amount of time to wait before switching:"
+msgstr "_Ajan pituus ennen vaihtamista:"
+
+#: src/strings.c:74 src/strings.c:105 src/strings.c:112 src/strings.c:120
+#: src/strings.c:169 src/strings.c:172
+msgid "ms"
+msgstr "ms"
+
+#: src/strings.c:75
+msgid "<span weight=\"bold\">Information Dialog</span>"
+msgstr "<span weight=\"bold\">Informaatiodialogi</span>"
+
+#: src/strings.c:76
+msgid "Show _information dialog:"
+msgstr "Näytä informaatiodialogi:"
+
+#: src/strings.c:77
+msgid "When resizing terminal windows"
+msgstr "Kun pääteikkunoiden kokoa muutetaan"
+
+#: src/strings.c:78
+msgid "Always"
+msgstr "Aina"
+
+#: src/strings.c:79
+msgid "Never"
+msgstr "Ei koskaan"
+
+#: src/strings.c:81
+msgid "Information dialog's _position:"
+msgstr "Informaatiodialogin sijainti:"
+
+#: src/strings.c:82
+msgid "Centered on the window"
+msgstr "Ikkunan keskellä"
+
+#: src/strings.c:83
+msgid "Above the window"
+msgstr "Ikkunan yläpuolella"
+
+#: src/strings.c:84
+msgid "Fixed position on screen"
+msgstr "Korjattu sijainti näytöllä"
+
+#: src/strings.c:86
+msgid "Fixed _x position:"
+msgstr "Korjattu x-sijainti:"
+
+#: src/strings.c:87 src/strings.c:92
+msgid "Centered"
+msgstr "Keskitetty"
+
+#: src/strings.c:88
+msgid "From left edge"
+msgstr "Vasemmassa reunassa"
+
+#: src/strings.c:89
+msgid "From right edge"
+msgstr "Oikeassa reunassa"
+
+#: src/strings.c:91
+msgid "Fixed _y position:"
+msgstr "Korjattu y-sijainti:"
+
+#: src/strings.c:93
+msgid "From top edge"
+msgstr "Yläreunassa"
+
+#: src/strings.c:94
+msgid "From bottom edge"
+msgstr "Alareunassa"
+
+#: src/strings.c:96
+msgid "Move & Resize"
+msgstr "Siirtäminen & Koon muuttaminen"
+
+#: src/strings.c:99
+msgid "_Focus windows when the mouse pointer moves over them"
+msgstr "_Valitse ikkuna, kun hiiren osoitin liikkuu niiden yläpuolella"
+
+#: src/strings.c:101
+msgid "Move focus under the mouse when _switching desktops"
+msgstr "Siirrä valinta osoittimen alapuolelle, kun työpöytää vaihdetaan"
+
+#: src/strings.c:102
+msgid "Move focus _under the mouse when the mouse is not moving"
+msgstr "Siirrä valinta osoittimen alapuolelle, kun osoitin ei liiku"
+
+#: src/strings.c:103
+msgid "_Raise windows when the mouse pointer moves over them"
+msgstr "_Nosta ikkuna, kun osoitin liikkuu niiden yläpuolella"
+
+#: src/strings.c:104
+msgid "_Delay before focusing and raising windows:"
+msgstr "_Viive ennen ikkunoiden valitsemista ja nostamista:"
+
+#: src/strings.c:106
+msgid "<span weight=\"bold\">Titlebar</span>"
+msgstr "<span weight=\"bold\">Otsikkopaneeli</span>"
+
+#: src/strings.c:108
+msgid "Double click on the _titlebar:"
+msgstr "Tuplaklikkaus otsikkopaneelin päällä:"
+
+#: src/strings.c:109
+msgid "Maximizes the window"
+msgstr "Suurentaa ikkunan"
+
+#: src/strings.c:110
+msgid "Shades the window"
+msgstr "Rullaa ikkunan"
+
+#: src/strings.c:111
+msgid "Double click ti_me:"
+msgstr "Tuplaklikkauksen aika:"
+
+#: src/strings.c:114
+msgid "Mouse"
+msgstr "Hiiri"
+
+#: src/strings.c:115
+msgid "<span weight=\"bold\">Desktops</span>"
+msgstr "<span weight=\"bold\">Työpöydät</span>"
+
+#: src/strings.c:117
+msgid "_Show a notification when switching desktops"
+msgstr "_Näytä ilmoitus, kun työpöytää vaihdetaan"
+
+#: src/strings.c:119
+msgid "_Amount of time to show the notification for:"
+msgstr "_Ajan pituus, jolloin ilmoitus näytetään:"
+
+#: src/strings.c:121
+msgid "_Number of desktops: "
+msgstr "_Työpöytien määrä: "
+
+#: src/strings.c:122
+msgid "_Desktop names:"
+msgstr "_Työpöytien nimet:"
+
+#: src/strings.c:123
+msgid "Desktops"
+msgstr "Työpöydät"
+
+#: src/strings.c:124
+msgid "<span weight=\"bold\">Desktop Margins</span>"
+msgstr "<span weight=\"bold\">Työpöydän reunukset</span>"
+
+#: src/strings.c:126
+msgid ""
+"Desktop margins are reserved areas on the edge of your screen.  New windows "
+"will not be placed within a margin, and maximized windows will not cover "
+"them."
+msgstr "Työpöytien reunukset ovat varattuja alueita työpöydän reunoissa. Uusia ikkunoita ei sijoiteta niiden alueella. Myöskään suurennetut ikkunat eivät peitä niitä."
+
+#: src/strings.c:127
+msgid "_Top"
+msgstr "_Yläreuna"
+
+#: src/strings.c:129
+msgid "_Left"
+msgstr "_Vasen reuna"
+
+#: src/strings.c:131
+msgid "_Right"
+msgstr "_Oikea reuna"
+
+#: src/strings.c:133
+msgid "_Bottom"
+msgstr "_Alareuna"
+
+#: src/strings.c:135
+msgid "Margins"
+msgstr "Reunukset"
+
+#: src/strings.c:136
+msgid "<span weight=\"bold\">Dock</span>"
+msgstr "<span weight=\"bold\">Telakka</span>"
+
+#: src/strings.c:138
+msgid ""
+"The dock is a special container for \"dockapps\", or dock applications.  It "
+"is not visible on screen until a dockapp is run.  Dockapps can be used to "
+"show things like a clock, or to provide you with a system tray."
+msgstr "Telakka on säiliö \"dockapp\":eille tai telakkaohjelmille. Se ei ole näkyvänä näytöllä kunnes telakkaohjelma käynnistetään. Telakkaohjelmia voidaan käyttää esimerkiksi kellon näyttämiseen tai ilmoitusalueen tarjoamiseen."
+
+#: src/strings.c:139
+msgid "<span weight=\"bold\">Position</span>"
+msgstr "<span weight=\"bold\">Sijainti</span>"
+
+#: src/strings.c:141
+msgid "_Position:"
+msgstr "_Sijainti:"
+
+#: src/strings.c:142
+msgid "Top Left"
+msgstr "Vasemmassa yläkulmassa"
+
+#: src/strings.c:143
+msgid "Top"
+msgstr "Yläreunassa"
+
+#: src/strings.c:144
+msgid "Top Right"
+msgstr "Oikeassa yläkulmassa"
+
+#: src/strings.c:145
+msgid "Left"
+msgstr "Vasemmalla"
+
+#: src/strings.c:146
+msgid "Right"
+msgstr "Oikealla"
+
+#: src/strings.c:147
+msgid "Bottom Left"
+msgstr "Vasemmassa alakulmassa"
+
+#: src/strings.c:148
+msgid "Bottom"
+msgstr "Alareunassa"
+
+#: src/strings.c:149
+msgid "Bottom Right"
+msgstr "Oikeassa alakulmassa"
+
+#: src/strings.c:150
+msgid "Floating"
+msgstr "Kelluva"
+
+#: src/strings.c:152
+msgid "_Floating position:"
+msgstr "_Kellumissijainti"
+
+#: src/strings.c:153
+msgid "x"
+msgstr "x"
+
+#: src/strings.c:155
+msgid "Allow _windows to be placed within the dock's area"
+msgstr "Salli ikkunoiden sijoittaminen telakan alueelle"
+
+#: src/strings.c:156
+msgid "_Orientation: "
+msgstr "_Suunta: "
+
+#: src/strings.c:157
+msgid "Vertical"
+msgstr "Pystysuora"
+
+#: src/strings.c:158
+msgid "Horizontal"
+msgstr "Vaakasuora"
+
+#: src/strings.c:159
+msgid "<span weight=\"bold\">Stacking</span>"
+msgstr "<span weight=\"bold\">Pinoaminen</span>"
+
+#: src/strings.c:161
+msgid "Keep dock _above other windows"
+msgstr "Pydä telakka muiden ikkunoiden yläpuolella"
+
+#: src/strings.c:162
+msgid "A_llow dock to be both above and below windows"
+msgstr "Salli telakan olla ikkunoiden ylä- ja alapuolella"
+
+#: src/strings.c:163
+msgid "Keep dock _below other windows"
+msgstr "Pidä telakka ikkunoiden alapuolella"
+
+#: src/strings.c:164
+msgid "<span weight=\"bold\">Hiding</span>"
+msgstr "<span weight=\"bold\">Piilottaminen</span>"
+
+#: src/strings.c:166
+msgid "_Hide off screen"
+msgstr "_Piilota näytöltä"
+
+#: src/strings.c:168
+msgid "_Delay before hiding:"
+msgstr "_Viive ennen piilottamista:"
+
+#: src/strings.c:171
+msgid "Delay before _showing:"
+msgstr "Viive ennen näyttämistä:"
+
+#: src/strings.c:173
+msgid "Dock"
+msgstr "Telakka"
+
+#: src/strings.c:174
+msgid "Abo_ut"
+msgstr "Tietoa"
+
+#: src/strings.c:175
+msgid "About ObConf"
+msgstr "Tietoa ObConf:sta"
+
+#: src/strings.c:176
+msgid "<span weight=\"bold\" size=\"xx-large\">ObConf VERSION</span>"
+msgstr "<span weight=\"bold\" size=\"xx-large\">ObConf VERSION</span>"
+
+#: src/strings.c:177
+msgid "A preferences manager for Openbox"
+msgstr "Asetusmanageri Openbox:lle"
+
+#: src/strings.c:178
+msgid ""
+"Copyright (c) 2003-2008\n"
+"Dana Jansens <danakj@orodu.net>\n"
+"Tim Riley <tr@slackzone.org>\n"
+"Javeed Shaikh <syscrash2k@gmail.com>"
+msgstr "Tekijänoikeudet (c) 2003-2008\n"
+"Dana Jansens <danakj@orodu.net>\n"
+"Tim Riley <tr@slackzone.org>\n"
+"Javeed Shaikh <syscrash2k@gmail.com>"
+
+#: src/strings.c:182
+msgid "window1"
+msgstr "window1"
+
+#: src/strings.c:183
+msgid "<span weight=\"bold\">Press the key you wish to bind...</span>"
+msgstr "<span weight=\"bold\">Paina näppäintä, jonka haluat sitoa...</span>"
+
+#: src/main.c:72 src/main.c:74 src/main.c:76
+msgid "Copyright (c)"
+msgstr "Tekijänoikeudet (c)"
+
+#: src/main.c:87
+msgid "Syntax: obconf [options] [ARCHIVE.obt]\n"
+msgstr "Syntaksi: obconf [valinnat] [ARKISTO.obt]\n"
+
+#: src/main.c:88
+msgid ""
+"\n"
+"Options:\n"
+msgstr "\n"
+"Valinnat:\n"
+
+#: src/main.c:89
+msgid "  --help                Display this help and exit\n"
+msgstr "  --help                Näyttää tämän ohjeen ja poistuu\n"
+
+#: src/main.c:90
+msgid "  --version             Display the version and exit\n"
+msgstr "  --version             Näyttää version ja poistuu\n"
+
+#: src/main.c:91
+msgid "  --install ARCHIVE.obt Install the given theme archive and select it\n"
+msgstr "  --install ARKISTO.obt Asentaa annetun teema-arkiston ja valitsee sen\n"
+
+#: src/main.c:92
+msgid ""
+"  --archive THEME       Create a theme archive from the given theme "
+"directory\n"
+msgstr "  --archive TEEMA       Luo teema-arkiston annetusta teemakansiosta\n"
+
+#: src/main.c:93
+msgid "  --config-file FILE    Specify the path to the config file to use\n"
+msgstr "  --config-file TIEDOSTO    Määrittää polun käytettävään asetustiedostoon\n"
+
+#: src/main.c:94
+#, c-format
+msgid ""
+"\n"
+"Please report bugs at %s\n"
+"\n"
+msgstr "\n"
+"voisitko ilmoittaa virheistä %s\n"
+"\n"
+
+#: src/main.c:110
+msgid "--install requires an argument\n"
+msgstr "--install tarvitsee argumentin\n"
+
+#: src/main.c:116
+msgid "--archive requires an argument\n"
+msgstr "--archive tarvitsee argumentin\n"
+
+#: src/main.c:122
+msgid "--config-file requires an argument\n"
+msgstr "--config-file tarvitsee argumentin\n"
+
+#: src/main.c:213
+msgid ""
+"Failed to load the obconf.glade interface file. You have probably failed to "
+"install ObConf properly."
+msgstr "Virhe avatessa obconf glade interface -tiedostoa. ObConf:in asennuksessa saattaa olla virheitä."
+
+#: src/main.c:234
+msgid ""
+"Failed to load an rc.xml. You have probably failed to install Openbox "
+"properly."
+msgstr "Virhe ladatessa rc.xml. Openbox:in asennuksessa saattaa olla virheitä."
+
+#: src/main.c:243
+#, c-format
+msgid ""
+"Error while parsing the Openbox configuration file.  Your configuration file "
+"is not valid XML.\n"
+"\n"
+"Message: %s"
+msgstr "Virhe jäsennettäessä Openbox:in asetustiedostoa. Asetustiedosto ei ole pätevä XML-tiedosto.\n"
+"\n"
+"Viesti: %s"
+
+#: src/desktops.c:134 src/desktops.c:165 src/desktops.c:181
+msgid "(Unnamed desktop)"
+msgstr "(Nimeämätön työpöytä)"
+
+#: src/theme.c:109 src/theme.c:141
+msgid "Choose an Openbox theme"
+msgstr "Valitse Openbox-teema"
+
+#: src/theme.c:118
+msgid "Openbox theme archives"
+msgstr "Openbox teema-arkistot"
+
+#: src/archive.c:40
+#, c-format
+msgid "\"%s\" was installed to %s"
+msgstr "\"%s\" asennettiin %s"
+
+#: src/archive.c:65
+#, c-format
+msgid "\"%s\" was successfully created"
+msgstr "\"%s\" Luotiin onnistuneesti"
+
+#: src/archive.c:101
+#, c-format
+msgid ""
+"Unable to create the theme archive \"%s\".\n"
+"The following errors were reported:\n"
+"%s"
+msgstr "Teema-arkiston \"%s\" luominen epäonnistui\n"
+"Seuraavat virheet reportoitiin:\n"
+"%s"
+
+#: src/archive.c:106 src/archive.c:190
+#, c-format
+msgid "Unable to run the \"tar\" command: %s"
+msgstr "Seuraavan \"tar\" komennon suorittaminen epäonnistui: %s"
+
+#: src/archive.c:126
+#, c-format
+msgid "Unable to create directory \"%s\": %s"
+msgstr "Kansion \"%s\" luominen epäonnistui: %s"
+
+#: src/archive.c:148
+#, c-format
+msgid "\"%s\" does not appear to be a valid Openbox theme directory"
+msgstr "\"%s\" ei ole pätevä Openbox teemahakemisto"
+
+#: src/archive.c:158
+#, c-format
+msgid "Unable to move to directory \"%s\": %s"
+msgstr "Kansion \"%s\" siirtäminen epäonnistui: %s"
+
+#: src/archive.c:197
+#, c-format
+msgid ""
+"Unable to extract the file \"%s\".\n"
+"Please ensure that \"%s\" is writable and that the file is a valid Openbox "
+"theme archive.\n"
+"The following errors were reported:\n"
+"%s"
+msgstr "Tiedoston \"%s\" purkaminen epäonnistui\n"
+"Varmista, että \"%s\" on kirjoitettava ja, että se on kelvollinen Openbox teema-arkisto\n"
+"Seuraavat virheet reportoitiin:\n"
+"%s"
+
+#: src/mouse.c:72
+msgid "Custom actions"
+msgstr "Mukautettu toiminta"
+
