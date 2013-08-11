@@ -59,7 +59,7 @@ void obconf_error(gchar *msg, gboolean modal)
                                GTK_MESSAGE_ERROR,
                                GTK_BUTTONS_CLOSE,
                                "%s", msg);
-    gtk_window_set_title(GTK_WINDOW(d), "ObConf Error");
+    gtk_window_set_title(GTK_WINDOW(d), _("ObConf Error"));
     if (modal)
         gtk_dialog_run(GTK_DIALOG(d));
     else {
