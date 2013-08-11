@@ -287,7 +287,7 @@ static RrFont *write_font(GtkFontButton *w, const gchar *place)
     RrFontWeight weight = RR_FONTWEIGHT_NORMAL;
     RrFontSlant slant = RR_FONTSLANT_NORMAL;
 
-    if (mapping) return;
+    if (mapping) return NULL;
 
     font = g_strdup(gtk_font_button_get_font_name(w));
     while ((c = strrchr(font, ' '))) {

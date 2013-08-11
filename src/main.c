@@ -204,7 +204,7 @@ int main(int argc, char **argv)
 
     if (obc_theme_archive) {
         archive_create(obc_theme_archive);
-        return;
+        return 0;
     }
 
     p = g_build_filename(GLADEDIR, "obconf.glade", NULL);
