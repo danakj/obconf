@@ -1,17 +1,16 @@
 # Turkish translations for obconf package.
 # Copyright (C) 2008 Dana Jansens
 # This file is distributed under the same license as the obconf package.
-# <mektup@tutkudalmaz.org>, 2008.
-# Muhammet Kara <muhammet.k@gmail.com>, 2011.
+#
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: obconf 2.0.3\n"
 "Report-Msgid-Bugs-To: http://bugzilla.icculus.org/\n"
 "POT-Creation-Date: 2008-03-02 19:36-0500\n"
-"PO-Revision-Date: 2011-04-28 00:49+0300\n"
-"Last-Translator: Muhammet Kara <muhammet.k@gmail.com>\n"
-"Language-Team: Turkish <gnome-turk@gnome.org>\n"
+"PO-Revision-Date: 2010-08-20 21:09+0200\n"
+"Last-Translator: Mehmet Gülmen <memetgulmen@gmail.com>\n"
+"Language-Team: Turkish\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -23,7 +22,7 @@ msgstr "Openbox Yapılandırma Yöneticisi"
 
 #: src/strings.c:8
 msgid "<span weight=\"bold\">Theme</span>"
-msgstr "<span·weight=\"bold\">Tema</span>"
+msgstr "<span weight=\"bold\">Tema</span>"
 
 #: src/strings.c:9 src/strings.c:14 src/strings.c:18 src/strings.c:27
 #: src/strings.c:43 src/strings.c:51 src/strings.c:54 src/strings.c:63
@@ -37,7 +36,7 @@ msgstr "    "
 
 #: src/strings.c:10
 msgid "_Install a new theme..."
-msgstr "_Yeni tema kur"
+msgstr "_Yeni bir tema kur"
 
 #: src/strings.c:11
 msgid "Create a theme _archive (.obt)..."
@@ -49,7 +48,7 @@ msgstr "Tema"
 
 #: src/strings.c:13
 msgid "<span weight=\"bold\">Windows</span>"
-msgstr "<span·weight=\"bold\">Pencereler</span>"
+msgstr "<span weight=\"bold\">Pencereler</span>"
 
 #: src/strings.c:15
 msgid "_Windows retain a border when undecorated"
@@ -61,7 +60,7 @@ msgstr "Simge durumuna küçültmeyi _canlandır ve yeniden yükle"
 
 #: src/strings.c:17
 msgid "<span weight=\"bold\">Window Titles</span>"
-msgstr "<span·weight=\"bold\">Pencere Başlıkları</span>"
+msgstr "<span weight=\"bold\">Pencere Başlıkları</span>"
 
 #: src/strings.c:19
 msgid "_Button order:"
@@ -81,7 +80,7 @@ msgstr ""
 "D - Tüm masaüstleri (yapışkan) düğmesi\n"
 "S - Gölgeleme (sarma) düğmesi\n"
 "L - Etiket (pencere başlığı)\n"
-"I - Simge durumuna (küçültme) düğmesi\n"
+"I - Simge durumuna küçültme düğmesi\n"
 "M - Ekranı kaplama düğmesi\n"
 "C - Kapatma düğmesi"
 
@@ -131,11 +130,11 @@ msgstr ""
 
 #: src/strings.c:42
 msgid "<span weight=\"bold\">Fonts</span>"
-msgstr "<span·weight=\"bold\">Yazı Biçimleri</span>"
+msgstr "<span weight=\"bold\">Yazıtipleri</span>"
 
 #: src/strings.c:44
 msgid "_Active window title: "
-msgstr "_Etkin pencere başlığı"
+msgstr "_Etkin pencere başlığı:"
 
 #: src/strings.c:45
 msgid "_Inactive window title: "
@@ -147,11 +146,11 @@ msgstr "Menü _başlığı: "
 
 #: src/strings.c:47
 msgid "_Menu Item: "
-msgstr "_Menü Öğesi"
+msgstr "_Menü Öğeleri:"
 
 #: src/strings.c:48
 msgid "_On-screen display: "
-msgstr "_Ekran görüntüsü"
+msgstr "_Ekran görüntüsü:"
 
 #: src/strings.c:49
 msgid "Appearance"
@@ -159,15 +158,15 @@ msgstr "Görünüm"
 
 #: src/strings.c:50 src/strings.c:97
 msgid "<span weight=\"bold\">Focusing Windows</span>"
-msgstr "<span·weight=\"bold\">Pencerelere Odaklan</span>"
+msgstr "<span weight=\"bold\">Pencere Odaklanması</span>"
 
 #: src/strings.c:52
 msgid "Focus _new windows when they appear"
-msgstr "Göründüğünde _yeni pencerelere odaklan"
+msgstr "Yeni pencerelere _göründükleri zaman odaklan"
 
 #: src/strings.c:53
 msgid "<span weight=\"bold\">Placing Windows</span>"
-msgstr "<span·weight=\"bold\">Pencereleri Konumlandırma</span>"
+msgstr "<span weight=\"bold\">Pencereleri Konumlandırma</span>"
 
 #: src/strings.c:55
 msgid "_Place new windows under the mouse pointer"
@@ -179,19 +178,19 @@ msgstr "Yeni pencereleri yerleştirildiğinde _ortala"
 
 #: src/strings.c:57
 msgid "Prefer to place new windows _on:"
-msgstr "Yeni pencereleri _yerleştirmeyi öner:"
+msgstr "Yeni pencereleri şuraya _yerleştir:"
 
 #: src/strings.c:58
 msgid "All monitors"
-msgstr "Tüm ekranlar"
+msgstr "Tüm ekranlara"
 
 #: src/strings.c:59
 msgid "The active monitor"
-msgstr "Etkin ekran"
+msgstr "Etkin ekrana"
 
 #: src/strings.c:60
 msgid "The monitor with the mouse"
-msgstr "Fareli görüntüleyici"
+msgstr "Farenin bulunduğu ekrana"
 
 #: src/strings.c:61
 msgid "Windows"
@@ -199,7 +198,7 @@ msgstr "Pencereler"
 
 #: src/strings.c:62
 msgid "<span weight=\"bold\">Moving and Resizing Windows</span>"
-msgstr "<span·weight=\"bold\">Pencereleri Taşı ve Yeniden Boyutlandır</span>"
+msgstr "<span weight=\"bold\">Pencereleri Taşı ve Yeniden Boyutlandır</span>"
 
 #: src/strings.c:64
 msgid "Update the window contents while _resizing"
@@ -238,11 +237,11 @@ msgstr "ms"
 
 #: src/strings.c:75
 msgid "<span weight=\"bold\">Information Dialog</span>"
-msgstr "<span·weight=\"bold\">Bilgi Penceresi</span>"
+msgstr "<span weight=\"bold\">Bilgi Penceresi</span>"
 
 #: src/strings.c:76
 msgid "Show _information dialog:"
-msgstr "_Bilgi penceresini görüntüle"
+msgstr "_Bilgi penceresini görüntüle:"
 
 #: src/strings.c:77
 msgid "When resizing terminal windows"
@@ -250,7 +249,7 @@ msgstr "Terminal pencerelerini yeniden boyutlandırırken"
 
 #: src/strings.c:78
 msgid "Always"
-msgstr "Herzaman"
+msgstr "Her zaman"
 
 #: src/strings.c:79
 msgid "Never"
@@ -270,11 +269,11 @@ msgstr "Pencere üzerinde"
 
 #: src/strings.c:84
 msgid "Fixed position on screen"
-msgstr "Ekranda karışık konum"
+msgstr "Ekranda sabit konum"
 
 #: src/strings.c:86
 msgid "Fixed _x position:"
-msgstr "Karışı _x konumu:"
+msgstr "Sabit _x konumu:"
 
 #: src/strings.c:87 src/strings.c:92
 msgid "Centered"
@@ -290,15 +289,15 @@ msgstr "Sağ köşeden"
 
 #: src/strings.c:91
 msgid "Fixed _y position:"
-msgstr "Karışık _y konumu:"
+msgstr "Sabit _y konumu:"
 
 #: src/strings.c:93
 msgid "From top edge"
-msgstr "Üst kenardan"
+msgstr "Üst köşeden"
 
 #: src/strings.c:94
 msgid "From bottom edge"
-msgstr "Alt kenardan"
+msgstr "Alt köşeden"
 
 #: src/strings.c:96
 msgid "Move & Resize"
@@ -306,7 +305,7 @@ msgstr "Taşı & Yeniden Boyutlandır"
 
 #: src/strings.c:99
 msgid "_Focus windows when the mouse pointer moves over them"
-msgstr "Fare imleci üzerine geldiğine pencerelere _odaklan"
+msgstr "Pencerelere fare imleci ile üzerine gelindiğinde _odaklan"
 
 #: src/strings.c:101
 msgid "Move focus under the mouse when _switching desktops"
@@ -314,7 +313,7 @@ msgstr "Masaüstleri _değişirken odağı fare imlecinin altına taşı"
 
 #: src/strings.c:102
 msgid "Move focus _under the mouse when the mouse is not moving"
-msgstr "Fara hareket etmezken odağı _fare imlecinin altına taşı"
+msgstr "Fare hareket etmezken odağı _fare imlecinin altına taşı"
 
 #: src/strings.c:103
 msgid "_Raise windows when the mouse pointer moves over them"
@@ -322,27 +321,27 @@ msgstr "Fare imleci üzerine geldiğinde pencereleri _yükselt"
 
 #: src/strings.c:104
 msgid "_Delay before focusing and raising windows:"
-msgstr "Pencerelere odaklanırken ve penceleri yükseltirken _gecik:"
+msgstr "Pencerelere odaklanırken ve yükseltirken _gecikme süresi:"
 
 #: src/strings.c:106
 msgid "<span weight=\"bold\">Titlebar</span>"
-msgstr "<span·weight=\"bold\">Başlık Çubuğu</span>"
+msgstr "<span weight=\"bold\">Başlık Çubuğu</span>"
 
 #: src/strings.c:108
 msgid "Double click on the _titlebar:"
-msgstr "_Başlık çubuğuna çift tıkla:"
+msgstr "_Başlık çubuğuna çift tıklanması:"
 
 #: src/strings.c:109
 msgid "Maximizes the window"
-msgstr "Pencereyi büyült"
+msgstr "Pencereyi büyütür"
 
 #: src/strings.c:110
 msgid "Shades the window"
-msgstr "Pencereyi gölgele"
+msgstr "Pencereyi gölgeler"
 
 #: src/strings.c:111
 msgid "Double click ti_me:"
-msgstr "_Zamana çift tıkla:"
+msgstr "Çift tıklama _süresi:"
 
 #: src/strings.c:114
 msgid "Mouse"
@@ -350,7 +349,7 @@ msgstr "Fare"
 
 #: src/strings.c:115
 msgid "<span weight=\"bold\">Desktops</span>"
-msgstr "<span·weight=\"bold\">Masaüstleri</span>"
+msgstr "<span weight=\"bold\">Masaüstleri</span>"
 
 #: src/strings.c:117
 msgid "_Show a notification when switching desktops"
@@ -362,11 +361,11 @@ msgstr "Duyuru gösterim _süresi:"
 
 #: src/strings.c:121
 msgid "_Number of desktops: "
-msgstr "Masaüstlerinin _sayısı"
+msgstr "Masaüstü _sayısı"
 
 #: src/strings.c:122
 msgid "_Desktop names:"
-msgstr "_Masaüstlerinin isimleri:"
+msgstr "_Masaüstü isimleri:"
 
 #: src/strings.c:123
 msgid "Desktops"
@@ -374,7 +373,7 @@ msgstr "Masaüstleri"
 
 #: src/strings.c:124
 msgid "<span weight=\"bold\">Desktop Margins</span>"
-msgstr "<span·weight=\"bold\">Masaüstü Kenar Boşlukları</span>"
+msgstr "<span weight=\"bold\">Masaüstü Kenar Boşlukları</span>"
 
 #: src/strings.c:126
 msgid ""
@@ -382,9 +381,9 @@ msgid ""
 "will not be placed within a margin, and maximized windows will not cover "
 "them."
 msgstr ""
-"Masaüstü kenar boşlukları ekranınızın köeşelerinde ayrılmış alanlardır. Yeni "
-"pencereler boşluklar içine yerleştirilemez ve büyültülen pencelere "
-"boşlukları kaplayamaz."
+"Masaüstü kenar boşlukları ekranınızın köşelerinde ayrılmış alanlardır. "
+"Yeni pencereler boşlukların içine yerleştirilmez ve büyütülen pencereler "
+"boşlukları kaplamaz."
 
 #: src/strings.c:127
 msgid "_Top"
@@ -408,7 +407,7 @@ msgstr "Kenar Boşlukları"
 
 #: src/strings.c:136
 msgid "<span weight=\"bold\">Dock</span>"
-msgstr "<span weight=\"bold\">Panel</span>"
+msgstr "<span weight=\"bold\">Uygulama Tablası</span>"
 
 #: src/strings.c:138
 msgid ""
@@ -416,14 +415,14 @@ msgid ""
 "is not visible on screen until a dockapp is run.  Dockapps can be used to "
 "show things like a clock, or to provide you with a system tray."
 msgstr ""
-"Panel, \"dockapps\" ya da panel uygulamaları için özel bir kaptır.  Bir "
-"panel uygulaması çalışmadığı sürece ekranda görünmez.  Panel uygulamaları; "
-"ekranda bir duvar saati gibi şeyler göstermek ya da size bir sistem tepsisi "
-"sağlamak için kullanılabilir."
+"Uygulama tablası \"dockapps\" adını verdiğimiz uygulamaların bulunduğu bir "
+"tabladır. Bu uygulamalardan biri başlatılmadıkça tabla görünmez. Bu tabla "
+"saat gibi uygulamaları içermekten başka bir sistem tablası olarak da "
+"kullanılabilir."
 
 #: src/strings.c:139
 msgid "<span weight=\"bold\">Position</span>"
-msgstr "<span·weight=\"bold\">Konum</span>"
+msgstr "<span weight=\"bold\">Konum</span>"
 
 #: src/strings.c:141
 msgid "_Position:"
@@ -479,7 +478,7 @@ msgstr "_Pencerelerin takma alanına yerleşmesini kabul et"
 
 #: src/strings.c:156
 msgid "_Orientation: "
-msgstr "_Oryantasyon"
+msgstr "_Yön"
 
 #: src/strings.c:157
 msgid "Vertical"
@@ -491,39 +490,39 @@ msgstr "Yatay"
 
 #: src/strings.c:159
 msgid "<span weight=\"bold\">Stacking</span>"
-msgstr "<span·weight=\"bold\">Yığma</span>"
+msgstr "<span weight=\"bold\">Döşeme</span>"
 
 #: src/strings.c:161
 msgid "Keep dock _above other windows"
-msgstr "Tamkayı pencerelerin _üzerinde tut"
+msgstr "Tablayı pencerelerin ü_zerinde tut"
 
 #: src/strings.c:162
 msgid "A_llow dock to be both above and below windows"
-msgstr "Takmanın pencerelerin hem üzerinde hem de altında olmasını _sağla"
+msgstr "Tabla pencerelerin üzerinde de altında da _olabilir"
 
 #: src/strings.c:163
 msgid "Keep dock _below other windows"
-msgstr "Takmayı diğer pencelerin_altında tut"
+msgstr "Tablayı diğer pencelerin _altında tut"
 
 #: src/strings.c:164
 msgid "<span weight=\"bold\">Hiding</span>"
-msgstr "<span·weight=\"bold\">Gizleniyor</span>"
+msgstr "<span weight=\"bold\">Gizleme</span>"
 
 #: src/strings.c:166
 msgid "_Hide off screen"
-msgstr "Ekranı _gizle"
+msgstr "Görünmezliği etkinleştir"
 
 #: src/strings.c:168
 msgid "_Delay before hiding:"
-msgstr "Gizlemeden önce _gecik:"
+msgstr "Gizlemeden önceki _gecikme süresi:"
 
 #: src/strings.c:171
 msgid "Delay before _showing:"
-msgstr "_Göstermeden önce gecik:"
+msgstr "_Göstermeden önce gecikme süresi:"
 
 #: src/strings.c:173
 msgid "Dock"
-msgstr "Takma"
+msgstr "Uygulama Tablası"
 
 #: src/strings.c:174
 msgid "Abo_ut"
@@ -535,7 +534,7 @@ msgstr "ObConf Hakkında"
 
 #: src/strings.c:176
 msgid "<span weight=\"bold\" size=\"xx-large\">ObConf VERSION</span>"
-msgstr "<span·weight=\"bold\"·size=\"xx-large\">ObConf·Sürümü</span>"
+msgstr "<span weight=\"bold\" size=\"xx-large\">ObConf Sürümü</span>"
 
 #: src/strings.c:177
 msgid "A preferences manager for Openbox"
@@ -548,10 +547,10 @@ msgid ""
 "Tim Riley <tr@slackzone.org>\n"
 "Javeed Shaikh <syscrash2k@gmail.com>"
 msgstr ""
-"Telif Hakkı·(c)·2003-2008\n"
-"Dana·Jansens·<danakj@orodu.net>\n"
-"Tim·Riley·<tr@slackzone.org>\n"
-"Javeed·Shaikh·<syscrash2k@gmail.com>"
+"Telif Hakkı (c) 2003-2008\n"
+"Dana Jansens <danakj@orodu.net>\n"
+"Tim Riley <tr@slackzone.org>\n"
+"Javeed Shaikh <syscrash2k@gmail.com>"
 
 #: src/strings.c:182
 msgid "window1"
@@ -559,7 +558,7 @@ msgstr "pencere1"
 
 #: src/strings.c:183
 msgid "<span weight=\"bold\">Press the key you wish to bind...</span>"
-msgstr "<span·weight=\"bold\">Bğlamak istediğiniz tuşa basın...</span>"
+msgstr "<span weight=\"bold\">Bağlamak istediğiniz tuşa basın...</span>"
 
 #: src/main.c:72 src/main.c:74 src/main.c:76
 msgid "Copyright (c)"
@@ -587,20 +586,19 @@ msgstr "  --version              Sürümü görüntüle ve çık\n"
 
 #: src/main.c:91
 msgid "  --install ARCHIVE.obt Install the given theme archive and select it\n"
-msgstr "  --install ARCHIVE.obt Belirlenen tema arşivini kurar ve kullanır\n"
+msgstr "  --install ARŞİV.obt Belirlenen tema arşivini kur ve seç\n"
 
 #: src/main.c:92
 msgid ""
 "  --archive THEME       Create a theme archive from the given theme "
 "directory\n"
 msgstr ""
-"  --archive THEME          Verilen tema dizininden tema arşivi oluşturur\n"
+"  --archive THEME          Verilen tema dizininden tema arşivi "
+"oluştur\n"
 
 #: src/main.c:93
 msgid "  --config-file FILE    Specify the path to the config file to use\n"
-msgstr ""
-"  --config-file DOSYA    Kullanılacak yapılandırma dosyasının yolunu "
-"belirtin\n"
+msgstr "  --config-file FILE    Kullanılacak yapılandırma dosyasının konumunu belirle\n"
 
 #: src/main.c:94
 #, c-format
@@ -623,23 +621,23 @@ msgstr "--archvie bir değişkene ihtiyaç duyar\n"
 
 #: src/main.c:122
 msgid "--config-file requires an argument\n"
-msgstr "--config-file bir argümana ihtiyaç duyuyor\n"
+msgstr "--config-file bir değişkene ihtiyaç duyar\n"
 
 #: src/main.c:213
 msgid ""
 "Failed to load the obconf.glade interface file. You have probably failed to "
 "install ObConf properly."
 msgstr ""
-"obconf.glade arayüz dosyası yüklenemedi. Muhtemelen ObConf'u doğru şekilde "
-"kuramadınız."
+"obconf.glade arayüz dosyası yüklenemedi. Mumtemelen ObConf uygulaması "
+"düzgün biçimde yüklenmemiş."
 
 #: src/main.c:234
 msgid ""
 "Failed to load an rc.xml. You have probably failed to install Openbox "
 "properly."
 msgstr ""
-"rc.xml yüklenmesi başarısız oldu. Muhtemelen Openbox'ı doğru şekilde "
-"kuramadınız."
+"Bir rc.xml dosyası yüklenemedi. Mumtemelen ObConf uygulaması düzgün "
+"biçimde yüklenmemiş."
 
 #: src/main.c:243
 #, c-format
@@ -649,10 +647,6 @@ msgid ""
 "\n"
 "Message: %s"
 msgstr ""
-"Openbox yapılandırma dosyası ayrıştırılırken hata oluştu.  Yapılandırma "
-"dosyanız geçerli bir XML dosyası değil.\n"
-"\n"
-"Mesaj: %s"
 
 #: src/desktops.c:134 src/desktops.c:165 src/desktops.c:181
 msgid "(Unnamed desktop)"
@@ -664,7 +658,7 @@ msgstr "Bir Openbox teması seçin"
 
 #: src/theme.c:118
 msgid "Openbox theme archives"
-msgstr "Openbox tema arşivi"
+msgstr "Openbox tema arşivleri"
 
 #: src/archive.c:40
 #, c-format
