@@ -1,0 +1,725 @@
+# Serbian translations for ObConf package
+# Copyright (C) 2008 Dana Jansens
+# This file is distributed under the same license as the ObConf package.
+# Jay A. Fleming <tito.nehru.naser@gmail.com>, 2008.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: obconf 2.0.3\n"
+"Report-Msgid-Bugs-To: http://bugzilla.icculus.org\n"
+"POT-Creation-Date: 2008-03-02 19:36-0500\n"
+"PO-Revision-Date: 2008-12-01 17:02+0100\n"
+"Last-Translator: Jay A. Fleming <tito.nehru.naser@gmail.com>\n"
+"Language-Team: None\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: src/strings.c:7
+msgid "Openbox Configuration Manager"
+msgstr "Upravljač podešavanjima Openboksa"
+
+#: src/strings.c:8
+msgid "<span weight=\"bold\">Theme</span>"
+msgstr "<span weight=\"bold\">Tema</span>"
+
+#: src/strings.c:9 src/strings.c:14 src/strings.c:18 src/strings.c:27
+#: src/strings.c:43 src/strings.c:51 src/strings.c:54 src/strings.c:63
+#: src/strings.c:72 src/strings.c:80 src/strings.c:85 src/strings.c:98
+#: src/strings.c:100 src/strings.c:107 src/strings.c:113 src/strings.c:116
+#: src/strings.c:118 src/strings.c:125 src/strings.c:137 src/strings.c:140
+#: src/strings.c:151 src/strings.c:154 src/strings.c:160 src/strings.c:165
+#: src/strings.c:167 src/strings.c:170
+msgid "    "
+msgstr "    "
+
+#: src/strings.c:10
+msgid "_Install a new theme..."
+msgstr "Instalirajte novu temu..."
+
+#: src/strings.c:11
+msgid "Create a theme _archive (.obt)..."
+msgstr "Napravite arhivu teme (.obt)..."
+
+#: src/strings.c:12
+msgid "Theme"
+msgstr "Tema"
+
+#: src/strings.c:13
+msgid "<span weight=\"bold\">Windows</span>"
+msgstr "<span weight=\"bold\">Prozori</span>"
+
+#: src/strings.c:15
+msgid "_Windows retain a border when undecorated"
+msgstr "Prozori čuvaju ivice kada nisu ukrašeni"
+
+#: src/strings.c:16
+msgid "A_nimate iconify and restore"
+msgstr "Animirano umanjivanje i vraćanje"
+
+#: src/strings.c:17
+msgid "<span weight=\"bold\">Window Titles</span>"
+msgstr "<span weight=\"bold\">Naslovne linije prozora</span>"
+
+#: src/strings.c:19
+msgid "_Button order:"
+msgstr "Redosled dugmadi:"
+
+#: src/strings.c:20
+msgid ""
+"N - The window's icon\n"
+"D - The all-desktops (sticky) button\n"
+"S - The shade (roll up) button\n"
+"L - The label (window title)\n"
+"I - The iconify (minimize) button\n"
+"M - The maximize button\n"
+"C - The close button"
+msgstr ""
+"N - Ikonica prozora\n"
+"D   Dugme svih radnih površina (sticky)\n"
+"S - Dugme za zamotavanje\n"
+"L - Natpis (Naslov prozora)\n"
+"I - Dugme za umanjivanje\n"
+"M - Dugme za uvećevanje\n"
+"C - Dugme za zatvaranje"
+
+#: src/strings.c:28
+msgid ""
+"N:\n"
+"L:\n"
+"I:\n"
+"M:"
+msgstr ""
+"N:\n"
+"L:\n"
+"I:\n"
+"M:"
+
+#: src/strings.c:32
+msgid ""
+"Window icon\n"
+"Window label (Title)\n"
+"Iconify (Minimize)\n"
+"Maximize"
+msgstr ""
+"Ikonica prozora\n"
+"Natpis (Naslov prozora)\n"
+"Umanji\n"
+"Uvećaj"
+
+#: src/strings.c:36
+msgid ""
+"C:\n"
+"S:\n"
+"D:"
+msgstr ""
+"C:\n"
+"S:\n"
+"D:"
+
+#: src/strings.c:39
+msgid ""
+"Close\n"
+"Shade (Roll up)\n"
+"Omnipresent (On all desktops)"
+msgstr ""
+"Zatvori\n"
+"Zamotaj\n"
+"Prisutan na svim radnim površinama"
+
+#: src/strings.c:42
+msgid "<span weight=\"bold\">Fonts</span>"
+msgstr "<span weight=\"bold\">Fontovi</span>"
+
+#: src/strings.c:44
+msgid "_Active window title: "
+msgstr "Naslov aktivnog prozora: "
+
+#: src/strings.c:45
+msgid "_Inactive window title: "
+msgstr "Naslov neaktivog prozora: "
+
+#: src/strings.c:46
+msgid "Menu _header: "
+msgstr "Zaglavlje menija: "
+
+#: src/strings.c:47
+msgid "_Menu Item: "
+msgstr "Stavka menija: "
+
+#: src/strings.c:48
+msgid "_On-screen display: "
+msgstr "Prikazivač na ekranu (_OSD): "
+
+#: src/strings.c:49
+msgid "Appearance"
+msgstr "Izgled"
+
+#: src/strings.c:50 src/strings.c:97
+msgid "<span weight=\"bold\">Focusing Windows</span>"
+msgstr "<span weight=\"bold\">Prozori u žiži</span>"
+
+#: src/strings.c:52
+msgid "Focus _new windows when they appear"
+msgstr "Novi prozor je u žiži kada se pojavi"
+
+#: src/strings.c:53
+msgid "<span weight=\"bold\">Placing Windows</span>"
+msgstr "<span weight=\"bold\">Razmeštaj prozora</span>"
+
+#: src/strings.c:55
+msgid "_Place new windows under the mouse pointer"
+msgstr "Postavi novi prozor ispod pokazivača miša"
+
+#: src/strings.c:56
+msgid "_Center new windows when they are placed"
+msgstr "Centriraj nove prozore kada su postavljeni"
+
+#: src/strings.c:57
+msgid "Prefer to place new windows _on:"
+msgstr "Postavi novi prozor na:"
+
+#: src/strings.c:58
+msgid "All monitors"
+msgstr "Sve monitore"
+
+#: src/strings.c:59
+msgid "The active monitor"
+msgstr "Aktivni monitor"
+
+#: src/strings.c:60
+msgid "The monitor with the mouse"
+msgstr "Monitor sa mišem"
+
+#: src/strings.c:61
+msgid "Windows"
+msgstr "Prozori"
+
+#: src/strings.c:62
+msgid "<span weight=\"bold\">Moving and Resizing Windows</span>"
+msgstr "<span weight=\"bold\">Pomeranje i promena dimenzija prozora</span>"
+
+#: src/strings.c:64
+msgid "Update the window contents while _resizing"
+msgstr "Osvežavaj sadržaj prozora kod menjanja njegovih dimenzija"
+
+#: src/strings.c:65
+msgid "Drag _threshold distance:"
+msgstr "Udaljenost praga prevlačenja:"
+
+#: src/strings.c:66 src/strings.c:68 src/strings.c:70 src/strings.c:90
+#: src/strings.c:95 src/strings.c:128 src/strings.c:130 src/strings.c:132
+#: src/strings.c:134
+msgid "px"
+msgstr "piksela"
+
+#: src/strings.c:67
+msgid "Amount of resistance against other _windows:"
+msgstr "Osetljivost prema drugim prozorima:"
+
+#: src/strings.c:69
+msgid "Amount of resistance against screen _edges:"
+msgstr "Osetljivost prema ivicama ekrana:"
+
+#: src/strings.c:71
+msgid "_Switch desktops when moving a window past the screen edge"
+msgstr "Izmeni radne površine kada se prozor pomera van ivica ekrana"
+
+#: src/strings.c:73
+msgid "_Amount of time to wait before switching:"
+msgstr "Čekaj pre izmenjivanja:"
+
+#: src/strings.c:74 src/strings.c:105 src/strings.c:112 src/strings.c:120
+#: src/strings.c:169 src/strings.c:172
+msgid "ms"
+msgstr "milisekundi"
+
+#: src/strings.c:75
+msgid "<span weight=\"bold\">Information Dialog</span>"
+msgstr "<span weight=\"bold\">Prozorče za informacije</span>"
+
+#: src/strings.c:76
+msgid "Show _information dialog:"
+msgstr "Prikaži prozorče za informacije:"
+
+#: src/strings.c:77
+msgid "When resizing terminal windows"
+msgstr "Kada menjam dimenzije prozora terminala"
+
+#: src/strings.c:78
+msgid "Always"
+msgstr "Uvek"
+
+#: src/strings.c:79
+msgid "Never"
+msgstr "Nikada"
+
+#: src/strings.c:81
+msgid "Information dialog's _position:"
+msgstr "Položaj prozorčeta za informacije:"
+
+#: src/strings.c:82
+msgid "Centered on the window"
+msgstr "Centrirano na prozoru"
+
+#: src/strings.c:83
+msgid "Above the window"
+msgstr "Iznad prozora"
+
+#: src/strings.c:84
+msgid "Fixed position on screen"
+msgstr "Utvrđen položaj na ekranu"
+
+#: src/strings.c:86
+msgid "Fixed _x position:"
+msgstr "Utvrđen položaj na X osi:"
+
+#: src/strings.c:87 src/strings.c:92
+msgid "Centered"
+msgstr "Centrirano"
+
+#: src/strings.c:88
+msgid "From left edge"
+msgstr "Od leve ivice"
+
+#: src/strings.c:89
+msgid "From right edge"
+msgstr "Od desne ivice"
+
+#: src/strings.c:91
+msgid "Fixed _y position:"
+msgstr "Utvrđen položaj po Y osi:"
+
+#: src/strings.c:93
+msgid "From top edge"
+msgstr "Od gornje ivice"
+
+#: src/strings.c:94
+msgid "From bottom edge"
+msgstr "Od donje ivice"
+
+#: src/strings.c:96
+msgid "Move & Resize"
+msgstr "Pomeraj/Menjaj dimenzije"
+
+#: src/strings.c:99
+msgid "_Focus windows when the mouse pointer moves over them"
+msgstr "Postavi prozore u žižu kada pokazivač miša prelazi preko njih"
+
+#: src/strings.c:101
+msgid "Move focus under the mouse when _switching desktops"
+msgstr "Žiža je na mišu kada izmenjujem radne površine"
+
+#: src/strings.c:102
+msgid "Move focus _under the mouse when the mouse is not moving"
+msgstr "Žiža je na mišu kada se miš ne pomera"
+
+#: src/strings.c:103
+msgid "_Raise windows when the mouse pointer moves over them"
+msgstr "Izdigni prozore kada se preko njih pomera pokazivač miša"
+
+#: src/strings.c:104
+msgid "_Delay before focusing and raising windows:"
+msgstr "Kašnjenje pre stavljanja u žižu i izdizanja prozora:"
+
+#: src/strings.c:106
+msgid "<span weight=\"bold\">Titlebar</span>"
+msgstr "<span weight=\"bold\">Naslovna linija</span>"
+
+#: src/strings.c:108
+msgid "Double click on the _titlebar:"
+msgstr "Dvostruki pritisak pokazivačem miša na naslovnu liniju:"
+
+#: src/strings.c:109
+msgid "Maximizes the window"
+msgstr "Uvećaj prozor"
+
+#: src/strings.c:110
+msgid "Shades the window"
+msgstr "Zamotaj prozor"
+
+#: src/strings.c:111
+msgid "Double click ti_me:"
+msgstr "Brzina dvostrukog pritiska pokazivača miša:"
+
+#: src/strings.c:114
+msgid "Mouse"
+msgstr "Miš"
+
+#: src/strings.c:115
+msgid "<span weight=\"bold\">Desktops</span>"
+msgstr "<span weight=\"bold\">Radne površine</span>"
+
+#: src/strings.c:117
+msgid "_Show a notification when switching desktops"
+msgstr "Prikazuj obaveštenje kod izmenjivanja radnih površina"
+
+#: src/strings.c:119
+msgid "_Amount of time to show the notification for:"
+msgstr "Trajanje prikaza obaveštenja za:"
+
+#: src/strings.c:121
+msgid "_Number of desktops: "
+msgstr "Broj radnih površina: "
+
+#: src/strings.c:122
+msgid "_Desktop names:"
+msgstr "Imena radnih površina:"
+
+#: src/strings.c:123
+msgid "Desktops"
+msgstr "Radne površine"
+
+#: src/strings.c:124
+msgid "<span weight=\"bold\">Desktop Margins</span>"
+msgstr "<span weight=\"bold\">Margine radnih površina</span>"
+
+#: src/strings.c:126
+msgid ""
+"Desktop margins are reserved areas on the edge of your screen.  New windows "
+"will not be placed within a margin, and maximized windows will not cover "
+"them."
+msgstr "Margine radne površine su rezervisana polja na ivicama vašeg ekrana.  "
+"Novi prozori se neće razmeštati unutar margina, a uvećani prozori neće "
+"ih prekrivati."
+
+#: src/strings.c:127
+msgid "_Top"
+msgstr "Vrh"
+
+#: src/strings.c:129
+msgid "_Left"
+msgstr "Levo"
+
+#: src/strings.c:131
+msgid "_Right"
+msgstr "Desno"
+
+#: src/strings.c:133
+msgid "_Bottom"
+msgstr "Dno"
+
+#: src/strings.c:135
+msgid "Margins"
+msgstr "Margine"
+
+#: src/strings.c:136
+msgid "<span weight=\"bold\">Dock</span>"
+msgstr "<span weight=\"bold\">Obaveštajna zona</span>"
+
+#: src/strings.c:138
+msgid ""
+"The dock is a special container for \"dockapps\", or dock applications.  It "
+"is not visible on screen until a dockapp is run.  Dockapps can be used to "
+"show things like a clock, or to provide you with a system tray."
+msgstr ""
+"Obaveštajna zona je skladište za tzv. „dockapps“. Nije vidljiva na ekranu "
+"kada se programi koji se smeštaju u nju pokreću.  Ovi programi mogu prikazivati "
+"razne stvari kao npr. vreme, ili pružati usluge sistemske kasete."
+
+#: src/strings.c:139
+msgid "<span weight=\"bold\">Position</span>"
+msgstr "<span weight=\"bold\">Postavljanje</span>"
+
+#: src/strings.c:141
+msgid "_Position:"
+msgstr "Položaj:"
+
+#: src/strings.c:142
+msgid "Top Left"
+msgstr "Na vrhu levo"
+
+#: src/strings.c:143
+msgid "Top"
+msgstr "Na vrhu"
+
+#: src/strings.c:144
+msgid "Top Right"
+msgstr "Na vrhu desno"
+
+#: src/strings.c:145
+msgid "Left"
+msgstr "Levo"
+
+#: src/strings.c:146
+msgid "Right"
+msgstr "Desno"
+
+#: src/strings.c:147
+msgid "Bottom Left"
+msgstr "Na dnu levo"
+
+#: src/strings.c:148
+msgid "Bottom"
+msgstr "Na dnu"
+
+#: src/strings.c:149
+msgid "Bottom Right"
+msgstr "Na dnu desno"
+
+#: src/strings.c:150
+msgid "Floating"
+msgstr "Lebdeći"
+
+#: src/strings.c:152
+msgid "_Floating position:"
+msgstr "Postavljanje za lebdeći položaj:"
+
+#: src/strings.c:153
+msgid "x"
+msgstr "x"
+
+#: src/strings.c:155
+msgid "Allow _windows to be placed within the dock's area"
+msgstr "Dozvoli prozorima razmeštaj u polju obaveštajne zone"
+
+#: src/strings.c:156
+msgid "_Orientation: "
+msgstr "Orijentacija: "
+
+#: src/strings.c:157
+msgid "Vertical"
+msgstr "Vertikalno"
+
+#: src/strings.c:158
+msgid "Horizontal"
+msgstr "Horizontalno"
+
+#: src/strings.c:159
+msgid "<span weight=\"bold\">Stacking</span>"
+msgstr "<span weight=\"bold\">Slaganje</span>"
+
+#: src/strings.c:161
+msgid "Keep dock _above other windows"
+msgstr "Postavi obaveštajnu zonu iznad drugih prozora"
+
+#: src/strings.c:162
+msgid "A_llow dock to be both above and below windows"
+msgstr "Dozvoli da obaveštajna zona bude i iznad i ispod drugih prozora"
+
+#: src/strings.c:163
+msgid "Keep dock _below other windows"
+msgstr "Postavi obaveštajnu zonu ispod drugih prozora"
+
+#: src/strings.c:164
+msgid "<span weight=\"bold\">Hiding</span>"
+msgstr "<span weight=\"bold\">Skrivanje</span>"
+
+#: src/strings.c:166
+msgid "_Hide off screen"
+msgstr "Sakrij van ekrana"
+
+#: src/strings.c:168
+msgid "_Delay before hiding:"
+msgstr "Kašnjenje pre skrivanja:"
+
+#: src/strings.c:171
+msgid "Delay before _showing:"
+msgstr "Kašnjenje pre prikazivanja:"
+
+#: src/strings.c:173
+msgid "Dock"
+msgstr "Obaveštajna zona"
+
+#: src/strings.c:174
+msgid "Abo_ut"
+msgstr "O programu"
+
+#: src/strings.c:175
+msgid "About ObConf"
+msgstr "O programu Obkonf"
+
+#: src/strings.c:176
+msgid "<span weight=\"bold\" size=\"xx-large\">ObConf VERSION</span>"
+msgstr "<span weight=\"bold\" size=\"xx-large\">ObConf VERSION</span>"
+
+#: src/strings.c:177
+msgid "A preferences manager for Openbox"
+msgstr "Upravljač podešavanjima Openboksa"
+
+#: src/strings.c:178
+msgid ""
+"Copyright (c) 2003-2008\n"
+"Dana Jansens <danakj@orodu.net>\n"
+"Tim Riley <tr@slackzone.org>\n"
+"Javeed Shaikh <syscrash2k@gmail.com>"
+msgstr ""
+"Sva prava zadržana, 2003-2008\n"
+"Dana Jansens <danakj@orodu.net>\n"
+"Tim Riley <tr@slackzone.org>\n"
+"Javeed Shaikh <syscrash2k@gmail.com>"
+
+#: src/strings.c:182
+msgid "window1"
+msgstr "window1"
+
+#: src/strings.c:183
+msgid "<span weight=\"bold\">Press the key you wish to bind...</span>"
+msgstr "<span weight=\"bold\">Pritisnite dugme tastature koje želite spojiti...</span>"
+
+#: src/main.c:72 src/main.c:74 src/main.c:76
+msgid "Copyright (c)"
+msgstr "Sva prava zadržana, "
+
+#: src/main.c:87
+msgid "Syntax: obconf [options] [ARCHIVE.obt]\n"
+msgstr "Sintaksa: obconf [opcije] [ARHIVA.obt]\n"
+
+#: src/main.c:88
+msgid ""
+"\n"
+"Options:\n"
+msgstr ""
+"\n"
+"Opcije:\n"
+
+#: src/main.c:89
+msgid "  --help                Display this help and exit\n"
+msgstr "  --help                 Prikaži ovu pomoć i izađi\n"
+
+#: src/main.c:90
+msgid "  --version             Display the version and exit\n"
+msgstr "  --version              Prikaži verziju i izađi\n"
+
+#: src/main.c:91
+msgid "  --install ARCHIVE.obt Install the given theme archive and select it\n"
+msgstr "  --install ARHIVA.obt   Instaliraj i postavi datu arhivu teme\n"
+
+#: src/main.c:92
+msgid ""
+"  --archive THEME       Create a theme archive from the given theme "
+"directory\n"
+msgstr ""
+"  --archive TEMA         Napravi arhivu teme iz datog direktotijuma "
+"teme\n"
+
+#: src/main.c:93
+msgid "  --config-file FILE    Specify the path to the config file to use\n"
+msgstr "  --config-file DATOTEKA Navedite putanju do datoteke sa podešavanjima \n"
+"                         koja će se koristiti\n"
+
+#: src/main.c:94
+#, c-format
+msgid ""
+"\n"
+"Please report bugs at %s\n"
+"\n"
+msgstr ""
+"\n"
+"Prijavite greške na %s\n"
+"\n"
+
+#: src/main.c:110
+msgid "--install requires an argument\n"
+msgstr "--install zahteva argument\n"
+
+#: src/main.c:116
+msgid "--archive requires an argument\n"
+msgstr "--archive zahteva argument\n"
+
+#: src/main.c:122
+msgid "--config-file requires an argument\n"
+msgstr "·--config-file zahteva argument\n"
+
+#: src/main.c:213
+msgid ""
+"Failed to load the obconf.glade interface file. You have probably failed to "
+"install ObConf properly."
+msgstr "Nije uspelo učitavanje obconf.glade datoteke. Najverovatnije niste "
+"ispravno instalirali Obkonf."
+
+#: src/main.c:234
+msgid ""
+"Failed to load an rc.xml. You have probably failed to install Openbox "
+"properly."
+msgstr "Nije uspelo učitavanje rc.xml datoteke. Najverovatnije niste ·"
+"ispravno instalirali Openboks."
+
+#: src/main.c:243
+#, c-format
+msgid ""
+"Error while parsing the Openbox configuration file.  Your configuration file "
+"is not valid XML.\n"
+"\n"
+"Message: %s"
+msgstr ""
+"Pojavila se greška prilikom obrade datoke sa podešavanjima Openboksa.  Vaša "
+"datoteka nije ispravna XML datoteka.\n"
+"\n"
+"Poruka: %s"
+
+#: src/desktops.c:134 src/desktops.c:165 src/desktops.c:181
+msgid "(Unnamed desktop)"
+msgstr "(Radna površina bez imena)"
+
+#: src/theme.c:109 src/theme.c:141
+msgid "Choose an Openbox theme"
+msgstr "Izaberite temu za Openboks"
+
+#: src/theme.c:118
+msgid "Openbox theme archives"
+msgstr "Arhive Openboks teme"
+
+#: src/archive.c:40
+#, c-format
+msgid "\"%s\" was installed to %s"
+msgstr "„%s“ je instalirano u %s"
+
+#: src/archive.c:65
+#, c-format
+msgid "\"%s\" was successfully created"
+msgstr "„%s“ je uspešno napravljen."
+
+#: src/archive.c:101
+#, c-format
+msgid ""
+"Unable to create the theme archive \"%s\".\n"
+"The following errors were reported:\n"
+"%s"
+msgstr ""
+"Ne mogu napraviti arhivu teme „%s“.\n"
+"Prijavljene su sledeće greške:\n"
+"%s"
+
+#: src/archive.c:106 src/archive.c:190
+#, c-format
+msgid "Unable to run the \"tar\" command: %s"
+msgstr "Ne mogu pokremuti „tar“ komandu: %s"
+
+#: src/archive.c:126
+#, c-format
+msgid "Unable to create directory \"%s\": %s"
+msgstr "Ne mogu napraviti direktorijum „%s“: %s"
+
+#: src/archive.c:148
+#, c-format
+msgid "\"%s\" does not appear to be a valid Openbox theme directory"
+msgstr "„%s“ ne izgleda kao ispravan direktorijum teme za Openboks"
+
+#: src/archive.c:158
+#, c-format
+msgid "Unable to move to directory \"%s\": %s"
+msgstr "Ne mogu se premestiti u direktorijum „%s“: %s"
+
+#: src/archive.c:197
+#, c-format
+msgid ""
+"Unable to extract the file \"%s\".\n"
+"Please ensure that \"%s\" is writable and that the file is a valid Openbox "
+"theme archive.\n"
+"The following errors were reported:\n"
+"%s"
+msgstr ""
+"Ne mogu raspakovati datoteku „%s“.\n"
+"Obezbedite dozvole za pisanje datoteci „%s“ i uverite se da je "
+"ona ispravna arhiva teme za Openboks.\n"
+"Prijavljene su sledeće greške:\n"
+"%s"
+
+#: src/mouse.c:72
+msgid "Custom actions"
+msgstr "Proizvoljne akcije"
+
