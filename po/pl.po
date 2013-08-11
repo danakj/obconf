@@ -8,47 +8,29 @@ msgstr ""
 "Project-Id-Version: obconf 2.0.3\n"
 "Report-Msgid-Bugs-To: http://bugzilla.icculus.org/\n"
 "POT-Creation-Date: 2008-03-02 19:36-0500\n"
-"PO-Revision-Date: 2011-12-18 23:38+0100\n"
-"Last-Translator: Franciszek Janowski <nobange@poczta.onet.pl>\n"
+"PO-Revision-Date: 2013-06-13 20:52+0100\n"
+"Last-Translator: Piotr Strębski <strebski@o2.pl>\n"
 "Language-Team: Polish <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
 
 #: src/strings.c:7
 msgid "Openbox Configuration Manager"
-msgstr "Manager konfiguracji Openboksa"
+msgstr "Menedżer konfiguracji Openboksa"
 
 #: src/strings.c:8
 msgid "<span weight=\"bold\">Theme</span>"
 msgstr "<span weight=\"bold\">Motyw</span>"
 
-#: src/strings.c:9
-#: src/strings.c:14
-#: src/strings.c:18
-#: src/strings.c:27
-#: src/strings.c:43
-#: src/strings.c:51
-#: src/strings.c:54
-#: src/strings.c:63
-#: src/strings.c:72
-#: src/strings.c:80
-#: src/strings.c:85
-#: src/strings.c:98
-#: src/strings.c:100
-#: src/strings.c:107
-#: src/strings.c:113
-#: src/strings.c:116
-#: src/strings.c:118
-#: src/strings.c:125
-#: src/strings.c:137
-#: src/strings.c:140
-#: src/strings.c:151
-#: src/strings.c:154
-#: src/strings.c:160
-#: src/strings.c:165
-#: src/strings.c:167
-#: src/strings.c:170
+#: src/strings.c:9 src/strings.c:14 src/strings.c:18 src/strings.c:27
+#: src/strings.c:43 src/strings.c:51 src/strings.c:54 src/strings.c:63
+#: src/strings.c:72 src/strings.c:80 src/strings.c:85 src/strings.c:98
+#: src/strings.c:100 src/strings.c:107 src/strings.c:113 src/strings.c:116
+#: src/strings.c:118 src/strings.c:125 src/strings.c:137 src/strings.c:140
+#: src/strings.c:151 src/strings.c:154 src/strings.c:160 src/strings.c:165
+#: src/strings.c:167 src/strings.c:170
 msgid "    "
 msgstr "    "
 
@@ -174,8 +156,7 @@ msgstr "_On-screen display: "
 msgid "Appearance"
 msgstr "Wygląd"
 
-#: src/strings.c:50
-#: src/strings.c:97
+#: src/strings.c:50 src/strings.c:97
 msgid "<span weight=\"bold\">Focusing Windows</span>"
 msgstr "<span weight=\"bold\">Aktywacja okien</span>"
 
@@ -227,14 +208,8 @@ msgstr "Odświeżaj zawartość okna podczas zmiany rozmiaru "
 msgid "Drag _threshold distance:"
 msgstr "Minimalne przesunięcie:"
 
-#: src/strings.c:66
-#: src/strings.c:68
-#: src/strings.c:70
-#: src/strings.c:90
-#: src/strings.c:95
-#: src/strings.c:128
-#: src/strings.c:130
-#: src/strings.c:132
+#: src/strings.c:66 src/strings.c:68 src/strings.c:70 src/strings.c:90
+#: src/strings.c:95 src/strings.c:128 src/strings.c:130 src/strings.c:132
 #: src/strings.c:134
 msgid "px"
 msgstr "px"
@@ -255,12 +230,8 @@ msgstr "Zmieniaj pulpit, gdy _okno zostanie przesunięte poza brzeg ekranu"
 msgid "_Amount of time to wait before switching:"
 msgstr "_Czas, po którym nastąpi zmiana pulpitu:"
 
-#: src/strings.c:74
-#: src/strings.c:105
-#: src/strings.c:112
-#: src/strings.c:120
-#: src/strings.c:169
-#: src/strings.c:172
+#: src/strings.c:74 src/strings.c:105 src/strings.c:112 src/strings.c:120
+#: src/strings.c:169 src/strings.c:172
 msgid "ms"
 msgstr "ms"
 
@@ -304,8 +275,7 @@ msgstr "Określona pozycja na ekranie"
 msgid "Fixed _x position:"
 msgstr "Pozycja _x:"
 
-#: src/strings.c:87
-#: src/strings.c:92
+#: src/strings.c:87 src/strings.c:92
 msgid "Centered"
 msgstr "Centralnie"
 
@@ -331,7 +301,7 @@ msgstr "Od dolnej krawędzi"
 
 #: src/strings.c:96
 msgid "Move & Resize"
-msgstr "Przesuń & zmień rozmiar"
+msgstr "Przesuń i zmień rozmiar"
 
 #: src/strings.c:99
 msgid "_Focus windows when the mouse pointer moves over them"
@@ -359,7 +329,7 @@ msgstr "<span weight=\"bold\">Pasek tytułu</span>"
 
 #: src/strings.c:108
 msgid "Double click on the _titlebar:"
-msgstr "Dwuklik na pasku _tytułu:"
+msgstr "Podwójne kliknięcie na pasku _tytułu:"
 
 #: src/strings.c:109
 msgid "Maximizes the window"
@@ -406,8 +376,14 @@ msgid "<span weight=\"bold\">Desktop Margins</span>"
 msgstr "<span weight=\"bold\">Marginesy pulpitów</span>"
 
 #: src/strings.c:126
-msgid "Desktop margins are reserved areas on the edge of your screen.  New windows will not be placed within a margin, and maximized windows will not cover them."
-msgstr "Marginesy pulpitu to obszary zarezerwowane na brzegach twojego ekranu.  Nowe okna nie będą umieszczane w obszarze marginesu, a okna zmaksymalizowane nie zakryją go."
+msgid ""
+"Desktop margins are reserved areas on the edge of your screen.  New windows "
+"will not be placed within a margin, and maximized windows will not cover "
+"them."
+msgstr ""
+"Marginesy pulpitu to obszary zarezerwowane na brzegach Twojego ekranu.  Nowe "
+"okna nie będą umieszczane w obszarze marginesu, a okna zmaksymalizowane nie "
+"zakryją go."
 
 #: src/strings.c:127
 msgid "_Top"
@@ -434,8 +410,15 @@ msgid "<span weight=\"bold\">Dock</span>"
 msgstr "<span weight=\"bold\">Dok</span>"
 
 #: src/strings.c:138
-msgid "The dock is a special container for \"dockapps\", or dock applications.  It is not visible on screen until a dockapp is run.  Dockapps can be used to show things like a clock, or to provide you with a system tray."
-msgstr "Dok to specjalne miejsce na programy dokowane.  Nie jest widoczny na ekranie, dopóki program dokowany nie zostanie uruchomiony.  Programy dokowane mogą być użyte do pokazywania rzeczy takich jak zegar, lub do udostępniania funkcjonalności zasobnika systemowego."
+msgid ""
+"The dock is a special container for \"dockapps\", or dock applications.  It "
+"is not visible on screen until a dockapp is run.  Dockapps can be used to "
+"show things like a clock, or to provide you with a system tray."
+msgstr ""
+"Dok to specjalne miejsce na programy dokowane.  Nie jest widoczny na "
+"ekranie, dopóki program dokowany nie zostanie uruchomiony.  Programy "
+"dokowane mogą być użyte do pokazywania rzeczy takich jak zegar, lub do "
+"udostępniania funkcjonalności zasobnika systemowego."
 
 #: src/strings.c:139
 msgid "<span weight=\"bold\">Position</span>"
@@ -555,7 +538,7 @@ msgstr "<span weight=\"bold\" size=\"xx-large\">ObConf VERSION</span>"
 
 #: src/strings.c:177
 msgid "A preferences manager for Openbox"
-msgstr "Manager preferencji Openboksa"
+msgstr "Menedżer preferencji Openboksa"
 
 #: src/strings.c:178
 msgid ""
@@ -564,7 +547,7 @@ msgid ""
 "Tim Riley <tr@slackzone.org>\n"
 "Javeed Shaikh <syscrash2k@gmail.com>"
 msgstr ""
-"Copyright (c) 2003-2008\n"
+"Prawa autorskie (c) 2003-2008\n"
 "Dana Jansens <danakj@orodu.net>\n"
 "Tim Riley <tr@slackzone.org>\n"
 "Javeed Shaikh <syscrash2k@gmail.com>"
@@ -577,11 +560,9 @@ msgstr "okno1"
 msgid "<span weight=\"bold\">Press the key you wish to bind...</span>"
 msgstr "<span weight=\"bold\">Wciśnij klawisz do powiązania...</span>"
 
-#: src/main.c:72
-#: src/main.c:74
-#: src/main.c:76
+#: src/main.c:72 src/main.c:74 src/main.c:76
 msgid "Copyright (c)"
-msgstr "Copyright (c)"
+msgstr "Prawa autorskie (c)"
 
 #: src/main.c:87
 msgid "Syntax: obconf [options] [ARCHIVE.obt]\n"
@@ -605,15 +586,18 @@ msgstr "  --version             Pokazuje numer wersji i kończy działanie\n"
 
 #: src/main.c:91
 msgid "  --install ARCHIVE.obt Install the given theme archive and select it\n"
-msgstr "  --install ARCHIVE.obt Instaluje dany plik motywu i wybiera go\n"
+msgstr ""
+"  --install ARCHIWUM.obt Instaluje dany plik archiwum motywu i wybiera go\n"
 
 #: src/main.c:92
-msgid "  --archive THEME       Create a theme archive from the given theme directory\n"
-msgstr "  --archive THEME       Tworzy plik motywu z danego katalogu motywu\n"
+msgid ""
+"  --archive THEME       Create a theme archive from the given theme "
+"directory\n"
+msgstr "  --archive MOTYW       Tworzy plik motywu z danego katalogu motywu\n"
 
 #: src/main.c:93
 msgid "  --config-file FILE    Specify the path to the config file to use\n"
-msgstr "  --config-file FILE    Wskazuje ścieżkę do pliku konfiguracji\n"
+msgstr "  --config-file PLIK    Wskazuje ścieżkę do pliku konfiguracji\n"
 
 #: src/main.c:94
 #, c-format
@@ -639,32 +623,39 @@ msgid "--config-file requires an argument\n"
 msgstr "--config-file wymaga argumentu\n"
 
 #: src/main.c:213
-msgid "Failed to load the obconf.glade interface file. You have probably failed to install ObConf properly."
-msgstr "Nie udało się wczytać pliku interfejsu obconf.glade. Prawdopodobnie ObConf nie jest prawidłowo zainstalowany."
+msgid ""
+"Failed to load the obconf.glade interface file. You have probably failed to "
+"install ObConf properly."
+msgstr ""
+"Nie udało się wczytać pliku interfejsu obconf.glade. Prawdopodobnie ObConf "
+"nie jest prawidłowo zainstalowany."
 
 #: src/main.c:234
-msgid "Failed to load an rc.xml. You have probably failed to install Openbox properly."
-msgstr "Nie udało się wczytać pliku rc.xml. Prawdopodobnie Openbox nie jest prawidłowo zainstalowany."
+msgid ""
+"Failed to load an rc.xml. You have probably failed to install Openbox "
+"properly."
+msgstr ""
+"Nie udało się wczytać pliku rc.xml. Prawdopodobnie Openbox nie jest "
+"prawidłowo zainstalowany."
 
 #: src/main.c:243
 #, c-format
 msgid ""
-"Error while parsing the Openbox configuration file.  Your configuration file is not valid XML.\n"
+"Error while parsing the Openbox configuration file.  Your configuration file "
+"is not valid XML.\n"
 "\n"
 "Message: %s"
 msgstr ""
-"Błąd parsowania pliku konfiguracji Openboksa.  Twój plik konfiguracji nie jest prawidłowym plikiem XML.\n"
+"Błąd parsowania pliku konfiguracji Openboksa.  Twój plik konfiguracji nie "
+"jest prawidłowym plikiem XML.\n"
 "\n"
 "Wiadomość: %s"
 
-#: src/desktops.c:134
-#: src/desktops.c:165
-#: src/desktops.c:181
+#: src/desktops.c:134 src/desktops.c:165 src/desktops.c:181
 msgid "(Unnamed desktop)"
 msgstr "(Nienazwany pulpit)"
 
-#: src/theme.c:109
-#: src/theme.c:141
+#: src/theme.c:109 src/theme.c:141
 msgid "Choose an Openbox theme"
 msgstr "Wybierz motyw Openboksa"
 
@@ -693,8 +684,7 @@ msgstr ""
 "Zostały zgłoszone następujące błędy:\n"
 "%s"
 
-#: src/archive.c:106
-#: src/archive.c:190
+#: src/archive.c:106 src/archive.c:190
 #, c-format
 msgid "Unable to run the \"tar\" command: %s"
 msgstr "Nie można uruchomić polecenia \"tar\": %s"
@@ -712,22 +702,23 @@ msgstr "\"%s\" nie jest prawidłowym katalogiem motywu Openboksa"
 #: src/archive.c:158
 #, c-format
 msgid "Unable to move to directory \"%s\": %s"
-msgstr "Nie można przesunąć do katalogu \"%s\": %s"
+msgstr "Nie można przenieść do katalogu \"%s\": %s"
 
 #: src/archive.c:197
 #, c-format
 msgid ""
 "Unable to extract the file \"%s\".\n"
-"Please ensure that \"%s\" is writable and that the file is a valid Openbox theme archive.\n"
+"Please ensure that \"%s\" is writable and that the file is a valid Openbox "
+"theme archive.\n"
 "The following errors were reported:\n"
 "%s"
 msgstr ""
-"Nie można wypakować pliku \"%s\".\n"
-"Upewnij się, że \"%s\" jest dostępny do zapisu i że plik jest prawidłowym archiwum motywu Openboksa.\n"
+"Nie można rozpakować pliku \"%s\".\n"
+"Upewnij się, że \"%s\" jest dostępny do zapisu i że plik jest prawidłowym "
+"archiwum motywu Openboksa.\n"
 "Zostały zgłoszone następujące błędy:\n"
 "%s"
 
 #: src/mouse.c:72
 msgid "Custom actions"
-msgstr "Akcje użytkownika"
-
+msgstr "Działania użytkownika"
