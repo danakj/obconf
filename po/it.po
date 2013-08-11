@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: obconf 2.0.3\n"
 "Report-Msgid-Bugs-To: http://bugzilla.icculus.org/\n"
 "POT-Creation-Date: 2008-03-02 19:36-0500\n"
-"PO-Revision-Date: 2007-08-05 13:02+0200\n"
+"PO-Revision-Date: 2010-08-22 22:36+0200\n"
 "Last-Translator: Davide Truffa <davide@catoblepa.org>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
 "MIME-Version: 1.0\n"
@@ -92,6 +92,10 @@ msgid ""
 "I:\n"
 "M:"
 msgstr ""
+"N:\n"
+"L:\n"
+"I:\n"
+"M:"
 
 #: src/strings.c:32
 msgid ""
@@ -100,6 +104,10 @@ msgid ""
 "Iconify (Minimize)\n"
 "Maximize"
 msgstr ""
+"Icona finestra\n"
+"Titolo finestra\n"
+"Minimizza\n"
+"Massimizza"
 
 #: src/strings.c:36
 msgid ""
@@ -107,6 +115,9 @@ msgid ""
 "S:\n"
 "D:"
 msgstr ""
+"C:\n"
+"S:\n"
+"D:"
 
 #: src/strings.c:39
 msgid ""
@@ -114,6 +125,9 @@ msgid ""
 "Shade (Roll up)\n"
 "Omnipresent (On all desktops)"
 msgstr ""
+"Chiudi\n"
+"Arrotola\n"
+"Presente su tutti i desktop"
 
 #: src/strings.c:42
 msgid "<span weight=\"bold\">Fonts</span>"
@@ -165,19 +179,19 @@ msgstr "_Centra le nuove finestre nello schermo"
 
 #: src/strings.c:57
 msgid "Prefer to place new windows _on:"
-msgstr ""
+msgstr "Posiziona nuove finestre _su:"
 
 #: src/strings.c:58
 msgid "All monitors"
-msgstr ""
+msgstr "Tutti gli schermi"
 
 #: src/strings.c:59
 msgid "The active monitor"
-msgstr ""
+msgstr "Schermo attivo"
 
 #: src/strings.c:60
 msgid "The monitor with the mouse"
-msgstr ""
+msgstr "Schermo con il mouse"
 
 #: src/strings.c:61
 msgid "Windows"
@@ -189,9 +203,7 @@ msgstr "<span weight=\"bold\">Movimento e Ridimensionamento Finestre</span>"
 
 #: src/strings.c:64
 msgid "Update the window contents while _resizing"
-msgstr ""
-"Aggiorna il contenuto delle finestre\n"
-"quando vengono _ridimensionate"
+msgstr "Aggiorna contenuto delle finestre quando vengono _ridimensionate"
 
 #: src/strings.c:65
 msgid "Drag _threshold distance:"
@@ -213,8 +225,7 @@ msgstr "Resistenza ai _bordi dello schermo:"
 
 #: src/strings.c:71
 msgid "_Switch desktops when moving a window past the screen edge"
-msgstr ""
-"Cambia _desktop se una finestra viene spostata fuori dai bordi dello schermo"
+msgstr "Cambia _desktop se la finestra viene spostata fuori dai bordi dello schermo"
 
 #: src/strings.c:73
 msgid "_Amount of time to wait before switching:"
@@ -227,11 +238,11 @@ msgstr "ms"
 
 #: src/strings.c:75
 msgid "<span weight=\"bold\">Information Dialog</span>"
-msgstr ""
+msgstr "<span weight=\"bold\">Finestra Informazioni</span>"
 
 #: src/strings.c:76
 msgid "Show _information dialog:"
-msgstr ""
+msgstr "Mostra finestra _informazioni:"
 
 #: src/strings.c:77
 msgid "When resizing terminal windows"
@@ -247,7 +258,7 @@ msgstr "Mai"
 
 #: src/strings.c:81
 msgid "Information dialog's _position:"
-msgstr ""
+msgstr "_Posizione finestra informazioni:"
 
 #: src/strings.c:82
 msgid "Centered on the window"
@@ -259,39 +270,40 @@ msgstr "Sopra la finestra"
 
 #: src/strings.c:84
 msgid "Fixed position on screen"
-msgstr ""
+msgstr "Posizione fissa"
 
 #: src/strings.c:86
 msgid "Fixed _x position:"
-msgstr ""
+msgstr "Posizione _orizzontale"
 
 #: src/strings.c:87 src/strings.c:92
 msgid "Centered"
-msgstr ""
+msgstr "Al centro"
 
 #: src/strings.c:88
 msgid "From left edge"
-msgstr ""
+msgstr "Dal bordo di sinistro"
 
 #: src/strings.c:89
 msgid "From right edge"
-msgstr ""
+msgstr "Dal bordo destro"
 
 #: src/strings.c:91
 msgid "Fixed _y position:"
-msgstr ""
+msgstr "Posizione _verticale"
 
 #: src/strings.c:93
 msgid "From top edge"
-msgstr ""
+msgstr "Dal bordo superiore"
 
 #: src/strings.c:94
 msgid "From bottom edge"
-msgstr ""
+msgstr "Dal bordo inferiore"
 
 #: src/strings.c:96
 msgid "Move & Resize"
-msgstr ""
+msgstr "Spostamento e\n"
+"ridimensionamento"
 
 #: src/strings.c:99
 msgid "_Focus windows when the mouse pointer moves over them"
@@ -299,15 +311,15 @@ msgstr "Il _Focus segue il mouse"
 
 #: src/strings.c:101
 msgid "Move focus under the mouse when _switching desktops"
-msgstr "Sposta il focus sotto il mouse al _cambio del desktop"
+msgstr "Sposta focus sotto il mouse al _cambio del desktop"
 
 #: src/strings.c:102
 msgid "Move focus _under the mouse when the mouse is not moving"
-msgstr "Sposta il focus _sotto il mouse anche quando il mouse rimane fermo"
+msgstr "Sposta focus _sotto il mouse anche quando il mouse rimane fermo"
 
 #: src/strings.c:103
 msgid "_Raise windows when the mouse pointer moves over them"
-msgstr "_Alza le finestre al passaggio del mouse"
+msgstr "So_lleva finestre al passaggio del mouse"
 
 #: src/strings.c:104
 msgid "_Delay before focusing and raising windows:"
@@ -351,7 +363,7 @@ msgstr "_Attesa prima di mostrare la notifica:"
 
 #: src/strings.c:121
 msgid "_Number of desktops: "
-msgstr "_Numero dei desktop: "
+msgstr "_Numero di desktop: "
 
 #: src/strings.c:122
 msgid "_Desktop names:"
@@ -397,7 +409,7 @@ msgstr "Margini"
 
 #: src/strings.c:136
 msgid "<span weight=\"bold\">Dock</span>"
-msgstr ""
+msgstr "<span weight=\"bold\">Dock</span>"
 
 #: src/strings.c:138
 msgid ""
@@ -405,6 +417,9 @@ msgid ""
 "is not visible on screen until a dockapp is run.  Dockapps can be used to "
 "show things like a clock, or to provide you with a system tray."
 msgstr ""
+"La dock è un contenitore di speciali applicazioni. Non è visibile sullo "
+"schermo finché non viene eseguita una \"dockapp\". La \"dockapp\" può essere "
+"utilizzata per visualizzare, ad esempio, un orologio o il vassoio di sistema."
 
 #: src/strings.c:139
 msgid "<span weight=\"bold\">Position</span>"
@@ -480,7 +495,7 @@ msgstr "<span weight=\"bold\">Livello</span>"
 
 #: src/strings.c:161
 msgid "Keep dock _above other windows"
-msgstr "Mantieni la dock _sopra le altre finestre"
+msgstr "Mantieni dock _sopra le altre finestre"
 
 #: src/strings.c:162
 msgid "A_llow dock to be both above and below windows"
@@ -488,7 +503,7 @@ msgstr "La dock _può stare sopra o sotto le altre finestre"
 
 #: src/strings.c:163
 msgid "Keep dock _below other windows"
-msgstr "Mantieni la dock s_otto le altre finestre"
+msgstr "Mantieni dock s_otto le altre finestre"
 
 #: src/strings.c:164
 msgid "<span weight=\"bold\">Hiding</span>"
@@ -524,7 +539,7 @@ msgstr "<span weight=\"bold\" size=\"xx-large\">ObConf VERSION</span>"
 
 #: src/strings.c:177
 msgid "A preferences manager for Openbox"
-msgstr "Un gestore delle preferenze di Openbox"
+msgstr "Gestore delle preferenze di Openbox"
 
 #: src/strings.c:178
 msgid ""
@@ -533,6 +548,10 @@ msgid ""
 "Tim Riley <tr@slackzone.org>\n"
 "Javeed Shaikh <syscrash2k@gmail.com>"
 msgstr ""
+"Copyright (c) 2003-2008\n"
+"Dana Jansens <danakj@orodu.net>\n"
+"Tim Riley <tr@slackzone.org>\n"
+"Javeed Shaikh <syscrash2k@gmail.com>"
 
 #: src/strings.c:182
 msgid "window1"
@@ -568,8 +587,7 @@ msgstr "  --version              Mostra la versione ed esce\n"
 
 #: src/main.c:91
 msgid "  --install ARCHIVE.obt Install the given theme archive and select it\n"
-msgstr ""
-"  --install ARCHIVIO.obt Installa e seleziona l'archivio-tema specificato\n"
+msgstr "  --install ARCHIVIO.obt Installa e seleziona l'archivio-tema specificato\n"
 
 #: src/main.c:92
 msgid ""
@@ -577,11 +595,12 @@ msgid ""
 "directory\n"
 msgstr ""
 "  --archive TEMA         Crea un archivio contenente il tema dalla directory "
-"tema specificata\n"
+"specificata\n"
 
 #: src/main.c:93
 msgid "  --config-file FILE    Specify the path to the config file to use\n"
-msgstr ""
+msgstr "  --config-file FILE    Indica il percorso del file di configurazione "
+"da usare\n"
 
 #: src/main.c:94
 #, c-format
@@ -604,19 +623,23 @@ msgstr "--archive richiede un argomento\n"
 
 #: src/main.c:122
 msgid "--config-file requires an argument\n"
-msgstr ""
+msgstr "--config-file richiede un argomento\n"
 
 #: src/main.c:213
 msgid ""
 "Failed to load the obconf.glade interface file. You have probably failed to "
 "install ObConf properly."
 msgstr ""
+"Impossibile caricare il file interfaccia obconf.glade. Probabilmente ObConf "
+"non è stato installato correttamente."
 
 #: src/main.c:234
 msgid ""
 "Failed to load an rc.xml. You have probably failed to install Openbox "
 "properly."
 msgstr ""
+"Impossibile caricare rc.xml. Probabilmente Openbox non è stato installato "
+"correttamente."
 
 #: src/main.c:243
 #, c-format
@@ -626,6 +649,10 @@ msgid ""
 "\n"
 "Message: %s"
 msgstr ""
+"Errore durante l'interpretazione del file di configurazione di Openbox. "
+"Il formato XML del file non è valido.\n"
+"\n"
+"Messaggio: %s"
 
 #: src/desktops.c:134 src/desktops.c:165 src/desktops.c:181
 msgid "(Unnamed desktop)"
@@ -673,7 +700,7 @@ msgstr "Impossibile creare la directory \"%s\": %s"
 #: src/archive.c:148
 #, c-format
 msgid "\"%s\" does not appear to be a valid Openbox theme directory"
-msgstr "\"%s\" non sembra contenere un tema per Openbox"
+msgstr "\"%s\" non sembra essere una directory di temi per Openbox"
 
 #: src/archive.c:158
 #, c-format
