@@ -103,11 +103,11 @@ void moveresize_setup_tab()
     if (!strcasecmp(s, "Center")) pos = EDGE_CENTER;
     else if (opp) pos = EDGE_RIGHT;
     else pos = EDGE_LEFT;
-    g_free(s);
     gtk_option_menu_set_history(GTK_OPTION_MENU(w), pos);
 
     w = get_widget("fixed_x_pos");
     gtk_spin_button_set_value(GTK_SPIN_BUTTON(w), MAX(atoi(s), 0));
+    g_free(s);
 
     w = get_widget("fixed_y_popup");
     s = tree_get_string("resize/popupFixedPosition/y", "0");
@@ -115,11 +115,11 @@ void moveresize_setup_tab()
     if (!strcasecmp(s, "Center")) pos = EDGE_CENTER;
     else if (opp) pos = EDGE_RIGHT;
     else pos = EDGE_LEFT;
-    g_free(s);
     gtk_option_menu_set_history(GTK_OPTION_MENU(w), pos);
 
     w = get_widget("fixed_y_pos");
     gtk_spin_button_set_value(GTK_SPIN_BUTTON(w), MAX(atoi(s), 0));
+    g_free(s);
 
     i = tree_get_int("mouse/screenEdgeWarpTime", 400);
 
