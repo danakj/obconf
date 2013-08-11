@@ -1,23 +1,27 @@
 # Czech translation for ObConf
 # Copyright (C) 2007 Dana Jansens
 # This file is distributed under the same license as the ObConf package.
-# tezlo <tezlo@gmx.net>, 2007.
 #
+# tezlo <tezlo@gmx.net>, 2007.
+# David Kolibac <david@kolibac.cz>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: obconf 2.0.2\n"
 "Report-Msgid-Bugs-To: http://bugzilla.icculus.org/\n"
 "POT-Creation-Date: 2008-03-02 19:36-0500\n"
-"PO-Revision-Date: 2008-01-24 04:20+0100\n"
-"Last-Translator: tezlo <tezlo@gmx.net>\n"
-"Language-Team: Czech <cs@li.org>\n"
+"PO-Revision-Date: 2011-06-03 17:29+0200\n"
+"Last-Translator: David Kolibac <david@kolibac.cz>\n"
+"Language-Team: Czech <diskuze@lists.l10n.cz>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: cs\n"
+"X-Generator: Lokalize 1.2\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: src/strings.c:7
 msgid "Openbox Configuration Manager"
-msgstr "Manažer Konfigurace Openbox"
+msgstr "Správce nastavení Openboxu"
 
 #: src/strings.c:8
 msgid "<span weight=\"bold\">Theme</span>"
@@ -51,7 +55,7 @@ msgstr "<span weight=\"bold\">Okna</span>"
 
 #: src/strings.c:15
 msgid "_Windows retain a border when undecorated"
-msgstr "Neo_zdobeným oknům ponechat okraj"
+msgstr "Oknům be_z dekorace ponechat okraj"
 
 #: src/strings.c:16
 msgid "A_nimate iconify and restore"
@@ -59,7 +63,7 @@ msgstr "A_nimovat minimalizaci a obnovení"
 
 #: src/strings.c:17
 msgid "<span weight=\"bold\">Window Titles</span>"
-msgstr "<span weight=\"bold\">Lišta</span>"
+msgstr "<span weight=\"bold\">Titulky oken</span>"
 
 #: src/strings.c:19
 msgid "_Button order:"
@@ -76,11 +80,11 @@ msgid ""
 "C - The close button"
 msgstr ""
 "N - Ikona okna\n"
-"D - Tlačítko omnipresence\n"
+"D - Tlačítko na všechny plochy\n"
 "S - Tlačítko rolování\n"
 "L - Titulek okna\n"
 "I - Tlačítko minimalizace\n"
-"M - Tlačítko maximializace\n"
+"M - Tlačítko maximalizace\n"
 "C - Tlačítko zavření"
 
 #: src/strings.c:28
@@ -125,11 +129,11 @@ msgid ""
 msgstr ""
 "Zavřít\n"
 "Srolovat\n"
-"Omnipresence (Na všech plochách)"
+"Na všech plochách"
 
 #: src/strings.c:42
 msgid "<span weight=\"bold\">Fonts</span>"
-msgstr "<span weight=\"bold\">Fonty</span>"
+msgstr "<span weight=\"bold\">Písma</span>"
 
 #: src/strings.c:44
 msgid "_Active window title: "
@@ -137,15 +141,15 @@ msgstr "Titulek _aktivního okna: "
 
 #: src/strings.c:45
 msgid "_Inactive window title: "
-msgstr "Titulek _inaktivního okna: "
+msgstr "Titulek neakt_ivního okna: "
 
 #: src/strings.c:46
 msgid "Menu _header: "
-msgstr "_Hlavička menu: "
+msgstr "_Hlavička nabídky: "
 
 #: src/strings.c:47
 msgid "_Menu Item: "
-msgstr "_Položka menu: "
+msgstr "_Položka nabídky: "
 
 # XXX
 #: src/strings.c:48
@@ -158,15 +162,15 @@ msgstr "Vzhled"
 
 #: src/strings.c:50 src/strings.c:97
 msgid "<span weight=\"bold\">Focusing Windows</span>"
-msgstr "<span weight=\"bold\">Správa Oken</span>"
+msgstr "<span weight=\"bold\">Aktivace oken</span>"
 
 #: src/strings.c:52
 msgid "Focus _new windows when they appear"
-msgstr "Aktivovat _nová okna když se objeví"
+msgstr "Aktivovat _nová okna, když se objeví"
 
 #: src/strings.c:53
 msgid "<span weight=\"bold\">Placing Windows</span>"
-msgstr "<span weight=\"bold\">Umístění Oken</span>"
+msgstr "<span weight=\"bold\">Umísťování oken</span>"
 
 #: src/strings.c:55
 msgid "_Place new windows under the mouse pointer"
@@ -174,11 +178,11 @@ msgstr "_Umísťovat nová okna pod kurzor myši"
 
 #: src/strings.c:56
 msgid "_Center new windows when they are placed"
-msgstr "_Centrovat nová okna při umístění"
+msgstr "_Vystředit nová okna při umístění"
 
 #: src/strings.c:57
 msgid "Prefer to place new windows _on:"
-msgstr "Přednostně umisťovat nová _okna na:"
+msgstr "Přednostně umísťovat nová _okna na:"
 
 #: src/strings.c:58
 msgid "All monitors"
@@ -199,11 +203,11 @@ msgstr "Okna"
 # XXX
 #: src/strings.c:62
 msgid "<span weight=\"bold\">Moving and Resizing Windows</span>"
-msgstr "<span weight=\"bold\">Změna Pozice a Velikosti Oken</span>"
+msgstr "<span weight=\"bold\">Změna polohy a velikosti oken</span>"
 
 #: src/strings.c:64
 msgid "Update the window contents while _resizing"
-msgstr "Aktualizovat obsah okna při změně _velikosti"
+msgstr "Aktualizovat obsah okna během změny _velikosti"
 
 # XXX
 #: src/strings.c:65
@@ -226,7 +230,7 @@ msgstr "Míra odporu ke _krajům obrazovky:"
 
 #: src/strings.c:71
 msgid "_Switch desktops when moving a window past the screen edge"
-msgstr "_Změnit plochu při tažení okna přes okraj obrazovky"
+msgstr "_Změnit plochu při přetažení okna přes okraj obrazovky"
 
 #: src/strings.c:73
 msgid "_Amount of time to wait before switching:"
@@ -239,11 +243,11 @@ msgstr "ms"
 
 #: src/strings.c:75
 msgid "<span weight=\"bold\">Information Dialog</span>"
-msgstr ""
+msgstr "<span weight=\"bold\">Informační dialog</span>"
 
 #: src/strings.c:76
 msgid "Show _information dialog:"
-msgstr "_Zobrazit informační dialog:"
+msgstr "_Zobrazovat informační dialog:"
 
 #: src/strings.c:77
 msgid "When resizing terminal windows"
@@ -259,7 +263,7 @@ msgstr "Nikdy"
 
 #: src/strings.c:81
 msgid "Information dialog's _position:"
-msgstr "_Pozice informačního dialogu:"
+msgstr "_Poloha informačního dialogu:"
 
 #: src/strings.c:82
 msgid "Centered on the window"
@@ -271,39 +275,39 @@ msgstr "Nad oknem"
 
 #: src/strings.c:84
 msgid "Fixed position on screen"
-msgstr "Fixní pozice na obrazovce"
+msgstr "Pevná pozice na obrazovce"
 
 #: src/strings.c:86
 msgid "Fixed _x position:"
-msgstr "Fixní _x pozice:"
+msgstr "Pevná pozice na ose _X:"
 
 #: src/strings.c:87 src/strings.c:92
 msgid "Centered"
-msgstr "Centrováno"
+msgstr "Vystředěno"
 
 #: src/strings.c:88
 msgid "From left edge"
-msgstr "Z levého okraje"
+msgstr "Od levé hrany"
 
 #: src/strings.c:89
 msgid "From right edge"
-msgstr "Z praváho okraje"
+msgstr "Od pravé hrany"
 
 #: src/strings.c:91
 msgid "Fixed _y position:"
-msgstr "Fixní _y pozice:"
+msgstr "Pevná pozice na ose _Y:"
 
 #: src/strings.c:93
 msgid "From top edge"
-msgstr ""
+msgstr "Od horní hrany"
 
 #: src/strings.c:94
 msgid "From bottom edge"
-msgstr ""
+msgstr "Od spodní hrany"
 
 #: src/strings.c:96
 msgid "Move & Resize"
-msgstr "Pohyb & Velikost"
+msgstr "Pohyb & velikost"
 
 # XXX
 #: src/strings.c:99
@@ -316,24 +320,24 @@ msgstr "Aktivovat okno pod kurzorem při změně _plochy"
 
 #: src/strings.c:102
 msgid "Move focus _under the mouse when the mouse is not moving"
-msgstr "Aktivovat okno pod kurzorem když se _myš nehýbe"
+msgstr "Aktivovat okno pod kurzorem, když se _myš nehýbe"
 
 # XXX
 #: src/strings.c:103
 msgid "_Raise windows when the mouse pointer moves over them"
-msgstr "_Zvednout okno při přejezdu kurzorem myši"
+msgstr "Přesunout okno do popředí při přeje_zdu kurzorem myši"
 
 #: src/strings.c:104
 msgid "_Delay before focusing and raising windows:"
-msgstr "P_rodleva před aktivací a zvedáním oken:"
+msgstr "P_rodleva před aktivací a přesunem oken do popředí:"
 
 #: src/strings.c:106
 msgid "<span weight=\"bold\">Titlebar</span>"
-msgstr "<span weight=\"bold\">Lišta</span>"
+msgstr "<span weight=\"bold\">Dekorace</span>"
 
 #: src/strings.c:108
 msgid "Double click on the _titlebar:"
-msgstr "Dvojitý klik na _lištu:"
+msgstr "Dvojitý k_lik na dekoraci:"
 
 #: src/strings.c:109
 msgid "Maximizes the window"
@@ -361,7 +365,7 @@ msgstr "Upozornit při _změně plochy"
 
 #: src/strings.c:119
 msgid "_Amount of time to show the notification for:"
-msgstr "Prodleva před _upozorněním:"
+msgstr "Doba zobrazení _upozornění:"
 
 #: src/strings.c:121
 msgid "_Number of desktops: "
@@ -377,7 +381,7 @@ msgstr "Plochy"
 
 #: src/strings.c:124
 msgid "<span weight=\"bold\">Desktop Margins</span>"
-msgstr "<span weight=\"bold\">Okraje Plochy</span>"
+msgstr "<span weight=\"bold\">Okraje plochy</span>"
 
 # XXX
 #: src/strings.c:126
@@ -386,8 +390,8 @@ msgid ""
 "will not be placed within a margin, and maximized windows will not cover "
 "them."
 msgstr ""
-"Okraje plochy je možné vyhranit jiným účelům. Nová okna budou umístěna mimo "
-"rámec okrajů a maximalizovaná okna je nebudou krýt."
+"Okraje plochy je možné vyhranit pro jiné účely. Nová okna nebudou zasahovat "
+"do okrajů a maximalizovaná okna je nebudou krýt."
 
 #: src/strings.c:127
 msgid "_Top"
@@ -411,7 +415,7 @@ msgstr "Okraje"
 
 #: src/strings.c:136
 msgid "<span weight=\"bold\">Dock</span>"
-msgstr ""
+msgstr "<span weight=\"bold\">Dok</span>"
 
 #: src/strings.c:138
 msgid ""
@@ -419,18 +423,22 @@ msgid ""
 "is not visible on screen until a dockapp is run.  Dockapps can be used to "
 "show things like a clock, or to provide you with a system tray."
 msgstr ""
+"Dok je zvláštní oblast, do které se mohou umisťovat dokovací aplikace. "
+"Není viditelná, dokud není nespustíte nějakou dokovací aplikaci. Dokovací "
+"aplikace "
+"mohou být použity pro zobrazování věcí jako hodiny nebo systémová oblast."
 
 #: src/strings.c:139
 msgid "<span weight=\"bold\">Position</span>"
-msgstr "<span weight=\"bold\">Pozice</span>"
+msgstr "<span weight=\"bold\">Poloha</span>"
 
 #: src/strings.c:141
 msgid "_Position:"
-msgstr "_Pozice:"
+msgstr "_Poloha:"
 
 #: src/strings.c:142
 msgid "Top Left"
-msgstr "Vlevo Nahoře"
+msgstr "Vlevo nahoře"
 
 #: src/strings.c:143
 msgid "Top"
@@ -438,7 +446,7 @@ msgstr "Nahoře"
 
 #: src/strings.c:144
 msgid "Top Right"
-msgstr "Vpravo Nahoře"
+msgstr "Vpravo nahoře"
 
 #: src/strings.c:145
 msgid "Left"
@@ -450,7 +458,7 @@ msgstr "Vpravo"
 
 #: src/strings.c:147
 msgid "Bottom Left"
-msgstr "Vlevo Dole"
+msgstr "Vlevo dole"
 
 #: src/strings.c:148
 msgid "Bottom"
@@ -458,7 +466,7 @@ msgstr "Dole"
 
 #: src/strings.c:149
 msgid "Bottom Right"
-msgstr "Vpravo Dole"
+msgstr "Vpravo dole"
 
 #: src/strings.c:150
 msgid "Floating"
@@ -466,11 +474,11 @@ msgstr "Plovoucí"
 
 #: src/strings.c:152
 msgid "_Floating position:"
-msgstr "P_lovoucí pozice:"
+msgstr "P_lovoucí poloha:"
 
 #: src/strings.c:153
 msgid "x"
-msgstr "x"
+msgstr "X"
 
 #: src/strings.c:155
 msgid "Allow _windows to be placed within the dock's area"
@@ -482,11 +490,11 @@ msgstr "_Orientace: "
 
 #: src/strings.c:157
 msgid "Vertical"
-msgstr "Vertikální"
+msgstr "Svislá"
 
 #: src/strings.c:158
 msgid "Horizontal"
-msgstr "Horizontální"
+msgstr "Vodorovná"
 
 #: src/strings.c:159
 msgid "<span weight=\"bold\">Stacking</span>"
@@ -506,15 +514,15 @@ msgstr "Udržovat dok po_d ostatními okny"
 
 #: src/strings.c:164
 msgid "<span weight=\"bold\">Hiding</span>"
-msgstr "<span weight=\"bold\">Schovávání</span>"
+msgstr "<span weight=\"bold\">Skrývání</span>"
 
 #: src/strings.c:166
 msgid "_Hide off screen"
-msgstr "_Schovat z obrazovky"
+msgstr "_Skrýt z obrazovky"
 
 #: src/strings.c:168
 msgid "_Delay before hiding:"
-msgstr "Prodleva před s_chováním:"
+msgstr "Prodleva před s_krytím:"
 
 #: src/strings.c:171
 msgid "Delay before _showing:"
@@ -538,7 +546,7 @@ msgstr "<span weight=\"bold\" size=\"xx-large\">ObConf VERSION</span>"
 
 #: src/strings.c:177
 msgid "A preferences manager for Openbox"
-msgstr "Manažer preferencí pro Openbox"
+msgstr "Správce nastavení pro Openbox"
 
 #: src/strings.c:178
 msgid ""
@@ -558,7 +566,7 @@ msgstr "window1"
 
 #: src/strings.c:183
 msgid "<span weight=\"bold\">Press the key you wish to bind...</span>"
-msgstr "<span weight=\"bold\">Stiskni kýženou klávesu...</span>"
+msgstr "<span weight=\"bold\">Stiskněte kýženou klávesu...</span>"
 
 #: src/main.c:72 src/main.c:74 src/main.c:76
 msgid "Copyright (c)"
@@ -596,7 +604,7 @@ msgstr "  --archive MOTIV       Vytvořit archiv z daného motivu\n"
 
 #: src/main.c:93
 msgid "  --config-file FILE    Specify the path to the config file to use\n"
-msgstr ""
+msgstr "  --config-file SOUBOR  Zadat cestu ke konfiguračnímu souboru\n"
 
 #: src/main.c:94
 #, c-format
@@ -606,7 +614,7 @@ msgid ""
 "\n"
 msgstr ""
 "\n"
-"Prosím hlašte chyby na %s\n"
+"Prosím, hlaste chyby anglicky na %s\n"
 "\n"
 
 #: src/main.c:110
@@ -619,19 +627,23 @@ msgstr "--archive vyžaduje argument\n"
 
 #: src/main.c:122
 msgid "--config-file requires an argument\n"
-msgstr ""
+msgstr "--config-file vyžaduje argument\n"
 
 #: src/main.c:213
 msgid ""
 "Failed to load the obconf.glade interface file. You have probably failed to "
 "install ObConf properly."
 msgstr ""
+"Nepodařilo se načíst soubor s rozhraním obconf.glade. Pravděpodobně se vám "
+"nepodařilo nainstalovat ObConf správně."
 
 #: src/main.c:234
 msgid ""
 "Failed to load an rc.xml. You have probably failed to install Openbox "
 "properly."
 msgstr ""
+"Nepodařilo se načíst rc.xml. Pravděpodobně se vám nepodařilo nainstalovat "
+"ObConf správně."
 
 #: src/main.c:243
 #, c-format
@@ -641,6 +653,10 @@ msgid ""
 "\n"
 "Message: %s"
 msgstr ""
+"Chyba při zpracování konfiguračního souboru Openboxu. Váš konfigurační soubor "
+"není platné XML.\n"
+"\n"
+"Zpráva: %s"
 
 #: src/desktops.c:134 src/desktops.c:165 src/desktops.c:181
 msgid "(Unnamed desktop)"
@@ -648,11 +664,11 @@ msgstr "(Bezejmenná plocha)"
 
 #: src/theme.c:109 src/theme.c:141
 msgid "Choose an Openbox theme"
-msgstr "Vyber motiv Openbox"
+msgstr "Vyber motiv Openboxu"
 
 #: src/theme.c:118
 msgid "Openbox theme archives"
-msgstr "Archiv openbox motivů"
+msgstr "Archivy motivů Openboxu"
 
 #: src/archive.c:40
 #, c-format
@@ -672,7 +688,7 @@ msgid ""
 "%s"
 msgstr ""
 "Nepodařilo se vytvořit archiv motivu \"%s\".\n"
-"Nahlášeny byly následující chyby:\n"
+"Byly nahlášeny následující chyby:\n"
 "%s"
 
 #: src/archive.c:106 src/archive.c:190
@@ -688,7 +704,7 @@ msgstr "Nepodařilo se vytvořit adresář \"%s\": %s"
 #: src/archive.c:148
 #, c-format
 msgid "\"%s\" does not appear to be a valid Openbox theme directory"
-msgstr "\"%s\" nevypadá jako adresář motivu Openbox"
+msgstr "\"%s\" nevypadá jako adresář motivu Openboxu"
 
 #: src/archive.c:158
 #, c-format
@@ -705,18 +721,11 @@ msgid ""
 "%s"
 msgstr ""
 "Nepodařilo se rozbalit soubor \"%s\".\n"
-"Prosím ověřte, že \"%s\" má povolen zápis a že soubor je archiv motivu pro "
+"Prosím, ověřte, že \"%s\" má povolen zápis a že soubor je archiv motivu pro "
 "Openbox.\n"
-"Nahlášeny byly následující chyby:\n"
+"Byly nahlášeny následující chyby:\n"
 "%s"
 
 #: src/mouse.c:72
 msgid "Custom actions"
 msgstr "Uživatelské akce"
-
-#~ msgid ""
-#~ "Unable to determine the theme's name from \"%s\".  File name should be "
-#~ "ThemeName.obt."
-#~ msgstr ""
-#~ "Kunde inte avgöra temats namn från \"%s\". Filnamnet borde vara TemaNamn."
-#~ "obt."
