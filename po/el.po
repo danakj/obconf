@@ -1,0 +1,736 @@
+# Greek translations for ObConf package.
+# Copyright (C) 2011 Dana Jansens
+# This file is distributed under the same license as the ObConf package.
+# forfolias <forfolias@gmail.com>, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: obconf\n"
+"Report-Msgid-Bugs-To: http://bugzilla.icculus.org/\n"
+"POT-Creation-Date: 2008-03-02 19:36-0500\n"
+"PO-Revision-Date: 2011-02-10 22:56+0200\n"
+"Last-Translator: George Vasilakos <forfolias@linuxteam.cs.teilar.gr>\n"
+"Language-Team: Greek\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Language: Greek\n"
+"X-Poedit-Country: GREECE\n"
+
+#: src/strings.c:7
+msgid "Openbox Configuration Manager"
+msgstr "Διαχειριστής ρυθμίσεων Openbox"
+
+#: src/strings.c:8
+msgid "<span weight=\"bold\">Theme</span>"
+msgstr "<span weight=\"bold\">Θέμα</span>"
+
+#: src/strings.c:9
+#: src/strings.c:14
+#: src/strings.c:18
+#: src/strings.c:27
+#: src/strings.c:43
+#: src/strings.c:51
+#: src/strings.c:54
+#: src/strings.c:63
+#: src/strings.c:72
+#: src/strings.c:80
+#: src/strings.c:85
+#: src/strings.c:98
+#: src/strings.c:100
+#: src/strings.c:107
+#: src/strings.c:113
+#: src/strings.c:116
+#: src/strings.c:118
+#: src/strings.c:125
+#: src/strings.c:137
+#: src/strings.c:140
+#: src/strings.c:151
+#: src/strings.c:154
+#: src/strings.c:160
+#: src/strings.c:165
+#: src/strings.c:167
+#: src/strings.c:170
+msgid "    "
+msgstr "    "
+
+#: src/strings.c:10
+msgid "_Install a new theme..."
+msgstr "_Εγκατάσταση νέου θέματος..."
+
+#: src/strings.c:11
+msgid "Create a theme _archive (.obt)..."
+msgstr "Δημιουργία ενός _αρχείου θέματος (.obt)..."
+
+#: src/strings.c:12
+msgid "Theme"
+msgstr "Θέμα"
+
+#: src/strings.c:13
+msgid "<span weight=\"bold\">Windows</span>"
+msgstr "<span weight=\"bold\">Παράθυρα</span>"
+
+#: src/strings.c:15
+msgid "_Windows retain a border when undecorated"
+msgstr "Τα _παράθυρα διατηρούν ένα πλαίσιο στη μη-διακόσμηση"
+
+#: src/strings.c:16
+msgid "A_nimate iconify and restore"
+msgstr "_Κίνηση κατά την εικονιδοποίηση και επαναφορά"
+
+#: src/strings.c:17
+msgid "<span weight=\"bold\">Window Titles</span>"
+msgstr "<span weight=\"bold\">Τίτλοι παραθύρων</span>"
+
+#: src/strings.c:19
+msgid "_Button order:"
+msgstr "_Σειρά κουμπιών:"
+
+#: src/strings.c:20
+msgid ""
+"N - The window's icon\n"
+"D - The all-desktops (sticky) button\n"
+"S - The shade (roll up) button\n"
+"L - The label (window title)\n"
+"I - The iconify (minimize) button\n"
+"M - The maximize button\n"
+"C - The close button"
+msgstr ""
+"N - Το εικονίδιο του παραθύρου\n"
+"D - Το κουμπί σε-όλες-τις-επιφάνειες-εργασίας\n"
+"S - Το κουμπί τυλίγματος\n"
+"L - Ο τίτλος του παραθύρου\n"
+"I - Το κουμπί εικονιδοποίησης\n"
+"M - Το κουμπί μεγιστοποίησης\n"
+"C - Το κουμπί τερματισμού"
+
+#: src/strings.c:28
+msgid ""
+"N:\n"
+"L:\n"
+"I:\n"
+"M:"
+msgstr ""
+"N:\n"
+"L:\n"
+"I:\n"
+"M:"
+
+#: src/strings.c:32
+msgid ""
+"Window icon\n"
+"Window label (Title)\n"
+"Iconify (Minimize)\n"
+"Maximize"
+msgstr ""
+"Εικονίδιο παραθύρου\n"
+"Τίτλος παραθύρου\n"
+"Εικονιδοποίηση\n"
+"Μεγιστοποίηση"
+
+#: src/strings.c:36
+msgid ""
+"C:\n"
+"S:\n"
+"D:"
+msgstr ""
+"C:\n"
+"S:\n"
+"D:"
+
+#: src/strings.c:39
+msgid ""
+"Close\n"
+"Shade (Roll up)\n"
+"Omnipresent (On all desktops)"
+msgstr ""
+"Κλείσιμο\n"
+"Τύλιγμα\n"
+"Πανταχού παρών (σε όλες τις επιφάνειες εργασίας)"
+
+#: src/strings.c:42
+msgid "<span weight=\"bold\">Fonts</span>"
+msgstr "<span weight=\"bold\">Γραμματοσειρές</span>"
+
+#: src/strings.c:44
+msgid "_Active window title: "
+msgstr "Τίτλος _ενεργού παραθύρου:"
+
+#: src/strings.c:45
+msgid "_Inactive window title: "
+msgstr "Τίτλος _ανενεργού παραθύρου:"
+
+#: src/strings.c:46
+msgid "Menu _header: "
+msgstr "_Επικεφαλίδα μενού:"
+
+#: src/strings.c:47
+msgid "_Menu Item: "
+msgstr "_Αντικείμενα μενού:"
+
+#: src/strings.c:48
+msgid "_On-screen display: "
+msgstr "Επί της _οθόνης:"
+
+#: src/strings.c:49
+msgid "Appearance"
+msgstr "Εμφάνιση"
+
+#: src/strings.c:50
+#: src/strings.c:97
+msgid "<span weight=\"bold\">Focusing Windows</span>"
+msgstr "<span weight=\"bold\">Εστίαση παραθύρων</span>"
+
+#: src/strings.c:52
+msgid "Focus _new windows when they appear"
+msgstr "Εστίαση στα _νέα παράθυρα όταν αυτά εμφανίζονται"
+
+#: src/strings.c:53
+msgid "<span weight=\"bold\">Placing Windows</span>"
+msgstr "<span weight=\"bold\">Τοποθέτηση παραθύρων</span>"
+
+#: src/strings.c:55
+msgid "_Place new windows under the mouse pointer"
+msgstr "_Τοποθέτηση νέων παραθύρων κάτω από το δρομέα του ποντικιού"
+
+#: src/strings.c:56
+msgid "_Center new windows when they are placed"
+msgstr "_Κεντράρισμα νέων παραθύρων όταν τοποθετηθούν"
+
+#: src/strings.c:57
+msgid "Prefer to place new windows _on:"
+msgstr "Προτίμηση τοποθέτησης νέων παραθύρων _σε:"
+
+#: src/strings.c:58
+msgid "All monitors"
+msgstr "Όλες τις οθόνες"
+
+#: src/strings.c:59
+msgid "The active monitor"
+msgstr "Ενεργή οθόνη"
+
+#: src/strings.c:60
+msgid "The monitor with the mouse"
+msgstr "Οθόνη του δρομέα ποντικιού"
+
+#: src/strings.c:61
+msgid "Windows"
+msgstr "Παράθυρα"
+
+#: src/strings.c:62
+msgid "<span weight=\"bold\">Moving and Resizing Windows</span>"
+msgstr "<span weight=\"bold\">Μετακίνηση και αλλαγή μεγέθους παραθύρων</span>"
+
+#: src/strings.c:64
+msgid "Update the window contents while _resizing"
+msgstr "Ανανέωση των περιεχομένων του παραθύρου κατά την αλλαγή _μεγέθους"
+
+#: src/strings.c:65
+msgid "Drag _threshold distance:"
+msgstr "Απόσταση κατωφλίου συρσίματος:"
+
+#: src/strings.c:66
+#: src/strings.c:68
+#: src/strings.c:70
+#: src/strings.c:90
+#: src/strings.c:95
+#: src/strings.c:128
+#: src/strings.c:130
+#: src/strings.c:132
+#: src/strings.c:134
+msgid "px"
+msgstr "px"
+
+#: src/strings.c:67
+msgid "Amount of resistance against other _windows:"
+msgstr "Ποσό ανθεκτικότητας στα άλλα _παράθυρα:"
+
+#: src/strings.c:69
+msgid "Amount of resistance against screen _edges:"
+msgstr "Ποσό ανθεκτικότητας στις άκρες της _οθόνης:"
+
+#: src/strings.c:71
+msgid "_Switch desktops when moving a window past the screen edge"
+msgstr "_Αλλαγή επιφάνειας εργασίας κατά τη μετακίνηση ενός παραθύρου πέρα από την άκρη της οθόνης"
+
+#: src/strings.c:73
+msgid "_Amount of time to wait before switching:"
+msgstr "_Χρόνος πριν την αλλαγή:"
+
+#: src/strings.c:74
+#: src/strings.c:105
+#: src/strings.c:112
+#: src/strings.c:120
+#: src/strings.c:169
+#: src/strings.c:172
+msgid "ms"
+msgstr "ms"
+
+#: src/strings.c:75
+msgid "<span weight=\"bold\">Information Dialog</span>"
+msgstr "<span weight=\"bold\">Παράθυρο πληροφοριών</span>"
+
+#: src/strings.c:76
+msgid "Show _information dialog:"
+msgstr "Εμφάνιση _παραθύρου πληροφοριών:"
+
+#: src/strings.c:77
+msgid "When resizing terminal windows"
+msgstr "Κατά την αλλαγή μεγέθους παραθύρων τερματικού"
+
+#: src/strings.c:78
+msgid "Always"
+msgstr "Πάντα"
+
+#: src/strings.c:79
+msgid "Never"
+msgstr "Ποτέ"
+
+#: src/strings.c:81
+msgid "Information dialog's _position:"
+msgstr "_Θέση παραθύρου πληροφοριών:"
+
+#: src/strings.c:82
+msgid "Centered on the window"
+msgstr "Στο κέντρο του παραθύρου"
+
+#: src/strings.c:83
+msgid "Above the window"
+msgstr "Πάνω από το παράθυρο"
+
+#: src/strings.c:84
+msgid "Fixed position on screen"
+msgstr "Σε συγκεκριμένη θέση στην οθόνη"
+
+#: src/strings.c:86
+msgid "Fixed _x position:"
+msgstr "Συγκεκριμένη θέση _χ:"
+
+#: src/strings.c:87
+#: src/strings.c:92
+msgid "Centered"
+msgstr "Κεντραρισμένο"
+
+#: src/strings.c:88
+msgid "From left edge"
+msgstr "Από την αριστερή άκρη"
+
+#: src/strings.c:89
+msgid "From right edge"
+msgstr "Από τη δεξιά άκρη"
+
+#: src/strings.c:91
+msgid "Fixed _y position:"
+msgstr "Συγκεκριμένη θέση _ψ:"
+
+#: src/strings.c:93
+msgid "From top edge"
+msgstr "Από την πάνω άκρη"
+
+#: src/strings.c:94
+msgid "From bottom edge"
+msgstr "Από την κάτω άκρη"
+
+#: src/strings.c:96
+msgid "Move & Resize"
+msgstr "Μετακίνηση & αλλαγή μεγέθους"
+
+#: src/strings.c:99
+msgid "_Focus windows when the mouse pointer moves over them"
+msgstr "_Εστίαση στα παράθυρα όταν ο δρομέας του ποντικιού κινείται πάνω τους"
+
+#: src/strings.c:101
+msgid "Move focus under the mouse when _switching desktops"
+msgstr "Μετακίνηση εστίασης κάτω από το δρομέα κατά την _αλλαγή επιφανειών εργασίας"
+
+#: src/strings.c:102
+msgid "Move focus _under the mouse when the mouse is not moving"
+msgstr "Μετακίνηση της εστίασης _κάτω από το δρομέα όταν αυτός δεν κινείται"
+
+#: src/strings.c:103
+msgid "_Raise windows when the mouse pointer moves over them"
+msgstr "_Ανύψωση παραθύρων όταν ο δρομέας του ποντικιού κινείται πάνω τους"
+
+#: src/strings.c:104
+msgid "_Delay before focusing and raising windows:"
+msgstr "_Καθυστέρηση πριν την εστίαση και ανύψωση παραθύρων:"
+
+#: src/strings.c:106
+msgid "<span weight=\"bold\">Titlebar</span>"
+msgstr "<span weight=\"bold\">Γραμμή τίτλου</span>"
+
+#: src/strings.c:108
+msgid "Double click on the _titlebar:"
+msgstr "Διπλό κλικ στη γραμμή τίτλου"
+
+#: src/strings.c:109
+msgid "Maximizes the window"
+msgstr "Μεγιστοποίηση του παραθύρου"
+
+#: src/strings.c:110
+msgid "Shades the window"
+msgstr "Τύλιγμα του παραθύρου"
+
+#: src/strings.c:111
+msgid "Double click ti_me:"
+msgstr "Χρόνος διπλού _κλικ:"
+
+#: src/strings.c:114
+msgid "Mouse"
+msgstr "Ποντίκι"
+
+#: src/strings.c:115
+msgid "<span weight=\"bold\">Desktops</span>"
+msgstr "<span weight=\"bold\">Επιφάνειες εργασίας</span>"
+
+#: src/strings.c:117
+msgid "_Show a notification when switching desktops"
+msgstr "_Εμφάνιση ειδοποίησης κατά την αλλαγή επιφάνειας εργασίας"
+
+#: src/strings.c:119
+msgid "_Amount of time to show the notification for:"
+msgstr "_Χρόνος εμφάνισης ειδοποίησης:"
+
+#: src/strings.c:121
+msgid "_Number of desktops: "
+msgstr "_Πλήθος επιφανειών εργασίας:"
+
+#: src/strings.c:122
+msgid "_Desktop names:"
+msgstr "_Ονόματα επιφανειών εργασίας"
+
+#: src/strings.c:123
+msgid "Desktops"
+msgstr "Επιφάνειες εργασίας"
+
+#: src/strings.c:124
+msgid "<span weight=\"bold\">Desktop Margins</span>"
+msgstr "<span weight=\"bold\">Περιθώρια επιφάνειας εργασίας</span>"
+
+#: src/strings.c:126
+msgid "Desktop margins are reserved areas on the edge of your screen.  New windows will not be placed within a margin, and maximized windows will not cover them."
+msgstr "Τα περιθώρια επιφάνειας εργασίας είναι κρατημένες περιοχές στην άκρη της οθόνης. Τα νέα παράθυρα δε θα τοποθετούνται μέσα σε αυτό το περιθώριο και τα μεγιστοποιημένα παράθυρα δεν θα το καλύπτουν."
+
+#: src/strings.c:127
+msgid "_Top"
+msgstr "_Πάνω"
+
+#: src/strings.c:129
+msgid "_Left"
+msgstr "_Αριστερά"
+
+#: src/strings.c:131
+msgid "_Right"
+msgstr "_Δεξιά"
+
+#: src/strings.c:133
+msgid "_Bottom"
+msgstr "_Κάτω"
+
+#: src/strings.c:135
+msgid "Margins"
+msgstr "Περιθώρια"
+
+#: src/strings.c:136
+msgid "<span weight=\"bold\">Dock</span>"
+msgstr "<span weight=\"bold\">Προσαρτήσεις</span>"
+
+#: src/strings.c:138
+msgid "The dock is a special container for \"dockapps\", or dock applications.  It is not visible on screen until a dockapp is run.  Dockapps can be used to show things like a clock, or to provide you with a system tray."
+msgstr "Μια προσάρτηση είναι ένας ειδικός χώρος για \"dockapps\", ή εφαρμογές προσάρτησης. Δεν εμφανίζεται στην οθόνη μέχρι μια εφαρμογή προσάρτησης να εκτελεστεί. Οι εφαρμογές προσάρτησης μπορούν να χρησιμοποιηθούν για να εμφανίζουν πράγματα όπως ένα ρολόι, ή να παρέχουν ένα πλαίσιο συστήματος."
+
+#: src/strings.c:139
+msgid "<span weight=\"bold\">Position</span>"
+msgstr "<span weight=\"bold\">Θέση</span>"
+
+#: src/strings.c:141
+msgid "_Position:"
+msgstr "_Θέση:"
+
+#: src/strings.c:142
+msgid "Top Left"
+msgstr "Πάνω αριστερά"
+
+#: src/strings.c:143
+msgid "Top"
+msgstr "Πάνω"
+
+#: src/strings.c:144
+msgid "Top Right"
+msgstr "Πάνω δεξιά"
+
+#: src/strings.c:145
+msgid "Left"
+msgstr "Αριστερά"
+
+#: src/strings.c:146
+msgid "Right"
+msgstr "Δεξιά"
+
+#: src/strings.c:147
+msgid "Bottom Left"
+msgstr "Κάτω αριστερά"
+
+#: src/strings.c:148
+msgid "Bottom"
+msgstr "Κάτω"
+
+#: src/strings.c:149
+msgid "Bottom Right"
+msgstr "Κάτω δεξιά"
+
+#: src/strings.c:150
+msgid "Floating"
+msgstr "Πλωτό"
+
+#: src/strings.c:152
+msgid "_Floating position:"
+msgstr "_Θέση πλωτού:"
+
+#: src/strings.c:153
+msgid "x"
+msgstr "χ"
+
+#: src/strings.c:155
+msgid "Allow _windows to be placed within the dock's area"
+msgstr "Να επιτρέπεται στα _παράθυρα να τοποθετούνται στην περιοχή προσάρτησης"
+
+#: src/strings.c:156
+msgid "_Orientation: "
+msgstr "_Προσανατολισμός:"
+
+#: src/strings.c:157
+msgid "Vertical"
+msgstr "Κάθετα"
+
+#: src/strings.c:158
+msgid "Horizontal"
+msgstr "Οριζόντια"
+
+#: src/strings.c:159
+msgid "<span weight=\"bold\">Stacking</span>"
+msgstr "<span weight=\"bold\">Στοίβα</span>"
+
+#: src/strings.c:161
+msgid "Keep dock _above other windows"
+msgstr "Κράτηση προσάρτησης _πάνω από τα άλλα παράθυρα"
+
+#: src/strings.c:162
+msgid "A_llow dock to be both above and below windows"
+msgstr "Να _επιτρέπεται στην περιοχή προσάρτησης να είναι και πάνω και κάτω από τα παράθυρα"
+
+#: src/strings.c:163
+msgid "Keep dock _below other windows"
+msgstr "Κράτηση προσάρτησης _κάτω από τα άλλα παράθυρα"
+
+#: src/strings.c:164
+msgid "<span weight=\"bold\">Hiding</span>"
+msgstr "<span weight=\"bold\">Απόκρυψη</span>"
+
+#: src/strings.c:166
+msgid "_Hide off screen"
+msgstr "_Απόκρυψη από την οθόνη"
+
+#: src/strings.c:168
+msgid "_Delay before hiding:"
+msgstr "Καθυστέρηση πριν _απόκρυψη:"
+
+#: src/strings.c:171
+msgid "Delay before _showing:"
+msgstr "Καθυστέρηση πριν την _εμφάνιση:"
+
+#: src/strings.c:173
+msgid "Dock"
+msgstr "Προσάρτηση"
+
+#: src/strings.c:174
+msgid "Abo_ut"
+msgstr "_Περί"
+
+#: src/strings.c:175
+msgid "About ObConf"
+msgstr "Περί ObConf"
+
+#: src/strings.c:176
+msgid "<span weight=\"bold\" size=\"xx-large\">ObConf VERSION</span>"
+msgstr "<span weight=\"bold\" size=\"xx-large\">Έκδοση ObConf</span>"
+
+#: src/strings.c:177
+msgid "A preferences manager for Openbox"
+msgstr "Ένας διαχειριστής ρυθμίσεων για το Openbox"
+
+#: src/strings.c:178
+msgid ""
+"Copyright (c) 2003-2008\n"
+"Dana Jansens <danakj@orodu.net>\n"
+"Tim Riley <tr@slackzone.org>\n"
+"Javeed Shaikh <syscrash2k@gmail.com>"
+msgstr ""
+"Πνευματικά δικαιώματα (c) 2003-2008\n"
+"Dana Jansens <danakj@orodu.net>\n"
+"Tim Riley <tr@slackzone.org>\n"
+"Javeed Shaikh <syscrash2k@gmail.com>"
+
+#: src/strings.c:182
+msgid "window1"
+msgstr "παράθυρο1"
+
+#: src/strings.c:183
+msgid "<span weight=\"bold\">Press the key you wish to bind...</span>"
+msgstr "<span weight=\"bold\">Πιέστε το κουμπί που θέλετε να δεσμεύσετε...</span>"
+
+#: src/main.c:72
+#: src/main.c:74
+#: src/main.c:76
+msgid "Copyright (c)"
+msgstr "Πνευματικά δικαιώματα (c)"
+
+#: src/main.c:87
+msgid "Syntax: obconf [options] [ARCHIVE.obt]\n"
+msgstr "Σύνταξη: obconf [επιλογές] [αρχείο.obt]\n"
+
+#: src/main.c:88
+msgid ""
+"\n"
+"Options:\n"
+msgstr ""
+"\n"
+"Επιλογές:\n"
+
+#: src/main.c:89
+msgid "  --help                Display this help and exit\n"
+msgstr "  --help               Εμφάνιση αυτής της βοήθειας και τερματισμός\n"
+
+#: src/main.c:90
+msgid "  --version             Display the version and exit\n"
+msgstr "  --version             Εμφάνιση της έκδοσης και τερματισμός\n"
+
+#: src/main.c:91
+msgid "  --install ARCHIVE.obt Install the given theme archive and select it\n"
+msgstr "  --install ΑΡΧΕΙΟ.obt Εγκατάσταση του δοθέντος αρχείου θέματος και επιλογή του\n"
+
+#: src/main.c:92
+msgid "  --archive THEME       Create a theme archive from the given theme directory\n"
+msgstr "  --archive THEME       Δημιουργία ενός αρχείου θέματος από το δοθέν κατάλογο θέματος\n"
+
+#: src/main.c:93
+msgid "  --config-file FILE    Specify the path to the config file to use\n"
+msgstr "  --config-file FILE    Καθορίστε τη διαδρομή του αρχείου ρυθμίσεων προς χρήση\n"
+
+#: src/main.c:94
+#, c-format
+msgid ""
+"\n"
+"Please report bugs at %s\n"
+"\n"
+msgstr ""
+"\n"
+"Παρακαλώ αναφέρετε σφάλματα στο %s\n"
+"\n"
+
+#: src/main.c:110
+msgid "--install requires an argument\n"
+msgstr "--install απαιτεί ένα όρισμα\n"
+
+#: src/main.c:116
+msgid "--archive requires an argument\n"
+msgstr "--archive απαιτεί ένα όρισμα\n"
+
+#: src/main.c:122
+msgid "--config-file requires an argument\n"
+msgstr "--config-file απαιτεί ένα όρισμα\n"
+
+#: src/main.c:213
+msgid "Failed to load the obconf.glade interface file. You have probably failed to install ObConf properly."
+msgstr "Αποτυχία φόρτωσης του αρχείου διεπαφής obconf.glade. Πιθανότατα αποτυχίας σωστής εγκατάστασης του ObConf."
+
+#: src/main.c:234
+msgid "Failed to load an rc.xml. You have probably failed to install Openbox properly."
+msgstr "Αποτυχία φόρτωσης ενός rc.xml. Πιθανότατα αποτυχία σωστής εγκατάστασης Openbox."
+
+#: src/main.c:243
+#, c-format
+msgid ""
+"Error while parsing the Openbox configuration file.  Your configuration file is not valid XML.\n"
+"\n"
+"Message: %s"
+msgstr ""
+"Σφάλμα κατά την προσπέλαση του αρχείου ρυθμίσεων Openbox. Το αρχείο ρυθμίσεων δεν είναι έγκυρο αρχείο XML.\n"
+"\n"
+"Μήνυμα: %s"
+
+#: src/desktops.c:134
+#: src/desktops.c:165
+#: src/desktops.c:181
+msgid "(Unnamed desktop)"
+msgstr "(Ανώνυμη επιφάνεια εργασίας)"
+
+#: src/theme.c:109
+#: src/theme.c:141
+msgid "Choose an Openbox theme"
+msgstr "Επιλογή ενός θέματος Openbox"
+
+#: src/theme.c:118
+msgid "Openbox theme archives"
+msgstr "Αρχεία θέματος Openbox"
+
+#: src/archive.c:40
+#, c-format
+msgid "\"%s\" was installed to %s"
+msgstr "\"%s\" εγκαταστάθηκε στο %s"
+
+#: src/archive.c:65
+#, c-format
+msgid "\"%s\" was successfully created"
+msgstr "\"%s\" δημιουργήθηκε επιτυχώς"
+
+#: src/archive.c:101
+#, c-format
+msgid ""
+"Unable to create the theme archive \"%s\".\n"
+"The following errors were reported:\n"
+"%s"
+msgstr ""
+"Δεν ήταν δυνατή η δημιουργία του αρχείου θέματος \"%s\".\n"
+"Τα ακόλουθα σφάλματα αναφέρθηκαν:\n"
+"%s"
+
+#: src/archive.c:106
+#: src/archive.c:190
+#, c-format
+msgid "Unable to run the \"tar\" command: %s"
+msgstr "Δεν ήταν δυνατή η εκτέλεση της εντολής \"tar\": %s"
+
+#: src/archive.c:126
+#, c-format
+msgid "Unable to create directory \"%s\": %s"
+msgstr "Δεν ήταν δυνατή η δημιουργία του καταλόγου \"%s\": %s"
+
+#: src/archive.c:148
+#, c-format
+msgid "\"%s\" does not appear to be a valid Openbox theme directory"
+msgstr "\"%s\" δε φαίνεται να είναι ένας έγκυρος κατάλογος θέματος Openbox"
+
+#: src/archive.c:158
+#, c-format
+msgid "Unable to move to directory \"%s\": %s"
+msgstr "Δεν ήταν δυνατή η μετακίνηση στον κατάλογο \"%s\": %s"
+
+#: src/archive.c:197
+#, c-format
+msgid ""
+"Unable to extract the file \"%s\".\n"
+"Please ensure that \"%s\" is writable and that the file is a valid Openbox theme archive.\n"
+"The following errors were reported:\n"
+"%s"
+msgstr ""
+"Δεν ήταν δυνατή η εξαγωγή του αρχείου \"%s\".\n"
+"Παρακαλώ επιβεβαιώστε ότι το \"%s\" είναι εγγράψιμο και ότι το αρχείο είναι ένα έγκυρο αρχείο θέματος Openbox.\n"
+"Τα ακόλουθα σφάλματα αναφέρθηκαν:\n"
+"%s"
+
+#: src/mouse.c:72
+msgid "Custom actions"
+msgstr "Προσαρμοσμένες ενέργεις"
+
