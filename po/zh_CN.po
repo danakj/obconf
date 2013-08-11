@@ -1,21 +1,22 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Dana Jansens
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Simplified chinese translations for obconf package.
+# Copyright (C) 2007 Free Software Foundation, Inc.
+# This file is distributed under the same license as the obconf package.
+# Careone <zzbusagain@yahoo.com.cn>, 2009.
+# Wei-Lun Chao <chaoweilun@gmail.com>, 2009.
+#
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Obconf 2.0.3\n"
+"Project-Id-Version: obconf 2.0.3\n"
 "Report-Msgid-Bugs-To: http://bugzilla.icculus.org/\n"
 "POT-Creation-Date: 2008-02-02 11:51-0500\n"
-"PO-Revision-Date: 2009-08-07 00:26+0800\n"
-"Last-Translator: lon <lon@xxlinux.com>\n"
-"Language-Team: Simplified Chinese\n"
+"PO-Revision-Date: 2009-07-13 20:43+0800\n"
+"Last-Translator: Careone <zzbusagain@yahoo.com.cn>\n"
+"Language-Team: Chinese/Simplified <i18n-translation@lists.linux.net.cn>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Chinese\n"
-"X-Poedit-Country: CHINA\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/strings.c:7
 msgid "Openbox Configuration Manager"
@@ -51,15 +52,15 @@ msgstr "<span weight=\"bold\">主题</span>"
 #: src/strings.c:164
 #: src/strings.c:167
 msgid "    "
-msgstr ""
+msgstr "    "
 
 #: src/strings.c:10
 msgid "_Install a new theme..."
-msgstr "安装新主题(_I)..."
+msgstr "安装新的主题(_I)…"
 
 #: src/strings.c:11
 msgid "Create a theme _archive (.obt)..."
-msgstr "创建主题包(.o_bt)..."
+msgstr "新建一个主题包(.obt)(_A)…"
 
 #: src/strings.c:12
 msgid "Theme"
@@ -71,11 +72,11 @@ msgstr "<span weight=\"bold\">窗口</span>"
 
 #: src/strings.c:15
 msgid "_Windows retain a border when undecorated"
-msgstr "当窗口没有装饰时保留边框(_W)"
+msgstr "窗口未装饰时保留边框(_W)"
 
 #: src/strings.c:16
 msgid "A_nimate iconify and restore"
-msgstr "最小化和还原启用动画效果(_N)"
+msgstr "最小化和还原使用动画效果(_N)"
 
 #: src/strings.c:17
 msgid "<span weight=\"bold\">Window Titles</span>"
@@ -83,7 +84,7 @@ msgstr "<span weight=\"bold\">窗口标题</span>"
 
 #: src/strings.c:19
 msgid "_Button order:"
-msgstr "按纽排序(_B)："
+msgstr "按钮顺序(_B)："
 
 #: src/strings.c:20
 msgid ""
@@ -96,12 +97,12 @@ msgid ""
 "C - The close button"
 msgstr ""
 "N - 窗口图标\n"
-"D - 在全部桌面按纽\n"
-"S - 卷起按纽\n"
-"L - 窗口标题\n"
-"I - 最小化按纽\n"
-"M - 最大化按纽\n"
-"C - 关闭按纽"
+"D - 所有桌面(粘附)按钮\n"
+"S - 卷起(向上卷起)按钮\n"
+"L - 标签(窗口标题)\n"
+"I - 最小化按钮\n"
+"M - 最大化按钮\n"
+"C - 关闭按钮"
 
 #: src/strings.c:28
 msgid ""
@@ -110,6 +111,10 @@ msgid ""
 "I:\n"
 "M:"
 msgstr ""
+"N:\n"
+"L：\n"
+"I：\n"
+"M："
 
 #: src/strings.c:32
 msgid ""
@@ -119,7 +124,7 @@ msgid ""
 "Maximize"
 msgstr ""
 "窗口图标\n"
-"窗口标题\n"
+"窗口标签(标题)\n"
 "最小化\n"
 "最大化"
 
@@ -129,6 +134,9 @@ msgid ""
 "S:\n"
 "D:"
 msgstr ""
+"C:\n"
+"S：\n"
+"D："
 
 #: src/strings.c:39
 msgid ""
@@ -137,8 +145,8 @@ msgid ""
 "Omnipresent (On all desktops)"
 msgstr ""
 "关闭\n"
-"卷起\n"
-"在全部桌面"
+"卷起(向上卷起)\n"
+"始终显示(在所有桌面)"
 
 #: src/strings.c:42
 msgid "<span weight=\"bold\">Fonts</span>"
@@ -146,7 +154,7 @@ msgstr "<span weight=\"bold\">字体</span>"
 
 #: src/strings.c:44
 msgid "_Active window title: "
-msgstr "活动窗口标题(_A)："
+msgstr "激活窗口标题(_A)："
 
 #: src/strings.c:45
 msgid "_Inactive window title: "
@@ -158,11 +166,11 @@ msgstr "菜单标题(_H)："
 
 #: src/strings.c:47
 msgid "_Menu Item: "
-msgstr "菜单项(_M)："
+msgstr "菜单项目(_M)："
 
 #: src/strings.c:48
 msgid "_On-screen display: "
-msgstr "屏幕显示(_O)："
+msgstr "在屏幕上显示(_O)："
 
 #: src/strings.c:49
 msgid "Appearance"
@@ -171,39 +179,39 @@ msgstr "外观"
 #: src/strings.c:50
 #: src/strings.c:97
 msgid "<span weight=\"bold\">Focusing Windows</span>"
-msgstr "<span weight=\"bold\">聚焦窗口</span>"
+msgstr "<span weight=\"bold\">焦点窗口</span>"
 
 #: src/strings.c:52
 msgid "Focus _new windows when they appear"
-msgstr "当新窗口出现时即为焦点(_N)"
+msgstr "新窗口出现时将它们设为焦点(_N)"
 
 #: src/strings.c:53
 msgid "<span weight=\"bold\">Placing Windows</span>"
-msgstr "<span weight=\"bold\">放置窗口</span>"
+msgstr "<span weight=\"bold\">置放窗口</span>"
 
 #: src/strings.c:55
 msgid "_Place new windows under the mouse pointer"
-msgstr "放置新窗口于鼠标之下(_P)"
+msgstr "把新窗口放置在鼠标光标下方(_P)"
 
 #: src/strings.c:56
 msgid "_Center new windows when they are placed"
-msgstr "放置时居中新窗口(_C)"
+msgstr "摆放新窗口时居中(_C)"
 
 #: src/strings.c:57
 msgid "Prefer to place new windows _on:"
-msgstr "更习惯放置新窗口于(_O)："
+msgstr "尽可能把新窗口摆放到(_O)："
 
 #: src/strings.c:58
 msgid "All monitors"
-msgstr "全部显示器"
+msgstr "所有显示器"
 
 #: src/strings.c:59
 msgid "The active monitor"
-msgstr "活动显示器"
+msgstr "作用中的显示器"
 
 #: src/strings.c:60
 msgid "The monitor with the mouse"
-msgstr "鼠标所在显示器"
+msgstr "带鼠标的显示器"
 
 #: src/strings.c:61
 msgid "Windows"
@@ -211,15 +219,15 @@ msgstr "窗口"
 
 #: src/strings.c:62
 msgid "<span weight=\"bold\">Moving and Resizing Windows</span>"
-msgstr "<span weight=\"bold\">移动和重置窗口</span>"
+msgstr "<span weight=\"bold\">移动窗口和调整大小</span>"
 
 #: src/strings.c:64
 msgid "Update the window contents while _resizing"
-msgstr "调整窗口大小时更新其内容(_R)"
+msgstr "调整大小时更新窗口內容(_R)"
 
 #: src/strings.c:65
 msgid "Drag _threshold distance:"
-msgstr "拖动距离阀值(_T)："
+msgstr "拖放距离临界值(_T)："
 
 #: src/strings.c:66
 #: src/strings.c:68
@@ -235,19 +243,19 @@ msgstr "像素"
 
 #: src/strings.c:67
 msgid "Amount of resistance against other _windows:"
-msgstr "相对其它窗口的阻值(_W)："
+msgstr "相对其它窗口的阻力程度(_W)："
 
 #: src/strings.c:69
 msgid "Amount of resistance against screen _edges:"
-msgstr "相于屏幕边缘的阻值(_E)："
+msgstr "相对屏幕边缘的阻力程度(_E)："
 
 #: src/strings.c:71
 msgid "_Switch desktops when moving a window past the screen edge"
-msgstr "当移动窗口越过屏幕边缘时切换桌面(_S)"
+msgstr "移动窗口越过屏幕边缘时切换桌面(_S)"
 
 #: src/strings.c:73
 msgid "_Amount of time to wait before switching:"
-msgstr "切换前的等待时间(_A)："
+msgstr "切换之前需要等待的时间(_A)："
 
 #: src/strings.c:74
 #: src/strings.c:105
@@ -260,11 +268,11 @@ msgstr "毫秒"
 
 #: src/strings.c:75
 msgid "<span weight=\"bold\">Information Dialog</span>"
-msgstr "<span weight=\"bold\">信息对话框</span>"
+msgstr "<span weight=\"bold\">信息框</span>"
 
 #: src/strings.c:76
 msgid "Show _information dialog:"
-msgstr "显示信息对话框(_I)："
+msgstr "显示信息框(_I)："
 
 #: src/strings.c:77
 msgid "When resizing terminal windows"
@@ -272,7 +280,7 @@ msgstr "调整终端窗口大小时"
 
 #: src/strings.c:78
 msgid "Always"
-msgstr "总是"
+msgstr "自动"
 
 #: src/strings.c:79
 msgid "Never"
@@ -284,19 +292,19 @@ msgstr "信息对话框位置(_P)："
 
 #: src/strings.c:82
 msgid "Centered on the window"
-msgstr "居中于窗口"
+msgstr "在窗口正中间"
 
 #: src/strings.c:83
 msgid "Above the window"
-msgstr "窗口之上"
+msgstr "在窗口上面"
 
 #: src/strings.c:84
 msgid "Fixed position on screen"
-msgstr "固定位置于屏幕"
+msgstr "屏幕上的固定位置"
 
 #: src/strings.c:86
 msgid "Fixed _x position:"
-msgstr "固定 _X 位置"
+msgstr "固定的 _x 位置："
 
 #: src/strings.c:87
 #: src/strings.c:92
@@ -306,40 +314,40 @@ msgstr "居中"
 #: src/strings.c:88
 #: src/strings.c:93
 msgid "From left edge"
-msgstr "从左边"
+msgstr "从左侧边缘"
 
 #: src/strings.c:89
 #: src/strings.c:94
 msgid "From right edge"
-msgstr "从右边"
+msgstr "从右侧边缘"
 
 #: src/strings.c:91
 msgid "Fixed _y position:"
-msgstr "固定 _Y 位置"
+msgstr "固定的 _y 位置："
 
 #: src/strings.c:96
 msgid "Move & Resize"
-msgstr "移动和重置"
+msgstr "移动/整大小"
 
 #: src/strings.c:99
 msgid "_Focus windows when the mouse pointer moves over them"
-msgstr "当鼠标放置之上时聚焦窗口(_F)"
+msgstr "鼠标光标移动到窗口上方时设为焦点(_F)"
 
 #: src/strings.c:101
 msgid "Move focus under the mouse when _switching desktops"
-msgstr "当切换桌面时焦点移至鼠标之下(_S)"
+msgstr "交換桌面时移动鼠标下方焦点(_S)"
 
 #: src/strings.c:102
 msgid "Move focus _under the mouse when the mouse is not moving"
-msgstr "当鼠标不移动时焦点移至鼠标之下(_S)"
+msgstr "鼠标未移动时移动鼠标下方焦点(_U)"
 
 #: src/strings.c:103
 msgid "_Raise windows when the mouse pointer moves over them"
-msgstr "当鼠标放置之上时提升窗口(_R)"
+msgstr "鼠标光标在窗口上方移动时，将它们提到上层(_R)"
 
 #: src/strings.c:104
 msgid "_Delay before focusing and raising windows:"
-msgstr "聚焦和提升窗口延时(_D)："
+msgstr "设为焦点和升起窗口前的延时(_D)："
 
 #: src/strings.c:106
 msgid "<span weight=\"bold\">Titlebar</span>"
@@ -347,11 +355,11 @@ msgstr "<span weight=\"bold\">标题栏</span>"
 
 #: src/strings.c:108
 msgid "Double click on the _titlebar:"
-msgstr "双击标题栏(_T)："
+msgstr "在标题栏上双击(_T)："
 
 #: src/strings.c:109
 msgid "Maximizes the window"
-msgstr "最大化窗口"
+msgstr "窗口放到最大"
 
 #: src/strings.c:110
 msgid "Shades the window"
@@ -359,7 +367,7 @@ msgstr "卷起窗口"
 
 #: src/strings.c:111
 msgid "Double click ti_me:"
-msgstr "双击时间(_N )："
+msgstr "双击时间间隔(_M)："
 
 #: src/strings.c:114
 msgid "Mouse"
@@ -371,11 +379,11 @@ msgstr "<span weight=\"bold\">桌面</span>"
 
 #: src/strings.c:117
 msgid "_Show a notification when switching desktops"
-msgstr "当切换桌面时显示通知(_S)"
+msgstr "切换桌面时显示通知(_S)"
 
 #: src/strings.c:119
 msgid "_Amount of time to show the notification for:"
-msgstr "通知显现维持的时间(_A)："
+msgstr "显示通知的持续时间(_A)："
 
 #: src/strings.c:121
 msgid "_Number of desktops: "
@@ -391,11 +399,11 @@ msgstr "桌面"
 
 #: src/strings.c:124
 msgid "<span weight=\"bold\">Desktop Margins</span>"
-msgstr "<span weight=\"bold\">桌面边际</span>"
+msgstr "<span weight=\"bold\">桌面边界</span>"
 
 #: src/strings.c:126
 msgid "Desktop margins are reserved areas on the edge of your screen.  New windows will not be placed within a margin, and maximized windows will not cover them."
-msgstr "桌面边际是在您屏幕上的一个保留区域，新建窗口无法置于边部空白之内，最大化也无法覆盖它们。"
+msgstr "桌面边界是您屏幕边缘保留的区域。新窗口不会被放在边界內，而最大化的窗口也不会盖住它。"
 
 #: src/strings.c:127
 msgid "_Top"
@@ -415,7 +423,7 @@ msgstr "下(_B)"
 
 #: src/strings.c:135
 msgid "Margins"
-msgstr "边际"
+msgstr "边界"
 
 #: src/strings.c:136
 msgid "<span weight=\"bold\">Position</span>"
@@ -423,7 +431,7 @@ msgstr "<span weight=\"bold\">位置</span>"
 
 #: src/strings.c:138
 msgid "_Position:"
-msgstr "位置(_P)"
+msgstr "位置(_P)："
 
 #: src/strings.c:139
 msgid "Top Left"
@@ -467,11 +475,11 @@ msgstr "浮动位置(_F)："
 
 #: src/strings.c:150
 msgid "x"
-msgstr ""
+msgstr "x"
 
 #: src/strings.c:152
 msgid "Allow _windows to be placed within the dock's area"
-msgstr "允许窗口放置于停靠区内(_W)"
+msgstr "允许窗口占用停靠栏区域(_W)"
 
 #: src/strings.c:153
 msgid "_Orientation: "
@@ -479,27 +487,27 @@ msgstr "方向(_O)："
 
 #: src/strings.c:154
 msgid "Vertical"
-msgstr "垂直线"
+msgstr "垂直"
 
 #: src/strings.c:155
 msgid "Horizontal"
-msgstr "水平线"
+msgstr "水平"
 
 #: src/strings.c:156
 msgid "<span weight=\"bold\">Stacking</span>"
-msgstr "<span weight=\"bold\">堆栈</span>"
+msgstr "<span weight=\"bold\">堆叠</span>"
 
 #: src/strings.c:158
 msgid "Keep dock _above other windows"
-msgstr "保持停靠在其它窗口之上(_A)"
+msgstr "停靠栏始终在其它窗口上面(_A)"
 
 #: src/strings.c:159
 msgid "A_llow dock to be both above and below windows"
-msgstr "允许停靠高于或低于窗口(_L)"
+msgstr "允许停靠栏在窗口上面和下面(_L)"
 
 #: src/strings.c:160
 msgid "Keep dock _below other windows"
-msgstr "保持停靠在其它窗口之下(_B)"
+msgstr "停靠栏始终在其他窗口下面(_B)"
 
 #: src/strings.c:161
 msgid "<span weight=\"bold\">Hiding</span>"
@@ -507,19 +515,19 @@ msgstr "<span weight=\"bold\">隐藏</span>"
 
 #: src/strings.c:163
 msgid "_Hide off screen"
-msgstr "隐藏于屏幕(_H)"
+msgstr "隐藏屏幕(_H)"
 
 #: src/strings.c:165
 msgid "_Delay before hiding:"
-msgstr "隐藏之前延时(_D)："
+msgstr "隐藏前的延时(_D)："
 
 #: src/strings.c:168
 msgid "Delay before _showing:"
-msgstr "显示之前延时(_S)："
+msgstr "显示前的延时(_S)："
 
 #: src/strings.c:170
 msgid "Dock"
-msgstr "停靠"
+msgstr "停靠栏"
 
 #: src/strings.c:171
 msgid "Abo_ut"
@@ -535,7 +543,7 @@ msgstr "<span weight=\"bold\" size=\"xx-large\">ObConf 版本</span>"
 
 #: src/strings.c:174
 msgid "A preferences manager for Openbox"
-msgstr "一个 Openbox 配置工具"
+msgstr "Openbox 个性化管理器"
 
 #: src/strings.c:175
 msgid ""
@@ -544,28 +552,28 @@ msgid ""
 "Tim Riley <tr@slackzone.org>\n"
 "Javeed Shaikh <syscrash2k@gmail.com>"
 msgstr ""
-"版权所有 (c) 2003-2008\n"
+"Copyright © 2003-2008\n"
 "Dana Jansens <danakj@orodu.net>\n"
 "Tim Riley <tr@slackzone.org>\n"
 "Javeed Shaikh <syscrash2k@gmail.com>"
 
 #: src/strings.c:179
 msgid "window1"
-msgstr "窗口1"
+msgstr "窗口 1"
 
 #: src/strings.c:180
 msgid "<span weight=\"bold\">Press the key you wish to bind...</span>"
-msgstr "<span weight=\"bold\">按下您想绑定的键...</span>"
+msgstr "<span weight=\"bold\">请按下想要绑定的按键...</span>"
 
 #: src/main.c:72
 #: src/main.c:74
 #: src/main.c:76
 msgid "Copyright (c)"
-msgstr "版权所有 (C)"
+msgstr "Copyright (c)"
 
 #: src/main.c:87
 msgid "Syntax: obconf [options] [ARCHIVE.obt]\n"
-msgstr "语法: obconf [选项] [ARCHIVE.obt]\n"
+msgstr "语法：obconf [选项] [xxx.obt]\n"
 
 #: src/main.c:88
 msgid ""
@@ -573,11 +581,11 @@ msgid ""
 "Options:\n"
 msgstr ""
 "\n"
-"选项:\n"
+"选项：\n"
 
 #: src/main.c:89
 msgid "  --help                Display this help and exit\n"
-msgstr "  --help                显示此帮助信息并退出\n"
+msgstr "  --help                显示帮助信息并退出\n"
 
 #: src/main.c:90
 msgid "  --version             Display the version and exit\n"
@@ -585,15 +593,15 @@ msgstr "  --version             显示版本信息并退出\n"
 
 #: src/main.c:91
 msgid "  --install ARCHIVE.obt Install the given theme archive and select it\n"
-msgstr "  --install ARCHIVE.obt 安装选择的主题包并使用它\n"
+msgstr "  --install xxx.obt 安装指定的主题包并使用\n"
 
 #: src/main.c:92
 msgid "  --archive THEME       Create a theme archive from the given theme directory\n"
-msgstr "  --archive THEME       在选择的目录创建一个主题包\n"
+msgstr "  --archive 主题       从指定的主题目录建立主题包\n"
 
 #: src/main.c:93
 msgid "  --config-file FILE    Specify the path to the config file to use\n"
-msgstr "  --config-file FILE    使用指定的配置文件\n"
+msgstr "  --config-file 文件    指定配置文件所在的位置\n"
 
 #: src/main.c:94
 #, c-format
@@ -603,7 +611,7 @@ msgid ""
 "\n"
 msgstr ""
 "\n"
-"报告 Bug %s\n"
+"请将错误报告给 %s\n"
 "\n"
 
 #: src/main.c:110
@@ -620,11 +628,11 @@ msgstr "--config-file 需要一个参数\n"
 
 #: src/main.c:213
 msgid "Failed to load the obconf.glade interface file. You have probably failed to install ObConf properly."
-msgstr "无法加载 obconf.glade 界面文件，您可能没有正确安装 ObConf。"
+msgstr "载入 obconf.glade 界面文件时失败。原因可能是没有正确安装 ObConf 。"
 
 #: src/main.c:234
 msgid "Failed to load an rc.xml. You have probably failed to install Openbox properly."
-msgstr "无法加载 rc.xml，您可能没有正确安装 ObConf。"
+msgstr "载入 rc.xml 时失败。原因可能是没有正确安装 Openbox 。"
 
 #: src/main.c:243
 #, c-format
@@ -633,9 +641,9 @@ msgid ""
 "\n"
 "Message: %s"
 msgstr ""
-"Openbox 配置文件错误，您的配置文件不是有效的 XML.\n"
+"处理 Openbox 配置文件时出错。配置文件不是有效的 XML 文件。\n"
 "\n"
-"信息: %s"
+"消息：%s"
 
 #: src/desktops.c:134
 #: src/desktops.c:165
@@ -646,11 +654,11 @@ msgstr "(未命名桌面)"
 #: src/theme.c:109
 #: src/theme.c:141
 msgid "Choose an Openbox theme"
-msgstr "选择一个 Openbox 主题"
+msgstr "选择 Openbox 主题"
 
 #: src/theme.c:118
 msgid "Openbox theme archives"
-msgstr "Openbox 主题包"
+msgstr "Openbox 主题包(.obt)"
 
 #: src/archive.c:40
 #, c-format
@@ -660,7 +668,7 @@ msgstr "\"%s\" 已安装到 %s"
 #: src/archive.c:65
 #, c-format
 msgid "\"%s\" was successfully created"
-msgstr "\"%s\" 已创建"
+msgstr "\"%s\" 已成功建立"
 
 #: src/archive.c:101
 #, c-format
@@ -669,30 +677,30 @@ msgid ""
 "The following errors were reported:\n"
 "%s"
 msgstr ""
-"无法创建主题包 \"%s\"。\n"
-"发生下列错误：\n"
+"无法建立主题包文件「%s」。\n"
+"报告下列错误：\n"
 "%s"
 
 #: src/archive.c:106
 #: src/archive.c:190
 #, c-format
 msgid "Unable to run the \"tar\" command: %s"
-msgstr "无法运行 \"tar\" 命令：%s"
+msgstr "无法执行 tar 命令：%s"
 
 #: src/archive.c:126
 #, c-format
 msgid "Unable to create directory \"%s\": %s"
-msgstr "无法创建目录 \"%s\": %s"
+msgstr "无法建立目录「%s」：%s"
 
 #: src/archive.c:148
 #, c-format
 msgid "\"%s\" does not appear to be a valid Openbox theme directory"
-msgstr "\"%s\" 没有有效的 Openbox 主题目录"
+msgstr "「%s」不是有效的 Openbox 主题目录"
 
 #: src/archive.c:158
 #, c-format
 msgid "Unable to move to directory \"%s\": %s"
-msgstr "无法移动到目录 \"%s\": %s"
+msgstr "无法移动到目录 \"%s\"：%s"
 
 #: src/archive.c:197
 #, c-format
@@ -702,11 +710,12 @@ msgid ""
 "The following errors were reported:\n"
 "%s"
 msgstr ""
-"无法提取文件 \"%s\".\n"
-"请确保 \"%s\" 可以写入并且是一个有效的 Openbox 主题包。\n"
-"发生下列错误：\n"
+"无法读取文件「%s」。\n"
+"请确保「%s」可以写入，并且是有效的 Openbox 主题包文件。\n"
+"出现下面的错误：\n"
 "%s"
 
 #: src/mouse.c:72
 msgid "Custom actions"
 msgstr "自定义动作"
+
