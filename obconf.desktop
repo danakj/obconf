@@ -2,8 +2,13 @@
 Encoding=UTF-8
 Type=Application
 Name=Openbox Configuration Manager
+Name[pt_BR]=Gerenciador de configurações do Openbox
 Name[zh_TW]=Openbox 組態管理器
-Comment=Openbox configuration manager
+GenericName=Configuration Manager
+GenericName[pt_BR]=Gerenciador de configurações
+GenericName[zh_TW]=Openbox 組態管理器
+Comment=Tweak settings for Openbox
+Comment[pt_BR]=Configure as opções do Openbox
 Comment[zh_TW]=管理 Openbox 組態設定
 Icon=obconf
 Exec=obconf %f
