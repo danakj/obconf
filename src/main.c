@@ -36,12 +36,14 @@
 #include <stdlib.h>
 
 GtkWidget *mainwin = NULL;
+GtkWidget *tabstrip = NULL;
 
 GladeXML *glade;
 xmlDocPtr doc;
 xmlNodePtr root;
 RrInstance *rrinst;
 gchar *obc_config_file = NULL;
+gint obc_tab;
 ObtPaths *paths;
 ObtXmlInst *parse_i;
 
@@ -93,8 +95,9 @@ static void print_help()
     g_print(_("  --install ARCHIVE.obt Install the given theme archive and select it\n"));
     g_print(_("  --archive THEME       Create a theme archive from the given theme directory\n"));
     g_print(_("  --config-file FILE    Specify the path to the config file to use\n"));
+    g_print(_("  --tab NUMBER          Switch to tab number NUMBER on startup\n"));
     g_print(_("\nPlease report bugs at %s\n\n"), PACKAGE_BUGREPORT);
-    
+
     exit(EXIT_SUCCESS);
 }
 
@@ -124,7 +127,14 @@ static void parse_args(int argc, char **argv)
                 g_printerr(_("--config-file requires an argument\n"));
             else
                 obc_config_file = argv[++i];
-        } else
+        }
+        else if (!strcmp(argv[i], "--tab")) {
+            if (i == argc - 1) /* no args left */
+                g_printerr(_("--tab requires an argument\n"));
+            else
+                obc_tab = MAX(atoi(argv[++i]) - 1, 0);
+        }
+        else
             obc_theme_install = argv[i];
     }
 }
@@ -282,6 +292,7 @@ int main(int argc, char **argv)
         dock_setup_tab();
 
         mainwin = get_widget("main_window");
+        tabstrip = glade_xml_get_widget(glade, "tabstrip");
 
         if (obc_theme_install)
             theme_install(obc_theme_install);
@@ -328,6 +339,11 @@ void obconf_show_main()
     if (GTK_WIDGET_VISIBLE(mainwin)) return;
 
     gtk_widget_show_all(mainwin);
+
+    /* Focus on the tab number specified by --tab. */
+    if (obc_tab)
+        gtk_notebook_set_current_page(GTK_NOTEBOOK(tabstrip), obc_tab);
+
 
     sn_d = sn_display_new(GDK_DISPLAY_XDISPLAY(gdk_display_get_default()),
                           NULL, NULL);

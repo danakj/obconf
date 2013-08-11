@@ -158,7 +158,7 @@ Javeed Shaikh &lt;syscrash2k@gmail.com&gt;</property>
         <property name="can_focus">False</property>
         <property name="spacing">6</property>
         <child>
-          <widget class="GtkNotebook" id="notebook1">
+          <widget class="GtkNotebook" id="tabstrip">
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="tab_pos">left</property>
