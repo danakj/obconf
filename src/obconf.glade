@@ -49,7 +49,7 @@
               <widget class="GtkLabel" id="label80">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
-                <property name="label" translatable="yes">Copyright (c) 2003-2008
+                <property name="label">Copyright (c) 2003-2008
 Dana Jansens &lt;danakj@orodu.net&gt;
 Tim Riley &lt;tr@slackzone.org&gt;
 Javeed Shaikh &lt;syscrash2k@gmail.com&gt;</property>
