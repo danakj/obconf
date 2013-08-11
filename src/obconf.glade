@@ -6,7 +6,7 @@
     <property name="can_focus">False</property>
     <property name="title" translatable="yes">About ObConf</property>
     <property name="type_hint">dialog</property>
-    <signal name="delete_event" handler="on_about_window_delete_event" swapped="no"/>
+    <signal name="delete_event" handler="on_about_window_delete_event"/>
     <child>
       <widget class="GtkVBox" id="vbox33">
         <property name="visible">True</property>
@@ -85,7 +85,7 @@ Javeed Shaikh &lt;syscrash2k@gmail.com&gt;</property>
                 <property name="receives_default">False</property>
                 <property name="use_action_appearance">False</property>
                 <property name="use_stock">True</property>
-                <signal name="clicked" handler="on_about_close_clicked" after="yes" swapped="no"/>
+                <signal name="clicked" handler="on_about_close_clicked" after="yes"/>
               </widget>
               <packing>
                 <property name="expand">False</property>
@@ -151,7 +151,7 @@ Javeed Shaikh &lt;syscrash2k@gmail.com&gt;</property>
     <property name="border_width">6</property>
     <property name="title" translatable="yes">Openbox Configuration Manager</property>
     <property name="icon_name">preferences-system-windows</property>
-    <signal name="delete_event" handler="on_main_window_delete_event" swapped="no"/>
+    <signal name="delete_event" handler="on_main_window_delete_event"/>
     <child>
       <widget class="GtkVBox" id="vbox8">
         <property name="visible">True</property>
@@ -261,7 +261,7 @@ Javeed Shaikh &lt;syscrash2k@gmail.com&gt;</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">False</property>
                         <property name="use_action_appearance">False</property>
-                        <signal name="clicked" handler="on_install_theme_clicked" swapped="no"/>
+                        <signal name="clicked" handler="on_install_theme_clicked"/>
                         <child>
                           <widget class="GtkAlignment" id="alignment1">
                             <property name="visible">True</property>
@@ -327,7 +327,7 @@ Javeed Shaikh &lt;syscrash2k@gmail.com&gt;</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">False</property>
                         <property name="use_action_appearance">False</property>
-                        <signal name="clicked" handler="on_theme_archive_clicked" swapped="no"/>
+                        <signal name="clicked" handler="on_theme_archive_clicked"/>
                         <child>
                           <widget class="GtkAlignment" id="alignment2">
                             <property name="visible">True</property>
@@ -466,7 +466,7 @@ Javeed Shaikh &lt;syscrash2k@gmail.com&gt;</property>
                                             <property name="use_action_appearance">False</property>
                                             <property name="use_underline">True</property>
                                             <property name="draw_indicator">True</property>
-                                            <signal name="toggled" handler="on_window_border_toggled" after="yes" swapped="no"/>
+                                            <signal name="toggled" handler="on_window_border_toggled" after="yes"/>
                                           </widget>
                                           <packing>
                                             <property name="expand">False</property>
@@ -490,7 +490,7 @@ Javeed Shaikh &lt;syscrash2k@gmail.com&gt;</property>
                                         <property name="use_action_appearance">False</property>
                                         <property name="use_underline">True</property>
                                         <property name="draw_indicator">True</property>
-                                        <signal name="toggled" handler="on_animate_iconify_toggled" after="yes" swapped="no"/>
+                                        <signal name="toggled" handler="on_animate_iconify_toggled" after="yes"/>
                                       </widget>
                                       <packing>
                                         <property name="expand">False</property>
@@ -607,7 +607,7 @@ C - The close button</property>
                                     <property name="secondary_icon_activatable">False</property>
                                     <property name="primary_icon_sensitive">True</property>
                                     <property name="secondary_icon_sensitive">True</property>
-                                    <signal name="changed" handler="on_title_layout_changed" after="yes" swapped="no"/>
+                                    <signal name="changed" handler="on_title_layout_changed" after="yes"/>
                                   </widget>
                                   <packing>
                                     <property name="expand">False</property>
@@ -805,7 +805,7 @@ Omnipresent (On all desktops)</property>
                                 <property name="receives_default">False</property>
                                 <property name="use_action_appearance">False</property>
                                 <property name="use_font">True</property>
-                                <signal name="font_set" handler="on_font_inactive_font_set" swapped="no"/>
+                                <signal name="font_set" handler="on_font_inactive_font_set"/>
                               </widget>
                               <packing>
                                 <property name="left_attach">1</property>
@@ -823,7 +823,7 @@ Omnipresent (On all desktops)</property>
                                 <property name="receives_default">False</property>
                                 <property name="use_action_appearance">False</property>
                                 <property name="use_font">True</property>
-                                <signal name="font_set" handler="on_font_menu_header_font_set" swapped="no"/>
+                                <signal name="font_set" handler="on_font_menu_header_font_set"/>
                               </widget>
                               <packing>
                                 <property name="left_attach">1</property>
@@ -841,7 +841,7 @@ Omnipresent (On all desktops)</property>
                                 <property name="receives_default">False</property>
                                 <property name="use_action_appearance">False</property>
                                 <property name="use_font">True</property>
-                                <signal name="font_set" handler="on_font_menu_item_font_set" swapped="no"/>
+                                <signal name="font_set" handler="on_font_menu_item_font_set"/>
                               </widget>
                               <packing>
                                 <property name="left_attach">1</property>
@@ -936,7 +936,7 @@ Omnipresent (On all desktops)</property>
                                 <property name="receives_default">False</property>
                                 <property name="use_action_appearance">False</property>
                                 <property name="use_font">True</property>
-                                <signal name="font_set" handler="on_font_active_font_set" swapped="no"/>
+                                <signal name="font_set" handler="on_font_active_font_set"/>
                               </widget>
                               <packing>
                                 <property name="left_attach">1</property>
@@ -966,7 +966,7 @@ Omnipresent (On all desktops)</property>
                                 <property name="receives_default">False</property>
                                 <property name="use_action_appearance">False</property>
                                 <property name="use_font">True</property>
-                                <signal name="font_set" handler="on_font_active_display_font_set" swapped="no"/>
+                                <signal name="font_set" handler="on_font_active_display_font_set"/>
                               </widget>
                               <packing>
                                 <property name="left_attach">1</property>
@@ -984,7 +984,7 @@ Omnipresent (On all desktops)</property>
                                 <property name="receives_default">False</property>
                                 <property name="use_action_appearance">False</property>
                                 <property name="use_font">True</property>
-                                <signal name="font_set" handler="on_font_inactive_display_font_set" swapped="no"/>
+                                <signal name="font_set" handler="on_font_inactive_display_font_set"/>
                               </widget>
                               <packing>
                                 <property name="left_attach">1</property>
@@ -1091,7 +1091,7 @@ Omnipresent (On all desktops)</property>
                                 <property name="use_action_appearance">False</property>
                                 <property name="use_underline">True</property>
                                 <property name="draw_indicator">True</property>
-                                <signal name="toggled" handler="on_focus_new_toggled" after="yes" swapped="no"/>
+                                <signal name="toggled" handler="on_focus_new_toggled" after="yes"/>
                               </widget>
                               <packing>
                                 <property name="expand">False</property>
@@ -1169,7 +1169,7 @@ Omnipresent (On all desktops)</property>
                                 <property name="use_action_appearance">False</property>
                                 <property name="use_underline">True</property>
                                 <property name="draw_indicator">True</property>
-                                <signal name="toggled" handler="on_place_mouse_toggled" after="yes" swapped="no"/>
+                                <signal name="toggled" handler="on_place_mouse_toggled" after="yes"/>
                               </widget>
                               <packing>
                                 <property name="expand">False</property>
@@ -1215,7 +1215,7 @@ Omnipresent (On all desktops)</property>
                                             <property name="use_action_appearance">False</property>
                                             <property name="label" translatable="yes">The primary monitor</property>
                                             <property name="use_underline">True</property>
-                                            <signal name="activate" handler="on_place_active_popup_primary_activate" swapped="no"/>
+                                            <signal name="activate" handler="on_place_active_popup_primary_activate"/>
                                           </widget>
                                         </child>
                                         <child>
@@ -1225,7 +1225,7 @@ Omnipresent (On all desktops)</property>
                                             <property name="use_action_appearance">False</property>
                                             <property name="label" translatable="yes">The active monitor</property>
                                             <property name="use_underline">True</property>
-                                            <signal name="activate" handler="on_place_active_popup_active_activate" swapped="no"/>
+                                            <signal name="activate" handler="on_place_active_popup_active_activate"/>
                                           </widget>
                                         </child>
                                         <child>
@@ -1235,7 +1235,7 @@ Omnipresent (On all desktops)</property>
                                             <property name="use_action_appearance">False</property>
                                             <property name="label" translatable="yes">The monitor with the mouse</property>
                                             <property name="use_underline">True</property>
-                                            <signal name="activate" handler="on_place_active_popup_mouse_activate" swapped="no"/>
+                                            <signal name="activate" handler="on_place_active_popup_mouse_activate"/>
                                           </widget>
                                         </child>
                                         <child>
@@ -1245,7 +1245,7 @@ Omnipresent (On all desktops)</property>
                                             <property name="use_action_appearance">False</property>
                                             <property name="label" translatable="yes">All monitors</property>
                                             <property name="use_underline">True</property>
-                                            <signal name="activate" handler="on_place_active_popup_all_activate" swapped="no"/>
+                                            <signal name="activate" handler="on_place_active_popup_all_activate"/>
                                           </widget>
                                         </child>
                                       </widget>
@@ -1387,7 +1387,7 @@ Omnipresent (On all desktops)</property>
                                             <property name="use_action_appearance">False</property>
                                             <property name="label" translatable="yes">Fixed Monitor</property>
                                             <property name="use_underline">True</property>
-                                            <signal name="activate" handler="on_primary_monitor_fixed_activate" swapped="no"/>
+                                            <signal name="activate" handler="on_primary_monitor_fixed_activate"/>
                                           </widget>
                                         </child>
                                         <child>
@@ -1397,7 +1397,7 @@ Omnipresent (On all desktops)</property>
                                             <property name="use_action_appearance">False</property>
                                             <property name="label" translatable="yes">Active Monitor</property>
                                             <property name="use_underline">True</property>
-                                            <signal name="activate" handler="on_primary_monitor_active_activate" swapped="no"/>
+                                            <signal name="activate" handler="on_primary_monitor_active_activate"/>
                                           </widget>
                                         </child>
                                         <child>
@@ -1407,7 +1407,7 @@ Omnipresent (On all desktops)</property>
                                             <property name="use_action_appearance">False</property>
                                             <property name="label" translatable="yes">Monitor With Mouse Pointer</property>
                                             <property name="use_underline">True</property>
-                                            <signal name="activate" handler="on_primary_monitor_mouse_activate" swapped="no"/>
+                                            <signal name="activate" handler="on_primary_monitor_mouse_activate"/>
                                           </widget>
                                         </child>
                                       </widget>
@@ -1468,7 +1468,7 @@ Omnipresent (On all desktops)</property>
                                     <property name="secondary_icon_sensitive">True</property>
                                     <property name="adjustment">1 1 100 1 10 0</property>
                                     <property name="climb_rate">1</property>
-                                    <signal name="value_changed" handler="on_fixed_monitor_value_changed" swapped="no"/>
+                                    <signal name="value_changed" handler="on_fixed_monitor_value_changed"/>
                                   </widget>
                                   <packing>
                                     <property name="expand">False</property>
@@ -1579,7 +1579,7 @@ Omnipresent (On all desktops)</property>
                                 <property name="use_action_appearance">False</property>
                                 <property name="use_underline">True</property>
                                 <property name="draw_indicator">True</property>
-                                <signal name="toggled" handler="on_resize_contents_toggled" after="yes" swapped="no"/>
+                                <signal name="toggled" handler="on_resize_contents_toggled" after="yes"/>
                               </widget>
                               <packing>
                                 <property name="expand">False</property>
@@ -1618,7 +1618,7 @@ Omnipresent (On all desktops)</property>
                                     <property name="adjustment">1 1 100 1 10 0</property>
                                     <property name="climb_rate">1</property>
                                     <property name="numeric">True</property>
-                                    <signal name="value_changed" handler="on_drag_threshold_value_changed" after="yes" swapped="no"/>
+                                    <signal name="value_changed" handler="on_drag_threshold_value_changed" after="yes"/>
                                   </widget>
                                   <packing>
                                     <property name="expand">False</property>
@@ -1676,7 +1676,7 @@ Omnipresent (On all desktops)</property>
                                     <property name="adjustment">20 0 100 1 10 0</property>
                                     <property name="climb_rate">1</property>
                                     <property name="numeric">True</property>
-                                    <signal name="value_changed" handler="on_resist_window_value_changed" after="yes" swapped="no"/>
+                                    <signal name="value_changed" handler="on_resist_window_value_changed" after="yes"/>
                                   </widget>
                                   <packing>
                                     <property name="expand">False</property>
@@ -1734,7 +1734,7 @@ Omnipresent (On all desktops)</property>
                                     <property name="adjustment">1 0 100 1 10 0</property>
                                     <property name="climb_rate">1</property>
                                     <property name="numeric">True</property>
-                                    <signal name="value_changed" handler="on_resist_edge_value_changed" after="yes" swapped="no"/>
+                                    <signal name="value_changed" handler="on_resist_edge_value_changed" after="yes"/>
                                   </widget>
                                   <packing>
                                     <property name="expand">False</property>
@@ -1770,7 +1770,7 @@ Omnipresent (On all desktops)</property>
                                 <property name="use_action_appearance">False</property>
                                 <property name="use_underline">True</property>
                                 <property name="draw_indicator">True</property>
-                                <signal name="toggled" handler="on_warp_edge_toggled" after="yes" swapped="no"/>
+                                <signal name="toggled" handler="on_warp_edge_toggled" after="yes"/>
                               </widget>
                               <packing>
                                 <property name="expand">False</property>
@@ -1825,7 +1825,7 @@ Omnipresent (On all desktops)</property>
                                         <property name="adjustment">100 100 10000 10 10 0</property>
                                         <property name="climb_rate">1</property>
                                         <property name="numeric">True</property>
-                                        <signal name="value_changed" handler="on_warp_edge_time_value_changed" after="yes" swapped="no"/>
+                                        <signal name="value_changed" handler="on_warp_edge_time_value_changed" after="yes"/>
                                       </widget>
                                       <packing>
                                         <property name="expand">False</property>
@@ -1939,7 +1939,7 @@ Omnipresent (On all desktops)</property>
                                         <property name="use_action_appearance">False</property>
                                         <property name="label" translatable="yes">When resizing terminal windows</property>
                                         <property name="use_underline">True</property>
-                                        <signal name="activate" handler="on_resize_popup_nonpixel_activate" swapped="no"/>
+                                        <signal name="activate" handler="on_resize_popup_nonpixel_activate"/>
                                       </widget>
                                     </child>
                                     <child>
@@ -1949,7 +1949,7 @@ Omnipresent (On all desktops)</property>
                                         <property name="use_action_appearance">False</property>
                                         <property name="label" translatable="yes">Always</property>
                                         <property name="use_underline">True</property>
-                                        <signal name="activate" handler="on_resize_popup_always_activate" swapped="no"/>
+                                        <signal name="activate" handler="on_resize_popup_always_activate"/>
                                       </widget>
                                     </child>
                                     <child>
@@ -1959,7 +1959,7 @@ Omnipresent (On all desktops)</property>
                                         <property name="use_action_appearance">False</property>
                                         <property name="label" translatable="yes">Never</property>
                                         <property name="use_underline">True</property>
-                                        <signal name="activate" handler="on_resize_popup_never_activate" swapped="no"/>
+                                        <signal name="activate" handler="on_resize_popup_never_activate"/>
                                       </widget>
                                     </child>
                                   </widget>
@@ -2034,7 +2034,7 @@ Omnipresent (On all desktops)</property>
                                                 <property name="use_action_appearance">False</property>
                                                 <property name="label" translatable="yes">Centered on the window</property>
                                                 <property name="use_underline">True</property>
-                                                <signal name="activate" handler="on_resize_position_center_activate" swapped="no"/>
+                                                <signal name="activate" handler="on_resize_position_center_activate"/>
                                               </widget>
                                             </child>
                                             <child>
@@ -2044,7 +2044,7 @@ Omnipresent (On all desktops)</property>
                                                 <property name="use_action_appearance">False</property>
                                                 <property name="label" translatable="yes">Above the window</property>
                                                 <property name="use_underline">True</property>
-                                                <signal name="activate" handler="on_resize_position_top_activate" swapped="no"/>
+                                                <signal name="activate" handler="on_resize_position_top_activate"/>
                                               </widget>
                                             </child>
                                             <child>
@@ -2054,7 +2054,7 @@ Omnipresent (On all desktops)</property>
                                                 <property name="use_action_appearance">False</property>
                                                 <property name="label" translatable="yes">Fixed position on screen</property>
                                                 <property name="use_underline">True</property>
-                                                <signal name="activate" handler="on_resize_position_fixed_activate" swapped="no"/>
+                                                <signal name="activate" handler="on_resize_position_fixed_activate"/>
                                               </widget>
                                             </child>
                                           </widget>
@@ -2129,7 +2129,7 @@ Omnipresent (On all desktops)</property>
                                                         <property name="use_action_appearance">False</property>
                                                         <property name="label" translatable="yes">Centered</property>
                                                         <property name="use_underline">True</property>
-                                                        <signal name="activate" handler="on_fixed_x_position_center_activate" swapped="no"/>
+                                                        <signal name="activate" handler="on_fixed_x_position_center_activate"/>
                                                       </widget>
                                                     </child>
                                                     <child>
@@ -2139,7 +2139,7 @@ Omnipresent (On all desktops)</property>
                                                         <property name="use_action_appearance">False</property>
                                                         <property name="label" translatable="yes">From left edge</property>
                                                         <property name="use_underline">True</property>
-                                                        <signal name="activate" handler="on_fixed_x_position_left_activate" swapped="no"/>
+                                                        <signal name="activate" handler="on_fixed_x_position_left_activate"/>
                                                       </widget>
                                                     </child>
                                                     <child>
@@ -2149,7 +2149,7 @@ Omnipresent (On all desktops)</property>
                                                         <property name="use_action_appearance">False</property>
                                                         <property name="label" translatable="yes">From right edge</property>
                                                         <property name="use_underline">True</property>
-                                                        <signal name="activate" handler="on_fixed_x_position_right_activate" swapped="no"/>
+                                                        <signal name="activate" handler="on_fixed_x_position_right_activate"/>
                                                       </widget>
                                                     </child>
                                                   </widget>
@@ -2177,7 +2177,7 @@ Omnipresent (On all desktops)</property>
                                                     <property name="adjustment">1 0 1000 1 10 0</property>
                                                     <property name="climb_rate">1</property>
                                                     <property name="numeric">True</property>
-                                                    <signal name="value_changed" handler="on_fixed_x_pos_value_changed" after="yes" swapped="no"/>
+                                                    <signal name="value_changed" handler="on_fixed_x_pos_value_changed" after="yes"/>
                                                   </widget>
                                                   <packing>
                                                     <property name="expand">False</property>
@@ -2246,7 +2246,7 @@ Omnipresent (On all desktops)</property>
                                                         <property name="use_action_appearance">False</property>
                                                         <property name="label" translatable="yes">Centered</property>
                                                         <property name="use_underline">True</property>
-                                                        <signal name="activate" handler="on_fixed_y_position_center_activate" swapped="no"/>
+                                                        <signal name="activate" handler="on_fixed_y_position_center_activate"/>
                                                       </widget>
                                                     </child>
                                                     <child>
@@ -2256,7 +2256,7 @@ Omnipresent (On all desktops)</property>
                                                         <property name="use_action_appearance">False</property>
                                                         <property name="label" translatable="yes">From top edge</property>
                                                         <property name="use_underline">True</property>
-                                                        <signal name="activate" handler="on_fixed_y_position_top_activate" swapped="no"/>
+                                                        <signal name="activate" handler="on_fixed_y_position_top_activate"/>
                                                       </widget>
                                                     </child>
                                                     <child>
@@ -2266,7 +2266,7 @@ Omnipresent (On all desktops)</property>
                                                         <property name="use_action_appearance">False</property>
                                                         <property name="label" translatable="yes">From bottom edge</property>
                                                         <property name="use_underline">True</property>
-                                                        <signal name="activate" handler="on_fixed_y_position_bottom_activate" swapped="no"/>
+                                                        <signal name="activate" handler="on_fixed_y_position_bottom_activate"/>
                                                       </widget>
                                                     </child>
                                                   </widget>
@@ -2294,7 +2294,7 @@ Omnipresent (On all desktops)</property>
                                                     <property name="adjustment">1 0 1000 1 10 0</property>
                                                     <property name="climb_rate">1</property>
                                                     <property name="numeric">True</property>
-                                                    <signal name="value_changed" handler="on_fixed_y_pos_value_changed" after="yes" swapped="no"/>
+                                                    <signal name="value_changed" handler="on_fixed_y_pos_value_changed" after="yes"/>
                                                   </widget>
                                                   <packing>
                                                     <property name="expand">False</property>
@@ -2445,7 +2445,7 @@ Omnipresent (On all desktops)</property>
                                 <property name="use_action_appearance">False</property>
                                 <property name="use_underline">True</property>
                                 <property name="draw_indicator">True</property>
-                                <signal name="toggled" handler="on_focus_mouse_toggled" after="yes" swapped="no"/>
+                                <signal name="toggled" handler="on_focus_mouse_toggled" after="yes"/>
                               </widget>
                               <packing>
                                 <property name="expand">False</property>
@@ -2483,7 +2483,7 @@ Omnipresent (On all desktops)</property>
                                         <property name="use_action_appearance">False</property>
                                         <property name="use_underline">True</property>
                                         <property name="draw_indicator">True</property>
-                                        <signal name="toggled" handler="on_focus_notlast_toggled" swapped="no"/>
+                                        <signal name="toggled" handler="on_focus_notlast_toggled"/>
                                       </widget>
                                       <packing>
                                         <property name="expand">False</property>
@@ -2500,7 +2500,7 @@ Omnipresent (On all desktops)</property>
                                         <property name="use_action_appearance">False</property>
                                         <property name="use_underline">True</property>
                                         <property name="draw_indicator">True</property>
-                                        <signal name="toggled" handler="on_focus_under_mouse_toggled" swapped="no"/>
+                                        <signal name="toggled" handler="on_focus_under_mouse_toggled"/>
                                       </widget>
                                       <packing>
                                         <property name="expand">False</property>
@@ -2517,7 +2517,7 @@ Omnipresent (On all desktops)</property>
                                         <property name="use_action_appearance">False</property>
                                         <property name="use_underline">True</property>
                                         <property name="draw_indicator">True</property>
-                                        <signal name="toggled" handler="on_focus_raise_toggled" after="yes" swapped="no"/>
+                                        <signal name="toggled" handler="on_focus_raise_toggled" after="yes"/>
                                       </widget>
                                       <packing>
                                         <property name="expand">False</property>
@@ -2555,7 +2555,7 @@ Omnipresent (On all desktops)</property>
                                             <property name="adjustment">0 0 10000 10 10 0</property>
                                             <property name="climb_rate">1</property>
                                             <property name="numeric">True</property>
-                                            <signal name="value_changed" handler="on_focus_delay_value_changed" after="yes" swapped="no"/>
+                                            <signal name="value_changed" handler="on_focus_delay_value_changed" after="yes"/>
                                           </widget>
                                           <packing>
                                             <property name="expand">False</property>
@@ -2692,7 +2692,7 @@ Omnipresent (On all desktops)</property>
                                             <property name="use_action_appearance">False</property>
                                             <property name="label" translatable="yes">Maximizes the window</property>
                                             <property name="use_underline">True</property>
-                                            <signal name="activate" handler="on_titlebar_doubleclick_maximize_activate" swapped="no"/>
+                                            <signal name="activate" handler="on_titlebar_doubleclick_maximize_activate"/>
                                           </widget>
                                         </child>
                                         <child>
@@ -2702,7 +2702,7 @@ Omnipresent (On all desktops)</property>
                                             <property name="use_action_appearance">False</property>
                                             <property name="label" translatable="yes">Shades the window</property>
                                             <property name="use_underline">True</property>
-                                            <signal name="activate" handler="on_titlebar_doubleclick_shade_activate" swapped="no"/>
+                                            <signal name="activate" handler="on_titlebar_doubleclick_shade_activate"/>
                                           </widget>
                                         </child>
                                       </widget>
@@ -2752,7 +2752,7 @@ Omnipresent (On all desktops)</property>
                                     <property name="adjustment">0 0 10000 10 10 0</property>
                                     <property name="climb_rate">1</property>
                                     <property name="numeric">True</property>
-                                    <signal name="value_changed" handler="on_doubleclick_time_value_changed" after="yes" swapped="no"/>
+                                    <signal name="value_changed" handler="on_doubleclick_time_value_changed" after="yes"/>
                                   </widget>
                                   <packing>
                                     <property name="expand">False</property>
@@ -2904,7 +2904,7 @@ Omnipresent (On all desktops)</property>
                             <property name="use_action_appearance">False</property>
                             <property name="use_underline">True</property>
                             <property name="draw_indicator">True</property>
-                            <signal name="toggled" handler="on_desktop_popup_toggled" after="yes" swapped="no"/>
+                            <signal name="toggled" handler="on_desktop_popup_toggled" after="yes"/>
                           </widget>
                           <packing>
                             <property name="expand">False</property>
@@ -2959,7 +2959,7 @@ Omnipresent (On all desktops)</property>
                                     <property name="adjustment">1 1 10000 10 10 0</property>
                                     <property name="climb_rate">1</property>
                                     <property name="numeric">True</property>
-                                    <signal name="value_changed" handler="on_desktop_popup_time_value_changed" after="yes" swapped="no"/>
+                                    <signal name="value_changed" handler="on_desktop_popup_time_value_changed" after="yes"/>
                                   </widget>
                                   <packing>
                                     <property name="expand">False</property>
@@ -3023,7 +3023,7 @@ Omnipresent (On all desktops)</property>
                                 <property name="adjustment">1 1 100 1 10 0</property>
                                 <property name="climb_rate">1</property>
                                 <property name="numeric">True</property>
-                                <signal name="value_changed" handler="on_desktop_num_value_changed" after="yes" swapped="no"/>
+                                <signal name="value_changed" handler="on_desktop_num_value_changed" after="yes"/>
                               </widget>
                               <packing>
                                 <property name="expand">False</property>
@@ -3240,7 +3240,7 @@ Omnipresent (On all desktops)</property>
                                             <property name="adjustment">20 0 10000 1 10 0</property>
                                             <property name="climb_rate">1</property>
                                             <property name="numeric">True</property>
-                                            <signal name="value_changed" handler="on_margins_top_value_changed" after="yes" swapped="no"/>
+                                            <signal name="value_changed" handler="on_margins_top_value_changed" after="yes"/>
                                           </widget>
                                           <packing>
                                             <property name="expand">False</property>
@@ -3382,7 +3382,7 @@ Omnipresent (On all desktops)</property>
                                         <property name="adjustment">20 0 10000 1 10 0</property>
                                         <property name="climb_rate">1</property>
                                         <property name="numeric">True</property>
-                                        <signal name="value_changed" handler="on_margins_left_value_changed" after="yes" swapped="no"/>
+                                        <signal name="value_changed" handler="on_margins_left_value_changed" after="yes"/>
                                       </widget>
                                       <packing>
                                         <property name="expand">False</property>
@@ -3508,7 +3508,7 @@ Omnipresent (On all desktops)</property>
                                         <property name="adjustment">20 0 10000 1 10 0</property>
                                         <property name="climb_rate">1</property>
                                         <property name="numeric">True</property>
-                                        <signal name="value_changed" handler="on_margins_right_value_changed" after="yes" swapped="no"/>
+                                        <signal name="value_changed" handler="on_margins_right_value_changed" after="yes"/>
                                       </widget>
                                       <packing>
                                         <property name="expand">False</property>
@@ -3643,7 +3643,7 @@ Omnipresent (On all desktops)</property>
                                         <property name="adjustment">20 0 10000 1 10 0</property>
                                         <property name="climb_rate">1</property>
                                         <property name="numeric">True</property>
-                                        <signal name="value_changed" handler="on_margins_bottom_value_changed" after="yes" swapped="no"/>
+                                        <signal name="value_changed" handler="on_margins_bottom_value_changed" after="yes"/>
                                       </widget>
                                       <packing>
                                         <property name="expand">False</property>
@@ -3908,7 +3908,7 @@ Omnipresent (On all desktops)</property>
                                             <property name="use_action_appearance">False</property>
                                             <property name="label" translatable="yes">Top Left</property>
                                             <property name="use_underline">True</property>
-                                            <signal name="activate" handler="on_dock_top_left_activate" swapped="no"/>
+                                            <signal name="activate" handler="on_dock_top_left_activate"/>
                                           </widget>
                                         </child>
                                         <child>
@@ -3918,7 +3918,7 @@ Omnipresent (On all desktops)</property>
                                             <property name="use_action_appearance">False</property>
                                             <property name="label" translatable="yes">Top</property>
                                             <property name="use_underline">True</property>
-                                            <signal name="activate" handler="on_dock_top_activate" swapped="no"/>
+                                            <signal name="activate" handler="on_dock_top_activate"/>
                                           </widget>
                                         </child>
                                         <child>
@@ -3928,7 +3928,7 @@ Omnipresent (On all desktops)</property>
                                             <property name="use_action_appearance">False</property>
                                             <property name="label" translatable="yes">Top Right</property>
                                             <property name="use_underline">True</property>
-                                            <signal name="activate" handler="on_dock_top_right_activate" swapped="no"/>
+                                            <signal name="activate" handler="on_dock_top_right_activate"/>
                                           </widget>
                                         </child>
                                         <child>
@@ -3938,7 +3938,7 @@ Omnipresent (On all desktops)</property>
                                             <property name="use_action_appearance">False</property>
                                             <property name="label" translatable="yes">Left</property>
                                             <property name="use_underline">True</property>
-                                            <signal name="activate" handler="on_dock_left_activate" swapped="no"/>
+                                            <signal name="activate" handler="on_dock_left_activate"/>
                                           </widget>
                                         </child>
                                         <child>
@@ -3948,7 +3948,7 @@ Omnipresent (On all desktops)</property>
                                             <property name="use_action_appearance">False</property>
                                             <property name="label" translatable="yes">Right</property>
                                             <property name="use_underline">True</property>
-                                            <signal name="activate" handler="on_dock_right_activate" swapped="no"/>
+                                            <signal name="activate" handler="on_dock_right_activate"/>
                                           </widget>
                                         </child>
                                         <child>
@@ -3958,7 +3958,7 @@ Omnipresent (On all desktops)</property>
                                             <property name="use_action_appearance">False</property>
                                             <property name="label" translatable="yes">Bottom Left</property>
                                             <property name="use_underline">True</property>
-                                            <signal name="activate" handler="on_dock_bottom_left_activate" swapped="no"/>
+                                            <signal name="activate" handler="on_dock_bottom_left_activate"/>
                                           </widget>
                                         </child>
                                         <child>
@@ -3968,7 +3968,7 @@ Omnipresent (On all desktops)</property>
                                             <property name="use_action_appearance">False</property>
                                             <property name="label" translatable="yes">Bottom</property>
                                             <property name="use_underline">True</property>
-                                            <signal name="activate" handler="on_dock_bottom_activate" swapped="no"/>
+                                            <signal name="activate" handler="on_dock_bottom_activate"/>
                                           </widget>
                                         </child>
                                         <child>
@@ -3978,7 +3978,7 @@ Omnipresent (On all desktops)</property>
                                             <property name="use_action_appearance">False</property>
                                             <property name="label" translatable="yes">Bottom Right</property>
                                             <property name="use_underline">True</property>
-                                            <signal name="activate" handler="on_dock_bottom_right_activate" swapped="no"/>
+                                            <signal name="activate" handler="on_dock_bottom_right_activate"/>
                                           </widget>
                                         </child>
                                         <child>
@@ -3988,7 +3988,7 @@ Omnipresent (On all desktops)</property>
                                             <property name="use_action_appearance">False</property>
                                             <property name="label" translatable="yes">Floating</property>
                                             <property name="use_underline">True</property>
-                                            <signal name="activate" handler="on_dock_floating_activate" swapped="no"/>
+                                            <signal name="activate" handler="on_dock_floating_activate"/>
                                           </widget>
                                         </child>
                                       </widget>
@@ -4053,7 +4053,7 @@ Omnipresent (On all desktops)</property>
                                         <property name="adjustment">1 0 10000 1 10 0</property>
                                         <property name="climb_rate">1</property>
                                         <property name="numeric">True</property>
-                                        <signal name="value_changed" handler="on_dock_float_x_value_changed" after="yes" swapped="no"/>
+                                        <signal name="value_changed" handler="on_dock_float_x_value_changed" after="yes"/>
                                       </widget>
                                       <packing>
                                         <property name="expand">False</property>
@@ -4084,7 +4084,7 @@ Omnipresent (On all desktops)</property>
                                         <property name="adjustment">1 0 10000 1 10 0</property>
                                         <property name="climb_rate">1</property>
                                         <property name="numeric">True</property>
-                                        <signal name="value_changed" handler="on_dock_float_y_value_changed" after="yes" swapped="no"/>
+                                        <signal name="value_changed" handler="on_dock_float_y_value_changed" after="yes"/>
                                       </widget>
                                       <packing>
                                         <property name="expand">False</property>
@@ -4131,7 +4131,7 @@ Omnipresent (On all desktops)</property>
                                     <property name="use_action_appearance">False</property>
                                     <property name="use_underline">True</property>
                                     <property name="draw_indicator">True</property>
-                                    <signal name="toggled" handler="on_dock_nostrut_toggled" swapped="no"/>
+                                    <signal name="toggled" handler="on_dock_nostrut_toggled"/>
                                   </widget>
                                   <packing>
                                     <property name="expand">False</property>
@@ -4181,7 +4181,7 @@ Omnipresent (On all desktops)</property>
                                             <property name="use_action_appearance">False</property>
                                             <property name="label" translatable="yes">Vertical</property>
                                             <property name="use_underline">True</property>
-                                            <signal name="activate" handler="on_dock_vertical_activate" swapped="no"/>
+                                            <signal name="activate" handler="on_dock_vertical_activate"/>
                                           </widget>
                                         </child>
                                         <child>
@@ -4191,7 +4191,7 @@ Omnipresent (On all desktops)</property>
                                             <property name="use_action_appearance">False</property>
                                             <property name="label" translatable="yes">Horizontal</property>
                                             <property name="use_underline">True</property>
-                                            <signal name="activate" handler="on_dock_horizontal_activate" swapped="no"/>
+                                            <signal name="activate" handler="on_dock_horizontal_activate"/>
                                           </widget>
                                         </child>
                                       </widget>
@@ -4280,7 +4280,7 @@ Omnipresent (On all desktops)</property>
                                 <property name="use_action_appearance">False</property>
                                 <property name="use_underline">True</property>
                                 <property name="draw_indicator">True</property>
-                                <signal name="toggled" handler="on_dock_stacking_top_toggled" after="yes" swapped="no"/>
+                                <signal name="toggled" handler="on_dock_stacking_top_toggled" after="yes"/>
                               </widget>
                               <packing>
                                 <property name="expand">False</property>
@@ -4298,7 +4298,7 @@ Omnipresent (On all desktops)</property>
                                 <property name="use_underline">True</property>
                                 <property name="draw_indicator">True</property>
                                 <property name="group">dock_stack_top</property>
-                                <signal name="toggled" handler="on_dock_stacking_normal_toggled" after="yes" swapped="no"/>
+                                <signal name="toggled" handler="on_dock_stacking_normal_toggled" after="yes"/>
                               </widget>
                               <packing>
                                 <property name="expand">False</property>
@@ -4316,7 +4316,7 @@ Omnipresent (On all desktops)</property>
                                 <property name="use_underline">True</property>
                                 <property name="draw_indicator">True</property>
                                 <property name="group">dock_stack_top</property>
-                                <signal name="toggled" handler="on_dock_stacking_bottom_toggled" after="yes" swapped="no"/>
+                                <signal name="toggled" handler="on_dock_stacking_bottom_toggled" after="yes"/>
                               </widget>
                               <packing>
                                 <property name="expand">False</property>
@@ -4394,7 +4394,7 @@ Omnipresent (On all desktops)</property>
                                 <property name="use_action_appearance">False</property>
                                 <property name="use_underline">True</property>
                                 <property name="draw_indicator">True</property>
-                                <signal name="toggled" handler="on_dock_hide_toggled" swapped="no"/>
+                                <signal name="toggled" handler="on_dock_hide_toggled"/>
                               </widget>
                               <packing>
                                 <property name="expand">False</property>
@@ -4449,7 +4449,7 @@ Omnipresent (On all desktops)</property>
                                         <property name="adjustment">300 0 10000 10 10 0</property>
                                         <property name="climb_rate">1</property>
                                         <property name="numeric">True</property>
-                                        <signal name="value_changed" handler="on_dock_hide_delay_value_changed" after="yes" swapped="no"/>
+                                        <signal name="value_changed" handler="on_dock_hide_delay_value_changed" after="yes"/>
                                       </widget>
                                       <packing>
                                         <property name="expand">False</property>
@@ -4530,7 +4530,7 @@ Omnipresent (On all desktops)</property>
                                         <property name="adjustment">300 0 10000 10 10 0</property>
                                         <property name="climb_rate">1</property>
                                         <property name="numeric">True</property>
-                                        <signal name="value_changed" handler="on_dock_show_delay_value_changed" after="yes" swapped="no"/>
+                                        <signal name="value_changed" handler="on_dock_show_delay_value_changed" after="yes"/>
                                       </widget>
                                       <packing>
                                         <property name="expand">False</property>
@@ -4630,7 +4630,7 @@ Omnipresent (On all desktops)</property>
                     <property name="receives_default">False</property>
                     <property name="use_action_appearance">False</property>
                     <property name="use_underline">True</property>
-                    <signal name="clicked" handler="on_about_clicked" after="yes" swapped="no"/>
+                    <signal name="clicked" handler="on_about_clicked" after="yes"/>
                   </widget>
                   <packing>
                     <property name="expand">False</property>
@@ -4659,7 +4659,7 @@ Omnipresent (On all desktops)</property>
                     <property name="receives_default">False</property>
                     <property name="use_action_appearance">False</property>
                     <property name="use_stock">True</property>
-                    <signal name="clicked" handler="on_close_clicked" swapped="no"/>
+                    <signal name="clicked" handler="on_close_clicked"/>
                   </widget>
                   <packing>
                     <property name="expand">False</property>
