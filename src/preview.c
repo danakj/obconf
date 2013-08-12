@@ -85,7 +85,6 @@ static GdkPixbuf* preview_menu(RrTheme *theme)
     /* determine window size */
     RrMinSize(normal, &width, &th);
     width += th + PADDING; /* make space for the bullet */
-    //height = th;
 
     width += 2*theme->mbwidth + 2*PADDING;
 
@@ -102,14 +101,22 @@ static GdkPixbuf* preview_menu(RrTheme *theme)
 
     height = title_h + 3*bh + 3*theme->mbwidth;
 
-    //height += 3*th + 3*theme->mbwidth + 5*PADDING;
-
     /* set border */
     pixbuf = gdk_pixbuf_new(GDK_COLORSPACE_RGB, FALSE, 8, width, height);
     gdk_pixbuf_fill(pixbuf, rr_color_pixel(theme->menu_border_color));
 
-    /* draw title */
+    /* menu appears after inside the border */
     x = y = theme->mbwidth;
+
+    /* fill in menu appearance, used as the parent to every menu item's bg */
+    menu = theme->a_menu;
+    th = height - 2 * theme->mbwidth;
+    theme_pixmap_paint(menu, bw, th);
+
+    /* draw title, it appears at the top of the menu background */
+    title->surface.parent = theme->a_menu;
+    title->surface.parentx = 0;
+    title->surface.parenty = 0;
     theme_pixmap_paint(title, bw, title_h);
 
     /* draw title text */
@@ -123,24 +130,13 @@ static GdkPixbuf* preview_menu(RrTheme *theme)
                                           gdk_colormap_get_system(),
                                           0, 0, x, y, bw, title_h);
 
-    /* menu appears after title */
-    y += theme->mbwidth + title_h;
-
-    /* fill in menu appearance, used as the parent to every menu item's bg */
-    menu = theme->a_menu;
-    th = height - 3*theme->mbwidth - title_h;
-    theme_pixmap_paint(menu, bw, th);
-
-    pixmap = gdk_pixmap_foreign_new(menu->pixmap);
-    pixbuf = gdk_pixbuf_get_from_drawable(pixbuf, pixmap,
-                                          gdk_colormap_get_system(),
-                                          0, 0, x, y, bw, th);
+    y += title_h + theme->mbwidth;
 
     /* fill in background appearance, used as the parent to text items */
     background = theme->a_menu_normal;
     background->surface.parent = menu;
-    background->surface.parentx = 0;
-    background->surface.parenty = 0;
+    background->surface.parentx = x - theme->mbwidth;
+    background->surface.parenty = y - theme->mbwidth;
 
     /* draw background for normal entry */
     theme_pixmap_paint(background, bw, bh);
@@ -153,14 +149,13 @@ static GdkPixbuf* preview_menu(RrTheme *theme)
     normal->surface.parent = background;
     normal->surface.parentx = PADDING;
     normal->surface.parenty = PADDING;
-    x += PADDING;
-    y += PADDING;
     RrMinSize(normal, &tw, &th);
     theme_pixmap_paint(normal, tw, th);
     pixmap = gdk_pixmap_foreign_new(normal->pixmap);
     pixbuf = gdk_pixbuf_get_from_drawable(pixbuf, pixmap,
                                           gdk_colormap_get_system(),
-                                          0, 0, x, y, tw, th);
+                                          0, 0, x + PADDING, y + PADDING,
+                                          tw, th);
 
     /* draw bullet */
     RrMinSize(normal, &tw, &th);
@@ -171,18 +166,22 @@ static GdkPixbuf* preview_menu(RrTheme *theme)
     pixmap = gdk_pixmap_foreign_new(bullet->pixmap);
     pixbuf = gdk_pixbuf_get_from_drawable(pixbuf, pixmap,
                                           gdk_colormap_get_system(),
-                                          0, 0, width - theme->mbwidth - th, y,
+                                          0, 0,
+                                          width - theme->mbwidth - th,
+                                          y + PADDING,
                                           th, th);
 
     y += th + 2*PADDING;
 
     /* draw background for disabled entry */
-    background->surface.parenty = bh;
+    background->surface.parent = menu;
+    background->surface.parentx = x - theme->mbwidth;
+    background->surface.parenty = y - theme->mbwidth;
     theme_pixmap_paint(background, bw, bh);
     pixmap = gdk_pixmap_foreign_new(background->pixmap);
     pixbuf = gdk_pixbuf_get_from_drawable(pixbuf, pixmap,
                                           gdk_colormap_get_system(),
-                                          0, 0, x - PADDING, y - PADDING,
+                                          0, 0, x, y,
                                           bw, bh);
 
     /* draw disabled entry */
@@ -194,20 +193,27 @@ static GdkPixbuf* preview_menu(RrTheme *theme)
     pixmap = gdk_pixmap_foreign_new(disabled->pixmap);
     pixbuf = gdk_pixbuf_get_from_drawable(pixbuf, pixmap,
                                           gdk_colormap_get_system(),
-                                          0, 0, x, y, tw, th);
+                                          0, 0, x + PADDING, y + PADDING,
+                                          tw, th);
 
     y += th + 2*PADDING;
 
     /* draw background for selected entry */
     background = theme->a_menu_selected;
     background->surface.parent = menu;
-    background->surface.parentx = 2*bh;
+    background->surface.parentx = x - theme->mbwidth;
+    background->surface.parenty = y - theme->mbwidth;
+    if (strcmp("SlickBox", theme->name) == 0)
+        printf("y %d parenty %d bh %d height %d menuheight %d parentbottom %d\n",
+               y, background->surface.parenty, bh, height,
+               height - 3*theme->mbwidth,
+               background->surface.parenty + bh);
 
     theme_pixmap_paint(background, bw, bh);
     pixmap = gdk_pixmap_foreign_new(background->pixmap);
     pixbuf = gdk_pixbuf_get_from_drawable(pixbuf, pixmap,
                                           gdk_colormap_get_system(),
-                                          0, 0, x - PADDING, y - PADDING,
+                                          0, 0, x, y,
                                           bw, bh);
 
     /* draw selected entry */
@@ -219,7 +225,8 @@ static GdkPixbuf* preview_menu(RrTheme *theme)
     pixmap = gdk_pixmap_foreign_new(selected->pixmap);
     pixbuf = gdk_pixbuf_get_from_drawable(pixbuf, pixmap,
                                           gdk_colormap_get_system(),
-                                          0, 0, x, y, tw, th);
+                                          0, 0, x + PADDING, y + PADDING,
+                                          tw, th);
 
     return pixbuf;
 }
