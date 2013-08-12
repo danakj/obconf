@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: obconf git\n"
 "Report-Msgid-Bugs-To: http://bugzilla.icculus.org/\n"
-"POT-Creation-Date: 2012-02-19 11:09-0600\n"
+"POT-Creation-Date: 2013-08-11 20:49-0400\n"
 "PO-Revision-Date: 2013-01-01 20:09+0200\n"
 "Last-Translator: Isratine Citizen <genghiskhan@gmx.ca>\n"
 "Language-Team: Rahut <genghiskhan@gmx.ca>\n"
@@ -612,89 +612,88 @@ msgstr "חלון1"
 msgid "<span weight=\"bold\">Press the key you wish to bind...</span>"
 msgstr "<span weight=\"bold\">אנא ללחוץ על מקש אותו ברצונך לכרוך...</span>"
 
-#: src/main.c:74 src/main.c:76 src/main.c:78
-#, fuzzy
+#: src/main.c:62
+msgid "ObConf Error"
+msgstr ""
+
+#: src/main.c:76 src/main.c:78 src/main.c:80
 msgid "Copyright (c)"
-msgstr "cli"
+msgstr ""
 
-#: src/main.c:89
-#, fuzzy
+#: src/main.c:91
 msgid "Syntax: obconf [options] [ARCHIVE.obt]\n"
-msgstr "cli"
+msgstr ""
 
-#: src/main.c:90
-#, fuzzy
+#: src/main.c:92
 msgid ""
 "\n"
 "Options:\n"
-msgstr "cli"
-
-#: src/main.c:91
-#, fuzzy
-msgid "  --help                Display this help and exit\n"
-msgstr "cli"
-
-#: src/main.c:92
-#, fuzzy
-msgid "  --version             Display the version and exit\n"
-msgstr "cli"
+msgstr ""
 
 #: src/main.c:93
-#, fuzzy
-msgid "  --install ARCHIVE.obt Install the given theme archive and select it\n"
-msgstr "cli"
+msgid "  --help                Display this help and exit\n"
+msgstr ""
 
 #: src/main.c:94
-#, fuzzy
+msgid "  --version             Display the version and exit\n"
+msgstr ""
+
+#: src/main.c:95
+msgid "  --install ARCHIVE.obt Install the given theme archive and select it\n"
+msgstr ""
+
+#: src/main.c:96
 msgid ""
 "  --archive THEME       Create a theme archive from the given theme "
 "directory\n"
-msgstr "cli"
+msgstr ""
 
-#: src/main.c:95
-#, fuzzy
+#: src/main.c:97
 msgid "  --config-file FILE    Specify the path to the config file to use\n"
-msgstr "cli"
+msgstr ""
 
-#: src/main.c:96
-#, fuzzy, c-format
+#: src/main.c:98
+msgid "  --tab NUMBER          Switch to tab number NUMBER on startup\n"
+msgstr ""
+
+#: src/main.c:99
+#, c-format
 msgid ""
 "\n"
 "Please report bugs at %s\n"
 "\n"
-msgstr "cli"
+msgstr ""
 
-#: src/main.c:112
-#, fuzzy
+#: src/main.c:115
 msgid "--install requires an argument\n"
-msgstr "cli"
+msgstr ""
 
-#: src/main.c:118
-#, fuzzy
+#: src/main.c:121
 msgid "--archive requires an argument\n"
-msgstr "cli"
+msgstr ""
 
-#: src/main.c:124
-#, fuzzy
+#: src/main.c:127
 msgid "--config-file requires an argument\n"
-msgstr "cli"
+msgstr ""
 
-#: src/main.c:215
-#, fuzzy
+#: src/main.c:133
+msgid "--tab requires an argument\n"
+msgstr ""
+
+#: src/main.c:225
 msgid ""
 "Failed to load the obconf.glade interface file. You have probably failed to "
 "install ObConf properly."
 msgstr ""
 "נכשל להטעין קובץ ממשק obconf.glade. כנראה שנכשלת להתקין את ObConf כיאות."
 
-#: src/main.c:241
-#, fuzzy
+#: src/main.c:251
 msgid ""
 "Failed to load an rc.xml. You have probably failed to install Openbox "
 "properly."
 msgstr "נכשל להטעין את rc.xml. כנראה שנכשלת להתקין את Openbox כיאות."
 
-#: src/main.c:254
+#: src/main.c:264
 #, c-format
 msgid ""
 "Error while parsing the Openbox configuration file.  Your configuration file "
@@ -740,7 +739,7 @@ msgstr ""
 "השגיאות הבאות דווחו:\n"
 "%s"
 
-#: src/archive.c:106 src/archive.c:187
+#: src/archive.c:106 src/archive.c:202
 #, c-format
 msgid "Unable to run the \"tar\" command: %s"
 msgstr "לא ניתן להריץ פקודת \"tar\": ‫%s"
@@ -760,7 +759,7 @@ msgstr "‫\"%s\" לא נראה כמדור מוטיבי Openbox בר תקף"
 msgid "Unable to move to directory \"%s\": %s"
 msgstr "לא ניתן להזיז אל מדור \"%s\": ‫%s"
 
-#: src/archive.c:194
+#: src/archive.c:209
 #, c-format
 msgid ""
 "Unable to extract the file \"%s\".\n"

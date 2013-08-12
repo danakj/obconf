@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: obconf\n"
 "Report-Msgid-Bugs-To: http://bugzilla.icculus.org/\n"
-"POT-Creation-Date: 2008-03-02 19:36-0500\n"
+"POT-Creation-Date: 2013-08-11 20:49-0400\n"
 "PO-Revision-Date: 2013-05-17 11:15+0200\n"
 "Last-Translator: Pjotr <pjotrvertaalt@gmail.com>\n"
 "Language: nl (Dutch)\n"
@@ -26,12 +26,12 @@ msgid "<span weight=\"bold\">Theme</span>"
 msgstr "<span weight=\"bold\">Thema</span>"
 
 #: src/strings.c:9 src/strings.c:14 src/strings.c:18 src/strings.c:27
-#: src/strings.c:43 src/strings.c:51 src/strings.c:54 src/strings.c:63
-#: src/strings.c:72 src/strings.c:80 src/strings.c:85 src/strings.c:98
-#: src/strings.c:100 src/strings.c:107 src/strings.c:113 src/strings.c:116
-#: src/strings.c:118 src/strings.c:125 src/strings.c:137 src/strings.c:140
-#: src/strings.c:151 src/strings.c:154 src/strings.c:160 src/strings.c:165
-#: src/strings.c:167 src/strings.c:170
+#: src/strings.c:43 src/strings.c:52 src/strings.c:55 src/strings.c:63
+#: src/strings.c:69 src/strings.c:73 src/strings.c:82 src/strings.c:90
+#: src/strings.c:95 src/strings.c:108 src/strings.c:110 src/strings.c:117
+#: src/strings.c:123 src/strings.c:126 src/strings.c:128 src/strings.c:135
+#: src/strings.c:147 src/strings.c:150 src/strings.c:161 src/strings.c:164
+#: src/strings.c:170 src/strings.c:175 src/strings.c:177 src/strings.c:180
 msgid "    "
 msgstr "    "
 
@@ -150,236 +150,270 @@ msgid "_Menu Item: "
 msgstr "Menu-onderdeel: "
 
 #: src/strings.c:48
-msgid "_On-screen display: "
-msgstr "Weergave op scherm: "
+msgid "Active _On-screen display: "
+msgstr ""
 
 #: src/strings.c:49
+msgid "Inactive O_n-screen display: "
+msgstr ""
+
+#: src/strings.c:50
 msgid "Appearance"
 msgstr "Uiterlijk"
 
-#: src/strings.c:50 src/strings.c:97
+#: src/strings.c:51 src/strings.c:107
 msgid "<span weight=\"bold\">Focusing Windows</span>"
 msgstr "<span weight=\"bold\">Scherpstellen op vensters</span>"
 
-#: src/strings.c:52
+#: src/strings.c:53
 msgid "Focus _new windows when they appear"
 msgstr "Stel scherp op nieuwe vensters wanneer ze verschijnen"
 
-#: src/strings.c:53
+#: src/strings.c:54
 msgid "<span weight=\"bold\">Placing Windows</span>"
 msgstr "<span weight=\"bold\">Vensterplaatsing</span>"
 
-#: src/strings.c:55
+#: src/strings.c:56
 msgid "_Place new windows under the mouse pointer"
 msgstr "_Plaats nieuwe vensters onder de muispijl"
 
-#: src/strings.c:56
+#: src/strings.c:57
 msgid "_Center new windows when they are placed"
 msgstr "_Centreer nieuwe vensters wanneer ze worden geplaatst"
 
-#: src/strings.c:57
+#: src/strings.c:58
 msgid "Prefer to place new windows _on:"
 msgstr "Plaats nieuwe vensters bij voorkeur _op:"
 
-#: src/strings.c:58
+#: src/strings.c:59
 msgid "All monitors"
 msgstr "Alle beeldschermen"
 
-#: src/strings.c:59
+#: src/strings.c:60
 msgid "The active monitor"
 msgstr "Het actieve beeldscherm"
 
-#: src/strings.c:60
+#: src/strings.c:61
 msgid "The monitor with the mouse"
 msgstr "Het beeldscherm met de muis"
 
-#: src/strings.c:61
+#: src/strings.c:62
+msgid "<span weight=\"bold\">Primary Monitor</span>"
+msgstr ""
+
+#: src/strings.c:64
+msgid ""
+"The primary monitor is where Openbox will place dialogs, such as the one "
+"used for cycling windows."
+msgstr ""
+
+#: src/strings.c:65
+msgid "Primary _monitor:"
+msgstr ""
+
+#: src/strings.c:66
+msgid "Fixed Monitor"
+msgstr ""
+
+#: src/strings.c:67
+msgid "Active Monitor"
+msgstr ""
+
+#: src/strings.c:68
+msgid "Monitor With Mouse Pointer"
+msgstr ""
+
+#: src/strings.c:70
+msgid "_Fixed monitor:"
+msgstr ""
+
+#: src/strings.c:71
 msgid "Windows"
 msgstr "Vensters"
 
-#: src/strings.c:62
+#: src/strings.c:72
 msgid "<span weight=\"bold\">Moving and Resizing Windows</span>"
 msgstr ""
 "<span weight=\"bold\">Vensters verplaatsen en van grootte veranderen</span>"
 
-#: src/strings.c:64
+#: src/strings.c:74
 msgid "Update the window contents while _resizing"
 msgstr "Werk de vensterinhoud bij tijdens grootteverandering"
 
-#: src/strings.c:65
+#: src/strings.c:75
 msgid "Drag _threshold distance:"
 msgstr "Afstand voor sleepdrempel:"
 
-#: src/strings.c:66 src/strings.c:68 src/strings.c:70 src/strings.c:90
-#: src/strings.c:95 src/strings.c:128 src/strings.c:130 src/strings.c:132
-#: src/strings.c:134
+#: src/strings.c:76 src/strings.c:78 src/strings.c:80 src/strings.c:100
+#: src/strings.c:105 src/strings.c:138 src/strings.c:140 src/strings.c:142
+#: src/strings.c:144
 msgid "px"
 msgstr "px"
 
-#: src/strings.c:67
+#: src/strings.c:77
 msgid "Amount of resistance against other _windows:"
 msgstr "Hoeveelheid weerstand tegen andere vensters:"
 
-#: src/strings.c:69
+#: src/strings.c:79
 msgid "Amount of resistance against screen _edges:"
 msgstr "Hoeveelheid weerstand tegen schermranden:"
 
-#: src/strings.c:71
+#: src/strings.c:81
 msgid "_Switch desktops when moving a window past the screen edge"
 msgstr ""
-"Verwissel bureaubladen wanneer een venster voorbij de schermrand "
-"wordt bewogen"
+"Verwissel bureaubladen wanneer een venster voorbij de schermrand wordt "
+"bewogen"
 
-#: src/strings.c:73
+#: src/strings.c:83
 msgid "_Amount of time to wait before switching:"
 msgstr "Hoeveelheid wachttijd voor verwisseling:"
 
-#: src/strings.c:74 src/strings.c:105 src/strings.c:112 src/strings.c:120
-#: src/strings.c:169 src/strings.c:172
+#: src/strings.c:84 src/strings.c:115 src/strings.c:122 src/strings.c:130
+#: src/strings.c:179 src/strings.c:182
 msgid "ms"
 msgstr "ms"
 
-#: src/strings.c:75
+#: src/strings.c:85
 msgid "<span weight=\"bold\">Information Dialog</span>"
 msgstr "<span weight=\"bold\">Informatiedialoog</span>"
 
-#: src/strings.c:76
+#: src/strings.c:86
 msgid "Show _information dialog:"
 msgstr "Toon informatiedialoog"
 
-#: src/strings.c:77
+#: src/strings.c:87
 msgid "When resizing terminal windows"
 msgstr "Tijdens grootteverandering van terminalvensters"
 
-#: src/strings.c:78
+#: src/strings.c:88
 msgid "Always"
 msgstr "Altijd"
 
-#: src/strings.c:79
+#: src/strings.c:89
 msgid "Never"
 msgstr "Nooit"
 
-#: src/strings.c:81
+#: src/strings.c:91
 msgid "Information dialog's _position:"
 msgstr "Positie van informatiedialoog"
 
-#: src/strings.c:82
+#: src/strings.c:92
 msgid "Centered on the window"
 msgstr "Gecentreerd op het venster"
 
-#: src/strings.c:83
+#: src/strings.c:93
 msgid "Above the window"
 msgstr "Boven het venster"
 
-#: src/strings.c:84
+#: src/strings.c:94
 msgid "Fixed position on screen"
 msgstr "Vaste positie op het scherm"
 
-#: src/strings.c:86
+#: src/strings.c:96
 msgid "Fixed _x position:"
 msgstr "Vaste _x-positie:"
 
-#: src/strings.c:87 src/strings.c:92
+#: src/strings.c:97 src/strings.c:102
 msgid "Centered"
 msgstr "Gecentreerd"
 
-#: src/strings.c:88
+#: src/strings.c:98
 msgid "From left edge"
 msgstr "Vanuit de linkerrand"
 
-#: src/strings.c:89
+#: src/strings.c:99
 msgid "From right edge"
 msgstr "Vanuit de rechterrand"
 
-#: src/strings.c:91
+#: src/strings.c:101
 msgid "Fixed _y position:"
 msgstr "Vaste _y-positie"
 
-#: src/strings.c:93
+#: src/strings.c:103
 msgid "From top edge"
 msgstr "Vanaf de bovenste rand"
 
-#: src/strings.c:94
+#: src/strings.c:104
 msgid "From bottom edge"
 msgstr "Vanaf de onderste rand"
 
-#: src/strings.c:96
+#: src/strings.c:106
 msgid "Move & Resize"
 msgstr "Verplaats en verander grootte"
 
-#: src/strings.c:99
+#: src/strings.c:109
 msgid "_Focus windows when the mouse pointer moves over them"
 msgstr "Stel scherp op vensters wanneer de muispijl over hen beweegt"
 
-#: src/strings.c:101
+#: src/strings.c:111
 msgid "Move focus under the mouse when _switching desktops"
 msgstr "Plaats scherpstelling onder de muis tijdens wisseling van bureaubladen"
 
-#: src/strings.c:102
+#: src/strings.c:112
 msgid "Move focus _under the mouse when the mouse is not moving"
 msgstr "Plaats scherpstelling onder de muis wanneer de muis niet beweegt"
 
-#: src/strings.c:103
+#: src/strings.c:113
 msgid "_Raise windows when the mouse pointer moves over them"
 msgstr "Verhef vensters wanneer de muispijl over hen beweegt"
 
-#: src/strings.c:104
+#: src/strings.c:114
 msgid "_Delay before focusing and raising windows:"
 msgstr "Vertraging voor scherpstellen op en verheffen van vensters:"
 
-#: src/strings.c:106
+#: src/strings.c:116
 msgid "<span weight=\"bold\">Titlebar</span>"
 msgstr "<span weight=\"bold\">Titelbalk</span>"
 
-#: src/strings.c:108
+#: src/strings.c:118
 msgid "Double click on the _titlebar:"
 msgstr "Dubbelklik op de _titelbalk:"
 
-#: src/strings.c:109
+#: src/strings.c:119
 msgid "Maximizes the window"
 msgstr "Maximaliseert het venster"
 
-#: src/strings.c:110
+#: src/strings.c:120
 msgid "Shades the window"
 msgstr "Rolt het venster op"
 
-#: src/strings.c:111
+#: src/strings.c:121
 msgid "Double click ti_me:"
 msgstr "Dubbelkliktijd:"
 
-#: src/strings.c:114
+#: src/strings.c:124
 msgid "Mouse"
 msgstr "Muis"
 
-#: src/strings.c:115
+#: src/strings.c:125
 msgid "<span weight=\"bold\">Desktops</span>"
 msgstr "<span weight=\"bold\">Bureaubladen</span>"
 
-#: src/strings.c:117
+#: src/strings.c:127
 msgid "_Show a notification when switching desktops"
 msgstr "_Toon een melding bij het wisselen van bureaubladen"
 
-#: src/strings.c:119
+#: src/strings.c:129
 msgid "_Amount of time to show the notification for:"
 msgstr "_Hoeveelheid tijd gedurende welke de melding wordt getoond:"
 
-#: src/strings.c:121
+#: src/strings.c:131
 msgid "_Number of desktops: "
 msgstr "_Aantal bureaubladen: "
 
-#: src/strings.c:122
+#: src/strings.c:132
 msgid "_Desktop names:"
 msgstr "_Bureaubladnamen:"
 
-#: src/strings.c:123
+#: src/strings.c:133
 msgid "Desktops"
 msgstr "Bureaubladen"
 
-#: src/strings.c:124
+#: src/strings.c:134
 msgid "<span weight=\"bold\">Desktop Margins</span>"
 msgstr "<span weight=\"bold\">Bureaubladmarges</span>"
 
-#: src/strings.c:126
+#: src/strings.c:136
 msgid ""
 "Desktop margins are reserved areas on the edge of your screen.  New windows "
 "will not be placed within a margin, and maximized windows will not cover "
@@ -389,31 +423,31 @@ msgstr ""
 "Nieuwe vensters zullen niet binnen een marge worden geplaatst, en "
 "gemaximaliseerde vensters zullen hen niet bedekken."
 
-#: src/strings.c:127
+#: src/strings.c:137
 msgid "_Top"
 msgstr "_Bovenkant"
 
-#: src/strings.c:129
+#: src/strings.c:139
 msgid "_Left"
 msgstr "_Links"
 
-#: src/strings.c:131
+#: src/strings.c:141
 msgid "_Right"
 msgstr "_Rechts"
 
-#: src/strings.c:133
+#: src/strings.c:143
 msgid "_Bottom"
 msgstr "_Onderkant"
 
-#: src/strings.c:135
+#: src/strings.c:145
 msgid "Margins"
 msgstr "Marges"
 
-#: src/strings.c:136
+#: src/strings.c:146
 msgid "<span weight=\"bold\">Dock</span>"
 msgstr "<span weight=\"bold\">Dok</span>"
 
-#: src/strings.c:138
+#: src/strings.c:148
 msgid ""
 "The dock is a special container for \"dockapps\", or dock applications.  It "
 "is not visible on screen until a dockapp is run.  Dockapps can be used to "
@@ -424,127 +458,127 @@ msgstr ""
 "Doktoepassingen kunnen worden gebruikt om dingen te tonen als een klok, of "
 "om u van een systeemvak te voorzien."
 
-#: src/strings.c:139
+#: src/strings.c:149
 msgid "<span weight=\"bold\">Position</span>"
 msgstr "<span weight=\"bold\">Positie</span>"
 
-#: src/strings.c:141
+#: src/strings.c:151
 msgid "_Position:"
 msgstr "_Positie:"
 
-#: src/strings.c:142
+#: src/strings.c:152
 msgid "Top Left"
 msgstr "Linksboven"
 
-#: src/strings.c:143
+#: src/strings.c:153
 msgid "Top"
 msgstr "Bovenkant"
 
-#: src/strings.c:144
+#: src/strings.c:154
 msgid "Top Right"
 msgstr "Rechtsboven"
 
-#: src/strings.c:145
+#: src/strings.c:155
 msgid "Left"
 msgstr "Links"
 
-#: src/strings.c:146
+#: src/strings.c:156
 msgid "Right"
 msgstr "Rechts"
 
-#: src/strings.c:147
+#: src/strings.c:157
 msgid "Bottom Left"
 msgstr "Linksonder"
 
-#: src/strings.c:148
+#: src/strings.c:158
 msgid "Bottom"
 msgstr "Onderkant"
 
-#: src/strings.c:149
+#: src/strings.c:159
 msgid "Bottom Right"
 msgstr "Rechtsonder"
 
-#: src/strings.c:150
+#: src/strings.c:160
 msgid "Floating"
 msgstr "Drijvend"
 
-#: src/strings.c:152
+#: src/strings.c:162
 msgid "_Floating position:"
 msgstr "Drijvende positie:"
 
-#: src/strings.c:153
+#: src/strings.c:163
 msgid "x"
 msgstr "x"
 
-#: src/strings.c:155
+#: src/strings.c:165
 msgid "Allow _windows to be placed within the dock's area"
 msgstr "Sta vensters toe om te worden geplaatst binnen het dokgebied"
 
-#: src/strings.c:156
+#: src/strings.c:166
 msgid "_Orientation: "
 msgstr "_Oriëntatie: "
 
-#: src/strings.c:157
+#: src/strings.c:167
 msgid "Vertical"
 msgstr "Verticaal"
 
-#: src/strings.c:158
+#: src/strings.c:168
 msgid "Horizontal"
 msgstr "Horizontaal"
 
-#: src/strings.c:159
+#: src/strings.c:169
 msgid "<span weight=\"bold\">Stacking</span>"
 msgstr "<span weight=\"bold\">Stapeling</span>"
 
-#: src/strings.c:161
+#: src/strings.c:171
 msgid "Keep dock _above other windows"
 msgstr "Houd dok boven andere vensters"
 
-#: src/strings.c:162
+#: src/strings.c:172
 msgid "A_llow dock to be both above and below windows"
 msgstr "Sta het dok toe om zowel boven als onder vensters te zijn"
 
-#: src/strings.c:163
+#: src/strings.c:173
 msgid "Keep dock _below other windows"
 msgstr "Houd dok onder andere vensters"
 
-#: src/strings.c:164
+#: src/strings.c:174
 msgid "<span weight=\"bold\">Hiding</span>"
 msgstr "<span weight=\"bold\">Verbergen</span>"
 
-#: src/strings.c:166
+#: src/strings.c:176
 msgid "_Hide off screen"
 msgstr "Verberg buiten scherm"
 
-#: src/strings.c:168
+#: src/strings.c:178
 msgid "_Delay before hiding:"
 msgstr "Vertraging voor verbergen:"
 
-#: src/strings.c:171
+#: src/strings.c:181
 msgid "Delay before _showing:"
 msgstr "Vertraging voor tonen:"
 
-#: src/strings.c:173
+#: src/strings.c:183
 msgid "Dock"
 msgstr "Dok"
 
-#: src/strings.c:174
+#: src/strings.c:184
 msgid "Abo_ut"
 msgstr "Over"
 
-#: src/strings.c:175
+#: src/strings.c:185
 msgid "About ObConf"
 msgstr "Over ObConf"
 
-#: src/strings.c:176
+#: src/strings.c:186
 msgid "<span weight=\"bold\" size=\"xx-large\">ObConf VERSION</span>"
 msgstr "<span weight=\"bold\" size=\"xx-large\">ObConf-versie</span>"
 
-#: src/strings.c:177
+#: src/strings.c:187
 msgid "A preferences manager for Openbox"
 msgstr "Een voorkeurenbeheerder voor Openbox"
 
-#: src/strings.c:178
+#: src/strings.c:188
 msgid ""
 "Copyright (c) 2003-2008\n"
 "Dana Jansens <danakj@orodu.net>\n"
@@ -556,23 +590,27 @@ msgstr ""
 "Tim Riley <tr@slackzone.org>\n"
 "Javeed Shaikh <syscrash2k@gmail.com>"
 
-#: src/strings.c:182
+#: src/strings.c:192
 msgid "window1"
 msgstr "venster1"
 
-#: src/strings.c:183
+#: src/strings.c:193
 msgid "<span weight=\"bold\">Press the key you wish to bind...</span>"
 msgstr "<span weight=\"bold\">Druk op de toets die u wil binden...</span>"
 
-#: src/main.c:72 src/main.c:74 src/main.c:76
+#: src/main.c:62
+msgid "ObConf Error"
+msgstr ""
+
+#: src/main.c:76 src/main.c:78 src/main.c:80
 msgid "Copyright (c)"
 msgstr "Auteursrecht (c)"
 
-#: src/main.c:87
+#: src/main.c:91
 msgid "Syntax: obconf [options] [ARCHIVE.obt]\n"
 msgstr "Syntax: obconf [opties] [ARCHIVE.obt]\n"
 
-#: src/main.c:88
+#: src/main.c:92
 msgid ""
 "\n"
 "Options:\n"
@@ -580,21 +618,21 @@ msgstr ""
 "\n"
 "Opties:\n"
 
-#: src/main.c:89
+#: src/main.c:93
 msgid "  --help                Display this help and exit\n"
 msgstr "  --help                Toon deze hulptekst en sluit af\n"
 
-#: src/main.c:90
+#: src/main.c:94
 msgid "  --version             Display the version and exit\n"
 msgstr "  --version             Toon de versie en sluit af\n"
 
-#: src/main.c:91
+#: src/main.c:95
 msgid "  --install ARCHIVE.obt Install the given theme archive and select it\n"
 msgstr ""
 "  --installeer ARCHIVE.obt Installeer het opgegeven thema-archief en "
 "selecteer het\n"
 
-#: src/main.c:92
+#: src/main.c:96
 msgid ""
 "  --archive THEME       Create a theme archive from the given theme "
 "directory\n"
@@ -602,13 +640,17 @@ msgstr ""
 "  --archive THEME       Maak een thema-archief vanuit de opgegeven thema- "
 "map\n"
 
-#: src/main.c:93
+#: src/main.c:97
 msgid "  --config-file FILE    Specify the path to the config file to use\n"
 msgstr ""
 "  --config-file FILE    Specificeer het pad naar het te gebruiken "
 "configuratiebestand\n"
 
-#: src/main.c:94
+#: src/main.c:98
+msgid "  --tab NUMBER          Switch to tab number NUMBER on startup\n"
+msgstr ""
+
+#: src/main.c:99
 #, c-format
 msgid ""
 "\n"
@@ -619,19 +661,23 @@ msgstr ""
 "Meld fouten a.u.b. aan %s\n"
 "\n"
 
-#: src/main.c:110
+#: src/main.c:115
 msgid "--install requires an argument\n"
 msgstr "--install vereist een argument\n"
 
-#: src/main.c:116
+#: src/main.c:121
 msgid "--archive requires an argument\n"
 msgstr "--archive vereist een argument\n"
 
-#: src/main.c:122
+#: src/main.c:127
 msgid "--config-file requires an argument\n"
 msgstr "--config-file vereist een argument\n"
 
-#: src/main.c:213
+#: src/main.c:133
+msgid "--tab requires an argument\n"
+msgstr ""
+
+#: src/main.c:225
 msgid ""
 "Failed to load the obconf.glade interface file. You have probably failed to "
 "install ObConf properly."
@@ -639,7 +685,7 @@ msgstr ""
 "Kon het obconf.glade interface-bestand niet laden. U hebt waarschijnlijk "
 "ObConf niet goed geïnstalleerd."
 
-#: src/main.c:234
+#: src/main.c:251
 msgid ""
 "Failed to load an rc.xml. You have probably failed to install Openbox "
 "properly."
@@ -647,7 +693,7 @@ msgstr ""
 "Kon een rc.xml niet laden. U hebt waarschijnlijk Openbox niet goed "
 "geïnstalleerd."
 
-#: src/main.c:243
+#: src/main.c:264
 #, c-format
 msgid ""
 "Error while parsing the Openbox configuration file.  Your configuration file "
@@ -693,7 +739,7 @@ msgstr ""
 "De volgende fouten werden gemeld:\n"
 "%s"
 
-#: src/archive.c:106 src/archive.c:190
+#: src/archive.c:106 src/archive.c:202
 #, c-format
 msgid "Unable to run the \"tar\" command: %s"
 msgstr "Kon de 'tar'-opdracht niet uitvoeren: %s"
@@ -713,7 +759,7 @@ msgstr "'%s' lijkt geen geldige Openbox-themamap te zijn"
 msgid "Unable to move to directory \"%s\": %s"
 msgstr "Kon niet verplaatsen naar map '%s': %s"
 
-#: src/archive.c:197
+#: src/archive.c:209
 #, c-format
 msgid ""
 "Unable to extract the file \"%s\".\n"
@@ -723,8 +769,8 @@ msgid ""
 "%s"
 msgstr ""
 "Kon het bestand '%s' niet uitpakken.\n"
-"Zorg er a.u.b. voor dat '%s' beschrijfbaar is en dat het bestand een "
-"geldig Openbox-thema-archief is.\n"
+"Zorg er a.u.b. voor dat '%s' beschrijfbaar is en dat het bestand een geldig "
+"Openbox-thema-archief is.\n"
 "De volgende fouten werden gemeld:\n"
 "%s"
 

@@ -7,16 +7,17 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: obconf 2.0.3\n"
-"Report-Msgid-Bugs-To: http://bugzilla.icculus.org\n"
-"POT-Creation-Date: 2008-03-02 19:36-0500\n"
+"Report-Msgid-Bugs-To: http://bugzilla.icculus.org/\n"
+"POT-Creation-Date: 2013-08-11 20:49-0400\n"
 "PO-Revision-Date: 2008-12-01 17:02+0100\n"
 "Last-Translator: Jay A. Fleming <tito.nehru.naser@gmail.com>\n"
 "Language-Team: None\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: src/strings.c:7
 msgid "Openbox Configuration Manager"
@@ -27,12 +28,12 @@ msgid "<span weight=\"bold\">Theme</span>"
 msgstr "<span weight=\"bold\">Тема</span>"
 
 #: src/strings.c:9 src/strings.c:14 src/strings.c:18 src/strings.c:27
-#: src/strings.c:43 src/strings.c:51 src/strings.c:54 src/strings.c:63
-#: src/strings.c:72 src/strings.c:80 src/strings.c:85 src/strings.c:98
-#: src/strings.c:100 src/strings.c:107 src/strings.c:113 src/strings.c:116
-#: src/strings.c:118 src/strings.c:125 src/strings.c:137 src/strings.c:140
-#: src/strings.c:151 src/strings.c:154 src/strings.c:160 src/strings.c:165
-#: src/strings.c:167 src/strings.c:170
+#: src/strings.c:43 src/strings.c:52 src/strings.c:55 src/strings.c:63
+#: src/strings.c:69 src/strings.c:73 src/strings.c:82 src/strings.c:90
+#: src/strings.c:95 src/strings.c:108 src/strings.c:110 src/strings.c:117
+#: src/strings.c:123 src/strings.c:126 src/strings.c:128 src/strings.c:135
+#: src/strings.c:147 src/strings.c:150 src/strings.c:161 src/strings.c:164
+#: src/strings.c:170 src/strings.c:175 src/strings.c:177 src/strings.c:180
 msgid "    "
 msgstr "    "
 
@@ -151,396 +152,431 @@ msgid "_Menu Item: "
 msgstr "Ставка менија: "
 
 #: src/strings.c:48
-msgid "_On-screen display: "
-msgstr "Приказивач на екрану (_OSD): "
+msgid "Active _On-screen display: "
+msgstr ""
 
 #: src/strings.c:49
+msgid "Inactive O_n-screen display: "
+msgstr ""
+
+#: src/strings.c:50
 msgid "Appearance"
 msgstr "Изглед"
 
-#: src/strings.c:50 src/strings.c:97
+#: src/strings.c:51 src/strings.c:107
 msgid "<span weight=\"bold\">Focusing Windows</span>"
 msgstr "<span weight=\"bold\">Прозори у жижи</span>"
 
-#: src/strings.c:52
+#: src/strings.c:53
 msgid "Focus _new windows when they appear"
 msgstr "Нови прозор је у жижи када се појави"
 
-#: src/strings.c:53
+#: src/strings.c:54
 msgid "<span weight=\"bold\">Placing Windows</span>"
 msgstr "<span weight=\"bold\">Размештај прозора</span>"
 
-#: src/strings.c:55
+#: src/strings.c:56
 msgid "_Place new windows under the mouse pointer"
 msgstr "Постави нови прозор испод показивача миша"
 
-#: src/strings.c:56
+#: src/strings.c:57
 msgid "_Center new windows when they are placed"
 msgstr "Центрирај нове прозоре када су постављени"
 
-#: src/strings.c:57
+#: src/strings.c:58
 msgid "Prefer to place new windows _on:"
 msgstr "Постави нови прозор на:"
 
-#: src/strings.c:58
+#: src/strings.c:59
 msgid "All monitors"
 msgstr "Све мониторе"
 
-#: src/strings.c:59
+#: src/strings.c:60
 msgid "The active monitor"
 msgstr "Активни монитор"
 
-#: src/strings.c:60
+#: src/strings.c:61
 msgid "The monitor with the mouse"
 msgstr "Монитор са мишем"
 
-#: src/strings.c:61
+#: src/strings.c:62
+msgid "<span weight=\"bold\">Primary Monitor</span>"
+msgstr ""
+
+#: src/strings.c:64
+msgid ""
+"The primary monitor is where Openbox will place dialogs, such as the one "
+"used for cycling windows."
+msgstr ""
+
+#: src/strings.c:65
+msgid "Primary _monitor:"
+msgstr ""
+
+#: src/strings.c:66
+msgid "Fixed Monitor"
+msgstr ""
+
+#: src/strings.c:67
+msgid "Active Monitor"
+msgstr ""
+
+#: src/strings.c:68
+msgid "Monitor With Mouse Pointer"
+msgstr ""
+
+#: src/strings.c:70
+msgid "_Fixed monitor:"
+msgstr ""
+
+#: src/strings.c:71
 msgid "Windows"
 msgstr "Прозори"
 
-#: src/strings.c:62
+#: src/strings.c:72
 msgid "<span weight=\"bold\">Moving and Resizing Windows</span>"
 msgstr "<span weight=\"bold\">Померање и промена димензија прозора</span>"
 
-#: src/strings.c:64
+#: src/strings.c:74
 msgid "Update the window contents while _resizing"
 msgstr "Освежавај садржај прозора код мењања његових димензија"
 
-#: src/strings.c:65
+#: src/strings.c:75
 msgid "Drag _threshold distance:"
 msgstr "Удаљеност прага превлачења:"
 
-#: src/strings.c:66 src/strings.c:68 src/strings.c:70 src/strings.c:90
-#: src/strings.c:95 src/strings.c:128 src/strings.c:130 src/strings.c:132
-#: src/strings.c:134
+#: src/strings.c:76 src/strings.c:78 src/strings.c:80 src/strings.c:100
+#: src/strings.c:105 src/strings.c:138 src/strings.c:140 src/strings.c:142
+#: src/strings.c:144
 msgid "px"
 msgstr "пиксела"
 
-#: src/strings.c:67
+#: src/strings.c:77
 msgid "Amount of resistance against other _windows:"
 msgstr "Осетљивост према другим прозорима:"
 
-#: src/strings.c:69
+#: src/strings.c:79
 msgid "Amount of resistance against screen _edges:"
 msgstr "Осетљивост према ивицама екрана:"
 
-#: src/strings.c:71
+#: src/strings.c:81
 msgid "_Switch desktops when moving a window past the screen edge"
 msgstr "Измени радне површине када се прозор помера ван ивица екрана"
 
-#: src/strings.c:73
+#: src/strings.c:83
 msgid "_Amount of time to wait before switching:"
 msgstr "Чекај пре измењивања:"
 
-#: src/strings.c:74 src/strings.c:105 src/strings.c:112 src/strings.c:120
-#: src/strings.c:169 src/strings.c:172
+#: src/strings.c:84 src/strings.c:115 src/strings.c:122 src/strings.c:130
+#: src/strings.c:179 src/strings.c:182
 msgid "ms"
 msgstr "милисекунди"
 
-#: src/strings.c:75
+#: src/strings.c:85
 msgid "<span weight=\"bold\">Information Dialog</span>"
 msgstr "<span weight=\"bold\">Прозорче за информације</span>"
 
-#: src/strings.c:76
+#: src/strings.c:86
 msgid "Show _information dialog:"
 msgstr "Прикажи прозорче за информације:"
 
-#: src/strings.c:77
+#: src/strings.c:87
 msgid "When resizing terminal windows"
 msgstr "Када мењам димензије прозора терминала"
 
-#: src/strings.c:78
+#: src/strings.c:88
 msgid "Always"
 msgstr "Увек"
 
-#: src/strings.c:79
+#: src/strings.c:89
 msgid "Never"
 msgstr "Никада"
 
-#: src/strings.c:81
+#: src/strings.c:91
 msgid "Information dialog's _position:"
 msgstr "Положај прозорчета за информације:"
 
-#: src/strings.c:82
+#: src/strings.c:92
 msgid "Centered on the window"
 msgstr "Центрирано на прозору"
 
-#: src/strings.c:83
+#: src/strings.c:93
 msgid "Above the window"
 msgstr "Изнад прозора"
 
-#: src/strings.c:84
+#: src/strings.c:94
 msgid "Fixed position on screen"
 msgstr "Утврђен положај на екрану"
 
-#: src/strings.c:86
+#: src/strings.c:96
 msgid "Fixed _x position:"
 msgstr "Утврђен положај на X оси:"
 
-#: src/strings.c:87 src/strings.c:92
+#: src/strings.c:97 src/strings.c:102
 msgid "Centered"
 msgstr "Центрирано"
 
-#: src/strings.c:88
+#: src/strings.c:98
 msgid "From left edge"
 msgstr "Од леве ивице"
 
-#: src/strings.c:89
+#: src/strings.c:99
 msgid "From right edge"
 msgstr "Од десне ивице"
 
-#: src/strings.c:91
+#: src/strings.c:101
 msgid "Fixed _y position:"
 msgstr "Утврђен положај по Y оси:"
 
-#: src/strings.c:93
+#: src/strings.c:103
 msgid "From top edge"
 msgstr "Од горње ивице"
 
-#: src/strings.c:94
+#: src/strings.c:104
 msgid "From bottom edge"
 msgstr "Од доње ивице"
 
-#: src/strings.c:96
+#: src/strings.c:106
 msgid "Move & Resize"
 msgstr "Померај/Мењај димензије"
 
-#: src/strings.c:99
+#: src/strings.c:109
 msgid "_Focus windows when the mouse pointer moves over them"
 msgstr "Постави прозоре у жижу када показивач миша прелази преко њих"
 
-#: src/strings.c:101
+#: src/strings.c:111
 msgid "Move focus under the mouse when _switching desktops"
 msgstr "Жижа је на мишу када измењујем радне површине"
 
-#: src/strings.c:102
+#: src/strings.c:112
 msgid "Move focus _under the mouse when the mouse is not moving"
 msgstr "Жижа је на мишу када се миш не помера"
 
-#: src/strings.c:103
+#: src/strings.c:113
 msgid "_Raise windows when the mouse pointer moves over them"
 msgstr "Издигни прозоре када се преко њих помера показивач миша"
 
-#: src/strings.c:104
+#: src/strings.c:114
 msgid "_Delay before focusing and raising windows:"
 msgstr "Кашњење пре стављања у жижу и издизања прозора:"
 
-#: src/strings.c:106
+#: src/strings.c:116
 msgid "<span weight=\"bold\">Titlebar</span>"
 msgstr "<span weight=\"bold\">Насловна линија</span>"
 
-#: src/strings.c:108
+#: src/strings.c:118
 msgid "Double click on the _titlebar:"
 msgstr "Двоструки притисак показивачем миша на насловну линију:"
 
-#: src/strings.c:109
+#: src/strings.c:119
 msgid "Maximizes the window"
 msgstr "Увећај прозор"
 
-#: src/strings.c:110
+#: src/strings.c:120
 msgid "Shades the window"
 msgstr "Замотај прозор"
 
-#: src/strings.c:111
+#: src/strings.c:121
 msgid "Double click ti_me:"
 msgstr "Брзина двоструког притиска показивача миша:"
 
-#: src/strings.c:114
+#: src/strings.c:124
 msgid "Mouse"
 msgstr "Миш"
 
-#: src/strings.c:115
+#: src/strings.c:125
 msgid "<span weight=\"bold\">Desktops</span>"
 msgstr "<span weight=\"bold\">Радне површине</span>"
 
-#: src/strings.c:117
+#: src/strings.c:127
 msgid "_Show a notification when switching desktops"
 msgstr "Приказуј обавештење код измењивања радних површина"
 
-#: src/strings.c:119
+#: src/strings.c:129
 msgid "_Amount of time to show the notification for:"
 msgstr "Трајање приказа обавештења за:"
 
-#: src/strings.c:121
+#: src/strings.c:131
 msgid "_Number of desktops: "
 msgstr "Број радних површина: "
 
-#: src/strings.c:122
+#: src/strings.c:132
 msgid "_Desktop names:"
 msgstr "Имена радних површина:"
 
-#: src/strings.c:123
+#: src/strings.c:133
 msgid "Desktops"
 msgstr "Радне површине"
 
-#: src/strings.c:124
+#: src/strings.c:134
 msgid "<span weight=\"bold\">Desktop Margins</span>"
 msgstr "<span weight=\"bold\">Маргине радних површина</span>"
 
-#: src/strings.c:126
+#: src/strings.c:136
 msgid ""
 "Desktop margins are reserved areas on the edge of your screen.  New windows "
 "will not be placed within a margin, and maximized windows will not cover "
 "them."
-msgstr "Маргине радне површине су резервисана поља на ивицама вашег екрана.  "
-"Нови прозори се неће размештати унутар маргина, а увећани прозори неће "
-"их прекривати."
+msgstr ""
+"Маргине радне површине су резервисана поља на ивицама вашег екрана.  Нови "
+"прозори се неће размештати унутар маргина, а увећани прозори неће их "
+"прекривати."
 
-#: src/strings.c:127
+#: src/strings.c:137
 msgid "_Top"
 msgstr "Врх"
 
-#: src/strings.c:129
+#: src/strings.c:139
 msgid "_Left"
 msgstr "Лево"
 
-#: src/strings.c:131
+#: src/strings.c:141
 msgid "_Right"
 msgstr "Десно"
 
-#: src/strings.c:133
+#: src/strings.c:143
 msgid "_Bottom"
 msgstr "Дно"
 
-#: src/strings.c:135
+#: src/strings.c:145
 msgid "Margins"
 msgstr "Маргине"
 
-#: src/strings.c:136
+#: src/strings.c:146
 msgid "<span weight=\"bold\">Dock</span>"
 msgstr "<span weight=\"bold\">Обавештајна зона</span>"
 
-#: src/strings.c:138
+#: src/strings.c:148
 msgid ""
 "The dock is a special container for \"dockapps\", or dock applications.  It "
 "is not visible on screen until a dockapp is run.  Dockapps can be used to "
 "show things like a clock, or to provide you with a system tray."
 msgstr ""
 "Обавештајна зона је складиште за тзв. „dockapps“. Није видљива на екрану "
-"када се програми који се смештaју у њу покрећу.  Ови програми могу приказивати "
-"разне ствари као нпр. време, или пружати услуге системске касете."
+"када се програми који се смештaју у њу покрећу.  Ови програми могу "
+"приказивати разне ствари као нпр. време, или пружати услуге системске касете."
 
-#: src/strings.c:139
+#: src/strings.c:149
 msgid "<span weight=\"bold\">Position</span>"
 msgstr "<span weight=\"bold\">Постављање</span>"
 
-#: src/strings.c:141
+#: src/strings.c:151
 msgid "_Position:"
 msgstr "Положај:"
 
-#: src/strings.c:142
+#: src/strings.c:152
 msgid "Top Left"
 msgstr "На врху лево"
 
-#: src/strings.c:143
+#: src/strings.c:153
 msgid "Top"
 msgstr "На врху"
 
-#: src/strings.c:144
+#: src/strings.c:154
 msgid "Top Right"
 msgstr "На врху десно"
 
-#: src/strings.c:145
+#: src/strings.c:155
 msgid "Left"
 msgstr "Лево"
 
-#: src/strings.c:146
+#: src/strings.c:156
 msgid "Right"
 msgstr "Десно"
 
-#: src/strings.c:147
+#: src/strings.c:157
 msgid "Bottom Left"
 msgstr "На дну лево"
 
-#: src/strings.c:148
+#: src/strings.c:158
 msgid "Bottom"
 msgstr "На дну"
 
-#: src/strings.c:149
+#: src/strings.c:159
 msgid "Bottom Right"
 msgstr "На дну десно"
 
-#: src/strings.c:150
+#: src/strings.c:160
 msgid "Floating"
 msgstr "Лебдећи"
 
-#: src/strings.c:152
+#: src/strings.c:162
 msgid "_Floating position:"
 msgstr "Постављање за лебдећи положај:"
 
-#: src/strings.c:153
+#: src/strings.c:163
 msgid "x"
 msgstr "x"
 
-#: src/strings.c:155
+#: src/strings.c:165
 msgid "Allow _windows to be placed within the dock's area"
 msgstr "Дозволи прозорима размештај у пољу обавештајне зоне"
 
-#: src/strings.c:156
+#: src/strings.c:166
 msgid "_Orientation: "
 msgstr "Оријентација: "
 
-#: src/strings.c:157
+#: src/strings.c:167
 msgid "Vertical"
 msgstr "Вертикално"
 
-#: src/strings.c:158
+#: src/strings.c:168
 msgid "Horizontal"
 msgstr "Хоризонтално"
 
-#: src/strings.c:159
+#: src/strings.c:169
 msgid "<span weight=\"bold\">Stacking</span>"
 msgstr "<span weight=\"bold\">Слагање</span>"
 
-#: src/strings.c:161
+#: src/strings.c:171
 msgid "Keep dock _above other windows"
 msgstr "Постави обавештајну зону изнад других прозора"
 
-#: src/strings.c:162
+#: src/strings.c:172
 msgid "A_llow dock to be both above and below windows"
 msgstr "Дозволи да обавештајна зона буде и изнад и испод других прозора"
 
-#: src/strings.c:163
+#: src/strings.c:173
 msgid "Keep dock _below other windows"
 msgstr "Постави обавештајну зону испод других прозора"
 
-#: src/strings.c:164
+#: src/strings.c:174
 msgid "<span weight=\"bold\">Hiding</span>"
 msgstr "<span weight=\"bold\">Скривање</span>"
 
-#: src/strings.c:166
+#: src/strings.c:176
 msgid "_Hide off screen"
 msgstr "Сакриј ван екрана"
 
-#: src/strings.c:168
+#: src/strings.c:178
 msgid "_Delay before hiding:"
 msgstr "Кашњење пре скривања:"
 
-#: src/strings.c:171
+#: src/strings.c:181
 msgid "Delay before _showing:"
 msgstr "Кашњење пре приказивања:"
 
-#: src/strings.c:173
+#: src/strings.c:183
 msgid "Dock"
 msgstr "Обавештајна зона"
 
-#: src/strings.c:174
+#: src/strings.c:184
 msgid "Abo_ut"
 msgstr "О програму"
 
-#: src/strings.c:175
+#: src/strings.c:185
 msgid "About ObConf"
 msgstr "О програму Обконф"
 
-#: src/strings.c:176
+#: src/strings.c:186
 msgid "<span weight=\"bold\" size=\"xx-large\">ObConf VERSION</span>"
 msgstr "<span weight=\"bold\" size=\"xx-large\">ObConf VERSION</span>"
 
-#: src/strings.c:177
+#: src/strings.c:187
 msgid "A preferences manager for Openbox"
 msgstr "Управљач подешавањима Опенбокса"
 
-#: src/strings.c:178
+#: src/strings.c:188
 msgid ""
 "Copyright (c) 2003-2008\n"
 "Dana Jansens <danakj@orodu.net>\n"
@@ -552,23 +588,29 @@ msgstr ""
 "Tim Riley <tr@slackzone.org>\n"
 "Javeed Shaikh <syscrash2k@gmail.com>"
 
-#: src/strings.c:182
+#: src/strings.c:192
 msgid "window1"
 msgstr "window1"
 
-#: src/strings.c:183
+#: src/strings.c:193
 msgid "<span weight=\"bold\">Press the key you wish to bind...</span>"
-msgstr "<span weight=\"bold\">Притисните дугме тастатуре које желите спојити...</span>"
+msgstr ""
+"<span weight=\"bold\">Притисните дугме тастатуре које желите спојити...</"
+"span>"
 
-#: src/main.c:72 src/main.c:74 src/main.c:76
+#: src/main.c:62
+msgid "ObConf Error"
+msgstr ""
+
+#: src/main.c:76 src/main.c:78 src/main.c:80
 msgid "Copyright (c)"
 msgstr "Сва права задржана, "
 
-#: src/main.c:87
+#: src/main.c:91
 msgid "Syntax: obconf [options] [ARCHIVE.obt]\n"
 msgstr "Синтакса: obconf [опције] [АРХИВА.obt]\n"
 
-#: src/main.c:88
+#: src/main.c:92
 msgid ""
 "\n"
 "Options:\n"
@@ -576,32 +618,36 @@ msgstr ""
 "\n"
 "Опције:\n"
 
-#: src/main.c:89
+#: src/main.c:93
 msgid "  --help                Display this help and exit\n"
 msgstr "  --help                 Прикажи ову помоћ и изађи\n"
 
-#: src/main.c:90
+#: src/main.c:94
 msgid "  --version             Display the version and exit\n"
 msgstr "  --version              Прикажи верзију и изађи\n"
 
-#: src/main.c:91
+#: src/main.c:95
 msgid "  --install ARCHIVE.obt Install the given theme archive and select it\n"
 msgstr "  --install АРХИВА.obt   Инсталирај и постави дату архиву теме\n"
 
-#: src/main.c:92
+#: src/main.c:96
 msgid ""
 "  --archive THEME       Create a theme archive from the given theme "
 "directory\n"
 msgstr ""
-"  --archive ТЕМА         Направи архиву теме из датог директотијума "
-"теме\n"
+"  --archive ТЕМА         Направи архиву теме из датог директотијума теме\n"
 
-#: src/main.c:93
+#: src/main.c:97
 msgid "  --config-file FILE    Specify the path to the config file to use\n"
-msgstr "  --config-file ДАТОТЕКА Наведите путању до датотеке са подешавањима \n"
+msgstr ""
+"  --config-file ДАТОТЕКА Наведите путању до датотеке са подешавањима \n"
 "                         која ће се користити\n"
 
-#: src/main.c:94
+#: src/main.c:98
+msgid "  --tab NUMBER          Switch to tab number NUMBER on startup\n"
+msgstr ""
+
+#: src/main.c:99
 #, c-format
 msgid ""
 "\n"
@@ -612,33 +658,39 @@ msgstr ""
 "Пријавите грешке на %s\n"
 "\n"
 
-#: src/main.c:110
+#: src/main.c:115
 msgid "--install requires an argument\n"
 msgstr "--install захтева аргумент\n"
 
-#: src/main.c:116
+#: src/main.c:121
 msgid "--archive requires an argument\n"
 msgstr "--archive захтева аргумент\n"
 
-#: src/main.c:122
+#: src/main.c:127
 msgid "--config-file requires an argument\n"
 msgstr "·--config-file захтева аргумент\n"
 
-#: src/main.c:213
+#: src/main.c:133
+msgid "--tab requires an argument\n"
+msgstr ""
+
+#: src/main.c:225
 msgid ""
 "Failed to load the obconf.glade interface file. You have probably failed to "
 "install ObConf properly."
-msgstr "Није успело учитавање obconf.glade датотеке. Највероватније нисте "
-"исправно инсталирали Обконф."
+msgstr ""
+"Није успело учитавање obconf.glade датотеке. Највероватније нисте исправно "
+"инсталирали Обконф."
 
-#: src/main.c:234
+#: src/main.c:251
 msgid ""
 "Failed to load an rc.xml. You have probably failed to install Openbox "
 "properly."
-msgstr "Није успело учитавање rc.xml датотеке. Највероватније нисте ·"
-"исправно инсталирали Опенбокс."
+msgstr ""
+"Није успело учитавање rc.xml датотеке. Највероватније нисте ·исправно "
+"инсталирали Опенбокс."
 
-#: src/main.c:243
+#: src/main.c:264
 #, c-format
 msgid ""
 "Error while parsing the Openbox configuration file.  Your configuration file "
@@ -684,7 +736,7 @@ msgstr ""
 "Пријављене су следеће грешке:\n"
 "%s"
 
-#: src/archive.c:106 src/archive.c:190
+#: src/archive.c:106 src/archive.c:202
 #, c-format
 msgid "Unable to run the \"tar\" command: %s"
 msgstr "Не могу покренути „tar“ команду: %s"
@@ -704,7 +756,7 @@ msgstr "„%s“ не изгледа као исправан директори�
 msgid "Unable to move to directory \"%s\": %s"
 msgstr "Не могу се преместити у директоријум·„%s“: %s"
 
-#: src/archive.c:197
+#: src/archive.c:209
 #, c-format
 msgid ""
 "Unable to extract the file \"%s\".\n"
@@ -714,12 +766,11 @@ msgid ""
 "%s"
 msgstr ""
 "Не могу распаковати датотеку „%s“.\n"
-"Обезбедите дозволе за писање датотеци „%s“ и уверите се да је "
-"она исправна архива теме за Опенбокс.\n"
+"Обезбедите дозволе за писање датотеци „%s“ и уверите се да је она исправна "
+"архива теме за Опенбокс.\n"
 "Пријављене су следеће грешке:\n"
 "%s"
 
 #: src/mouse.c:72
 msgid "Custom actions"
 msgstr "Произвољне акције"
-

@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: obconf 2.0.3\n"
 "Report-Msgid-Bugs-To: http://bugzilla.icculus.org/\n"
-"POT-Creation-Date: 2008-03-02 19:36-0500\n"
+"POT-Creation-Date: 2013-08-11 20:49-0400\n"
 "PO-Revision-Date: 2009-03-31 21:44+0300\n"
 "Last-Translator:  <einars8@gmail.com>\n"
 "Language-Team: Latvian <lv@li.org>\n"
+"Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -26,12 +27,12 @@ msgid "<span weight=\"bold\">Theme</span>"
 msgstr "<span weight=\"bold\">Tēma</span>"
 
 #: src/strings.c:9 src/strings.c:14 src/strings.c:18 src/strings.c:27
-#: src/strings.c:43 src/strings.c:51 src/strings.c:54 src/strings.c:63
-#: src/strings.c:72 src/strings.c:80 src/strings.c:85 src/strings.c:98
-#: src/strings.c:100 src/strings.c:107 src/strings.c:113 src/strings.c:116
-#: src/strings.c:118 src/strings.c:125 src/strings.c:137 src/strings.c:140
-#: src/strings.c:151 src/strings.c:154 src/strings.c:160 src/strings.c:165
-#: src/strings.c:167 src/strings.c:170
+#: src/strings.c:43 src/strings.c:52 src/strings.c:55 src/strings.c:63
+#: src/strings.c:69 src/strings.c:73 src/strings.c:82 src/strings.c:90
+#: src/strings.c:95 src/strings.c:108 src/strings.c:110 src/strings.c:117
+#: src/strings.c:123 src/strings.c:126 src/strings.c:128 src/strings.c:135
+#: src/strings.c:147 src/strings.c:150 src/strings.c:161 src/strings.c:164
+#: src/strings.c:170 src/strings.c:175 src/strings.c:177 src/strings.c:180
 msgid "    "
 msgstr ""
 
@@ -150,233 +151,267 @@ msgid "_Menu Item: "
 msgstr "Izvēlnes punkts: "
 
 #: src/strings.c:48
-msgid "_On-screen display: "
-msgstr "Uz-ekrāna attēlojums: "
+msgid "Active _On-screen display: "
+msgstr ""
 
 #: src/strings.c:49
+msgid "Inactive O_n-screen display: "
+msgstr ""
+
+#: src/strings.c:50
 msgid "Appearance"
 msgstr "Izskats"
 
-#: src/strings.c:50 src/strings.c:97
+#: src/strings.c:51 src/strings.c:107
 msgid "<span weight=\"bold\">Focusing Windows</span>"
 msgstr "<span weight=\"bold\">Logu fokusēšana</span>"
 
-#: src/strings.c:52
+#: src/strings.c:53
 msgid "Focus _new windows when they appear"
 msgstr "Fokusēties uz jaunajiem logiem, kad tie parādās"
 
-#: src/strings.c:53
+#: src/strings.c:54
 msgid "<span weight=\"bold\">Placing Windows</span>"
 msgstr "<span weight=\"bold\">Logu novietošana</span>"
 
-#: src/strings.c:55
+#: src/strings.c:56
 msgid "_Place new windows under the mouse pointer"
 msgstr "Novietot jaunos logus zem _peles kursora"
 
-#: src/strings.c:56
+#: src/strings.c:57
 msgid "_Center new windows when they are placed"
 msgstr "_Centrēt jaunos logus, kad tie tiek novietoti"
 
-#: src/strings.c:57
+#: src/strings.c:58
 msgid "Prefer to place new windows _on:"
 msgstr "Dot priekšroku jauno l_ogu novietošanai uz:"
 
-#: src/strings.c:58
+#: src/strings.c:59
 msgid "All monitors"
 msgstr "Visiem monitoriem"
 
-#: src/strings.c:59
+#: src/strings.c:60
 msgid "The active monitor"
 msgstr "Aktīvā monitora"
 
-#: src/strings.c:60
+#: src/strings.c:61
 msgid "The monitor with the mouse"
 msgstr "Monitora ar peli"
 
-#: src/strings.c:61
+#: src/strings.c:62
+msgid "<span weight=\"bold\">Primary Monitor</span>"
+msgstr ""
+
+#: src/strings.c:64
+msgid ""
+"The primary monitor is where Openbox will place dialogs, such as the one "
+"used for cycling windows."
+msgstr ""
+
+#: src/strings.c:65
+msgid "Primary _monitor:"
+msgstr ""
+
+#: src/strings.c:66
+msgid "Fixed Monitor"
+msgstr ""
+
+#: src/strings.c:67
+msgid "Active Monitor"
+msgstr ""
+
+#: src/strings.c:68
+msgid "Monitor With Mouse Pointer"
+msgstr ""
+
+#: src/strings.c:70
+msgid "_Fixed monitor:"
+msgstr ""
+
+#: src/strings.c:71
 msgid "Windows"
 msgstr "Logi"
 
-#: src/strings.c:62
+#: src/strings.c:72
 msgid "<span weight=\"bold\">Moving and Resizing Windows</span>"
 msgstr "<span weight=\"bold\">Logu pārvietošana un izmēru mainīšana</span>"
 
-#: src/strings.c:64
+#: src/strings.c:74
 msgid "Update the window contents while _resizing"
 msgstr "Mainot izmē_rus, atjaunināt loga saturu"
 
-#: src/strings.c:65
+#: src/strings.c:75
 msgid "Drag _threshold distance:"
 msgstr "Pārnešanas aiz_tures attālums:"
 
-#: src/strings.c:66 src/strings.c:68 src/strings.c:70 src/strings.c:90
-#: src/strings.c:95 src/strings.c:128 src/strings.c:130 src/strings.c:132
-#: src/strings.c:134
+#: src/strings.c:76 src/strings.c:78 src/strings.c:80 src/strings.c:100
+#: src/strings.c:105 src/strings.c:138 src/strings.c:140 src/strings.c:142
+#: src/strings.c:144
 msgid "px"
 msgstr "px"
 
-#: src/strings.c:67
+#: src/strings.c:77
 msgid "Amount of resistance against other _windows:"
 msgstr "Noturība pret citiem logiem:"
 
-#: src/strings.c:69
+#: src/strings.c:79
 msgid "Amount of resistance against screen _edges:"
 msgstr "Noturība pret _ekrāna malām:"
 
-#: src/strings.c:71
+#: src/strings.c:81
 msgid "_Switch desktops when moving a window past the screen edge"
 msgstr "Pārslēgt darbvirsmas, pārvietojot logu aiz ekrāna malas"
 
-#: src/strings.c:73
+#: src/strings.c:83
 msgid "_Amount of time to wait before switching:"
 msgstr "Gaidīšanas laiks pirms pārslēgšanas:"
 
-#: src/strings.c:74 src/strings.c:105 src/strings.c:112 src/strings.c:120
-#: src/strings.c:169 src/strings.c:172
+#: src/strings.c:84 src/strings.c:115 src/strings.c:122 src/strings.c:130
+#: src/strings.c:179 src/strings.c:182
 msgid "ms"
 msgstr "ms"
 
-#: src/strings.c:75
+#: src/strings.c:85
 msgid "<span weight=\"bold\">Information Dialog</span>"
 msgstr "<span weight=\"bold\">Informatīvais dialogs</span>"
 
-#: src/strings.c:76
+#: src/strings.c:86
 msgid "Show _information dialog:"
 msgstr "Rādīt _informatīvo dialogu:"
 
-#: src/strings.c:77
+#: src/strings.c:87
 msgid "When resizing terminal windows"
 msgstr "Mainot izmērus terminālu logiem"
 
-#: src/strings.c:78
+#: src/strings.c:88
 msgid "Always"
 msgstr "Vienmēr"
 
-#: src/strings.c:79
+#: src/strings.c:89
 msgid "Never"
 msgstr "Nekad"
 
-#: src/strings.c:81
+#: src/strings.c:91
 msgid "Information dialog's _position:"
 msgstr "Informatīvā dialoga _pozīcija:"
 
-#: src/strings.c:82
+#: src/strings.c:92
 msgid "Centered on the window"
 msgstr "Loga centrā"
 
-#: src/strings.c:83
+#: src/strings.c:93
 msgid "Above the window"
 msgstr "Virs loga"
 
-#: src/strings.c:84
+#: src/strings.c:94
 msgid "Fixed position on screen"
 msgstr "Fiksētā pozīcijā uz ekrāna"
 
-#: src/strings.c:86
+#: src/strings.c:96
 msgid "Fixed _x position:"
 msgstr "Fiksētā _x pozīcija:"
 
-#: src/strings.c:87 src/strings.c:92
+#: src/strings.c:97 src/strings.c:102
 msgid "Centered"
 msgstr "Centrēts"
 
-#: src/strings.c:88
+#: src/strings.c:98
 msgid "From left edge"
 msgstr "No kreisās malas"
 
-#: src/strings.c:89
+#: src/strings.c:99
 msgid "From right edge"
 msgstr "No labās malas"
 
-#: src/strings.c:91
+#: src/strings.c:101
 msgid "Fixed _y position:"
 msgstr "Fiksētā _y pozīcija:"
 
-#: src/strings.c:93
+#: src/strings.c:103
 msgid "From top edge"
 msgstr "No augšējās malas"
 
-#: src/strings.c:94
+#: src/strings.c:104
 msgid "From bottom edge"
 msgstr "No apakšējās malas"
 
-#: src/strings.c:96
+#: src/strings.c:106
 msgid "Move & Resize"
 msgstr "Pārvietot & mainīt izm."
 
-#: src/strings.c:99
+#: src/strings.c:109
 msgid "_Focus windows when the mouse pointer moves over them"
 msgstr "_Fokusēties uz logiem, kad tiem pāri pārvietojas peles kursors"
 
-#: src/strings.c:101
+#: src/strings.c:111
 msgid "Move focus under the mouse when _switching desktops"
 msgstr "Pārvietot foku_su zem peles, kad tiek pārslēgtas darbvirsmas"
 
-#: src/strings.c:102
+#: src/strings.c:112
 msgid "Move focus _under the mouse when the mouse is not moving"
 msgstr "Pārvietot fok_usu zem peles kursora, kad tas nekustas"
 
-#: src/strings.c:103
+#: src/strings.c:113
 msgid "_Raise windows when the mouse pointer moves over them"
 msgstr "Pacelt logus, kad tiem pāri pārvietojas peles kursors"
 
-#: src/strings.c:104
+#: src/strings.c:114
 msgid "_Delay before focusing and raising windows:"
 msgstr "Aizture pirms logu fokusēšanas un pacelšanas:"
 
-#: src/strings.c:106
+#: src/strings.c:116
 msgid "<span weight=\"bold\">Titlebar</span>"
 msgstr "<span weight=\"bold\">Virsraksta josla</span>"
 
-#: src/strings.c:108
+#: src/strings.c:118
 msgid "Double click on the _titlebar:"
 msgstr "Dubul_tklikšķis uz nosaukuma joslas:"
 
-#: src/strings.c:109
+#: src/strings.c:119
 msgid "Maximizes the window"
 msgstr "Maksimizē logu"
 
-#: src/strings.c:110
+#: src/strings.c:120
 msgid "Shades the window"
 msgstr "Ēno logu"
 
-#: src/strings.c:111
+#: src/strings.c:121
 msgid "Double click ti_me:"
 msgstr "Dubultklikšķa intervāls:"
 
-#: src/strings.c:114
+#: src/strings.c:124
 msgid "Mouse"
 msgstr "Pele"
 
-#: src/strings.c:115
+#: src/strings.c:125
 msgid "<span weight=\"bold\">Desktops</span>"
 msgstr "<span weight=\"bold\">Darbvirsmas</span>"
 
-#: src/strings.c:117
+#: src/strings.c:127
 msgid "_Show a notification when switching desktops"
 msgstr "Rādīt paziņojumu pār_slēdzot darbvirsmas"
 
-#: src/strings.c:119
+#: src/strings.c:129
 msgid "_Amount of time to show the notification for:"
 msgstr "P_aziņojuma uzkavēšanās laiks:"
 
-#: src/strings.c:121
+#: src/strings.c:131
 msgid "_Number of desktops: "
 msgstr "Da_rbvirsmu skaits: "
 
-#: src/strings.c:122
+#: src/strings.c:132
 msgid "_Desktop names:"
 msgstr "_Darbvirsmu nosaukumi:"
 
-#: src/strings.c:123
+#: src/strings.c:133
 msgid "Desktops"
 msgstr "Darbvirsmas"
 
-#: src/strings.c:124
+#: src/strings.c:134
 msgid "<span weight=\"bold\">Desktop Margins</span>"
 msgstr "<span weight=\"bold\">Darbvirsmu apmales</span>"
 
-#: src/strings.c:126
+#: src/strings.c:136
 msgid ""
 "Desktop margins are reserved areas on the edge of your screen.  New windows "
 "will not be placed within a margin, and maximized windows will not cover "
@@ -385,161 +420,161 @@ msgstr ""
 "Darvirsmu apmales ir rezervēti apgabali pie jūsu ekrāna malām. Jauni logi "
 "netiks novietoti uz apmalēm, un maksimizēti logi tās nepārsegs."
 
-#: src/strings.c:127
+#: src/strings.c:137
 msgid "_Top"
 msgstr "_Augša"
 
-#: src/strings.c:129
+#: src/strings.c:139
 msgid "_Left"
 msgstr "_Kreisā mala"
 
-#: src/strings.c:131
+#: src/strings.c:141
 msgid "_Right"
 msgstr "_Labā mala"
 
-#: src/strings.c:133
+#: src/strings.c:143
 msgid "_Bottom"
 msgstr "A_pakša"
 
-#: src/strings.c:135
+#: src/strings.c:145
 msgid "Margins"
 msgstr "Apmales"
 
-#: src/strings.c:136
+#: src/strings.c:146
 msgid "<span weight=\"bold\">Dock</span>"
 msgstr "<span weight=\"bold\">Doks</span>"
 
-#: src/strings.c:138
+#: src/strings.c:148
 msgid ""
 "The dock is a special container for \"dockapps\", or dock applications.  It "
 "is not visible on screen until a dockapp is run.  Dockapps can be used to "
 "show things like a clock, or to provide you with a system tray."
 msgstr ""
 "Doks ir speciāls konteiners dokaplikācijām. Tas nav redzams uz ekrāna līdz "
-"dokaplikācija tiek palaista. Dokaplikācijas var tikt izmantotas, lai, piemēram, "
-"rādītu pulksteni vai arī nodrošinātu ar sistēmjoslu."
+"dokaplikācija tiek palaista. Dokaplikācijas var tikt izmantotas, lai, "
+"piemēram, rādītu pulksteni vai arī nodrošinātu ar sistēmjoslu."
 
-#: src/strings.c:139
+#: src/strings.c:149
 msgid "<span weight=\"bold\">Position</span>"
 msgstr "<span weight=\"bold\">Pozīcija</span>"
 
-#: src/strings.c:141
+#: src/strings.c:151
 msgid "_Position:"
 msgstr "_Pozīcija:"
 
-#: src/strings.c:142
+#: src/strings.c:152
 msgid "Top Left"
 msgstr "Augšā pa kreisi"
 
-#: src/strings.c:143
+#: src/strings.c:153
 msgid "Top"
 msgstr "Augšā"
 
-#: src/strings.c:144
+#: src/strings.c:154
 msgid "Top Right"
 msgstr "Augšā pa labi"
 
-#: src/strings.c:145
+#: src/strings.c:155
 msgid "Left"
 msgstr "Pa kreisi"
 
-#: src/strings.c:146
+#: src/strings.c:156
 msgid "Right"
 msgstr "Pa labi"
 
-#: src/strings.c:147
+#: src/strings.c:157
 msgid "Bottom Left"
 msgstr "Apakšā pa kreisi"
 
-#: src/strings.c:148
+#: src/strings.c:158
 msgid "Bottom"
 msgstr "Apakšā"
 
-#: src/strings.c:149
+#: src/strings.c:159
 msgid "Bottom Right"
 msgstr "Apakšā pa labi"
 
-#: src/strings.c:150
+#: src/strings.c:160
 msgid "Floating"
 msgstr "Brīvi novietots"
 
-#: src/strings.c:152
+#: src/strings.c:162
 msgid "_Floating position:"
 msgstr "_Novietošanas pozīcija:"
 
-#: src/strings.c:153
+#: src/strings.c:163
 msgid "x"
 msgstr "x"
 
-#: src/strings.c:155
+#: src/strings.c:165
 msgid "Allow _windows to be placed within the dock's area"
 msgstr "A_tļaut logiem tikt novietotiem doka apgabalā"
 
-#: src/strings.c:156
+#: src/strings.c:166
 msgid "_Orientation: "
 msgstr "_Orientācija: "
 
-#: src/strings.c:157
+#: src/strings.c:167
 msgid "Vertical"
 msgstr "Vertikāli"
 
-#: src/strings.c:158
+#: src/strings.c:168
 msgid "Horizontal"
 msgstr "Horizontāli"
 
-#: src/strings.c:159
+#: src/strings.c:169
 msgid "<span weight=\"bold\">Stacking</span>"
 msgstr "<span weight=\"bold\">Novietošana</span>"
 
-#: src/strings.c:161
+#: src/strings.c:171
 msgid "Keep dock _above other windows"
 msgstr "Pa_turēt doku virs citiem logiem"
 
-#: src/strings.c:162
+#: src/strings.c:172
 msgid "A_llow dock to be both above and below windows"
 msgstr "Atļaut doka novietošanu gan virs, gan zem _logiem"
 
-#: src/strings.c:163
+#: src/strings.c:173
 msgid "Keep dock _below other windows"
 msgstr "Paturēt doku zem citiem lo_giem"
 
-#: src/strings.c:164
+#: src/strings.c:174
 msgid "<span weight=\"bold\">Hiding</span>"
 msgstr "<span weight=\"bold\">Slēpšana</span>"
 
-#: src/strings.c:166
+#: src/strings.c:176
 msgid "_Hide off screen"
 msgstr "Paslēpt"
 
-#: src/strings.c:168
+#: src/strings.c:178
 msgid "_Delay before hiding:"
 msgstr "Aizture pirms paslēpšanas:"
 
-#: src/strings.c:171
+#: src/strings.c:181
 msgid "Delay before _showing:"
 msgstr "Aizture pirms rādīšana_s:"
 
-#: src/strings.c:173
+#: src/strings.c:183
 msgid "Dock"
 msgstr "Doks"
 
-#: src/strings.c:174
+#: src/strings.c:184
 msgid "Abo_ut"
 msgstr "Par"
 
-#: src/strings.c:175
+#: src/strings.c:185
 msgid "About ObConf"
 msgstr "Par ObConf"
 
-#: src/strings.c:176
+#: src/strings.c:186
 msgid "<span weight=\"bold\" size=\"xx-large\">ObConf VERSION</span>"
 msgstr "<span weight=\"bold\" size=\"xx-large\">ObConf VERSION</span>"
 
-#: src/strings.c:177
+#: src/strings.c:187
 msgid "A preferences manager for Openbox"
 msgstr "Openbox iestatījumu pārvaldnieks"
 
-#: src/strings.c:178
+#: src/strings.c:188
 msgid ""
 "Copyright (c) 2003-2008\n"
 "Dana Jansens <danakj@orodu.net>\n"
@@ -547,23 +582,29 @@ msgid ""
 "Javeed Shaikh <syscrash2k@gmail.com>"
 msgstr ""
 
-#: src/strings.c:182
+#: src/strings.c:192
 msgid "window1"
 msgstr "logs1"
 
-#: src/strings.c:183
+#: src/strings.c:193
 msgid "<span weight=\"bold\">Press the key you wish to bind...</span>"
-msgstr "<span weight=\"bold\">Nospiediet taustiņu, kuru vēlieties piesaistīt...</span>"
+msgstr ""
+"<span weight=\"bold\">Nospiediet taustiņu, kuru vēlieties piesaistīt...</"
+"span>"
 
-#: src/main.c:72 src/main.c:74 src/main.c:76
+#: src/main.c:62
+msgid "ObConf Error"
+msgstr ""
+
+#: src/main.c:76 src/main.c:78 src/main.c:80
 msgid "Copyright (c)"
 msgstr ""
 
-#: src/main.c:87
+#: src/main.c:91
 msgid "Syntax: obconf [options] [ARCHIVE.obt]\n"
 msgstr "Sintakse: obconf [iespējas] [ARHĪVS.obt]\n"
 
-#: src/main.c:88
+#: src/main.c:92
 msgid ""
 "\n"
 "Options:\n"
@@ -571,31 +612,34 @@ msgstr ""
 "\n"
 "Iespējas:\n"
 
-#: src/main.c:89
+#: src/main.c:93
 msgid "  --help                Display this help and exit\n"
 msgstr "  --help              Parāda šo palīdzības tekstu un iziet\n"
 
-#: src/main.c:90
+#: src/main.c:94
 msgid "  --version             Display the version and exit\n"
 msgstr "  --version           Parāda versiju un iziet\n"
 
-#: src/main.c:91
+#: src/main.c:95
 msgid "  --install ARCHIVE.obt Install the given theme archive and select it\n"
 msgstr "  --install ARHĪVS.obt Instalē doto tēmas arhīvu un pārslēdzas uz to\n"
 
-#: src/main.c:92
+#: src/main.c:96
 msgid ""
 "  --archive THEME       Create a theme archive from the given theme "
 "directory\n"
-msgstr ""
-"  --archive TĒMA        Izveido tēmas arhīvu no dotās tēmu "
-"mapes\n"
+msgstr "  --archive TĒMA        Izveido tēmas arhīvu no dotās tēmu mapes\n"
 
-#: src/main.c:93
+#: src/main.c:97
 msgid "  --config-file FILE    Specify the path to the config file to use\n"
-msgstr "  --config-file FAILS  Norāda ceļu uz izmantojamo konfigurācijas failu\n"
+msgstr ""
+"  --config-file FAILS  Norāda ceļu uz izmantojamo konfigurācijas failu\n"
 
-#: src/main.c:94
+#: src/main.c:98
+msgid "  --tab NUMBER          Switch to tab number NUMBER on startup\n"
+msgstr ""
+
+#: src/main.c:99
 #, c-format
 msgid ""
 "\n"
@@ -606,27 +650,31 @@ msgstr ""
 "Lūdzu, ziņojiet kļūdas %s\n"
 "\n"
 
-#: src/main.c:110
+#: src/main.c:115
 msgid "--install requires an argument\n"
 msgstr "--install vajadzīgs arguments\n"
 
-#: src/main.c:116
+#: src/main.c:121
 msgid "--archive requires an argument\n"
 msgstr "--archive vajadzīgs arguments\n"
 
-#: src/main.c:122
+#: src/main.c:127
 msgid "--config-file requires an argument\n"
 msgstr "--config-file vajadzīgs arguments\n"
 
-#: src/main.c:213
+#: src/main.c:133
+msgid "--tab requires an argument\n"
+msgstr ""
+
+#: src/main.c:225
 msgid ""
 "Failed to load the obconf.glade interface file. You have probably failed to "
 "install ObConf properly."
 msgstr ""
-"Nevarēja ielādēt obconf.glade saskarnes failu. Iespējams, ObConf jums ir nepareizi "
-"instalēts."
+"Nevarēja ielādēt obconf.glade saskarnes failu. Iespējams, ObConf jums ir "
+"nepareizi instalēts."
 
-#: src/main.c:234
+#: src/main.c:251
 msgid ""
 "Failed to load an rc.xml. You have probably failed to install Openbox "
 "properly."
@@ -634,7 +682,7 @@ msgstr ""
 "Nevarēja ielādēt rc.xml. Iespējams, Iespējams, Openbox jums ir nepareizi "
 "instalēts."
 
-#: src/main.c:243
+#: src/main.c:264
 #, c-format
 msgid ""
 "Error while parsing the Openbox configuration file.  Your configuration file "
@@ -642,8 +690,8 @@ msgid ""
 "\n"
 "Message: %s"
 msgstr ""
-"Kļūda nolasot Openbox konfigurācijas failu. Jūsu konfigurācijas fails "
-"nav derīgs XML.\n"
+"Kļūda nolasot Openbox konfigurācijas failu. Jūsu konfigurācijas fails nav "
+"derīgs XML.\n"
 "\n"
 "Ziņojums: %s"
 
@@ -675,11 +723,12 @@ msgid ""
 "Unable to create the theme archive \"%s\".\n"
 "The following errors were reported:\n"
 "%s"
-msgstr "Nespēja izveidot tēmas arhīvu \"%s\".\n"
+msgstr ""
+"Nespēja izveidot tēmas arhīvu \"%s\".\n"
 "Tika ziņotas šādas kļūdas:\n"
 "%s"
 
-#: src/archive.c:106 src/archive.c:190
+#: src/archive.c:106 src/archive.c:202
 #, c-format
 msgid "Unable to run the \"tar\" command: %s"
 msgstr "Nespēja palaist \"tar\" komandu: %s"
@@ -699,7 +748,7 @@ msgstr "\"%s\" nav derīga Openbox tēmas mape"
 msgid "Unable to move to directory \"%s\": %s"
 msgstr "Nespēja pārvietot uz mapi \"%s\": %s"
 
-#: src/archive.c:197
+#: src/archive.c:209
 #, c-format
 msgid ""
 "Unable to extract the file \"%s\".\n"
