@@ -24,6 +24,8 @@
 #include <string.h>
 
 #include <obrender/theme.h>
+#include <gdk/gdkx.h>
+#include <cairo-xlib.h>
 
 #define PADDING 2 /* openbox does it :/ */
 
@@ -53,7 +55,10 @@ static GdkPixbuf* preview_menu(RrTheme *theme)
     RrAppearance *selected;
     RrAppearance *bullet; /* for submenu */
 
-    GdkPixmap *pixmap;
+    cairo_surface_t *surface;
+    GdkScreen *screen;
+    Display *xdisplay;
+    Visual *xvisual;
     GdkPixbuf *pixbuf, *tmp_pixbuf;
 
     /* width and height of the whole menu */
@@ -63,6 +68,10 @@ static GdkPixbuf* preview_menu(RrTheme *theme)
     gint tw, th;
     gint bw, bh;
     gint unused;
+
+    screen = gdk_screen_get_default();
+    xdisplay = gdk_x11_get_default_xdisplay();
+    xvisual = gdk_x11_visual_get_xvisual(gdk_screen_get_system_visual(screen));
 
     /* set up appearances */
     title = theme->a_menu_title;
@@ -126,11 +135,13 @@ static GdkPixbuf* preview_menu(RrTheme *theme)
 
     theme_pixmap_paint(title_text, bw, title_h);
 
-    pixmap = gdk_pixmap_foreign_new(title_text->pixmap);
-    tmp_pixbuf = gdk_pixbuf_get_from_drawable(tmp_pixbuf, pixmap,
-                                              gdk_colormap_get_system(),
-                                              0, 0, 0, 0,
-                                              bw, title_h);
+    surface = cairo_xlib_surface_create(xdisplay, title_text->pixmap,
+                                        xvisual,
+                                        bw, title_h);
+    tmp_pixbuf = gdk_pixbuf_get_from_surface(surface,
+                                             0, 0,
+                                             bw, title_h);
+    cairo_surface_destroy(surface);
     gdk_pixbuf_copy_area(tmp_pixbuf, 0, 0, bw, title_h, pixbuf, x, y);
 
     y += title_h + theme->mbwidth;
@@ -143,11 +154,13 @@ static GdkPixbuf* preview_menu(RrTheme *theme)
 
     /* draw background for normal entry */
     theme_pixmap_paint(background, bw, bh);
-    pixmap = gdk_pixmap_foreign_new(background->pixmap);
-    tmp_pixbuf = gdk_pixbuf_get_from_drawable(tmp_pixbuf, pixmap,
-                                              gdk_colormap_get_system(),
-                                              0, 0, 0, 0,
-                                              bw, bh);
+    surface = cairo_xlib_surface_create(xdisplay, background->pixmap,
+                                        xvisual,
+                                        bw, bh);
+    tmp_pixbuf = gdk_pixbuf_get_from_surface(surface,
+                                             0, 0,
+                                             bw, bh);
+    cairo_surface_destroy(surface);
     gdk_pixbuf_copy_area(tmp_pixbuf, 0, 0, bw, bh, pixbuf, x, y);
 
     /* draw normal entry */
@@ -156,11 +169,13 @@ static GdkPixbuf* preview_menu(RrTheme *theme)
     normal->surface.parenty = PADDING;
     RrMinSize(normal, &tw, &th);
     theme_pixmap_paint(normal, tw, th);
-    pixmap = gdk_pixmap_foreign_new(normal->pixmap);
-    tmp_pixbuf = gdk_pixbuf_get_from_drawable(tmp_pixbuf, pixmap,
-                                              gdk_colormap_get_system(),
-                                              0, 0, 0, 0,
-                                              tw, th);
+    surface = cairo_xlib_surface_create(xdisplay, normal->pixmap,
+                                        xvisual,
+                                        tw, th);
+    tmp_pixbuf = gdk_pixbuf_get_from_surface(surface,
+                                             0, 0,
+                                             tw, th);
+    cairo_surface_destroy(surface);
     gdk_pixbuf_copy_area(tmp_pixbuf, 0, 0, tw, th, pixbuf,
                          x + PADDING, y + PADDING);
 
@@ -170,11 +185,13 @@ static GdkPixbuf* preview_menu(RrTheme *theme)
     bullet->surface.parentx = bw - th;
     bullet->surface.parenty = PADDING;
     theme_pixmap_paint(bullet, th, th);
-    pixmap = gdk_pixmap_foreign_new(bullet->pixmap);
-    tmp_pixbuf = gdk_pixbuf_get_from_drawable(tmp_pixbuf, pixmap,
-                                              gdk_colormap_get_system(),
-                                              0, 0, 0, 0,
-                                              th, th);
+    surface = cairo_xlib_surface_create(xdisplay, bullet->pixmap,
+                                        xvisual,
+                                        th, th);
+    tmp_pixbuf = gdk_pixbuf_get_from_surface(surface,
+                                             0, 0,
+                                             th, th);
+    cairo_surface_destroy(surface);
     gdk_pixbuf_copy_area(tmp_pixbuf, 0, 0, th, th, pixbuf,
                          width - theme->mbwidth - th, y + PADDING);
 
@@ -185,11 +202,13 @@ static GdkPixbuf* preview_menu(RrTheme *theme)
     background->surface.parentx = x - theme->mbwidth;
     background->surface.parenty = y - theme->mbwidth;
     theme_pixmap_paint(background, bw, bh);
-    pixmap = gdk_pixmap_foreign_new(background->pixmap);
-    tmp_pixbuf = gdk_pixbuf_get_from_drawable(tmp_pixbuf, pixmap,
-                                              gdk_colormap_get_system(),
-                                              0, 0, 0, 0,
-                                              bw, bh);
+    surface = cairo_xlib_surface_create(xdisplay, background->pixmap,
+                                        xvisual,
+                                        bw, bh);
+    tmp_pixbuf = gdk_pixbuf_get_from_surface(surface,
+                                             0, 0,
+                                             bw, bh);
+    cairo_surface_destroy(surface);
     gdk_pixbuf_copy_area(tmp_pixbuf, 0, 0, bw, bh, pixbuf, x, y);
 
     /* draw disabled entry */
@@ -198,11 +217,13 @@ static GdkPixbuf* preview_menu(RrTheme *theme)
     disabled->surface.parentx = PADDING;
     disabled->surface.parenty = PADDING;
     theme_pixmap_paint(disabled, tw, th);
-    pixmap = gdk_pixmap_foreign_new(disabled->pixmap);
-    tmp_pixbuf = gdk_pixbuf_get_from_drawable(tmp_pixbuf, pixmap,
-                                              gdk_colormap_get_system(),
-                                              0, 0, 0, 0,
-                                              tw, th);
+    surface = cairo_xlib_surface_create(xdisplay, disabled->pixmap,
+                                        xvisual,
+                                        tw, th);
+    tmp_pixbuf = gdk_pixbuf_get_from_surface(surface,
+                                             0, 0,
+                                             tw, th);
+    cairo_surface_destroy(surface);
     gdk_pixbuf_copy_area(tmp_pixbuf, 0, 0, tw, th, pixbuf,
                          x + PADDING, y + PADDING);
 
@@ -215,11 +236,13 @@ static GdkPixbuf* preview_menu(RrTheme *theme)
     background->surface.parenty = y - theme->mbwidth;
 
     theme_pixmap_paint(background, bw, bh);
-    pixmap = gdk_pixmap_foreign_new(background->pixmap);
-    tmp_pixbuf = gdk_pixbuf_get_from_drawable(tmp_pixbuf, pixmap,
-                                              gdk_colormap_get_system(),
-                                              0, 0, 0, 0,
-                                              bw, bh);
+    surface = cairo_xlib_surface_create(xdisplay, background->pixmap,
+                                        xvisual,
+                                        bw, bh);
+    tmp_pixbuf = gdk_pixbuf_get_from_surface(surface,
+                                             0, 0,
+                                             bw, bh);
+    cairo_surface_destroy(surface);
     gdk_pixbuf_copy_area(tmp_pixbuf, 0, 0, bw, bh, pixbuf, x, y);
 
     /* draw selected entry */
@@ -228,11 +251,13 @@ static GdkPixbuf* preview_menu(RrTheme *theme)
     selected->surface.parentx = PADDING;
     selected->surface.parenty = PADDING;
     theme_pixmap_paint(selected, tw, th);
-    pixmap = gdk_pixmap_foreign_new(selected->pixmap);
-    tmp_pixbuf = gdk_pixbuf_get_from_drawable(tmp_pixbuf, pixmap,
-                                              gdk_colormap_get_system(),
-                                              0, 0, 0, 0,
-                                              tw, th);
+    surface = cairo_xlib_surface_create(xdisplay, selected->pixmap,
+                                        xvisual,
+                                        tw, th);
+    tmp_pixbuf = gdk_pixbuf_get_from_surface(surface,
+                                             0, 0,
+                                             tw, th);
+    cairo_surface_destroy(surface);
     gdk_pixbuf_copy_area(tmp_pixbuf, 0, 0, tw, th, pixbuf,
                          x + PADDING, y + PADDING);
     g_object_unref(tmp_pixbuf);
@@ -247,13 +272,20 @@ static GdkPixbuf* preview_window(RrTheme *theme, const gchar *titlelayout,
     RrAppearance *handle;
     RrAppearance *a;
 
-    GdkPixmap *pixmap;
+    cairo_surface_t *surface;
+    GdkScreen *screen;
+    Display *xdisplay;
+    Visual *xvisual;
     GdkPixbuf *pixbuf = NULL, *tmp_pixbuf = NULL;
     GdkPixbuf *scratch;
 
     gint w, label_w, h, x, y;
 
     const gchar *layout;
+
+    screen = gdk_screen_get_default();
+    xdisplay = gdk_x11_get_default_xdisplay();
+    xvisual = gdk_x11_visual_get_xvisual(gdk_screen_get_system_visual(screen));
 
     title = focus ? theme->a_focused_title : theme->a_unfocused_title;
 
@@ -271,10 +303,12 @@ static GdkPixbuf* preview_window(RrTheme *theme, const gchar *titlelayout,
     theme_pixmap_paint(title, w, h);
 
     x = y = theme->fbwidth;
-    pixmap = gdk_pixmap_foreign_new(title->pixmap);
-    tmp_pixbuf = gdk_pixbuf_get_from_drawable(tmp_pixbuf, pixmap,
-                                              gdk_colormap_get_system(),
-                                              0, 0, 0, 0, w, h);
+    surface = cairo_xlib_surface_create(xdisplay, title->pixmap,
+                                        xvisual,
+                                        w, h);
+    tmp_pixbuf = gdk_pixbuf_get_from_surface(surface,
+                                             0, 0, w, h);
+    cairo_surface_destroy(surface);
     gdk_pixbuf_copy_area(tmp_pixbuf, 0, 0, w, h, pixbuf, x, y);
 
     /* calculate label width */
@@ -317,10 +351,12 @@ static GdkPixbuf* preview_window(RrTheme *theme, const gchar *titlelayout,
             w = h = theme->button_size + 2;
 
             theme_pixmap_paint(a, w, h);
-            pixmap = gdk_pixmap_foreign_new(a->pixmap);
-            tmp_pixbuf = gdk_pixbuf_get_from_drawable(tmp_pixbuf, pixmap,
-                                                      gdk_colormap_get_system(),
-                                                      0, 0, 0, 0, w, h);
+            surface = cairo_xlib_surface_create(xdisplay, a->pixmap,
+                                                xvisual,
+                                                w, h);
+            tmp_pixbuf = gdk_pixbuf_get_from_surface(surface,
+                                                     0, 0, w, h);
+            cairo_surface_destroy(surface);
             gdk_pixbuf_copy_area(tmp_pixbuf, 0, 0, w, h, pixbuf, x, y);
 
             x += theme->button_size + 2 + theme->paddingx + 1;
@@ -335,10 +371,12 @@ static GdkPixbuf* preview_window(RrTheme *theme, const gchar *titlelayout,
             h = theme->label_height;
 
             theme_pixmap_paint(a, w, h);
-            pixmap = gdk_pixmap_foreign_new(a->pixmap);
-            tmp_pixbuf = gdk_pixbuf_get_from_drawable(tmp_pixbuf, pixmap,
-                                                      gdk_colormap_get_system(),
-                                                      0, 0, 0, 0, w, h);
+            surface = cairo_xlib_surface_create(xdisplay, a->pixmap,
+                                                xvisual,
+                                                w, h);
+            tmp_pixbuf = gdk_pixbuf_get_from_surface(surface,
+                                                     0, 0, w, h);
+            cairo_surface_destroy(surface);
             gdk_pixbuf_copy_area(tmp_pixbuf, 0, 0, w, h, pixbuf, x, y);
 
             x += w + theme->paddingx + 1;
@@ -382,12 +420,14 @@ static GdkPixbuf* preview_window(RrTheme *theme, const gchar *titlelayout,
             h = theme->button_size;
 
             theme_pixmap_paint(a, w, h);
-            pixmap = gdk_pixmap_foreign_new(a->pixmap);
+            surface = cairo_xlib_surface_create(xdisplay, a->pixmap,
+                                                xvisual,
+                                                w, h);
             /* use y + 1 because these buttons should be centered wrt the label
              */
-            tmp_pixbuf = gdk_pixbuf_get_from_drawable(tmp_pixbuf, pixmap,
-                                                      gdk_colormap_get_system(),
-                                                      0, 0, 0, 0, w, h);
+            tmp_pixbuf = gdk_pixbuf_get_from_surface(surface,
+                                                     0, 0, w, h);
+            cairo_surface_destroy(surface);
             gdk_pixbuf_copy_area(tmp_pixbuf, 0, 0, w, h, pixbuf, x, y + 1);
 
             x += theme->button_size + theme->paddingx + 1;
@@ -403,10 +443,12 @@ static GdkPixbuf* preview_window(RrTheme *theme, const gchar *titlelayout,
         h = theme->handle_height;
 
         theme_pixmap_paint(handle, w, h);
-        pixmap = gdk_pixmap_foreign_new(handle->pixmap);
-        tmp_pixbuf = gdk_pixbuf_get_from_drawable(tmp_pixbuf, pixmap,
-                                                  gdk_colormap_get_system(),
-                                                  0, 0, 0, 0, w, h);
+        surface = cairo_xlib_surface_create(xdisplay, handle->pixmap,
+                                            xvisual,
+                                            w, h);
+        tmp_pixbuf = gdk_pixbuf_get_from_surface(surface,
+                                                 0, 0, w, h);
+        cairo_surface_destroy(surface);
         gdk_pixbuf_copy_area(tmp_pixbuf, 0, 0, w, h, pixbuf, x, y);
 
         /* openbox handles this drawing stuff differently (it fills the bottom
@@ -425,17 +467,17 @@ static GdkPixbuf* preview_window(RrTheme *theme, const gchar *titlelayout,
         w = theme->grip_width;
 
         theme_pixmap_paint(a, w, h);
-        pixmap = gdk_pixmap_foreign_new(a->pixmap);
-        tmp_pixbuf = gdk_pixbuf_get_from_drawable(tmp_pixbuf, pixmap,
-                                                  gdk_colormap_get_system(),
-                                                  0, 0, 0, 0, w, h);
+        surface = cairo_xlib_surface_create(xdisplay, a->pixmap,
+                                            xvisual, w, h);
+        tmp_pixbuf = gdk_pixbuf_get_from_surface(surface,
+                                                 0, 0, w, h);
         gdk_pixbuf_copy_area(tmp_pixbuf, 0, 0, w, h, pixbuf, x, y);
 
         /* right grip */
         x = width - theme->fbwidth - theme->grip_width;
-        tmp_pixbuf = gdk_pixbuf_get_from_drawable(tmp_pixbuf, pixmap,
-                                                  gdk_colormap_get_system(),
-                                                  0, 0, 0, 0, w, h);
+        tmp_pixbuf = gdk_pixbuf_get_from_surface(surface,
+                                                 0, 0, w, h);
+        cairo_surface_destroy(surface);
         gdk_pixbuf_copy_area(tmp_pixbuf, 0, 0, w, h, pixbuf, x, y);
     }
 
