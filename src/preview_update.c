@@ -136,8 +136,10 @@ static gboolean update_theme_preview_iterate(gpointer data)
                             inactive_window_font, menu_title_font,
                             menu_item_font, osd_active_font,
                             osd_inactive_font);
-    if (preview)
+    if (preview) {
         gtk_list_store_set(GTK_LIST_STORE(ls), &iter, 1, preview, -1);
+        g_object_unref(preview);
+    }
 
     return TRUE;
 }

@@ -19,7 +19,6 @@ src_obconf_CPPFLAGS = \
 	$(OPENBOX_CFLAGS) \
 	$(LIBSTARTUPNOTIFICATION_CFLAGS) \
 	$(GTK_CFLAGS) \
-	$(GLADE_CFLAGS) \
 	$(GDK_PIXBUF_CFLAGS) \
 	$(XML_CFLAGS) \
 	-DLOCALEDIR=\"$(localedir)\" \
@@ -31,7 +30,6 @@ src_obconf_LDADD = \
 	$(OPENBOX_LIBS) \
 	$(LIBSTARTUPNOTIFICATION_LIBS) \
 	$(GTK_LIBS) \
-	$(GLADE_LIBS) \
 	$(GDK_PIXBUF_LIBS) \
 	$(LIBINTL) \
 	$(ZLIB_LIBS) \
@@ -67,11 +65,8 @@ src_obconf_SOURCES = \
 	src/tree.h
 
 dist_glade_DATA = \
-	src/obconf.glade \
+	src/obconf.ui \
 	pixmaps/video-display.png
-
-dist_noinst_DATA = \
-	src/obconf.gladep
 
 dist_desktop_DATA = \
 	obconf.desktop

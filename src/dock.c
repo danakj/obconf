@@ -82,7 +82,7 @@ void dock_setup_tab()
     else if (!strcasecmp(s, "Floating"))    pos = POSITION_FLOATING;
     else                                    pos = POSITION_TOPLEFT;
     g_free(s);
-    gtk_option_menu_set_history(GTK_OPTION_MENU(w), pos);
+    gtk_combo_box_set_active(GTK_COMBO_BOX(w), pos);
 
     w = get_widget("dock_float_x");
     gtk_spin_button_set_value(GTK_SPIN_BUTTON(w),
@@ -107,7 +107,7 @@ void dock_setup_tab()
     if (!strcasecmp(s, "Horizontal")) pos = DIRECTION_HORIZONTAL;
     else                              pos = DIRECTION_VERTICAL;
     g_free(s);
-    gtk_option_menu_set_history(GTK_OPTION_MENU(w), pos);
+    gtk_combo_box_set_active(GTK_COMBO_BOX(w), pos);
 
     w = get_widget("dock_nostrut");
     gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(w),
@@ -136,7 +136,7 @@ static void dock_enable_stuff()
     gboolean b;
 
     w = get_widget("dock_position");
-    b = gtk_option_menu_get_history(GTK_OPTION_MENU(w)) == POSITION_FLOATING;
+    b = gtk_combo_box_get_active(GTK_COMBO_BOX(w)) == POSITION_FLOATING;
 
     s = get_widget("dock_float_x");
     gtk_widget_set_sensitive(s, b);
@@ -166,75 +166,39 @@ static void dock_enable_stuff()
     gtk_widget_set_sensitive(s, b);
 }
 
-void on_dock_top_left_activate(GtkMenuItem *w, gpointer data)
+void on_dock_position_changed(GtkComboBox *w, gpointer data)
 {
     if (mapping) return;
 
-    tree_set_string("dock/position", "TopLeft");
-    dock_enable_stuff();
-}
-
-void on_dock_top_activate(GtkMenuItem *w, gpointer data)
-{
-    if (mapping) return;
-
-    tree_set_string("dock/position", "Top");
-    dock_enable_stuff();
-}
-
-void on_dock_top_right_activate(GtkMenuItem *w, gpointer data)
-{
-    if (mapping) return;
-
-    tree_set_string("dock/position", "TopRight");
-    dock_enable_stuff();
-}
-
-void on_dock_left_activate(GtkMenuItem *w, gpointer data)
-{
-    if (mapping) return;
-
-    tree_set_string("dock/position", "Left");
-    dock_enable_stuff();
-}
-
-void on_dock_right_activate(GtkMenuItem *w, gpointer data)
-{
-    if (mapping) return;
-
-    tree_set_string("dock/position", "Right");
-    dock_enable_stuff();
-}
-
-void on_dock_bottom_left_activate(GtkMenuItem *w, gpointer data)
-{
-    if (mapping) return;
-
-    tree_set_string("dock/position", "BottomLeft");
-    dock_enable_stuff();
-}
-
-void on_dock_bottom_activate(GtkMenuItem *w, gpointer data)
-{
-    if (mapping) return;
-
-    tree_set_string("dock/position", "Bottom");
-    dock_enable_stuff();
-}
-
-void on_dock_bottom_right_activate(GtkMenuItem *w, gpointer data)
-{
-    if (mapping) return;
-
-    tree_set_string("dock/position", "BottomRight");
-    dock_enable_stuff();
-}
-
-void on_dock_floating_activate(GtkMenuItem *w, gpointer data)
-{
-    if (mapping) return;
-
-    tree_set_string("dock/position", "Floating");
+    switch (gtk_combo_box_get_active(w)) {
+    case 0:
+      tree_set_string("dock/position", "TopLeft");
+      break;
+    case 1:
+      tree_set_string("dock/position", "Top");
+      break;
+    case 2:
+      tree_set_string("dock/position", "TopRight");
+      break;
+    case 3:
+      tree_set_string("dock/position", "Left");
+      break;
+    case 4:
+      tree_set_string("dock/position", "Right");
+      break;
+    case 5:
+      tree_set_string("dock/position", "BottomLeft");
+      break;
+    case 6:
+      tree_set_string("dock/position", "Bottom");
+      break;
+    case 7:
+      tree_set_string("dock/position", "BottomRight");
+      break;
+    case 8:
+      tree_set_string("dock/position", "Floating");
+      break;
+    }
     dock_enable_stuff();
 }
 
@@ -276,18 +240,18 @@ void on_dock_stacking_bottom_toggled(GtkToggleButton *w, gpointer data)
         tree_set_string("dock/stacking", "Below");
 }
 
-void on_dock_horizontal_activate(GtkMenuItem *w, gpointer data)
+void on_dock_direction_changed(GtkComboBox *w, gpointer data)
 {
     if (mapping) return;
 
-    tree_set_string("dock/direction", "Horizontal");
-}
-
-void on_dock_vertical_activate(GtkMenuItem *w, gpointer data)
-{
-    if (mapping) return;
-
-    tree_set_string("dock/direction", "Vertical");
+    switch (gtk_combo_box_get_active(w)) {
+    case 0:
+      tree_set_string("dock/direction", "Vertical");
+      break;
+    case 1:
+      tree_set_string("dock/direction", "Horizontal");
+      break;
+    }
 }
 
 void on_dock_nostrut_toggled(GtkToggleButton *w, gpointer data)

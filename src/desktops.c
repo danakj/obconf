@@ -212,7 +212,7 @@ static void desktops_write_names()
     tree_apply();
 
     /* make openbox re-set the property */
-    XDeleteProperty(GDK_DISPLAY(), GDK_ROOT_WINDOW(),
+    XDeleteProperty(gdk_x11_get_default_xdisplay(), GDK_ROOT_WINDOW(),
                     gdk_x11_get_xatom_by_name("_NET_DESKTOP_NAMES"));
 }
 
@@ -225,7 +225,7 @@ static void desktops_write_number()
     ce.xclient.type = ClientMessage;
     ce.xclient.message_type =
         gdk_x11_get_xatom_by_name("_NET_NUMBER_OF_DESKTOPS");
-    ce.xclient.display = GDK_DISPLAY();
+    ce.xclient.display = gdk_x11_get_default_xdisplay();
     ce.xclient.window = GDK_ROOT_WINDOW();
     ce.xclient.format = 32;
     ce.xclient.data.l[0] = num_desktops;
@@ -233,7 +233,7 @@ static void desktops_write_number()
     ce.xclient.data.l[2] = 0;
     ce.xclient.data.l[3] = 0;
     ce.xclient.data.l[4] = 0;
-    XSendEvent(GDK_DISPLAY(), GDK_ROOT_WINDOW(), FALSE,
+    XSendEvent(gdk_x11_get_default_xdisplay(), GDK_ROOT_WINDOW(), FALSE,
                SubstructureNotifyMask | SubstructureRedirectMask,
                &ce);
 }

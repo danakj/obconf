@@ -82,7 +82,7 @@ void moveresize_setup_tab()
     else if (!strcasecmp(s, "Never")) pos = POPUP_NEVER;
     else                              pos = POPUP_NONPIXEL;
     g_free(s);
-    gtk_option_menu_set_history(GTK_OPTION_MENU(w), pos);
+    gtk_combo_box_set_active(GTK_COMBO_BOX(w), pos);
 
     w = get_widget("drag_threshold");
     gtk_spin_button_set_value(GTK_SPIN_BUTTON(w),
@@ -94,7 +94,7 @@ void moveresize_setup_tab()
     if (!strcasecmp(s, "Fixed")) pos = POSITION_FIXED;
     else                         pos = POSITION_CENTER;
     g_free(s);
-    gtk_option_menu_set_history(GTK_OPTION_MENU(w), pos);
+    gtk_combo_box_set_active(GTK_COMBO_BOX(w), pos);
 
     w = get_widget("fixed_x_popup");
     s = tree_get_string("resize/popupFixedPosition/x", "0");
@@ -103,7 +103,7 @@ void moveresize_setup_tab()
     if (!strcasecmp(s, "Center")) pos = EDGE_CENTER;
     else if (opp) pos = EDGE_RIGHT;
     else pos = EDGE_LEFT;
-    gtk_option_menu_set_history(GTK_OPTION_MENU(w), pos);
+    gtk_combo_box_set_active(GTK_COMBO_BOX(w), pos);
 
     w = get_widget("fixed_x_pos");
     gtk_spin_button_set_value(GTK_SPIN_BUTTON(w), MAX(atoi(s), 0));
@@ -115,7 +115,7 @@ void moveresize_setup_tab()
     if (!strcasecmp(s, "Center")) pos = EDGE_CENTER;
     else if (opp) pos = EDGE_RIGHT;
     else pos = EDGE_LEFT;
-    gtk_option_menu_set_history(GTK_OPTION_MENU(w), pos);
+    gtk_combo_box_set_active(GTK_COMBO_BOX(w), pos);
 
     w = get_widget("fixed_y_pos");
     gtk_spin_button_set_value(GTK_SPIN_BUTTON(w), MAX(atoi(s), 0));
@@ -140,7 +140,7 @@ static void enable_stuff()
     gboolean b;
 
     w = get_widget("resize_popup");
-    b = gtk_option_menu_get_history(GTK_OPTION_MENU(w)) != POPUP_NEVER;
+    b = gtk_combo_box_get_active(GTK_COMBO_BOX(w)) != POPUP_NEVER;
     w = get_widget("resize_position");
     gtk_widget_set_sensitive(w, b);
 
@@ -150,7 +150,7 @@ static void enable_stuff()
     gtk_widget_set_sensitive(w, b);
 
     w = get_widget("resize_position");
-    b = gtk_option_menu_get_history(GTK_OPTION_MENU(w)) == POSITION_FIXED;
+    b = gtk_combo_box_get_active(GTK_COMBO_BOX(w)) == POSITION_FIXED;
     w = get_widget("fixed_x_popup");
     gtk_widget_set_sensitive(w, b);
     w = get_widget("fixed_y_popup");
@@ -163,12 +163,12 @@ static void enable_stuff()
     }
     else {
         w = get_widget("fixed_x_popup");
-        b = gtk_option_menu_get_history(GTK_OPTION_MENU(w)) != EDGE_CENTER;
+        b = gtk_combo_box_get_active(GTK_COMBO_BOX(w)) != EDGE_CENTER;
         w = get_widget("fixed_x_pos");
         gtk_widget_set_sensitive(w, b);
 
         w = get_widget("fixed_y_popup");
-        b = gtk_option_menu_get_history(GTK_OPTION_MENU(w)) != EDGE_CENTER;
+        b = gtk_combo_box_get_active(GTK_COMBO_BOX(w)) != EDGE_CENTER;
         w = get_widget("fixed_y_pos");
         gtk_widget_set_sensitive(w, b);
     }
@@ -196,27 +196,21 @@ void on_resize_contents_toggled(GtkToggleButton *w, gpointer data)
     tree_set_bool("resize/drawContents", gtk_toggle_button_get_active(w));
 }
 
-void on_resize_popup_nonpixel_activate(GtkMenuItem *w, gpointer data)
+void on_resize_popup_changed(GtkComboBox *w, gpointer data)
 {
     if (mapping) return;
 
-    tree_set_string("resize/popupShow", "NonPixel");
-    enable_stuff();
-}
-
-void on_resize_popup_always_activate(GtkMenuItem *w, gpointer data)
-{
-    if (mapping) return;
-
-    tree_set_string("resize/popupShow", "Always");
-    enable_stuff();
-}
-
-void on_resize_popup_never_activate(GtkMenuItem *w, gpointer data)
-{
-    if (mapping) return;
-
-    tree_set_string("resize/popupShow", "Never");
+    switch(gtk_combo_box_get_active(w)) {
+    case 0:
+      tree_set_string("resize/popupShow", "NonPixel");
+      break;
+    case 1:
+      tree_set_string("resize/popupShow", "Always");
+      break;
+    case 2:
+      tree_set_string("resize/popupShow", "Never");
+      break;
+    }
     enable_stuff();
 }
 
@@ -228,27 +222,21 @@ void on_drag_threshold_value_changed(GtkSpinButton *w, gpointer data)
                  gtk_spin_button_get_value_as_int(w));
 }
 
-void on_resize_position_center_activate(GtkMenuItem *w, gpointer data)
+void on_resize_position_changed(GtkComboBox *w, gpointer data)
 {
     if (mapping) return;
 
-    tree_set_string("resize/popupPosition", "Center");
-    enable_stuff();
-}
-
-void on_resize_position_top_activate(GtkMenuItem *w, gpointer data)
-{
-    if (mapping) return;
-
-    tree_set_string("resize/popupPosition", "Top");
-    enable_stuff();
-}
-
-void on_resize_position_fixed_activate(GtkMenuItem *w, gpointer data)
-{
-    if (mapping) return;
-
-    tree_set_string("resize/popupPosition", "Fixed");
+    switch(gtk_combo_box_get_active(w)) {
+    case 0:
+      tree_set_string("resize/popupPosition", "Center");
+      break;
+    case 1:
+      tree_set_string("resize/popupPosition", "Top");
+      break;
+    case 2:
+      tree_set_string("resize/popupPosition", "Fixed");
+      break;
+    }
     enable_stuff();
 }
 
@@ -266,7 +254,7 @@ static void write_fixed_position(const gchar *coord)
     popup = get_widget(popupname);
     g_free(popupname);
 
-    edge = gtk_option_menu_get_history(GTK_OPTION_MENU(popup));
+    edge = gtk_combo_box_get_active(GTK_COMBO_BOX(popup));
     g_assert(edge == EDGE_CENTER || edge == EDGE_LEFT || edge == EDGE_RIGHT);
 
     if (edge == EDGE_CENTER)
@@ -295,7 +283,7 @@ static void write_fixed_position(const gchar *coord)
 }
 
 
-void on_fixed_x_position_left_activate(GtkMenuItem *w, gpointer data)
+void on_fixed_x_position_changed(GtkComboBox *w, gpointer data)
 {
     if (mapping) return;
 
@@ -303,39 +291,7 @@ void on_fixed_x_position_left_activate(GtkMenuItem *w, gpointer data)
     enable_stuff();
 }
 
-void on_fixed_x_position_right_activate(GtkMenuItem *w, gpointer data)
-{
-    if (mapping) return;
-
-    write_fixed_position("x");
-    enable_stuff();
-}
-
-void on_fixed_x_position_center_activate(GtkMenuItem *w, gpointer data)
-{
-    if (mapping) return;
-
-    write_fixed_position("x");
-    enable_stuff();
-}
-
-void on_fixed_y_position_top_activate(GtkMenuItem *w, gpointer data)
-{
-    if (mapping) return;
-
-    write_fixed_position("y");
-    enable_stuff();
-}
-
-void on_fixed_y_position_bottom_activate(GtkMenuItem *w, gpointer data)
-{
-    if (mapping) return;
-
-    write_fixed_position("y");
-    enable_stuff();
-}
-
-void on_fixed_y_position_center_activate(GtkMenuItem *w, gpointer data)
+void on_fixed_y_position_changed(GtkComboBox *w, gpointer data)
 {
     if (mapping) return;
 
