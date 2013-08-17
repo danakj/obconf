@@ -38,7 +38,7 @@
 GtkWidget *mainwin = NULL;
 GtkWidget *tabstrip = NULL;
 
-GladeXML *glade;
+GtkBuilder *builder;
 xmlDocPtr doc;
 xmlNodePtr root;
 RrInstance *rrinst;
@@ -63,9 +63,9 @@ void obconf_error(gchar *msg, gboolean modal)
     if (modal)
         gtk_dialog_run(GTK_DIALOG(d));
     else {
-        g_signal_connect_swapped(GTK_OBJECT(d), "response",
+        g_signal_connect_swapped(G_OBJECT(d), "response",
                                  G_CALLBACK(gtk_widget_destroy),
-                                 GTK_OBJECT(d));
+                                 G_OBJECT(d));
         gtk_widget_show(d);
     }
 }
@@ -149,7 +149,7 @@ static gboolean get_all(Window win, Atom prop, Atom type, gint size,
     gint ret_size;
     gulong ret_items, bytes_left;
 
-    res = XGetWindowProperty(GDK_DISPLAY(), win, prop, 0l, G_MAXLONG,
+    res = XGetWindowProperty(gdk_x11_get_default_xdisplay(), win, prop, 0l, G_MAXLONG,
                              FALSE, type, &ret_type, &ret_size,
                              &ret_items, &bytes_left, &xdata);
     if (res == Success) {
@@ -203,6 +203,7 @@ static gboolean prop_get_string_utf8(Window win, Atom prop, gchar **ret)
 int main(int argc, char **argv)
 {
     gchar *p;
+    GError *error = NULL;
     gboolean exit_with_error = FALSE;
 
     bindtextdomain(PACKAGE_NAME, LOCALEDIR);
@@ -217,18 +218,21 @@ int main(int argc, char **argv)
         return 0;
     }
 
-    p = g_build_filename(GLADEDIR, "obconf.glade", NULL);
-    glade = glade_xml_new(p, NULL, NULL);
+    p = g_build_filename(GLADEDIR, "obconf.ui", NULL);
+    builder = gtk_builder_new();
+    gtk_builder_add_from_file(builder, p, &error);
     g_free(p);
 
-    if (!glade) {
-        obconf_error(_("Failed to load the obconf.glade interface file. You have probably failed to install ObConf properly."), TRUE);
+    if (error) {
+        obconf_error(_("Failed to load the obconf.ui interface file. You have probably failed to install ObConf properly."), TRUE);
+        g_printerr("%s\n", error->message);
+        g_error_free(error);
         exit_with_error = TRUE;
     }
 
     paths = obt_paths_new();
     parse_i = obt_xml_instance_new();
-    rrinst = RrInstanceNew(GDK_DISPLAY(), gdk_x11_get_default_screen());
+    rrinst = RrInstanceNew(gdk_x11_get_default_xdisplay(), gdk_x11_get_default_screen());
 
     if (!obc_config_file) {
         gchar *p;
@@ -270,14 +274,14 @@ int main(int argc, char **argv)
     }
 
     if (!exit_with_error) {
-        glade_xml_signal_autoconnect(glade);
+        gtk_builder_connect_signals(builder, NULL);
 
         {
             gchar *s = g_strdup_printf
                 ("<span weight=\"bold\" size=\"xx-large\">ObConf %s</span>",
                  PACKAGE_VERSION);
             gtk_label_set_markup(GTK_LABEL
-                                 (glade_xml_get_widget(glade, "title_label")),
+                                 (gtk_builder_get_object(builder, "title_label")),
                                  s);
             g_free(s);
         }
@@ -292,7 +296,7 @@ int main(int argc, char **argv)
         dock_setup_tab();
 
         mainwin = get_widget("main_window");
-        tabstrip = glade_xml_get_widget(glade, "tabstrip");
+        tabstrip = get_widget("tabstrip");
 
         if (obc_theme_install)
             theme_install(obc_theme_install);
@@ -336,7 +340,7 @@ void obconf_show_main()
     SnDisplay *sn_d;
     SnLauncheeContext *sn_cx;
 
-    if (GTK_WIDGET_VISIBLE(mainwin)) return;
+    if (gtk_widget_get_visible(mainwin)) return;
 
     gtk_widget_show_all(mainwin);
 
@@ -354,7 +358,7 @@ void obconf_show_main()
 
     if (sn_cx)
         sn_launchee_context_setup_window
-            (sn_cx, GDK_WINDOW_XWINDOW(GDK_WINDOW(mainwin->window)));
+            (sn_cx, GDK_WINDOW_XID(gtk_widget_get_window(mainwin)));
 
     if (sn_cx)
         sn_launchee_context_complete(sn_cx);

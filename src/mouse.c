@@ -30,8 +30,6 @@ static xmlNodePtr saved_custom = NULL;
 
 static gint read_doubleclick_action();
 static void write_doubleclick_action(gint a);
-static void on_titlebar_doubleclick_custom_activate(GtkMenuItem *w,
-                                                    gpointer data);
 static void enable_stuff();
 
 void mouse_setup_tab()
@@ -69,16 +67,10 @@ void mouse_setup_tab()
     w = get_widget("titlebar_doubleclick");
     a = read_doubleclick_action();
     if (a == TITLEBAR_CUSTOM) {
-        GtkWidget *i = gtk_menu_item_new_with_label(_("Custom actions"));
-        g_signal_connect(i, "activate",
-                         G_CALLBACK (on_titlebar_doubleclick_custom_activate),
-                         NULL);
-        gtk_menu_shell_append
-            (GTK_MENU_SHELL
-             (gtk_option_menu_get_menu
-              (GTK_OPTION_MENU(w))), i);
+        gtk_combo_box_text_append_text
+            (GTK_COMBO_BOX_TEXT(w), _("Custom actions"));
     }
-    gtk_option_menu_set_history(GTK_OPTION_MENU(w), a);
+    gtk_combo_box_set_active(GTK_COMBO_BOX(w), a);
 
     enable_stuff();
 
@@ -147,26 +139,21 @@ void on_focus_under_mouse_toggled(GtkToggleButton *w, gpointer data)
     tree_set_bool("focus/underMouse", gtk_toggle_button_get_active(w));
 }
 
-void on_titlebar_doubleclick_maximize_activate(GtkMenuItem *w, gpointer data)
+void on_titlebar_doubleclick_changed(GtkComboBox *w, gpointer data)
 {
     if (mapping) return;
 
-    write_doubleclick_action(TITLEBAR_MAXIMIZE);
-}
-
-void on_titlebar_doubleclick_shade_activate(GtkMenuItem *w, gpointer data)
-{
-    if (mapping) return;
-
-    write_doubleclick_action(TITLEBAR_SHADE);
-}
-
-static void on_titlebar_doubleclick_custom_activate(GtkMenuItem *w,
-                                                    gpointer data)
-{
-    if (mapping) return;
-
-    write_doubleclick_action(TITLEBAR_CUSTOM);
+    switch (gtk_combo_box_get_active(w)) {
+    case 0:
+      write_doubleclick_action(TITLEBAR_MAXIMIZE);
+      break;
+    case 1:
+      write_doubleclick_action(TITLEBAR_SHADE);
+      break;
+    case 2:
+      write_doubleclick_action(TITLEBAR_CUSTOM);
+      break;
+    }
 }
 
 void on_doubleclick_time_value_changed(GtkSpinButton *w, gpointer data)

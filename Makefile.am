@@ -1,7 +1,7 @@
 SUBDIRS = po
 
 localedir       = $(datadir)/locale
-gladedir        = $(datadir)/obconf
+resourcedir     = $(datadir)/obconf
 pixmapdir       = $(datadir)/pixmaps
 themedir        = $(datadir)/openbox/themes
 desktopdir      = $(datadir)/applications
@@ -19,7 +19,6 @@ src_obconf_CPPFLAGS = \
 	$(OPENBOX_CFLAGS) \
 	$(LIBSTARTUPNOTIFICATION_CFLAGS) \
 	$(GTK_CFLAGS) \
-	$(GLADE_CFLAGS) \
 	$(GDK_PIXBUF_CFLAGS) \
 	$(XML_CFLAGS) \
 	-DLOCALEDIR=\"$(localedir)\" \
@@ -31,7 +30,6 @@ src_obconf_LDADD = \
 	$(OPENBOX_LIBS) \
 	$(LIBSTARTUPNOTIFICATION_LIBS) \
 	$(GTK_LIBS) \
-	$(GLADE_LIBS) \
 	$(GDK_PIXBUF_LIBS) \
 	$(LIBINTL) \
 	$(ZLIB_LIBS) \
@@ -66,12 +64,9 @@ src_obconf_SOURCES = \
 	src/tree.c \
 	src/tree.h
 
-dist_glade_DATA = \
-	src/obconf.glade \
+dist_resource_DATA = \
+	src/obconf.ui \
 	pixmaps/video-display.png
-
-dist_noinst_DATA = \
-	src/obconf.gladep
 
 dist_desktop_DATA = \
 	obconf.desktop
@@ -121,8 +116,7 @@ EXTRA_DIST = \
 	m4/wchar_t.m4 \
 	m4/wint_t.m4 \
 	m4/xsize.m4 \
-	data/video-display.svg \
-	config.rpath
+	data/video-display.svg
 
 # Packages need to run these...
 
