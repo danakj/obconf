@@ -22,7 +22,7 @@
 #include <glib.h>
 
 #include <obrender/font.h>
-#include <gdk/gdkpixbuf.h>
+#include <gdk/gdk.h>
 
 GdkPixbuf *preview_theme(const gchar *name, const gchar *titlelayout,
                          RrFont *active_window_font,
