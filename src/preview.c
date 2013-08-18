@@ -203,11 +203,6 @@ static GdkPixbuf* preview_menu(RrTheme *theme)
     background->surface.parent = menu;
     background->surface.parentx = x - theme->mbwidth;
     background->surface.parenty = y - theme->mbwidth;
-    if (strcmp("SlickBox", theme->name) == 0)
-        printf("y %d parenty %d bh %d height %d menuheight %d parentbottom %d\n",
-               y, background->surface.parenty, bh, height,
-               height - 3*theme->mbwidth,
-               background->surface.parenty + bh);
 
     theme_pixmap_paint(background, bw, bh);
     pixmap = gdk_pixmap_foreign_new(background->pixmap);
