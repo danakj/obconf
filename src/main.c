@@ -38,7 +38,7 @@
 GtkWidget *mainwin = NULL;
 GtkWidget *tabstrip = NULL;
 
-GtkBuilder *glade;
+GtkBuilder *builder;
 xmlDocPtr doc;
 xmlNodePtr root;
 RrInstance *rrinst;
@@ -203,7 +203,7 @@ static gboolean prop_get_string_utf8(Window win, Atom prop, gchar **ret)
 int main(int argc, char **argv)
 {
     gchar *p;
-    GError *error;
+    GError *error = NULL;
     gboolean exit_with_error = FALSE;
 
     bindtextdomain(PACKAGE_NAME, LOCALEDIR);
@@ -219,12 +219,12 @@ int main(int argc, char **argv)
     }
 
     p = g_build_filename(GLADEDIR, "obconf.ui", NULL);
-    glade = gtk_builder_new();
-    gtk_builder_add_from_file(glade, p, &error);
+    builder = gtk_builder_new();
+    gtk_builder_add_from_file(builder, p, &error);
     g_free(p);
 
     if (error) {
-        obconf_error(_("Failed to load the obconf.glade interface file. You have probably failed to install ObConf properly."), TRUE);
+        obconf_error(_("Failed to load the obconf.ui interface file. You have probably failed to install ObConf properly."), TRUE);
         g_printerr("%s\n", error->message);
         g_error_free(error);
         exit_with_error = TRUE;
@@ -274,14 +274,14 @@ int main(int argc, char **argv)
     }
 
     if (!exit_with_error) {
-        gtk_builder_connect_signals(glade, NULL);
+        gtk_builder_connect_signals(builder, NULL);
 
         {
             gchar *s = g_strdup_printf
                 ("<span weight=\"bold\" size=\"xx-large\">ObConf %s</span>",
                  PACKAGE_VERSION);
             gtk_label_set_markup(GTK_LABEL
-                                 (gtk_builder_get_object(glade, "title_label")),
+                                 (gtk_builder_get_object(builder, "title_label")),
                                  s);
             g_free(s);
         }
