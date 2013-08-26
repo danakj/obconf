@@ -1,6 +1,6 @@
 AC_PREREQ([2.54])
 AC_INIT([obconf], [2.0.4], [http://bugzilla.icculus.org])
-AM_INIT_AUTOMAKE
+AM_INIT_AUTOMAKE([subdir-objects foreign dist-xz])
 AC_CONFIG_SRCDIR([src/main.c])
 
 AC_PREFIX_DEFAULT([/usr/local])
@@ -16,7 +16,6 @@ AC_PROG_INSTALL
 CHECK_EXPORT_DYNAMIC
 LDFLAGS="$LDFLAGS $EXPORT_DYNAMIC_FLAGS"
 
-ALL_LINGUAS=""
 AM_GNU_GETTEXT_VERSION(0.15)
 AM_GNU_GETTEXT([external])
 

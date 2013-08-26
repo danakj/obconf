@@ -1,7 +1,7 @@
 SUBDIRS = po
 
 localedir       = $(datadir)/locale
-gladedir        = $(datadir)/obconf
+resourcedir     = $(datadir)/obconf
 pixmapdir       = $(datadir)/pixmaps
 themedir        = $(datadir)/openbox/themes
 desktopdir      = $(datadir)/applications
@@ -64,7 +64,7 @@ src_obconf_SOURCES = \
 	src/tree.c \
 	src/tree.h
 
-dist_glade_DATA = \
+dist_resource_DATA = \
 	src/obconf.ui \
 	pixmaps/video-display.png
 
@@ -116,8 +116,7 @@ EXTRA_DIST = \
 	m4/wchar_t.m4 \
 	m4/wint_t.m4 \
 	m4/xsize.m4 \
-	data/video-display.svg \
-	config.rpath
+	data/video-display.svg
 
 # Packages need to run these...
 
