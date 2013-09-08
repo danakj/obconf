@@ -218,7 +218,7 @@ int main(int argc, char **argv)
         return 0;
     }
 
-    p = g_build_filename(GLADEDIR, "obconf.ui", NULL);
+    p = g_build_filename(RESOURCEDIR, "obconf.ui", NULL);
     builder = gtk_builder_new();
     gtk_builder_add_from_file(builder, p, &error);
     g_free(p);

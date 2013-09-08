@@ -23,7 +23,7 @@ src_obconf_CPPFLAGS = \
 	$(XML_CFLAGS) \
 	-DLOCALEDIR=\"$(localedir)\" \
 	-DPIXMAPDIR=\"$(pixmapdir)\" \
-	-DGLADEDIR=\"$(gladedir)\" \
+	-DRESOURCEDIR=\"$(resourcedir)\" \
 	-DTHEMEDIR=\"$(themedir)\" \
 	-DG_LOG_DOMAIN=\"Obconf\"
 src_obconf_LDADD = \
