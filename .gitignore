@@ -30,6 +30,7 @@ po/en@quot.header
 po/en@quot.insert-header
 po/en@quot.po
 po/insert-header.sin
+po/obconf.pot
 po/quot.sed
 po/remove-potcdate.sed
 po/remove-potcdate.sin

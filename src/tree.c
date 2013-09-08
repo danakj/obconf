@@ -114,7 +114,7 @@ void tree_apply()
 
         ce.xclient.type = ClientMessage;
         ce.xclient.message_type = gdk_x11_get_xatom_by_name("_OB_CONTROL");
-        ce.xclient.display = GDK_DISPLAY();
+        ce.xclient.display = gdk_x11_get_default_xdisplay();
         ce.xclient.window = GDK_ROOT_WINDOW();
         ce.xclient.format = 32;
         ce.xclient.data.l[0] = 1; /* reconfigure */
@@ -122,7 +122,7 @@ void tree_apply()
         ce.xclient.data.l[2] = 0;
         ce.xclient.data.l[3] = 0;
         ce.xclient.data.l[4] = 0;
-        XSendEvent(GDK_DISPLAY(), GDK_ROOT_WINDOW(), FALSE,
+        XSendEvent(gdk_x11_get_default_xdisplay(), GDK_ROOT_WINDOW(), FALSE,
                    SubstructureNotifyMask | SubstructureRedirectMask,
                    &ce);
     }

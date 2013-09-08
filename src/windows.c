@@ -50,23 +50,23 @@ void windows_setup_tab()
     w = get_widget("place_active_popup");
     s = tree_get_string("placement/monitor", "Any");
     if (!g_ascii_strcasecmp(s, "Active"))
-        gtk_option_menu_set_history(GTK_OPTION_MENU(w), PLACE_ON_ACTIVE);
+        gtk_combo_box_set_active(GTK_COMBO_BOX(w), PLACE_ON_ACTIVE);
     else if (!g_ascii_strcasecmp(s, "Mouse"))
-        gtk_option_menu_set_history(GTK_OPTION_MENU(w), PLACE_ON_MOUSE);
+        gtk_combo_box_set_active(GTK_COMBO_BOX(w), PLACE_ON_MOUSE);
     else if (!g_ascii_strcasecmp(s, "Primary"))
-        gtk_option_menu_set_history(GTK_OPTION_MENU(w), PLACE_ON_PRIMARY);
+        gtk_combo_box_set_active(GTK_COMBO_BOX(w), PLACE_ON_PRIMARY);
     else
-        gtk_option_menu_set_history(GTK_OPTION_MENU(w), PLACE_ON_ALL);
+        gtk_combo_box_set_active(GTK_COMBO_BOX(w), PLACE_ON_ALL);
     g_free(s);
 
     w = get_widget("primary_monitor_popup");
     s = tree_get_string("placement/primaryMonitor", "");
     if (!g_ascii_strcasecmp(s, "Active"))
-        gtk_option_menu_set_history(GTK_OPTION_MENU(w), PLACE_ON_ACTIVE);
+        gtk_combo_box_set_active(GTK_COMBO_BOX(w), PLACE_ON_ACTIVE);
     else if (!g_ascii_strcasecmp(s, "Mouse"))
-        gtk_option_menu_set_history(GTK_OPTION_MENU(w), PLACE_ON_MOUSE);
+        gtk_combo_box_set_active(GTK_COMBO_BOX(w), PLACE_ON_MOUSE);
     else {
-        gtk_option_menu_set_history(GTK_OPTION_MENU(w), PLACE_ON_FIXED);
+        gtk_combo_box_set_active(GTK_COMBO_BOX(w), PLACE_ON_FIXED);
 
         w = get_widget("fixed_monitor");
         gtk_spin_button_set_value(GTK_SPIN_BUTTON(w),
@@ -88,36 +88,30 @@ static void enable_stuff()
     b = gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(w));
 
     w = get_widget("primary_monitor_popup");
-    b = gtk_option_menu_get_history(GTK_OPTION_MENU(w)) == PLACE_ON_FIXED;
+    b = gtk_combo_box_get_active(GTK_COMBO_BOX(w)) == PLACE_ON_FIXED;
     w = get_widget("fixed_monitor");
     gtk_widget_set_sensitive(w, b);
 }
 
-void on_primary_monitor_active_activate(GtkMenuItem *w, gpointer data)
+void on_primary_monitor_changed(GtkComboBox *w, gpointer data)
 {
     if (mapping) return;
 
-    tree_set_string("placement/primaryMonitor", "Active");
-    enable_stuff();
-}
-
-void on_primary_monitor_mouse_activate(GtkMenuItem *w, gpointer data)
-{
-    if (mapping) return;
-
-    tree_set_string("placement/primaryMonitor", "Mouse");
-    enable_stuff();
-}
-
-void on_primary_monitor_fixed_activate(GtkMenuItem *w, gpointer data)
-{
-    GtkWidget *w2;
-
-    if (mapping) return;
-
-    w2 = get_widget("fixed_monitor");
-    tree_set_int("placement/primaryMonitor",
-                 gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(w2)));
+    switch (gtk_combo_box_get_active(w)) {
+    case 0:
+      {
+        GtkWidget *w2 = get_widget("fixed_monitor");
+        tree_set_int("placement/primaryMonitor",
+                     gtk_spin_button_get_value_as_int(GTK_SPIN_BUTTON(w2)));
+        break;
+      }
+      break;
+    case 1:
+      tree_set_string("placement/primaryMonitor", "Active");
+      break;
+    case 2:
+      tree_set_string("placement/primaryMonitor", "Mouse");
+    }
     enable_stuff();
 }
 
@@ -146,30 +140,22 @@ void on_place_mouse_toggled(GtkToggleButton *w, gpointer data)
     enable_stuff();
 }
 
-void on_place_active_popup_all_activate(GtkMenuItem *w, gpointer data)
+void on_place_active_popup_changed(GtkComboBox *w, gpointer data)
 {
     if (mapping) return;
 
-    tree_set_string("placement/monitor", "Any");
-}
-
-void on_place_active_popup_active_activate(GtkMenuItem *w, gpointer data)
-{
-    if (mapping) return;
-
-    tree_set_string("placement/monitor", "Active");
-}
-
-void on_place_active_popup_mouse_activate(GtkMenuItem *w, gpointer data)
-{
-    if (mapping) return;
-
-    tree_set_string("placement/monitor", "Mouse");
-}
-
-void on_place_active_popup_primary_activate(GtkMenuItem *w, gpointer data)
-{
-    if (mapping) return;
-
-    tree_set_string("placement/monitor", "Primary");
+    switch (gtk_combo_box_get_active(w)) {
+    case 0:
+      tree_set_string("placement/monitor", "Primary");
+      break;
+    case 1:
+      tree_set_string("placement/monitor", "Active");
+      break;
+    case 2:
+      tree_set_string("placement/monitor", "Mouse");
+      break;
+    case 3:
+      tree_set_string("placement/monitor", "Any");
+      break;
+    }
 }
