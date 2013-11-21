@@ -3,13 +3,14 @@
 # This file is distributed under the same license as the obconf package.
 #
 # David Merino <rastiazul at yahoo . com>, 2007.
+# Francisco Vila <paconet at gmx . es>, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: obconf 2.0.2\n"
 "Report-Msgid-Bugs-To: http://bugzilla.icculus.org/\n"
 "POT-Creation-Date: 2013-08-11 20:49-0400\n"
 "PO-Revision-Date: 2011-07-21 15:42-0500\n"
-"Last-Translator: Andres Sanchez <afsanchez93@gmail.com>\n"
+"Last-Translator: Francisco Vila <paconet@gmx.es>\n"
 "Language-Team: spanish\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -61,7 +62,7 @@ msgstr "A_nimar iconificar y restaurar"
 
 #: src/strings.c:17
 msgid "<span weight=\"bold\">Window Titles</span>"
-msgstr "<span weight=\"bold\">Títulos de las Ventanas</span>"
+msgstr "<span weight=\"bold\">Títulos de las ventanas</span>"
 
 #: src/strings.c:19
 msgid "_Button order:"
@@ -80,7 +81,7 @@ msgstr ""
 "N - El icono de la ventana\n"
 "D - El botón de todos los (sticky) escritorios\n"
 "S - El botón de(arrollar hacia arriba) ocultar\n"
-"L - La etiqueta(titulo de la ventana)\n"
+"L - La etiqueta(título de la ventana)\n"
 "I - El botón de (minimizar) iconificar\n"
 "M - El botón de maximizar\n"
 "C - El botón de cerrar"
@@ -121,11 +122,11 @@ msgstr "<span weight=\"bold\">Fuentes</span>"
 
 #: src/strings.c:44
 msgid "_Active window title: "
-msgstr "_Titulo activo de la ventana: "
+msgstr "_Título activo de la ventana: "
 
 #: src/strings.c:45
 msgid "_Inactive window title: "
-msgstr "Titulo in_activo de la ventana "
+msgstr "Título in_activo de la ventana "
 
 #: src/strings.c:46
 msgid "Menu _header: "
@@ -149,7 +150,7 @@ msgstr "Apariencia"
 
 #: src/strings.c:51 src/strings.c:107
 msgid "<span weight=\"bold\">Focusing Windows</span>"
-msgstr "<span weight=\"bold\">Enfocando Ventanas</span>"
+msgstr "<span weight=\"bold\">Enfoque de las ventanas</span>"
 
 #: src/strings.c:53
 msgid "Focus _new windows when they appear"
@@ -157,7 +158,7 @@ msgstr "E_nfocar ventanas nuevas cuando éstas aparezcan"
 
 #: src/strings.c:54
 msgid "<span weight=\"bold\">Placing Windows</span>"
-msgstr "<span weight=\"bold\">Colocando Ventanas</span>"
+msgstr "<span weight=\"bold\">Colocación de las ventanas</span>"
 
 #: src/strings.c:56
 msgid "_Place new windows under the mouse pointer"
@@ -327,7 +328,7 @@ msgstr "Mover & Cambiar de Tamaño"
 
 #: src/strings.c:109
 msgid "_Focus windows when the mouse pointer moves over them"
-msgstr "En_focar las ventanas cuando el puntero del ratón se mueve sobre estas"
+msgstr "En_focar las ventanas cuando el puntero del ratón se mueve sobre éstas"
 
 #: src/strings.c:111
 msgid "Move focus under the mouse when _switching desktops"
@@ -347,11 +348,11 @@ msgstr "Atrasar antes _de enfocar y elevar ventanas:"
 
 #: src/strings.c:116
 msgid "<span weight=\"bold\">Titlebar</span>"
-msgstr "<span weight=\"bold\">Barra de titulo</span>"
+msgstr "<span weight=\"bold\">Barra de título</span>"
 
 #: src/strings.c:118
 msgid "Double click on the _titlebar:"
-msgstr "Doble click en la barra de _titulo:"
+msgstr "Doble click en la barra de _título:"
 
 #: src/strings.c:119
 msgid "Maximizes the window"
@@ -359,7 +360,7 @@ msgstr "Maximiza la ventana"
 
 #: src/strings.c:120
 msgid "Shades the window"
-msgstr "Oculta la ventala"
+msgstr "Oculta la ventana"
 
 #: src/strings.c:121
 msgid "Double click ti_me:"
@@ -395,7 +396,7 @@ msgstr "Escritorios"
 
 #: src/strings.c:134
 msgid "<span weight=\"bold\">Desktop Margins</span>"
-msgstr "<span weight=\"bold\">Márgenes de los Escritorios</span>"
+msgstr "<span weight=\"bold\">Márgenes de los escritorios</span>"
 
 #: src/strings.c:136
 msgid ""
@@ -508,7 +509,7 @@ msgstr "Horizontal"
 
 #: src/strings.c:169
 msgid "<span weight=\"bold\">Stacking</span>"
-msgstr "<span weight=\"bold\">Apilando</span>"
+msgstr "<span weight=\"bold\">Apilado/span>"
 
 #: src/strings.c:171
 msgid "Keep dock _above other windows"
@@ -524,7 +525,7 @@ msgstr "Mantener el muelle _bajo otras ventanas"
 
 #: src/strings.c:174
 msgid "<span weight=\"bold\">Hiding</span>"
-msgstr "<span weight=\"bold\">Ocultando</span>"
+msgstr "<span weight=\"bold\">Ocultación</span>"
 
 #: src/strings.c:176
 msgid "_Hide off screen"
