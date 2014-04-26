@@ -8,14 +8,15 @@ msgstr ""
 "Project-Id-Version: obconf 2.0.2\n"
 "Report-Msgid-Bugs-To: http://bugzilla.icculus.org/\n"
 "POT-Creation-Date: 2013-08-11 20:49-0400\n"
-"PO-Revision-Date: 2011-07-21 15:42-0500\n"
-"Last-Translator: Andres Sanchez <afsanchez93@gmail.com>\n"
+"PO-Revision-Date: 2014-04-25 21:38-0300\n"
+"Last-Translator: Martín Aranciaga <malakian14@live.com>\n"
 "Language-Team: spanish\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.5.5\n"
+"Language: Español\n"
 
 #: src/strings.c:7
 msgid "Openbox Configuration Manager"
@@ -100,6 +101,10 @@ msgid ""
 "Iconify (Minimize)\n"
 "Maximize"
 msgstr ""
+"Icono de ventana\n"
+"Etiqueta de ventana (Título)\n"
+"Iconificar (Minimizar)\n"
+"Maximizar"
 
 #: src/strings.c:36
 msgid ""
@@ -114,6 +119,9 @@ msgid ""
 "Shade (Roll up)\n"
 "Omnipresent (On all desktops)"
 msgstr ""
+"Cerrar\n"
+"Sombra (Arrollar)\n"
+"Omnipresente (En todos los escritorios)"
 
 #: src/strings.c:42
 msgid "<span weight=\"bold\">Fonts</span>"
@@ -137,11 +145,11 @@ msgstr "_Elemento del Menú: "
 
 #: src/strings.c:48
 msgid "Active _On-screen display: "
-msgstr ""
+msgstr "Pantalla _On-screen activa: "
 
 #: src/strings.c:49
 msgid "Inactive O_n-screen display: "
-msgstr ""
+msgstr "Pantalla O_n-screen inactiva: "
 
 #: src/strings.c:50
 msgid "Appearance"
@@ -169,49 +177,51 @@ msgstr "_Centrar las ventanas nuevas cuando éstas son colocadas"
 
 #: src/strings.c:58
 msgid "Prefer to place new windows _on:"
-msgstr ""
+msgstr "Prefiero poner nuevas ventanas _en"
 
 #: src/strings.c:59
 msgid "All monitors"
-msgstr ""
+msgstr "Todos los monitores"
 
 #: src/strings.c:60
 msgid "The active monitor"
-msgstr ""
+msgstr "El monitor activo"
 
 #: src/strings.c:61
 msgid "The monitor with the mouse"
-msgstr ""
+msgstr "El monitor con el ratón"
 
 #: src/strings.c:62
 msgid "<span weight=\"bold\">Primary Monitor</span>"
-msgstr ""
+msgstr "<span weight=\"bold\">Monitor primario</span>"
 
 #: src/strings.c:64
 msgid ""
 "The primary monitor is where Openbox will place dialogs, such as the one "
 "used for cycling windows."
 msgstr ""
+"El monitor primario es donde Openbox pondrá los dialogos, como el usado para "
+"cambiar ventanas"
 
 #: src/strings.c:65
 msgid "Primary _monitor:"
-msgstr ""
+msgstr "Primario _monitor:"
 
 #: src/strings.c:66
 msgid "Fixed Monitor"
-msgstr ""
+msgstr "Monitor Fijo"
 
 #: src/strings.c:67
 msgid "Active Monitor"
-msgstr ""
+msgstr "Monitor activo"
 
 #: src/strings.c:68
 msgid "Monitor With Mouse Pointer"
-msgstr ""
+msgstr "Monitor con cursor de raton"
 
 #: src/strings.c:70
 msgid "_Fixed monitor:"
-msgstr ""
+msgstr "_Monitor fijo:"
 
 #: src/strings.c:71
 msgid "Windows"
@@ -247,10 +257,11 @@ msgstr "Cantidad d_e resistencia contra los bordes de la pantalla:"
 #: src/strings.c:81
 msgid "_Switch desktops when moving a window past the screen edge"
 msgstr ""
+"_Cambia entre escritorios cuando una ventana pasa la esquina de la pantalla"
 
 #: src/strings.c:83
 msgid "_Amount of time to wait before switching:"
-msgstr ""
+msgstr "_Cantidad de tiempo para esperar antes de cambiar:"
 
 #: src/strings.c:84 src/strings.c:115 src/strings.c:122 src/strings.c:130
 #: src/strings.c:179 src/strings.c:182
@@ -259,11 +270,11 @@ msgstr "ms"
 
 #: src/strings.c:85
 msgid "<span weight=\"bold\">Information Dialog</span>"
-msgstr ""
+msgstr "<span weight=\"bold\">Diálogo de información</span>"
 
 #: src/strings.c:86
 msgid "Show _information dialog:"
-msgstr ""
+msgstr "Mostrar _information diálogo:"
 
 #: src/strings.c:87
 msgid "When resizing terminal windows"
@@ -279,7 +290,7 @@ msgstr "Nunca"
 
 #: src/strings.c:91
 msgid "Information dialog's _position:"
-msgstr ""
+msgstr "Diálogo de información _position:"
 
 #: src/strings.c:92
 msgid "Centered on the window"
@@ -291,35 +302,35 @@ msgstr "Sobre la ventana"
 
 #: src/strings.c:94
 msgid "Fixed position on screen"
-msgstr ""
+msgstr "Posición fija en pantalla"
 
 #: src/strings.c:96
 msgid "Fixed _x position:"
-msgstr ""
+msgstr "Posición _x fija:"
 
 #: src/strings.c:97 src/strings.c:102
 msgid "Centered"
-msgstr ""
+msgstr "Centrado"
 
 #: src/strings.c:98
 msgid "From left edge"
-msgstr ""
+msgstr "Desde esquina izquierda"
 
 #: src/strings.c:99
 msgid "From right edge"
-msgstr ""
+msgstr "Desde esquina derecha"
 
 #: src/strings.c:101
 msgid "Fixed _y position:"
-msgstr ""
+msgstr "Posición _y fija:"
 
 #: src/strings.c:103
 msgid "From top edge"
-msgstr ""
+msgstr "Desde esquina superior"
 
 #: src/strings.c:104
 msgid "From bottom edge"
-msgstr ""
+msgstr "Desde esquina inferior"
 
 #: src/strings.c:106
 msgid "Move & Resize"
@@ -437,6 +448,10 @@ msgid ""
 "is not visible on screen until a dockapp is run.  Dockapps can be used to "
 "show things like a clock, or to provide you with a system tray."
 msgstr ""
+"El dock es un contenedor especial para \"dockapps\", o aplicaciones dock.  "
+"Este no es visible hasta que la aplicación dock esté corriendo.  Las "
+"aplicaciones dock pueden ser usadas para mostrar cosas como un reloj, o "
+"proveerle una bandeja de sistema"
 
 #: src/strings.c:149
 msgid "<span weight=\"bold\">Position</span>"
@@ -580,7 +595,7 @@ msgstr "<span weight=\"bold\">Presione la letra que desea enlazar...</span>"
 
 #: src/main.c:62
 msgid "ObConf Error"
-msgstr ""
+msgstr "Error de ObConf"
 
 #: src/main.c:76 src/main.c:78 src/main.c:80
 msgid "Copyright (c)"
@@ -622,10 +637,12 @@ msgstr ""
 #: src/main.c:97
 msgid "  --config-file FILE    Specify the path to the config file to use\n"
 msgstr ""
+"  --config-file ARCHIVO    Especifica la ruta de el archivo de configuración "
+"para usar\n"
 
 #: src/main.c:98
 msgid "  --tab NUMBER          Switch to tab number NUMBER on startup\n"
-msgstr ""
+msgstr "  --tab NUMERO          Cambia al numero de pestaña NUMERO en inicio\n"
 
 #: src/main.c:99
 #, c-format
@@ -652,13 +669,15 @@ msgstr "--config-file requiere un argumento\n"
 
 #: src/main.c:133
 msgid "--tab requires an argument\n"
-msgstr ""
+msgstr "--tab requiere un argumento\n"
 
 #: src/main.c:225
 msgid ""
 "Failed to load the obconf.glade interface file. You have probably failed to "
 "install ObConf properly."
 msgstr ""
+"Fallo al cargar el archivo de interfaz obconf.glade. Probablemente no se "
+"pudo instalar ObConf correctamente"
 
 #: src/main.c:251
 msgid ""
@@ -675,6 +694,10 @@ msgid ""
 "\n"
 "Message: %s"
 msgstr ""
+"Error mientras se analizaba el archivo de configuración Openbox. Tu archivo "
+"de configuración no es un XML valido.\n"
+"\n"
+"Mensaje: %s"
 
 #: src/desktops.c:134 src/desktops.c:165 src/desktops.c:181
 msgid "(Unnamed desktop)"
