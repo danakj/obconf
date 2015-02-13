@@ -131,8 +131,10 @@ static void parse_args(int argc, char **argv)
         else if (!strcmp(argv[i], "--tab")) {
             if (i == argc - 1) /* no args left */
                 g_printerr(_("--tab requires an argument\n"));
-            else
-                obc_tab = MAX(atoi(argv[++i]) - 1, 0);
+            else {
+                obc_tab = atoi(argv[++i]) - 1;
+                obc_tab = MAX(obc_tab, 0); /* tab number should not be negative */
+            }
         }
         else
             obc_theme_install = argv[i];
