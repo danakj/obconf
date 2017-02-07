@@ -1,24 +1,26 @@
-# Danish translation for ObConf package.
+# Danish translation for ObConf
 # Copyright (C) 2007 Dana Jansens
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the obconf package.
+# Jesper Sander <sander.contrib@gmail.com>, 2008.
+# scootergrisen, 2017.
 #
-# Danish translation by: Jesper Sander <sander.contrib@gmail.com>, 2008
 msgid ""
 msgstr ""
-"Project-Id-Version: obconf 2.0.3\n"
+"Project-Id-Version: ObConf 2.0.4\n"
 "Report-Msgid-Bugs-To: http://bugzilla.icculus.org/\n"
 "POT-Creation-Date: 2013-08-11 20:49-0400\n"
-"PO-Revision-Date: 2008-08-19 22:23+0100\n"
-"Last-Translator: Jesper Sander <sander.contrib@gmail.com>\n"
-"Language-Team: None\n"
-"Language: \n"
+"PO-Revision-Date: 2017-02-06 00:00+0100\n"
+"Last-Translator: scootergrisen\n"
+"Language-Team: Danish\n"
+"Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/strings.c:7
 msgid "Openbox Configuration Manager"
-msgstr "Openbox Konfigurationsbehandler"
+msgstr "Openbox-konfigurationshåndtering"
 
 #: src/strings.c:8
 msgid "<span weight=\"bold\">Theme</span>"
@@ -64,7 +66,7 @@ msgstr "<span weight=\"bold\">Vinduestitler</span>"
 
 #: src/strings.c:19
 msgid "_Button order:"
-msgstr "_Knap-rækkefølge:"
+msgstr "_Rækkefølge på knapper:"
 
 #: src/strings.c:20
 msgid ""
@@ -103,8 +105,8 @@ msgid ""
 "Iconify (Minimize)\n"
 "Maximize"
 msgstr ""
-"Vindue ikon\n"
-"Vindue titel\n"
+"Vinduesikon\n"
+"Vinduestitel\n"
 "Minimer\n"
 "Maksimer"
 
@@ -125,8 +127,8 @@ msgid ""
 "Omnipresent (On all desktops)"
 msgstr ""
 "Luk\n"
-"Rul up\n"
-"Omnipresent (på alle skriveborde)"
+"Rul op\n"
+"Allestedsnærværende (på alle skriveborde)"
 
 #: src/strings.c:42
 msgid "<span weight=\"bold\">Fonts</span>"
@@ -142,7 +144,7 @@ msgstr "_Inaktiv vinduestitel: "
 
 #: src/strings.c:46
 msgid "Menu _header: "
-msgstr "Vindues_overskrift: "
+msgstr "Vinduesov_erskrift: "
 
 #: src/strings.c:47
 msgid "_Menu Item: "
@@ -150,11 +152,11 @@ msgstr "_Menupunkt: "
 
 #: src/strings.c:48
 msgid "Active _On-screen display: "
-msgstr ""
+msgstr "A_ktiv skærmdisplay: "
 
 #: src/strings.c:49
 msgid "Inactive O_n-screen display: "
-msgstr ""
+msgstr "Inak_tiv skærmdisplay: "
 
 #: src/strings.c:50
 msgid "Appearance"
@@ -166,7 +168,7 @@ msgstr "<span weight=\"bold\">Vinduesfokus</span>"
 
 #: src/strings.c:53
 msgid "Focus _new windows when they appear"
-msgstr "Fokuser på _nye vinduer når de vises"
+msgstr "Fokusér på _nye vinduer når de vises"
 
 #: src/strings.c:54
 msgid "<span weight=\"bold\">Placing Windows</span>"
@@ -198,33 +200,35 @@ msgstr "Skærmen med musen"
 
 #: src/strings.c:62
 msgid "<span weight=\"bold\">Primary Monitor</span>"
-msgstr ""
+msgstr "<span weight=\"bold\">Primær skærm</span>"
 
 #: src/strings.c:64
 msgid ""
 "The primary monitor is where Openbox will place dialogs, such as the one "
 "used for cycling windows."
 msgstr ""
+"Den primære skærm er den hvor Openbox placerer dialoger, såsom den der "
+"bruges til at gennemløbe vinduer."
 
 #: src/strings.c:65
 msgid "Primary _monitor:"
-msgstr ""
+msgstr "Primær _skærm:"
 
 #: src/strings.c:66
 msgid "Fixed Monitor"
-msgstr ""
+msgstr "Fast skærm"
 
 #: src/strings.c:67
 msgid "Active Monitor"
-msgstr ""
+msgstr "Aktiv skærm"
 
 #: src/strings.c:68
 msgid "Monitor With Mouse Pointer"
-msgstr ""
+msgstr "Skærm med musemarkør"
 
 #: src/strings.c:70
 msgid "_Fixed monitor:"
-msgstr ""
+msgstr "_Fast skærm:"
 
 #: src/strings.c:71
 msgid "Windows"
@@ -279,7 +283,7 @@ msgstr "Vis _informationsdialog:"
 
 #: src/strings.c:87
 msgid "When resizing terminal windows"
-msgstr "Når terminalvinduer ændrer størrelse"
+msgstr "Når størrelsen på terminalvinduer ændres"
 
 #: src/strings.c:88
 msgid "Always"
@@ -291,7 +295,7 @@ msgstr "Aldrig"
 
 #: src/strings.c:91
 msgid "Information dialog's _position:"
-msgstr "Informationsdialogens _position:"
+msgstr "Informationsdialogens _placering:"
 
 #: src/strings.c:92
 msgid "Centered on the window"
@@ -303,11 +307,11 @@ msgstr "Over vinduet"
 
 #: src/strings.c:94
 msgid "Fixed position on screen"
-msgstr "Fast position på skærmen"
+msgstr "Fast placering på skærmen"
 
 #: src/strings.c:96
 msgid "Fixed _x position:"
-msgstr "Fast _x position:"
+msgstr "Fast _x-placering:"
 
 #: src/strings.c:97 src/strings.c:102
 msgid "Centered"
@@ -323,7 +327,7 @@ msgstr "Fra højre kant"
 
 #: src/strings.c:101
 msgid "Fixed _y position:"
-msgstr "Fast _y position:"
+msgstr "Fast _y-placering:"
 
 #: src/strings.c:103
 msgid "From top edge"
@@ -335,7 +339,7 @@ msgstr "Fra bunden"
 
 #: src/strings.c:106
 msgid "Move & Resize"
-msgstr "Flyt og størrelsesændre"
+msgstr "Flyt og tilpas størrelse"
 
 #: src/strings.c:109
 msgid "_Focus windows when the mouse pointer moves over them"
@@ -387,11 +391,11 @@ msgstr "<span weight=\"bold\">Skriveborde</span>"
 
 #: src/strings.c:127
 msgid "_Show a notification when switching desktops"
-msgstr "_Vis en meldelelse når skrivebord skiftes"
+msgstr "_Vis en notifikation når der skiftes skrivebord"
 
 #: src/strings.c:129
 msgid "_Amount of time to show the notification for:"
-msgstr "Visningstid for _meldelelsen:"
+msgstr "Visningstid for _notifikationen:"
 
 #: src/strings.c:131
 msgid "_Number of desktops: "
@@ -415,7 +419,7 @@ msgid ""
 "will not be placed within a margin, and maximized windows will not cover "
 "them."
 msgstr ""
-"Skrivebordsmarginer er reserverede områder på skærmkanterne. Nye vinduer vil "
+"Skrivebordsmarginer er reserverede områder på kanten af skærmen. Nye vinduer vil "
 "ikke blive placeret over en margin, og maksimerede vinduer vil ikke dække "
 "dem."
 
@@ -437,11 +441,11 @@ msgstr "_Bund"
 
 #: src/strings.c:145
 msgid "Margins"
-msgstr "_Marginer"
+msgstr "Marginer"
 
 #: src/strings.c:146
 msgid "<span weight=\"bold\">Dock</span>"
-msgstr "<span weight=\"bold\">Dock</span>"
+msgstr "<span weight=\"bold\">Dok</span>"
 
 #: src/strings.c:148
 msgid ""
@@ -449,17 +453,17 @@ msgid ""
 "is not visible on screen until a dockapp is run.  Dockapps can be used to "
 "show things like a clock, or to provide you with a system tray."
 msgstr ""
-"Dock'en er en special container for \"dockapps\", eller dock applikationer. "
-"De er ikke synlige på skærmen før en dockapp startes. Dockapps kan benyttes "
-"til at vise ting som et ur, eller til at give dig en systembakke."
+"Dokken er en særlig beholder til \"dokapps\", eller dokprogrammer. "
+"Den er ikke synlige på skærmen før et dokprogram startes. Dokapps kan benyttes "
+"til at vise ting såsom et ur, eller til at give dig en systembakke."
 
 #: src/strings.c:149
 msgid "<span weight=\"bold\">Position</span>"
-msgstr "<span weight=\"bold\">Position</span>"
+msgstr "<span weight=\"bold\">Placering</span>"
 
 #: src/strings.c:151
 msgid "_Position:"
-msgstr "_Position:"
+msgstr "_Placering:"
 
 #: src/strings.c:152
 msgid "Top Left"
@@ -499,7 +503,7 @@ msgstr "Svævende"
 
 #: src/strings.c:162
 msgid "_Floating position:"
-msgstr "_Svævende position:"
+msgstr "_Svævende placering:"
 
 #: src/strings.c:163
 msgid "x"
@@ -507,7 +511,7 @@ msgstr "x"
 
 #: src/strings.c:165
 msgid "Allow _windows to be placed within the dock's area"
-msgstr "Tillad _vinduer at blive placeret i dockens område"
+msgstr "Tillad _vinduer at blive placeret i dokkens område"
 
 #: src/strings.c:166
 msgid "_Orientation: "
@@ -515,11 +519,11 @@ msgstr "_Orientering: "
 
 #: src/strings.c:167
 msgid "Vertical"
-msgstr "Vertikal"
+msgstr "Lodret"
 
 #: src/strings.c:168
 msgid "Horizontal"
-msgstr "Horisontal"
+msgstr "Vandret"
 
 #: src/strings.c:169
 msgid "<span weight=\"bold\">Stacking</span>"
@@ -527,15 +531,15 @@ msgstr "<span weight=\"bold\">Stabling</span>"
 
 #: src/strings.c:171
 msgid "Keep dock _above other windows"
-msgstr "Hold docken _over andre vinduer"
+msgstr "Hold dokken over _andre vinduer"
 
 #: src/strings.c:172
 msgid "A_llow dock to be both above and below windows"
-msgstr "Ti_llad docken at være både over og under vinduer"
+msgstr "Ti_llad dokken at være både over og under vinduer"
 
 #: src/strings.c:173
 msgid "Keep dock _below other windows"
-msgstr "Hold docken _under andre vinduer"
+msgstr "Hold dokken _under andre vinduer"
 
 #: src/strings.c:174
 msgid "<span weight=\"bold\">Hiding</span>"
@@ -555,7 +559,7 @@ msgstr "Forsinkelse før vi_sning:"
 
 #: src/strings.c:183
 msgid "Dock"
-msgstr "Dock"
+msgstr "Dok"
 
 #: src/strings.c:184
 msgid "Abo_ut"
@@ -571,7 +575,7 @@ msgstr "<span weight=\"bold\" size=\"xx-large\">ObConf VERSION</span>"
 
 #: src/strings.c:187
 msgid "A preferences manager for Openbox"
-msgstr "En konfigurationsbehandler til Openbox"
+msgstr "En konfigurationshåndtering til Openbox"
 
 #: src/strings.c:188
 msgid ""
@@ -580,7 +584,7 @@ msgid ""
 "Tim Riley <tr@slackzone.org>\n"
 "Javeed Shaikh <syscrash2k@gmail.com>"
 msgstr ""
-"Copyright (c) 2003-2008\n"
+"Ophavsret (c) 2003-2008\n"
 "Dana Jansens <danakj@orodu.net>\n"
 "Tim Riley <tr@slackzone.org>\n"
 "Javeed Shaikh <syscrash2k@gmail.com>"
@@ -595,15 +599,15 @@ msgstr "<span weight=\"bold\">Tryk på knappen du ønsker at benytte...</span>"
 
 #: src/main.c:62
 msgid "ObConf Error"
-msgstr ""
+msgstr "Fejl i ObConf"
 
 #: src/main.c:76 src/main.c:78 src/main.c:80
 msgid "Copyright (c)"
-msgstr "Copyright (c)"
+msgstr "Ophavsret (c)"
 
 #: src/main.c:91
 msgid "Syntax: obconf [options] [ARCHIVE.obt]\n"
-msgstr "Syntaks: obconf [argumenter] [ARKIV.obt]\n"
+msgstr "Syntaks: obconf [tilvalg] [ARKIV.obt]\n"
 
 #: src/main.c:92
 msgid ""
@@ -611,11 +615,11 @@ msgid ""
 "Options:\n"
 msgstr ""
 "\n"
-"Argumenter:\n"
+"Tilvalg:\n"
 
 #: src/main.c:93
 msgid "  --help                Display this help and exit\n"
-msgstr "  --help                Vis denne tekst og afslut\n"
+msgstr "  --help                Vis denne hjælpetekst og afslut\n"
 
 #: src/main.c:94
 msgid "  --version             Display the version and exit\n"
@@ -623,7 +627,7 @@ msgstr "  --version             Vis versionsnummeret og afslut\n"
 
 #: src/main.c:95
 msgid "  --install ARCHIVE.obt Install the given theme archive and select it\n"
-msgstr "  --install ARKIV.obt   Installér valgt tema-arkiv og vælg det\n"
+msgstr "  --install ARKIV.obt   Installér det angivne tema-arkiv og vælg det\n"
 
 #: src/main.c:96
 msgid ""
@@ -640,7 +644,7 @@ msgstr ""
 
 #: src/main.c:98
 msgid "  --tab NUMBER          Switch to tab number NUMBER on startup\n"
-msgstr ""
+msgstr "  --tab NUMMER          Skift til faneblad nummer NUMMER ved opstart\n"
 
 #: src/main.c:99
 #, c-format
@@ -650,7 +654,7 @@ msgid ""
 "\n"
 msgstr ""
 "\n"
-"Rapporter venligst fejl til %s\n"
+"Rapportér venligst fejl til %s\n"
 "\n"
 
 #: src/main.c:115
@@ -667,7 +671,7 @@ msgstr "--config-file kræver et argument\n"
 
 #: src/main.c:133
 msgid "--tab requires an argument\n"
-msgstr ""
+msgstr "--tab kræver et argument\n"
 
 #: src/main.c:225
 msgid ""
@@ -693,14 +697,14 @@ msgid ""
 "\n"
 "Message: %s"
 msgstr ""
-"Fejl ved fortolkning af Openbox konfigurationsfilen. Din konfigurationsfil "
+"Fejl ved fortolkning af Openbox' konfigurationsfil. Din konfigurationsfil "
 "er ikke gyldig XML.\n"
 "\n"
 "Besked: %s"
 
 #: src/desktops.c:134 src/desktops.c:165 src/desktops.c:181
 msgid "(Unnamed desktop)"
-msgstr "(Unavngivet skrivebord)"
+msgstr "(unavngivet skrivebord)"
 
 #: src/theme.c:109 src/theme.c:141
 msgid "Choose an Openbox theme"
@@ -708,7 +712,7 @@ msgstr "Vælg et Openbox-tema"
 
 #: src/theme.c:118
 msgid "Openbox theme archives"
-msgstr "Openbox tema-arkiver"
+msgstr "Arkiver med Openbox-tema"
 
 #: src/archive.c:40
 #, c-format
@@ -761,8 +765,8 @@ msgid ""
 "%s"
 msgstr ""
 "Kan ikke udpakke filen \"%s\".\n"
-"Sørg venligst for at \"%s\" er skrivbar og at filen er et gyldigt Openbox "
-"tema-arkiv.\n"
+"Sørg venligst for at \"%s\" er skrivbar og at filen er et gyldigt arkiv "
+"med Openbox-tema.\n"
 "Følgende fejl blev rapporteret:\n"
 "%s"
 
