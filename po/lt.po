@@ -2,25 +2,27 @@
 # Copyright (C) 2012 Dana Jansens
 # This file is distributed under the same license as the ObConf package.
 # Algimantas Margevičius <margevicius.algimantas@gmail.com>, 2012.
+# Moo, 2017
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: obconf-lt\n"
 "Report-Msgid-Bugs-To: http://bugzilla.icculus.org/\n"
 "POT-Creation-Date: 2013-08-11 20:49-0400\n"
-"PO-Revision-Date: 2012-05-17 15:09+0300\n"
-"Last-Translator: Algimantas Margevičius <margevicius.algimantas@gmail.com>\n"
+"PO-Revision-Date: 2017-07-21 15:15+0300\n"
+"Last-Translator: Moo\n"
 "Language-Team: Lietuvių <>\n"
-"Language: \n"
+"Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
-"%100<10 || n%100>=20) ? 1 : 2)\n"
+"%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 1.8.7.1\n"
 
 #: src/strings.c:7
 msgid "Openbox Configuration Manager"
-msgstr "Openbox konfigūracijos tvarkyklė"
+msgstr "Openbox konfigūracijos tvarkytuvė"
 
 #: src/strings.c:8
 msgid "<span weight=\"bold\">Theme</span>"
@@ -34,11 +36,11 @@ msgstr "<span weight=\"bold\">Tema</span>"
 #: src/strings.c:147 src/strings.c:150 src/strings.c:161 src/strings.c:164
 #: src/strings.c:170 src/strings.c:175 src/strings.c:177 src/strings.c:180
 msgid "    "
-msgstr " "
+msgstr "    "
 
 #: src/strings.c:10
 msgid "_Install a new theme..."
-msgstr "_Diegti naują temą..."
+msgstr "Į_diegti naują temą..."
 
 #: src/strings.c:11
 msgid "Create a theme _archive (.obt)..."
@@ -54,11 +56,11 @@ msgstr "<span weight=\"bold\">Langai</span>"
 
 #: src/strings.c:15
 msgid "_Windows retain a border when undecorated"
-msgstr "_Pašalinus dekoravimą, langai išlaiko rėmelį"
+msgstr "_Pašalinus dekoravimą, langai išsaugo rėmelį"
 
 #: src/strings.c:16
 msgid "A_nimate iconify and restore"
-msgstr "_Animuoti sumažinimą ir atstatymą"
+msgstr "_Animuoti suskleidimą ir išskleidimą"
 
 #: src/strings.c:17
 msgid "<span weight=\"bold\">Window Titles</span>"
@@ -79,11 +81,11 @@ msgid ""
 "C - The close button"
 msgstr ""
 "N - Lango piktograma\n"
-"D - „Visų darbastalių“ mygtukas\n"
-"S - Šešėlio (sustūmimo) mygtukas\n"
+"D - \"Visuose darbalaukiuose\" mygtukas\n"
+"S - Užraitymo mygtukas\n"
 "L - Etiketė (lango pavadinimas)\n"
-"I - Sumažinimo mygtukas\n"
-"M - Išdidinimo mygtukas\n"
+"I - Suskleidimo mygtukas\n"
+"M - Išskleidimo mygtukas\n"
 "C - Užvėrimo mygtukas"
 
 #: src/strings.c:28
@@ -106,9 +108,9 @@ msgid ""
 "Maximize"
 msgstr ""
 "Lango piktograma\n"
-"Lango pavadinimas\n"
-"Sumažinimas\n"
-"Išdidinimas"
+"Lango etiketė (pavadinimas)\n"
+"Suskleisti\n"
+"Išskleisti"
 
 #: src/strings.c:36
 msgid ""
@@ -127,8 +129,8 @@ msgid ""
 "Omnipresent (On all desktops)"
 msgstr ""
 "Užverti\n"
-"Sustūmti\n"
-"Ant visų darbastalių"
+"Užraityti\n"
+"Visuose darbalaukiuose"
 
 #: src/strings.c:42
 msgid "<span weight=\"bold\">Fonts</span>"
@@ -144,7 +146,7 @@ msgstr "_Neaktyvaus lango pavadinimas: "
 
 #: src/strings.c:46
 msgid "Menu _header: "
-msgstr "Meniu _antraštė:"
+msgstr "Meniu _antraštė: "
 
 #: src/strings.c:47
 msgid "_Menu Item: "
@@ -152,11 +154,11 @@ msgstr "_Meniu elementas: "
 
 #: src/strings.c:48
 msgid "Active _On-screen display: "
-msgstr "_Aktyvus rodymas ekrane (OSD):"
+msgstr "_Aktyvus rodymas ekrane (OSD): "
 
 #: src/strings.c:49
 msgid "Inactive O_n-screen display: "
-msgstr "_Neaktyvus rodymas ekrane (OSD):"
+msgstr "_Neaktyvus rodymas ekrane (OSD): "
 
 #: src/strings.c:50
 msgid "Appearance"
@@ -168,50 +170,51 @@ msgstr "<span weight=\"bold\">Langų fokusavimas</span>"
 
 #: src/strings.c:53
 msgid "Focus _new windows when they appear"
-msgstr "Suteikti fokusą _naujai sukurtiems langams"
+msgstr "Fokusuoti _naujus langus, jiems atsiradus"
 
 #: src/strings.c:54
 msgid "<span weight=\"bold\">Placing Windows</span>"
-msgstr "<span weight=\"bold\">Langų dėstymas</span>"
+msgstr "<span weight=\"bold\">Langų išdėstymas</span>"
 
 #: src/strings.c:56
 msgid "_Place new windows under the mouse pointer"
-msgstr "_Naujus langus kurti po pelės žymekliu"
+msgstr "_Kurti naujus langus po pelės žymekliu"
 
 #: src/strings.c:57
 msgid "_Center new windows when they are placed"
-msgstr "_Padėjus naujus langus, centruoti juos"
+msgstr "_Išdėstant naujus langus, juos centruoti"
 
 #: src/strings.c:58
 msgid "Prefer to place new windows _on:"
-msgstr "_Pagal nutylėjimą naujus langus padėti ant:"
+msgstr "Teikti pirmenybę išdėstyti nau_jus langus:"
 
 #: src/strings.c:59
 msgid "All monitors"
-msgstr "Visų monitorių"
+msgstr "Visuose monitoriuose"
 
 #: src/strings.c:60
 msgid "The active monitor"
-msgstr "Aktyvaus monitoriaus"
+msgstr "Aktyviame monitoriuje"
 
 #: src/strings.c:61
 msgid "The monitor with the mouse"
-msgstr "Monitoriaus kuriame yra pelė"
+msgstr "Monitoriuje, kuriame yra pelė"
 
 #: src/strings.c:62
 msgid "<span weight=\"bold\">Primary Monitor</span>"
-msgstr "<span weight=\"bold\">Pagrindinis monitorius</span>"
+msgstr "<span weight=\"bold\">Pirminis monitorius</span>"
 
 #: src/strings.c:64
 msgid ""
 "The primary monitor is where Openbox will place dialogs, such as the one "
 "used for cycling windows."
 msgstr ""
-"Pagrindinis monitorius, tai tas monitorius kuriame Openbox padės dialogus."
+"Pirminis monitorius yra tas, kuriame Openbox rodys dialogus, kaip, "
+"pavyzdžiui, tą, kuris yra naudojamas langų perjungimui."
 
 #: src/strings.c:65
 msgid "Primary _monitor:"
-msgstr "Pagrindinis _monitorius:"
+msgstr "Pirminis _monitorius:"
 
 #: src/strings.c:66
 msgid "Fixed Monitor"
@@ -223,7 +226,7 @@ msgstr "Aktyvus monitorius"
 
 #: src/strings.c:68
 msgid "Monitor With Mouse Pointer"
-msgstr "Monitorius kuriame yra pelės žymeklis"
+msgstr "Monitorius, kuriame yra pelės žymeklis"
 
 #: src/strings.c:70
 msgid "_Fixed monitor:"
@@ -235,11 +238,11 @@ msgstr "Langai"
 
 #: src/strings.c:72
 msgid "<span weight=\"bold\">Moving and Resizing Windows</span>"
-msgstr "<span weight=\"bold\">Perkėlimas ir dydžio keitimas</span>"
+msgstr "<span weight=\"bold\">Langų perkėlimas ir dydžio keitimas</span>"
 
 #: src/strings.c:74
 msgid "Update the window contents while _resizing"
-msgstr "_Keičiant lango dydį atnaujinti lango turinį"
+msgstr "_Keičiant lango dydį, atnaujinti lango turinį"
 
 #: src/strings.c:75
 msgid "Drag _threshold distance:"
@@ -249,7 +252,7 @@ msgstr "_Atstumas po kurio langas bus pradedamas vilkti:"
 #: src/strings.c:105 src/strings.c:138 src/strings.c:140 src/strings.c:142
 #: src/strings.c:144
 msgid "px"
-msgstr "px"
+msgstr "pikselių"
 
 #: src/strings.c:77
 msgid "Amount of resistance against other _windows:"
@@ -261,11 +264,11 @@ msgstr "Pasipriešinimo ekrano _kraštams kiekis:"
 
 #: src/strings.c:81
 msgid "_Switch desktops when moving a window past the screen edge"
-msgstr "_Nuvilkus langą už ekrano krašto persijungti į kitą darbastalį"
+msgstr "_Nuvilkus langą už ekrano krašto, perjungti į kitą darbalaukį"
 
 #: src/strings.c:83
 msgid "_Amount of time to wait before switching:"
-msgstr "_Kiek laukti prieš persijungiant:"
+msgstr "Ki_ek laiko laukti prieš perjungiant:"
 
 #: src/strings.c:84 src/strings.c:115 src/strings.c:122 src/strings.c:130
 #: src/strings.c:179 src/strings.c:182
@@ -274,11 +277,11 @@ msgstr "ms"
 
 #: src/strings.c:85
 msgid "<span weight=\"bold\">Information Dialog</span>"
-msgstr "<span weight=\"bold\">Informacijos dialogas</span>"
+msgstr "<span weight=\"bold\">Informacinis dialogas</span>"
 
 #: src/strings.c:86
 msgid "Show _information dialog:"
-msgstr "Rodyti _informacijos dialogą:"
+msgstr "Rodyti _informacinį dialogą:"
 
 #: src/strings.c:87
 msgid "When resizing terminal windows"
@@ -294,7 +297,7 @@ msgstr "Niekada"
 
 #: src/strings.c:91
 msgid "Information dialog's _position:"
-msgstr "Informacijos dialogo _vieta:"
+msgstr "Informacinio dialogo _vieta:"
 
 #: src/strings.c:92
 msgid "Centered on the window"
@@ -318,11 +321,11 @@ msgstr "Centruota"
 
 #: src/strings.c:98
 msgid "From left edge"
-msgstr "Nuo kairio krašto"
+msgstr "Nuo kairiojo krašto"
 
 #: src/strings.c:99
 msgid "From right edge"
-msgstr "Nuo dešinio krašto"
+msgstr "Nuo dešiniojo krašto"
 
 #: src/strings.c:101
 msgid "Fixed _y position:"
@@ -330,35 +333,35 @@ msgstr "Numatyta _y vieta:"
 
 #: src/strings.c:103
 msgid "From top edge"
-msgstr "Nuo viršaus"
+msgstr "Nuo viršutinio krašto"
 
 #: src/strings.c:104
 msgid "From bottom edge"
-msgstr "Nuo apačios"
+msgstr "Nuo apatinio krašto"
 
 #: src/strings.c:106
 msgid "Move & Resize"
-msgstr "Keisti dydį ar Perkelti"
+msgstr "Perkėlimas ir dydžio keitimas"
 
 #: src/strings.c:109
 msgid "_Focus windows when the mouse pointer moves over them"
-msgstr "_Užvedus pelę, fokusuoti langą"
+msgstr "_Fokusuoti langą, kai virš jo yra pelės žymeklis"
 
 #: src/strings.c:111
 msgid "Move focus under the mouse when _switching desktops"
-msgstr "_Perjungiant darbastalius, fokusavimą perkelti po pele"
+msgstr "_Perjungiant darbalaukius, fokusą perkelti po pele"
 
 #: src/strings.c:112
 msgid "Move focus _under the mouse when the mouse is not moving"
-msgstr "Kai pelė _nejuda, perkelti fokusą po pele"
+msgstr "Kai _pelė nejuda, perkelti fokusą po pele"
 
 #: src/strings.c:113
 msgid "_Raise windows when the mouse pointer moves over them"
-msgstr "_Užvedus pelę, pakelti langą"
+msgstr "_Iškelti langą, kai virš jo yra judinamas pelės žymeklis"
 
 #: src/strings.c:114
 msgid "_Delay before focusing and raising windows:"
-msgstr "_Delsa prieš pakeliant ar fokusuojant langą:"
+msgstr "_Delsa prieš fokusuojant ar iškeliant langą:"
 
 #: src/strings.c:116
 msgid "<span weight=\"bold\">Titlebar</span>"
@@ -366,19 +369,19 @@ msgstr "<span weight=\"bold\">Pavadinimo juosta</span>"
 
 #: src/strings.c:118
 msgid "Double click on the _titlebar:"
-msgstr "Dvigubas spragtelėjimas ant _pavadinimo juostos:"
+msgstr "Dvikartis spustelėjimas ant pavadinimo _juostos:"
 
 #: src/strings.c:119
 msgid "Maximizes the window"
-msgstr "Išdidina langą"
+msgstr "Išskleidžia langą"
 
 #: src/strings.c:120
 msgid "Shades the window"
-msgstr "Suskleidžia langą"
+msgstr "Užraito langą"
 
 #: src/strings.c:121
 msgid "Double click ti_me:"
-msgstr "Dvigubo spragtelėjimo _laikas:"
+msgstr "Dvikarčio spustelėjimo _laikas:"
 
 #: src/strings.c:124
 msgid "Mouse"
@@ -386,11 +389,11 @@ msgstr "Pelė"
 
 #: src/strings.c:125
 msgid "<span weight=\"bold\">Desktops</span>"
-msgstr "<span weight=\"bold\">Darbastaliai</span>"
+msgstr "<span weight=\"bold\">Darbalaukiai</span>"
 
 #: src/strings.c:127
 msgid "_Show a notification when switching desktops"
-msgstr "_Perjungiant darbastalį rodyti pranešimą"
+msgstr "_Perjungiant darbalaukį, rodyti pranešimą"
 
 #: src/strings.c:129
 msgid "_Amount of time to show the notification for:"
@@ -398,19 +401,19 @@ msgstr "_Kiek laiko rodyti pranešimą:"
 
 #: src/strings.c:131
 msgid "_Number of desktops: "
-msgstr "_Darbastalių skaičius: "
+msgstr "_Darbalaukių skaičius: "
 
 #: src/strings.c:132
 msgid "_Desktop names:"
-msgstr "_Darbastalių pavadinimai:"
+msgstr "_Darbalaukių pavadinimai:"
 
 #: src/strings.c:133
 msgid "Desktops"
-msgstr "Darbastaliai"
+msgstr "Darbalaukiai"
 
 #: src/strings.c:134
 msgid "<span weight=\"bold\">Desktop Margins</span>"
-msgstr "<span weight=\"bold\">Darbastalio paraštės</span>"
+msgstr "<span weight=\"bold\">Darbalaukio paraštės</span>"
 
 #: src/strings.c:136
 msgid ""
@@ -418,8 +421,8 @@ msgid ""
 "will not be placed within a margin, and maximized windows will not cover "
 "them."
 msgstr ""
-"Darbastalio paraštės tai vieta ekrano kraštuose. Nauji langai nebus dedami "
-"paraštėse, išdidinti langai neuždengs jų."
+"Darbalaukio paraštės tai rezervuota vieta jūsų ekrano kraštuose. Į paraštes "
+"nebus išdėstomi nauji langai, o išskleisti langai jų neuždengs."
 
 #: src/strings.c:137
 msgid "_Top"
@@ -451,8 +454,9 @@ msgid ""
 "is not visible on screen until a dockapp is run.  Dockapps can be used to "
 "show things like a clock, or to provide you with a system tray."
 msgstr ""
-"Dėklas (dock) tai yra specialus konteineris skirtas „dockapps“. Jis nėra "
-"matomas ekrane kol „dockapp“ neveikia. „Dockapps“ naudojama rodyti tokius "
+"Dėklas (angl. Dock) tai specialus konteineris, kuris yra skirtas „dockapps“ "
+"arba dėklo programoms. Jis nėra matomas ekrane tol, kol neveikia dėklo "
+"programa (angl. dockapp). Dėklo programos gali būti naudojamos rodyti tokius "
 "dalykus kaip laikrodis ar suteikti sistemos dėklą."
 
 #: src/strings.c:149
@@ -461,7 +465,7 @@ msgstr "<span weight=\"bold\">Vieta</span>"
 
 #: src/strings.c:151
 msgid "_Position:"
-msgstr "_Padėtis:"
+msgstr "_Vieta:"
 
 #: src/strings.c:152
 msgid "Top Left"
@@ -497,7 +501,7 @@ msgstr "Apačioje dešinėje"
 
 #: src/strings.c:160
 msgid "Floating"
-msgstr "Slankus"
+msgstr "Slanki"
 
 #: src/strings.c:162
 msgid "_Floating position:"
@@ -509,23 +513,23 @@ msgstr "x"
 
 #: src/strings.c:165
 msgid "Allow _windows to be placed within the dock's area"
-msgstr "Leisti _padėti langus dėklo zonoje"
+msgstr "Leisti _išdėstyti langus dėklo srityje"
 
 #: src/strings.c:166
 msgid "_Orientation: "
-msgstr "Padėtis:"
+msgstr "_Padėtis: "
 
 #: src/strings.c:167
 msgid "Vertical"
-msgstr "Vertikalus"
+msgstr "Vertikali"
 
 #: src/strings.c:168
 msgid "Horizontal"
-msgstr "Horizontalus"
+msgstr "Horizontali"
 
 #: src/strings.c:169
 msgid "<span weight=\"bold\">Stacking</span>"
-msgstr "<span weight=\"bold\">Krovimas</span>"
+msgstr "<span weight=\"bold\">Sudėliojimas</span>"
 
 #: src/strings.c:171
 msgid "Keep dock _above other windows"
@@ -545,7 +549,7 @@ msgstr "<span weight=\"bold\">Slėpimas</span>"
 
 #: src/strings.c:176
 msgid "_Hide off screen"
-msgstr "_Slėpti išjungimo ekraną"
+msgstr "_Slėpti iš ekrano"
 
 #: src/strings.c:178
 msgid "_Delay before hiding:"
@@ -573,7 +577,7 @@ msgstr "<span weight=\"bold\" size=\"xx-large\">ObConf versija</span>"
 
 #: src/strings.c:187
 msgid "A preferences manager for Openbox"
-msgstr "Openbox nustatymų tvarkyklė"
+msgstr "Openbox nuostatų tvarkytuvė"
 
 #: src/strings.c:188
 msgid ""
@@ -582,7 +586,7 @@ msgid ""
 "Tim Riley <tr@slackzone.org>\n"
 "Javeed Shaikh <syscrash2k@gmail.com>"
 msgstr ""
-"Autorinės teisės (c) 2003-2008\n"
+"Autorių teisės (c) 2003-2008\n"
 "Dana Jansens <danakj@orodu.net>\n"
 "Tim Riley <tr@slackzone.org>\n"
 "Javeed Shaikh <syscrash2k@gmail.com>"
@@ -594,19 +598,19 @@ msgstr "langas1"
 #: src/strings.c:193
 msgid "<span weight=\"bold\">Press the key you wish to bind...</span>"
 msgstr ""
-"<span weight=\"bold\">Paspauksite klavišą kurį norite susieti...</span>"
+"<span weight=\"bold\">Paspauksite klavišą, kurį norite susieti...</span>"
 
 #: src/main.c:62
 msgid "ObConf Error"
-msgstr ""
+msgstr "ObConf klaida"
 
 #: src/main.c:76 src/main.c:78 src/main.c:80
 msgid "Copyright (c)"
-msgstr "Autorinės teisės (c)"
+msgstr "Autorių teisės (c)"
 
 #: src/main.c:91
 msgid "Syntax: obconf [options] [ARCHIVE.obt]\n"
-msgstr "Sintaksė: obconf [parinktys] [ARCHYVAS.obt]\n"
+msgstr "Sintaksė: obconf [parametrai] [ARCHYVAS.obt]\n"
 
 #: src/main.c:92
 msgid ""
@@ -614,7 +618,7 @@ msgid ""
 "Options:\n"
 msgstr ""
 "\n"
-"Parinktys\n"
+"Parametrai\n"
 
 #: src/main.c:93
 msgid "  --help                Display this help and exit\n"
@@ -626,24 +630,26 @@ msgstr "  --version             Parodyti versiją ir išeiti\n"
 
 #: src/main.c:95
 msgid "  --install ARCHIVE.obt Install the given theme archive and select it\n"
-msgstr "  --install ARCHYVAS.obt įdiegti temos archyvą ir įjunkti tą temą\n"
+msgstr "  --install ARCHYVAS.obt Įdiegti temos archyvą ir ją pasirinkti\n"
 
 #: src/main.c:96
 msgid ""
 "  --archive THEME       Create a theme archive from the given theme "
 "directory\n"
 msgstr ""
-"  --archive TEMA       Iš nurodytos temos aplanko sukurti temos archyvą\n"
+"  --archive TEMA       Iš nurodyto temos katalogo sukurti temos archyvą\n"
 
 #: src/main.c:97
 msgid "  --config-file FILE    Specify the path to the config file to use\n"
 msgstr ""
-"  --config-file FAILAS    Nurodykite kurį konfigūracijos failą reikia "
+"  --config-file FAILAS    Nurodyti kelią į konfigūracijos failą, kurį "
 "naudoti\n"
 
 #: src/main.c:98
 msgid "  --tab NUMBER          Switch to tab number NUMBER on startup\n"
 msgstr ""
+"  --tab NUMERIS          Paleidus programą, perjungti į kortelės numerį "
+"NUMERIS\n"
 
 #: src/main.c:99
 #, c-format
@@ -653,38 +659,40 @@ msgid ""
 "\n"
 msgstr ""
 "\n"
-"Apie klaidas praneškite %s\n"
+"Prašome apie klaidas pranešti %s\n"
 "\n"
 
 #: src/main.c:115
 msgid "--install requires an argument\n"
-msgstr "--install reikia argumentų\n"
+msgstr "--install reikalauja argumento\n"
 
 #: src/main.c:121
 msgid "--archive requires an argument\n"
-msgstr "--archive reikia argumentų\n"
+msgstr "--archive reikalauja argumento\n"
 
 #: src/main.c:127
 msgid "--config-file requires an argument\n"
-msgstr "--config-file reikia argumentų\n"
+msgstr "--config-file reikalauja argumento\n"
 
 #: src/main.c:133
 msgid "--tab requires an argument\n"
-msgstr ""
+msgstr "--tab reikalauja argumento\n"
 
 #: src/main.c:225
 msgid ""
 "Failed to load the obconf.glade interface file. You have probably failed to "
 "install ObConf properly."
 msgstr ""
-"Įkelti obconf.glade sąsajos failo nepavyko. Greičiausiai blogai įdiegėte "
-"ObConf."
+"Nepavyko įkelti obconf.glade sąsajos failo. Jums, greičiausiai, nepavyko "
+"tinkamai įdiegti ObConf."
 
 #: src/main.c:251
 msgid ""
 "Failed to load an rc.xml. You have probably failed to install Openbox "
 "properly."
-msgstr "Įkelti rc.xml nepavyko. Greičiausiai blogai įdiegėte ObConf."
+msgstr ""
+"Nepavyko įkelti rc.xml. Jums, greičiausiai, nepavyko tinkamai įdiegti "
+"Openbox."
 
 #: src/main.c:264
 #, c-format
@@ -694,14 +702,14 @@ msgid ""
 "\n"
 "Message: %s"
 msgstr ""
-"Apdorojant Openbox konfigūracijos failą įvyko klaida. Jūsų konfigūracijos "
+"Apdorojant Openbox konfigūracijos failą, įvyko klaida. Jūsų konfigūracijos "
 "failas nėra tinkamas XML failas.\n"
 "\n"
 "Pranešimas: %s"
 
 #: src/desktops.c:134 src/desktops.c:165 src/desktops.c:181
 msgid "(Unnamed desktop)"
-msgstr "(Nepavadintas darbastalis)"
+msgstr "(Nepavadintas darbalaukis)"
 
 #: src/theme.c:109 src/theme.c:141
 msgid "Choose an Openbox theme"
@@ -714,7 +722,7 @@ msgstr "Openbox temų archyvai"
 #: src/archive.c:40
 #, c-format
 msgid "\"%s\" was installed to %s"
-msgstr "„%s“ buvo įdiegtas į %s"
+msgstr "„%s“ buvo įdiegta į %s"
 
 #: src/archive.c:65
 #, c-format
@@ -728,7 +736,7 @@ msgid ""
 "The following errors were reported:\n"
 "%s"
 msgstr ""
-"Temos archyvo „%s“ sukurti nepavyko.\n"
+"Nepavyko sukurti temos archyvo „%s“.\n"
 "Buvo pranešta apie šias klaidas:\n"
 "%s"
 
@@ -740,17 +748,17 @@ msgstr "Nepavyko įvykdyti „tar“ komandos: %s"
 #: src/archive.c:126
 #, c-format
 msgid "Unable to create directory \"%s\": %s"
-msgstr "Aplanko „%s“ sukurti nepavyko: %s"
+msgstr "Nepavyko sukurti katalogo „%s“: %s"
 
 #: src/archive.c:148
 #, c-format
 msgid "\"%s\" does not appear to be a valid Openbox theme directory"
-msgstr "„%s“ nėra tinkamas Openbox temos aplankas"
+msgstr "„%s“ nėra tinkamas Openbox temos katalogas"
 
 #: src/archive.c:158
 #, c-format
 msgid "Unable to move to directory \"%s\": %s"
-msgstr "Perkelti aplanką „%s“ nepavyko: %s"
+msgstr "Nepavyko perkelti į katalogą „%s“: %s"
 
 #: src/archive.c:209
 #, c-format
@@ -761,9 +769,9 @@ msgid ""
 "The following errors were reported:\n"
 "%s"
 msgstr ""
-"Nepavyko išarchyvuoti failo „%s“.\n"
-"Įsitikinkite jog galima rašyti į „%s“ ir jog tas failas yra tinkamas Openbox "
-"temos archyvas.\n"
+"Nepavyko išskleisti failo „%s“.\n"
+"Įsitikinkite, kad galima rašyti  į „%s“ ir, kad tas failas yra tinkamas "
+"Openbox temos archyvas.\n"
 "Buvo pranešta apie šias klaidas:\n"
 "%s"
 
