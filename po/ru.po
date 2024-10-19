@@ -237,7 +237,7 @@ msgstr "<span weight=\"bold\">Перемещение и Изменение ра�
 
 #: src/strings.c:74
 msgid "Update the window contents while _resizing"
-msgstr "Обновить содержимое  окна, когда  изменетются его _размеры"
+msgstr "Обновить содержимое  окна, когда  изменяются его _размеры"
 
 #: src/strings.c:75
 msgid "Drag _threshold distance:"
@@ -336,7 +336,7 @@ msgstr ""
 
 #: src/strings.c:106
 msgid "Move & Resize"
-msgstr "Перемещение & Измение размера"
+msgstr "Перемещение и изменение размера"
 
 #: src/strings.c:109
 msgid "_Focus windows when the mouse pointer moves over them"
@@ -384,7 +384,7 @@ msgstr "Мышь"
 
 #: src/strings.c:125
 msgid "<span weight=\"bold\">Desktops</span>"
-msgstr "<span weight=\"bold\">Рабочии столы</span>"
+msgstr "<span weight=\"bold\">Рабочие столы</span>"
 
 #: src/strings.c:127
 msgid "_Show a notification when switching desktops"
@@ -569,7 +569,7 @@ msgstr "<span weight=\"bold\" size=\"xx-large\">Версия ObConf</span>"
 
 #: src/strings.c:187
 msgid "A preferences manager for Openbox"
-msgstr "Привилегированный менеджер для Openbox"
+msgstr "Менеджер настроек для Openbox"
 
 #: src/strings.c:188
 msgid ""
