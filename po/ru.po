@@ -259,7 +259,7 @@ msgstr "Отступ от краев _экрана: "
 
 #: src/strings.c:81
 msgid "_Switch desktops when moving a window past the screen edge"
-msgstr "_Переключать рабочии столы, когда окно перемещается на край экрана"
+msgstr "_Переключать рабочие столы, когда окно перемещается на край экрана"
 
 #: src/strings.c:83
 msgid "_Amount of time to wait before switching:"
@@ -404,7 +404,7 @@ msgstr "_Названия  рабочих столов:"
 
 #: src/strings.c:133
 msgid "Desktops"
-msgstr "Рабочии столы"
+msgstr "Рабочие столы"
 
 #: src/strings.c:134
 msgid "<span weight=\"bold\">Desktop Margins</span>"
