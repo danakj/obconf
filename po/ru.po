@@ -143,11 +143,11 @@ msgstr "Название н_еактивного окна: "
 
 #: src/strings.c:46
 msgid "Menu _header: "
-msgstr "Заго_ловок меню:"
+msgstr "Заго_ловок меню: "
 
 #: src/strings.c:47
 msgid "_Menu Item: "
-msgstr "_Элемент меню:"
+msgstr "_Элемент меню: "
 
 #: src/strings.c:48
 msgid "Active _On-screen display: "
