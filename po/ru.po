@@ -513,11 +513,11 @@ msgstr "_Ориентация:"
 
 #: src/strings.c:167
 msgid "Vertical"
-msgstr "По вертикальи"
+msgstr "По вертикали"
 
 #: src/strings.c:168
 msgid "Horizontal"
-msgstr "По горизонтальи"
+msgstr "По горизонтали"
 
 #: src/strings.c:169
 msgid "<span weight=\"bold\">Stacking</span>"
