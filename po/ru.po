@@ -239,7 +239,7 @@ msgstr "<span weight=\"bold\">Перемещение и Изменение ра�
 
 #: src/strings.c:74
 msgid "Update the window contents while _resizing"
-msgstr "Обновить содержимое  окна, когда  изменяются его _размеры"
+msgstr "Обновить содержимое окна, когда изменяются его _размеры"
 
 #: src/strings.c:75
 msgid "Drag _threshold distance:"
@@ -510,7 +510,7 @@ msgstr "x"
 
 #: src/strings.c:165
 msgid "Allow _windows to be placed within the dock's area"
-msgstr "Разре_шить окнам быть размещенными в области уведомлений"
+msgstr "Разре_шить размещение окон в области дока"
 
 #: src/strings.c:166
 msgid "_Orientation: "
