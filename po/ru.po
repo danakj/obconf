@@ -616,31 +616,31 @@ msgstr ""
 
 #: src/main.c:93
 msgid "  --help                Display this help and exit\n"
-msgstr "  --help				Показать справку и выйти\n"
+msgstr "  --help			Показать справку и выйти\n"
 
 #: src/main.c:94
 msgid "  --version             Display the version and exit\n"
-msgstr "  --version				Показать версию и выйти\n"
+msgstr "  --version			Показать версию и выйти\n"
 
 #: src/main.c:95
 msgid "  --install ARCHIVE.obt Install the given theme archive and select it\n"
 msgstr ""
-"  --install АРХИВ.obt			Установить тему из архива АРХИВ.obt и выбрать её\n"
+"  --install АРХИВ.obt		Установить тему из архива АРХИВ.obt и выбрать её\n"
 
 #: src/main.c:96
 msgid ""
 "  --archive THEME       Create a theme archive from the given theme "
 "directory\n"
-msgstr "  --archive ТЕМА			Создать архив obt из каталога с темой ТЕМА\n"
+msgstr "  --archive ТЕМА		Создать архив obt из каталога с темой ТЕМА\n"
 
 #: src/main.c:97
 msgid "  --config-file FILE    Specify the path to the config file to use\n"
 msgstr ""
-"  --config-file ФАЙЛ			Явно указать путь к конфигурационному файлу\n"
+"  --config-file ФАЙЛ		Явно указать путь к конфигурационному файлу\n"
 
 #: src/main.c:98
 msgid "  --tab NUMBER          Switch to tab number NUMBER on startup\n"
-msgstr "  --tab NUMBER				Переключиться на вкладку NUMBER при старте\n"
+msgstr "  --tab NUMBER			Переключиться на вкладку NUMBER при старте\n"
 
 #: src/main.c:99
 #, c-format
