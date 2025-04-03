@@ -151,11 +151,11 @@ msgstr "_Элемент меню: "
 
 #: src/strings.c:48
 msgid "Active _On-screen display: "
-msgstr "Активные экранные сообщения"
+msgstr "Активные экранные сообщения: "
 
 #: src/strings.c:49
 msgid "Inactive O_n-screen display: "
-msgstr "Пассивные экранные сообщения"
+msgstr "Пассивные экранные сообщения: "
 
 #: src/strings.c:50
 msgid "Appearance"
@@ -452,8 +452,8 @@ msgid ""
 "is not visible on screen until a dockapp is run.  Dockapps can be used to "
 "show things like a clock, or to provide you with a system tray."
 msgstr ""
-"Контейнер для dockapp-ов, специфических приложений с графическим интерфейсом, например "
-"часов или системного трея, не требующих полноразмерное окно для работы."
+"Контейнер для \"dockapp\"-ов, специфических приложений с графическим интерфейсом, например "
+"часов или системного трея, не требующих полноразмерное окно для работы. "
 "Док не будет виден, если не запущен хотя бы один докап."
 
 #: src/strings.c:149
@@ -616,11 +616,11 @@ msgstr ""
 
 #: src/main.c:93
 msgid "  --help                Display this help and exit\n"
-msgstr "  --help				Показать справку и выйти\n"
+msgstr "  --help					Показать справку и выйти\n"
 
 #: src/main.c:94
-msgid "  --version				Display the version and exit\n"
-msgstr "  --version				Показать версию и выйти\n"
+msgid "  --version             Display the version and exit\n"
+msgstr "  --version					Показать версию и выйти\n"
 
 #: src/main.c:95
 msgid "  --install ARCHIVE.obt Install the given theme archive and select it\n"
@@ -640,7 +640,7 @@ msgstr ""
 
 #: src/main.c:98
 msgid "  --tab NUMBER          Switch to tab number NUMBER on startup\n"
-msgstr "  --tab NUMBER				Переключиться на вкладку NUMBER при старте\n"
+msgstr "  --tab NUMBER					Переключиться на вкладку NUMBER при старте\n"
 
 #: src/main.c:99
 #, c-format
