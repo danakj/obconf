@@ -741,7 +741,7 @@ msgstr "Невозможно создать каталог \"%s\": %s"
 #: src/archive.c:148
 #, c-format
 msgid "\"%s\" does not appear to be a valid Openbox theme directory"
-msgstr "\"%s\" не похож на допустимый каталог тем для Openbox"
+msgstr "\"%s\" не похож на каталог темы Openbox"
 
 #: src/archive.c:158
 #, c-format
