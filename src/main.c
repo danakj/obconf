@@ -266,7 +266,7 @@ int main(int argc, char **argv)
 
     /* look for parsing errors */
     {
-        xmlErrorPtr e = xmlGetLastError();
+        const xmlError *e = xmlGetLastError();
         if (e) {
             char *a = g_strdup_printf
                 (_("Error while parsing the Openbox configuration file.  Your configuration file is not valid XML.\n\nMessage: %s"),
