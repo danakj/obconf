@@ -21,6 +21,8 @@
 #include "tree.h"
 #include "preview_update.h"
 
+#include <ctype.h>
+
 static gboolean mapping = FALSE;
 
 static RrFont *read_font(GtkFontButton *w, const gchar *place, gboolean def);

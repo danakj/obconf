@@ -24,5 +24,6 @@
 
 void desktops_setup_num(GtkWidget *w);
 void desktops_setup_names(GtkWidget *w);
+void desktops_setup_tab();
 
 #endif
