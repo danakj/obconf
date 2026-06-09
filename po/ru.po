@@ -61,7 +61,7 @@ msgstr "А_нимированое  сворачивание и восстано�
 
 #: src/strings.c:17
 msgid "<span weight=\"bold\">Window Titles</span>"
-msgstr "<span weight=\"bold\">Название Окна</span>"
+msgstr "<span weight=\"bold\">Заголовок Окна</span>"
 
 #: src/strings.c:19
 msgid "_Button order:"
@@ -105,9 +105,9 @@ msgid ""
 "Maximize"
 msgstr ""
 "Значек окна\n"
-"Метка окна (Название)\n"
-"Сворачивание\n"
-"Восстановление"
+"Заголовок\n"
+"Свернуть\n"
+"Восстановить размер окна"
 
 #: src/strings.c:36
 msgid ""
@@ -126,7 +126,7 @@ msgid ""
 "Omnipresent (On all desktops)"
 msgstr ""
 "Закрыть\n"
-"Shade (Roll up)\n"
+"Свернуть в заголовок\n"
 "Вездесущий (На всех рабочих столах)"
 
 #: src/strings.c:42
@@ -135,27 +135,27 @@ msgstr "<span weight=\"bold\">Шрифт</span>"
 
 #: src/strings.c:44
 msgid "_Active window title: "
-msgstr "Название _активного окна: "
+msgstr "Заголовок _активного окна: "
 
 #: src/strings.c:45
 msgid "_Inactive window title: "
-msgstr "Название н_еактивного окна: "
+msgstr "Заголовок н_еактивного окна: "
 
 #: src/strings.c:46
 msgid "Menu _header: "
-msgstr "Заго_ловок меню:"
+msgstr "Заго_ловок меню: "
 
 #: src/strings.c:47
 msgid "_Menu Item: "
-msgstr "_Элемент меню:"
+msgstr "_Элемент меню: "
 
 #: src/strings.c:48
 msgid "Active _On-screen display: "
-msgstr ""
+msgstr "Активные экранные сообщения: "
 
 #: src/strings.c:49
 msgid "Inactive O_n-screen display: "
-msgstr ""
+msgstr "Пассивные экранные сообщения: "
 
 #: src/strings.c:50
 msgid "Appearance"
@@ -199,33 +199,35 @@ msgstr "Монитор с мышью"
 
 #: src/strings.c:62
 msgid "<span weight=\"bold\">Primary Monitor</span>"
-msgstr ""
+msgstr "<span weight=\"bold\">Основной монитор</span>"
 
 #: src/strings.c:64
 msgid ""
 "The primary monitor is where Openbox will place dialogs, such as the one "
 "used for cycling windows."
 msgstr ""
+"Основной монитор - тот, на котором Openbox будет размещать диалоги, например "
+"диалог переключения окон."
 
 #: src/strings.c:65
 msgid "Primary _monitor:"
-msgstr ""
+msgstr "Основной _монитор:"
 
 #: src/strings.c:66
 msgid "Fixed Monitor"
-msgstr ""
+msgstr "Фиксированный монитор"
 
 #: src/strings.c:67
 msgid "Active Monitor"
-msgstr ""
+msgstr "Активный монитор"
 
 #: src/strings.c:68
 msgid "Monitor With Mouse Pointer"
-msgstr ""
+msgstr "Монитор с курсором мыши"
 
 #: src/strings.c:70
 msgid "_Fixed monitor:"
-msgstr ""
+msgstr "_Фиксированный монитор:"
 
 #: src/strings.c:71
 msgid "Windows"
@@ -237,11 +239,11 @@ msgstr "<span weight=\"bold\">Перемещение и Изменение ра�
 
 #: src/strings.c:74
 msgid "Update the window contents while _resizing"
-msgstr "Обновить содержимое  окна, когда  изменетются его _размеры"
+msgstr "Обновить содержимое окна, когда изменяются его _размеры"
 
 #: src/strings.c:75
 msgid "Drag _threshold distance:"
-msgstr ""
+msgstr "Минимальное смещение:"
 
 #: src/strings.c:76 src/strings.c:78 src/strings.c:80 src/strings.c:100
 #: src/strings.c:105 src/strings.c:138 src/strings.c:140 src/strings.c:142
@@ -251,15 +253,15 @@ msgstr "пик"
 
 #: src/strings.c:77
 msgid "Amount of resistance against other _windows:"
-msgstr "Отступ от других _окон: "
+msgstr "Величина сопротивления другим _окнам:"
 
 #: src/strings.c:79
 msgid "Amount of resistance against screen _edges:"
-msgstr "Отступ от краев _экрана: "
+msgstr "Величина сопротивления краям _экрана:"
 
 #: src/strings.c:81
 msgid "_Switch desktops when moving a window past the screen edge"
-msgstr "_Переключать рабочии столы, когда окно перемещается на край экрана"
+msgstr "_Переключать рабочие столы, когда окно перемещается за край экрана"
 
 #: src/strings.c:83
 msgid "_Amount of time to wait before switching:"
@@ -328,15 +330,15 @@ msgstr "Фиксированная позиция по _y:"
 
 #: src/strings.c:103
 msgid "From top edge"
-msgstr ""
+msgstr "По верхнему краю"
 
 #: src/strings.c:104
 msgid "From bottom edge"
-msgstr ""
+msgstr "По нижнему краю"
 
 #: src/strings.c:106
 msgid "Move & Resize"
-msgstr "Перемещение & Измение размера"
+msgstr "Перемещение и изменение размера"
 
 #: src/strings.c:109
 msgid "_Focus windows when the mouse pointer moves over them"
@@ -372,7 +374,7 @@ msgstr "Развернуть окно"
 
 #: src/strings.c:120
 msgid "Shades the window"
-msgstr "Отбросить тень"
+msgstr "Свернуть в заголовок"
 
 #: src/strings.c:121
 msgid "Double click ti_me:"
@@ -384,7 +386,7 @@ msgstr "Мышь"
 
 #: src/strings.c:125
 msgid "<span weight=\"bold\">Desktops</span>"
-msgstr "<span weight=\"bold\">Рабочии столы</span>"
+msgstr "<span weight=\"bold\">Рабочие столы</span>"
 
 #: src/strings.c:127
 msgid "_Show a notification when switching desktops"
@@ -404,7 +406,7 @@ msgstr "_Названия  рабочих столов:"
 
 #: src/strings.c:133
 msgid "Desktops"
-msgstr "Рабочии столы"
+msgstr "Рабочие столы"
 
 #: src/strings.c:134
 msgid "<span weight=\"bold\">Desktop Margins</span>"
@@ -442,7 +444,7 @@ msgstr "Отступы"
 
 #: src/strings.c:146
 msgid "<span weight=\"bold\">Dock</span>"
-msgstr ""
+msgstr "<span weight=\"bold\">Док</span>"
 
 #: src/strings.c:148
 msgid ""
@@ -450,6 +452,9 @@ msgid ""
 "is not visible on screen until a dockapp is run.  Dockapps can be used to "
 "show things like a clock, or to provide you with a system tray."
 msgstr ""
+"Контейнер для \"dockapp\"-ов, специфических приложений с графическим интерфейсом, например "
+"часов или системного трея, не требующих полноразмерное окно для работы. "
+"Док не будет виден, если не запущен хотя бы один докап."
 
 #: src/strings.c:149
 msgid "<span weight=\"bold\">Position</span>"
@@ -505,7 +510,7 @@ msgstr "x"
 
 #: src/strings.c:165
 msgid "Allow _windows to be placed within the dock's area"
-msgstr "Разре_шить окнам быть размещенными в области уведомлений"
+msgstr "Разре_шить размещение окон в области дока"
 
 #: src/strings.c:166
 msgid "_Orientation: "
@@ -513,11 +518,11 @@ msgstr "_Ориентация:"
 
 #: src/strings.c:167
 msgid "Vertical"
-msgstr "По вертикальи"
+msgstr "По вертикали"
 
 #: src/strings.c:168
 msgid "Horizontal"
-msgstr "По горизонтальи"
+msgstr "По горизонтали"
 
 #: src/strings.c:169
 msgid "<span weight=\"bold\">Stacking</span>"
@@ -525,15 +530,15 @@ msgstr "<span weight=\"bold\">Наложение</span>"
 
 #: src/strings.c:171
 msgid "Keep dock _above other windows"
-msgstr "Область уведомлений _выше других окон"
+msgstr "Разместить док _выше других окон"
 
 #: src/strings.c:172
 msgid "A_llow dock to be both above and below windows"
-msgstr "_Разрешить области уведомлений быть выше и ниже окон"
+msgstr "_Разрешить размещать док выше и ниже окон"
 
 #: src/strings.c:173
 msgid "Keep dock _below other windows"
-msgstr "Область уведомлений _ниже других окон"
+msgstr "Разместить док _ниже других окон"
 
 #: src/strings.c:174
 msgid "<span weight=\"bold\">Hiding</span>"
@@ -553,7 +558,7 @@ msgstr "Задержка перед показо_м:"
 
 #: src/strings.c:183
 msgid "Dock"
-msgstr "Область уведомления"
+msgstr "Док"
 
 #: src/strings.c:184
 msgid "Abo_ut"
@@ -561,7 +566,7 @@ msgstr "О про_грамме"
 
 #: src/strings.c:185
 msgid "About ObConf"
-msgstr "О ObConf"
+msgstr "Об ObConf"
 
 #: src/strings.c:186
 msgid "<span weight=\"bold\" size=\"xx-large\">ObConf VERSION</span>"
@@ -569,7 +574,7 @@ msgstr "<span weight=\"bold\" size=\"xx-large\">Версия ObConf</span>"
 
 #: src/strings.c:187
 msgid "A preferences manager for Openbox"
-msgstr "Привилегированный менеджер для Openbox"
+msgstr "Менеджер настроек для Openbox"
 
 #: src/strings.c:188
 msgid ""
@@ -591,7 +596,7 @@ msgstr ""
 
 #: src/main.c:62
 msgid "ObConf Error"
-msgstr ""
+msgstr "Ошибка ObConf"
 
 #: src/main.c:76 src/main.c:78 src/main.c:80
 msgid "Copyright (c)"
@@ -611,32 +616,31 @@ msgstr ""
 
 #: src/main.c:93
 msgid "  --help                Display this help and exit\n"
-msgstr "  --help                Показать справку и выйти\n"
+msgstr "  --help			Показать справку и выйти\n"
 
 #: src/main.c:94
 msgid "  --version             Display the version and exit\n"
-msgstr "  --version            Показать версию и выйти\n"
+msgstr "  --version			Показать версию и выйти\n"
 
 #: src/main.c:95
 msgid "  --install ARCHIVE.obt Install the given theme archive and select it\n"
 msgstr ""
-"  --install АРХИВ.obt       Установить данный архив темы и выбрать его\n"
+"  --install АРХИВ.obt		Установить тему из архива АРХИВ.obt и выбрать её\n"
 
 #: src/main.c:96
 msgid ""
 "  --archive THEME       Create a theme archive from the given theme "
 "directory\n"
-msgstr "  --archive ТЕМА       Создать архив темы из данного каталога\n"
+msgstr "  --archive ТЕМА		Создать архив obt из каталога с темой ТЕМА\n"
 
 #: src/main.c:97
 msgid "  --config-file FILE    Specify the path to the config file to use\n"
 msgstr ""
-"  --config-file ФАЙЛ    Специфический путь к конфигурационному файлу, "
-"который будет использован\n"
+"  --config-file ФАЙЛ		Явно указать путь к конфигурационному файлу\n"
 
 #: src/main.c:98
 msgid "  --tab NUMBER          Switch to tab number NUMBER on startup\n"
-msgstr ""
+msgstr "  --tab NUMBER			Переключиться на вкладку NUMBER при старте\n"
 
 #: src/main.c:99
 #, c-format
@@ -663,7 +667,7 @@ msgstr "--config-file требуется аргумент\n"
 
 #: src/main.c:133
 msgid "--tab requires an argument\n"
-msgstr ""
+msgstr "--tab требуется аргумент\n"
 
 #: src/main.c:225
 msgid ""
@@ -727,17 +731,17 @@ msgstr ""
 #: src/archive.c:106 src/archive.c:202
 #, c-format
 msgid "Unable to run the \"tar\" command: %s"
-msgstr "Unable to run the \"tar\" command: %s"
+msgstr "Невозможно выполнить команду \"tar\": %s"
 
 #: src/archive.c:126
 #, c-format
 msgid "Unable to create directory \"%s\": %s"
-msgstr "Невозможно создать калаог \"%s\": %s"
+msgstr "Невозможно создать каталог \"%s\": %s"
 
 #: src/archive.c:148
 #, c-format
 msgid "\"%s\" does not appear to be a valid Openbox theme directory"
-msgstr "\"%s\" кажется, не допустимый каталог темы Openbox"
+msgstr "\"%s\" не похож на каталог темы Openbox"
 
 #: src/archive.c:158
 #, c-format
