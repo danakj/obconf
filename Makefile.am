@@ -7,7 +7,6 @@ themedir        = $(datadir)/openbox/themes
 desktopdir      = $(datadir)/applications
 mimedir         = $(datadir)/mime
 mimepkgdir      = $(datadir)/mime/packages
-kdemimedir      = $(datadir)/mimelnk/application
 
 AUTOMAKE_OPTIONS = subdir-objects foreign
 ACLOCAL_AMFLAGS = -I m4
@@ -73,9 +72,6 @@ dist_desktop_DATA = \
 
 dist_mimepkg_DATA = \
 	obconf.xml
-
-dist_kdemime_DATA = \
-	x-openbox-theme.desktop
 
 dist_pixmap_DATA = \
 	data/obconf.png
